@@ -1,0 +1,8 @@
+# Rojo build artifacts
+.rojo/
+*.rbxlx.lock
+*.rbxl.lock
+
+# Operating System files
+.DS_Store
+Thumbs.db
