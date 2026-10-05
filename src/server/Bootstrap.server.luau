@@ -10,12 +10,21 @@ assert(ServicesFolder, "[Bootstrap] No se encontro ServerScriptService.Services"
 
 -- Orden de carga controlado. Cada servicio expone Name, Init(context) y Start(context).
 local SERVICE_ORDER = {
+	"PlayerDataService",
 	"PlayerService",
+	"RagdollService",
+	"MatchInstanceService",
+	"SpawnService",
+	"PointFeedbackService",
+	"PointEffectTestService",
+	"ScoreService",
 	"RoundService",
+	"MatchmakingFeedbackService",
+	"MatchmakingService",
 	"CombatService",
 	"KnockbackService",
 	"EliminationService",
-	"SpawnService",
+	"SlapService",
 }
 
 local loadedServices: { [string]: any } = {}

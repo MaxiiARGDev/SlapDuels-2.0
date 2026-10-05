@@ -1,0 +1,271 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+  <Item class="ScreenGui" referent="1">
+    <Properties>
+      <string name="Name">MatchmakingHUD</string>
+      <bool name="ResetOnSpawn">false</bool>
+      <int name="DisplayOrder">5</int>
+      <token name="ZIndexBehavior">1</token>
+    </Properties>
+    <Item class="Frame" referent="2">
+      <Properties>
+        <string name="Name">QueueFrame</string>
+        <bool name="Visible">false</bool>
+        <UDim2 name="Position"><XS>0.5</XS><XO>-260</XO><YS>0.08</YS><YO>0</YO></UDim2>
+        <UDim2 name="Size"><XS>0</XS><XO>520</XO><YS>0</YS><YO>240</YO></UDim2>
+        <Color3 name="BackgroundColor3"><R>0.0588235</R><G>0.0705882</G><B>0.109804</B></Color3>
+        <float name="BackgroundTransparency">0.08</float>
+        <int name="BorderSizePixel">0</int>
+      </Properties>
+      <Item class="UICorner" referent="3">
+        <Properties>
+          <string name="Name">UICorner</string>
+          <UDim name="CornerRadius"><S>0</S><O>12</O></UDim>
+        </Properties>
+      </Item>
+      <Item class="UIStroke" referent="4">
+        <Properties>
+          <string name="Name">UIStroke</string>
+          <Color3 name="Color"><R>0.176471</R><G>0.254902</G><B>0.392157</B></Color3>
+          <float name="Thickness">1.5</float>
+        </Properties>
+      </Item>
+      <Item class="Frame" referent="5">
+        <Properties>
+          <string name="Name">Header</string>
+          <UDim2 name="Position"><XS>0</XS><XO>0</XO><YS>0</YS><YO>0</YO></UDim2>
+          <UDim2 name="Size"><XS>1</XS><XO>0</XO><YS>0</YS><YO>48</YO></UDim2>
+          <float name="BackgroundTransparency">1</float>
+        </Properties>
+        <Item class="TextLabel" referent="6">
+          <Properties>
+            <string name="Name">Title</string>
+            <UDim2 name="Position"><XS>0</XS><XO>18</XO><YS>0</YS><YO>0</YO></UDim2>
+            <UDim2 name="Size"><XS>0.6</XS><XO>0</XO><YS>1</YS><YO>0</YO></UDim2>
+            <float name="BackgroundTransparency">1</float>
+            <string name="Text">COLA 1v1</string>
+            <Color3 name="TextColor3"><R>1</R><G>1</G><B>1</B></Color3>
+            <float name="TextSize">18</float>
+            <token name="Font">19</token>
+            <token name="TextXAlignment">0</token>
+          </Properties>
+        </Item>
+        <Item class="TextLabel" referent="7">
+          <Properties>
+            <string name="Name">StatusBadge</string>
+            <UDim2 name="Position"><XS>1</XS><XO>-198</XO><YS>0.5</YS><YO>-13</YO></UDim2>
+            <UDim2 name="Size"><XS>0</XS><XO>180</XO><YS>0</YS><YO>26</YO></UDim2>
+            <Color3 name="BackgroundColor3"><R>0.117647</R><G>0.156863</G><B>0.235294</B></Color3>
+            <string name="Text">ESPERANDO OPONENTE</string>
+            <Color3 name="TextColor3"><R>0.705882</R><G>0.803922</G><B>1</B></Color3>
+            <float name="TextSize">11</float>
+            <token name="Font">19</token>
+          </Properties>
+          <Item class="UICorner" referent="8">
+            <Properties>
+              <string name="Name">UICorner</string>
+              <UDim name="CornerRadius"><S>0</S><O>6</O></UDim>
+            </Properties>
+          </Item>
+          <Item class="UIStroke" referent="9">
+            <Properties>
+              <string name="Name">UIStroke</string>
+              <Color3 name="Color"><R>0.27451</R><G>0.392157</G><B>0.627451</B></Color3>
+              <float name="Thickness">1</float>
+            </Properties>
+          </Item>
+        </Item>
+      </Item>
+      <Item class="Frame" referent="10">
+        <Properties>
+          <string name="Name">TeamsContainer</string>
+          <UDim2 name="Position"><XS>0</XS><XO>16</XO><YS>0</YS><YO>52</YO></UDim2>
+          <UDim2 name="Size"><XS>1</XS><XO>-32</XO><YS>1</YS><YO>-64</YO></UDim2>
+          <float name="BackgroundTransparency">1</float>
+        </Properties>
+        <Item class="Frame" referent="11">
+          <Properties>
+            <string name="Name">RedTeam</string>
+            <UDim2 name="Position"><XS>0</XS><XO>0</XO><YS>0</YS><YO>0</YO></UDim2>
+            <UDim2 name="Size"><XS>0.48</XS><XO>0</XO><YS>1</YS><YO>0</YO></UDim2>
+            <Color3 name="BackgroundColor3"><R>0.109804</R><G>0.0705882</G><B>0.0862745</B></Color3>
+            <float name="BackgroundTransparency">0.3</float>
+            <int name="BorderSizePixel">0</int>
+          </Properties>
+          <Item class="UICorner" referent="12">
+            <Properties>
+              <string name="Name">UICorner</string>
+              <UDim name="CornerRadius"><S>0</S><O>8</O></UDim>
+            </Properties>
+          </Item>
+          <Item class="UIStroke" referent="13">
+            <Properties>
+              <string name="Name">UIStroke</string>
+              <Color3 name="Color"><R>0.588235</R><G>0.176471</G><B>0.235294</B></Color3>
+              <float name="Thickness">1</float>
+            </Properties>
+          </Item>
+          <Item class="TextLabel" referent="14">
+            <Properties>
+              <string name="Name">TeamHeader</string>
+              <UDim2 name="Position"><XS>0</XS><XO>10</XO><YS>0</YS><YO>6</YO></UDim2>
+              <UDim2 name="Size"><XS>1</XS><XO>-16</XO><YS>0</YS><YO>26</YO></UDim2>
+              <float name="BackgroundTransparency">1</float>
+              <string name="Text">EQUIPO ROJO</string>
+              <Color3 name="TextColor3"><R>1</R><G>0.372549</G><B>0.431373</B></Color3>
+              <float name="TextSize">12</float>
+              <token name="Font">19</token>
+              <token name="TextXAlignment">0</token>
+            </Properties>
+          </Item>
+          <Item class="Frame" referent="15">
+            <Properties>
+              <string name="Name">SlotsContainer</string>
+              <UDim2 name="Position"><XS>0</XS><XO>8</XO><YS>0</YS><YO>34</YO></UDim2>
+              <UDim2 name="Size"><XS>1</XS><XO>-16</XO><YS>1</YS><YO>-40</YO></UDim2>
+              <float name="BackgroundTransparency">1</float>
+            </Properties>
+            <Item class="UIListLayout" referent="16">
+              <Properties>
+                <string name="Name">UIListLayout</string>
+                <UDim name="Padding"><S>0</S><O>6</O></UDim>
+                <token name="SortOrder">2</token>
+              </Properties>
+            </Item>
+          </Item>
+        </Item>
+        <Item class="Frame" referent="17">
+          <Properties>
+            <string name="Name">BlueTeam</string>
+            <UDim2 name="Position"><XS>0.52</XS><XO>0</XO><YS>0</YS><YO>0</YO></UDim2>
+            <UDim2 name="Size"><XS>0.48</XS><XO>0</XO><YS>1</YS><YO>0</YO></UDim2>
+            <Color3 name="BackgroundColor3"><R>0.0705882</R><G>0.0941176</G><B>0.137255</B></Color3>
+            <float name="BackgroundTransparency">0.3</float>
+            <int name="BorderSizePixel">0</int>
+          </Properties>
+          <Item class="UICorner" referent="18">
+            <Properties>
+              <string name="Name">UICorner</string>
+              <UDim name="CornerRadius"><S>0</S><O>8</O></UDim>
+            </Properties>
+          </Item>
+          <Item class="UIStroke" referent="19">
+            <Properties>
+              <string name="Name">UIStroke</string>
+              <Color3 name="Color"><R>0.176471</R><G>0.352941</G><B>0.627451</B></Color3>
+              <float name="Thickness">1</float>
+            </Properties>
+          </Item>
+          <Item class="TextLabel" referent="20">
+            <Properties>
+              <string name="Name">TeamHeader</string>
+              <UDim2 name="Position"><XS>0</XS><XO>10</XO><YS>0</YS><YO>6</YO></UDim2>
+              <UDim2 name="Size"><XS>1</XS><XO>-16</XO><YS>0</YS><YO>26</YO></UDim2>
+              <float name="BackgroundTransparency">1</float>
+              <string name="Text">EQUIPO AZUL</string>
+              <Color3 name="TextColor3"><R>0.372549</R><G>0.627451</G><B>1</B></Color3>
+              <float name="TextSize">12</float>
+              <token name="Font">19</token>
+              <token name="TextXAlignment">0</token>
+            </Properties>
+          </Item>
+          <Item class="Frame" referent="21">
+            <Properties>
+              <string name="Name">SlotsContainer</string>
+              <UDim2 name="Position"><XS>0</XS><XO>8</XO><YS>0</YS><YO>34</YO></UDim2>
+              <UDim2 name="Size"><XS>1</XS><XO>-16</XO><YS>1</YS><YO>-40</YO></UDim2>
+              <float name="BackgroundTransparency">1</float>
+            </Properties>
+            <Item class="UIListLayout" referent="22">
+              <Properties>
+                <string name="Name">UIListLayout</string>
+                <UDim name="Padding"><S>0</S><O>6</O></UDim>
+                <token name="SortOrder">2</token>
+              </Properties>
+            </Item>
+          </Item>
+        </Item>
+      </Item>
+      <Item class="Frame" referent="23">
+        <Properties>
+          <string name="Name">PlayerSlotTemplate</string>
+          <bool name="Visible">false</bool>
+          <UDim2 name="Position"><XS>0</XS><XO>0</XO><YS>0</YS><YO>0</YO></UDim2>
+          <UDim2 name="Size"><XS>1</XS><XO>0</XO><YS>0</YS><YO>52</YO></UDim2>
+          <Color3 name="BackgroundColor3"><R>0.0862745</R><G>0.109804</G><B>0.164706</B></Color3>
+          <float name="BackgroundTransparency">0.2</float>
+          <int name="BorderSizePixel">0</int>
+        </Properties>
+        <Item class="UICorner" referent="24">
+          <Properties>
+            <string name="Name">UICorner</string>
+            <UDim name="CornerRadius"><S>0</S><O>6</O></UDim>
+          </Properties>
+        </Item>
+        <Item class="UIStroke" referent="25">
+          <Properties>
+            <string name="Name">UIStroke</string>
+            <Color3 name="Color"><R>0.196078</R><G>0.27451</G><B>0.392157</B></Color3>
+            <float name="Thickness">1</float>
+          </Properties>
+        </Item>
+        <Item class="ImageLabel" referent="26">
+          <Properties>
+            <string name="Name">AvatarImage</string>
+            <UDim2 name="Position"><XS>0</XS><XO>7</XO><YS>0.5</YS><YO>-19</YO></UDim2>
+            <UDim2 name="Size"><XS>0</XS><XO>38</XO><YS>0</YS><YO>38</YO></UDim2>
+            <Color3 name="BackgroundColor3"><R>0.137255</R><G>0.164706</G><B>0.235294</B></Color3>
+            <int name="BorderSizePixel">0</int>
+            <Content name="Image"><url>rbxasset://textures/ui/GuiImagePlaceholder.png</url></Content>
+          </Properties>
+          <Item class="UICorner" referent="27">
+            <Properties>
+              <string name="Name">UICorner</string>
+              <UDim name="CornerRadius"><S>0</S><O>19</O></UDim>
+            </Properties>
+          </Item>
+        </Item>
+        <Item class="TextLabel" referent="28">
+          <Properties>
+            <string name="Name">DisplayName</string>
+            <UDim2 name="Position"><XS>0</XS><XO>52</XO><YS>0</YS><YO>8</YO></UDim2>
+            <UDim2 name="Size"><XS>1</XS><XO>-120</XO><YS>0</YS><YO>18</YO></UDim2>
+            <float name="BackgroundTransparency">1</float>
+            <string name="Text">Esperando...</string>
+            <Color3 name="TextColor3"><R>0.941176</R><G>0.960784</G><B>1</B></Color3>
+            <float name="TextSize">13</float>
+            <token name="Font">19</token>
+            <token name="TextXAlignment">0</token>
+            <token name="TextTruncate">1</token>
+          </Properties>
+        </Item>
+        <Item class="TextLabel" referent="29">
+          <Properties>
+            <string name="Name">Username</string>
+            <UDim2 name="Position"><XS>0</XS><XO>52</XO><YS>0</YS><YO>28</YO></UDim2>
+            <UDim2 name="Size"><XS>1</XS><XO>-120</XO><YS>0</YS><YO>14</YO></UDim2>
+            <float name="BackgroundTransparency">1</float>
+            <string name="Text">@vacio</string>
+            <Color3 name="TextColor3"><R>0.509804</R><G>0.568627</G><B>0.686275</B></Color3>
+            <float name="TextSize">10</float>
+            <token name="Font">18</token>
+            <token name="TextXAlignment">0</token>
+            <token name="TextTruncate">1</token>
+          </Properties>
+        </Item>
+        <Item class="TextLabel" referent="30">
+          <Properties>
+            <string name="Name">StatusText</string>
+            <UDim2 name="Position"><XS>1</XS><XO>-66</XO><YS>0.5</YS><YO>-10</YO></UDim2>
+            <UDim2 name="Size"><XS>0</XS><XO>60</XO><YS>0</YS><YO>20</YO></UDim2>
+            <float name="BackgroundTransparency">1</float>
+            <string name="Text">Libre</string>
+            <Color3 name="TextColor3"><R>0.588235</R><G>0.647059</G><B>0.745098</B></Color3>
+            <float name="TextSize">11</float>
+            <token name="Font">18</token>
+            <token name="TextXAlignment">1</token>
+          </Properties>
+        </Item>
+      </Item>
+    </Item>
+  </Item>
+</roblox>
