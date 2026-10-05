@@ -233,6 +233,87 @@ function RagdollService:RemoveRagdoll(character: Model): boolean
 	return true
 end
 
+-- Reseteo forzado e inmediato de ragdoll para reposicionamiento en arena (Zero-Death)
+-- Idempotente, síncrono, cancela timers/callbacks y restaura articulaciones, colisiones y estado físico.
+function RagdollService:ResetRagdollImmediate(character: Model): boolean
+	if not character or not character.Parent then return false end
+
+	-- 1. Cancelar cualquier timer pendiente para evitar callbacks diferidos
+	local timer = self._activeTimers[character]
+	if timer then
+		pcall(task.cancel, timer)
+		self._activeTimers[character] = nil
+	end
+
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+	local rootPart = character:FindFirstChild("HumanoidRootPart") :: BasePart?
+
+	-- 2. Reactivar AnimationConstraints si es R15
+	for _, desc in ipairs(character:GetDescendants()) do
+		if desc:IsA("AnimationConstraint") then
+			desc.Enabled = true
+		end
+	end
+
+	-- 3. Limpiar instancias R6 si correspondía
+	local r6Instances = self._r6Instances[character]
+	if r6Instances then
+		if rootPart then rootPart.Massless = false end
+		for _, v in ipairs(character:GetDescendants()) do
+			if v:IsA("Motor6D") then
+				v.Enabled = true
+			end
+		end
+		for _, inst in ipairs(r6Instances) do
+			if inst and inst.Parent then
+				inst:Destroy()
+			end
+		end
+		self._r6Instances[character] = nil
+	end
+
+	-- 4. Anular colapso de RootJoint / TorsoWeld residuales si existieran
+	if rootPart then
+		rootPart.Massless = false
+		rootPart.CanCollide = true
+		local rootJoint = rootPart:FindFirstChild("RootJoint") :: Motor6D?
+		if rootJoint then
+			rootJoint.Enabled = true
+		end
+		local torsoWeld = rootPart:FindFirstChild("TorsoWeld")
+		if torsoWeld then
+			torsoWeld:Destroy()
+		end
+	end
+
+	-- 5. Restaurar estado de locomoción en Humanoid sin alterar Health
+	if humanoid and humanoid.Health > 0 then
+		humanoid.PlatformStand = false
+		humanoid.AutoRotate = true
+
+		local player = Players:GetPlayerFromCharacter(character)
+		local stateEvent = self:_getStateEvent()
+		if player and stateEvent then
+			stateEvent:FireClient(player, true)
+		end
+
+		pcall(function()
+			humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp, true)
+			humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
+		end)
+	end
+
+	-- 6. Anular cualquier inercia o impulso en todas las partes del modelo
+	for _, desc in ipairs(character:GetDescendants()) do
+		if desc:IsA("BasePart") then
+			desc.AssemblyLinearVelocity = Vector3.zero
+			desc.AssemblyAngularVelocity = Vector3.zero
+		end
+	end
+
+	return true
+end
+
 -- Calcula el vector tridimensional de impulso de lanzamiento a partir de un punto de origen
 function RagdollService:ComputeLaunchVelocity(
 	originPos: Vector3,

@@ -256,6 +256,124 @@ function SpawnService:SpawnPlayerInMatch(session: MatchSession, player: Player):
 	return self:TeleportCharacterToSpawn(player, targetSpawn)
 end
 
+-- Reposiciona el Character EXISTENTE de un jugador dentro de su MatchInstance (Zero-Death)
+-- Garantiza:
+-- 1. NO invoca player:LoadCharacter().
+-- 2. NO reemplaza ni destruye el Character existente.
+-- 3. Resuelve TeamSpawn exclusivamente desde MatchId y MatchTeam (aislamiento multi-match).
+-- 4. Invoca RagdollService:ResetRagdollImmediate() para restaurar locomoción y cancelar timers.
+-- 5. Anula AssemblyLinearVelocity y AssemblyAngularVelocity antes y después de PivotTo.
+-- 6. Aplica elevación vertical y orientación de forma segura para no incrustar en el suelo.
+function SpawnService:ResetCharacterInArena(player: Player): boolean
+	if not player or not player:IsDescendantOf(game:GetService("Players")) then
+		warn("[SpawnService] Player invalido o desconectado para ResetCharacterInArena")
+		return false
+	end
+
+	local character = player.Character
+	if not character or not character.Parent or not character:IsDescendantOf(Workspace) then
+		warn(string.format("[SpawnService] Jugador '%s' no tiene Character valido en Workspace", player.Name))
+		return false
+	end
+
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+	local rootPart = character:FindFirstChild("HumanoidRootPart") :: BasePart?
+	if not humanoid or not rootPart then
+		warn(string.format("[SpawnService] Personaje de '%s' carece de Humanoid o HumanoidRootPart", player.Name))
+		return false
+	end
+
+	-- Resolver identidad server-authoritative
+	local matchId = player:GetAttribute("MatchId") :: string?
+	local team = player:GetAttribute("MatchTeam") :: string?
+
+	-- Fallback a RoundService si los atributos no estuvieran en el jugador
+	if not matchId or not team then
+		local roundService = self:_getRoundService()
+		if roundService and roundService.GetSessionForPlayer then
+			local session = roundService:GetSessionForPlayer(player)
+			if session then
+				matchId = session.Id
+				team = self:_getPlayerTeam(session, player)
+			end
+		end
+	end
+
+	if not matchId or not team then
+		warn(string.format("[SpawnService] No se pudo resolver MatchId/MatchTeam para '%s'", player.Name))
+		return false
+	end
+
+	-- Resolver spawn físico de la MatchInstance correspondiente (sin búsquedas globales)
+	local matchInstanceService = self:_getMatchInstanceService()
+	if not matchInstanceService then
+		warn("[SpawnService] MatchInstanceService no disponible")
+		return false
+	end
+
+	local instanceInfo = matchInstanceService:GetInstance(matchId)
+	if not instanceInfo then
+		warn(string.format("[SpawnService] MatchInstance no encontrada para MatchId '%s'", matchId))
+		return false
+	end
+
+	local targetSpawn = if team == "Red" then instanceInfo.RedSpawn else instanceInfo.BlueSpawn
+	if not targetSpawn or not targetSpawn:IsA("BasePart") or not targetSpawn:IsDescendantOf(Workspace) then
+		warn(string.format("[SpawnService] TeamSpawn '%s' no valido para Match '%s'", tostring(team), matchId))
+		return false
+	end
+
+	-- 1. Resetear inmediatamente el estado de Ragdoll y cancelar callbacks pendientes
+	local ragdollService = self:_getRagdollService()
+	if ragdollService and type(ragdollService.ResetRagdollImmediate) == "function" then
+		ragdollService:ResetRagdollImmediate(character)
+	elseif ragdollService then
+		ragdollService:RemoveRagdoll(character)
+	end
+
+	-- 2. Limpiar velocidades e impulsos antes del teleport
+	rootPart.AssemblyLinearVelocity = Vector3.zero
+	rootPart.AssemblyAngularVelocity = Vector3.zero
+	for _, desc in ipairs(character:GetDescendants()) do
+		if desc:IsA("BasePart") then
+			desc.AssemblyLinearVelocity = Vector3.zero
+			desc.AssemblyAngularVelocity = Vector3.zero
+		end
+	end
+
+	-- 3. Calcular CFrame objetivo con elevación de seguridad
+	local spawnHalfThickness = targetSpawn.Size.Y / 2
+	local hipHeight = if humanoid.HipHeight > 0 then humanoid.HipHeight else 2.0
+	local rootHalfHeight = rootPart.Size.Y / 2
+	local safetyBuffer = 0.5
+	local verticalClearance = spawnHalfThickness + hipHeight + rootHalfHeight + safetyBuffer
+
+	local targetPosition = targetSpawn.Position + Vector3.new(0, verticalClearance, 0)
+	local targetCFrame = CFrame.new(targetPosition) * CFrame.Angles(0, math.rad(targetSpawn.Orientation.Y), 0)
+
+	-- 4. Reposicionar el Character EXISTENTE
+	character:PivotTo(targetCFrame)
+
+	-- 5. Limpieza física secundaria post-PivotTo para cancelar inercia residual
+	rootPart.AssemblyLinearVelocity = Vector3.zero
+	rootPart.AssemblyAngularVelocity = Vector3.zero
+
+	-- 6. Garantizar que Humanoid pueda caminar
+	if humanoid.Health > 0 then
+		humanoid.PlatformStand = false
+		humanoid.AutoRotate = true
+		pcall(function()
+			humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp, true)
+			humanoid:ChangeState(Enum.HumanoidStateType.Running)
+		end)
+	end
+
+	print(string.format("[SpawnService] ResetCharacterInArena exitoso para '%s' en '%s' (Match '%s', Team '%s')",
+		player.Name, targetSpawn.Name, matchId, team))
+
+	return true
+end
+
 -- Activa el seguimiento de CharacterAdded para respawn en arena durante Playing
 function SpawnService:StartMatchRespawnTracking(session: MatchSession)
 	if not session then return end

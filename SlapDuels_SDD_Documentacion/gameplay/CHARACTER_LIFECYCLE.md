@@ -85,3 +85,23 @@ Como preparación para el modelo de reposicionamiento sin muerte (Zero-Death / P
      - `_cleanupSession` (al concluir `ReturningToLobby` hacia `Waiting`).
      - `_cancelSession` (ante cancelaciones imprevistas o abortos de match).
      - `_handlePlayerLeaving` (cuando un jugador abandona el servidor vía `PlayerRemoving`).
+
+### 15.6 Infraestructura Zero-Death — Fase 2 (Ragdoll Reset + Persistent Character Reposition)
+En esta fase se incorporan las APIs autoritativas de restauración y reposicionamiento físico sobre el mismo `Character` sin recargas ni regeneraciones:
+1. **`RagdollService:ResetRagdollImmediate(character: Model): boolean`:**
+   - Reseteo forzado, síncrono e idempotente del estado de muñeco de trapo.
+   - Cancela de inmediato cualquier timer activo en `_activeTimers[character]`, evitando callbacks diferidos posteriores.
+   - Reactiva articulaciones (`AnimationConstraint` en R15 o `Motor6D`/`RootJoint` en R6).
+   - Destruye soldaduras o partes colisionadoras temporales asociadas a R6.
+   - Restablece el `Humanoid` (`PlatformStand = false`, `AutoRotate = true`, `GettingUp`).
+   - Anula `AssemblyLinearVelocity` y `AssemblyAngularVelocity` en todas las partes del modelo.
+   - Emite señal al cliente para apagar `RagdollStatesHandler`.
+   - **Garantía:** No mata al `Humanoid`, no toca `Health` y no reemplaza el `Character`.
+2. **`SpawnService:ResetCharacterInArena(player: Player): boolean`:**
+   - Reposiciona el modelo existente del avatar dentro de su arena correspondiente.
+   - Resuelve el spawn físico (`RedSpawn` / `BlueSpawn`) consultando exclusivamente los atributos `MatchId` y `MatchTeam` contra `MatchInstanceService:GetInstance(matchId)`, garantizando cero colisiones entre partidas concurrentes.
+   - Invoca previamente `RagdollService:ResetRagdollImmediate(character)` para asegurar locomoción inmediata.
+   - Limpia velocidades lineales y rotacionales antes y después del reposicionamiento.
+   - Mueve el avatar mediante `character:PivotTo()` con elevación de seguridad basada en `HipHeight` y grosor del spawn.
+   - **Garantía:** No invoca `player:LoadCharacter()`, no destruye el modelo y preserva exactamente la misma instancia del `Character` del jugador.
+   - *Nota de Fase 2:* Esta API queda expuesta como primitiva para las fases subsiguientes. Todavía no está conectada a listeners de `VoidBoundaryPart`, `KillPart`, `Touched` ni `Humanoid.Died`. El ciclo tradicional de respawn sigue operando en paralelo sin interferencias.
