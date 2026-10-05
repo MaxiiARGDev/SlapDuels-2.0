@@ -148,6 +148,31 @@ En esta fase se completa la detección integral de jugadores que abandonan el vo
    - Al finalizar la partida (`UnbindMatch`), se desconectan los listeners, se retira la sesión de `_activeSessions`, se apaga el thread de polling si no quedan partidas en el servidor y se limpian las tablas de debounce.
    - Al destruir la instancia (`MatchInstanceService:DestroyInstance`), el contenedor destruye el `VoidBoundaryPart` sin dejar memory leaks.
 7. **Estado del Lifecycle y Compatibilidad:**
-   - El listener `Humanoid.Died` permanece activo únicamente como red de seguridad/compatibilidad ante muertes no controladas por el gameplay.
-   - Ni el `KillPart` ni el `VoidBoundaryPart` modifican `Humanoid.Health` ni provocan la muerte del avatar.
-   - El respawn nativo de Roblox todavía no ha sido desactivado globalmente a la espera de la siguiente fase.
+   - *Nota de Fase 3B:* `VoidBoundaryPart` y fail-safe polling integrados operativamente.
+
+### 15.9 Infraestructura Zero-Death — Fase 4B (Migración Definitiva)
+En esta fase se culmina la transición definitiva hacia la arquitectura **Zero-Death / Persistent Character**, erradicando el ciclo reactivo de muerte/respawn en partidas:
+1. **Preservación Global de `Players.CharacterAutoLoads = true`:**
+   - Se mantiene intacto el valor del motor a nivel global para garantizar el correcto flujo de jugadores en el Lobby (`PlayerAdded`, `Lobby.SpawnLocation`).
+   - Está prohibido alterar `CharacterAutoLoads` dinámicamente, garantizando total estabilidad en entornos multijugador concurrentes.
+2. **Blindaje de Humanoid durante Match (`Dead State Protection`):**
+   - Al posicionar a un avatar en la arena (`SpawnPlayerInMatch` y `ResetCharacterInArena`), se bloquea el estado de muerte mediante:
+     `humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)`
+   - Al concluir la partida y regresar al Lobby (`ReturnPlayersToLobby`), se restaura autoritativamente el estado normal:
+     `humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, true)`
+   - No se utiliza salud infinita (`MaxHealth = math.huge`) como sustituto de la arquitectura física.
+3. **Retiro Completo de `StartMatchRespawnTracking`:**
+   - Se eliminaron todas las invocaciones a `spawnService:StartMatchRespawnTracking` y `spawnService:StopMatchRespawnTracking` desde `RoundService`.
+   - Se retiró el listener de `CharacterAdded` que interceptaba personajes en el Lobby para forzar su rescate a la arena, eliminando la race condition crítica que provocaba recargas infinitas (`LoadCharacter`).
+4. **Desacople Estricto de `player:LoadCharacter()`:**
+   - En `SpawnService:TeleportCharacterToSpawn`, se implementó la regla autoritativa con guard `IsPlayerInActiveMatch(player)`:
+     - **En Match:** Nunca se llama `player:LoadCharacter()`. El rig existente se reutiliza y se espera a que `HumanoidRootPart` esté listo sin recargar el modelo.
+     - **En Lobby:** Se permite la llamada de recuperación si el personaje realmente fue destruido.
+5. **Migración de `Humanoid.Died` a Modo Diagnóstico Pasivo:**
+   - En `EliminationService`, el listener de `hum.Died` ya no otorga Kills, no ejecuta `OnPlayerEliminated`, no altera el marcador de puntos ni desencadena respawns. Emite exclusivamente advertencias diagnósticas pasivas.
+   - Las únicas fuentes válidas de eliminación en partida son los sensores no letales: `KillPart`, `VoidBoundary` y `VoidBoundaryPolling`.
+6. **Invariante de Persistencia del Character:**
+   - Durante todo el transcurso de una `MatchSession` (`StartCountdown` $\rightarrow$ `Playing` $\rightarrow$ `PointRestartCountdown` $\rightarrow$ `Ending` $\rightarrow$ `ReturningToLobby`), el rig del jugador permanece intacto:
+     $$\text{characterBefore} == \text{characterAfter}$$
+   - Cero destrucción de modelos, cero parpadeos de pantalla en el Lobby y sincronización física limpia de Slaps y animaciones.
+

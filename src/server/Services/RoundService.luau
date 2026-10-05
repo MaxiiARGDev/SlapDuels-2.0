@@ -647,12 +647,6 @@ function RoundService:_runSession(sessionId: string)
 		scoreService:StartScoring(session)
 	end
 
-	-- Iniciar seguimiento de respawn contextual en arena durante Playing
-	local spawnService = self:_getSpawnService()
-	if spawnService then
-		spawnService:StartMatchRespawnTracking(session)
-	end
-
 	-- Iniciar detección y resolución de eliminaciones autoritativas
 	local eliminationService = self:_getEliminationService()
 	if eliminationService then
@@ -704,11 +698,6 @@ function RoundService:_runSession(sessionId: string)
 	local combatService = self:_getCombatService()
 	if combatService then
 		combatService:ClearMatch(session.Id)
-	end
-
-	-- Detener respawn en arena al finalizar Playing
-	if spawnService then
-		spawnService:StopMatchRespawnTracking(session.Id)
 	end
 
 	-- Hook preparado para entrega de recompensas
@@ -1000,7 +989,6 @@ function RoundService:_cancelSession(reason: string)
 
 		local spawnService = self:_getSpawnService()
 		if spawnService then
-			spawnService:StopMatchRespawnTracking(session.Id)
 			spawnService:ReturnPlayersToLobby(session.RedPlayer, session.BluePlayer)
 		end
 
@@ -1036,11 +1024,6 @@ end
 
 function RoundService:_cleanupSession()
 	if self._currentSession then
-		local spawnService = self:_getSpawnService()
-		if spawnService then
-			spawnService:StopMatchRespawnTracking(self._currentSession.Id)
-		end
-
 		local matchInstanceService = self:_getMatchInstanceService()
 		if matchInstanceService then
 			matchInstanceService:DestroyInstance(self._currentSession.Id)

@@ -6,9 +6,11 @@
 -- NO implementa: respawn, muerte, combate, knockback, eliminacion, checkpoints ni herramientas.
 
 local Workspace = game:GetService("Workspace")
+local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerScriptService = game:GetService("ServerScriptService")
 
+local Constants = require(ReplicatedStorage.Shared.Constants)
 local Types = require(ReplicatedStorage.Shared.Types)
 
 type MatchSession = Types.MatchSession
@@ -19,11 +21,9 @@ SpawnService.Name = "SpawnService"
 SpawnService._context = nil
 SpawnService._lobbySpawn = nil :: SpawnLocation?
 SpawnService._returnConnection = nil :: RBXScriptConnection?
-SpawnService._matchRespawnConnections = {} :: { [string]: { RBXScriptConnection } }
 
 function SpawnService:Init(context)
 	self._context = context
-	self._matchRespawnConnections = {}
 
 	-- Validar existencia de Workspace.Lobby.SpawnLocation
 	local lobby = Workspace:FindFirstChild("Lobby")
@@ -130,6 +130,31 @@ function SpawnService:GetSpawnPoints(session: MatchSession): (BasePart?, BasePar
 	return self:_getSpawnPoints(session)
 end
 
+local function isPlayer(p: any): boolean
+	if not p then return false end
+	if typeof(p) == "Instance" then
+		return p:IsA("Player")
+	end
+	return false
+end
+
+-- Determina si un jugador pertenece activamente a una partida en curso
+function SpawnService:IsPlayerInActiveMatch(player: Player): boolean
+	if not player or not isPlayer(player) then return false end
+	local matchId = player:GetAttribute("MatchId")
+	if matchId and matchId ~= "" then
+		return true
+	end
+	local roundService = self:_getRoundService()
+	if roundService and type(roundService.GetSessionForPlayer) == "function" then
+		local session = roundService:GetSessionForPlayer(player)
+		if session and session.State ~= Constants.RoundState.Waiting and session.State ~= Constants.RoundState.ReturningToLobby then
+			return true
+		end
+	end
+	return false
+end
+
 -- Posiciona un personaje de jugador de forma segura sobre un spawnpart evitando que quede incrustado en el suelo
 function SpawnService:TeleportCharacterToSpawn(player: Player, spawnPart: BasePart): boolean
 	if not player or not spawnPart or not spawnPart:IsDescendantOf(Workspace) then
@@ -150,21 +175,36 @@ function SpawnService:TeleportCharacterToSpawn(player: Player, spawnPart: BasePa
 		and rootPart.Position.Y > (workspace.FallenPartsDestroyHeight + 100)
 
 	if not isAlive then
-		print(string.format("[SpawnService] Personaje de '%s' inactivo, destruido o muerto. Recargando con LoadCharacter()...", player.Name))
-		local ok, err = pcall(function()
-			player:LoadCharacter()
-		end)
-		if not ok then
-			warn(string.format("[SpawnService] Error al forzar LoadCharacter() para '%s': %s", player.Name, tostring(err)))
-			return false
-		end
-		character = player.Character
-		if not character then
-			local start = os.clock()
-			while not player.Character and (os.clock() - start) < 2 do
-				task.wait(0.05)
+		if self:IsPlayerInActiveMatch(player) then
+			-- REGLA FASE 4B: En MATCH, NUNCA invocar player:LoadCharacter()
+			warn(string.format("[SpawnService] Personaje de '%s' no listo durante MatchSession. Esperando HumanoidRootPart sin recargar rig...", player.Name))
+			character = player.Character
+			if character then
+				rootPart = character:WaitForChild("HumanoidRootPart", 2) :: BasePart?
+				humanoid = character:FindFirstChildOfClass("Humanoid")
+			end
+			if not character or not rootPart or not humanoid then
+				warn(string.format("[SpawnService] Imposible teletransportar '%s' en partida: Character no recuperable sin LoadCharacter.", player.Name))
+				return false
+			end
+		else
+			-- LOBBY: Recarga permitida exclusivamente como mecanismo fuera de match
+			print(string.format("[SpawnService] Personaje de '%s' inactivo en Lobby. Recargando con LoadCharacter()...", player.Name))
+			local ok, err = pcall(function()
+				player:LoadCharacter()
+			end)
+			if not ok then
+				warn(string.format("[SpawnService] Error al forzar LoadCharacter() para '%s': %s", player.Name, tostring(err)))
+				return false
 			end
 			character = player.Character
+			if not character then
+				local start = os.clock()
+				while not player.Character and (os.clock() - start) < 2 do
+					task.wait(0.05)
+				end
+				character = player.Character
+			end
 		end
 	end
 
@@ -178,6 +218,13 @@ function SpawnService:TeleportCharacterToSpawn(player: Player, spawnPart: BasePa
 	if not rootPart or not humanoid then
 		warn(string.format("[SpawnService] Personaje de '%s' no contiene HumanoidRootPart o Humanoid", player.Name))
 		return false
+	end
+
+	-- Si el jugador está dentro de un match, asegurar que Dead esté deshabilitado
+	if self:IsPlayerInActiveMatch(player) then
+		pcall(function()
+			humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
+		end)
 	end
 
 	-- Calculo de elevacion para evitar que el personaje aparezca dentro del suelo:
@@ -251,6 +298,17 @@ function SpawnService:SpawnPlayerInMatch(session: MatchSession, player: Player):
 	if not targetSpawn or not targetSpawn:IsA("BasePart") or not targetSpawn:IsDescendantOf(Workspace) then
 		warn(string.format("[SpawnService] Spawn de equipo '%s' no valido para Match '%s'", team, session.Id))
 		return false
+	end
+
+	-- Blindaje del Humanoid al ingresar al Match (Fase 4B Zero-Death)
+	local character = player.Character
+	if character then
+		local humanoid = character:FindFirstChildOfClass("Humanoid")
+		if humanoid then
+			pcall(function()
+				humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
+			end)
+		end
 	end
 
 	return self:TeleportCharacterToSpawn(player, targetSpawn)
@@ -358,11 +416,12 @@ function SpawnService:ResetCharacterInArena(player: Player): boolean
 	rootPart.AssemblyLinearVelocity = Vector3.zero
 	rootPart.AssemblyAngularVelocity = Vector3.zero
 
-	-- 6. Garantizar que Humanoid pueda caminar
+	-- 6. Garantizar que Humanoid pueda caminar y mantener Dead bloqueado (Zero-Death)
 	if humanoid.Health > 0 then
 		humanoid.PlatformStand = false
 		humanoid.AutoRotate = true
 		pcall(function()
+			humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
 			humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp, true)
 			humanoid:ChangeState(Enum.HumanoidStateType.Running)
 		end)
@@ -374,85 +433,14 @@ function SpawnService:ResetCharacterInArena(player: Player): boolean
 	return true
 end
 
--- Activa el seguimiento de CharacterAdded para respawn en arena durante Playing
-function SpawnService:StartMatchRespawnTracking(session: MatchSession)
-	if not session then return end
-	local matchId = session.Id
-	self:StopMatchRespawnTracking(matchId)
-
-	local connections = {}
-	self._matchRespawnConnections[matchId] = connections
-
-	local trackPlayer = function(player: Player, team: "Red" | "Blue")
-		if not player then return end
-
-		local conn = player.CharacterAdded:Connect(function(character)
-			print(string.format("[SpawnService] CharacterAdded for %s", player.Name))
-
-			-- Validar que la sesión siga activa y en Playing
-			if not session or not session.InstanceInfo then return end
-
-			local roundService = self:_getRoundService()
-			local currentState = (roundService and roundService:GetState()) or session.State
-
-			-- Permitir respawn contextual en arena durante Playing, PointRestartCountdown y StartCountdown
-			local isMatchActive = (currentState == Constants.RoundState.Playing
-				or currentState == Constants.RoundState.PointRestartCountdown
-				or currentState == Constants.RoundState.StartCountdown
-				or (roundService and (roundService:GetState() == Constants.RoundState.Playing
-					or roundService:GetState() == Constants.RoundState.PointRestartCountdown
-					or roundService:GetState() == Constants.RoundState.StartCountdown)))
-				and (session.State ~= Constants.RoundState.Ending
-				and session.State ~= Constants.RoundState.ReturningToLobby
-				and session.State ~= Constants.RoundState.Waiting)
-
-			if not isMatchActive then
-				print(string.format("[SpawnService] Match '%s' no está en estado activo de arena (Estado: %s), ignorando arena respawn",
-					session.Id, tostring(currentState)))
-				return
-			end
-
-			print(string.format("[SpawnService] Player belongs to %s", session.Id))
-			local resolvedTeam = self:_getPlayerTeam(session, player) or team
-			print(string.format("[SpawnService] Player team: %s", tostring(resolvedTeam)))
-			print(string.format("[SpawnService] Respawning in %sSpawn", tostring(resolvedTeam)))
-
-			task.defer(function()
-				self:SpawnPlayerInMatch(session, player)
-				local slapService = self:_getSlapService()
-				if slapService then
-					slapService:GiveSlap(player)
-				end
-			end)
-		end)
-		table.insert(connections, conn)
-	end
-
-	if session.RedTeam and #session.RedTeam > 0 then
-		for _, p in ipairs(session.RedTeam) do trackPlayer(p, "Red") end
-	elseif session.RedPlayer then
-		trackPlayer(session.RedPlayer, "Red")
-	end
-
-	if session.BlueTeam and #session.BlueTeam > 0 then
-		for _, p in ipairs(session.BlueTeam) do trackPlayer(p, "Blue") end
-	elseif session.BluePlayer then
-		trackPlayer(session.BluePlayer, "Blue")
-	end
-
-	print(string.format("[SpawnService] Seguimiento de respawn en arena activado para Match '%s'", matchId))
+-- Deprecated (Fase 4B Zero-Death): En arquitectura Zero-Death el Character es persistente y no requiere rescue reactivo
+function SpawnService:StartMatchRespawnTracking(_session: MatchSession)
+	-- No-op: Zero-Death elimina el ciclo de muerte/respawn nativo en partida
 end
 
--- Detiene el seguimiento de respawn y desconecta los eventos CharacterAdded de la partida
-function SpawnService:StopMatchRespawnTracking(matchId: string)
-	local conns = self._matchRespawnConnections[matchId]
-	if conns then
-		for _, conn in ipairs(conns) do
-			conn:Disconnect()
-		end
-		self._matchRespawnConnections[matchId] = nil
-		print(string.format("[SpawnService] Seguimiento de respawn en arena detenido para Match '%s'", matchId))
-	end
+-- Deprecated (Fase 4B Zero-Death): Limpieza no requerida al no existir listeners activos
+function SpawnService:StopMatchRespawnTracking(_matchId: string)
+	-- No-op
 end
 
 -- Valida spawns de la partida y posiciona a RedPlayer y BluePlayer
@@ -535,15 +523,27 @@ function SpawnService:ReturnPlayersToLobby(redPlayer: Player?, bluePlayer: Playe
 		return
 	end
 
+	local restoreHumanoid = function(player: Player?)
+		if not player or not player.Character then return end
+		local hum = player.Character:FindFirstChildOfClass("Humanoid")
+		if hum then
+			pcall(function()
+				hum:SetStateEnabled(Enum.HumanoidStateType.Dead, true)
+			end)
+		end
+	end
+
 	if redPlayer and redPlayer.Character then
+		restoreHumanoid(redPlayer)
 		self:TeleportCharacterToSpawn(redPlayer, lobbySpawn)
 	end
 
 	if bluePlayer and bluePlayer.Character then
+		restoreHumanoid(bluePlayer)
 		self:TeleportCharacterToSpawn(bluePlayer, lobbySpawn)
 	end
 
-	print("[SpawnService] Jugadores retornados a Workspace.Lobby.SpawnLocation")
+	print("[SpawnService] Jugadores retornados a Workspace.Lobby.SpawnLocation con estados normales restaurados")
 end
 
 return SpawnService

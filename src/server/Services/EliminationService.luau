@@ -193,7 +193,7 @@ function EliminationService:BindMatch(session: MatchSession)
 		table.insert(conns, voidConn)
 	end
 
-	-- 3. Escuchar Humanoid.Died en los jugadores de la partida (Fallback compatibilidad)
+	-- 3. Escuchar Humanoid.Died en modo diagnóstico pasivo (Fase 4B Zero-Death)
 	local trackPlayerDeath = function(player: Player)
 		if not player then return end
 
@@ -201,7 +201,8 @@ function EliminationService:BindMatch(session: MatchSession)
 			local hum = character:WaitForChild("Humanoid", 5) :: Humanoid?
 			if hum then
 				local diedConn = hum.Died:Connect(function()
-					self:OnPlayerEliminated(player, "HumanoidDied", matchId)
+					warn(string.format("[EliminationService] [DIAGNOSTIC] Humanoid.Died detectado en '%s' durante Match '%s'. Evento absorbido pasivamente por Zero-Death (sin scoring, sin respawn).",
+						player.Name, matchId))
 				end)
 				table.insert(conns, diedConn)
 			end
@@ -549,6 +550,14 @@ function EliminationService:OnPlayerEliminated(victim: Player, reason: string, o
 
 	if not matchId or not session then
 		-- Jugador fuera de partida o match no encontrado
+		return false, nil
+	end
+
+	-- En arquitectura Zero-Death, las eliminaciones autoritativas ocurren exclusivamente via KillPart/VoidBoundary
+	local currentState = session.State
+	if currentState == Constants.RoundState.Playing or currentState == Constants.RoundState.PointRestartCountdown then
+		warn(string.format("[EliminationService] [DIAGNOSTIC] OnPlayerEliminated invocado para '%s' (Razón: %s) en partida Zero-Death. Se descarta scoring o respawn secundario.",
+			victim.Name, tostring(reason)))
 		return false, nil
 	end
 
