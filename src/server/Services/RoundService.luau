@@ -685,19 +685,9 @@ function RoundService:_runSession(sessionId: string)
 	-- 8. ENDING
 	local result = session.Result or Constants.MatchResult.Draw
 
-	-- Detener scoring
+	-- Detener scoring de inmediato
 	if scoreService then
 		scoreService:StopScoring(session.Id)
-	end
-
-	-- Detener eliminaciones autoritativas y limpiar combate del match
-	local eliminationService = self:_getEliminationService()
-	if eliminationService then
-		eliminationService:UnbindMatch(session.Id)
-	end
-	local combatService = self:_getCombatService()
-	if combatService then
-		combatService:ClearMatch(session.Id)
 	end
 
 	-- Hook preparado para entrega de recompensas
@@ -716,18 +706,31 @@ function RoundService:_runSession(sessionId: string)
 	})
 	self:_broadcastResult(result, winnerName)
 
+	-- Estabilizar inmediatamente a ambos contendientes en sus TeamSpawns de arena (Fase 4D Zero-Death)
+	-- Se anulan velocidades residuales del blast final y se preserva el Character persistente
+	local spawnService = self:_getSpawnService()
+	if spawnService then
+		local redPlayers = session.RedTeam or (session.RedPlayer and { session.RedPlayer }) or {}
+		local bluePlayers = session.BlueTeam or (session.BluePlayer and { session.BluePlayer }) or {}
+		for _, p in ipairs(redPlayers) do
+			if p and p.Parent then
+				spawnService:ResetCharacterInArena(p)
+			end
+		end
+		for _, p in ipairs(bluePlayers) do
+			if p and p.Parent then
+				spawnService:ResetCharacterInArena(p)
+			end
+		end
+	end
+
+	-- NOTA FASE 4D: Durante Ending los sensores (KillPart, VoidBoundary y Polling) PERMANECEN ACTIVOS.
+	-- UnbindMatch y ClearMatch se postergan a ReturningToLobby para actuar como red de seguridad física.
 	task.wait(Config.Round.EndingDisplayTime or 4)
 	if not self:_isSessionValid(sessionId) then return end
 
 	-- 9. RETURNING_TO_LOBBY
 	self:_setState(Constants.RoundState.ReturningToLobby)
-
-	-- Retornar a los jugadores al lobby ANTES de destruir la arena
-	returnLobbyBindable:Fire({
-		RedPlayer = session.RedPlayer,
-		BluePlayer = session.BluePlayer,
-		Session = session,
-	})
 
 	-- Retirar Slaps de combate al retornar al lobby
 	local slapService = self:_getSlapService()
@@ -735,9 +738,30 @@ function RoundService:_runSession(sessionId: string)
 		slapService:RemoveMatchPlayers(session)
 	end
 
-	local spawnService = self:_getSpawnService()
+	-- Retornar a los contendientes al Lobby utilizando sus Characters existentes
 	if spawnService then
-		spawnService:ReturnPlayersToLobby(session.RedPlayer, session.BluePlayer)
+		local redPlayers = session.RedTeam or (session.RedPlayer and { session.RedPlayer }) or {}
+		local bluePlayers = session.BlueTeam or (session.BluePlayer and { session.BluePlayer }) or {}
+		spawnService:ReturnPlayersToLobby(redPlayers, bluePlayers)
+	end
+
+	returnLobbyBindable:Fire({
+		RedPlayer = session.RedPlayer,
+		BluePlayer = session.BluePlayer,
+		Session = session,
+	})
+
+	-- Limpiar atributos MatchId y MatchTeam tras traslado seguro al Lobby
+	clearMatchIdentity(session)
+
+	-- Desvincular sensores autoritativos y limpiar tags de combate al entrar a Lobby (Fase 4D Zero-Death)
+	local eliminationService = self:_getEliminationService()
+	if eliminationService then
+		eliminationService:UnbindMatch(session.Id)
+	end
+	local combatService = self:_getCombatService()
+	if combatService then
+		combatService:ClearMatch(session.Id)
 	end
 
 	-- Destruir la instancia fisica del mapa y liberar el ArenaSlot

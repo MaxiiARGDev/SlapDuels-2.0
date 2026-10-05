@@ -176,3 +176,22 @@ En esta fase se culmina la transición definitiva hacia la arquitectura **Zero-D
      $$\text{characterBefore} == \text{characterAfter}$$
    - Cero destrucción de modelos, cero parpadeos de pantalla en el Lobby y sincronización física limpia de Slaps y animaciones.
 
+### 15.10 Infraestructura Zero-Death — Fase 4D (Fix Definitivo Ending → Lobby)
+En esta fase se resuelve la transición crítica entre el punto final de una partida y el retorno seguro al Lobby:
+1. **Estabilización Inmediata en `Ending`:**
+   - Al alcanzarse la condición de victoria (ej. 5-0) y transicionar a `Ending`, `RoundService` invoca de forma síncrona `SpawnService:ResetCharacterInArena()` para todos los contendientes.
+   - Neutraliza inmediatamente el impulso físico del blastzone final (`PointFeedbackService` / `RagdollService:BlastZone`), resetea el ragdoll, anula velocidades residuales (`AssemblyLinearVelocity = Vector3.zero`, `AssemblyAngularVelocity = Vector3.zero`) y reposiciona a los avatares en sus respectivos `TeamSpawns`.
+2. **Sensores Físicos Activos durante `Ending`:**
+   - `EliminationService:UnbindMatch()` y `CombatService:ClearMatch()` se postergan estrictamente hasta la fase `ReturningToLobby`.
+   - `KillPart`, `VoidBoundaryPart` y el polling asíncrono permanecen 100% operativos durante los 4 segundos de `Ending` como red de contención física.
+   - Si un jugador cayese durante `Ending`, `EliminationService` procesa el evento como `Normal Fall` sin scoring ($+0\text{ Kills}$, no altera el ganador, no reinicia puntos) y lo reposiciona de inmediato en su `TeamSpawn`.
+3. **Retorno Seguro al Lobby (`ReturningToLobby`):**
+   - Se transporta al avatar existente mediante `SpawnService:ReturnPlayersToLobby()`.
+   - Se limpian velocidades de todas las partes del modelo, se cancelan timers de ragdoll y se reactiva la locomoción (`PlatformStand = false`, `AutoRotate = true`, `Running`).
+   - Se restaura `humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, true)` de manera segura una vez en el Lobby.
+   - Se eliminan los atributos `MatchId` y `MatchTeam`.
+   - Se desvinculan los sensores y se destruye la instancia física de la arena.
+4. **Prohibición Absoluta de `LoadCharacter()`:**
+   - `LoadCharacter()` permanece estrictamente prohibido durante la totalidad de la `MatchSession` (incluyendo `Ending`).
+   - El mismo `Character` que jugó la partida es el que camina de regreso al Lobby.
+

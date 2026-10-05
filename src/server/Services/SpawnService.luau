@@ -240,19 +240,33 @@ function SpawnService:TeleportCharacterToSpawn(player: Player, spawnPart: BasePa
 	local targetPosition = spawnPart.Position + Vector3.new(0, verticalClearance, 0)
 	local targetCFrame = CFrame.new(targetPosition) * CFrame.Angles(0, math.rad(spawnPart.Orientation.Y), 0)
 
-	-- Detener cualquier inercia o velocidad previa del jugador
+	-- Detener cualquier inercia o velocidad previa del jugador en todas sus partes
 	rootPart.AssemblyLinearVelocity = Vector3.zero
 	rootPart.AssemblyAngularVelocity = Vector3.zero
+	for _, desc in ipairs(character:GetDescendants()) do
+		if desc:IsA("BasePart") then
+			desc.AssemblyLinearVelocity = Vector3.zero
+			desc.AssemblyAngularVelocity = Vector3.zero
+		end
+	end
 
-	-- Si el personaje estaba en ragdoll por la explosión de un punto anterior, restaurarlo
+	-- Si el personaje estaba en ragdoll, restaurarlo inmediatamente cancelando timers pendientes
 	local ragdollService = self:_getRagdollService()
-	if ragdollService then
+	if ragdollService and type(ragdollService.ResetRagdollImmediate) == "function" then
+		ragdollService:ResetRagdollImmediate(character)
+	elseif ragdollService then
 		ragdollService:RemoveRagdoll(character)
 	end
 
 	character:PivotTo(targetCFrame)
 	rootPart.AssemblyLinearVelocity = Vector3.zero
 	rootPart.AssemblyAngularVelocity = Vector3.zero
+	for _, desc in ipairs(character:GetDescendants()) do
+		if desc:IsA("BasePart") then
+			desc.AssemblyLinearVelocity = Vector3.zero
+			desc.AssemblyAngularVelocity = Vector3.zero
+		end
+	end
 
 	print(string.format("[SpawnService] Jugador '%s' posicionado en '%s' (%s)",
 		player.Name, spawnPart.Name, tostring(targetPosition)))
@@ -509,8 +523,8 @@ function SpawnService:SpawnMatchPlayers(session: MatchSession): boolean
 	return redOk or blueOk
 end
 
--- Retorna a los jugadores al punto de spawn del lobby
-function SpawnService:ReturnPlayersToLobby(redPlayer: Player?, bluePlayer: Player?)
+-- Retorna a los jugadores al punto de spawn del lobby reutilizando sus Characters existentes
+function SpawnService:ReturnPlayersToLobby(redPlayer: any?, bluePlayer: any?)
 	local lobbySpawn = self._lobbySpawn
 	if not lobbySpawn or not lobbySpawn:IsDescendantOf(Workspace) then
 		local lobby = Workspace:FindFirstChild("Lobby")
@@ -523,25 +537,52 @@ function SpawnService:ReturnPlayersToLobby(redPlayer: Player?, bluePlayer: Playe
 		return
 	end
 
-	local restoreHumanoid = function(player: Player?)
-		if not player or not player.Character then return end
-		local hum = player.Character:FindFirstChildOfClass("Humanoid")
-		if hum then
-			pcall(function()
-				hum:SetStateEnabled(Enum.HumanoidStateType.Dead, true)
-			end)
+	local ragdollService = self:_getRagdollService()
+
+	local returnSinglePlayer = function(player: Player?)
+		if not player or not player:IsA("Player") or not player:IsDescendantOf(Players) then return end
+		local character = player.Character
+		if character and character.Parent then
+			if ragdollService and type(ragdollService.ResetRagdollImmediate) == "function" then
+				ragdollService:ResetRagdollImmediate(character)
+			elseif ragdollService then
+				ragdollService:RemoveRagdoll(character)
+			end
+
+			local hum = character:FindFirstChildOfClass("Humanoid")
+			if hum then
+				pcall(function()
+					hum.PlatformStand = false
+					hum.AutoRotate = true
+					hum:SetStateEnabled(Enum.HumanoidStateType.Dead, true)
+					hum:SetStateEnabled(Enum.HumanoidStateType.GettingUp, true)
+					hum:ChangeState(Enum.HumanoidStateType.Running)
+				end)
+			end
+		end
+
+		self:TeleportCharacterToSpawn(player, lobbySpawn)
+
+		-- Limpieza inmediata de identidad de match a nivel de player
+		pcall(function()
+			player:SetAttribute("MatchId", nil)
+			player:SetAttribute("MatchTeam", nil)
+		end)
+	end
+
+	local processTarget = function(target: any?)
+		if not target then return end
+		if type(target) == "table" and not (typeof(target) == "Instance") then
+			for _, p in ipairs(target) do
+				returnSinglePlayer(p)
+			end
+		else
+			returnSinglePlayer(target)
 		end
 	end
 
-	if redPlayer and redPlayer.Character then
-		restoreHumanoid(redPlayer)
-		self:TeleportCharacterToSpawn(redPlayer, lobbySpawn)
-	end
-
-	if bluePlayer and bluePlayer.Character then
-		restoreHumanoid(bluePlayer)
-		self:TeleportCharacterToSpawn(bluePlayer, lobbySpawn)
-	end
+	processTarget(redPlayer)
+	processTarget(bluePlayer)
 
 	print("[SpawnService] Jugadores retornados a Workspace.Lobby.SpawnLocation con estados normales restaurados")
 end
