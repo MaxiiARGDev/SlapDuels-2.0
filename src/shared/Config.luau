@@ -214,6 +214,8 @@ Config.Arena = {
 	BaseOrigin = Vector3.new(10000, 500, 0),
 	Spacing = Vector3.new(10000, 0, 0),
 	MaxSlots = 100,
+	VoidBoundarySize = Vector3.new(500, 4, 500),
+	VoidBoundaryOffset = Vector3.new(0, -50, 0),
 }
 
 Config.Matchmaking = {

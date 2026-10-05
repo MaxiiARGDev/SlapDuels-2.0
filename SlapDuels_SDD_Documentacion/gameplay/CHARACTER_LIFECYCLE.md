@@ -68,3 +68,20 @@ Durante una partida, el motor de la partida (`RoundService` y `SpawnService`) ma
   4. **NO** se inicia `PointRestartCountdown`, **NO** se realiza respawn innecesario en arena.
   5. La partida avanza directamente hacia `Ending` (presentación de victoria) y `ReturningToLobby`.
   6. Si el ganador cae al vacío tras anotar el punto de victoria, su muerte es igualmente tratada como `PointScoreDeath`, impidiendo cualquier atribución de Kill errónea al perdedor.
+
+### 15.5 Infraestructura Zero-Death — Fase 1 (VoidBoundary + Match Identity)
+Como preparación para el modelo de reposicionamiento sin muerte (Zero-Death / Persistent Character), se incorporan los siguientes componentes de infraestructura base:
+1. **`VoidBoundaryPart` por MatchInstance:**
+   - Cada arena clonada crea automáticamente una instancia `Part` llamada `VoidBoundaryPart` contenida dentro de `Workspace.ActiveMatches.Match_<Id>`.
+   - Dimensiones configuradas en `Config.Arena.VoidBoundarySize` (por defecto `Vector3.new(500, 4, 500)`) y posición desplazada según `Config.Arena.VoidBoundaryOffset` (por defecto `(0, -50, 0)` respecto al `Origin` de la arena).
+   - Propiedades: `Anchored = true`, `CanCollide = false`, `CanTouch = true`, `CanQuery = false`, `Transparency = 1`.
+   - Aislamiento: Se destruye automáticamente al finalizar el match mediante `MatchInstanceService:DestroyInstance`.
+   - *Nota de Fase 1:* No posee listeners activos de `Touched` ni interrumpe el gameplay actual; actúa únicamente como volumen físico preparado para fases posteriores.
+2. **Identidad Server-Authoritative (`MatchId` y `MatchTeam`):**
+   - Asignación: Al alcanzar el estado `MatchReady` en `RoundService`, a cada jugador contendiente se le asignan los atributos:
+     - `player:SetAttribute("MatchId", session.Id)`
+     - `player:SetAttribute("MatchTeam", "Red" | "Blue")`
+   - Limpieza: Los atributos se restablecen a `nil` de forma garantizada en:
+     - `_cleanupSession` (al concluir `ReturningToLobby` hacia `Waiting`).
+     - `_cancelSession` (ante cancelaciones imprevistas o abortos de match).
+     - `_handlePlayerLeaving` (cuando un jugador abandona el servidor vía `PlayerRemoving`).

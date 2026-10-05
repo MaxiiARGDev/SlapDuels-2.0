@@ -179,6 +179,22 @@ function MatchInstanceService:CreateInstance(matchSession: MatchSession, mapName
 		end
 	end
 
+	-- Crear VoidBoundaryPart exclusivo para esta MatchInstance
+	local voidBoundarySize = (Config.Arena and Config.Arena.VoidBoundarySize) or Vector3.new(500, 4, 500)
+	local voidBoundaryOffset = (Config.Arena and Config.Arena.VoidBoundaryOffset) or Vector3.new(0, -50, 0)
+	local voidBoundaryPosition = origin + voidBoundaryOffset
+
+	local voidBoundaryPart = Instance.new("Part")
+	voidBoundaryPart.Name = "VoidBoundaryPart"
+	voidBoundaryPart.Size = voidBoundarySize
+	voidBoundaryPart.CFrame = CFrame.new(voidBoundaryPosition)
+	voidBoundaryPart.Anchored = true
+	voidBoundaryPart.CanCollide = false
+	voidBoundaryPart.CanTouch = true
+	voidBoundaryPart.CanQuery = false
+	voidBoundaryPart.Transparency = 1
+	voidBoundaryPart.Parent = container
+
 	local instanceInfo: MatchInstanceInfo = {
 		MatchId = matchId,
 		MapName = mapName,
@@ -193,6 +209,7 @@ function MatchInstanceService:CreateInstance(matchSession: MatchSession, mapName
 		RedWin = redWin,
 		BlueWin = blueWin,
 		KillParts = killParts,
+		VoidBoundaryPart = voidBoundaryPart,
 	}
 
 	self._instances[matchId] = instanceInfo

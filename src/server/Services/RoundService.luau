@@ -439,6 +439,45 @@ local function getTeamPlayerSnapshots(players: { Player }?): { { Name: string, U
 	return res
 end
 
+local function assignMatchIdentity(session: MatchSession)
+	local redPlayers = session.RedTeam or (session.RedPlayer and { session.RedPlayer }) or {}
+	local bluePlayers = session.BlueTeam or (session.BluePlayer and { session.BluePlayer }) or {}
+
+	for _, p in ipairs(redPlayers) do
+		if p and p.Parent then
+			p:SetAttribute("MatchId", session.Id)
+			p:SetAttribute("MatchTeam", "Red")
+		end
+	end
+
+	for _, p in ipairs(bluePlayers) do
+		if p and p.Parent then
+			p:SetAttribute("MatchId", session.Id)
+			p:SetAttribute("MatchTeam", "Blue")
+		end
+	end
+end
+
+local function clearMatchIdentity(session: MatchSession?)
+	if not session then return end
+	local redPlayers = session.RedTeam or (session.RedPlayer and { session.RedPlayer }) or {}
+	local bluePlayers = session.BlueTeam or (session.BluePlayer and { session.BluePlayer }) or {}
+
+	for _, p in ipairs(redPlayers) do
+		if p and p.Parent then
+			p:SetAttribute("MatchId", nil)
+			p:SetAttribute("MatchTeam", nil)
+		end
+	end
+
+	for _, p in ipairs(bluePlayers) do
+		if p and p.Parent then
+			p:SetAttribute("MatchId", nil)
+			p:SetAttribute("MatchTeam", nil)
+		end
+	end
+end
+
 function RoundService:_runSession(sessionId: string)
 	local session = self._currentSession
 	if not session or session.Id ~= sessionId then return end
@@ -447,6 +486,8 @@ function RoundService:_runSession(sessionId: string)
 	local blueSnap = getTeamPlayerSnapshots(session.BlueTeam or { session.BluePlayer })
 
 	-- 1. MATCH_READY
+	assignMatchIdentity(session)
+
 	self:_setState(Constants.RoundState.MatchReady, {
 		Red = session.RedPlayer.Name,
 		Blue = session.BluePlayer.Name,
@@ -907,6 +948,10 @@ function RoundService:_handlePlayerLeaving(player: Player)
 	if not session then return end
 	if player ~= session.RedPlayer and player ~= session.BluePlayer then return end
 
+	-- Limpiar atributos del jugador que abandona
+	player:SetAttribute("MatchId", nil)
+	player:SetAttribute("MatchTeam", nil)
+
 	print(string.format("[RoundService] Jugador desconectado: %s durante estado %s", player.Name, self._state))
 
 	if self._state == Constants.RoundState.Playing or self._state == Constants.RoundState.PointRestartCountdown then
@@ -1005,6 +1050,8 @@ function RoundService:_cleanupSession()
 		if scoreService then
 			scoreService:CleanupSession(self._currentSession.Id)
 		end
+
+		clearMatchIdentity(self._currentSession)
 	end
 
 	self._currentSession = nil

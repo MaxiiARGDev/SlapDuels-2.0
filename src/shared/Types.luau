@@ -65,6 +65,7 @@ export type MatchInstanceInfo = {
 	RedWin: BasePart?,
 	BlueWin: BasePart?,
 	KillParts: { BasePart }?,
+	VoidBoundaryPart: BasePart?,
 }
 
 export type MatchSession = {
