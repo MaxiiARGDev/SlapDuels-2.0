@@ -32,14 +32,17 @@ EliminationService.PlayerEliminated = playerEliminatedBindable.Event
 EliminationService._context = nil :: any
 EliminationService._connections = {} :: { [string]: { RBXScriptConnection } }
 EliminationService._resolvedEliminations = {} :: { [string]: boolean }
+EliminationService._processingEliminations = {} :: { [Player]: number }
 EliminationService._combatService = nil :: any
 EliminationService._playerService = nil :: any
 EliminationService._roundService = nil :: any
+EliminationService._spawnService = nil :: any
 
 function EliminationService:Init(context: any)
 	self._context = context
 	self._connections = {}
 	self._resolvedEliminations = {}
+	self._processingEliminations = {}
 end
 
 function EliminationService:Start(context: any)
@@ -92,6 +95,21 @@ function EliminationService:_getRoundService(): any
 	if mod and mod:IsA("ModuleScript") then
 		local ok, result = pcall(require, mod)
 		if ok and result then self._roundService = result; return result end
+	end
+	return nil
+end
+
+function EliminationService:_getSpawnService(): any
+	if self._spawnService then return self._spawnService end
+	if self._context and type(self._context.GetService) == "function" then
+		local s = self._context:GetService("SpawnService")
+		if s then self._spawnService = s; return s end
+	end
+	local servicesFolder = ServerScriptService:FindFirstChild("Services")
+	local mod = servicesFolder and servicesFolder:FindFirstChild("SpawnService")
+	if mod and mod:IsA("ModuleScript") then
+		local ok, result = pcall(require, mod)
+		if ok and result then self._spawnService = result; return result end
 	end
 	return nil
 end
@@ -153,27 +171,7 @@ function EliminationService:BindMatch(session: MatchSession)
 
 	for _, killPart in ipairs(killParts) do
 		local conn = killPart.Touched:Connect(function(otherPart)
-			local player = getPlayerFromPart(otherPart)
-			if not player then return end
-
-			-- Validar pertenencia a este match
-			local belongs = false
-			if session.RedPlayer == player or session.BluePlayer == player then
-				belongs = true
-			elseif session.RedTeam and table.find(session.RedTeam, player) then
-				belongs = true
-			elseif session.BlueTeam and table.find(session.BlueTeam, player) then
-				belongs = true
-			end
-			if not belongs then return end
-
-			local char = player.Character
-			local hum = char and char:FindFirstChildOfClass("Humanoid")
-			if hum and hum.Health > 0 then
-				-- Provocar la eliminación física
-				hum.Health = 0
-				self:OnPlayerEliminated(player, "KillPart", matchId)
-			end
+			self:HandleKillPartTouch(killPart, otherPart, session)
 		end)
 		table.insert(conns, conn)
 	end
@@ -234,10 +232,160 @@ function EliminationService:UnbindMatch(matchId: string)
 			self._resolvedEliminations[key] = nil
 		end
 	end
+
+	-- Limpiar debounces temporales
+	for player, _ in pairs(self._processingEliminations) do
+		if not player:IsDescendantOf(Players) then
+			self._processingEliminations[player] = nil
+		end
+	end
 end
 
 -- ==================================================
--- RESOLUCIÓN DE ELIMINACIONES Y KILLS
+-- SENSOR NO LETAL DE KILLPART (Zero-Death Fase 3A)
+-- ==================================================
+
+-- Procesa el contacto con un KillPart como sensor de eliminación/caída (Humanoid.Health intacto)
+function EliminationService:HandleKillPartTouch(killPart: BasePart, hitPart: BasePart, session: MatchSession)
+	-- 1. Validar Player desde hitPart
+	local player = getPlayerFromPart(hitPart)
+	if not player or not player:IsDescendantOf(Players) then return end
+
+	-- 2. Validar que la sesión esté activa y en Playing
+	if not session or not session.Id then return end
+	local matchId = session.Id
+
+	local roundService = self:_getRoundService()
+	local currentState = (roundService and roundService:GetState()) or session.State
+	if currentState ~= Constants.RoundState.Playing and currentState ~= Constants.RoundState.PointRestartCountdown then
+		return
+	end
+
+	-- 3. Validar pertenencia del jugador a este match específico
+	local belongs = false
+	if session.RedPlayer == player or session.BluePlayer == player then
+		belongs = true
+	elseif session.RedTeam and table.find(session.RedTeam, player) then
+		belongs = true
+	elseif session.BlueTeam and table.find(session.BlueTeam, player) then
+		belongs = true
+	end
+	if not belongs then return end
+
+	-- 4. Validar que el KillPart pertenezca a la MatchInstance de este match
+	if session.InstanceInfo then
+		local container = session.InstanceInfo.Container
+		if container and not killPart:IsDescendantOf(container) then
+			-- KillPart pertenece a otra arena o no está en el contenedor de este match
+			return
+		end
+	end
+
+	-- 5. Anti-duplicate lock: evitar que múltiples partes del cuerpo disparen eventos concurrentes
+	local now = os.clock()
+	local lastTouch = self._processingEliminations[player]
+	if lastTouch and (now - lastTouch) < 0.5 then
+		return
+	end
+	self._processingEliminations[player] = now
+
+	-- 6. POINT PROTECTION:
+	-- Si el jugador es el PointScorer durante PointInProgress, NO es eliminación de combate ni caída normal.
+	-- NO otorgar Kill, NO reposicionar inmediatamente para no romper la cinemática del gol.
+	if session.PointInProgress and session.PointScorer == player then
+		print(string.format("[EliminationService] PointScorer '%s' tocó KillPart durante PointInProgress en Match '%s'. Evento absorbido.",
+			player.Name, matchId))
+		local combatService = self:_getCombatService()
+		if combatService and type(combatService.ClearCombatTag) == "function" then
+			combatService:ClearCombatTag(player)
+		end
+		return
+	end
+
+	-- 7. Validar estado del Character sin alterar su vida
+	local character = player.Character
+	if not character or not character.Parent then return end
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+	if not humanoid or humanoid.Health <= 0 then return end
+
+	-- 8. Resolver atacante en CombatService (ventana LastHitLifetime = 10s)
+	local combatService = self:_getCombatService()
+	local killer: Player? = nil
+
+	if combatService and type(combatService.GetLastAttacker) == "function" then
+		local attacker, attackerMatchId, _hitTimestamp = combatService:GetLastAttacker(
+			player,
+			(Config.Combat and Config.Combat.LastHitLifetime) or 10
+		)
+
+		if attacker and attacker ~= player and isPlayer(attacker) and attacker.Parent and attackerMatchId == matchId then
+			killer = attacker
+		end
+	end
+
+	-- 9. Clasificación del evento: CombatElimination vs Normal Fall
+	local charId = tostring(character:GetDebugId())
+	local elimKey = string.format("%s_%d_%s", matchId, player.UserId, charId)
+
+	if killer then
+		-- CASO A: COMBAT ELIMINATION (+1 Kill)
+		if not self._resolvedEliminations[elimKey] then
+			self._resolvedEliminations[elimKey] = true
+
+			local playerService = self:_getPlayerService()
+			if playerService and type(playerService.AddKill) == "function" then
+				playerService:AddKill(killer, 1, "SlapElimination")
+			end
+
+			print(string.format("[EliminationService] COMBAT ELIMINATION (KillPart): '%s' eliminó a '%s' (+1 Kill) en Match '%s'",
+				killer.Name, player.Name, matchId))
+
+			-- Limpiar CombatTag consumido
+			if combatService and type(combatService.ClearCombatTag) == "function" then
+				combatService:ClearCombatTag(player)
+			end
+
+			-- Emitir BindableEvent para sistemas de estadísticas y feed
+			local record: EliminationRecord = {
+				Victim = player,
+				Killer = killer,
+				MatchId = matchId,
+				Timestamp = now,
+				Reason = "KillPart",
+				EliminationId = elimKey,
+			}
+			playerEliminatedBindable:Fire(record)
+		end
+	else
+		-- CASO B: NORMAL FALL (+0 Kill)
+		print(string.format("[EliminationService] NORMAL FALL (KillPart): '%s' cayó sin atacante en Match '%s'",
+			player.Name, matchId))
+
+		-- Limpiar CombatTag residual si existiese
+		if combatService and type(combatService.ClearCombatTag) == "function" then
+			combatService:ClearCombatTag(player)
+		end
+
+		local record: EliminationRecord = {
+			Victim = player,
+			Killer = nil,
+			MatchId = matchId,
+			Timestamp = now,
+			Reason = "KillPart_NormalFall",
+			EliminationId = elimKey,
+		}
+		playerEliminatedBindable:Fire(record)
+	end
+
+	-- 10. Reposicionamiento del Character EXISTENTE sin matar Humanoid ni recargar rig
+	local spawnService = self:_getSpawnService()
+	if spawnService and type(spawnService.ResetCharacterInArena) == "function" then
+		spawnService:ResetCharacterInArena(player)
+	end
+end
+
+-- ==================================================
+-- RESOLUCIÓN DE ELIMINACIONES Y KILLS (Compatibilidad)
 -- ==================================================
 
 -- Invocado cuando un jugador es eliminado; resuelve la atribución de Kill de forma segura

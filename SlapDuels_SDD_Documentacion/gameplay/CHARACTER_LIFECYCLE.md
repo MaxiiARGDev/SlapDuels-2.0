@@ -105,3 +105,22 @@ En esta fase se incorporan las APIs autoritativas de restauración y reposiciona
    - Mueve el avatar mediante `character:PivotTo()` con elevación de seguridad basada en `HipHeight` y grosor del spawn.
    - **Garantía:** No invoca `player:LoadCharacter()`, no destruye el modelo y preserva exactamente la misma instancia del `Character` del jugador.
    - *Nota de Fase 2:* Esta API queda expuesta como primitiva para las fases subsiguientes. Todavía no está conectada a listeners de `VoidBoundaryPart`, `KillPart`, `Touched` ni `Humanoid.Died`. El ciclo tradicional de respawn sigue operando en paralelo sin interferencias.
+
+### 15.7 Infraestructura Zero-Death — Fase 3A (KillParts como Sensores No Letales)
+A partir de esta fase, los `KillPart` dentro de una `MatchSession` dejan de ser letales y pasan a operar como sensores espaciales de salida/eliminación de combate:
+1. **No Letalidad de KillPart:**
+   - Se elimina la asignación `humanoid.Health = 0` al tocar un KillPart.
+   - `Humanoid.Health` permanece intacto (> 0) y no se dispara `Humanoid.Died`.
+   - El `Character` existente se preserva en memoria (`player.Character == characterBefore`).
+2. **Clasificación Autoritativa (`HandleKillPartTouch`):**
+   - **CombatElimination:** Si existe un atacante válido en `CombatService` (`attacker ~= victim`, mismo `MatchId`, TTL $\le 10\text{s}$), se otorga autoritativamente $+1\text{ Kill}$ al atacante vía `PlayerService:AddKill()`, se consume/limpia el `CombatTag` y se reposiciona a la víctima en su base mediante `SpawnService:ResetCharacterInArena(victim)`.
+   - **Normal Fall:** Si no hay atacante válido, se clasifica como caída libre sin kill ($+0\text{ Kill}$), se limpia cualquier tag residual y se reposiciona al jugador en su base.
+3. **Protección Anti-Duplicate:**
+   - Debounce local en `EliminationService._processingEliminations[player]` (ventana de 0.5s) y clave unívoca `MatchId_UserId_CharId` en `_resolvedEliminations`, impidiendo dobles Kills ante impactos multifacéticos simultáneos.
+4. **Protección PointInProgress:**
+   - Si el jugador que toca el KillPart es el `PointScorer` durante `session.PointInProgress == true`, el evento es absorbido: no genera kill, no produce eliminación y no teletransporta de inmediato al anotador, preservando la cinemática del gol.
+5. **Aislamiento Multi-Match:**
+   - Se valida que `killPart` sea descendiente directo de `session.InstanceInfo.Container`. Contactos cruzados con arenas ajenas son descartados sin procesamiento.
+6. **Compatibilidad:**
+   - El listener de `Humanoid.Died` se mantiene como fallback de compatibilidad para otros eventos ajenos al KillPart (ej. muertes no controladas).
+   - `VoidBoundaryPart` todavía no está conectado a la detección en esta fase.
