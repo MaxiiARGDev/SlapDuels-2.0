@@ -33,6 +33,10 @@ EliminationService._context = nil :: any
 EliminationService._connections = {} :: { [string]: { RBXScriptConnection } }
 EliminationService._resolvedEliminations = {} :: { [string]: boolean }
 EliminationService._processingEliminations = {} :: { [Player]: number }
+EliminationService._eliminationCounters = {} :: { [Player]: number }
+EliminationService._activeSessions = {} :: { [string]: MatchSession }
+EliminationService._isPolling = false
+EliminationService._pollThread = nil :: thread?
 EliminationService._combatService = nil :: any
 EliminationService._playerService = nil :: any
 EliminationService._roundService = nil :: any
@@ -43,6 +47,10 @@ function EliminationService:Init(context: any)
 	self._connections = {}
 	self._resolvedEliminations = {}
 	self._processingEliminations = {}
+	self._eliminationCounters = {}
+	self._activeSessions = {}
+	self._isPolling = false
+	self._pollThread = nil
 end
 
 function EliminationService:Start(context: any)
@@ -146,7 +154,7 @@ end
 -- VINCULACIÓN CON MAPAS Y PARTIDAS
 -- ==================================================
 
--- Vincula la detección de KillParts y muertes a una MatchSession activa
+-- Vincula la detección de KillParts, VoidBoundary y muertes a una MatchSession activa
 function EliminationService:BindMatch(session: MatchSession)
 	if not session or not session.Id then return end
 	local matchId = session.Id
@@ -155,7 +163,7 @@ function EliminationService:BindMatch(session: MatchSession)
 	local conns: { RBXScriptConnection } = {}
 	self._connections[matchId] = conns
 
-	-- 1. Vincular partes de eliminación física (KillParts)
+	-- 1. Vincular partes de eliminación física (KillParts) como sensores no letales
 	local killParts: { BasePart } = {}
 	if session.InstanceInfo then
 		if session.InstanceInfo.KillParts and #session.InstanceInfo.KillParts > 0 then
@@ -176,7 +184,16 @@ function EliminationService:BindMatch(session: MatchSession)
 		table.insert(conns, conn)
 	end
 
-	-- 2. Escuchar Humanoid.Died en los jugadores de la partida
+	-- 2. Vincular sensor de límite de vacío (VoidBoundaryPart) como sensor no letal
+	if session.InstanceInfo and session.InstanceInfo.VoidBoundaryPart then
+		local voidBoundary = session.InstanceInfo.VoidBoundaryPart
+		local voidConn = voidBoundary.Touched:Connect(function(otherPart)
+			self:HandleVoidBoundaryTouch(voidBoundary, otherPart, session)
+		end)
+		table.insert(conns, voidConn)
+	end
+
+	-- 3. Escuchar Humanoid.Died en los jugadores de la partida (Fallback compatibilidad)
 	local trackPlayerDeath = function(player: Player)
 		if not player then return end
 
@@ -209,8 +226,12 @@ function EliminationService:BindMatch(session: MatchSession)
 		trackPlayerDeath(session.BluePlayer)
 	end
 
-	print(string.format("[EliminationService] Vinculación completada para Match '%s' (%d KillParts detectadas)",
-		matchId, #killParts))
+	-- Registrar sesión activa y arrancar polling fail-safe si corresponde
+	self._activeSessions[matchId] = session
+	self:_startPollingIfNeeded()
+
+	print(string.format("[EliminationService] Vinculación completada para Match '%s' (%d KillParts, VoidBoundary: %s)",
+		matchId, #killParts, tostring(session.InstanceInfo and session.InstanceInfo.VoidBoundaryPart ~= nil)))
 end
 
 -- Desvincula los listeners y limpia el registro de una partida finalizada
@@ -225,6 +246,12 @@ function EliminationService:UnbindMatch(matchId: string)
 		self._connections[matchId] = nil
 	end
 
+	-- Desregistrar sesión activa y detener polling si no quedan partidas
+	self._activeSessions[matchId] = nil
+	if next(self._activeSessions) == nil then
+		self:_stopPolling()
+	end
+
 	-- Limpiar claves resueltas asociadas al matchId
 	local prefix = matchId .. "_"
 	for key, _ in pairs(self._resolvedEliminations) do
@@ -233,35 +260,58 @@ function EliminationService:UnbindMatch(matchId: string)
 		end
 	end
 
-	-- Limpiar debounces temporales
+	-- Limpiar debounces y contadores temporales de jugadores desconectados
 	for player, _ in pairs(self._processingEliminations) do
 		if not player:IsDescendantOf(Players) then
 			self._processingEliminations[player] = nil
 		end
 	end
+	for player, _ in pairs(self._eliminationCounters) do
+		if not player:IsDescendantOf(Players) then
+			self._eliminationCounters[player] = nil
+		end
+	end
 end
 
 -- ==================================================
--- SENSOR NO LETAL DE KILLPART (Zero-Death Fase 3A)
+-- SENSORES NO LETALES (Zero-Death Fase 3A / 3B)
 -- ==================================================
 
 -- Procesa el contacto con un KillPart como sensor de eliminación/caída (Humanoid.Health intacto)
 function EliminationService:HandleKillPartTouch(killPart: BasePart, hitPart: BasePart, session: MatchSession)
-	-- 1. Validar Player desde hitPart
 	local player = getPlayerFromPart(hitPart)
-	if not player or not player:IsDescendantOf(Players) then return end
+	if not player then return end
+	self:_processEliminationEvent(player, session, "KillPart", killPart)
+end
 
-	-- 2. Validar que la sesión esté activa y en Playing
+-- Procesa el contacto con el sensor VoidBoundaryPart de la arena (Humanoid.Health intacto)
+function EliminationService:HandleVoidBoundaryTouch(voidBoundary: BasePart, hitPart: BasePart, session: MatchSession)
+	local player = getPlayerFromPart(hitPart)
+	if not player then return end
+	self:_processEliminationEvent(player, session, "VoidBoundary", voidBoundary)
+end
+
+-- Núcleo unificado de procesamiento autoritativo de salida / eliminación sin muerte física
+function EliminationService:_processEliminationEvent(player: Player, session: MatchSession, source: string, boundaryPart: BasePart?)
+	-- 1. Validar que la instancia sea un Player conectado
+	if not player or not isPlayer(player) or not player:IsDescendantOf(Players) then return end
+
+	-- 2. Validar que la sesión esté activa y en estado válido para el lifecycle
 	if not session or not session.Id then return end
 	local matchId = session.Id
 
 	local roundService = self:_getRoundService()
 	local currentState = (roundService and roundService:GetState()) or session.State
-	if currentState ~= Constants.RoundState.Playing and currentState ~= Constants.RoundState.PointRestartCountdown then
+
+	-- Estados permitidos: Playing, PointRestartCountdown, StartCountdown, Ending
+	if currentState ~= Constants.RoundState.Playing
+		and currentState ~= Constants.RoundState.PointRestartCountdown
+		and currentState ~= Constants.RoundState.StartCountdown
+		and currentState ~= Constants.RoundState.Ending then
 		return
 	end
 
-	-- 3. Validar pertenencia del jugador a este match específico
+	-- 3. Validar pertenencia estricta del jugador a este match específico
 	local belongs = false
 	if session.RedPlayer == player or session.BluePlayer == player then
 		belongs = true
@@ -272,16 +322,16 @@ function EliminationService:HandleKillPartTouch(killPart: BasePart, hitPart: Bas
 	end
 	if not belongs then return end
 
-	-- 4. Validar que el KillPart pertenezca a la MatchInstance de este match
-	if session.InstanceInfo then
+	-- 4. Multi-match isolation: Validar que el boundaryPart pertenezca al contenedor de esta MatchInstance
+	if boundaryPart and session.InstanceInfo then
 		local container = session.InstanceInfo.Container
-		if container and not killPart:IsDescendantOf(container) then
-			-- KillPart pertenece a otra arena o no está en el contenedor de este match
+		if container and not boundaryPart:IsDescendantOf(container) then
+			-- El sensor tocado pertenece a otra arena
 			return
 		end
 	end
 
-	-- 5. Anti-duplicate lock: evitar que múltiples partes del cuerpo disparen eventos concurrentes
+	-- 5. Anti-duplicate lock independiente por Player: evitar eventos concurrentes (Touched + Polling o multifacetas)
 	local now = os.clock()
 	local lastTouch = self._processingEliminations[player]
 	if lastTouch and (now - lastTouch) < 0.5 then
@@ -293,8 +343,8 @@ function EliminationService:HandleKillPartTouch(killPart: BasePart, hitPart: Bas
 	-- Si el jugador es el PointScorer durante PointInProgress, NO es eliminación de combate ni caída normal.
 	-- NO otorgar Kill, NO reposicionar inmediatamente para no romper la cinemática del gol.
 	if session.PointInProgress and session.PointScorer == player then
-		print(string.format("[EliminationService] PointScorer '%s' tocó KillPart durante PointInProgress en Match '%s'. Evento absorbido.",
-			player.Name, matchId))
+		print(string.format("[EliminationService] PointScorer '%s' tocó %s durante PointInProgress en Match '%s'. Evento absorbido.",
+			player.Name, source, matchId))
 		local combatService = self:_getCombatService()
 		if combatService and type(combatService.ClearCombatTag) == "function" then
 			combatService:ClearCombatTag(player)
@@ -308,12 +358,13 @@ function EliminationService:HandleKillPartTouch(killPart: BasePart, hitPart: Bas
 	local humanoid = character:FindFirstChildOfClass("Humanoid")
 	if not humanoid or humanoid.Health <= 0 then return end
 
-	-- 8. Resolver atacante en CombatService (ventana LastHitLifetime = 10s)
+	-- 8. Resolver atacante en CombatService (solo elegible durante Playing o PointRestartCountdown)
+	local combatEligible = (currentState == Constants.RoundState.Playing or currentState == Constants.RoundState.PointRestartCountdown)
 	local combatService = self:_getCombatService()
 	local killer: Player? = nil
 
-	if combatService and type(combatService.GetLastAttacker) == "function" then
-		local attacker, attackerMatchId, _hitTimestamp = combatService:GetLastAttacker(
+	if combatEligible and combatService and type(combatService.GetLastAttacker) == "function" then
+		local attacker, attackerMatchId = combatService:GetLastAttacker(
 			player,
 			(Config.Combat and Config.Combat.LastHitLifetime) or 10
 		)
@@ -324,8 +375,9 @@ function EliminationService:HandleKillPartTouch(killPart: BasePart, hitPart: Bas
 	end
 
 	-- 9. Clasificación del evento: CombatElimination vs Normal Fall
-	local charId = tostring(character:GetDebugId())
-	local elimKey = string.format("%s_%d_%s", matchId, player.UserId, charId)
+	local counter = (self._eliminationCounters[player] or 0) + 1
+	self._eliminationCounters[player] = counter
+	local elimKey = string.format("%s_%d_%d", matchId, player.UserId, counter)
 
 	if killer then
 		-- CASO A: COMBAT ELIMINATION (+1 Kill)
@@ -337,8 +389,8 @@ function EliminationService:HandleKillPartTouch(killPart: BasePart, hitPart: Bas
 				playerService:AddKill(killer, 1, "SlapElimination")
 			end
 
-			print(string.format("[EliminationService] COMBAT ELIMINATION (KillPart): '%s' eliminó a '%s' (+1 Kill) en Match '%s'",
-				killer.Name, player.Name, matchId))
+			print(string.format("[EliminationService] COMBAT ELIMINATION (%s): '%s' eliminó a '%s' (+1 Kill) en Match '%s'",
+				source, killer.Name, player.Name, matchId))
 
 			-- Limpiar CombatTag consumido
 			if combatService and type(combatService.ClearCombatTag) == "function" then
@@ -351,15 +403,15 @@ function EliminationService:HandleKillPartTouch(killPart: BasePart, hitPart: Bas
 				Killer = killer,
 				MatchId = matchId,
 				Timestamp = now,
-				Reason = "KillPart",
+				Reason = source,
 				EliminationId = elimKey,
 			}
 			playerEliminatedBindable:Fire(record)
 		end
 	else
 		-- CASO B: NORMAL FALL (+0 Kill)
-		print(string.format("[EliminationService] NORMAL FALL (KillPart): '%s' cayó sin atacante en Match '%s'",
-			player.Name, matchId))
+		print(string.format("[EliminationService] NORMAL FALL (%s): '%s' cayó sin atacante en Match '%s' (Estado: %s)",
+			source, player.Name, matchId, tostring(currentState)))
 
 		-- Limpiar CombatTag residual si existiese
 		if combatService and type(combatService.ClearCombatTag) == "function" then
@@ -371,7 +423,7 @@ function EliminationService:HandleKillPartTouch(killPart: BasePart, hitPart: Bas
 			Killer = nil,
 			MatchId = matchId,
 			Timestamp = now,
-			Reason = "KillPart_NormalFall",
+			Reason = source .. "_NormalFall",
 			EliminationId = elimKey,
 		}
 		playerEliminatedBindable:Fire(record)
@@ -381,6 +433,88 @@ function EliminationService:HandleKillPartTouch(killPart: BasePart, hitPart: Bas
 	local spawnService = self:_getSpawnService()
 	if spawnService and type(spawnService.ResetCharacterInArena) == "function" then
 		spawnService:ResetCharacterInArena(player)
+	end
+end
+
+-- ==================================================
+-- POLLING FAIL-SAFE DE CAÍDAS AL VACÍO (Fase 3B)
+-- ==================================================
+
+function EliminationService:_startPollingIfNeeded()
+	if self._isPolling then return end
+	self._isPolling = true
+	self._pollThread = task.spawn(function()
+		self:_pollActiveSessions()
+	end)
+end
+
+function EliminationService:_stopPolling()
+	self._isPolling = false
+	if self._pollThread then
+		task.cancel(self._pollThread)
+		self._pollThread = nil
+	end
+end
+
+-- Chequeo periódico exclusivo sobre participantes de partidas activas
+function EliminationService:_pollActiveSessions()
+	local pollInterval = (Config.Arena and Config.Arena.VoidBoundaryPollInterval) or 0.2
+
+	while self._isPolling do
+		task.wait(pollInterval)
+		if not self._isPolling then break end
+
+		for matchId, session in pairs(self._activeSessions) do
+			if not session or not session.InstanceInfo then continue end
+			local boundaryPart = session.InstanceInfo.VoidBoundaryPart
+			if not boundaryPart or not boundaryPart.Parent then continue end
+
+			local roundService = self:_getRoundService()
+			local currentState = (roundService and roundService:GetState()) or session.State
+			if currentState ~= Constants.RoundState.Playing
+				and currentState ~= Constants.RoundState.PointRestartCountdown
+				and currentState ~= Constants.RoundState.StartCountdown
+				and currentState ~= Constants.RoundState.Ending then
+				continue
+			end
+
+			-- Criterio de altura: relativa a la geometría del VoidBoundary de esta MatchInstance
+			local thresholdY = boundaryPart.Position.Y + (boundaryPart.Size.Y * 0.5)
+
+			local playersToCheck: { Player } = {}
+			if session.RedPlayer then table.insert(playersToCheck, session.RedPlayer) end
+			if session.BluePlayer then table.insert(playersToCheck, session.BluePlayer) end
+			if session.RedTeam then
+				for _, p in ipairs(session.RedTeam) do
+					if not table.find(playersToCheck, p) then table.insert(playersToCheck, p) end
+				end
+			end
+			if session.BlueTeam then
+				for _, p in ipairs(session.BlueTeam) do
+					if not table.find(playersToCheck, p) then table.insert(playersToCheck, p) end
+				end
+			end
+
+			local now = os.clock()
+			for _, player in ipairs(playersToCheck) do
+				if not player:IsDescendantOf(Players) then continue end
+
+				-- Descarte rápido si ya está en procesamiento activo por Touched
+				local lastTouch = self._processingEliminations[player]
+				if lastTouch and (now - lastTouch) < 0.5 then
+					continue
+				end
+
+				local character = player.Character
+				if not character or not character.Parent then continue end
+				local hrp = character:FindFirstChild("HumanoidRootPart") :: BasePart?
+				if not hrp then continue end
+
+				if hrp.Position.Y <= thresholdY then
+					self:_processEliminationEvent(player, session, "VoidBoundaryPolling", boundaryPart)
+				end
+			end
+		end
 	end
 end
 

@@ -216,6 +216,7 @@ Config.Arena = {
 	MaxSlots = 100,
 	VoidBoundarySize = Vector3.new(500, 4, 500),
 	VoidBoundaryOffset = Vector3.new(0, -50, 0),
+	VoidBoundaryPollInterval = 0.2, -- Intervalo de chequeo fail-safe para caídas al vacío (segundos)
 }
 
 Config.Matchmaking = {

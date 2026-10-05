@@ -122,5 +122,32 @@ A partir de esta fase, los `KillPart` dentro de una `MatchSession` dejan de ser 
 5. **Aislamiento Multi-Match:**
    - Se valida que `killPart` sea descendiente directo de `session.InstanceInfo.Container`. Contactos cruzados con arenas ajenas son descartados sin procesamiento.
 6. **Compatibilidad:**
-   - El listener de `Humanoid.Died` se mantiene como fallback de compatibilidad para otros eventos ajenos al KillPart (ej. muertes no controladas).
-   - `VoidBoundaryPart` todavía no está conectado a la detección en esta fase.
+   - *Nota de Fase 3A:* `VoidBoundaryPart` quedó preparado para ser activado en la Fase 3B.
+
+### 15.8 Infraestructura Zero-Death — Fase 3B (VoidBoundary + Detección Server-Authoritative de Caída)
+En esta fase se completa la detección integral de jugadores que abandonan el volumen jugable de la arena sin depender exclusivamente de colisionar físicamente con un `KillPart`:
+1. **Doble Capa de Detección (Touched + Polling Fail-Safe):**
+   - **`VoidBoundaryPart.Touched`:** Detecta contactos directos con el volumen no letal del boundary (`HandleVoidBoundaryTouch`).
+   - **Polling Fail-Safe (`_pollActiveSessions`):** Loop asíncrono con intervalo configurable (`Config.Arena.VoidBoundaryPollInterval = 0.2s`) que evalúa exclusivamente a los jugadores de partidas activas (`_activeSessions`). Si un avatar atraviesa la geometría por tunneling a alta velocidad y su `HumanoidRootPart.Position.Y <= boundary.Position.Y + (boundary.Size.Y * 0.5)`, se activa la resolución autoritativa de inmediato.
+2. **Diferencia Conceptual entre KillPart y VoidBoundary:**
+   - **KillPart:** Sensor geométrico ubicado en trampas o zonas intermedias inferiores del mapa.
+   - **VoidBoundary:** Sensor perimetral y fail-safe de salida definitiva del volumen jugable de la arena completa.
+   - Ambos convergen en el núcleo unificado `EliminationService:_processEliminationEvent`.
+3. **Clasificación Unificada (Fall vs CombatElimination):**
+   - **CombatElimination:** Atacante válido (`CombatService:GetLastAttacker`), mismo `MatchId`, $TTL \le 10\text{s}$, `attacker ~= victim` $\rightarrow$ otorga $+1\text{ Kill}$ vía `PlayerService:AddKill`, limpia el `CombatTag` y reposiciona al jugador.
+   - **Normal Fall:** Caída libre sin atacante válido $\rightarrow$ $+0\text{ Kills}$, limpia cualquier tag residual y reposiciona al jugador.
+4. **Mecanismo Anti-Duplicate Compartido:**
+   - Lock idempotente por jugador en `_processingEliminations[player]` (ventana de 0.5s) que garantiza que si `Touched` y `Polling` detectan la misma caída simultáneamente, sólo se procesa exactamente una vez.
+   - Contadores secuenciales por jugador en `_eliminationCounters[player]` para generar claves `_resolvedEliminations` unívocas por caída sin bloquear futuros derribos en la misma partida.
+5. **Comportamiento ante Estados del Lifecycle:**
+   - **`PointInProgress`:** Si el jugador detectado en el boundary es el `PointScorer` durante un gol anotado, el evento es absorbido: no otorga Kill rival, no emite eliminación y no reposiciona prematuramente, preservando la cinemática del gol y delegando el retorno a `RoundService:TriggerPointRestart`.
+   - **`StartCountdown`:** Si un jugador cae durante la cuenta regresiva previa al inicio de ronda, se reposiciona inmediatamente a su TeamSpawn mediante `ResetCharacterInArena(player)` con $+0\text{ Kills}$, dejándolo listo en su base para el inicio oficial.
+   - **`Ending`:** Durante la pantalla de victoria/resultado, los avatares que caigan al vacío son reposicionados en su spawn con $+0\text{ Kills}$, evitando que mueran físicamente o caigan a `FallenPartsDestroyHeight` antes de la transición a `ReturningToLobby`.
+6. **Aislamiento Multi-Match y Cleanup:**
+   - Comprobación estricta de pertenencia del boundary a `session.InstanceInfo.Container`.
+   - Al finalizar la partida (`UnbindMatch`), se desconectan los listeners, se retira la sesión de `_activeSessions`, se apaga el thread de polling si no quedan partidas en el servidor y se limpian las tablas de debounce.
+   - Al destruir la instancia (`MatchInstanceService:DestroyInstance`), el contenedor destruye el `VoidBoundaryPart` sin dejar memory leaks.
+7. **Estado del Lifecycle y Compatibilidad:**
+   - El listener `Humanoid.Died` permanece activo únicamente como red de seguridad/compatibilidad ante muertes no controladas por el gameplay.
+   - Ni el `KillPart` ni el `VoidBoundaryPart` modifican `Humanoid.Health` ni provocan la muerte del avatar.
+   - El respawn nativo de Roblox todavía no ha sido desactivado globalmente a la espera de la siguiente fase.
