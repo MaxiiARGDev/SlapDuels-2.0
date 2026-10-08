@@ -198,6 +198,34 @@ function PlayerService:GetCoins(player: any): number
 	return (data and data.Coins) or self._coins[player] or 0
 end
 
+-- Deduce monedas del jugador de forma server-authoritative (retorna éxito y nuevo balance)
+function PlayerService:DeductCoins(player: any, amount: number, reason: string?): (boolean, number)
+	if not player or amount <= 0 then
+		return false, self:GetCoins(player)
+	end
+
+	local data = self._data[player]
+	if not data then
+		self:_register(player)
+		data = self._data[player]
+	end
+
+	if data.Coins < amount then
+		return false, data.Coins
+	end
+
+	local newBalance = data.Coins - amount
+	data.Coins = newBalance
+	self._coins[player] = newBalance
+
+	local pName = if type(player) == "table" and player.Name then player.Name elseif typeof(player) == "Instance" then player.Name else tostring(player)
+	print(string.format("[PlayerService] -%d Coins deducidos de '%s' (Razón: %s). Saldo restante: %d",
+		amount, pName, reason or "ShopPurchase", newBalance))
+
+	self:_sendDataUpdate(player)
+	return true, newBalance
+end
+
 function PlayerService:AddWin(player: any, reason: string?): number
 	if not player then return 0 end
 

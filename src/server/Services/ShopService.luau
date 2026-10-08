@@ -51,6 +51,33 @@ function ShopService:Init(context: any)
 
 	-- Resolver ShopRegistry
 	self:_getRegistryInternal()
+
+	-- Auto-registrar PointEffectProvider
+	self:_registerDefaultProviders()
+end
+
+function ShopService:_registerDefaultProviders()
+	local shopFolder = ServerScriptService:FindFirstChild("Shop")
+	local providersFolder = shopFolder and shopFolder:FindFirstChild("Providers")
+	if providersFolder then
+		local pepMod = providersFolder:FindFirstChild("PointEffectProvider")
+		if pepMod and pepMod:IsA("ModuleScript") then
+			local ok, pep = pcall(require, pepMod)
+			if ok and pep and not self:GetProvider(pep:GetCategory()) then
+				self:RegisterProvider(pep)
+			end
+		end
+	end
+
+	-- Fallback relativo si la estructura aún no cargó completamente
+	if not self:GetProvider("PointEffects") then
+		local ok, pep = pcall(function()
+			return require(script.Parent.Parent.Shop.Providers.PointEffectProvider)
+		end)
+		if ok and pep and not self:GetProvider("PointEffects") then
+			self:RegisterProvider(pep)
+		end
+	end
 end
 
 function ShopService:Start(context: any)
@@ -142,10 +169,13 @@ function ShopService:GetProvider(category: string): ProductProvider?
 	return registry:GetProvider(category)
 end
 
--- Obtiene el catálogo completo unificado de productos
-function ShopService:GetCatalog(): { ProductDefinition }
+-- Obtiene el catálogo unificado de productos (o filtrado por categoría si se especifica)
+function ShopService:GetCatalog(category: string?): { ProductDefinition }
 	local registry = self:GetRegistry()
 	if not registry then return {} end
+	if category and category ~= "" then
+		return registry:GetCategoryProducts(category)
+	end
 	return registry:GetCatalog()
 end
 
@@ -240,15 +270,37 @@ function ShopService:_processCoinsPurchase(player: any, product: ProductDefiniti
 		return false, "PlayerServiceNotAvailable"
 	end
 
-	-- Verificación autoritativa de fondos vía API pública de PlayerService (sin acceder a tablas privadas)
+	-- 1. Verificación autoritativa de fondos vía API pública de PlayerService (sin acceder a tablas privadas)
 	local currentCoins = playerService:GetCoins(player)
 	if currentCoins < product.Price then
 		return false, "InsufficientFunds"
 	end
 
-	-- En Fase 2 (Core Framework): el flujo y validaciones están completamente establecidos.
-	-- La deducción atómica de monedas y la asignación al inventario genérico se conectan en Fase 4.
-	return false, "PurchaseExecutionPendingPhase4"
+	-- 2. Lock transaccional in-flight
+	self:_setTransactionLock(player, true)
+
+	-- 3. Deducción atómica de fondos
+	local deductOk, newBalance = playerService:DeductCoins(player, product.Price, "ShopPurchase:" .. product.Id)
+	if not deductOk then
+		self:_setTransactionLock(player, false)
+		return false, "DeductFundsFailed"
+	end
+
+	-- 4. Entrega autoritativa mediante ProductProvider
+	local deliveryOk, deliveryErr = provider:OnPurchased(player, product)
+	if not deliveryOk then
+		-- Rollback atómico de fondos si la entrega falla
+		playerService:AddCoins(player, product.Price, "ShopPurchaseRefund:" .. product.Id)
+		self:_setTransactionLock(player, false)
+		warn(string.format("[ShopService] Entrega de '%s' falló para '%s' (err: %s). Fondos reembolsados.",
+			product.Id, tostring(player), tostring(deliveryErr)))
+		return false, deliveryErr or "DeliveryFailed"
+	end
+
+	self:_setTransactionLock(player, false)
+	print(string.format("[ShopService] Compra exitosa de '%s' por '%s'. Saldo restante: %d",
+		product.Id, tostring(player), newBalance))
+	return true, nil
 end
 
 -- Procesa compras con moneda de plataforma (Robux)
@@ -299,8 +351,12 @@ function ShopService:EquipProduct(player: any, productId: string): (boolean, str
 		return false, canEquipErr or "CannotEquip"
 	end
 
-	-- En Fase 2: Equip execution pertenece a la Fase 5 (Equip System)
-	return false, "EquipExecutionPendingPhase5"
+	local equipOk, equipErr = provider:OnEquipped(player, product)
+	if not equipOk then
+		return false, equipErr or "EquipFailed"
+	end
+
+	return true, nil
 end
 
 -- Solicita desequipar el cosmético activo de una categoría
@@ -322,8 +378,12 @@ function ShopService:UnequipProduct(player: any, category: string): (boolean, st
 		return false, "ProviderNotFound"
 	end
 
-	-- En Fase 2: Unequip execution pertenece a la Fase 5 (Equip System)
-	return false, "UnequipExecutionPendingPhase5"
+	local unequipOk, unequipErr = provider:OnUnequipped(player, nil)
+	if not unequipOk then
+		return false, unequipErr or "UnequipFailed"
+	end
+
+	return true, nil
 end
 
 return ShopService
