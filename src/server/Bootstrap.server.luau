@@ -12,6 +12,7 @@ assert(ServicesFolder, "[Bootstrap] No se encontro ServerScriptService.Services"
 local SERVICE_ORDER = {
 	"PlayerDataService",
 	"PlayerService",
+	"ShopService",
 	"RagdollService",
 	"MatchInstanceService",
 	"SpawnService",

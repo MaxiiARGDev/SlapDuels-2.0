@@ -186,5 +186,54 @@ export type Service = {
 	Start: (self: Service, context: { [string]: any }?) -> (),
 }
 
+-- ==================================================
+-- SHOP FRAMEWORK TYPES
+-- ==================================================
+
+export type CurrencyType = "Coins" | "Robux"
+
+export type ProductType = "Cosmetic" | "Consumable"
+
+export type ProductDefinition = {
+	-- Campos Obligatorios
+	Id: string,
+	Category: string,
+	ProductType: ProductType,
+	DisplayName: string,
+	Price: number,
+	Currency: CurrencyType,
+	IsAvailable: boolean,
+
+	-- Requerido según Currency (Robux)
+	RobloxProductId: number?,
+
+	-- Campos Opcionales / Metadata
+	Description: string?,
+	Rarity: string?,
+	AssetId: string?,
+	Icon: string?,
+	Metadata: { [string]: any }?,
+}
+
+export type ProductProvider = {
+	GetCategory: (self: ProductProvider) -> string,
+	GetProducts: (self: ProductProvider) -> { ProductDefinition },
+	GetProduct: (self: ProductProvider, productId: string) -> ProductDefinition?,
+	CanPurchase: (self: ProductProvider, player: Player, product: ProductDefinition) -> (boolean, string?),
+	CanEquip: (self: ProductProvider, player: Player, product: ProductDefinition) -> (boolean, string?),
+	OnPurchased: (self: ProductProvider, player: Player, product: ProductDefinition) -> (boolean, string?),
+	OnEquipped: (self: ProductProvider, player: Player, product: ProductDefinition) -> (boolean, string?),
+	OnUnequipped: (self: ProductProvider, player: Player, product: ProductDefinition) -> (boolean, string?),
+}
+
+export type PlayerInventory = {
+	Owned: {
+		[string]: { [string]: boolean },
+	},
+	Equipped: {
+		[string]: string?,
+	},
+}
+
 return {}
 

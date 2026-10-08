@@ -54,6 +54,9 @@
           "PerformSlap": {
             "$className": "RemoteEvent"
           }
+        },
+        "Shop": {
+          "$className": "Folder"
         }
       }
     },
@@ -71,6 +74,9 @@
       },
       "RagdollHandler": {
         "$path": "src/server/RagdollHandler.server.luau"
+      },
+      "Shop": {
+        "$path": "src/server/Shop"
       }
     },
 
