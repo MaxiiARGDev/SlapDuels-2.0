@@ -30,28 +30,106 @@ local function isValidNumber(val: any): boolean
 	return typeof(val) == "number" and val == val and math.abs(val) ~= math.huge
 end
 
+-- Función auxiliar para generar Inventory por defecto
+local function getDefaultInventory(): Types.PlayerInventory
+	return {
+		Owned = {
+			["PointEffects"] = { ["Basic"] = true },
+		},
+		Equipped = {
+			["PointEffects"] = "Basic",
+		},
+	}
+end
+
+-- Sanitiza y valida profundamente una estructura de Inventory
+local function sanitizeInventory(rawInv: any, warnings: { string }): Types.PlayerInventory
+	if type(rawInv) ~= "table" then
+		table.insert(warnings, "Inventory is not a table, generated default Inventory")
+		return getDefaultInventory()
+	end
+
+	local sanitizedOwned: { [string]: { [string]: boolean } } = {}
+	local rawOwned = rawInv.Owned
+	if type(rawOwned) == "table" then
+		for category, items in pairs(rawOwned) do
+			if type(category) == "string" and type(items) == "table" then
+				local catItems: { [string]: boolean } = {}
+				for itemId, isOwned in pairs(items) do
+					if type(itemId) == "string" and isOwned == true then
+						catItems[itemId] = true
+					end
+				end
+				sanitizedOwned[category] = catItems
+			end
+		end
+	else
+		table.insert(warnings, "Inventory.Owned is not a table, initialized empty Owned")
+	end
+
+	-- Regla arquitectónica: PointEffects.Basic siempre debe existir
+	if not sanitizedOwned["PointEffects"] then
+		sanitizedOwned["PointEffects"] = {}
+	end
+	sanitizedOwned["PointEffects"]["Basic"] = true
+
+	local sanitizedEquipped: { [string]: string? } = {}
+	local rawEquipped = rawInv.Equipped
+	if type(rawEquipped) == "table" then
+		for category, equippedId in pairs(rawEquipped) do
+			if type(category) == "string" and type(equippedId) == "string" then
+				-- Verificar que el ítem realmente se posea en su categoría
+				if sanitizedOwned[category] and sanitizedOwned[category][equippedId] == true then
+					sanitizedEquipped[category] = equippedId
+				else
+					table.insert(warnings, string.format("Equipped item '%s' in category '%s' not owned, unequipped", equippedId, category))
+				end
+			end
+		end
+	else
+		table.insert(warnings, "Inventory.Equipped is not a table, initialized empty Equipped")
+	end
+
+	-- Regla arquitectónica: PointEffects.Equipped fallback seguro obligatorio a Basic
+	if not sanitizedEquipped["PointEffects"] or not sanitizedOwned["PointEffects"][sanitizedEquipped["PointEffects"]] then
+		sanitizedEquipped["PointEffects"] = "Basic"
+	end
+
+	return {
+		Owned = sanitizedOwned,
+		Equipped = sanitizedEquipped,
+	}
+end
+
 -- ==================================================
 -- VALIDACIÓN CENTRAL DE DATOS
 -- ==================================================
 
 function PlayerDataService:ValidatePlayerData(raw: any): (boolean, PlayerDataRecord, string?)
+	local defaultInv = getDefaultInventory()
 	if type(raw) ~= "table" then
 		return false, {
-			Version = Config.DataStore.CurrentVersion or 1,
+			Version = Config.DataStore.CurrentVersion or 2,
 			Coins = Config.Economy.StartingCoins or 0,
 			Wins = Config.Economy.StartingWins or 0,
 			Losses = Config.Economy.StartingLosses or 0,
 			Kills = Config.Economy.StartingKills or 0,
+			Inventory = defaultInv,
 		}, "Raw data is not a table"
 	end
 
-	local warnings: { string } = {}
 	local version = raw.Version
+	local currentVersion = (Config.DataStore and Config.DataStore.CurrentVersion) or 2
 	if not isValidNumber(version) or version < 1 then
-		table.insert(warnings, string.format("Invalid or missing Version (%s), default to 1", tostring(version)))
-		version = 1
-	elseif version > (Config.DataStore.CurrentVersion or 1) then
-		table.insert(warnings, string.format("Data version (%d) is newer than current config (%d)", version, Config.DataStore.CurrentVersion))
+		table.insert(warnings, string.format("Invalid or missing Version (%s), migrating to %d", tostring(version), currentVersion))
+		version = currentVersion
+	elseif version < currentVersion then
+		table.insert(warnings, string.format("Migrating PlayerData from version %d to %d", version, currentVersion))
+		version = currentVersion
+	elseif version > currentVersion then
+		local errMsg = string.format("IncompatibleVersion: Data version (%d) is newer than current config (%d)", version, currentVersion)
+		warn(string.format("[PlayerData] %s. Normalización y guardado bloqueados para prevenir corrupción de esquema futuro.", errMsg))
+		return false, raw, errMsg
 	end
 
 	-- Coins
@@ -90,12 +168,16 @@ function PlayerDataService:ValidatePlayerData(raw: any): (boolean, PlayerDataRec
 		kills = math.floor(kills)
 	end
 
+	-- Inventory (Migración y sanitización profunda)
+	local inventory = sanitizeInventory(raw.Inventory, warnings)
+
 	local validatedRecord: PlayerDataRecord = {
-		Version = version,
+		Version = Config.DataStore.CurrentVersion or 2,
 		Coins = coins,
 		Wins = wins,
 		Losses = losses,
 		Kills = kills,
+		Inventory = inventory,
 		LastSaved = raw.LastSaved,
 	}
 
@@ -195,16 +277,31 @@ function PlayerDataService:LoadPlayer(player: Player): (boolean, PlayerDataRecor
 			if result == nil then
 				-- Jugador nuevo sin datos previos
 				local newRecord: PlayerDataRecord = {
-					Version = (Config.DataStore and Config.DataStore.CurrentVersion) or 1,
+					Version = (Config.DataStore and Config.DataStore.CurrentVersion) or 2,
 					Coins = (Config.Economy and Config.Economy.StartingCoins) or 0,
 					Wins = (Config.Economy and Config.Economy.StartingWins) or 0,
 					Losses = (Config.Economy and Config.Economy.StartingLosses) or 0,
+					Kills = (Config.Economy and Config.Economy.StartingKills) or 0,
+					Inventory = getDefaultInventory(),
 				}
 				self._loadStates[player] = "Loaded"
 				print(string.format("[PlayerData] Load success (Nuevo jugador): '%s' (UserId: %d)", player.Name, player.UserId))
 				return true, newRecord, nil
 			else
 				local valid, validatedRecord, warnMsg = self:ValidatePlayerData(result)
+				if not valid then
+					if type(result) == "table" and isValidNumber(result.Version) and result.Version > ((Config.DataStore and Config.DataStore.CurrentVersion) or 2) then
+						self._loadStates[player] = "IncompatibleVersion"
+						warn(string.format("[PlayerData] Load rejected para '%s': Versión de datos incompatible (%d > %d). Guardado bloqueado.",
+							player.Name, result.Version, (Config.DataStore and Config.DataStore.CurrentVersion) or 2))
+						return false, nil, warnMsg or "IncompatibleVersion"
+					else
+						self._loadStates[player] = "Corrupted"
+						warn(string.format("[PlayerData] Load rejected para '%s': Datos corruptos (%s)", player.Name, tostring(warnMsg)))
+						return false, nil, warnMsg or "ValidationFailed"
+					end
+				end
+
 				if warnMsg then
 					warn(string.format("[PlayerData] Advertencia en datos de '%s': %s", player.Name, warnMsg))
 				end
@@ -239,6 +336,12 @@ function PlayerDataService:SavePlayer(player: Player, runtimeData: PlayerData?):
 
 	-- SEGURIDAD CRÍTICA: Si el jugador no cargó correctamente, NUNCA guardar para no corromper ni sobrescribir
 	local loadState = self._loadStates[player]
+	if loadState == "IncompatibleVersion" then
+		warn(string.format("[PlayerData] RECHAZO DE GUARDADO para '%s': Versión de datos en DataStore es incompatible (%s). Guardado bloqueado para proteger datos futuros.",
+			player.Name, tostring(loadState)))
+		return false, "IncompatibleVersion"
+	end
+
 	if loadState ~= "Loaded" then
 		warn(string.format("[PlayerData] RECHAZO DE GUARDADO para '%s': Estado no es 'Loaded' (Estado actual: %s). Protección contra pérdida de datos activada.",
 			player.Name, tostring(loadState)))
@@ -279,32 +382,49 @@ function PlayerDataService:SavePlayer(player: Player, runtimeData: PlayerData?):
 	local backoff = (Config.DataStore and Config.DataStore.RetryBackoffMultiplier) or 2.0
 
 	local payload: PlayerDataRecord = {
-		Version = (Config.DataStore and Config.DataStore.CurrentVersion) or 1,
+		Version = (Config.DataStore and Config.DataStore.CurrentVersion) or 2,
 		Coins = math.max(0, math.floor(runtimeData.Coins or 0)),
 		Wins = math.max(0, math.floor(runtimeData.Wins or 0)),
 		Losses = math.max(0, math.floor(runtimeData.Losses or 0)),
 		Kills = math.max(0, math.floor(runtimeData.Kills or 0)),
+		Inventory = runtimeData.Inventory or getDefaultInventory(),
 		LastSaved = os.time(),
 	}
 
 	local lastErr: any = nil
+	local wasVersionAborted = false
 	for attempt = 1, maxRetries do
 		local ok, err = pcall(function()
 			store:UpdateAsync(key, function(oldData: any)
 				-- Mantener posibles campos externos futuros si existen
 				if type(oldData) == "table" then
+					local currentVersion = (Config.DataStore and Config.DataStore.CurrentVersion) or 2
+					if isValidNumber(oldData.Version) and oldData.Version > currentVersion then
+						wasVersionAborted = true
+						return nil -- Cancela la escritura atómica en DataStore sin alterar los datos remotos
+					end
+
 					local updated = table.clone(oldData)
 					updated.Version = payload.Version
 					updated.Coins = payload.Coins
 					updated.Wins = payload.Wins
 					updated.Losses = payload.Losses
 					updated.Kills = payload.Kills
+					updated.Inventory = payload.Inventory
 					updated.LastSaved = payload.LastSaved
 					return updated
 				end
 				return payload
 			end)
 		end)
+
+		if wasVersionAborted then
+			self._saving[player] = nil
+			self._loadStates[player] = "IncompatibleVersion"
+			warn(string.format("[PlayerData] Save abortado para '%s': Versión remota en DataStore es superior a la versión soportada (%d).",
+				player.Name, (Config.DataStore and Config.DataStore.CurrentVersion) or 2))
+			return false, "IncompatibleVersion"
+		end
 
 		if ok then
 			self._saving[player] = nil

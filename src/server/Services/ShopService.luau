@@ -82,6 +82,7 @@ end
 
 function ShopService:Start(context: any)
 	self._context = context
+	self:_registerDefaultProviders()
 	print("[ShopService] Orquestador transaccional de tienda iniciado y listo")
 end
 

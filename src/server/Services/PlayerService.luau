@@ -104,16 +104,20 @@ end
 
 function PlayerService:_register(player: any)
 	self._registered[player] = {}
-	self._ownedPointEffects[player] = {
-		[PointEffectDefinitions.DefaultEffectId] = true,
-	}
-	self._equippedPointEffects[player] = PointEffectDefinitions.DefaultEffectId
 
 	local initialData: PlayerData = {
 		Coins = (Config.Economy and Config.Economy.StartingCoins) or 0,
 		Wins = (Config.Economy and Config.Economy.StartingWins) or 0,
 		Losses = (Config.Economy and Config.Economy.StartingLosses) or 0,
 		Kills = (Config.Economy and Config.Economy.StartingKills) or 0,
+		Inventory = {
+			Owned = {
+				["PointEffects"] = { [PointEffectDefinitions.DefaultEffectId] = true },
+			},
+			Equipped = {
+				["PointEffects"] = PointEffectDefinitions.DefaultEffectId,
+			},
+		},
 	}
 
 	if typeof(player) == "Instance" and player:IsA("Player") then
@@ -125,6 +129,9 @@ function PlayerService:_register(player: any)
 				initialData.Wins = record.Wins
 				initialData.Losses = record.Losses
 				initialData.Kills = record.Kills or 0
+				if record.Inventory then
+					initialData.Inventory = record.Inventory
+				end
 			else
 				warn(string.format("[PlayerService] No se pudo cargar PlayerData de '%s' (err: %s). Usando valores seguros no persistibles.", player.Name, tostring(err)))
 			end
@@ -134,10 +141,12 @@ function PlayerService:_register(player: any)
 	self._data[player] = initialData
 	self._coins[player] = initialData.Coins
 	self._kills[player] = initialData.Kills
+	self._ownedPointEffects[player] = initialData.Inventory.Owned["PointEffects"]
+	self._equippedPointEffects[player] = initialData.Inventory.Equipped["PointEffects"] or PointEffectDefinitions.DefaultEffectId
 
 	local pName = if type(player) == "table" and player.Name then player.Name elseif typeof(player) == "Instance" then player.Name else tostring(player)
 	print(string.format("[PlayerService] Registrado: %s (Coins=%d, Wins=%d, Losses=%d, Kills=%d, PointEffect: %s)",
-		pName, initialData.Coins, initialData.Wins, initialData.Losses, initialData.Kills, PointEffectDefinitions.DefaultEffectId))
+		pName, initialData.Coins, initialData.Wins, initialData.Losses, initialData.Kills, tostring(self._equippedPointEffects[player])))
 
 	-- Enviar estado inicial cargado al jugador (el HUD muestra inmediatamente datos reales sin parpadeo de 0)
 	self:_sendDataUpdate(player)
@@ -309,6 +318,7 @@ function PlayerService:GetPlayerData(player: any): PlayerData
 			Wins = data.Wins,
 			Losses = data.Losses,
 			Kills = data.Kills or 0,
+			Inventory = data.Inventory,
 		}
 	end
 	return {
@@ -316,100 +326,235 @@ function PlayerService:GetPlayerData(player: any): PlayerData
 		Wins = 0,
 		Losses = 0,
 		Kills = 0,
+		Inventory = {
+			Owned = {
+				["PointEffects"] = { [PointEffectDefinitions.DefaultEffectId] = true },
+			},
+			Equipped = {
+				["PointEffects"] = PointEffectDefinitions.DefaultEffectId,
+			},
+		},
 	}
 end
 
 -- ==================================================
--- INTERFAZ AUTORITATIVA DE POINT EFFECTS (COSMÉTICOS)
+-- INTERFAZ AUTORITATIVA GENÉRICA DE INVENTORY
+-- ==================================================
+
+-- Obtiene el inventario completo del jugador
+function PlayerService:GetInventory(player: any): Types.PlayerInventory?
+	local data = self._data[player]
+	if not data then return nil end
+	return data.Inventory
+end
+
+-- Verifica si el jugador posee un ítem en una categoría específica
+function PlayerService:HasItem(player: any, category: string, productId: string): boolean
+	if not player or type(category) ~= "string" or type(productId) ~= "string" then
+		return false
+	end
+
+	-- Regla especial universal: PointEffects.Basic siempre es poseído
+	if category == "PointEffects" and productId == PointEffectDefinitions.DefaultEffectId then
+		return true
+	end
+
+	local data = self._data[player]
+	if not data or not data.Inventory or not data.Inventory.Owned then
+		return false
+	end
+
+	local catOwned = data.Inventory.Owned[category]
+	return catOwned ~= nil and catOwned[productId] == true
+end
+
+-- Otorga propiedad de un ítem en una categoría genérica (server-authoritative)
+function PlayerService:AddItem(player: any, category: string, productId: string): (boolean, string?)
+	if not player then
+		return false, "PlayerNotFound"
+	end
+	if type(category) ~= "string" or category == "" then
+		return false, "InvalidCategory"
+	end
+	if type(productId) ~= "string" or productId == "" then
+		return false, "InvalidProductId"
+	end
+
+	local data = self._data[player]
+	if not data then
+		self:_register(player)
+		data = self._data[player]
+	end
+
+	if not data.Inventory then
+		data.Inventory = { Owned = {}, Equipped = {} }
+	end
+	if not data.Inventory.Owned then
+		data.Inventory.Owned = {}
+	end
+	if not data.Inventory.Owned[category] then
+		data.Inventory.Owned[category] = {}
+	end
+
+	data.Inventory.Owned[category][productId] = true
+
+	-- Mantener referencias auxiliares de PointEffects sincronizadas
+	if category == "PointEffects" then
+		self._ownedPointEffects[player] = data.Inventory.Owned[category]
+	end
+
+	local pName = if type(player) == "table" and player.Name then player.Name elseif typeof(player) == "Instance" then player.Name else tostring(player)
+	print(string.format("[PlayerService] Jugador '%s' adquirió ítem: [%s] '%s'", pName, category, productId))
+
+	self:_sendDataUpdate(player)
+	return true, nil
+end
+
+-- Retorna el ítem equipado actualmente en una categoría
+function PlayerService:GetEquippedItem(player: any, category: string): string?
+	if not player or type(category) ~= "string" then
+		return nil
+	end
+
+	local data = self._data[player]
+	if not data or not data.Inventory or not data.Inventory.Equipped then
+		if category == "PointEffects" then
+			return PointEffectDefinitions.DefaultEffectId
+		end
+		return nil
+	end
+
+	local equipped = data.Inventory.Equipped[category]
+
+	if category == "PointEffects" then
+		if not equipped or not PointEffectDefinitions.IsValid(equipped) or not self:HasItem(player, category, equipped) then
+			return PointEffectDefinitions.DefaultEffectId
+		end
+		return equipped
+	end
+
+	if equipped and not self:HasItem(player, category, equipped) then
+		return nil
+	end
+
+	return equipped
+end
+
+-- Equipa un ítem en una categoría (valida propiedad y disponibilidad)
+function PlayerService:SetEquippedItem(player: any, category: string, productId: string?): (boolean, string?)
+	if not player then
+		return false, "PlayerNotFound"
+	end
+	if type(category) ~= "string" or category == "" then
+		return false, "InvalidCategory"
+	end
+
+	local data = self._data[player]
+	if not data then
+		self:_register(player)
+		data = self._data[player]
+	end
+
+	if not data.Inventory then
+		data.Inventory = { Owned = {}, Equipped = {} }
+	end
+	if not data.Inventory.Equipped then
+		data.Inventory.Equipped = {}
+	end
+
+	if productId == nil or productId == "" then
+		return self:UnequipItem(player, category)
+	end
+
+	if not self:HasItem(player, category, productId) then
+		warn(string.format("[PlayerService] Jugador no posee el ítem: [%s] '%s'", category, productId))
+		return false, "NotOwned"
+	end
+
+	data.Inventory.Equipped[category] = productId
+
+	if category == "PointEffects" then
+		self._equippedPointEffects[player] = productId
+	end
+
+	local pName = if type(player) == "table" and player.Name then player.Name elseif typeof(player) == "Instance" then player.Name else tostring(player)
+	print(string.format("[PlayerService] Jugador '%s' equipó ítem: [%s] '%s'", pName, category, productId))
+
+	self:_sendDataUpdate(player)
+	return true, nil
+end
+
+-- Desequipa el ítem de una categoría (restituye default seguro si aplica)
+function PlayerService:UnequipItem(player: any, category: string): (boolean, string?)
+	if not player then
+		return false, "PlayerNotFound"
+	end
+	if type(category) ~= "string" or category == "" then
+		return false, "InvalidCategory"
+	end
+
+	local data = self._data[player]
+	if not data or not data.Inventory then
+		return false, "NoInventory"
+	end
+	if not data.Inventory.Equipped then
+		data.Inventory.Equipped = {}
+	end
+
+	if category == "PointEffects" then
+		data.Inventory.Equipped["PointEffects"] = PointEffectDefinitions.DefaultEffectId
+		self._equippedPointEffects[player] = PointEffectDefinitions.DefaultEffectId
+	else
+		data.Inventory.Equipped[category] = nil
+	end
+
+	local pName = if type(player) == "table" and player.Name then player.Name elseif typeof(player) == "Instance" then player.Name else tostring(player)
+	print(string.format("[PlayerService] Jugador '%s' desequipó categoría: [%s]", pName, category))
+
+	self:_sendDataUpdate(player)
+	return true, nil
+end
+
+-- ==================================================
+-- INTERFAZ ESPECÍFICA DE POINT EFFECTS (WRAPPERS SOBRE INVENTORY)
 -- ==================================================
 
 -- Verifica si el jugador posee un PointEffect específico
 function PlayerService:HasPointEffect(player: any, effectId: string): boolean
-	if effectId == PointEffectDefinitions.DefaultEffectId then
-		return true -- Basic está disponible para todos los jugadores de forma universal
-	end
-	if not player then return false end
-	local owned = self._ownedPointEffects[player]
-	return (owned ~= nil and owned[effectId] == true)
+	return self:HasItem(player, "PointEffects", effectId)
 end
 
 -- Retorna el diccionario de efectos que posee el jugador
 function PlayerService:GetOwnedPointEffects(player: any): { [string]: boolean }
-	if not player then
-		return { [PointEffectDefinitions.DefaultEffectId] = true }
-	end
-	local owned = self._ownedPointEffects[player]
-	if not owned then
-		return { [PointEffectDefinitions.DefaultEffectId] = true }
-	end
-
-	local copy = {}
+	local inv = self:GetInventory(player)
+	local owned = (inv and inv.Owned and inv.Owned["PointEffects"]) or {}
+	local copy = { [PointEffectDefinitions.DefaultEffectId] = true }
 	for k, v in pairs(owned) do
 		copy[k] = v
 	end
 	return copy
 end
 
--- Agrega un efecto a la lista de efectos poseídos (preparado para compras de tienda / desbloqueos)
+-- Agrega un efecto a la lista de efectos poseídos (wrapper compatible)
 function PlayerService:AddOwnedPointEffect(player: any, effectId: string): (boolean, string?)
-	if not player then
-		return false, "PlayerNotFound"
-	end
 	if not PointEffectDefinitions.IsValid(effectId) then
 		return false, "InvalidEffectId"
 	end
-
-	local owned = self._ownedPointEffects[player]
-	if not owned then
-		owned = { [PointEffectDefinitions.DefaultEffectId] = true }
-		self._ownedPointEffects[player] = owned
-	end
-
-	owned[effectId] = true
-	local pName = if type(player) == "table" and player.Name then player.Name elseif typeof(player) == "Instance" then player.Name else tostring(player)
-	print(string.format("[PlayerService] Jugador '%s' desbloqueó PointEffect: '%s'", pName, effectId))
-	return true, nil
+	return self:AddItem(player, "PointEffects", effectId)
 end
 
 -- Retorna el PointEffect equipado por el jugador (con fallback seguro obligatorio a Basic)
 function PlayerService:GetEquippedPointEffect(player: any): string
-	if not player then
-		return PointEffectDefinitions.DefaultEffectId
-	end
-
-	local equipped = self._equippedPointEffects[player]
-	if not equipped or not PointEffectDefinitions.IsValid(equipped) then
-		return PointEffectDefinitions.DefaultEffectId
-	end
-
-	-- Validar defensivamente que realmente lo posea
-	if not self:HasPointEffect(player, equipped) then
-		return PointEffectDefinitions.DefaultEffectId
-	end
-
-	return equipped
+	return self:GetEquippedItem(player, "PointEffects") or PointEffectDefinitions.DefaultEffectId
 end
 
--- Equipa autoritativamente un PointEffect para el jugador
+-- Equipa autoritativamente un PointEffect para el jugador (wrapper compatible)
 function PlayerService:SetEquippedPointEffect(player: any, effectId: string): (boolean, string?)
-	if not player then
-		return false, "PlayerNotFound"
-	end
-
 	if not PointEffectDefinitions.IsValid(effectId) then
 		warn(string.format("[PlayerService] Intento de equipar effectId inexistente: '%s'", tostring(effectId)))
 		return false, "InvalidEffectId"
 	end
-
-	if not self:HasPointEffect(player, effectId) then
-		warn(string.format("[PlayerService] Jugador no posee el efecto '%s'", effectId))
-		return false, "NotOwned"
-	end
-
-	self._equippedPointEffects[player] = effectId
-	local pName = if type(player) == "table" and player.Name then player.Name elseif typeof(player) == "Instance" then player.Name else tostring(player)
-	print(string.format("[PlayerService] Jugador '%s' equipó PointEffect: '%s'", pName, effectId))
-	return true, nil
+	return self:SetEquippedItem(player, "PointEffects", effectId)
 end
 
 function PlayerService:Start(context)

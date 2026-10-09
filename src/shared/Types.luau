@@ -106,11 +106,21 @@ export type PlayerStats = {
 	eliminations: number,
 }
 
+export type PlayerInventory = {
+	Owned: {
+		[string]: { [string]: boolean },
+	},
+	Equipped: {
+		[string]: string?,
+	},
+}
+
 export type PlayerData = {
 	Coins: number,
 	Wins: number,
 	Losses: number,
 	Kills: number,
+	Inventory: PlayerInventory,
 }
 
 export type PlayerDataRecord = {
@@ -119,6 +129,7 @@ export type PlayerDataRecord = {
 	Wins: number,
 	Losses: number,
 	Kills: number,
+	Inventory: PlayerInventory,
 	LastSaved: number?,
 }
 
@@ -224,15 +235,6 @@ export type ProductProvider = {
 	OnPurchased: (self: ProductProvider, player: Player, product: ProductDefinition) -> (boolean, string?),
 	OnEquipped: (self: ProductProvider, player: Player, product: ProductDefinition) -> (boolean, string?),
 	OnUnequipped: (self: ProductProvider, player: Player, product: ProductDefinition) -> (boolean, string?),
-}
-
-export type PlayerInventory = {
-	Owned: {
-		[string]: { [string]: boolean },
-	},
-	Equipped: {
-		[string]: string?,
-	},
 }
 
 return {}

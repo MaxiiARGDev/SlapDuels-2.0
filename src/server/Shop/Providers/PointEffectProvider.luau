@@ -126,8 +126,8 @@ function PointEffectProvider:CanPurchase(player: Player, product: ProductDefinit
 		return false, "PlayerServiceNotAvailable"
 	end
 
-	-- Si el jugador ya posee este cosmético, se rechaza la recompra
-	if ps:HasPointEffect(player, product.Id) then
+	-- Si el jugador ya posee este cosmético en su inventario genérico, se rechaza la recompra
+	if ps:HasItem(player, "PointEffects", product.Id) then
 		return false, "AlreadyOwned"
 	end
 
@@ -152,13 +152,13 @@ function PointEffectProvider:CanEquip(player: Player, product: ProductDefinition
 		return false, "PlayerServiceNotAvailable"
 	end
 
-	-- Verificar si el jugador posee el efecto
-	if not ps:HasPointEffect(player, product.Id) then
+	-- Verificar si el jugador posee el ítem en su inventario genérico
+	if not ps:HasItem(player, "PointEffects", product.Id) then
 		return false, "NotOwned"
 	end
 
 	-- Verificar si ya está equipado actualmente
-	if ps:GetEquippedPointEffect(player) == product.Id then
+	if ps:GetEquippedItem(player, "PointEffects") == product.Id then
 		return false, "AlreadyEquipped"
 	end
 
@@ -171,7 +171,7 @@ function PointEffectProvider:OnPurchased(player: Player, product: ProductDefinit
 		return false, "PlayerServiceNotAvailable"
 	end
 
-	local ok, err = ps:AddOwnedPointEffect(player, product.Id)
+	local ok, err = ps:AddItem(player, "PointEffects", product.Id)
 	if not ok then
 		return false, err or "FailedToAddOwnership"
 	end
@@ -185,7 +185,7 @@ function PointEffectProvider:OnEquipped(player: Player, product: ProductDefiniti
 		return false, "PlayerServiceNotAvailable"
 	end
 
-	local ok, err = ps:SetEquippedPointEffect(player, product.Id)
+	local ok, err = ps:SetEquippedItem(player, "PointEffects", product.Id)
 	if not ok then
 		return false, err or "FailedToEquip"
 	end
@@ -199,8 +199,8 @@ function PointEffectProvider:OnUnequipped(player: Player, _product: ProductDefin
 		return false, "PlayerServiceNotAvailable"
 	end
 
-	-- Al desequipar un PointEffect, se restablece al efecto base universal (Basic)
-	local ok, err = ps:SetEquippedPointEffect(player, PointEffectDefinitions.DefaultEffectId)
+	-- Al desequipar un PointEffect, se restituye al efecto base universal (Basic)
+	local ok, err = ps:SetEquippedItem(player, "PointEffects", PointEffectDefinitions.DefaultEffectId)
 	if not ok then
 		return false, err or "FailedToUnequip"
 	end

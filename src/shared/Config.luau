@@ -191,7 +191,7 @@ Config.Economy = {
 
 Config.DataStore = {
 	Name = "SlapDuels_PlayerData_v1",
-	CurrentVersion = 1,
+	CurrentVersion = 2,
 	MaxRetries = 3,
 	InitialRetryDelay = 1.0,
 	RetryBackoffMultiplier = 2.0,
