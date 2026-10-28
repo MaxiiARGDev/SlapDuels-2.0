@@ -1,0 +1,139 @@
+{
+  "Date": "2026-10-16",
+  "Studio": {
+    "Config": {
+      "Kill50": true,
+      "DebugFalse": true,
+      "Delay500": true
+    },
+    "Sources": [
+      {
+        "Path": "ServerScriptService.Services.Respawn.CharacterPhysics",
+        "Present": true,
+        "Marker": "SlapDuelsCharacters",
+        "DuplicateSourcesEqual": true,
+        "Count": 1
+      },
+      {
+        "Path": "ServerScriptService.Services.Respawn.ArenaRespawn",
+        "Present": true,
+        "Marker": "CharacterPhysics.Restore",
+        "DuplicateSourcesEqual": true,
+        "Count": 1
+      },
+      {
+        "Path": "ServerScriptService.Services.SpawnService",
+        "Present": true,
+        "Marker": "ReturnToLobby",
+        "DuplicateSourcesEqual": true,
+        "Count": 1
+      },
+      {
+        "Path": "ServerScriptService.Services.EliminationService",
+        "Present": true,
+        "Marker": "FeedbackSnapshot",
+        "DuplicateSourcesEqual": true,
+        "Count": 1
+      },
+      {
+        "Path": "ServerScriptService.Services.DeathEffectService",
+        "Present": true,
+        "Marker": "snapshotEffect",
+        "DuplicateSourcesEqual": true,
+        "Count": 2
+      },
+      {
+        "Path": "ServerScriptService.Services.RagdollService",
+        "Present": true,
+        "Marker": "collider.CollisionGroup",
+        "DuplicateSourcesEqual": true,
+        "Count": 1
+      },
+      {
+        "Path": "StarterPlayer.StarterPlayerScripts.Controllers.DeathFeedbackController",
+        "Present": true,
+        "Marker": "FeedbackReceived",
+        "DuplicateSourcesEqual": true,
+        "Count": 2
+      },
+      {
+        "Path": "StarterPlayer.StarterCharacterScripts.ArenaRespawnGuard",
+        "Present": true,
+        "Marker": "lobbyGeneration",
+        "DuplicateSourcesEqual": true,
+        "Count": 1
+      }
+    ],
+    "IsStudio": true,
+    "IsRunning": false,
+    "DefaultSelf": false,
+    "Mode": "Edit",
+    "CharactersWorld": true,
+    "CharactersSelf": false
+  },
+  "SceneBasePartsPropertiesUnchanged": true,
+  "ProductionConfigSourceUnchanged": true,
+  "SourceChanges": [
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\character\\ArenaRespawnGuard.client.luau",
+      "BeforeSHA256": "4466E06518C6C6F72043B87324F5B6974768FFBEC28C9CE5E39ACA24C104D93A",
+      "AfterSHA256": "88CD022CAB46B0CB193E4C274EA1D28244AAFD06F291A09D7703CA1CF604CBDA"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\DeathFeedbackController.luau",
+      "BeforeSHA256": "736142B97CE6DBFDDE125F2360B5301DF42386D0FCD3147C9E86C09BB4670AC9",
+      "AfterSHA256": "465DEF2959AE4EB035CD23D8ECDA01B5A2FE49E716F061B48D8B2815C9395DE1"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\DeathEffectService.luau",
+      "BeforeSHA256": "19BB9806177CF79069110A7F7B80730DB100B155BAA9BE26EC6B6E5662FFBEA1",
+      "AfterSHA256": "4DB341A5246254D4B183D31C61B5CC6CEA8CFA81CEBCA7C8958B4791BFC6B9AE"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\EliminationService.luau",
+      "BeforeSHA256": "9D5CB00224D422C5A9F3DB46481A0615571D3CB4FB9E8EE7C0C176403463956D",
+      "AfterSHA256": "37F0A38FFB1C8B3F1B38817EAE446A077220CA8B21D1FEA275AE9403241B0FF2"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\RagdollService.luau",
+      "BeforeSHA256": "D2CE50A60A6838374CC26098F2EC4046EF413B9D6DB625FEFFB818C315C8ECE5",
+      "AfterSHA256": "5BC4C9F4C9C6B7AB9C99BAE85384BD13B6BE1CF44119E5974DD7B575C1F30E2F"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\SpawnService.luau",
+      "BeforeSHA256": "0298B8E9A90175BC5C557AD13F3D7DFE0AF8D1FA4C57D85C38619655D8E6B137",
+      "AfterSHA256": "0EC8B3619BD57D39A35DAC8881159807AB733E0841CEFE9829D79A2F96E764DC"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Respawn\\ArenaRespawn.luau",
+      "BeforeSHA256": "60D11A054B0EAFCC0FC7B109F799CBF0FDA07D1ADEBBDABE87F6A0E46B93A598",
+      "AfterSHA256": "ED94FA0B0E5CBB786D3215A8F2AC5A5CB9281AA0B58C7BA1BAC1C0566A01B5C8"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Respawn\\CharacterPhysics.luau",
+      "BeforeSHA256": null,
+      "AfterSHA256": "303E65D3CDC1BA78C98B712A47B3DEA44C0E0285B000766A63E597DD8AE006B7"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\Types.luau",
+      "BeforeSHA256": "1EB52C029D738B5C9D59803CCDD7B9C35738652B820530FF88694368214DE176",
+      "AfterSHA256": "2B7543562025472639EB667C05861A3A9726EAC97FF39A3010E4B958973D51C2"
+    }
+  ],
+  "DeletedSources": [],
+  "FunctionalTests": "NOT_RUN",
+  "IsolatedSuite": "PREPARED_NOT_RUN",
+  "Acceptance": "PENDING_DEVELOPER",
+  "Build": "PASS",
+  "DiffCheck": "PASS",
+  "Restrictions": {
+    "StartedPlay": false,
+    "StartedRun": false,
+    "StartedServer": false,
+    "ControlledPlayers": false,
+    "CloudWrites": false,
+    "Published": false,
+    "Committed": false,
+    "Pushed": false
+  }
+}

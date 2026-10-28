@@ -1,0 +1,115 @@
+{
+  "Installation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"SoundIdsAssigned\":false,\"Prompt\":\"Workspace.CrateStands.MainCrateStand.InteractionPart.ProximityPrompt\",\"Edit\":true,\"Stand\":\"Workspace.CrateStands.MainCrateStand\",\"CreatedInstances\":72,\"BasePosition\":\"-46.561256408691406, 16.079307556152344, 197.22760009765625\",\"HUD\":\"StarterGui.CrateOpeningHUD\"}"
+      }
+    ],
+    "isError": false
+  },
+  "Assets": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"Duplicates\":false,\"ReferencesValid\":true,\"Edit\":true,\"NoPlay\":true,\"CheckedProperties\":370,\"CheckedInstances\":72,\"UnassignedSounds\":12,\"Parts\":18}"
+      }
+    ],
+    "isError": false
+  },
+  "Sources": [
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"7b189661c047583675eeae5dae12272c8dee754aeb3a147efa7bde6862303410\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.OpeningConfig\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"c9962f0d2ef2fa06b5e28568ad0f9070c119cfc0a8bd25674bc5f9391ff593f7\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.OpeningTimeline\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"0ad7428fa449268f955ffaa74d9ed22880c8ee6005218d44b170165fda516d37\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.CrateShopView\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"546f3ddd20f1b9c4cb41be31556280c2558627531d658b34bfa601faeb0c2db6\",\"Path\":\"ServerScriptService.Services.Crates.StandOpeningLedger\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"c450625462cff6a28a8ab379670baf08f2b951b782e88fbd11b46e716d3d3d5c\",\"Path\":\"ServerScriptService.Services.Crates.StandOpeningService\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"9a858109cca22f6b3e4438db3d5ebb3388523fedc5e66ac625ab8c8650bd7605\",\"Path\":\"ServerScriptService.Services.CrateService\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"ff44506bf7d5e2e9feb57a55eecaa9f331df3fb161fca065d01be5eaa0f315c6\",\"Path\":\"StarterPlayer.StarterPlayerScripts.CrateOpening.CameraLease\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"2362c678c6a52826544a4b3dbeeaa87b3a80045bb6833a3d07c43df27b8f54b9\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.CrateStandCinematicController\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"3686cc089c87577a86db30b2b5a778a22d7d12ee2faf3d346b7125f77ebe0913\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.CrateController\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"82577d5b853708a96877f48829d3e033265d7b7b05196935a863396cde06a872\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.ShopController\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    }
+  ],
+  "Gameplay": "NOT RUN",
+  "Audio": "SoundIds unassigned; NOT RUN"
+}
+

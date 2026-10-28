@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "CoinPackages",
+    "Path": "src/shared/PremiumShop/Catalog/CoinPackages.luau",
+    "BeforeHash": "7a72fc838cc2f0b72e7fe74f6719a42ec5f3f687c7bd2653b8687ae6477ec90c",
+    "Hash": "df99a959c4cf18eb7a8a808efba0dcfb3b62ca3a5699406173e45c8fb7c4c323"
+  },
+  {
+    "Name": "PremiumShopController",
+    "Path": "src/client/Controllers/PremiumShopController.luau",
+    "BeforeHash": "1ce0e5aaf9a9959f8ea28e05d15e16998e3f107b8169b9d893731546b2e8f921",
+    "Hash": "130fadf6715eb8a48b54b61efaab05535a75c9ec64549a43270305d5fb9f84f2"
+  }
+]

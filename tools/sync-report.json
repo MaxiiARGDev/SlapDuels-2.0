@@ -1,0 +1,203 @@
+{
+  "totalReceived": 258,
+  "identicalCount": 220,
+  "modifiedCount": 0,
+  "newInStudioCount": 38,
+  "missingFromStudioCount": 1,
+  "modified": [],
+  "newInStudio": [
+    {
+      "path": "ServerScriptService/GlobalAnnounce",
+      "className": "Script",
+      "lines": 120
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/WindController",
+      "className": "LocalScript",
+      "lines": 131
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/WindController/WindLines",
+      "className": "ModuleScript",
+      "lines": 147
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/WindController/WindShake",
+      "className": "ModuleScript",
+      "lines": 316
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/WindController/WindShake/Settings",
+      "className": "ModuleScript",
+      "lines": 51
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/WindController/WindShake/Octree",
+      "className": "ModuleScript",
+      "lines": 276
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/WindController/WindShake/Octree/OctreeNode",
+      "className": "ModuleScript",
+      "lines": 178
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/WindController/WindShake/Octree/OctreeRegionUtils",
+      "className": "ModuleScript",
+      "lines": 74
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/ZoneShopMusicPause",
+      "className": "LocalScript",
+      "lines": 88
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GroupPromptTrigger/AutomaticPrompt",
+      "className": "LocalScript",
+      "lines": 8
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GroupPromptTrigger/ChatCommand",
+      "className": "LocalScript",
+      "lines": 12
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GroupPromptTrigger/PartTouch",
+      "className": "LocalScript",
+      "lines": 22
+    },
+    {
+      "path": "StarterPlayer/StarterPlayerScripts/GroupPromptTrigger/ProximityPrompt",
+      "className": "LocalScript",
+      "lines": 13
+    },
+    {
+      "path": "ReplicatedStorage/DialogModule",
+      "className": "ModuleScript",
+      "lines": 330
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/RewardTemplate/CardController",
+      "className": "LocalScript",
+      "lines": 192
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/MainFrame/Rewards/Stage_1/CardController",
+      "className": "LocalScript",
+      "lines": 174
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/MainFrame/Rewards/Stage_2/CardController",
+      "className": "LocalScript",
+      "lines": 174
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/MainFrame/Rewards/Stage_3/CardController",
+      "className": "LocalScript",
+      "lines": 174
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/MainFrame/Rewards/Stage_4/CardController",
+      "className": "LocalScript",
+      "lines": 174
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/MainFrame/Rewards/Stage_5/CardController",
+      "className": "LocalScript",
+      "lines": 174
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/MainFrame/Rewards/Stage_6/CardController",
+      "className": "LocalScript",
+      "lines": 174
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/MainFrame/Rewards/Stage_7/CardController",
+      "className": "LocalScript",
+      "lines": 174
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/MainFrame/BattlePassVisuals",
+      "className": "LocalScript",
+      "lines": 192
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/FramewispTextScaler",
+      "className": "LocalScript",
+      "lines": 666
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/FramewispSpin",
+      "className": "LocalScript",
+      "lines": 118
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/FramewispJuice",
+      "className": "LocalScript",
+      "lines": 975
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/FramewispCard3D",
+      "className": "LocalScript",
+      "lines": 359
+    },
+    {
+      "path": "StarterGui/ProgressionHUD/FramewispButtonFX",
+      "className": "LocalScript",
+      "lines": 768
+    },
+    {
+      "path": "StarterGui/MatchHUD/LastPointFrame/Title/ScriptAnim8",
+      "className": "LocalScript",
+      "lines": 52
+    },
+    {
+      "path": "StarterGui/PlayerHUD/FramewispFlow",
+      "className": "LocalScript",
+      "lines": 842
+    },
+    {
+      "path": "StarterGui/PlayerHUD/FramewispJuice",
+      "className": "LocalScript",
+      "lines": 975
+    },
+    {
+      "path": "StarterGui/PlayerHUD/FramewispTextScaler",
+      "className": "LocalScript",
+      "lines": 666
+    },
+    {
+      "path": "StarterGui/PlayerHUD/FramewispButtonFX",
+      "className": "LocalScript",
+      "lines": 768
+    },
+    {
+      "path": "StarterGui/ShopHUD/UIEffects",
+      "className": "LocalScript",
+      "lines": 217
+    },
+    {
+      "path": "StarterGui/ShopHUD/MainFrame/NeonShopMotion",
+      "className": "LocalScript",
+      "lines": 89
+    },
+    {
+      "path": "StarterGui/dialog/dialogResponses/template/text/update size",
+      "className": "LocalScript",
+      "lines": 18
+    },
+    {
+      "path": "StarterGui/Messages/MessageHandler",
+      "className": "LocalScript",
+      "lines": 69
+    },
+    {
+      "path": "StarterGui/ModernShopHUD/ShopInteractions",
+      "className": "LocalScript",
+      "lines": 271
+    }
+  ],
+  "missingFromStudio": [
+    "src/ui/ProgressionButtonScale.client.luau"
+  ]
+}

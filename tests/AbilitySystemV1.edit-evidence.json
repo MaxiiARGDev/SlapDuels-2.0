@@ -1,0 +1,195 @@
+{
+  "ShopTab": "StarterGui.ShopHUD.MainFrame.Tabs.AbilitiesTab",
+  "PersistenceEnvironment": "Studio",
+  "IsRunning": false,
+  "DuplicatePaths": [],
+  "WritesToCloud": false,
+  "Effects": [
+    {
+      "SoundPending": true,
+      "Path": "ReplicatedStorage.AbilityEffects.StrongSlap",
+      "Descendants": 8
+    },
+    {
+      "SoundPending": true,
+      "Path": "ReplicatedStorage.AbilityEffects.Dash",
+      "Descendants": 7
+    },
+    {
+      "SoundPending": true,
+      "Path": "ReplicatedStorage.AbilityEffects.DevilSpeed",
+      "Descendants": 7
+    },
+    {
+      "SoundPending": true,
+      "Path": "ReplicatedStorage.AbilityEffects.Invisible",
+      "Descendants": 7
+    },
+    {
+      "SoundPending": true,
+      "Path": "ReplicatedStorage.AbilityEffects.AirJumps",
+      "Descendants": 7
+    }
+  ],
+  "Sources": [
+    {
+      "SHA256": "0be83df4246876341dc3b9e0b65dab9ce543109484cab03d46d8a940ebfde127",
+      "File": "src/server/Bootstrap.server.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Bootstrap"
+    },
+    {
+      "SHA256": "4f933eb46bd9297e4a2e29725b3f3081453095fc96c39975feada8de8c523267",
+      "File": "src/shared/Types.luau",
+      "Matches": true,
+      "Path": "ReplicatedStorage.Shared.Types"
+    },
+    {
+      "SHA256": "866322f383d65e81ff4157d806151fac6554244920093983a75f4d4b1fda3e5e",
+      "File": "src/client/Controllers/ShopController.luau",
+      "Matches": true,
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.ShopController"
+    },
+    {
+      "SHA256": "d51bf993907ba9aec949c565d0fcf2b8e54bc5352c5af7637c9e6daf41b5e759",
+      "File": "src/server/Services/CombatService.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Services.CombatService"
+    },
+    {
+      "SHA256": "050c5ab47cd2e39e842df8f4c43fe25173d600c23b147e3a4b93de75ff1a90c3",
+      "File": "src/server/Services/EliminationService.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Services.EliminationService"
+    },
+    {
+      "SHA256": "e457aab19161e1fde8bcad720df6fcdf519103222aa55918f0e1b200e9b7e91a",
+      "File": "src/server/Services/PlayerDataService.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Services.PlayerDataService"
+    },
+    {
+      "SHA256": "3fc4d954e3b18b476a22c0c24840083b5a0f27a5034a5b03a747783bb748f7d5",
+      "File": "src/server/Services/PlayerService.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Services.PlayerService"
+    },
+    {
+      "SHA256": "25aa9e76fe7e726557b5d9eed5a6412318caabf06fd662102fdc8657f148a1f1",
+      "File": "src/server/Services/RagdollService.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Services.RagdollService"
+    },
+    {
+      "SHA256": "58d98abb000cedac55155564542a25ca74f1aa25c51c1450e21e6a1bef0c1dea",
+      "File": "src/server/Services/RoundService.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Services.RoundService"
+    },
+    {
+      "SHA256": "f3251ef3e1f15d03d56e6a78c7f8c6410371d5aaf46421d244de440414e809b6",
+      "File": "src/server/Services/ShopService.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Services.ShopService"
+    },
+    {
+      "SHA256": "cf75ef9c1cb2ca05de4aa74018836108a40a7fd330223fa5ab5106c8c54d505c",
+      "File": "src/server/Services/SlapService.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Services.SlapService"
+    },
+    {
+      "SHA256": "f5eaa557268b58d0e766da2e07b334a6da1183abcf351bc275bfc2cee515b91c",
+      "File": "src/server/Shop/ProfilePurchase.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Shop.ProfilePurchase"
+    },
+    {
+      "SHA256": "3405acb7832c7873a04cbb3ef6075d23c8ff48af9799de64f708c94a1e8e7941",
+      "File": "src/server/Shop/ShopRegistry.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Shop.ShopRegistry"
+    },
+    {
+      "SHA256": "8975288f239cef0405fb17ff9c0fc2c26737aeed1d102340ee971738df782082",
+      "File": "src/server/Abilities/AirJumpsAbility.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Abilities.AirJumpsAbility"
+    },
+    {
+      "SHA256": "967d263135713e1bd5fb4173139d1e2b0a730fa84925bac9f564a3c5f3ca0f13",
+      "File": "src/server/Abilities/DashAbility.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Abilities.DashAbility"
+    },
+    {
+      "SHA256": "fa3412a07a59608466f64a1e555a9dc3c775e93de75981c395bc0f239b4e88c7",
+      "File": "src/server/Abilities/DevilSpeedAbility.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Abilities.DevilSpeedAbility"
+    },
+    {
+      "SHA256": "3e684ecec1bf420bcaab0819a3e4cdac4e135d82d87c06eb2b67727d642dea63",
+      "File": "src/server/Abilities/InvisibilityAbility.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Abilities.InvisibilityAbility"
+    },
+    {
+      "SHA256": "7f7dd28a135ee570c8d4360a890d647857f57407310251b6bb6994ca6f23e728",
+      "File": "src/server/Abilities/MovementGuard.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Abilities.MovementGuard"
+    },
+    {
+      "SHA256": "78791aa7c6b5cf6ae97214f78072dc9a8971f76adc0fb68405c71d85acc8efcb",
+      "File": "src/server/Abilities/StrongSlapAbility.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Abilities.StrongSlapAbility"
+    },
+    {
+      "SHA256": "0f877737d4548896940229d7528d7c4d3589ace32289f988dd0ea48a9605e14c",
+      "File": "src/client/Abilities/AbilityPresentation.luau",
+      "Matches": true,
+      "Path": "StarterPlayer.StarterPlayerScripts.Abilities.AbilityPresentation"
+    },
+    {
+      "SHA256": "4a2a5dd27d2a67efdccfc7a4951cc6d028777c1969783db85f3b5ab02cf93040",
+      "File": "src/client/Abilities/AbilitySelection.luau",
+      "Matches": true,
+      "Path": "StarterPlayer.StarterPlayerScripts.Abilities.AbilitySelection"
+    },
+    {
+      "SHA256": "0279dc2f51fb49a3a1e3948337822ee8b5f74e145696169244391e53d4ea38c0",
+      "File": "src/server/Services/AbilityService.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Services.AbilityService"
+    },
+    {
+      "SHA256": "f9c857b03fac4ab461b6554c1481a21bf0a28df3379e2f5ec0dacabf54906fe1",
+      "File": "src/shared/AbilityDefinitions.luau",
+      "Matches": true,
+      "Path": "ReplicatedStorage.Shared.AbilityDefinitions"
+    },
+    {
+      "SHA256": "71824c1e968a3c4fc5b8f2aadc07f07a5be00f3e10f08f5b9f0b9903a2f3b750",
+      "File": "src/server/Shop/Providers/AbilityProvider.luau",
+      "Matches": true,
+      "Path": "ServerScriptService.Shop.Providers.AbilityProvider"
+    },
+    {
+      "SHA256": "8a061c9aea8e8fd678447be8e1caf2875bcc5f7e72fb37aca709ef5720241bb1",
+      "File": "src/client/Controllers/AbilityController.luau",
+      "Matches": true,
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.AbilityController"
+    }
+  ],
+  "IsStudio": true,
+  "Recovery": "ServerStorage._AbilityV1Backups",
+  "FunctionalTests": "NOT RUN",
+  "PersistenceProvider": "InMemory",
+  "HUD": {
+    "Path": "StarterGui.AbilityHUD",
+    "Descendants": 23,
+    "ButtonPosition": "{1, -28}, {1, -175}"
+  }
+}

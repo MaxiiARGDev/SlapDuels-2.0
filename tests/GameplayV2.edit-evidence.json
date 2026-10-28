@@ -1,0 +1,107 @@
+{
+  "Template": {
+    "Enabled": false,
+    "Path": "ReplicatedStorage.UIAssets.SuddenDeathAssets.RedCorrection"
+  },
+  "IsRunning": false,
+  "SuddenHUD": {
+    "Path": "StarterGui.SuddenDeathHUD",
+    "NoticeVisible": false,
+    "Descendants": 2
+  },
+  "ContractTests": "PREPARED_NOT_RUN",
+  "Gameplay": "NOT_RUN",
+  "Sources": [
+    {
+      "Bytes": 82778,
+      "Path": "ServerScriptService.Services.RoundService"
+    },
+    {
+      "Bytes": 31728,
+      "Path": "ServerScriptService.Services.ScoreService"
+    },
+    {
+      "Bytes": 32551,
+      "Path": "ServerScriptService.Services.EliminationService"
+    },
+    {
+      "Bytes": 9163,
+      "Path": "ServerScriptService.Services.CombatService"
+    },
+    {
+      "Bytes": 30351,
+      "Path": "ServerScriptService.Services.SlapService"
+    },
+    {
+      "Bytes": 18891,
+      "Path": "ServerScriptService.Services.RagdollService"
+    },
+    {
+      "Bytes": 48992,
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.MatchController"
+    },
+    {
+      "Bytes": 20790,
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.MusicController"
+    },
+    {
+      "Bytes": 6082,
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SlapController"
+    },
+    {
+      "Bytes": 3817,
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SuddenDeathController"
+    }
+  ],
+  "IsStudio": true,
+  "Music": {
+    "SoundId": "",
+    "Path": "SoundService.Music.SuddenDeath",
+    "AudioStatus": "BLOCKED"
+  },
+  "Timer": "3:00",
+  "Mode": "Edit",
+  "Geometry": [
+    {
+      "Size": "334, 5, 248",
+      "Path": "Workspace.MapaPlantilla.Geometry.KillPart",
+      "CanTouch": true,
+      "Position": "1018.5, -25, 500"
+    },
+    {
+      "Size": "9, 11, 14",
+      "Path": "Workspace.MapaPlantilla.ZoneWin.RedWin",
+      "CanTouch": true,
+      "Position": "941.4442138671875, 95.15524291992188, 507.74285888671875"
+    },
+    {
+      "Size": "8.967330932617188, 11, 13.999979019165039",
+      "Path": "Workspace.MapaPlantilla.ZoneWin.BlueWin",
+      "CanTouch": true,
+      "Position": "1091.4609375, 95.15524291992188, 506.75140380859375"
+    },
+    {
+      "Size": "334, 5, 248",
+      "Path": "ServerStorage.Maps.Levels.Geometry.KillPart",
+      "CanTouch": true,
+      "Position": "161.5, -25, 805"
+    },
+    {
+      "Size": "9, 11, 14",
+      "Path": "ServerStorage.Maps.Levels.ZoneWin.RedWin",
+      "CanTouch": true,
+      "Position": "158.57318115234375, 4.5, 805"
+    },
+    {
+      "Size": "8.967330932617188, 11, 13.999979019165039",
+      "Path": "ServerStorage.Maps.Levels.ZoneWin.BlueWin",
+      "CanTouch": true,
+      "Position": "208.9503173828125, 4.101390838623047, 804.008544921875"
+    }
+  ],
+  "HUD": {
+    "Path": "StarterGui.MatchHUD",
+    "BackupDescendants": 76,
+    "Descendants": 76
+  }
+}

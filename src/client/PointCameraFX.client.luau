@@ -81,6 +81,7 @@ end
 local trauma = 0
 local seed = math.random() * 100
 RunService:BindToRenderStep("PointCameraFX", Enum.RenderPriority.Camera.Value + 1, function(dt: number)
+	if player:GetAttribute("ResultsSessionId") ~= nil and player:GetAttribute("FinalGoalSessionId") == nil then trauma = 0; return end
 	if trauma <= 0 then return end
 	trauma = math.max(0, trauma - dt * CONFIG.ShakeDecay)
 	local shake = trauma * trauma
@@ -99,12 +100,17 @@ end)
 -- Golpe de FOV
 local fovBase: number? = nil
 local function fovKick(amount: number)
+	local sourceSessionId = player:GetAttribute("MatchId")
 	local cam = workspace.CurrentCamera
 	if not cam then return end
 	if fovBase == nil then fovBase = cam.FieldOfView end
 	local base = fovBase :: number
 	TweenService:Create(cam, TweenInfo.new(0.06, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { FieldOfView = base + amount }):Play()
 	task.delay(0.07, function()
+		if player:GetAttribute("MatchId") ~= sourceSessionId or (player:GetAttribute("ResultsSessionId") ~= nil and player:GetAttribute("FinalGoalSessionId") ~= sourceSessionId) then
+			if fovBase then cam.FieldOfView = fovBase; fovBase = nil end
+			return
+		end
 		local c = workspace.CurrentCamera
 		if not c then return end
 		local back = TweenService:Create(c, TweenInfo.new(0.55, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), { FieldOfView = base })
@@ -123,6 +129,13 @@ end
 
 local function onPoint(data: any)
 	if typeof(data) ~= "table" then return end
+	local sessionId = data.SessionId or data.MatchId
+	if type(sessionId) ~= "string" or player:GetAttribute("MatchId") ~= sessionId then return end
+	local function allowed()
+		return player:GetAttribute("MatchId") == sessionId and (player:GetAttribute("ResultsSessionId") == nil
+			or (data.VisualOnly == true and player:GetAttribute("FinalGoalSessionId") == sessionId))
+	end
+	if not allowed() then return end
 	local pos = data.ScoringZonePosition
 	if typeof(pos) ~= "Vector3" then return end
 
@@ -137,6 +150,7 @@ local function onPoint(data: any)
 	local strength = CONFIG.FlashStrength * factor * (if isFinal then CONFIG.FlashFinalBoost else 1)
 	pulse(Color3.new(1, 1, 1), strength, 0.34)
 	task.delay(0.2, function()
+		if not allowed() then return end
 		pulse(Color3.fromRGB(255, 232, 160), strength * 0.55, 0.45)
 	end)
 

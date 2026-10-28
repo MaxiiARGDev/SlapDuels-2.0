@@ -1,0 +1,24 @@
+{
+  "SourceSync": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"1\":{\"Hash\":\"d517d956d46f24d243bec87811b5b341e1dd39fb252b9f7d0e121d326a8fe62d\",\"Path\":\"ReplicatedStorage.Shared.Config\"},\"3\":{\"Hash\":\"9f023892a84c6972b6e5f7560eba4fff2a2c355ca7575a812256d65c92316f2c\",\"Path\":\"ServerScriptService.Services.SpawnService\"},\"2\":{\"Hash\":\"400e33a2836b65d3ba87e28ae2ebaf750dba8c5eb17b0b4f50927e4281ed3185\",\"Path\":\"ServerScriptService.Services.MatchInstanceService\"},\"5\":{\"Hash\":\"e47e0ac6053f5ba6c591d7d453f6531dd4bd2ed76c1517e6ae10216ce1acbf89\",\"Path\":\"ServerScriptService.Services.TeamSpawnResolver\"},\"4\":{\"Hash\":\"e28cf153ebbe8716b0c6c72527054b3e6f7417a5959f03aba43fb86d0d4e68af\",\"Path\":\"ServerScriptService.Services.RoundService\"}}"
+      }
+    ],
+    "isError": false
+  },
+  "PhysicalVerification": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"TemplateCapacity\":4,\"PersistenceEnvironment\":\"Studio\",\"Edit\":true,\"WritesToCloud\":false,\"OriginalMaps\":{\"1\":{\"NewContract\":true,\"Hash\":\"a1da792e7d79b65b85f78fb2919aa4f35da996d504698b6e97f00c1bcd0aceb2\"}},\"Spawns\":{\"1\":{\"Path\":\"ServerStorage.Maps.Levels.RedTeam.Spawn1\",\"CanCollide\":false,\"Anchored\":true,\"CFrame\":{\"1\":-137.7484893798828,\"3\":1058.012451171875,\"2\":13.1019926071167,\"5\":0,\"4\":-1,\"7\":0,\"6\":0,\"9\":0,\"8\":1,\"12\":-1,\"11\":0,\"10\":0},\"Transparency\":1},\"8\":{\"Path\":\"ServerStorage.Maps.Levels.BlueTeam.Spawn4\",\"CanCollide\":false,\"Anchored\":true,\"CFrame\":{\"1\":-144.66455078125,\"3\":1248.012451171875,\"2\":13.1019926071167,\"5\":0,\"4\":1,\"7\":0,\"6\":0,\"9\":0,\"8\":1,\"12\":1,\"11\":0,\"10\":0},\"Transparency\":1},\"3\":{\"Path\":\"ServerStorage.Maps.Levels.RedTeam.Spawn3\",\"CanCollide\":false,\"Anchored\":true,\"CFrame\":{\"1\":-144.7484893798828,\"3\":1054.012451171875,\"2\":13.1019926071167,\"5\":0,\"4\":-1,\"7\":0,\"6\":0,\"9\":0,\"8\":1,\"12\":-1,\"11\":0,\"10\":0},\"Transparency\":1},\"2\":{\"Path\":\"ServerStorage.Maps.Levels.RedTeam.Spawn2\",\"CanCollide\":false,\"Anchored\":true,\"CFrame\":{\"1\":-144.7484893798828,\"3\":1058.012451171875,\"2\":13.1019926071167,\"5\":0,\"4\":-1,\"7\":0,\"6\":0,\"9\":0,\"8\":1,\"12\":-1,\"11\":0,\"10\":0},\"Transparency\":1},\"5\":{\"Path\":\"ServerStorage.Maps.Levels.BlueTeam.Spawn1\",\"CanCollide\":false,\"Anchored\":true,\"CFrame\":{\"1\":-144.66455078125,\"3\":1244.012451171875,\"2\":13.1019926071167,\"5\":0,\"4\":1,\"7\":0,\"6\":0,\"9\":0,\"8\":1,\"12\":1,\"11\":0,\"10\":0},\"Transparency\":1},\"4\":{\"Path\":\"ServerStorage.Maps.Levels.RedTeam.Spawn4\",\"CanCollide\":false,\"Anchored\":true,\"CFrame\":{\"1\":-137.7484893798828,\"3\":1054.012451171875,\"2\":13.1019926071167,\"5\":0,\"4\":-1,\"7\":0,\"6\":0,\"9\":0,\"8\":1,\"12\":-1,\"11\":0,\"10\":0},\"Transparency\":1},\"7\":{\"Path\":\"ServerStorage.Maps.Levels.BlueTeam.Spawn3\",\"CanCollide\":false,\"Anchored\":true,\"CFrame\":{\"1\":-137.66455078125,\"3\":1248.012451171875,\"2\":13.1019926071167,\"5\":0,\"4\":1,\"7\":0,\"6\":0,\"9\":0,\"8\":1,\"12\":1,\"11\":0,\"10\":0},\"Transparency\":1},\"6\":{\"Path\":\"ServerStorage.Maps.Levels.BlueTeam.Spawn2\",\"CanCollide\":false,\"Anchored\":true,\"CFrame\":{\"1\":-137.66455078125,\"3\":1244.012451171875,\"2\":13.1019926071167,\"5\":0,\"4\":1,\"7\":0,\"6\":0,\"9\":0,\"8\":1,\"12\":1,\"11\":0,\"10\":0},\"Transparency\":1}},\"PersistenceProvider\":\"InMemory\",\"IsRunning\":false,\"ActiveMatches\":0,\"ZoneAttributes\":{\"Secuencia\":\"2, 8, 7\",\"MaxPlayersPerTeam\":2,\"TotalPlayers\":4,\"TiempoTransicion\":0.6,\"Mode\":\"2v2\",\"DuracionFase\":4,\"TeamSize\":2}}"
+      }
+    ],
+    "isError": false
+  },
+  "MapSourceBackupHash": "a1da792e7d79b65b85f78fb2919aa4f35da996d504698b6e97f00c1bcd0aceb2",
+  "SourceUntouched": true,
+  "PlayStarted": false,
+  "RuntimeGameplayValidated": false
+}

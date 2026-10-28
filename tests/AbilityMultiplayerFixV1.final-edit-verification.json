@@ -1,0 +1,28 @@
+{
+  "Date": "2026-10-17",
+  "Verification": [
+    {
+      "PersistenceProvider": "InMemory",
+      "IsRunning": false,
+      "WritesToCloud": false,
+      "Mode": "Edit",
+      "PersistenceEnvironment": "Studio",
+      "Expected": 98,
+      "Remotes": {
+        "AbilityState": {
+          "Count": 1,
+          "Class": "RemoteEvent"
+        },
+        "AbilityRequest": {
+          "Count": 1,
+          "Class": "RemoteEvent"
+        }
+      },
+      "DiagnosticsEnabled": false,
+      "EditorMatches": 98,
+      "SourceMatches": 98,
+      "ActiveMatches": 0,
+      "Build": "AbilityMultiplayerFixV1"
+    }
+  ]
+}

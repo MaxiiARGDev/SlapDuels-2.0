@@ -1,0 +1,8 @@
+{
+  "hashes.before.json": "4b1638b8cf78f14c2710fa05b9d8958fd52da5a1bb98bd9d72dd62238194f0c1",
+  "native.before.json": "c2833561fb6146da4647783dde333f3d7b96757f5ba07a231353b621d8b733a6",
+  "PlayerProfileHUD.rbxm": "c8cd041961e0e2cd88d767b35a9a5b3601069b0fe175c857a9f455c24b4386a9",
+  "PlayerProfileHUD.rbxm.b64": "2dbbdab593d112916c5e72d724300033c0ca9dcd59b512529dd6345c8ebabd0e",
+  "src/ui/PlayerProfileHUD.project.json": "0cada6d0ca4b780bb49723b90e7acd8161b5c2f3a80cf937dd41280c5c4a2133",
+  "src/client/Controllers/SocialController.luau": "e449c813b59622a308056a748b64dd72139afddae1104baba50d31c598d9960d"
+}

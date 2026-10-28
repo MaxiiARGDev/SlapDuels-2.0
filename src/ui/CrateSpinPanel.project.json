@@ -1,0 +1,356 @@
+{
+  "name": "CrateSpinPanel",
+  "tree": {
+    "$className": "Frame",
+    "$properties": {
+      "AnchorPoint": {
+        "Vector2": [
+          0.5,
+          0.5
+        ]
+      },
+      "Position": {
+        "UDim2": [
+          [
+            0.5,
+            0
+          ],
+          [
+            0.5,
+            0
+          ]
+        ]
+      },
+      "Size": {
+        "UDim2": [
+          [
+            0.94,
+            0
+          ],
+          [
+            0,
+            320
+          ]
+        ]
+      },
+      "Visible": false,
+      "BackgroundColor3": {
+        "Color3": [
+          0.05,
+          0.12,
+          0.32
+        ]
+      },
+      "ZIndex": 70
+    },
+    "UICorner": {
+      "$className": "UICorner",
+      "$properties": {}
+    },
+    "UISizeConstraint": {
+      "$className": "UISizeConstraint",
+      "$properties": {
+        "MaxSize": {
+          "Vector2": [
+            860,
+            320
+          ]
+        }
+      }
+    },
+    "Window": {
+      "$className": "Frame",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              48
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              1,
+              -32
+            ],
+            [
+              0,
+              140
+            ]
+          ]
+        },
+        "ClipsDescendants": true,
+        "BackgroundColor3": {
+          "Color3": [
+            0.08,
+            0.1,
+            0.15
+          ]
+        },
+        "ZIndex": 71
+      },
+      "RollingStrip": {
+        "$className": "Frame",
+        "$properties": {
+          "Size": {
+            "UDim2": [
+              [
+                0,
+                6300
+              ],
+              [
+                0,
+                140
+              ]
+            ]
+          },
+          "BackgroundTransparency": 1,
+          "ZIndex": 72
+        },
+        "RewardTemplate": {
+          "$className": "Frame",
+          "$properties": {
+            "Position": {
+              "UDim2": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  0,
+                  132
+                ],
+                [
+                  0,
+                  140
+                ]
+              ]
+            },
+            "BorderSizePixel": 0,
+            "Visible": false,
+            "BackgroundColor3": {
+              "Color3": [
+                0.12,
+                0.15,
+                0.24
+              ]
+            },
+            "ZIndex": 72
+          },
+          "Title": {
+            "$className": "TextLabel",
+            "$properties": {
+              "Position": {
+                "UDim2": [
+                  [
+                    0,
+                    4
+                  ],
+                  [
+                    0,
+                    38
+                  ]
+                ]
+              },
+              "Size": {
+                "UDim2": [
+                  [
+                    0,
+                    124
+                  ],
+                  [
+                    0,
+                    62
+                  ]
+                ]
+              },
+              "BorderSizePixel": 0,
+              "Text": "RECOMPENSA",
+              "TextSize": 16,
+              "TextColor3": {
+                "Color3": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "BackgroundColor3": {
+                "Color3": [
+                  0.08,
+                  0.1,
+                  0.15
+                ]
+              },
+              "TextWrapped": true,
+              "ZIndex": 73
+            }
+          },
+          "UICorner": {
+            "$className": "UICorner",
+            "$properties": {}
+          }
+        }
+      }
+    },
+    "Indicator": {
+      "$className": "Frame",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              0.5,
+              -2
+            ],
+            [
+              0,
+              40
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              158
+            ]
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            1,
+            0.8,
+            0.2
+          ]
+        },
+        "BorderSizePixel": 0,
+        "ZIndex": 76
+      }
+    },
+    "Result": {
+      "$className": "TextLabel",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              204
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              1,
+              -32
+            ],
+            [
+              0,
+              44
+            ]
+          ]
+        },
+        "BorderSizePixel": 0,
+        "Text": "Abriendo…",
+        "TextSize": 16,
+        "TextColor3": {
+          "Color3": [
+            1,
+            1,
+            1
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.08,
+            0.1,
+            0.15
+          ]
+        },
+        "TextWrapped": true,
+        "ZIndex": 75
+      }
+    },
+    "Close": {
+      "$className": "TextButton",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              262
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              0,
+              160
+            ],
+            [
+              0,
+              40
+            ]
+          ]
+        },
+        "BorderSizePixel": 0,
+        "Text": "CERRAR",
+        "TextSize": 16,
+        "TextColor3": {
+          "Color3": [
+            1,
+            1,
+            1
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.08,
+            0.1,
+            0.15
+          ]
+        },
+        "TextWrapped": true,
+        "ZIndex": 75
+      }
+    },
+    "Tick": {
+      "$className": "Sound",
+      "$properties": {
+        "Volume": 0.25
+      }
+    },
+    "Reveal": {
+      "$className": "Sound",
+      "$properties": {
+        "Volume": 0.4
+      }
+    }
+  }
+}

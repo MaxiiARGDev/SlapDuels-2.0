@@ -1,0 +1,10 @@
+{
+  "Name": "CrateRevealV25",
+  "Descendants": 44,
+  "Hash": "4eb56ed7fe1fc005fec60fee2a5bd385496b65dd685ebd6908c97a3e1ae46a73",
+  "PreservedShopHUD": {
+    "Descendants": 200,
+    "Hash": "3520d1d2e9d1ce541f59f11c99bac1a4b522c17625f870e7aa76357e4503fe02",
+    "Origin": "Captured current Edit design; not overwritten"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "Compile": {
+    "Sources": 172,
+    "Specs": 1,
+    "Failures": []
+  },
+  "social": {
+    "ExitCode": 0
+  },
+  "matchmaking": {
+    "ExitCode": 0
+  },
+  "SlapVictimProtection": {
+    "ExitCode": 0
+  },
+  "AbilityMultiplayerFixV1.regression": {
+    "ExitCode": 0
+  },
+  "EconomyBalanceV1": {
+    "ExitCode": 0
+  },
+  "EconomyBalanceV1.shop": {
+    "ExitCode": 0
+  },
+  "PremiumShopV11": {
+    "ExitCode": 0
+  },
+  "CrateBatchV24": {
+    "ExitCode": 0
+  },
+  "default.project.json": {
+    "ExitCode": 0
+  },
+  "studio-safe.project.json": {
+    "ExitCode": 0
+  },
+  "diff": {
+    "ExitCode": 0
+  },
+  "Integrity": {
+    "ChangedExistingFiles": [
+      "src/server/Bootstrap.server.luau",
+      "default.project.json",
+      "studio-safe.project.json"
+    ],
+    "Unexpected": []
+  },
+  "OldRojoEntriesPreserved": true
+}

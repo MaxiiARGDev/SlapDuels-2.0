@@ -1,0 +1,41 @@
+{
+  "PersistenceEnvironment": "Studio",
+  "IsRunning": false,
+  "ButtonCount": 1,
+  "WritesToCloud": false,
+  "NativeHUDDescendants": 26,
+  "OriginalHUDPosition": "{1, -28}, {1, -175}",
+  "MenuInitiallyVisible": false,
+  "ButtonPosition": "{1, -28}, {1, -303}",
+  "Button": "StarterGui.AbilityHUD.ChangeAbilityButton",
+  "OriginalHUDPreserved": true,
+  "OriginalHUDSize": "{0, 148}, {0, 120}",
+  "PersistenceProvider": "InMemory",
+  "Sources": [
+    {
+      "File": "src/shared/AbilityDefinitions.luau",
+      "Matches": true,
+      "CurrentHash": "e193adba083c68559e1f758c336611143d51a5e46d11c5b84e8b065d5a9a962c"
+    },
+    {
+      "File": "src/client/Abilities/AbilitySelection.luau",
+      "Matches": true,
+      "CurrentHash": "94097b602a4eb4f9d5ba0db53bc90562573e87b0c4b6e48fb61183c5810a0f1e"
+    },
+    {
+      "File": "src/client/Controllers/AbilityController.luau",
+      "Matches": true,
+      "CurrentHash": "e9a294ebd55e3e5596d578af0c8001e904918db4ed2b7711035a27c992653a0e"
+    },
+    {
+      "File": "src/server/Services/AbilityService.luau",
+      "Matches": true,
+      "CurrentHash": "d964bd292c7a8843dedbe0e327d163a4e1eee15d42054cde4224f1f15e7763ae"
+    },
+    {
+      "File": "src/server/Services/RoundService.luau",
+      "Matches": true,
+      "CurrentHash": "828f14b2a62ed04d3ebca74e3cc8c59d7851e9ca4a0fb1541d7b81162c4e5f93"
+    }
+  ]
+}

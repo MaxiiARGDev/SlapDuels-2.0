@@ -1,0 +1,787 @@
+[
+  {
+    "Path": "StarterPlayer/StarterCharacterScripts/ArenaRespawnGuard",
+    "File": "src/character/ArenaRespawnGuard.client.luau",
+    "Copies": 1,
+    "Hashes": [
+      "c9cb7dae6fd8cf463b31a5fb3cf80c101d9f79e02117f058c5ea5391c1f6648d"
+    ],
+    "DiskSourceSHA256": "c9cb7dae6fd8cf463b31a5fb3cf80c101d9f79e02117f058c5ea5391c1f6648d",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterCharacterScripts/RagdollStatesHandler",
+    "File": "src/character/RagdollStatesHandler.client.luau",
+    "Copies": 1,
+    "Hashes": [
+      "cb751176afc7c289765f3c51ddaa1f13acbde86e4f0b5e10c5f32ab5b8e5b701"
+    ],
+    "DiskSourceSHA256": "cb751176afc7c289765f3c51ddaa1f13acbde86e4f0b5e10c5f32ab5b8e5b701",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/AnimacionLetras1v1",
+    "File": "src/client/AnimacionLetras1v1.client.luau",
+    "Copies": 1,
+    "Hashes": [
+      "07355e44bddb5e74441a816af6d1147b004d4cfdadffda9d0fd9e267e6720db8"
+    ],
+    "DiskSourceSHA256": "07355e44bddb5e74441a816af6d1147b004d4cfdadffda9d0fd9e267e6720db8",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/ClientBootstrap",
+    "File": "src/client/ClientBootstrap.client.luau",
+    "Copies": 1,
+    "Hashes": [
+      "bcfc92ac4db6e55788f27d96c5fb50d845f54966f070550ef2fe2a1507cd1f55"
+    ],
+    "DiskSourceSHA256": "bcfc92ac4db6e55788f27d96c5fb50d845f54966f070550ef2fe2a1507cd1f55",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/Controllers/DeathFeedbackController",
+    "File": "src/client/Controllers/DeathFeedbackController.luau",
+    "Copies": 2,
+    "Hashes": [
+      "2d42edc16b81c860b945b1b2b182466b1408bd048e82537e0aafb791aab70443",
+      "2d42edc16b81c860b945b1b2b182466b1408bd048e82537e0aafb791aab70443"
+    ],
+    "DiskSourceSHA256": "2d42edc16b81c860b945b1b2b182466b1408bd048e82537e0aafb791aab70443",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/Controllers/EndCinematicController",
+    "File": "src/client/Controllers/EndCinematicController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "9aaf8a70a9624005564f88791afc6c30060d94d72da745bbcdce28e85d0bb039"
+    ],
+    "DiskSourceSHA256": "9aaf8a70a9624005564f88791afc6c30060d94d72da745bbcdce28e85d0bb039",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/Controllers/KillRewardController",
+    "File": "src/client/Controllers/KillRewardController.luau",
+    "Copies": 2,
+    "Hashes": [
+      "b61fdea82a9670c4ceb5e8ccb72f3bbe15be1f3627ee60d764e17918695cff3f",
+      "b61fdea82a9670c4ceb5e8ccb72f3bbe15be1f3627ee60d764e17918695cff3f"
+    ],
+    "DiskSourceSHA256": "b61fdea82a9670c4ceb5e8ccb72f3bbe15be1f3627ee60d764e17918695cff3f",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/Controllers/MatchController",
+    "File": "src/client/Controllers/MatchController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "80643bc49b7919595b2ec3889e1167a50bff3ce4ceb162eb834b109109b66b27"
+    ],
+    "DiskSourceSHA256": "80643bc49b7919595b2ec3889e1167a50bff3ce4ceb162eb834b109109b66b27",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/Controllers/MatchmakingController",
+    "File": "src/client/Controllers/MatchmakingController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "929e294867a951601773e39a8ab4c864fd4ad1d3082275edc1cc6fdbc3be94e0"
+    ],
+    "DiskSourceSHA256": "929e294867a951601773e39a8ab4c864fd4ad1d3082275edc1cc6fdbc3be94e0",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/Controllers/MatchStartEffectsController",
+    "File": "src/client/Controllers/MatchStartEffectsController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "4256b7be4e29729715d685fa8633c27266e97758c0e60412d2611772d555a7b7"
+    ],
+    "DiskSourceSHA256": "4256b7be4e29729715d685fa8633c27266e97758c0e60412d2611772d555a7b7",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/Controllers/MusicController",
+    "File": "src/client/Controllers/MusicController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "cd8d1051ebd6b28cb65b65f3917354ea09529f5fa455cf64ba9b54bdf8a5083c"
+    ],
+    "DiskSourceSHA256": "cd8d1051ebd6b28cb65b65f3917354ea09529f5fa455cf64ba9b54bdf8a5083c",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/Controllers/PlayerHUDController",
+    "File": "src/client/Controllers/PlayerHUDController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "3c8d715b8541636ed916348c5f6cb17c40f113c96685cf9bf5c4d3c161d29506"
+    ],
+    "DiskSourceSHA256": "3c8d715b8541636ed916348c5f6cb17c40f113c96685cf9bf5c4d3c161d29506",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/Controllers/SettingsController",
+    "File": "src/client/Controllers/SettingsController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "03bd478b247e316443bac11e5ceb5f89bcf2592a84b9a3e208049cbca3cd258a"
+    ],
+    "DiskSourceSHA256": "03bd478b247e316443bac11e5ceb5f89bcf2592a84b9a3e208049cbca3cd258a",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/Controllers/ShopController",
+    "File": "src/client/Controllers/ShopController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "d0a56e864f9b80e1f7f1f95a5125bdcab485336ccf1f63ff50b90bab6fb53500"
+    ],
+    "DiskSourceSHA256": "d0a56e864f9b80e1f7f1f95a5125bdcab485336ccf1f63ff50b90bab6fb53500",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/Controllers/SlapController",
+    "File": "src/client/Controllers/SlapController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "a3680711ee8f2302a02de8cfe2b7050a6cfe13a4f81c352a6c57f1be79594035"
+    ],
+    "DiskSourceSHA256": "a3680711ee8f2302a02de8cfe2b7050a6cfe13a4f81c352a6c57f1be79594035",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/Controllers/SuddenDeathController",
+    "File": "src/client/Controllers/SuddenDeathController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "58b475dbe43194a0d138aecbc18e571ca8159074d1788174812deb1baf64541d"
+    ],
+    "DiskSourceSHA256": "58b475dbe43194a0d138aecbc18e571ca8159074d1788174812deb1baf64541d",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/DeathFeedback/DeathEffectPlayer",
+    "File": "src/client/DeathFeedback/DeathEffectPlayer.luau",
+    "Copies": 2,
+    "Hashes": [
+      "5c59717aae084232a5a81169a7e423f30accaa57d5be0bf455bcd91083d42345",
+      "5c59717aae084232a5a81169a7e423f30accaa57d5be0bf455bcd91083d42345"
+    ],
+    "DiskSourceSHA256": "5c59717aae084232a5a81169a7e423f30accaa57d5be0bf455bcd91083d42345",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/DeathFeedback/DeathNotifications",
+    "File": "src/client/DeathFeedback/DeathNotifications.luau",
+    "Copies": 2,
+    "Hashes": [
+      "3bfb03012a56cba5c81872bc0cb1d72a3e4719e898fe2747aa0a868d704e6fb5",
+      "3bfb03012a56cba5c81872bc0cb1d72a3e4719e898fe2747aa0a868d704e6fb5"
+    ],
+    "DiskSourceSHA256": "3bfb03012a56cba5c81872bc0cb1d72a3e4719e898fe2747aa0a868d704e6fb5",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/DeathFeedback/Scope",
+    "File": "src/client/DeathFeedback/Scope.luau",
+    "Copies": 2,
+    "Hashes": [
+      "c2e1fbfc7511139c040585d555176c8922f78a2a089297023e039586ee4db79e",
+      "c2e1fbfc7511139c040585d555176c8922f78a2a089297023e039586ee4db79e"
+    ],
+    "DiskSourceSHA256": "c2e1fbfc7511139c040585d555176c8922f78a2a089297023e039586ee4db79e",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicAnimations",
+    "File": "src/client/EndCinematic/Modules/EndCinematicAnimations.luau",
+    "Copies": 1,
+    "Hashes": [
+      "ff2683c38e2c506b80c84d5aca57165fdee921d9f5db5c1708f86e7c4590c3a3"
+    ],
+    "DiskSourceSHA256": "ff2683c38e2c506b80c84d5aca57165fdee921d9f5db5c1708f86e7c4590c3a3",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicAudio",
+    "File": "src/client/EndCinematic/Modules/EndCinematicAudio.luau",
+    "Copies": 1,
+    "Hashes": [
+      "7b0dcac4673a37c537ebc7d595acd9836c0fbc59fbc3b8166e596a8e17bb24cc"
+    ],
+    "DiskSourceSHA256": "7b0dcac4673a37c537ebc7d595acd9836c0fbc59fbc3b8166e596a8e17bb24cc",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicAvatars",
+    "File": "src/client/EndCinematic/Modules/EndCinematicAvatars.luau",
+    "Copies": 1,
+    "Hashes": [
+      "1eb29c6e85f65267f2776b04d588aa4a09949388ffefdc16740073d524834c86"
+    ],
+    "DiskSourceSHA256": "1eb29c6e85f65267f2776b04d588aa4a09949388ffefdc16740073d524834c86",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicBillboards",
+    "File": "src/client/EndCinematic/Modules/EndCinematicBillboards.luau",
+    "Copies": 2,
+    "Hashes": [
+      "9c49087b688ef9259bd2428b27f0313fe948a802d6e6bf3b7e258a7e8d5ef4f6",
+      "9c49087b688ef9259bd2428b27f0313fe948a802d6e6bf3b7e258a7e8d5ef4f6"
+    ],
+    "DiskSourceSHA256": "9c49087b688ef9259bd2428b27f0313fe948a802d6e6bf3b7e258a7e8d5ef4f6",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicCamera",
+    "File": "src/client/EndCinematic/Modules/EndCinematicCamera.luau",
+    "Copies": 1,
+    "Hashes": [
+      "025ec35c5ae1b8a7c99e52bdf317746b4e968f929c8d978f74e13196198105db"
+    ],
+    "DiskSourceSHA256": "025ec35c5ae1b8a7c99e52bdf317746b4e968f929c8d978f74e13196198105db",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicHUD",
+    "File": "src/client/EndCinematic/Modules/EndCinematicHUD.luau",
+    "Copies": 1,
+    "Hashes": [
+      "6164dcf2a857552028b15f7a168e182e70bf33a186b50e89bc18aece07a5a554"
+    ],
+    "DiskSourceSHA256": "6164dcf2a857552028b15f7a168e182e70bf33a186b50e89bc18aece07a5a554",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicParticles",
+    "File": "src/client/EndCinematic/Modules/EndCinematicParticles.luau",
+    "Copies": 1,
+    "Hashes": [
+      "5e2a6a4e07eda81046469a690ddc24e93f65036d1e3b6bf87780d1197af8a466"
+    ],
+    "DiskSourceSHA256": "5e2a6a4e07eda81046469a690ddc24e93f65036d1e3b6bf87780d1197af8a466",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicRanking",
+    "File": "src/client/EndCinematic/Modules/EndCinematicRanking.luau",
+    "Copies": 2,
+    "Hashes": [
+      "8123a682b042b36a321f1a867a3b960e003a4124b82b2d98e54fc559df7783be",
+      "8123a682b042b36a321f1a867a3b960e003a4124b82b2d98e54fc559df7783be"
+    ],
+    "DiskSourceSHA256": "8123a682b042b36a321f1a867a3b960e003a4124b82b2d98e54fc559df7783be",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicTransition",
+    "File": "src/client/EndCinematic/Modules/EndCinematicTransition.luau",
+    "Copies": 1,
+    "Hashes": [
+      "fa08a1b2703d3f5a34f96dfd12d20e99b0d30d2a5d562c8d1b9efc751a1a188e"
+    ],
+    "DiskSourceSHA256": "fa08a1b2703d3f5a34f96dfd12d20e99b0d30d2a5d562c8d1b9efc751a1a188e",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/EndCinematicPreview",
+    "File": "src/client/EndCinematicPreview.client.luau",
+    "Copies": 1,
+    "Hashes": [
+      "85ffc0367297aa5a0ae418a46f0ee5794036f42ac95927b3a1001db41523bdaf"
+    ],
+    "DiskSourceSHA256": "85ffc0367297aa5a0ae418a46f0ee5794036f42ac95927b3a1001db41523bdaf",
+    "Matches": true
+  },
+  {
+    "Path": "StarterPlayer/StarterPlayerScripts/PointCameraFX",
+    "File": "src/client/PointCameraFX.client.luau",
+    "Copies": 1,
+    "Hashes": [
+      "a8454f623af3b234d5a6f5e113301d9805f5a0e0ef1aebc8c09ef8cc92c23c73"
+    ],
+    "DiskSourceSHA256": "a8454f623af3b234d5a6f5e113301d9805f5a0e0ef1aebc8c09ef8cc92c23c73",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Bootstrap",
+    "File": "src/server/Bootstrap.server.luau",
+    "Copies": 1,
+    "Hashes": [
+      "172ff0581b6a3ebdf2e69e1066ebf74e14cafe633a7033214b8851671ccc9571"
+    ],
+    "DiskSourceSHA256": "172ff0581b6a3ebdf2e69e1066ebf74e14cafe633a7033214b8851671ccc9571",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/PointEffectControllers/BasicController",
+    "File": "src/server/PointEffectControllers/BasicController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "2cb81af62ece6acf07cfc6e4407735ed5355f5a655055bba2477fbc3d548b364"
+    ],
+    "DiskSourceSHA256": "2cb81af62ece6acf07cfc6e4407735ed5355f5a655055bba2477fbc3d548b364",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/PointEffectControllers/InfernoController",
+    "File": "src/server/PointEffectControllers/InfernoController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "2457e09e5aacfbc0a66a797f01ef2827f4ff5aed0863e7c583634f7de1a02e74"
+    ],
+    "DiskSourceSHA256": "2457e09e5aacfbc0a66a797f01ef2827f4ff5aed0863e7c583634f7de1a02e74",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/PointEffectControllers/PointEffectRegistry",
+    "File": "src/server/PointEffectControllers/PointEffectRegistry.luau",
+    "Copies": 1,
+    "Hashes": [
+      "1eafd724d37fe9767ad5e4c8653fb78657d0409a12e9771cdbff10e5fa9a16d1"
+    ],
+    "DiskSourceSHA256": "1eafd724d37fe9767ad5e4c8653fb78657d0409a12e9771cdbff10e5fa9a16d1",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/PointEffectControllers/ThunderController",
+    "File": "src/server/PointEffectControllers/ThunderController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "077d5c51c9837a16ee39322e0071c104e3fde9e47c2c670573ce3e79c27b29c1"
+    ],
+    "DiskSourceSHA256": "077d5c51c9837a16ee39322e0071c104e3fde9e47c2c670573ce3e79c27b29c1",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/RagdollHandler",
+    "File": "src/server/RagdollHandler.server.luau",
+    "Copies": 1,
+    "Hashes": [
+      "dcf3f79467f7108d3f7173969ab9a60d3292b3cbd79a5bdef668bf6bc0073bd0"
+    ],
+    "DiskSourceSHA256": "dcf3f79467f7108d3f7173969ab9a60d3292b3cbd79a5bdef668bf6bc0073bd0",
+    "Matches": true
+  },
+  {
+    "Path": "ServerStorage/RagdollModule",
+    "File": "src/server/RagdollModule.luau",
+    "Copies": 1,
+    "Hashes": [
+      "b78afb612eb0805129266a2da1f9f4a76e5b7aea76a5450a4afc18add7215464"
+    ],
+    "DiskSourceSHA256": "b78afb612eb0805129266a2da1f9f4a76e5b7aea76a5450a4afc18add7215464",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/CombatService",
+    "File": "src/server/Services/CombatService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "2f989a4798ca41c756b3153098427237b9a918e912dded34645a066388f39173"
+    ],
+    "DiskSourceSHA256": "2f989a4798ca41c756b3153098427237b9a918e912dded34645a066388f39173",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/DeathEffectService",
+    "File": "src/server/Services/DeathEffectService.luau",
+    "Copies": 2,
+    "Hashes": [
+      "69bc9635a7f95475ab244637d46ececae90d6e058770b00dd48e19787a65655d",
+      "69bc9635a7f95475ab244637d46ececae90d6e058770b00dd48e19787a65655d"
+    ],
+    "DiskSourceSHA256": "69bc9635a7f95475ab244637d46ececae90d6e058770b00dd48e19787a65655d",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/EliminationService",
+    "File": "src/server/Services/EliminationService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "d66b53236bcdcdc7319f4cd35cf55579e5ed297083f3070ef566320c66bd0883"
+    ],
+    "DiskSourceSHA256": "d66b53236bcdcdc7319f4cd35cf55579e5ed297083f3070ef566320c66bd0883",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/Gameplay/RoundClock",
+    "File": "src/server/Services/Gameplay/RoundClock.luau",
+    "Copies": 1,
+    "Hashes": [
+      "bd809611fd76a90dcb564c0113e75ca89ee77bb4d40e8510cc81156e6cf8d770"
+    ],
+    "DiskSourceSHA256": "bd809611fd76a90dcb564c0113e75ca89ee77bb4d40e8510cc81156e6cf8d770",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/KnockbackService",
+    "File": "src/server/Services/KnockbackService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "346721e0c2d588da28d49948e121b22b496f6b616b6050fce4d6f9e2e5e00ac3"
+    ],
+    "DiskSourceSHA256": "346721e0c2d588da28d49948e121b22b496f6b616b6050fce4d6f9e2e5e00ac3",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/MatchInstanceService",
+    "File": "src/server/Services/MatchInstanceService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "b33163a57fc17625e8ac29354ffd78cb6bd930cf6d13e49be1aec155e0e359ab"
+    ],
+    "DiskSourceSHA256": "b33163a57fc17625e8ac29354ffd78cb6bd930cf6d13e49be1aec155e0e359ab",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/MatchmakingFeedbackService",
+    "File": "src/server/Services/MatchmakingFeedbackService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "01e6a50c2de686dfbe2fdef1ade8580c019ba3ed3065e78298546996f18ce7f1"
+    ],
+    "DiskSourceSHA256": "01e6a50c2de686dfbe2fdef1ade8580c019ba3ed3065e78298546996f18ce7f1",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/MatchmakingService",
+    "File": "src/server/Services/MatchmakingService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "8048a279147416eddfca0e4444afbf4cbb933e8564958ad00b8429dd7952cf38"
+    ],
+    "DiskSourceSHA256": "8048a279147416eddfca0e4444afbf4cbb933e8564958ad00b8429dd7952cf38",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/Persistence/InMemoryDataStore",
+    "File": "src/server/Services/Persistence/InMemoryDataStore.luau",
+    "Copies": 1,
+    "Hashes": [
+      "f56374b3388e2b4bb8ed820edb8b9fb3ae3c8637512b2fb078761f0bf9aa9f12"
+    ],
+    "DiskSourceSHA256": "f56374b3388e2b4bb8ed820edb8b9fb3ae3c8637512b2fb078761f0bf9aa9f12",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/Persistence/PersistenceEnvironment",
+    "File": "src/server/Services/Persistence/PersistenceEnvironment.luau",
+    "Copies": 1,
+    "Hashes": [
+      "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853"
+    ],
+    "DiskSourceSHA256": "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/Persistence/RobloxDataStoreAdapter",
+    "File": "src/server/Services/Persistence/RobloxDataStoreAdapter.luau",
+    "Copies": 1,
+    "Hashes": [
+      "d081f0a22cc940ef7948c9663bd884c10def45e25b06cf48bb1edbe245c51adf"
+    ],
+    "DiskSourceSHA256": "d081f0a22cc940ef7948c9663bd884c10def45e25b06cf48bb1edbe245c51adf",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/PlayerDataService",
+    "File": "src/server/Services/PlayerDataService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "8735a3a660a188c93038a4aeec8ed9aa0a2cc57b6ae366a36e9e4e1b1b06358e"
+    ],
+    "DiskSourceSHA256": "8735a3a660a188c93038a4aeec8ed9aa0a2cc57b6ae366a36e9e4e1b1b06358e",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/PlayerService",
+    "File": "src/server/Services/PlayerService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "bf24629820c2974b1d080bcc82b3ecbcb968ad14e94d06d901d5b3435c079310"
+    ],
+    "DiskSourceSHA256": "bf24629820c2974b1d080bcc82b3ecbcb968ad14e94d06d901d5b3435c079310",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/PointEffectTestService",
+    "File": "src/server/Services/PointEffectTestService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "690b79ca9fc1f42a61edf67fe4b4101fd0a0dbe8142be44934029c7e41417d8e"
+    ],
+    "DiskSourceSHA256": "690b79ca9fc1f42a61edf67fe4b4101fd0a0dbe8142be44934029c7e41417d8e",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/PointFeedbackService",
+    "File": "src/server/Services/PointFeedbackService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "569857775b824b35cc07e3e8baf4d65f620ec2f6048d32142e8ad52c07dc7c2d"
+    ],
+    "DiskSourceSHA256": "569857775b824b35cc07e3e8baf4d65f620ec2f6048d32142e8ad52c07dc7c2d",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/RagdollService",
+    "File": "src/server/Services/RagdollService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "1c183866456e99976d7bcb3f765a40380b0bfa7f557fa86073e69d560ab1d414"
+    ],
+    "DiskSourceSHA256": "1c183866456e99976d7bcb3f765a40380b0bfa7f557fa86073e69d560ab1d414",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/Respawn/ArenaRespawn",
+    "File": "src/server/Services/Respawn/ArenaRespawn.luau",
+    "Copies": 2,
+    "Hashes": [
+      "7c19a71ba27e134480b7318bb7ec4cbe48b8cfa01fe576b6621fdb5d39413319",
+      "7c19a71ba27e134480b7318bb7ec4cbe48b8cfa01fe576b6621fdb5d39413319"
+    ],
+    "DiskSourceSHA256": "7c19a71ba27e134480b7318bb7ec4cbe48b8cfa01fe576b6621fdb5d39413319",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/Respawn/CharacterPhysics",
+    "File": "src/server/Services/Respawn/CharacterPhysics.luau",
+    "Copies": 2,
+    "Hashes": [
+      "57bf13bc6752a0aa814bd7049fb6611456ae128bd90433e73eb2e232cc3a24eb",
+      "57bf13bc6752a0aa814bd7049fb6611456ae128bd90433e73eb2e232cc3a24eb"
+    ],
+    "DiskSourceSHA256": "57bf13bc6752a0aa814bd7049fb6611456ae128bd90433e73eb2e232cc3a24eb",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/Respawn/CompetitiveTransit",
+    "File": "src/server/Services/Respawn/CompetitiveTransit.luau",
+    "Copies": 1,
+    "Hashes": [
+      "06782a4ab036f25c6b4ebf24c32b3344545f1646f3d4ef0d65cb0700442b8161"
+    ],
+    "DiskSourceSHA256": "06782a4ab036f25c6b4ebf24c32b3344545f1646f3d4ef0d65cb0700442b8161",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/RoundService",
+    "File": "src/server/Services/RoundService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "b658710b4027a28e304a35d9a5aaa26e4b88cd17aa3f8351274d1b717b522bb3"
+    ],
+    "DiskSourceSHA256": "b658710b4027a28e304a35d9a5aaa26e4b88cd17aa3f8351274d1b717b522bb3",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/ScoreService",
+    "File": "src/server/Services/ScoreService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "a7cb41f0f76bfd401c15de503ac9b71e0d6fffbc9779d367c02ce6b2d1ba0001"
+    ],
+    "DiskSourceSHA256": "a7cb41f0f76bfd401c15de503ac9b71e0d6fffbc9779d367c02ce6b2d1ba0001",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/ShopService",
+    "File": "src/server/Services/ShopService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "745167081725d16a33fea7e1b352f0ad840114895fc79d30579483bb1d27db96"
+    ],
+    "DiskSourceSHA256": "745167081725d16a33fea7e1b352f0ad840114895fc79d30579483bb1d27db96",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/SlapService",
+    "File": "src/server/Services/SlapService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "88c95a23892a54a4833971cdce91a6c64f9ea363c9573cb7d806d02d6c8dc896"
+    ],
+    "DiskSourceSHA256": "88c95a23892a54a4833971cdce91a6c64f9ea363c9573cb7d806d02d6c8dc896",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/SpawnService",
+    "File": "src/server/Services/SpawnService.luau",
+    "Copies": 1,
+    "Hashes": [
+      "aaed4d0c1ff74344b835b14e7b8de15ede82167587024ade24ea1e672597ce5d"
+    ],
+    "DiskSourceSHA256": "aaed4d0c1ff74344b835b14e7b8de15ede82167587024ade24ea1e672597ce5d",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Services/ThunderController",
+    "File": "src/server/Services/ThunderController.luau",
+    "Copies": 1,
+    "Hashes": [
+      "528d690ff8970e3ff654ed48363d37f1a07e00b879fa01d63cc1c93cbc21a0fb"
+    ],
+    "DiskSourceSHA256": "528d690ff8970e3ff654ed48363d37f1a07e00b879fa01d63cc1c93cbc21a0fb",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Shop/ProfilePurchase",
+    "File": "src/server/Shop/ProfilePurchase.luau",
+    "Copies": 1,
+    "Hashes": [
+      "67e28218c098890f98da8d567a74f3e23772ecef42b87ec9f5ad2f6bdee0c4d0"
+    ],
+    "DiskSourceSHA256": "67e28218c098890f98da8d567a74f3e23772ecef42b87ec9f5ad2f6bdee0c4d0",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Shop/Providers/DeathEffectProvider",
+    "File": "src/server/Shop/Providers/DeathEffectProvider.luau",
+    "Copies": 1,
+    "Hashes": [
+      "abc9b1daeacdcb9b07656a723c74bac7c94451d9e4d09d97ffdc6d18b7440217"
+    ],
+    "DiskSourceSHA256": "abc9b1daeacdcb9b07656a723c74bac7c94451d9e4d09d97ffdc6d18b7440217",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Shop/Providers/PointEffectProvider",
+    "File": "src/server/Shop/Providers/PointEffectProvider.luau",
+    "Copies": 1,
+    "Hashes": [
+      "75df3a9e8ecac0ad164d4f5ba9cbd91b9c9d0dbb84f8c325a667f42aceff1732"
+    ],
+    "DiskSourceSHA256": "75df3a9e8ecac0ad164d4f5ba9cbd91b9c9d0dbb84f8c325a667f42aceff1732",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Shop/ShopRegistry",
+    "File": "src/server/Shop/ShopRegistry.luau",
+    "Copies": 1,
+    "Hashes": [
+      "a1944deb03b685fb6dca037786e3779fc2fd7be47572c9d17f5e7799b7c96eac"
+    ],
+    "DiskSourceSHA256": "a1944deb03b685fb6dca037786e3779fc2fd7be47572c9d17f5e7799b7c96eac",
+    "Matches": true
+  },
+  {
+    "Path": "ServerScriptService/Shop/ShopRemotes",
+    "File": "src/server/Shop/ShopRemotes.luau",
+    "Copies": 1,
+    "Hashes": [
+      "763c9ccc613a0b2408be493be24e0026f8a472217e892c44ef32d2535a51921f"
+    ],
+    "DiskSourceSHA256": "763c9ccc613a0b2408be493be24e0026f8a472217e892c44ef32d2535a51921f",
+    "Matches": true
+  },
+  {
+    "Path": "ReplicatedStorage/Shared/ArenaRespawnPolicy",
+    "File": "src/shared/ArenaRespawnPolicy.luau",
+    "Copies": 2,
+    "Hashes": [
+      "9212a0018e58b8544aef9f397a99a5ee351d1b47925d6d5c771aa4e2e4ff58f0",
+      "9212a0018e58b8544aef9f397a99a5ee351d1b47925d6d5c771aa4e2e4ff58f0"
+    ],
+    "DiskSourceSHA256": "9212a0018e58b8544aef9f397a99a5ee351d1b47925d6d5c771aa4e2e4ff58f0",
+    "Matches": true
+  },
+  {
+    "Path": "ReplicatedStorage/Shared/Config",
+    "File": "src/shared/Config.luau",
+    "Copies": 1,
+    "Hashes": [
+      "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda"
+    ],
+    "DiskSourceSHA256": "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda",
+    "Matches": true
+  },
+  {
+    "Path": "ReplicatedStorage/Shared/Constants",
+    "File": "src/shared/Constants.luau",
+    "Copies": 1,
+    "Hashes": [
+      "392e3402b4aa980bc6880ebe2ce8338fc46c65f2fe59d51c03081b255485b211"
+    ],
+    "DiskSourceSHA256": "392e3402b4aa980bc6880ebe2ce8338fc46c65f2fe59d51c03081b255485b211",
+    "Matches": true
+  },
+  {
+    "Path": "ReplicatedStorage/Shared/DeathEffectDefinitions",
+    "File": "src/shared/DeathEffectDefinitions.luau",
+    "Copies": 2,
+    "Hashes": [
+      "ddd872667861710a6a11db732a1091b771e83fccacab1038383f80a5f2b044d3",
+      "ddd872667861710a6a11db732a1091b771e83fccacab1038383f80a5f2b044d3"
+    ],
+    "DiskSourceSHA256": "ddd872667861710a6a11db732a1091b771e83fccacab1038383f80a5f2b044d3",
+    "Matches": true
+  },
+  {
+    "Path": "ReplicatedStorage/Shared/DeathFeedbackConfig",
+    "File": "src/shared/DeathFeedbackConfig.luau",
+    "Copies": 2,
+    "Hashes": [
+      "cc0d66164f21af5699ad3c454615b4d4ad75923ae6254f96798713e901efa58a",
+      "cc0d66164f21af5699ad3c454615b4d4ad75923ae6254f96798713e901efa58a"
+    ],
+    "DiskSourceSHA256": "cc0d66164f21af5699ad3c454615b4d4ad75923ae6254f96798713e901efa58a",
+    "Matches": true
+  },
+  {
+    "Path": "ReplicatedStorage/Shared/DeathFeedbackContract",
+    "File": "src/shared/DeathFeedbackContract.luau",
+    "Copies": 2,
+    "Hashes": [
+      "a8c06f436518be010171c46d627558533657b8682148fe8d7ac6372f90a54f0c",
+      "a8c06f436518be010171c46d627558533657b8682148fe8d7ac6372f90a54f0c"
+    ],
+    "DiskSourceSHA256": "a8c06f436518be010171c46d627558533657b8682148fe8d7ac6372f90a54f0c",
+    "Matches": true
+  },
+  {
+    "Path": "ReplicatedStorage/Shared/EndCinematicConfig",
+    "File": "src/shared/EndCinematicConfig.luau",
+    "Copies": 1,
+    "Hashes": [
+      "2371cc57dfb802c984b8bc6e45a856a857314e962e7648be0bacc18c0ca89e2b"
+    ],
+    "DiskSourceSHA256": "2371cc57dfb802c984b8bc6e45a856a857314e962e7648be0bacc18c0ca89e2b",
+    "Matches": true
+  },
+  {
+    "Path": "ReplicatedStorage/Shared/EndCinematicRanking",
+    "File": "src/shared/EndCinematicRanking.luau",
+    "Copies": 2,
+    "Hashes": [
+      "9e6916432249aedcdcce2299d0af266de75c76a4fe85a896fca236d012002dad",
+      "9e6916432249aedcdcce2299d0af266de75c76a4fe85a896fca236d012002dad"
+    ],
+    "DiskSourceSHA256": "9e6916432249aedcdcce2299d0af266de75c76a4fe85a896fca236d012002dad",
+    "Matches": true
+  },
+  {
+    "Path": "ReplicatedStorage/Shared/PointEffectDefinitions",
+    "File": "src/shared/PointEffectDefinitions.luau",
+    "Copies": 1,
+    "Hashes": [
+      "f49e083321e665b14f84fb7d16f0df76fdde196f8c72c308d77a26b30effa2fa"
+    ],
+    "DiskSourceSHA256": "f49e083321e665b14f84fb7d16f0df76fdde196f8c72c308d77a26b30effa2fa",
+    "Matches": true
+  },
+  {
+    "Path": "ReplicatedStorage/Shared/Types",
+    "File": "src/shared/Types.luau",
+    "Copies": 1,
+    "Hashes": [
+      "257b98eaca53e38a831db2cd8bc02bd80d9de211f107e26810be197f6cbd8f14"
+    ],
+    "DiskSourceSHA256": "257b98eaca53e38a831db2cd8bc02bd80d9de211f107e26810be197f6cbd8f14",
+    "Matches": true
+  }
+]

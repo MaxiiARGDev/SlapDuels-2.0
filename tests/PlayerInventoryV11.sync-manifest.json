@@ -1,0 +1,20 @@
+[
+  {
+    "File": "src/shared/SocialConfig.luau",
+    "Path": "ReplicatedStorage.Shared.SocialConfig",
+    "Before": "c67f97932d7b9685123bdd0cda37758e13bbad880db9589cf124a56e5b11ba14",
+    "After": "9f3816bf3671334c35cd524c840b591670ec14bc351101d7149f51677d148fd1"
+  },
+  {
+    "File": "src/server/Services/SocialService.luau",
+    "Path": "ServerScriptService.Services.SocialService",
+    "Before": "e8ed7182116ba74342f308d02966f786546fd43b449b9039d3f2e82d31bf3406",
+    "After": "85daa7796e4939b3906b05feac59c702d2f77ab8c25e89e2eceddf2f1f82c380"
+  },
+  {
+    "File": "src/client/Controllers/SocialController.luau",
+    "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SocialController",
+    "Before": "c1ef47729bab480a1d5fc6d38742f5e9f7e4072889eaeef7a544e5d52ea96f84",
+    "After": "cd38f72ab3fec43a49465c65c52229e2d8d96a5974e405b9c5905c6ad62c8906"
+  }
+]

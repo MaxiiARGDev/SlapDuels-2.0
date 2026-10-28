@@ -1,0 +1,38 @@
+[
+  {
+    "File": "src/server/Abilities/DashAbility.luau",
+    "SHA256": "f5b08cd26d402588ee4ec3cb2a1088d358179f3d3d938d7cf1fafe62180105a5"
+  },
+  {
+    "File": "src/server/Abilities/AirJumpsAbility.luau",
+    "SHA256": "8ce20ab6e39890b75f36d734ba1376148e56bb4eecfa84e90d3d5206e8140cb0"
+  },
+  {
+    "File": "src/server/Abilities/DevilSpeedAbility.luau",
+    "SHA256": "bc9d6187b5d30ba928bc60d2a48a7295d28d1ee43c4d618bc940fb921e05b17d"
+  },
+  {
+    "File": "src/server/Abilities/InvisibilityAbility.luau",
+    "SHA256": "becd28daa3e02be7d3597191b45e2dc9ebcd9e9aba80a821b22e8d3dfafd5a7a"
+  },
+  {
+    "File": "src/server/Abilities/StrongSlapAbility.luau",
+    "SHA256": "40fe712dd4cd12b7a35e70ba447e52284dae75310f112e3556f0aae9776ab4a7"
+  },
+  {
+    "File": "src/server/Shop/Providers/AbilityProvider.luau",
+    "SHA256": "6bb6107434077d1189778d8513661b040a8d6f6ff343f4527551966966e200bb"
+  },
+  {
+    "File": "src/server/Shop/ShopRemotes.luau",
+    "SHA256": "7df48cc0b9ffd20724c93e1180d27afbedaa4c90fa25369a271746a32234d69b"
+  },
+  {
+    "File": "src/server/Shop/ProfilePurchase.luau",
+    "SHA256": "eaabe1abb2925afcf8ebbb861799a58bdbd5dacba14cde23d09bec1414c7f5bf"
+  },
+  {
+    "File": "src/client/Controllers/ShopController.luau",
+    "SHA256": "df8a16c7772ee3a79dc2b599b0ba741a2a91cb894bee9928d5949dfd84a4fe53"
+  }
+]

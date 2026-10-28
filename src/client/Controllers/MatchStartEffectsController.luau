@@ -30,6 +30,7 @@ MatchStartEffectsController.Name = "MatchStartEffectsController"
 -- Referencias internas
 MatchStartEffectsController._context = nil :: any
 MatchStartEffectsController._activeMatchId = nil :: string?
+MatchStartEffectsController._lastStateVersion = 0
 MatchStartEffectsController._activeConnections = {} :: { RBXScriptConnection }
 MatchStartEffectsController._activeTweens = {} :: { Tween }
 MatchStartEffectsController._activeThreads = {} :: { thread }
@@ -63,6 +64,8 @@ end
 
 function MatchStartEffectsController:Init(context)
 	self._context = context
+	self._activeMatchId = nil
+	self._lastStateVersion = 0
 	self._activeConnections = {}
 	self._activeTweens = {}
 	self._activeThreads = {}
@@ -129,6 +132,7 @@ function MatchStartEffectsController:_setupCameraShake()
 	RunService:UnbindFromRenderStep(RENDER_STEP_NAME)
 
 	RunService:BindToRenderStep(RENDER_STEP_NAME, Enum.RenderPriority.Camera.Value + 1, function(dt: number)
+		if localPlayer:GetAttribute("ResultsSessionId") ~= nil then self._shakeTrauma = 0; return end
 		if self._shakeTrauma <= 0 then return end
 
 		self._shakeTrauma = math.max(0, self._shakeTrauma - dt * self._shakeDecay)
@@ -175,53 +179,50 @@ end
 
 -- Determina si el jugador local pertenece al match según los datos del servidor
 local function isLocalPlayerInMatch(extraData: any): boolean
-	if not extraData then return true end
-	local myName = localPlayer.Name
+	return type(extraData) == "table"
+		and type(extraData.ParticipantUserIds) == "table"
+		and table.find(extraData.ParticipantUserIds, localPlayer.UserId) ~= nil
+end
 
-	if extraData.Red == myName or extraData.Blue == myName then
-		return true
-	end
-
-	if type(extraData.RedTeam) == "table" then
-		for _, p in ipairs(extraData.RedTeam) do
-			if (type(p) == "table" and p.Name == myName) or (typeof(p) == "Instance" and p.Name == myName) then
-				return true
-			end
+function MatchStartEffectsController:_acceptSessionPayload(extraData: any, allowBind: boolean, advanceVersion: boolean?): boolean
+	if type(extraData) ~= "table" then return false end
+	local sessionId = extraData.SessionId or extraData.MatchId
+	if type(sessionId) ~= "string" or sessionId == "" then return false end
+	local version = extraData.StateVersion
+	if version ~= nil and type(version) ~= "number" then return false end
+	if self._activeMatchId == nil then
+		if not allowBind or localPlayer:GetAttribute("MatchId") ~= sessionId or not isLocalPlayerInMatch(extraData) then
+			return false
 		end
+		self._activeMatchId = sessionId
+		self._lastStateVersion = 0
+	elseif self._activeMatchId ~= sessionId then
+		return false
 	end
-
-	if type(extraData.BlueTeam) == "table" then
-		for _, p in ipairs(extraData.BlueTeam) do
-			if (type(p) == "table" and p.Name == myName) or (typeof(p) == "Instance" and p.Name == myName) then
-				return true
-			end
-		end
-	end
-
-	return false
+	if version ~= nil and version < self._lastStateVersion then return false end
+	if advanceVersion and version ~= nil then self._lastStateVersion = version end
+	return true
 end
 
 function MatchStartEffectsController:_handleStateChanged(newState: string, extraData: any)
+	if not self:_acceptSessionPayload(extraData, true, true) then return end
+	local eventSessionId = self._activeMatchId
 	if newState == Constants.RoundState.StartCountdown
 		or newState == Constants.RoundState.PointRestartCountdown
 		or newState == Constants.RoundState.MatchReady then
-		if isLocalPlayerInMatch(extraData) then
-			if extraData and extraData.MatchId then
-				self._activeMatchId = extraData.MatchId
-			end
-		else
-			self._activeMatchId = nil
-		end
 	elseif newState == Constants.RoundState.Playing then
 		-- Al entrar a Playing, programar cleanup tras un breve respiro para que concluya la secuencia de ¡COMIENZA!
 		task.delay(0.75, function()
-			self:Cleanup()
+			if self._activeMatchId == eventSessionId then self:Cleanup() end
 		end)
 	elseif newState == Constants.RoundState.Ending
 		or newState == Constants.RoundState.ReturningToLobby
 		or newState == Constants.RoundState.Waiting then
-		self._activeMatchId = nil
 		self:Cleanup()
+		if newState == Constants.RoundState.ReturningToLobby or newState == Constants.RoundState.Waiting then
+			self._activeMatchId = nil
+			self._lastStateVersion = 0
+		end
 	end
 end
 
@@ -231,13 +232,7 @@ function MatchStartEffectsController:_handleCountdown(remaining: number, label: 
 		return
 	end
 
-	-- Validación estricta de MatchId para aislar múltiples partidas simultáneas
-	if extraData and extraData.MatchId then
-		if self._activeMatchId and self._activeMatchId ~= extraData.MatchId then
-			return -- Ignorar evento de otra partida concurrente
-		end
-		self._activeMatchId = extraData.MatchId
-	end
+	if not self:_acceptSessionPayload(extraData, false, false) then return end
 
 	if remaining > 0 then
 		self:PlayCountdown(remaining, extraData)

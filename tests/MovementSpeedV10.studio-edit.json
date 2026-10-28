@@ -1,0 +1,36 @@
+{
+  "StarterPlayerSpeed": 16,
+  "Sources": {
+    "Config": {
+      "Editor": "6c194310ebfbcdc262ca254eaa0a8f1f18ac0d166caba9d559bf00be0980b4e8",
+      "Path": "ReplicatedStorage.Shared.Config",
+      "Source": "6c194310ebfbcdc262ca254eaa0a8f1f18ac0d166caba9d559bf00be0980b4e8"
+    },
+    "DevilSpeedAbility": {
+      "Editor": "cac65b0ccdbd145f4f60cd2492febbeb3cf7410994a0b474ae9f0f85143fae21",
+      "Path": "ServerScriptService.Abilities.DevilSpeedAbility",
+      "Source": "cac65b0ccdbd145f4f60cd2492febbeb3cf7410994a0b474ae9f0f85143fae21"
+    },
+    "RoundService": {
+      "Editor": "616e31078aaceb63c786d1e968c15ac9118105234020256781d934902f691b23",
+      "Path": "ServerScriptService.Services.RoundService",
+      "Source": "616e31078aaceb63c786d1e968c15ac9118105234020256781d934902f691b23"
+    },
+    "SpawnService": {
+      "Editor": "22b2a58a5b315b81a2637ae300142b3c0420358be4501c00fdf0477ae76bc309",
+      "Path": "ServerScriptService.Services.SpawnService",
+      "Source": "22b2a58a5b315b81a2637ae300142b3c0420358be4501c00fdf0477ae76bc309"
+    },
+    "MovementSpeed": {
+      "Editor": "1d5945679563dc89953c9d3db979e95c131dbafd7e2f88b427232f99a55f566a",
+      "Path": "ServerScriptService.Services.Respawn.MovementSpeed",
+      "Source": "1d5945679563dc89953c9d3db979e95c131dbafd7e2f88b427232f99a55f566a"
+    }
+  },
+  "PersistenceEnvironment": "Studio",
+  "Running": false,
+  "Mode": "Edit",
+  "WritesToCloud": false,
+  "StarterCharacterSpeed": 32,
+  "PersistenceProvider": "InMemory"
+}

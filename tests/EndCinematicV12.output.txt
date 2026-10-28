@@ -1,0 +1,642 @@
+Output seleccionado; pruebas Studio/InMemory, sin tokens de presentación.
+ENSAYO 1
+[EliminationService] NORMAL FALL (VoidBoundaryPolling): 'Player2' cayó sin atacante en Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2' (Estado: PointRestartCountdown)
+[SpawnService] ResetCharacterInArena exitoso para 'Player2' en 'BlueSpawn' (Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2', Team 'Blue')
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Head (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: PointRestartCountdown
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.HumanoidRootPart (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: PointRestartCountdown
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Torso (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: PointRestartCountdown
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.DevAwardsGold.Handle (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: PointRestartCountdown
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Right Leg (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: PointRestartCountdown
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Vampire.Handle (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: PointRestartCountdown
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Right Arm (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: PointRestartCountdown
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Left Arm (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: PointRestartCountdown
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Left Leg (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: PointRestartCountdown
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Classic.Hand (MeshPart)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: PointRestartCountdown
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Classic.Handle (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: PointRestartCountdown
+[EliminationService] PointScorer 'Player1' tocó KillPart durante PointInProgress en Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2'. Evento absorbido.
+[EliminationService] PointScorer 'Player1' tocó VoidBoundaryPolling durante PointInProgress en Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2'. Evento absorbido.
+[RoundService] Estado de sesión '1c133d07-7a1c-4119-bfad-f7af41a5bce2' cambiado a: Playing (v10)
+[RoundService] PointRestartCountdown completado para Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2'. Partida reanudada en PLAYING.
+[EliminationService] NORMAL FALL (VoidBoundaryPolling): 'Player1' cayó sin atacante en Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2' (Estado: Playing)
+[SpawnService] ResetCharacterInArena exitoso para 'Player1' en 'RedSpawn' (Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2', Team 'Red')
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Head (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Valid scoring entry
+[ScoreService] PointScorer registrado: 'Player1' (Equipo Red, Punto 3, Match 1c133d07-7a1c-4119-bfad-f7af41a5bce2)
+[ScoreService] Red score incremented
+[PlayerService] +50 Coins otorgados a 'Player1' (Razón: MatchPoint). Saldo: 150
+[ScoreService] ¡ANOTACIÓN! Player1 anotó para Red (+50 Coins). Nuevo Score: Red=3, Blue=0
+[PointFeedbackService] Feedback activado para Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2' (Punto: 1c133d07-7a1c-4119-bfad-f7af41a5bce2_Red_3_0, Equipo: Red, Jugador: Player1, PointEffect: Basic [Básico], Origen: Workspace.ActiveMatches.Match_1c133d07-7a1c-4119-bfad-f7af41a5bce2.Levels.ZoneWin.RedWin, Final: false)
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.HumanoidRootPart (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Torso (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.DevAwardsGold.Handle (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Right Leg (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Vampire.Handle (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Right Arm (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Left Arm (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Left Leg (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Classic.Hand (MeshPart)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Classic.Handle (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[EliminationService] PointScorer 'Player1' tocó KillPart durante PointInProgress en Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2'. Evento absorbido.
+[EliminationService] PointScorer 'Player1' tocó VoidBoundaryPolling durante PointInProgress en Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2'. Evento absorbido.
+[EliminationService] NORMAL FALL (KillPart): 'Player2' cayó sin atacante en Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2' (Estado: Playing)
+[SpawnService] ResetCharacterInArena exitoso para 'Player2' en 'BlueSpawn' (Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2', Team 'Blue')
+[SpawnService] Jugador 'Player1' posicionado en 'RedSpawn' (9979, 505, -0.991455078125)
+[SpawnService] Jugador 'Player2' posicionado en 'BlueSpawn' (9810.5, 505, 0)
+[SpawnService] Posicionamiento Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2': 2/2; Success=true
+[RoundService] Estado de sesión '1c133d07-7a1c-4119-bfad-f7af41a5bce2' cambiado a: PointRestartCountdown (v11)
+[RoundService] Estado de sesión '1c133d07-7a1c-4119-bfad-f7af41a5bce2' cambiado a: Playing (v12)
+[RoundService] PointRestartCountdown completado para Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2'. Partida reanudada en PLAYING.
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Head (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Valid scoring entry
+[ScoreService] PointScorer registrado: 'Player1' (Equipo Red, Punto 4, Match 1c133d07-7a1c-4119-bfad-f7af41a5bce2)
+[ScoreService] Red score incremented
+[PlayerService] +50 Coins otorgados a 'Player1' (Razón: MatchPoint). Saldo: 200
+[ScoreService] ¡ANOTACIÓN! Player1 anotó para Red (+50 Coins). Nuevo Score: Red=4, Blue=0
+[PointFeedbackService] Feedback activado para Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2' (Punto: 1c133d07-7a1c-4119-bfad-f7af41a5bce2_Red_4_0, Equipo: Red, Jugador: Player1, PointEffect: Basic [Básico], Origen: Workspace.ActiveMatches.Match_1c133d07-7a1c-4119-bfad-f7af41a5bce2.Levels.ZoneWin.RedWin, Final: false)
+[ScoreService] Match Point emitido para equipo 'Red'
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.HumanoidRootPart (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Torso (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.DevAwardsGold.Handle (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Right Leg (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Vampire.Handle (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Right Arm (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Left Arm (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Left Leg (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Classic.Hand (MeshPart)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Classic.Handle (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[EliminationService] PointScorer 'Player1' tocó KillPart durante PointInProgress en Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2'. Evento absorbido.
+[EliminationService] PointScorer 'Player1' tocó VoidBoundaryPolling durante PointInProgress en Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2'. Evento absorbido.
+[EliminationService] NORMAL FALL (KillPart): 'Player2' cayó sin atacante en Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2' (Estado: Playing)
+[SpawnService] ResetCharacterInArena exitoso para 'Player2' en 'BlueSpawn' (Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2', Team 'Blue')
+[SpawnService] Jugador 'Player1' posicionado en 'RedSpawn' (9979, 505, -0.991455078125)
+[SpawnService] Jugador 'Player2' posicionado en 'BlueSpawn' (9810.5, 505, 0)
+[SpawnService] Posicionamiento Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2': 2/2; Success=true
+[RoundService] Estado de sesión '1c133d07-7a1c-4119-bfad-f7af41a5bce2' cambiado a: PointRestartCountdown (v13)
+[EliminationService] NORMAL FALL (VoidBoundaryPolling): 'Player2' cayó sin atacante en Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2' (Estado: PointRestartCountdown)
+[SpawnService] ResetCharacterInArena exitoso para 'Player2' en 'BlueSpawn' (Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2', Team 'Blue')
+[RoundService] Estado de sesión '1c133d07-7a1c-4119-bfad-f7af41a5bce2' cambiado a: Playing (v14)
+[RoundService] PointRestartCountdown completado para Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2'. Partida reanudada en PLAYING.
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Head (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: Red
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Playing
+[ScoreService] Valid scoring entry
+[ScoreService] PointScorer registrado: 'Player1' (Equipo Red, Punto 5, Match 1c133d07-7a1c-4119-bfad-f7af41a5bce2)
+[ScoreService] Red score incremented
+[PlayerService] +50 Coins otorgados a 'Player1' (Razón: MatchPoint). Saldo: 250
+[ScoreService] ¡ANOTACIÓN! Player1 anotó para Red (+50 Coins). Nuevo Score: Red=5, Blue=0
+[RoundService] Estado de sesión '1c133d07-7a1c-4119-bfad-f7af41a5bce2' cambiado a: Ending (v15)
+[PointFeedbackService] Limpieza completada para Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2'
+[SpawnService] ResetCharacterInArena exitoso para 'Player1' en 'RedSpawn' (Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2', Team 'Red')
+[SpawnService] ResetCharacterInArena exitoso para 'Player2' en 'BlueSpawn' (Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2', Team 'Blue')
+[ScoreService] ¡Red ALCANZÓ EL WINNING SCORE (5)! Victoria inmediata.
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.HumanoidRootPart (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: nil
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Torso (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: nil
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.DevAwardsGold.Handle (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: nil
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Right Leg (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: nil
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Vampire.Handle (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: nil
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Right Arm (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: nil
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Left Arm (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: nil
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player1.Left Leg (Part)
+[ScoreService] Resolved player: Player1
+[ScoreService] Player team: nil
+[ScoreService] Match: 1c133d07-7a1c-4119-bfad-f7af41a5bce2
+[ScoreService] Match state: Ending
+[PlayerService] +1 Win otorgado a 'Player1' (Razón: MatchWin). Total Wins: 1
+[PlayerService] +1 Loss registrado a 'Player2' (Razón: MatchLoss). Total Losses: 1
+[RoundService] Estadísticas y recompensas procesadas para Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2' (Resultado: Red, 2 jugadores)
+[SpawnService] Jugador 'Player1' posicionado en 'SpawnLocation' (-55.22151184082031, 20.579307556152344, 202.22760009765625)
+[SpawnService] Jugadores retornados a Workspace.Lobby.SpawnLocation con estados normales restaurados
+[SpawnService] Jugador 'Player2' posicionado en 'SpawnLocation' (-55.22151184082031, 20.579307556152344, 202.22760009765625)
+[SpawnService] Jugadores retornados a Workspace.Lobby.SpawnLocation con estados normales restaurados
+[RoundService] Estado de sesión '1c133d07-7a1c-4119-bfad-f7af41a5bce2' cambiado a: ReturningToLobby (v16)
+[MatchInstanceService] Instancia destruida: Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2', ArenaSlot 0 liberado
+[PointFeedbackService] Limpieza completada para Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2'
+[ScoreService] Limpieza completada para Match '1c133d07-7a1c-4119-bfad-f7af41a5bce2'
+[RoundService] Sesión '1c133d07-7a1c-4119-bfad-f7af41a5bce2' cerrada sin recursos pendientes
+
+ENSAYO 2
+[PointFeedbackService] Feedback activado para Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' (Punto: a12296e2-71cd-47ea-b4b5-10eb438a0edb_Red_2_0, Equipo: Red, Jugador: Player2, PointEffect: Basic [Básico], Origen: Workspace.ActiveMatches.Match_a12296e2-71cd-47ea-b4b5-10eb438a0edb.Levels.ZoneWin.RedWin, Final: false)
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Right Leg (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Torso (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Classic.Hand (MeshPart)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.HumanoidRootPart (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Right Arm (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Classic.Handle (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Left Leg (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Left Arm (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.DevAwardsGold.Handle (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Head (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[EliminationService] PointScorer 'Player2' tocó KillPart durante PointInProgress en Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb'. Evento absorbido.
+[EliminationService] PointScorer 'Player2' tocó VoidBoundaryPolling durante PointInProgress en Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb'. Evento absorbido.
+[EliminationService] NORMAL FALL (KillPart): 'Player1' cayó sin atacante en Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' (Estado: Playing)
+[SpawnService] ResetCharacterInArena exitoso para 'Player1' en 'BlueSpawn' (Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb', Team 'Blue')
+[SpawnService] Jugador 'Player2' posicionado en 'RedSpawn' (9979, 505, -0.991455078125)
+[SpawnService] Jugador 'Player1' posicionado en 'BlueSpawn' (9810.5, 505, 0)
+[SpawnService] Posicionamiento Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb': 2/2; Success=true
+[RoundService] Estado de sesión 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' cambiado a: PointRestartCountdown (v9)
+[RoundService] Estado de sesión 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' cambiado a: Playing (v10)
+[RoundService] PointRestartCountdown completado para Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb'. Partida reanudada en PLAYING.
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Vampire.Handle (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Valid scoring entry
+[ScoreService] PointScorer registrado: 'Player2' (Equipo Red, Punto 3, Match a12296e2-71cd-47ea-b4b5-10eb438a0edb)
+[ScoreService] Red score incremented
+[PlayerService] +50 Coins otorgados a 'Player2' (Razón: MatchPoint). Saldo: 150
+[ScoreService] ¡ANOTACIÓN! Player2 anotó para Red (+50 Coins). Nuevo Score: Red=3, Blue=0
+[PointFeedbackService] Feedback activado para Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' (Punto: a12296e2-71cd-47ea-b4b5-10eb438a0edb_Red_3_0, Equipo: Red, Jugador: Player2, PointEffect: Basic [Básico], Origen: Workspace.ActiveMatches.Match_a12296e2-71cd-47ea-b4b5-10eb438a0edb.Levels.ZoneWin.RedWin, Final: false)
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Right Leg (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Torso (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Classic.Hand (MeshPart)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.HumanoidRootPart (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Right Arm (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Classic.Handle (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Left Leg (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Left Arm (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.DevAwardsGold.Handle (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Head (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[EliminationService] PointScorer 'Player2' tocó KillPart durante PointInProgress en Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb'. Evento absorbido.
+[EliminationService] PointScorer 'Player2' tocó VoidBoundaryPolling durante PointInProgress en Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb'. Evento absorbido.
+[EliminationService] NORMAL FALL (KillPart): 'Player1' cayó sin atacante en Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' (Estado: Playing)
+[SpawnService] ResetCharacterInArena exitoso para 'Player1' en 'BlueSpawn' (Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb', Team 'Blue')
+[SpawnService] Jugador 'Player2' posicionado en 'RedSpawn' (9979, 505, -0.991455078125)
+[SpawnService] Jugador 'Player1' posicionado en 'BlueSpawn' (9810.5, 505, 0)
+[SpawnService] Posicionamiento Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb': 2/2; Success=true
+[RoundService] Estado de sesión 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' cambiado a: PointRestartCountdown (v11)
+[RoundService] Estado de sesión 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' cambiado a: Playing (v12)
+[RoundService] PointRestartCountdown completado para Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb'. Partida reanudada en PLAYING.
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Vampire.Handle (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Valid scoring entry
+[ScoreService] PointScorer registrado: 'Player2' (Equipo Red, Punto 4, Match a12296e2-71cd-47ea-b4b5-10eb438a0edb)
+[ScoreService] Red score incremented
+[PlayerService] +50 Coins otorgados a 'Player2' (Razón: MatchPoint). Saldo: 200
+[ScoreService] ¡ANOTACIÓN! Player2 anotó para Red (+50 Coins). Nuevo Score: Red=4, Blue=0
+[PointFeedbackService] Feedback activado para Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' (Punto: a12296e2-71cd-47ea-b4b5-10eb438a0edb_Red_4_0, Equipo: Red, Jugador: Player2, PointEffect: Basic [Básico], Origen: Workspace.ActiveMatches.Match_a12296e2-71cd-47ea-b4b5-10eb438a0edb.Levels.ZoneWin.RedWin, Final: false)
+[ScoreService] Match Point emitido para equipo 'Red'
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Right Leg (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Torso (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Classic.Hand (MeshPart)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.HumanoidRootPart (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Right Arm (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Classic.Handle (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Left Leg (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Left Arm (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.DevAwardsGold.Handle (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Head (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[EliminationService] PointScorer 'Player2' tocó KillPart durante PointInProgress en Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb'. Evento absorbido.
+[EliminationService] PointScorer 'Player2' tocó VoidBoundaryPolling durante PointInProgress en Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb'. Evento absorbido.
+[EliminationService] NORMAL FALL (KillPart): 'Player1' cayó sin atacante en Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' (Estado: Playing)
+[SpawnService] ResetCharacterInArena exitoso para 'Player1' en 'BlueSpawn' (Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb', Team 'Blue')
+[SpawnService] Jugador 'Player2' posicionado en 'RedSpawn' (9979, 505, -0.991455078125)
+[SpawnService] Jugador 'Player1' posicionado en 'BlueSpawn' (9810.5, 505, 0)
+[SpawnService] Posicionamiento Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb': 2/2; Success=true
+[RoundService] Estado de sesión 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' cambiado a: PointRestartCountdown (v13)
+[RoundService] Estado de sesión 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' cambiado a: Playing (v14)
+[RoundService] PointRestartCountdown completado para Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb'. Partida reanudada en PLAYING.
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Vampire.Handle (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: Red
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Playing
+[ScoreService] Valid scoring entry
+[ScoreService] PointScorer registrado: 'Player2' (Equipo Red, Punto 5, Match a12296e2-71cd-47ea-b4b5-10eb438a0edb)
+[ScoreService] Red score incremented
+[PlayerService] +50 Coins otorgados a 'Player2' (Razón: MatchPoint). Saldo: 250
+[ScoreService] ¡ANOTACIÓN! Player2 anotó para Red (+50 Coins). Nuevo Score: Red=5, Blue=0
+[RoundService] Estado de sesión 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' cambiado a: Ending (v15)
+[PointFeedbackService] Limpieza completada para Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb'
+[SpawnService] ResetCharacterInArena exitoso para 'Player2' en 'RedSpawn' (Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb', Team 'Red')
+[SpawnService] ResetCharacterInArena exitoso para 'Player1' en 'BlueSpawn' (Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb', Team 'Blue')
+[ScoreService] ¡Red ALCANZÓ EL WINNING SCORE (5)! Victoria inmediata.
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Right Leg (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: nil
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Torso (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: nil
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.HumanoidRootPart (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: nil
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Right Arm (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: nil
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Left Leg (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: nil
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Left Arm (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: nil
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.DevAwardsGold.Handle (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: nil
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Ending
+[ScoreService] Zone touched: RedWin
+[ScoreService] Touching instance: Workspace.Player2.Head (Part)
+[ScoreService] Resolved player: Player2
+[ScoreService] Player team: nil
+[ScoreService] Match: a12296e2-71cd-47ea-b4b5-10eb438a0edb
+[ScoreService] Match state: Ending
+[PlayerService] +1 Win otorgado a 'Player2' (Razón: MatchWin). Total Wins: 1
+[PlayerService] +1 Loss registrado a 'Player1' (Razón: MatchLoss). Total Losses: 1
+[RoundService] Estadísticas y recompensas procesadas para Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' (Resultado: Red, 2 jugadores)
+[SpawnService] Jugador 'Player2' posicionado en 'SpawnLocation' (-55.22151184082031, 20.579307556152344, 202.22760009765625)
+[SpawnService] Jugadores retornados a Workspace.Lobby.SpawnLocation con estados normales restaurados
+[SpawnService] Jugador 'Player1' posicionado en 'SpawnLocation' (-55.22151184082031, 20.579307556152344, 202.22760009765625)
+[SpawnService] Jugadores retornados a Workspace.Lobby.SpawnLocation con estados normales restaurados
+[RoundService] Estado de sesión 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' cambiado a: ReturningToLobby (v16)
+[MatchInstanceService] Instancia destruida: Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb', ArenaSlot 0 liberado
+[PointFeedbackService] Limpieza completada para Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb'
+[ScoreService] Limpieza completada para Match 'a12296e2-71cd-47ea-b4b5-10eb438a0edb'
+[RoundService] Sesión 'a12296e2-71cd-47ea-b4b5-10eb438a0edb' cerrada sin recursos pendientes
+[ENSAYO REPETIDO EN EL MISMO SERVIDOR]
+[PlayerService] +1 Win otorgado a 'Player2' (Razón: MatchWin). Total Wins: 2
+[PlayerService] +1 Loss registrado a 'Player1' (Razón: MatchLoss). Total Losses: 2
+[PlayerData] Save success: 'Player2' (Coins=500, Wins=2, Losses=0, Kills=0)
+[PlayerService] Desregistrado: Player2
+[RoundService] Jugador desconectado: Player2 durante estado Ending
+[MatchInstanceService] Instancia destruida: Match 'd075d273-a02e-4b7b-b54e-d858bbeacbd1', ArenaSlot 0 liberado
+[RoundService] Sesión 'd075d273-a02e-4b7b-b54e-d858bbeacbd1' cerrada sin recursos pendientes
+

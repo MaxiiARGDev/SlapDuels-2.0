@@ -1,0 +1,66 @@
+[
+  {
+    "File": "src/server/Abilities/AirJumpsAbility.luau",
+    "SHA256": "8e9bc950f31b180b57b640aa53439c35ca82514989eb1f9107add8da4b8dcb3d"
+  },
+  {
+    "File": "src/server/Abilities/DashAbility.luau",
+    "SHA256": "ff23f7691f26e13eae62f77b64def0629470c0204c33d022717f686b2517ad68"
+  },
+  {
+    "File": "src/server/Abilities/DevilSpeedAbility.luau",
+    "SHA256": "f1482813fcb2b4a0a52bbd8ff9773b94c6a7c44cbf5bf815ca5f080b202d6232"
+  },
+  {
+    "File": "src/server/Abilities/InvisibilityAbility.luau",
+    "SHA256": "9ab4a4503bbda7de9569713f3c24f2ad4d2f1f28c9248c8d2f7477e96ede9544"
+  },
+  {
+    "File": "src/server/Abilities/MovementGuard.luau",
+    "SHA256": "3fcfb27bae4d4a122847f2514cd41e05affc5cbed92d707f594bf34eeac89539"
+  },
+  {
+    "File": "src/server/Abilities/StrongSlapAbility.luau",
+    "SHA256": "f5b83a3cb6ae8394f6d798456ada7d7ceafd3d9eb9d682483c4dc7a48aaf00e9"
+  },
+  {
+    "File": "src/shared/AbilityDefinitions.luau",
+    "SHA256": "71dd072cbf775c373694c90cc12ae9dca70f33440198d6c38dbe21f343b3d9ba"
+  },
+  {
+    "File": "src/server/Services/AbilityService.luau",
+    "SHA256": "a4dfb8a29229b8ca87b024739f26ceb7c2096603e680f10e49822a20435ae6ea"
+  },
+  {
+    "File": "src/server/Shop/Providers/AbilityProvider.luau",
+    "SHA256": "ab56e323fa83c38db7aec729cbaa1dc1558644050a7266df37f7ca1f5079f456"
+  },
+  {
+    "File": "src/client/Controllers/AbilityController.luau",
+    "SHA256": "056ae82db52be1d19e3932072fb94e09ee01d686ce965db8733a7d965d18df00"
+  },
+  {
+    "File": "src/client/Abilities/AbilitySelection.luau",
+    "SHA256": "7e9ab8711f248a76d37d5815f612affcd9ba8be8b7213de8aab9395c1e8b6ed7"
+  },
+  {
+    "File": "src/client/Abilities/AbilityPresentation.luau",
+    "SHA256": "eaf5c6bdbc8f0c61e4a0a7449ae40e200f6189a94b199522f1b7b3235ecef35f"
+  },
+  {
+    "File": "src/server/Services/SlapService.luau",
+    "SHA256": "a171f211b109dfebfcb94baf8278f69ddc5bdb2d9154bbb38db9ba952f2a0ee5"
+  },
+  {
+    "File": "src/server/Services/EliminationService.luau",
+    "SHA256": "7f1290446030daff4a190b399d7a1c82d9c4eea8e3a831a0186219105553f975"
+  },
+  {
+    "File": "src/server/Bootstrap.server.luau",
+    "SHA256": "b0850423674e836e8c88572b9caaa44dd71460511bbdb8f586307749d4fb83f7"
+  },
+  {
+    "File": "studio-safe.project.json",
+    "SHA256": "be4dc77ede55036334654972793c78a2e1594a304ea0e860363cd96785a7db6f"
+  }
+]

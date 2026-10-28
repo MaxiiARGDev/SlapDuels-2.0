@@ -1,0 +1,78 @@
+{
+  "Sources": [
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"428baa2e1a2349efdb8972bbb93ceb27226ccc17795bc3947f1da20e02b4509d\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.InitialOdds\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"04f0c8e3fe7b8b5aaf40ecacde6b4b90f0740e9b73a42be91cb4a05be45b4319\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.CrateDefinitions\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"48f27b008de1d221248588e80d990f4eb1d86daa9e189ad5fe64f479702d346a\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.Catalog\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"52d9d4d1926fa7fc7516d55e6b9b733ac419c7fe38fe8af67881e8a1351b04d3\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.Odds\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"e0a46524ea3e16061069ddddd9325dd69950230c6da5178929ddc435d3871959\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.OddsPresentation\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"6e71d9fa3afc1ae43a7d646bd15afbca1fcec0cab978b10d185d039fd20cf098\",\"Path\":\"ServerScriptService.Services.CrateService\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"9a1d3c298b75591f39fa52ca5d1cc629b81e0b78df50caf97195bcde76ecd270\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.CrateController\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    }
+  ],
+  "UI": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"Path\":\"StarterGui.ShopHUD.CratePanel.OddsList\",\"FontInherited\":true,\"Edit\":true,\"CreatedInstances\":3,\"ExistingGeometryUnchanged\":true,\"Scrolling\":true}"
+      }
+    ],
+    "isError": false
+  },
+  "Gameplay": "NOT RUN",
+  "Cloud": "NOT ACCESSED"
+}

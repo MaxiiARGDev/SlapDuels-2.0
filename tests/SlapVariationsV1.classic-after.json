@@ -1,0 +1,82 @@
+{
+  "Classic": [
+    {
+      "Path": "ServerStorage.Slaps.Classic.Swing",
+      "AnimationId": "rbxassetid://204062532",
+      "Class": "Animation"
+    },
+    {
+      "Class": "Configuration",
+      "Path": "ServerStorage.Slaps.Classic.Configuration"
+    },
+    {
+      "Value": 20,
+      "Path": "ServerStorage.Slaps.Classic.Configuration.Power",
+      "Class": "NumberValue"
+    },
+    {
+      "Value": 0.6,
+      "Path": "ServerStorage.Slaps.Classic.Configuration.SlapCooldown",
+      "Class": "NumberValue"
+    },
+    {
+      "Path": "ServerStorage.Slaps.Classic.Hand",
+      "CanQuery": true,
+      "CanCollide": false,
+      "Color": [
+        0.9725490212440491,
+        0.9725490212440491,
+        0.9725490212440491
+      ],
+      "Class": "MeshPart",
+      "CanTouch": true,
+      "Transparency": 0,
+      "MeshSize": [
+        3.96301007270813,
+        4.535019874572754,
+        1.3670300245285034
+      ],
+      "TextureID": "",
+      "MaterialName": "SmoothPlastic",
+      "MeshId": "http://www.roblox.com/asset/?id=32054761",
+      "Size": [
+        2.300506353378296,
+        3.1455867290496826,
+        1.088670015335083
+      ]
+    },
+    {
+      "PlaybackSpeed": 1,
+      "Path": "ServerStorage.Slaps.Classic.Hand.Hit",
+      "Volume": 0.5,
+      "SoundId": "rbxassetid://5213679380",
+      "Class": "Sound"
+    },
+    {
+      "Path": "ServerStorage.Slaps.Classic.Handle",
+      "CanQuery": true,
+      "CanCollide": false,
+      "Color": [
+        0.06666667014360428,
+        0.06666667014360428,
+        0.06666667014360428
+      ],
+      "Class": "Part",
+      "CanTouch": true,
+      "Transparency": 0,
+      "MaterialName": "Plastic",
+      "Size": [
+        0.9551976323127747,
+        0.3149276375770569,
+        0.11502531915903091
+      ]
+    },
+    {
+      "Class": "WeldConstraint",
+      "Path": "ServerStorage.Slaps.Classic.Handle.WeldConstraint"
+    }
+  ],
+  "IsStudio": true,
+  "IsRunning": false,
+  "UnchangedComparedToInitialAudit": true
+}

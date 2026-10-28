@@ -1,0 +1,115 @@
+{
+  "Sources": {
+    "SourceCount": 13,
+    "Sources": {
+      "1": {
+        "Hash": "29432541d0972d7d17506498ca77f7e94434b2d216e2195c1b0ec55d53e3cd5a",
+        "Path": "ServerScriptService.Services.Crates.RewardVisualMetadata"
+      },
+      "2": {
+        "Hash": "43506077952ebf10da7d4a7709de1486528ad88b8cc88602812a1fe4b57338d5",
+        "Path": "StarterPlayer.StarterPlayerScripts.CrateOpening.RewardRevealConfig"
+      },
+      "3": {
+        "Hash": "95d21ee90b5e35f525b7607e186fa63c90974e03ede77f12c79c16a33568108f",
+        "Path": "StarterPlayer.StarterPlayerScripts.CrateOpening.RewardRevealProfile"
+      },
+      "4": {
+        "Hash": "cad9be681f6b261bdfc7ac9c72ffc6add30335fef76dcec5e8e0280cb6309d18",
+        "Path": "StarterPlayer.StarterPlayerScripts.CrateOpening.RewardVFX"
+      },
+      "5": {
+        "Hash": "dd365c35024f3b02c049f71c54489b45ea2190745f38c9c14bc9b81b4ead693f",
+        "Path": "StarterPlayer.StarterPlayerScripts.CrateOpening.RewardSpinMotion"
+      },
+      "6": {
+        "Hash": "7cf8f0de351bddf6b891cf6821631fb120c0ea55eab4b50baf83087fcf0ab547",
+        "Path": "StarterPlayer.StarterPlayerScripts.CrateOpening.RewardSpin3D"
+      },
+      "7": {
+        "Hash": "7c5af855e19cedaecc07cda8e99580b9528799ae4f9cc827eb2781ad2895f625",
+        "Path": "StarterPlayer.StarterPlayerScripts.Controllers.CrateStandCinematicController"
+      },
+      "8": {
+        "Hash": "40d4ed1cc2aed65fa7d30a0ee50d1d8044e112855a9e0411b6c27aff0b89392c",
+        "Path": "StarterPlayer.StarterPlayerScripts.CrateOpening.RewardGallery"
+      },
+      "9": {
+        "Hash": "1e54f9555df119b3b0c8cbc83645076abe26e8f8a4698c55fd7b422a05469d4d",
+        "Path": "ServerScriptService.Services.Crates.CrateBatchEngine"
+      },
+      "10": {
+        "Hash": "7a39546b2bfc115645b000f21d1218ed56ee72d8ba18ab65572fd253172d6c0d",
+        "Path": "ServerScriptService.Services.Crates.CrateEngine"
+      },
+      "11": {
+        "Hash": "fd156b697ba83a57fae468376342bc499e8fdd2b5be7a81cd5fcc830b018f2d0",
+        "Path": "ServerScriptService.Services.Crates.StandOpeningService"
+      },
+      "12": {
+        "Hash": "5b397d69664ca6cb79780a0c6f058df2d2cc2702c23670bcab02795cb91d19ac",
+        "Path": "ReplicatedStorage.Shared.SlapCrates.OpeningConfig"
+      },
+      "13": {
+        "Hash": "3baa8e55cb0eaed6123d9b60719487462e9d4caf3f6158074dc4b2682d430699",
+        "Path": "ReplicatedStorage.Shared.SlapCrates.OpeningTimeline"
+      }
+    },
+    "IsStudio": true,
+    "IsRunning": false
+  },
+  "Physical": {
+    "Highlights": 2,
+    "Resource": "ReplicatedStorage.UIAssets.CrateRevealV25",
+    "IsRunning": false,
+    "ShopHUDSnapshotMatched": true,
+    "ShopHUDDescendants": 200,
+    "Beams": 16,
+    "IsStudio": true,
+    "Emitters": 4,
+    "Sounds": {
+      "1": {
+        "SoundId": "",
+        "Path": "ReplicatedStorage.UIAssets.CrateRevealV25.RewardEffects.Anchor.JackpotReveal"
+      },
+      "2": {
+        "SoundId": "",
+        "Path": "ReplicatedStorage.UIAssets.CrateRevealV25.SpinTick"
+      }
+    }
+  },
+  "Snapshots": [
+    {
+      "Path": "Workspace.CrateStands.MainCrateStand",
+      "SnapshotByteIdentical": true,
+      "Descendants": 154
+    },
+    {
+      "Path": "StarterGui.CrateOpeningHUD",
+      "SnapshotByteIdentical": true,
+      "Descendants": 26
+    },
+    {
+      "Path": "ReplicatedStorage.UIAssets.CrateBatchRewardSlot",
+      "SnapshotByteIdentical": true,
+      "Descendants": 18
+    },
+    {
+      "Path": "StarterGui.ShopHUD",
+      "SnapshotByteIdentical": true,
+      "Descendants": 200
+    },
+    {
+      "Path": "ReplicatedStorage.UIAssets.CrateRevealV25",
+      "SnapshotByteIdentical": true,
+      "Descendants": 44
+    }
+  ],
+  "Persistence": {
+    "Environment": "Studio",
+    "ProviderName": "InMemory",
+    "WritesToCloud": false,
+    "Scope": "Edit Resolve only; no gameplay or runtime profile validation"
+  },
+  "Gameplay": "NOT RUN"
+}

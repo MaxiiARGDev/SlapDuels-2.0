@@ -1,0 +1,1 @@
+ClassicVariationsV2 resolver PASS: 5 assertions; gameplay NOT RUN

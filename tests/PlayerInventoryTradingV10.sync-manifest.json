@@ -1,0 +1,68 @@
+[
+  {
+    "File": "src/server/Bootstrap.server.luau",
+    "Path": "ServerScriptService.Bootstrap",
+    "After": "aa6f1a8aef9703f30c8e85f7f61ae7ce687a4305927199cf5cd0c05d3146b2f5",
+    "Before": "fc50d61cc8fb908eff85d3b720425d635a2bd522ed757359896395f8df80e467"
+  },
+  {
+    "File": "src/shared/SocialConfig.luau",
+    "Path": "ReplicatedStorage.Shared.SocialConfig",
+    "After": "c67f97932d7b9685123bdd0cda37758e13bbad880db9589cf124a56e5b11ba14",
+    "Before": null
+  },
+  {
+    "File": "src/client/Controllers/SocialController.luau",
+    "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SocialController",
+    "After": "c1ef47729bab480a1d5fc6d38742f5e9f7e4072889eaeef7a544e5d52ea96f84",
+    "Before": null
+  },
+  {
+    "File": "src/client/Social/Targeting.luau",
+    "Path": "StarterPlayer.StarterPlayerScripts.Social.Targeting",
+    "After": "fe51f51f4e2fdbcb8660ad6e44f2752bc785d9aeb8e9cde5f7cddd188bafeb3e",
+    "Before": null
+  },
+  {
+    "File": "src/client/Social/ViewportPool.luau",
+    "Path": "StarterPlayer.StarterPlayerScripts.Social.ViewportPool",
+    "After": "cd984fe74824810fcaeb048dd913d54de453626fb357042cf66363506330099d",
+    "Before": null
+  },
+  {
+    "File": "src/server/Services/SocialService.luau",
+    "Path": "ServerScriptService.Services.SocialService",
+    "After": "e8ed7182116ba74342f308d02966f786546fd43b449b9039d3f2e82d31bf3406",
+    "Before": null
+  },
+  {
+    "File": "src/server/Services/Trading/PublicInventory.luau",
+    "Path": "ServerScriptService.Services.Trading.PublicInventory",
+    "After": "36ac29a28a9d09c8896dd63a67345155ec1a3458eceb1bd6bd617c714c53d9c0",
+    "Before": null
+  },
+  {
+    "File": "src/server/Services/Trading/TradeEngine.luau",
+    "Path": "ServerScriptService.Services.Trading.TradeEngine",
+    "After": "963ae28310f118c1b42e0f36649f71d9f56db9aacbff09f9278922ea25e24c1a",
+    "Before": null
+  },
+  {
+    "File": "src/server/Services/Trading/TradePolicy.luau",
+    "Path": "ServerScriptService.Services.Trading.TradePolicy",
+    "After": "23f9b1975948a484d82ae95a41dcbf5b9d95bf3faff59b1266b529ccc2d52370",
+    "Before": null
+  },
+  {
+    "File": "src/server/Services/Trading/TradeRecoveryService.luau",
+    "Path": "ServerScriptService.Services.Trading.TradeRecoveryService",
+    "After": "8b9ebf9fa8ffdec09c9163d89d1df1df0839bcbcb7bdc68cd63648f8cd40efd6",
+    "Before": null
+  },
+  {
+    "File": "src/server/Services/Trading/TradeTransactionService.luau",
+    "Path": "ServerScriptService.Services.Trading.TradeTransactionService",
+    "After": "decc4a6acb97ae0acefd50049536e5e90d67da401712360fbe3a5c365fd6688e",
+    "Before": null
+  }
+]

@@ -1,0 +1,69 @@
+{
+  "name": "CrateOpeningHUD",
+  "tree": {
+    "$className": "ScreenGui",
+    "$properties": {
+      "Enabled": false,
+      "ResetOnSpawn": false,
+      "IgnoreGuiInset": true,
+      "DisplayOrder": 90,
+      "ZIndexBehavior": "Sibling"
+    },
+    "Transition": {
+      "$className": "Frame",
+      "$properties": {
+        "Size": {
+          "UDim2": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0,
+            0,
+            0
+          ]
+        },
+        "BackgroundTransparency": 1,
+        "BorderSizePixel": 0,
+        "ZIndex": 100,
+        "Active": false
+      }
+    },
+    "Flash": {
+      "$className": "Frame",
+      "$properties": {
+        "Size": {
+          "UDim2": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            1,
+            1,
+            1
+          ]
+        },
+        "BackgroundTransparency": 1,
+        "BorderSizePixel": 0,
+        "ZIndex": 99,
+        "Active": false
+      }
+    }
+  }
+}

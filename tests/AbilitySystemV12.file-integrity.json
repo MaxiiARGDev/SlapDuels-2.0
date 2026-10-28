@@ -1,0 +1,25 @@
+{
+  "ProtectedFiles": 92,
+  "ProtectedUnchanged": 92,
+  "ProtectedDifferences": [],
+  "BackupFiles": 16,
+  "BackupHashMismatches": [],
+  "ChangedFromTaskBaseline": [
+    "src/server/Abilities/AirJumpsAbility.luau",
+    "src/server/Abilities/DashAbility.luau",
+    "src/server/Abilities/DevilSpeedAbility.luau",
+    "src/server/Abilities/InvisibilityAbility.luau",
+    "src/server/Abilities/MovementGuard.luau",
+    "src/server/Abilities/StrongSlapAbility.luau",
+    "src/shared/AbilityDefinitions.luau",
+    "src/server/Services/AbilityService.luau",
+    "src/server/Shop/Providers/AbilityProvider.luau",
+    "src/client/Controllers/AbilityController.luau",
+    "src/client/Abilities/AbilitySelection.luau",
+    "src/client/Abilities/AbilityPresentation.luau",
+    "src/server/Services/SlapService.luau",
+    "src/server/Services/EliminationService.luau",
+    "src/server/Bootstrap.server.luau",
+    "studio-safe.project.json"
+  ]
+}

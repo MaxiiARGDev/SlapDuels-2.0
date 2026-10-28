@@ -15,8 +15,12 @@ type ProductProvider = Types.ProductProvider
 
 local PointEffectProvider = {}
 
-local _cachedProducts: { ProductDefinition }? = nil
 local _playerService: any = nil
+local function hasResource(productId: string): boolean
+	local folder = game:GetService("ServerStorage"):FindFirstChild("PointEffects")
+	local model = folder and folder:FindFirstChild(productId)
+	return model ~= nil and model:IsA("Model")
+end
 
 local function getPlayerService(): any
 	if _playerService then
@@ -45,10 +49,6 @@ function PointEffectProvider:GetCategory(): string
 end
 
 function PointEffectProvider:GetProducts(): { ProductDefinition }
-	if _cachedProducts then
-		return _cachedProducts
-	end
-
 	local products: { ProductDefinition } = {}
 	local allDefs = PointEffectDefinitions.GetAll()
 
@@ -61,7 +61,7 @@ function PointEffectProvider:GetProducts(): { ProductDefinition }
 			Description = def.Description,
 			Price = def.Price,
 			Currency = "Coins",
-			IsAvailable = true,
+			IsAvailable = hasResource(def.Id),
 			Rarity = def.Rarity,
 			Metadata = {
 				Rarity = def.Rarity,
@@ -78,7 +78,6 @@ function PointEffectProvider:GetProducts(): { ProductDefinition }
 		return a.Price < b.Price
 	end)
 
-	_cachedProducts = products
 	return products
 end
 
@@ -100,7 +99,7 @@ function PointEffectProvider:GetProduct(productId: string): ProductDefinition?
 		Description = def.Description,
 		Price = def.Price,
 		Currency = "Coins",
-		IsAvailable = true,
+		IsAvailable = hasResource(def.Id),
 		Rarity = def.Rarity,
 		Metadata = {
 			Rarity = def.Rarity,
@@ -116,6 +115,8 @@ function PointEffectProvider:CanPurchase(player: Player, product: ProductDefinit
 	if product.Category ~= "PointEffects" then
 		return false, "InvalidCategory"
 	end
+	if not self:GetProduct(product.Id) then return false, "ProductNotFound" end
+	if not hasResource(product.Id) then return false, "ProductUnavailable" end
 
 	if not product.IsAvailable then
 		return false, "ProductUnavailable"
@@ -142,6 +143,8 @@ function PointEffectProvider:CanEquip(player: Player, product: ProductDefinition
 	if product.Category ~= "PointEffects" then
 		return false, "InvalidCategory"
 	end
+	if not self:GetProduct(product.Id) then return false, "ProductNotFound" end
+	if not hasResource(product.Id) then return false, "ProductUnavailable" end
 
 	if product.ProductType ~= "Cosmetic" then
 		return false, "NotEquippable"
@@ -166,6 +169,7 @@ function PointEffectProvider:CanEquip(player: Player, product: ProductDefinition
 end
 
 function PointEffectProvider:OnPurchased(player: Player, product: ProductDefinition): (boolean, string?)
+	if not self:GetProduct(product.Id) or not hasResource(product.Id) then return false, "ProductUnavailable" end
 	local ps = getPlayerService()
 	if not ps then
 		return false, "PlayerServiceNotAvailable"
@@ -180,6 +184,7 @@ function PointEffectProvider:OnPurchased(player: Player, product: ProductDefinit
 end
 
 function PointEffectProvider:OnEquipped(player: Player, product: ProductDefinition): (boolean, string?)
+	if not self:GetProduct(product.Id) or not hasResource(product.Id) then return false, "ProductUnavailable" end
 	local ps = getPlayerService()
 	if not ps then
 		return false, "PlayerServiceNotAvailable"

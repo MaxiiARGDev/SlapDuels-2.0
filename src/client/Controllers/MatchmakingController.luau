@@ -7,6 +7,7 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
+local Constants = require(ReplicatedStorage.Shared.Constants)
 local Types = require(ReplicatedStorage.Shared.Types)
 
 type QueueSnapshot = Types.QueueSnapshot
@@ -79,18 +80,20 @@ function MatchmakingController:_bindHUD()
 	if redSide then
 		local header = redSide:FindFirstChild("TeamLabel") or redSide:FindFirstChild("TeamHeader")
 		if header and header:IsA("TextLabel") then
-			header.Visible = false
+			header.Visible = true
+			header.Position = UDim2.new(header.Position.X.Scale, header.Position.X.Offset, 0, -36)
+			self._redTeamHeader = header
 		end
-		self._redTeamHeader = nil
 		self._redSlotsContainer = redSide:FindFirstChild("SlotsContainer") :: Frame?
 	end
 
 	if blueSide then
 		local header = blueSide:FindFirstChild("TeamLabel") or blueSide:FindFirstChild("TeamHeader")
 		if header and header:IsA("TextLabel") then
-			header.Visible = false
+			header.Visible = true
+			header.Position = UDim2.new(header.Position.X.Scale, header.Position.X.Offset, 0, -36)
+			self._blueTeamHeader = header
 		end
-		self._blueTeamHeader = nil
 		self._blueSlotsContainer = blueSide:FindFirstChild("SlotsContainer") :: Frame?
 	end
 
@@ -99,6 +102,30 @@ function MatchmakingController:_bindHUD()
 		self._slotTemplate = template
 		template.Visible = false
 	end
+	-- Reuse the authored center label when this HUD has no separate status header.
+	if not self._statusBadge then
+		local versus = content:FindFirstChild("Versus")
+		self._statusBadge = versus and versus:FindFirstChildOfClass("TextLabel")
+	end
+	local scale = queueFrame:FindFirstChild("CardScale")
+	if scale and scale:IsA("UIScale") then
+		self._queueScale = scale
+		self._authoredQueueScale = scale.Scale
+	end
+	if self._queueSizeConnection then self._queueSizeConnection:Disconnect() end
+	if self._viewportSizeConnection then self._viewportSizeConnection:Disconnect() end
+	self._queueSizeConnection = queueFrame:GetPropertyChangedSignal("AbsoluteSize"):Connect(function() self:_fitQueue() end)
+	self._viewportSizeConnection = hud:GetPropertyChangedSignal("AbsoluteSize"):Connect(function() self:_fitQueue() end)
+end
+
+-- Bound the existing card to the viewport; preserve its authored scale whenever it fits.
+function MatchmakingController:_fitQueue()
+	local frame, scale, hud = self._queueFrame, self._queueScale, self._hud
+	if not frame or not scale or not hud or scale.Scale <= 0 then return end
+	local width = frame.AbsoluteSize.X / scale.Scale
+	if width <= 0 or hud.AbsoluteSize.X <= 0 then return end
+	local fitted = math.min(self._authoredQueueScale or 1, hud.AbsoluteSize.X * 0.92 / width)
+	if math.abs(scale.Scale - fitted) > 0.001 then scale.Scale = fitted end
 end
 
 function MatchmakingController:_connectRemotes()
@@ -115,13 +142,19 @@ function MatchmakingController:_connectRemotes()
 		end
 	end
 
-	-- Ocultar el HUD de matchmaking cuando la partida pasa a fases activas
+	-- Ocultar el HUD de matchmaking únicamente cuando la partida pasa a fases comprometidas (supera la preparación)
 	local matchFolder = remotes:WaitForChild("Match", 10)
 	if matchFolder then
 		local stateChanged = matchFolder:WaitForChild("StateChanged", 10) :: RemoteEvent?
 		if stateChanged then
-			stateChanged.OnClientEvent:Connect(function(newState: string)
-				if newState ~= "Waiting" then
+			stateChanged.OnClientEvent:Connect(function(newState: string, payload: any)
+				local sessionId = type(payload) == "table" and (payload.SessionId or payload.MatchId) or nil
+				if type(sessionId) ~= "string" or localPlayer:GetAttribute("MatchId") ~= sessionId then return end
+				local isPreparationState = (newState == Constants.RoundState.Waiting
+					or newState == Constants.RoundState.MatchReady
+					or newState == Constants.RoundState.MatchCountdown)
+
+				if not isPreparationState then
 					if self._queueFrame then
 						self._queueFrame.Visible = false
 					end
@@ -212,6 +245,12 @@ function MatchmakingController:_handleQueueStatus(snapshot: QueueSnapshot)
 	end
 
 	-- 1. Actualizar Título y Estado
+	if self._redTeamHeader then
+		self._redTeamHeader.Text = string.format("RED %d/%d", #snapshot.Red, snapshot.TeamSize)
+	end
+	if self._blueTeamHeader then
+		self._blueTeamHeader.Text = string.format("BLUE %d/%d", #snapshot.Blue, snapshot.TeamSize)
+	end
 	if self._title then
 		self._title.Text = string.format("COLA %s", string.upper(snapshot.Mode))
 	end
@@ -249,6 +288,7 @@ function MatchmakingController:_handleQueueStatus(snapshot: QueueSnapshot)
 			table.insert(self._blueSlotClones, slot)
 		end
 	end
+	self:_fitQueue()
 end
 
 -- Clona y configura una instancia del template de slot de jugador

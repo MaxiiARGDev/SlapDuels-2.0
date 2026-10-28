@@ -1,0 +1,108 @@
+{
+  "StudioId": "5984807e-5268-4214-8b30-e127bebb4d84",
+  "Preflight": {
+    "Editor": "c042081f8bd8bc47c3b5038fdbee8ac9b893329fc72e0483377bd56bc13b352f",
+    "ProfileHash": "c8cd041961e0e2cd88d767b35a9a5b3601069b0fe175c857a9f455c24b4386a9",
+    "Source": "c042081f8bd8bc47c3b5038fdbee8ac9b893329fc72e0483377bd56bc13b352f",
+    "Gradient": true,
+    "NewSurface": false,
+    "Safe": true
+  },
+  "Synchronization": {
+    "Editor": "0609ec2dfa90c322abfd914dd2211fac3c5d78b2950726b2aca18890e92bdaab",
+    "Descendants": 258,
+    "Source": "0609ec2dfa90c322abfd914dd2211fac3c5d78b2950726b2aca18890e92bdaab",
+    "Edit": true,
+    "Background": "Frame",
+    "Expected": "0609ec2dfa90c322abfd914dd2211fac3c5d78b2950726b2aca18890e92bdaab",
+    "DirectGradients": {
+      "BackgroundGradient": false
+    },
+    "GroupColor": "1, 1, 1"
+  },
+  "Final": {
+    "TradeCommitEnabled": false,
+    "Protected": {
+      "EndCinematicHUD": {
+        "Before": "8b4239bc70abf009195d6c636a374e270da92fe7b9c13881c98956790a641c92",
+        "After": "8b4239bc70abf009195d6c636a374e270da92fe7b9c13881c98956790a641c92",
+        "Unchanged": true
+      },
+      "ShopHUD": {
+        "Before": "044aa835a3c39771c9061a1d35d8336fb0cd71810c2258263581ddbc9fb77b16",
+        "After": "044aa835a3c39771c9061a1d35d8336fb0cd71810c2258263581ddbc9fb77b16",
+        "Unchanged": true
+      },
+      "TradeHUD": {
+        "Before": "9749ab9ca86db5310042ff81bf36c836db7a0b4d62ea1e644e63b18d241ed181",
+        "After": "9749ab9ca86db5310042ff81bf36c836db7a0b4d62ea1e644e63b18d241ed181",
+        "Unchanged": true
+      },
+      "MatchHUD": {
+        "Before": "0bd648c4a16fa25ce4c554c9c2736a30756f9cae390e4d96d059ace2d0453cae",
+        "After": "0bd648c4a16fa25ce4c554c9c2736a30756f9cae390e4d96d059ace2d0453cae",
+        "Unchanged": true
+      },
+      "PremiumShopHUD": {
+        "Before": "c5353b46410505b19152f666d8830c1b1d4acc2d412c28dda78ac7a33699d1f5",
+        "After": "c5353b46410505b19152f666d8830c1b1d4acc2d412c28dda78ac7a33699d1f5",
+        "Unchanged": true
+      },
+      "MatchmakingHUD": {
+        "Before": "ec941de59e6676587ca28e652d500bd7a8fa96dcc343a3ce1eed1518e6f50ea1",
+        "After": "ec941de59e6676587ca28e652d500bd7a8fa96dcc343a3ce1eed1518e6f50ea1",
+        "Unchanged": true
+      },
+      "SocialPlayHUD": {
+        "Before": "f31fbf52f929161401e59a25c17aa33038007593c3b1a57809f7b0eefd4a3551",
+        "After": "f31fbf52f929161401e59a25c17aa33038007593c3b1a57809f7b0eefd4a3551",
+        "Unchanged": true
+      },
+      "TradeRequestHUD": {
+        "Before": "4c00d1e2f155d135679d38bc991fa64743c3f1da4b99e24263aabc113937516c",
+        "After": "4c00d1e2f155d135679d38bc991fa64743c3f1da4b99e24263aabc113937516c",
+        "Unchanged": true
+      },
+      "PlayerHUD": {
+        "Before": "c66fd5857497fcb429d4e6088f5783ec328f4dc218fbcb07ed8b19d30949dca6",
+        "After": "c66fd5857497fcb429d4e6088f5783ec328f4dc218fbcb07ed8b19d30949dca6",
+        "Unchanged": true
+      }
+    },
+    "Edit": true,
+    "DirectGradients": {
+      "BackgroundGradient": false
+    },
+    "HiddenInternalUnitId": true,
+    "Descendants": 258,
+    "Persistence": {
+      "Provider": "InMemory",
+      "WritesToCloud": false,
+      "Environment": "Studio"
+    },
+    "GroupColor": "1, 1, 1",
+    "Components": {
+      "Surface": "Frame",
+      "Trade.ActionIcon": "Frame",
+      "CollectionTitle": "TextLabel",
+      "Summary.Kills.StatIcon": "Frame",
+      "CollectionHint": "TextLabel",
+      "Summary.Streak.StatIcon": "Frame",
+      "Summary.Wins.StatIcon": "Frame",
+      "Articles.ActionLabel": "TextLabel",
+      "Summary.Equipped.Preview": "ViewportFrame",
+      "Challenge.ActionIcon": "Frame",
+      "Invite.ActionIcon": "Frame",
+      "Articles.ActionIcon": "Frame",
+      "Username": "TextLabel",
+      "ProfileBadge.Label": "TextLabel"
+    },
+    "PreviewStateRestored": true
+  },
+  "EditPreview": {
+    "CaptureId": "ProfileVisualV13_Edit",
+    "Static": true,
+    "GameplayStarted": false,
+    "TemporaryPreviewStateRestored": true
+  }
+}

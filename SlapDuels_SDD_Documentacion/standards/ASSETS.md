@@ -1,8 +1,8 @@
 # Slap Duels 2.0 — ASSETS
 
-> Este documento conserva contenido del `GAME_SDD.md` original suministrado, redistribuido por dominio para reducir el contexto necesario para agentes de IA.
+> Especificación vigente. Define el comportamiento requerido; no certifica que la implementación ni los assets actuales hayan sido verificados en Studio.
 
-## 3. Regla Fundamental de Assets
+## Regla Fundamental de Assets
 
 **Los assets permanentes de presentación DEBEN crearse y editarse directamente en Roblox Studio.**
 
@@ -20,8 +20,7 @@ Esto incluye de forma obligatoria:
 
 ---
 
-
-## 4. Distinción: Template vs Instance
+## Distinción: Template vs Instance
 
 Para cualquier efecto o recurso audiovisual, se debe mantener una separación estricta:
 
@@ -45,3 +44,7 @@ stateDiagram-v2
 ```
 
 ---
+
+## Alcance de la regla
+
+La prohibición aplica a assets permanentes de presentación. No impide crear infraestructura temporal de gameplay como VoidBoundaryPart, conexiones, remotes o restricciones físicas de ragdoll. Estos recursos tienen propietario y cleanup; esta distinción no permite construir UI, sonidos o VFX permanentes por código. Los cambios deliberados de diseño en modo edición son distintos de mutar templates en runtime.

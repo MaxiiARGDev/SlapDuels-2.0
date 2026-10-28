@@ -1,0 +1,818 @@
+{
+  "Added": [
+    "/CrateSpinPanel/Close/UICorner",
+    "/CrateSpinPanel/UIStroke",
+    "/CrateSpinPanel/Window/UICorner",
+    "/CrateSpinPanel/Window/UIStroke",
+    "/MainFrame/Body/DetailPanel/ActionButton/ActionStroke",
+    "/MainFrame/Header/CoinsContainer/CoinsStroke",
+    "/MainFrame/Header/Divider",
+    "/MainFrame/Tabs/CratesTab/TabStroke",
+    "/UIEffects"
+  ],
+  "Removed": [],
+  "ChangedProperties": {
+    "/MainFrame/Body/DetailPanel/UIStroke": {
+      "Color": {
+        "Before": "<Color3 name=\"Color\">\n                  <R>0.1764706</R>\n                  <G>0.22745098</G>\n                  <B>0.32156864</B>\n                </Color3>\n                ",
+        "After": "<Color3 name=\"Color\">\n                  <R>0.19607843</R>\n                  <G>0.29411766</G>\n                  <B>0.4509804</B>\n                </Color3>\n                "
+      },
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0</float>\n                ",
+        "After": "<float name=\"Transparency\">0.1</float>\n                "
+      }
+    },
+    "/MainFrame/Tabs/CratesTab": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n                <R>0.08</R>\n                <G>0.1</G>\n                <B>0.15</B>\n              </Color3>\n              ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n                <R>0.078431375</R>\n                <G>0.11764706</G>\n                <B>0.19607843</B>\n              </Color3>\n              "
+      },
+      "TextSize": {
+        "Before": "<float name=\"TextSize\">18</float>\n              ",
+        "After": "<float name=\"TextSize\">16</float>\n              "
+      },
+      "FontFace": {
+        "Before": "<Font name=\"FontFace\">\n                <Family>\n                  <url>rbxasset://fonts/families/LegacyArial.json</url>\n                </Family>\n                <Weight>400</Weight>\n                <Style>Normal</Style>\n                <CachedFaceId>\n                  <url>rbxasset://fonts/Arimo-Regular.ttf</url>\n                </CachedFaceId>\n              </Font>\n              ",
+        "After": "<Font name=\"FontFace\">\n                <Family>\n                  <url>rbxasset://fonts/families/GothamSSm.json</url>\n                </Family>\n                <Weight>700</Weight>\n                <Style>Normal</Style>\n                <CachedFaceId>\n                  <url>rbxasset://fonts/Montserrat-Bold.ttf</url>\n                </CachedFaceId>\n              </Font>\n              "
+      }
+    },
+    "/CrateActionsTemplate/ViewOdds": {
+      "FontFace": {
+        "Before": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>900</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Black.ttf</url>\n              </CachedFaceId>\n            </Font>\n            ",
+        "After": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>700</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Bold.ttf</url>\n              </CachedFaceId>\n            </Font>\n            "
+      }
+    },
+    "/CrateActionsTemplate/ViewOdds/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"TopLeftRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n            ",
+        "After": "<UDim name=\"TopRightRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n            "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"BottomRightRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      }
+    },
+    "/CratePanel/Buy/ButtonStroke": {
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0.6</float>\n              ",
+        "After": "<float name=\"Transparency\">0.65</float>\n              "
+      }
+    },
+    "/CrateSpinPanel/Indicator": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n              <R>1</R>\n              <G>0.8</G>\n              <B>0.2</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n              <R>1</R>\n              <G>0.8235294</G>\n              <B>0.3019608</B>\n            </Color3>\n            "
+      }
+    },
+    "/MainFrame/Body/DetailPanel/NameLabel": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n                  <R>0.9411765</R>\n                  <G>0.9607843</G>\n                  <B>1</B>\n                </Color3>\n                ",
+        "After": "<Color3 name=\"TextColor3\">\n                  <R>0.92156863</R>\n                  <G>0.9607843</G>\n                  <B>1</B>\n                </Color3>\n                "
+      },
+      "FontFace": {
+        "Before": "<Font name=\"FontFace\">\n                  <Family>\n                    <url>rbxasset://fonts/families/GothamSSm.json</url>\n                  </Family>\n                  <Weight>900</Weight>\n                  <Style>Normal</Style>\n                </Font>\n                ",
+        "After": "<Font name=\"FontFace\">\n                  <Family>\n                    <url>rbxasset://fonts/families/GothamSSm.json</url>\n                  </Family>\n                  <Weight>700</Weight>\n                  <Style>Normal</Style>\n                  <CachedFaceId>\n                    <url>rbxasset://fonts/Montserrat-Bold.ttf</url>\n                  </CachedFaceId>\n                </Font>\n                "
+      }
+    },
+    "/MainFrame/Tabs/CratesTab/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n                  <S>0</S>\n                  <O>8</O>\n                </UDim>\n                ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n                  <S>0</S>\n                  <O>10</O>\n                </UDim>\n                "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n                  <S>0</S>\n                  <O>8</O>\n                </UDim>\n                ",
+        "After": "<UDim name=\"TopLeftRadius\">\n                  <S>0</S>\n                  <O>10</O>\n                </UDim>\n                "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n                  <S>0</S>\n                  <O>8</O>\n                </UDim>\n              ",
+        "After": "<UDim name=\"TopRightRadius\">\n                  <S>0</S>\n                  <O>10</O>\n                </UDim>\n              "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n                  <S>0</S>\n                  <O>8</O>\n                </UDim>\n                ",
+        "After": "<UDim name=\"BottomRightRadius\">\n                  <S>0</S>\n                  <O>10</O>\n                </UDim>\n                "
+      }
+    },
+    "/MainFrame/Body/Catalog/UIGridLayout": {
+      "CellPadding": {
+        "Before": "<UDim2 name=\"CellPadding\">\n                  <XS>0.02</XS>\n                  <XO>0</XO>\n                  <YS>0</YS>\n                  <YO>10</YO>\n                </UDim2>\n                ",
+        "After": "<UDim2 name=\"CellPadding\">\n                  <XS>0.02</XS>\n                  <XO>0</XO>\n                  <YS>0</YS>\n                  <YO>12</YO>\n                </UDim2>\n                "
+      },
+      "CellSize": {
+        "Before": "<UDim2 name=\"CellSize\">\n                  <XS>0.31</XS>\n                  <XO>0</XO>\n                  <YS>0</YS>\n                  <YO>146</YO>\n                </UDim2>\n                ",
+        "After": "<UDim2 name=\"CellSize\">\n                  <XS>0.31</XS>\n                  <XO>0</XO>\n                  <YS>0</YS>\n                  <YO>164</YO>\n                </UDim2>\n                "
+      }
+    },
+    "/MainFrame/Body/DetailPanel/ActionButton": {
+      "AttributesSerialize": {
+        "Before": "<BinaryString name=\"AttributesSerialize\">AwAAAAkAAABDb2xvcl9CdXkPoaAgPo2MDD+XlpY+DgAAAENvbG9yX0Rpc2FibGVkD7W0ND7R0FA+jYyMPgsAAABDb2xvcl9FcXVpcA8AAAAA8fDwPtjXVz8=</BinaryString>\n                ",
+        "After": "<BinaryString name=\"AttributesSerialize\">AwAAAAkAAABDb2xvcl9CdXkPiYgIPsbFRT+9vLw+DgAAAENvbG9yX0Rpc2FibGVkD/HwcD6NjIw+tbS0PgsAAABDb2xvcl9FcXVpcA8AAAAAw8JCPwAAgD8=</BinaryString>\n                "
+      },
+      "FontFace": {
+        "Before": "<Font name=\"FontFace\">\n                  <Family>\n                    <url>rbxasset://fonts/families/GothamSSm.json</url>\n                  </Family>\n                  <Weight>900</Weight>\n                  <Style>Normal</Style>\n                </Font>\n                ",
+        "After": "<Font name=\"FontFace\">\n                  <Family>\n                    <url>rbxasset://fonts/families/GothamSSm.json</url>\n                  </Family>\n                  <Weight>700</Weight>\n                  <Style>Normal</Style>\n                  <CachedFaceId>\n                    <url>rbxasset://fonts/Montserrat-Bold.ttf</url>\n                  </CachedFaceId>\n                </Font>\n                "
+      }
+    },
+    "/CratePanel/Title": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n              <R>1</R>\n              <G>0.78431374</G>\n              <B>0.23529412</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"TextColor3\">\n              <R>1</R>\n              <G>0.8235294</G>\n              <B>0.3019608</B>\n            </Color3>\n            "
+      },
+      "FontFace": {
+        "Before": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>900</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Black.ttf</url>\n              </CachedFaceId>\n            </Font>\n            ",
+        "After": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>700</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Bold.ttf</url>\n              </CachedFaceId>\n            </Font>\n            "
+      }
+    },
+    "/MainFrame/Body/DetailPanel/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n                  <S>0</S>\n                  <O>12</O>\n                </UDim>\n                ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n                  <S>0</S>\n                  <O>14</O>\n                </UDim>\n                "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n                  <S>0</S>\n                  <O>12</O>\n                </UDim>\n                ",
+        "After": "<UDim name=\"TopLeftRadius\">\n                  <S>0</S>\n                  <O>14</O>\n                </UDim>\n                "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n                  <S>0</S>\n                  <O>12</O>\n                </UDim>\n              ",
+        "After": "<UDim name=\"TopRightRadius\">\n                  <S>0</S>\n                  <O>14</O>\n                </UDim>\n              "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n                  <S>0</S>\n                  <O>12</O>\n                </UDim>\n                ",
+        "After": "<UDim name=\"BottomRightRadius\">\n                  <S>0</S>\n                  <O>14</O>\n                </UDim>\n                "
+      }
+    },
+    "/MainFrame/Body/DetailPanel": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n                <R>0.078431375</R>\n                <G>0.09803922</G>\n                <B>0.14901961</B>\n              </Color3>\n              ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n                <R>0.05490196</R>\n                <G>0.08627451</G>\n                <B>0.15686275</B>\n              </Color3>\n              "
+      }
+    },
+    "/CratePanel/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n              <S>0</S>\n              <O>12</O>\n            </UDim>\n            ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n            "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n              <S>0</S>\n              <O>12</O>\n            </UDim>\n            ",
+        "After": "<UDim name=\"TopLeftRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n            "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n              <S>0</S>\n              <O>12</O>\n            </UDim>\n          ",
+        "After": "<UDim name=\"TopRightRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n          "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n              <S>0</S>\n              <O>12</O>\n            </UDim>\n            ",
+        "After": "<UDim name=\"BottomRightRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n            "
+      }
+    },
+    "/MainFrame/Body/DetailPanel/ActionButton/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n                    <S>0</S>\n                    <O>10</O>\n                  </UDim>\n                  ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n                    <S>0</S>\n                    <O>999</O>\n                  </UDim>\n                  "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n                    <S>0</S>\n                    <O>10</O>\n                  </UDim>\n                  ",
+        "After": "<UDim name=\"TopLeftRadius\">\n                    <S>0</S>\n                    <O>999</O>\n                  </UDim>\n                  "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n                    <S>0</S>\n                    <O>10</O>\n                  </UDim>\n                ",
+        "After": "<UDim name=\"TopRightRadius\">\n                    <S>0</S>\n                    <O>999</O>\n                  </UDim>\n                "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n                    <S>0</S>\n                    <O>10</O>\n                  </UDim>\n                  ",
+        "After": "<UDim name=\"BottomRightRadius\">\n                    <S>0</S>\n                    <O>999</O>\n                  </UDim>\n                  "
+      }
+    },
+    "/CratePanel/HeaderAccent": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n              <R>1</R>\n              <G>1</G>\n              <B>1</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n              <R>0</R>\n              <G>0.7607843</G>\n              <B>1</B>\n            </Color3>\n            "
+      },
+      "BackgroundTransparency": {
+        "Before": "<float name=\"BackgroundTransparency\">0</float>\n            ",
+        "After": "<float name=\"BackgroundTransparency\">0.2</float>\n            "
+      }
+    },
+    "/MainFrame/Header/CoinsContainer/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n                  <S>0</S>\n                  <O>6</O>\n                </UDim>\n                ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n                  <S>0</S>\n                  <O>999</O>\n                </UDim>\n                "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n                  <S>0</S>\n                  <O>6</O>\n                </UDim>\n                ",
+        "After": "<UDim name=\"TopLeftRadius\">\n                  <S>0</S>\n                  <O>999</O>\n                </UDim>\n                "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n                  <S>0</S>\n                  <O>6</O>\n                </UDim>\n              ",
+        "After": "<UDim name=\"TopRightRadius\">\n                  <S>0</S>\n                  <O>999</O>\n                </UDim>\n              "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n                  <S>0</S>\n                  <O>6</O>\n                </UDim>\n                ",
+        "After": "<UDim name=\"BottomRightRadius\">\n                  <S>0</S>\n                  <O>999</O>\n                </UDim>\n                "
+      }
+    },
+    "/MainFrame/Body/DetailPanel/Preview/UIStroke": {
+      "Thickness": {
+        "Before": "<float name=\"Thickness\">1</float>\n                  ",
+        "After": "<float name=\"Thickness\">1.5</float>\n                  "
+      },
+      "Color": {
+        "Before": "<Color3 name=\"Color\">\n                    <R>0.27450982</R>\n                    <G>0.3137255</G>\n                    <B>0.43137255</B>\n                  </Color3>\n                  ",
+        "After": "<Color3 name=\"Color\">\n                    <R>0</R>\n                    <G>0.7607843</G>\n                    <B>1</B>\n                  </Color3>\n                  "
+      },
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0.3</float>\n                  ",
+        "After": "<float name=\"Transparency\">0.6</float>\n                  "
+      }
+    },
+    "/MainFrame/Body/Catalog/ProductCardTemplate": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n                  <R>0.078431375</R>\n                  <G>0.09803922</G>\n                  <B>0.14901961</B>\n                </Color3>\n                ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n                  <R>0.07058824</R>\n                  <G>0.10980392</G>\n                  <B>0.1882353</B>\n                </Color3>\n                "
+      }
+    },
+    "/MainFrame/Body/Catalog/ProductCardTemplate/RarityLabel": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n                    <R>0.6666667</R>\n                    <G>0.7058824</G>\n                    <B>0.78431374</B>\n                  </Color3>\n                  ",
+        "After": "<Color3 name=\"TextColor3\">\n                    <R>0.54901963</R>\n                    <G>0.627451</G>\n                    <B>0.74509805</B>\n                  </Color3>\n                  "
+      },
+      "Position": {
+        "Before": "<UDim2 name=\"Position\">\n                    <XS>0</XS>\n                    <XO>10</XO>\n                    <YS>0</YS>\n                    <YO>95</YO>\n                  </UDim2>\n                  ",
+        "After": "<UDim2 name=\"Position\">\n                    <XS>0</XS>\n                    <XO>10</XO>\n                    <YS>0</YS>\n                    <YO>108</YO>\n                  </UDim2>\n                  "
+      }
+    },
+    "/CratePanel/Open": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n              <R>0.15686275</R>\n              <G>0.09411765</G>\n              <B>0</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"TextColor3\">\n              <R>0.15686275</R>\n              <G>0.09803922</G>\n              <B>0</B>\n            </Color3>\n            "
+      },
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n              <R>1</R>\n              <G>0.72156864</G>\n              <B>0.10980392</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n              <R>1</R>\n              <G>0.8235294</G>\n              <B>0.3019608</B>\n            </Color3>\n            "
+      },
+      "FontFace": {
+        "Before": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>900</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Black.ttf</url>\n              </CachedFaceId>\n            </Font>\n            ",
+        "After": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>700</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Bold.ttf</url>\n              </CachedFaceId>\n            </Font>\n            "
+      }
+    },
+    "/MainFrame/Body/Catalog": {
+      "ScrollBarImageColor3": {
+        "Before": "<Color3 name=\"ScrollBarImageColor3\">\n                <R>0.29411766</R>\n                <G>0.3529412</G>\n                <B>0.5882353</B>\n              </Color3>\n              ",
+        "After": "<Color3 name=\"ScrollBarImageColor3\">\n                <R>0</R>\n                <G>0.7607843</G>\n                <B>1</B>\n              </Color3>\n              "
+      }
+    },
+    "/ShopButton/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n              <S>0</S>\n              <O>8</O>\n            </UDim>\n            ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n            "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n              <S>0</S>\n              <O>8</O>\n            </UDim>\n            ",
+        "After": "<UDim name=\"TopLeftRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n            "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n              <S>0</S>\n              <O>8</O>\n            </UDim>\n          ",
+        "After": "<UDim name=\"TopRightRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n          "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n              <S>0</S>\n              <O>8</O>\n            </UDim>\n            ",
+        "After": "<UDim name=\"BottomRightRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n            "
+      }
+    },
+    "/MainFrame/Body/Catalog/ProductCardTemplate/PriceLabel": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n                    <R>1</R>\n                    <G>0.84313726</G>\n                    <B>0</B>\n                  </Color3>\n                  ",
+        "After": "<Color3 name=\"TextColor3\">\n                    <R>1</R>\n                    <G>0.8235294</G>\n                    <B>0.3019608</B>\n                  </Color3>\n                  "
+      },
+      "TextSize": {
+        "Before": "<float name=\"TextSize\">13</float>\n                  ",
+        "After": "<float name=\"TextSize\">14</float>\n                  "
+      },
+      "Position": {
+        "Before": "<UDim2 name=\"Position\">\n                    <XS>0</XS>\n                    <XO>28</XO>\n                    <YS>1</YS>\n                    <YO>-29</YO>\n                  </UDim2>\n                  ",
+        "After": "<UDim2 name=\"Position\">\n                    <XS>0</XS>\n                    <XO>28</XO>\n                    <YS>1</YS>\n                    <YO>-30</YO>\n                  </UDim2>\n                  "
+      }
+    },
+    "/MainFrame/Tabs": {
+      "AttributesSerialize": {
+        "Before": "<BinaryString name=\"AttributesSerialize\">AwAAAAsAAABBY3RpdmVDb2xvcg8AAAAA8fDwPtjXVz8RAAAARGlzYWJsZWRUZXh0Q29sb3IP8fDwPoOCAj+XlhY/DQAAAEluYWN0aXZlQ29sb3IPwcDAPfHw8D25uDg+</BinaryString>\n            ",
+        "After": "<BinaryString name=\"AttributesSerialize\">AwAAAAsAAABBY3RpdmVDb2xvcg8AAAAAw8JCPwAAgD8RAAAARGlzYWJsZWRUZXh0Q29sb3IP8fDwPoOCAj+XlhY/DQAAAEluYWN0aXZlQ29sb3IPoaCgPfHw8D3JyEg+</BinaryString>\n            "
+      }
+    },
+    "/MainFrame/Body/DetailPanel/SecondaryButton/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n                    <S>0</S>\n                    <O>8</O>\n                  </UDim>\n                  ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n                    <S>0</S>\n                    <O>999</O>\n                  </UDim>\n                  "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n                    <S>0</S>\n                    <O>8</O>\n                  </UDim>\n                  ",
+        "After": "<UDim name=\"TopLeftRadius\">\n                    <S>0</S>\n                    <O>999</O>\n                  </UDim>\n                  "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n                    <S>0</S>\n                    <O>8</O>\n                  </UDim>\n                ",
+        "After": "<UDim name=\"TopRightRadius\">\n                    <S>0</S>\n                    <O>999</O>\n                  </UDim>\n                "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n                    <S>0</S>\n                    <O>8</O>\n                  </UDim>\n                  ",
+        "After": "<UDim name=\"BottomRightRadius\">\n                    <S>0</S>\n                    <O>999</O>\n                  </UDim>\n                  "
+      }
+    },
+    "/CratePanel/Close/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"TopLeftRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n            ",
+        "After": "<UDim name=\"TopRightRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n            "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"BottomRightRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      }
+    },
+    "/CratePanel/Buy": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n              <R>0.18039216</R>\n              <G>0.8</G>\n              <B>0.44313726</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n              <R>0.13333334</R>\n              <G>0.77254903</G>\n              <B>0.36862746</B>\n            </Color3>\n            "
+      },
+      "FontFace": {
+        "Before": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>900</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Black.ttf</url>\n              </CachedFaceId>\n            </Font>\n            ",
+        "After": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>700</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Bold.ttf</url>\n              </CachedFaceId>\n            </Font>\n            "
+      }
+    },
+    "/CrateActionsTemplate/ViewOdds/ButtonStroke": {
+      "Thickness": {
+        "Before": "<float name=\"Thickness\">1.5</float>\n              ",
+        "After": "<float name=\"Thickness\">1</float>\n              "
+      },
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0.6</float>\n              ",
+        "After": "<float name=\"Transparency\">0.65</float>\n              "
+      }
+    },
+    "/MainFrame/Body/Catalog/ProductCardTemplate/StateBadge/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n                      <S>0</S>\n                      <O>5</O>\n                    </UDim>\n                    ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n                      <S>0</S>\n                      <O>999</O>\n                    </UDim>\n                    "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n                      <S>0</S>\n                      <O>5</O>\n                    </UDim>\n                    ",
+        "After": "<UDim name=\"TopLeftRadius\">\n                      <S>0</S>\n                      <O>999</O>\n                    </UDim>\n                    "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n                      <S>0</S>\n                      <O>5</O>\n                    </UDim>\n                  ",
+        "After": "<UDim name=\"TopRightRadius\">\n                      <S>0</S>\n                      <O>999</O>\n                    </UDim>\n                  "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n                      <S>0</S>\n                      <O>5</O>\n                    </UDim>\n                    ",
+        "After": "<UDim name=\"BottomRightRadius\">\n                      <S>0</S>\n                      <O>999</O>\n                    </UDim>\n                    "
+      }
+    },
+    "/CratePanel": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n            <R>1</R>\n            <G>1</G>\n            <B>1</B>\n          </Color3>\n          ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n            <R>0.039215688</R>\n            <G>0.0627451</G>\n            <B>0.11764706</B>\n          </Color3>\n          "
+      }
+    },
+    "/CratePanel/Status/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"TopLeftRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n            ",
+        "After": "<UDim name=\"TopRightRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n            "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"BottomRightRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      }
+    },
+    "/CrateSpinPanel/Result": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n              <R>1</R>\n              <G>1</G>\n              <B>1</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"TextColor3\">\n              <R>1</R>\n              <G>0.8235294</G>\n              <B>0.3019608</B>\n            </Color3>\n            "
+      },
+      "BackgroundTransparency": {
+        "Before": "<float name=\"BackgroundTransparency\">0</float>\n            ",
+        "After": "<float name=\"BackgroundTransparency\">1</float>\n            "
+      },
+      "FontFace": {
+        "Before": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/LegacyArial.json</url>\n              </Family>\n              <Weight>400</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Arimo-Regular.ttf</url>\n              </CachedFaceId>\n            </Font>\n            ",
+        "After": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>700</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Bold.ttf</url>\n              </CachedFaceId>\n            </Font>\n            "
+      }
+    },
+    "/MainFrame/Body/Catalog/ProductCardTemplate/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n                    <S>0</S>\n                    <O>10</O>\n                  </UDim>\n                  ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n                    <S>0</S>\n                    <O>12</O>\n                  </UDim>\n                  "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n                    <S>0</S>\n                    <O>10</O>\n                  </UDim>\n                  ",
+        "After": "<UDim name=\"TopLeftRadius\">\n                    <S>0</S>\n                    <O>12</O>\n                  </UDim>\n                  "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n                    <S>0</S>\n                    <O>10</O>\n                  </UDim>\n                ",
+        "After": "<UDim name=\"TopRightRadius\">\n                    <S>0</S>\n                    <O>12</O>\n                  </UDim>\n                "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n                    <S>0</S>\n                    <O>10</O>\n                  </UDim>\n                  ",
+        "After": "<UDim name=\"BottomRightRadius\">\n                    <S>0</S>\n                    <O>12</O>\n                  </UDim>\n                  "
+      }
+    },
+    "/CratePanel/ViewOdds/ButtonStroke": {
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0.6</float>\n              ",
+        "After": "<float name=\"Transparency\">0.65</float>\n              "
+      }
+    },
+    "/MainFrame/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n            ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n              <S>0</S>\n              <O>16</O>\n            </UDim>\n            "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n            ",
+        "After": "<UDim name=\"TopLeftRadius\">\n              <S>0</S>\n              <O>16</O>\n            </UDim>\n            "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n          ",
+        "After": "<UDim name=\"TopRightRadius\">\n              <S>0</S>\n              <O>16</O>\n            </UDim>\n          "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n            ",
+        "After": "<UDim name=\"BottomRightRadius\">\n              <S>0</S>\n              <O>16</O>\n            </UDim>\n            "
+      }
+    },
+    "/MainFrame/Header/CoinsContainer": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n                <R>0.10980392</R>\n                <G>0.1254902</G>\n                <B>0.21176471</B>\n              </Color3>\n              ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n                <R>0.078431375</R>\n                <G>0.11764706</G>\n                <B>0.19607843</B>\n              </Color3>\n              "
+      },
+      "BackgroundTransparency": {
+        "Before": "<float name=\"BackgroundTransparency\">1</float>\n              ",
+        "After": "<float name=\"BackgroundTransparency\">0.1</float>\n              "
+      }
+    },
+    "/CratePanel/Close": {
+      "FontFace": {
+        "Before": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>900</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Black.ttf</url>\n              </CachedFaceId>\n            </Font>\n            ",
+        "After": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>700</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Bold.ttf</url>\n              </CachedFaceId>\n            </Font>\n            "
+      }
+    },
+    "/MainFrame/UIStroke": {
+      "Thickness": {
+        "Before": "<float name=\"Thickness\">2</float>\n            ",
+        "After": "<float name=\"Thickness\">1.5</float>\n            "
+      },
+      "Color": {
+        "Before": "<Color3 name=\"Color\">\n              <R>0</R>\n              <G>0</G>\n              <B>0</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"Color\">\n              <R>0</R>\n              <G>0.7607843</G>\n              <B>1</B>\n            </Color3>\n            "
+      },
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0</float>\n            ",
+        "After": "<float name=\"Transparency\">0.55</float>\n            "
+      }
+    },
+    "/CrateSpinPanel": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n            <R>0.05</R>\n            <G>0.12</G>\n            <B>0.32</B>\n          </Color3>\n          ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n            <R>0.039215688</R>\n            <G>0.0627451</G>\n            <B>0.11764706</B>\n          </Color3>\n          "
+      }
+    },
+    "/ShopButton/TextLabel": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n              <R>1</R>\n              <G>1</G>\n              <B>1</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"TextColor3\">\n              <R>0</R>\n              <G>0.7607843</G>\n              <B>1</B>\n            </Color3>\n            "
+      },
+      "FontFace": {
+        "Before": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/LuckiestGuy.json</url>\n              </Family>\n              <Weight>700</Weight>\n              <Style>Normal</Style>\n            </Font>\n            ",
+        "After": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>700</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Bold.ttf</url>\n              </CachedFaceId>\n            </Font>\n            "
+      }
+    },
+    "/MainFrame/Body/Catalog/ProductCardTemplate/NameLabel": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n                    <R>0.9411765</R>\n                    <G>0.9607843</G>\n                    <B>1</B>\n                  </Color3>\n                  ",
+        "After": "<Color3 name=\"TextColor3\">\n                    <R>0.92156863</R>\n                    <G>0.9607843</G>\n                    <B>1</B>\n                  </Color3>\n                  "
+      },
+      "TextSize": {
+        "Before": "<float name=\"TextSize\">14</float>\n                  ",
+        "After": "<float name=\"TextSize\">15</float>\n                  "
+      },
+      "Position": {
+        "Before": "<UDim2 name=\"Position\">\n                    <XS>0</XS>\n                    <XO>10</XO>\n                    <YS>0</YS>\n                    <YO>76</YO>\n                  </UDim2>\n                  ",
+        "After": "<UDim2 name=\"Position\">\n                    <XS>0</XS>\n                    <XO>10</XO>\n                    <YS>0</YS>\n                    <YO>88</YO>\n                  </UDim2>\n                  "
+      }
+    },
+    "/CratePanel/Outcomes/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"TopLeftRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n            ",
+        "After": "<UDim name=\"TopRightRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n            "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"BottomRightRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      }
+    },
+    "/MainFrame": {
+      "AttributesSerialize": {
+        "Before": "<BinaryString name=\"AttributesSerialize\">CAAAABIAAABNZXNzYWdlQ29sb3JfRXJyb3IPAACAP93c3D7d3Nw+EQAAAE1lc3NhZ2VDb2xvcl9JbmZvD7W0ND/Ew0M/3dxcPxQAAABNZXNzYWdlQ29sb3JfU3VjY2Vzcw/JyMg+5+ZmP4OCAj8SAAAAUmFyaXR5Q29sb3JfQ29tbW9uD6uqKj+1tDQ/ychIPxAAAABSYXJpdHlDb2xvcl9FcGljD7CvLz+/vr4+AACAPxUAAABSYXJpdHlDb2xvcl9MZWdlbmRhcnkPAACAP7q5OT+hoCA+EAAAAFJhcml0eUNvbG9yX1JhcmUPjYyMPpeWFj8AAIA/EwAAAFNlbGVjdGVkU3Ryb2tlQ29sb3IPAAAAAKGgID8AAIA/</BinaryString>\n          ",
+        "After": "<BinaryString name=\"AttributesSerialize\">CAAAABIAAABNZXNzYWdlQ29sb3JfRXJyb3IPAACAP8nIyD7x8PA+EQAAAE1lc3NhZ2VDb2xvcl9JbmZvD42MDD+hoCA/v74+PxQAAABNZXNzYWdlQ29sb3JfU3VjY2Vzcw+JiAg+xsVFP728vD4SAAAAUmFyaXR5Q29sb3JfQ29tbW9uD6GgID+rqio/v74+PxAAAABSYXJpdHlDb2xvcl9FcGljD7W0ND/d3Nw+AACAPxUAAABSYXJpdHlDb2xvcl9MZWdlbmRhcnkPAACAP9PSUj+bmpo+EAAAAFJhcml0eUNvbG9yX1JhcmUPtbS0PqGgID8AAIA/EwAAAFNlbGVjdGVkU3Ryb2tlQ29sb3IPAAAAAMPCQj8AAIA/</BinaryString>\n          "
+      },
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n            <R>0.04705883</R>\n            <G>0.11764707</G>\n            <B>0.31764707</B>\n          </Color3>\n          ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n            <R>0.039215688</R>\n            <G>0.0627451</G>\n            <B>0.11764706</B>\n          </Color3>\n          "
+      },
+      "BackgroundTransparency": {
+        "Before": "<float name=\"BackgroundTransparency\">0.2</float>\n          ",
+        "After": "<float name=\"BackgroundTransparency\">0.03</float>\n          "
+      }
+    },
+    "/CratePanel/Close/ButtonStroke": {
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0.6</float>\n              ",
+        "After": "<float name=\"Transparency\">0.65</float>\n              "
+      }
+    },
+    "/CratePanel/Status": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n              <R>0.88235295</R>\n              <G>0.9098039</G>\n              <B>1</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"TextColor3\">\n              <R>0.92156863</R>\n              <G>0.9607843</G>\n              <B>1</B>\n            </Color3>\n            "
+      },
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n              <R>0.047058824</R>\n              <G>0.05490196</G>\n              <B>0.14117648</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n              <R>0.078431375</R>\n              <G>0.11764706</G>\n              <B>0.19607843</B>\n            </Color3>\n            "
+      }
+    },
+    "/MainFrame/MessageLabel": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n              <R>0.7058824</R>\n              <G>0.7647059</G>\n              <B>0.8627451</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"TextColor3\">\n              <R>0.54901963</R>\n              <G>0.627451</G>\n              <B>0.74509805</B>\n            </Color3>\n            "
+      }
+    },
+    "/CrateSpinPanel/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n              <S>0</S>\n              <O>8</O>\n            </UDim>\n            ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n            "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n              <S>0</S>\n              <O>8</O>\n            </UDim>\n            ",
+        "After": "<UDim name=\"TopLeftRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n            "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n              <S>0</S>\n              <O>8</O>\n            </UDim>\n          ",
+        "After": "<UDim name=\"TopRightRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n          "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n              <S>0</S>\n              <O>8</O>\n            </UDim>\n            ",
+        "After": "<UDim name=\"BottomRightRadius\">\n              <S>0</S>\n              <O>14</O>\n            </UDim>\n            "
+      }
+    },
+    "/CrateSpinPanel/Window": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n              <R>0.08</R>\n              <G>0.1</G>\n              <B>0.15</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n              <R>0.078431375</R>\n              <G>0.11764706</G>\n              <B>0.19607843</B>\n            </Color3>\n            "
+      }
+    },
+    "/CratePanel/Receipt/ButtonStroke": {
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0.6</float>\n              ",
+        "After": "<float name=\"Transparency\">0.65</float>\n              "
+      }
+    },
+    "/CrateActionsTemplate/Action/ButtonStroke": {
+      "Thickness": {
+        "Before": "<float name=\"Thickness\">1.5</float>\n              ",
+        "After": "<float name=\"Thickness\">1</float>\n              "
+      },
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0.6</float>\n              ",
+        "After": "<float name=\"Transparency\">0.65</float>\n              "
+      }
+    },
+    "/MainFrame/Body/Catalog/UIPadding": {
+      "PaddingTop": {
+        "Before": "<UDim name=\"PaddingTop\">\n                  <S>0</S>\n                  <O>4</O>\n                </UDim>\n                ",
+        "After": "<UDim name=\"PaddingTop\">\n                  <S>0</S>\n                  <O>8</O>\n                </UDim>\n                "
+      },
+      "PaddingBottom": {
+        "Before": "<UDim name=\"PaddingBottom\">\n                  <S>0</S>\n                  <O>8</O>\n                </UDim>\n                ",
+        "After": "<UDim name=\"PaddingBottom\">\n                  <S>0</S>\n                  <O>12</O>\n                </UDim>\n                "
+      }
+    },
+    "/CratePanel/PanelStroke": {
+      "Thickness": {
+        "Before": "<float name=\"Thickness\">3</float>\n            ",
+        "After": "<float name=\"Thickness\">2</float>\n            "
+      },
+      "Color": {
+        "Before": "<Color3 name=\"Color\">\n              <R>0</R>\n              <G>0.8392157</G>\n              <B>1</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"Color\">\n              <R>0</R>\n              <G>0.7607843</G>\n              <B>1</B>\n            </Color3>\n            "
+      },
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0</float>\n            ",
+        "After": "<float name=\"Transparency\">0.4</float>\n            "
+      }
+    },
+    "/MainFrame/Body/Catalog/ProductCardTemplate/Preview": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n                    <R>0.10980392</R>\n                    <G>0.13333334</G>\n                    <B>0.20392157</B>\n                  </Color3>\n                  ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n                    <R>0.10980392</R>\n                    <G>0.16470589</G>\n                    <B>0.26666668</B>\n                  </Color3>\n                  "
+      },
+      "Size": {
+        "Before": "<UDim2 name=\"Size\">\n                    <XS>1</XS>\n                    <XO>-16</XO>\n                    <YS>0</YS>\n                    <YO>62</YO>\n                  </UDim2>\n                  ",
+        "After": "<UDim2 name=\"Size\">\n                    <XS>1</XS>\n                    <XO>-16</XO>\n                    <YS>0</YS>\n                    <YO>74</YO>\n                  </UDim2>\n                  "
+      }
+    },
+    "/CratePanel/Open/ButtonStroke": {
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0.6</float>\n              ",
+        "After": "<float name=\"Transparency\">0.65</float>\n              "
+      }
+    },
+    "/CrateSpinPanel/Close": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n              <R>0.08</R>\n              <G>0.1</G>\n              <B>0.15</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n              <R>0.9019608</R>\n              <G>0.23529412</G>\n              <B>0.3137255</B>\n            </Color3>\n            "
+      }
+    },
+    "/MainFrame/Body/Catalog/ProductCardTemplate/UIStroke": {
+      "Color": {
+        "Before": "<Color3 name=\"Color\">\n                    <R>0.1764706</R>\n                    <G>0.22745098</G>\n                    <B>0.32156864</B>\n                  </Color3>\n                  ",
+        "After": "<Color3 name=\"Color\">\n                    <R>0.19607843</R>\n                    <G>0.29411766</G>\n                    <B>0.4509804</B>\n                  </Color3>\n                  "
+      }
+    },
+    "/MainFrame/Body/Catalog/ProductCardTemplate/Preview/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n                      <S>0</S>\n                      <O>8</O>\n                    </UDim>\n                    ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n                      <S>0</S>\n                      <O>10</O>\n                    </UDim>\n                    "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n                      <S>0</S>\n                      <O>8</O>\n                    </UDim>\n                    ",
+        "After": "<UDim name=\"TopLeftRadius\">\n                      <S>0</S>\n                      <O>10</O>\n                    </UDim>\n                    "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n                      <S>0</S>\n                      <O>8</O>\n                    </UDim>\n                  ",
+        "After": "<UDim name=\"TopRightRadius\">\n                      <S>0</S>\n                      <O>10</O>\n                    </UDim>\n                  "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n                      <S>0</S>\n                      <O>8</O>\n                    </UDim>\n                    ",
+        "After": "<UDim name=\"BottomRightRadius\">\n                      <S>0</S>\n                      <O>10</O>\n                    </UDim>\n                    "
+      }
+    },
+    "/CrateActionsTemplate/Action/UICorner": {
+      "BottomLeftRadius": {
+        "Before": "<UDim name=\"BottomLeftRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"BottomLeftRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      },
+      "TopLeftRadius": {
+        "Before": "<UDim name=\"TopLeftRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"TopLeftRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      },
+      "TopRightRadius": {
+        "Before": "<UDim name=\"TopRightRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n            ",
+        "After": "<UDim name=\"TopRightRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n            "
+      },
+      "BottomRightRadius": {
+        "Before": "<UDim name=\"BottomRightRadius\">\n                <S>0</S>\n                <O>10</O>\n              </UDim>\n              ",
+        "After": "<UDim name=\"BottomRightRadius\">\n                <S>0</S>\n                <O>8</O>\n              </UDim>\n              "
+      }
+    },
+    "/MainFrame/Body/DetailPanel/SecondaryButton/UIStroke": {
+      "Thickness": {
+        "Before": "<float name=\"Thickness\">1</float>\n                  ",
+        "After": "<float name=\"Thickness\">1.5</float>\n                  "
+      },
+      "Color": {
+        "Before": "<Color3 name=\"Color\">\n                    <R>0.21568628</R>\n                    <G>0.27450982</G>\n                    <B>0.37254903</B>\n                  </Color3>\n                  ",
+        "After": "<Color3 name=\"Color\">\n                    <R>0.19607843</R>\n                    <G>0.29411766</G>\n                    <B>0.4509804</B>\n                  </Color3>\n                  "
+      },
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0</float>\n                  ",
+        "After": "<float name=\"Transparency\">0.2</float>\n                  "
+      }
+    },
+    "/MainFrame/Body/Catalog/ProductCardTemplate/Preview/UIStroke": {
+      "Thickness": {
+        "Before": "<float name=\"Thickness\">1</float>\n                    ",
+        "After": "<float name=\"Thickness\">1.5</float>\n                    "
+      },
+      "Color": {
+        "Before": "<Color3 name=\"Color\">\n                      <R>0.27450982</R>\n                      <G>0.3137255</G>\n                      <B>0.43137255</B>\n                    </Color3>\n                    ",
+        "After": "<Color3 name=\"Color\">\n                      <R>0.19607843</R>\n                      <G>0.29411766</G>\n                      <B>0.4509804</B>\n                    </Color3>\n                    "
+      },
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0.3</float>\n                    ",
+        "After": "<float name=\"Transparency\">0.2</float>\n                    "
+      }
+    },
+    "/CratePanel/Receipt": {
+      "FontFace": {
+        "Before": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>900</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Black.ttf</url>\n              </CachedFaceId>\n            </Font>\n            ",
+        "After": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>700</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Bold.ttf</url>\n              </CachedFaceId>\n            </Font>\n            "
+      }
+    },
+    "/MainFrame/Body/DetailPanel/SecondaryButton": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n                  <R>0.78431374</R>\n                  <G>0.8235294</G>\n                  <B>0.9019608</B>\n                </Color3>\n                ",
+        "After": "<Color3 name=\"TextColor3\">\n                  <R>0.92156863</R>\n                  <G>0.9607843</G>\n                  <B>1</B>\n                </Color3>\n                "
+      },
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n                  <R>0.11764706</R>\n                  <G>0.14901961</G>\n                  <B>0.21568628</B>\n                </Color3>\n                ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n                  <R>0.11764706</R>\n                  <G>0.16470589</G>\n                  <B>0.26666668</B>\n                </Color3>\n                "
+      }
+    },
+    "/MainFrame/Body/Catalog/ProductCardTemplate/StateBadge": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n                    <R>0.05882353</R>\n                    <G>0.07058824</G>\n                    <B>0.10980392</B>\n                  </Color3>\n                  ",
+        "After": "<Color3 name=\"TextColor3\">\n                    <R>0.039215688</R>\n                    <G>0.0627451</G>\n                    <B>0.11764706</B>\n                  </Color3>\n                  "
+      },
+      "AttributesSerialize": {
+        "Before": "<BinaryString name=\"AttributesSerialize\">AwAAAA4AAABDb2xvcl9FcXVpcHBlZA/JyMg+5+ZmP4OCAj8LAAAAQ29sb3JfT3duZWQPAAAAAKGgID8AAIA/EQAAAENvbG9yX1VuYXZhaWxhYmxlD/Hw8D6DggI/l5YWPw==</BinaryString>\n                  ",
+        "After": "<BinaryString name=\"AttributesSerialize\">AwAAAA4AAABDb2xvcl9FcXVpcHBlZA+JiAg+xsVFP728vD4LAAAAQ29sb3JfT3duZWQPAAAAAMPCQj8AAIA/EQAAAENvbG9yX1VuYXZhaWxhYmxlD/Hw8D6DggI/l5YWPw==</BinaryString>\n                  "
+      }
+    },
+    "/CratePanel/Outcomes": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n              <R>0.78431374</R>\n              <G>0.83137256</G>\n              <B>0.9607843</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"TextColor3\">\n              <R>0.92156863</R>\n              <G>0.9607843</G>\n              <B>1</B>\n            </Color3>\n            "
+      },
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n              <R>0.047058824</R>\n              <G>0.05490196</G>\n              <B>0.14117648</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n              <R>0.078431375</R>\n              <G>0.11764706</G>\n              <B>0.19607843</B>\n            </Color3>\n            "
+      }
+    },
+    "/ShopButton": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n            <R>1</R>\n            <G>1</G>\n            <B>1</B>\n          </Color3>\n          ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n            <R>0.05490196</R>\n            <G>0.08627451</G>\n            <B>0.15686275</B>\n          </Color3>\n          "
+      }
+    },
+    "/CratePanel/ViewOdds": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n              <R>0.43137255</R>\n              <G>0.3137255</G>\n              <B>0.9019608</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n              <R>0.47058824</R>\n              <G>0.3529412</G>\n              <B>1</B>\n            </Color3>\n            "
+      },
+      "FontFace": {
+        "Before": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>900</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Black.ttf</url>\n              </CachedFaceId>\n            </Font>\n            ",
+        "After": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>700</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Bold.ttf</url>\n              </CachedFaceId>\n            </Font>\n            "
+      }
+    },
+    "/MainFrame/Body/DetailPanel/Preview": {
+      "BackgroundColor3": {
+        "Before": "<Color3 name=\"BackgroundColor3\">\n                  <R>0.10980392</R>\n                  <G>0.13333334</G>\n                  <B>0.20392157</B>\n                </Color3>\n                ",
+        "After": "<Color3 name=\"BackgroundColor3\">\n                  <R>0.10980392</R>\n                  <G>0.16470589</G>\n                  <B>0.26666668</B>\n                </Color3>\n                "
+      }
+    },
+    "/CratePanel/Count": {
+      "TextColor3": {
+        "Before": "<Color3 name=\"TextColor3\">\n              <R>0.5882353</R>\n              <G>0.88235295</G>\n              <B>1</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"TextColor3\">\n              <R>0</R>\n              <G>0.7607843</G>\n              <B>1</B>\n            </Color3>\n            "
+      }
+    },
+    "/ShopButton/UIStroke": {
+      "Thickness": {
+        "Before": "<float name=\"Thickness\">2.1</float>\n            ",
+        "After": "<float name=\"Thickness\">2</float>\n            "
+      },
+      "Color": {
+        "Before": "<Color3 name=\"Color\">\n              <R>0.015686275</R>\n              <G>0.015686275</G>\n              <B>0.20784315</B>\n            </Color3>\n            ",
+        "After": "<Color3 name=\"Color\">\n              <R>0</R>\n              <G>0.7607843</G>\n              <B>1</B>\n            </Color3>\n            "
+      },
+      "Transparency": {
+        "Before": "<float name=\"Transparency\">0</float>\n            ",
+        "After": "<float name=\"Transparency\">0.3</float>\n            "
+      }
+    },
+    "/CrateActionsTemplate/Action": {
+      "FontFace": {
+        "Before": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>900</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Black.ttf</url>\n              </CachedFaceId>\n            </Font>\n            ",
+        "After": "<Font name=\"FontFace\">\n              <Family>\n                <url>rbxasset://fonts/families/GothamSSm.json</url>\n              </Family>\n              <Weight>700</Weight>\n              <Style>Normal</Style>\n              <CachedFaceId>\n                <url>rbxasset://fonts/Montserrat-Bold.ttf</url>\n              </CachedFaceId>\n            </Font>\n            "
+      }
+    }
+  }
+}

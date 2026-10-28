@@ -1,0 +1,31 @@
+{
+  "Scripts": [
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"085afdb336c737364aa009261ff6b6d59e3dc20599e6aa973068ee6ca3b52bd7\",\"Path\":\"StarterPlayer.StarterPlayerScripts.CrateOpening.CharacterVisibility\",\"Mode\":\"Edit\",\"Created\":true,\"Hash\":\"085afdb336c737364aa009261ff6b6d59e3dc20599e6aa973068ee6ca3b52bd7\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"d4e405761b0e9f28a86b92114728021eebabd7cd66cc006ecc1cef9d93832c8f\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.CrateStandCinematicController\",\"Mode\":\"Edit\",\"Created\":false,\"Hash\":\"d4e405761b0e9f28a86b92114728021eebabd7cd66cc006ecc1cef9d93832c8f\"}"
+        }
+      ],
+      "isError": false
+    }
+  ],
+  "Inspection": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"VisibilityModuleCount\":1,\"CurrentVisualResources\":{\"1\":{\"Hash\":\"02ab3968189bbd7b98ec5602265cf4ca17fa68663326f6fd725ee01e1b7f6f3d\",\"Path\":\"Workspace.CrateStands.MainCrateStand\",\"Descendants\":177},\"4\":{\"Hash\":\"7b838825c792e6ad7a4904961b3c48023c10dcb7b8677df94e961a08c8270b8a\",\"Path\":\"ServerStorage._CrateVisualBackup_20261019\",\"Descendants\":108},\"3\":{\"Hash\":\"ce7a44b723f4881e1fb5c3a8bfac9d2f5e369c409393608d05f7dded80e39b57\",\"Path\":\"StarterGui.ShopHUD\",\"Descendants\":172},\"2\":{\"Hash\":\"443984dae9326a10615e8d6725eec84ad31a59fe83a72ba65e93a6140eba79ff\",\"Path\":\"StarterGui.CrateOpeningHUD\",\"Descendants\":24}},\"Mode\":\"Edit\",\"PlaceId\":107328891970677,\"VisualResourcesWritten\":false,\"Gameplay\":\"NOT RUN\"}"
+      }
+    ],
+    "isError": false
+  }
+}

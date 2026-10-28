@@ -1,0 +1,1 @@
+PASS CrateGalleryV4: 31 isolated assertions; visual/render/gameplay NOT RUN

@@ -1,0 +1,128 @@
+{
+  "Date": "2026-10-17",
+  "SourceDeployment": [
+    {
+      "Matched": 9,
+      "Mode": "Edit",
+      "Scripts": {
+        "1": {
+          "SHA256": "d1e6c7d945249449a130a9e8b058dbc94f8e1cacca7f3711b8fd4551d83a4356",
+          "Path": "ServerScriptService/Abilities/DashAbility",
+          "Action": "Verified"
+        },
+        "2": {
+          "SHA256": "1e3890ce65cd2943cf83d62e645eb543abc53a138f05335e63f3be84cb3f3cf2",
+          "Path": "ServerScriptService/Abilities/AirJumpsAbility",
+          "Action": "Verified"
+        },
+        "3": {
+          "SHA256": "df02e550301bca6f33e6aba91608dc32bdbfc08e511f61f5dc2e82c937ea7e85",
+          "Path": "ServerScriptService/Abilities/DevilSpeedAbility",
+          "Action": "Verified"
+        },
+        "4": {
+          "SHA256": "719cbcf04aaee7fb6febebdb9df6dbc474bf4199e7e92ff6ac0f6c949fde0bd8",
+          "Path": "ServerScriptService/Abilities/InvisibilityAbility",
+          "Action": "Verified"
+        },
+        "5": {
+          "SHA256": "41e7ded94930159deb5c2e8363d58c3d7407dc1383bf41342b46f50b85ae29c4",
+          "Path": "ServerScriptService/Abilities/StrongSlapAbility",
+          "Action": "Verified"
+        },
+        "6": {
+          "SHA256": "e45a6da27d3d50f7b9337fd2dcf9b0720aea697807ebd8f41ef8ad3498deb0f1",
+          "Path": "ServerScriptService/Shop/Providers/AbilityProvider",
+          "Action": "Verified"
+        },
+        "7": {
+          "SHA256": "313649397b4104479185e5408c7ee0caaf9c3ee7d6538356e668be8c86a03b5b",
+          "Path": "ServerScriptService/Shop/ShopRemotes",
+          "Action": "Verified"
+        },
+        "8": {
+          "SHA256": "0f4b8f015ad983f9e428ba832bf9f5202925cf143aec91b693242b7e9051c207",
+          "Path": "ServerScriptService/Shop/ProfilePurchase",
+          "Action": "Verified"
+        },
+        "9": {
+          "SHA256": "c24018a0cc3cfec48218e8ec27a2b36df1d1b6e3e7280837462a41c1240fbb51",
+          "Path": "StarterPlayer/StarterPlayerScripts/Controllers/ShopController",
+          "Action": "Verified"
+        }
+      },
+      "IsRunning": false
+    }
+  ],
+  "ShopHUDBefore": [
+    {
+      "SHA256": "b29a76d12c154258f969b0bfabe0e342dc53309b30b516bcd0e10910a5c9449b",
+      "Mode": "Edit",
+      "Rows": 53,
+      "Descendants": 91
+    }
+  ],
+  "ShopHUDAfter": [
+    {
+      "SHA256": "b29a76d12c154258f969b0bfabe0e342dc53309b30b516bcd0e10910a5c9449b",
+      "Mode": "Edit",
+      "Rows": 53,
+      "Descendants": 91
+    }
+  ],
+  "GuiPhysicallyModified": false,
+  "StudioCatalogObservation": {
+    "Mode": "Edit",
+    "IsRunning": false,
+    "Count": 5,
+    "Diagnostics": [],
+    "Environment": "Studio",
+    "Provider": "InMemory",
+    "WritesToCloud": false,
+    "ActiveMatches": 0,
+    "Abilities": [
+      {
+        "Id": "Dash",
+        "DisplayName": "Impulso",
+        "Price": 0,
+        "PriceApproved": true,
+        "PurchaseEnabled": false,
+        "Duration": 0.2,
+        "Cooldown": 11
+      },
+      {
+        "Id": "AirJumps",
+        "Price": 750,
+        "PriceApproved": true,
+        "PurchaseEnabled": true,
+        "Duration": 15,
+        "Cooldown": 20
+      },
+      {
+        "Id": "DevilSpeed",
+        "Price": 1500,
+        "PriceApproved": true,
+        "PurchaseEnabled": true,
+        "Duration": 5,
+        "Cooldown": 14
+      },
+      {
+        "Id": "Invisible",
+        "Price": 2250,
+        "PriceApproved": true,
+        "PurchaseEnabled": true,
+        "Duration": 5,
+        "Cooldown": 35
+      },
+      {
+        "Id": "StrongSlap",
+        "Price": 3000,
+        "PriceApproved": true,
+        "PurchaseEnabled": true,
+        "Duration": 15,
+        "Cooldown": 25
+      }
+    ]
+  },
+  "NoGameplayExecuted": true
+}

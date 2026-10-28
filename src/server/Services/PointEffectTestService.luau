@@ -12,6 +12,7 @@ local ServerStorage = game:GetService("ServerStorage")
 local Workspace = game:GetService("Workspace")
 
 local Config = require(ReplicatedStorage.Shared.Config)
+local PointEffectDefinitions = require(ReplicatedStorage.Shared.PointEffectDefinitions)
 
 local PointEffectTestService = {}
 PointEffectTestService.Name = "PointEffectTestService"
@@ -43,7 +44,42 @@ function PointEffectTestService:_getRegistry()
 	return nil
 end
 
--- Obtiene el template visual/sonoro desde ServerStorage.PointEffects[EffectId]
+-- Obtiene el servicio de jugadores para resolver el cosmético equipado
+function PointEffectTestService:_getPlayerService()
+	if self._context and type(self._context.GetService) == "function" then
+		local s = self._context:GetService("PlayerService")
+		if s then return s end
+	end
+	local servicesFolder = ServerScriptService:FindFirstChild("Services")
+	local mod = servicesFolder and servicesFolder:FindFirstChild("PlayerService")
+	if mod and mod:IsA("ModuleScript") then
+		local ok, result = pcall(require, mod)
+		if ok then return result end
+	end
+	return nil
+end
+
+-- Resuelve autoritativamente el EffectId equipado por el jugador (con fallback seguro a Basic)
+function PointEffectTestService:_resolvePlayerEffectId(player: Player?): string
+	local defaultId = PointEffectDefinitions.DefaultEffectId
+	if not player then
+		return defaultId
+	end
+
+	local playerService = self:_getPlayerService()
+	if not playerService or type(playerService.GetEquippedPointEffect) ~= "function" then
+		return defaultId
+	end
+
+	local equipped = playerService:GetEquippedPointEffect(player)
+	if not equipped or not PointEffectDefinitions.IsValid(equipped) then
+		return defaultId
+	end
+
+	return equipped
+end
+
+-- Obtiene el template visual/sonoro desde ServerStorage.PointEffects[EffectId] (con fallback seguro a Basic)
 function PointEffectTestService:_getEffectTemplate(effectId: string): Instance?
 	local pointEffectsFolder = ServerStorage:FindFirstChild("PointEffects")
 	if not pointEffectsFolder then
@@ -52,8 +88,14 @@ function PointEffectTestService:_getEffectTemplate(effectId: string): Instance?
 	end
 
 	local template = pointEffectsFolder:FindFirstChild(effectId)
+	if not template and effectId ~= PointEffectDefinitions.DefaultEffectId then
+		warn(string.format("[PointEffectTestService] Template para '%s' no encontrado en ServerStorage.PointEffects. Usando fallback '%s'",
+			tostring(effectId), PointEffectDefinitions.DefaultEffectId))
+		template = pointEffectsFolder:FindFirstChild(PointEffectDefinitions.DefaultEffectId)
+	end
+
 	if not template then
-		warn(string.format("[PointEffectTestService] Template para '%s' no encontrado en ServerStorage.PointEffects", tostring(effectId)))
+		warn(string.format("[PointEffectTestService] Template de efecto '%s' no encontrado", tostring(effectId)))
 		return nil
 	end
 
@@ -126,13 +168,8 @@ function PointEffectTestService:_triggerTest(part: BasePart, player: Player?)
 	end
 	self._cooldowns[part] = now
 
-	-- 2. Lectura y validación de EffectId
-	local rawEffectId = part:GetAttribute("EffectId")
-	if not rawEffectId or typeof(rawEffectId) ~= "string" or rawEffectId == "" then
-		warn(string.format("[PointEffectTestService] TestPart '%s' tiene EffectId vacío o inválido", part:GetFullName()))
-		return
-	end
-	local effectId = rawEffectId
+	-- 2. Resolución dinámica del efecto equipado por el jugador (o fallback seguro a Basic)
+	local effectId = self:_resolvePlayerEffectId(player)
 
 	-- 3. Localizar template del efecto en ServerStorage.PointEffects
 	local template = self:_getEffectTemplate(effectId)

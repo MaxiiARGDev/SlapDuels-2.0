@@ -25,6 +25,23 @@ export type StartCountdownPayload = {
 
 export type MatchResultName = "Red" | "Blue" | "Draw" | "Cancelled"
 
+export type SessionId = string
+
+export type MatchMode = string
+
+export type MatchTeamName = "Red" | "Blue"
+
+export type SessionParticipantState = "Reserved" | "Active" | "Left" | "Released"
+
+export type SessionParticipant = {
+	Player: Player,
+	UserId: number,
+	Team: MatchTeamName,
+	Slot: number,
+	State: SessionParticipantState,
+	MatchStats: { Goals: number, Kills: number, Deaths: number }?,
+}
+
 export type QueueStateName = "WAITING" | "READY"
 
 export type MatchmakingZoneConfig = {
@@ -46,6 +63,26 @@ export type QueueSnapshot = {
 	State: QueueStateName,
 }
 
+export type TeamMatchAdmissionRequest = {
+	ZoneId: string,
+	Mode: string,
+	TeamSize: number,
+	RedTeam: { Player },
+	BlueTeam: { Player },
+	ReservationToken: string?,
+}
+
+export type TeamMatchReservation = {
+	Token: string,
+	ZoneId: string,
+	Mode: string,
+	TeamSize: number,
+	RedTeam: { Player },
+	BlueTeam: { Player },
+	CreatedAt: number,
+	ExpiresAt: number,
+}
+
 export type MatchScore = {
 	Red: number,
 	Blue: number,
@@ -61,32 +98,84 @@ export type MatchInstanceInfo = {
 	Geometry: Instance,
 	RedSpawn: BasePart,
 	BlueSpawn: BasePart,
+	TeamSpawns: {
+		Red: { BasePart },
+		Blue: { BasePart },
+	},
+	TeamCapacity: number,
 	ZoneWin: Instance?,
 	RedWin: BasePart?,
 	BlueWin: BasePart?,
 	KillParts: { BasePart }?,
 	VoidBoundaryPart: BasePart?,
+	EndCinematic: Model?,
+	ArenaTransform: CFrame?,
+}
+
+export type SpawnFailure = {
+	Player: Player?,
+	UserId: number?,
+	Team: MatchTeamName?,
+	Slot: number?,
+	Reason: string,
+}
+
+export type SpawnBatchResult = {
+	Success: boolean,
+	SessionId: SessionId,
+	Required: number,
+	Placed: number,
+	PlacedPlayers: { Player },
+	Failures: { SpawnFailure },
+}
+
+export type PlayerVotes = {
+	[Player]: string,
 }
 
 export type MatchSession = {
-	Id: string,
-	Mode: string,
+	Id: SessionId,
+	Mode: MatchMode,
+	TeamSize: number,
+	ZoneId: string?,
+	ReservationToken: string?,
+	Participants: { SessionParticipant },
+	-- Compatibilidad 1v1 temporal. Participants es el registro autoritativo;
+	-- estos arrays y referencias se derivan una sola vez durante la admisión.
 	RedPlayer: Player,
 	BluePlayer: Player,
-	RedTeam: { Player }?,
-	BlueTeam: { Player }?,
+	RedTeam: { Player },
+	BlueTeam: { Player },
 	SelectedMap: string?,
 	Result: MatchResultName?,
 	StartTime: number?,
 	State: RoundStateName,
+	StateVersion: number,
+	Votes: PlayerVotes,
+	SessionThread: thread?,
+	PointRestartThread: thread?,
+	RemainingTime: number?,
+	GameplayRound: any?, -- Server-owned per-round deadline/identity/outcome; no second global timer.
+	Closing: boolean,
+	Cancelled: boolean,
+	Closed: boolean,
+	CloseStarted: boolean?,
+	CloseSteps: { [string]: boolean }?,
+	CloseErrors: { [string]: string }?,
 	InstanceInfo: MatchInstanceInfo?,
 	Score: MatchScore?,
+	-- Alias temporal de ZoneId para los consumidores 1v1 existentes.
 	MatchmakingZoneId: string?,
 	PointInProgress: boolean?,
 	PointScorer: Player?,
 	PointScorerTeam: ("Red" | "Blue")?,
 	PointScoreTimestamp: number?,
 	PointNumber: number?,
+	GameplayFrozen: boolean?,
+	Results: any?,
+	ResultsThread: thread?,
+	MatchStatEvents: { [string]: boolean }?,
+	EndingCharacters: { [Player]: any }?,
 }
 
 export type MatchRewardPayload = {
@@ -96,10 +185,6 @@ export type MatchRewardPayload = {
 	Players: { Player },
 }
 
-export type PlayerVotes = {
-	[Player]: string,
-}
-
 export type PlayerStats = {
 	wins: number,
 	losses: number,
@@ -107,6 +192,9 @@ export type PlayerStats = {
 }
 
 export type PlayerInventory = {
+	Crates: { [string]: number }?,
+	SlapUnits: { [string]: any }?,
+	CrateOperations: { [string]: any }?,
 	Owned: {
 		[string]: { [string]: boolean },
 	},
@@ -115,21 +203,29 @@ export type PlayerInventory = {
 	},
 }
 
+export type WinStreakRecord = {Total: number, Progress: number, LastMatchId: string?}
+
 export type PlayerData = {
+ Preferences: any?,
+ Progression: any?,
 	Coins: number,
 	Wins: number,
 	Losses: number,
 	Kills: number,
 	Inventory: PlayerInventory,
+	WinStreak: WinStreakRecord?,
 }
 
 export type PlayerDataRecord = {
+ Preferences: any?,
+ Progression: any?,
 	Version: number,
 	Coins: number,
 	Wins: number,
 	Losses: number,
 	Kills: number,
 	Inventory: PlayerInventory,
+	WinStreak: WinStreakRecord?,
 	LastSaved: number?,
 }
 
@@ -154,9 +250,14 @@ export type EliminationRecord = {
 	Timestamp: number,
 	Reason: string,
 	EliminationId: string,
+	ImpactCFrame: CFrame?,
+	RewardCoins: number?,
+	StateVersion: number?,
+	ConfirmedAt: number?,
+	FeedbackSnapshot: { [string]: any }?,
 }
 
-export type DataLoadState = "Loading" | "Loaded" | "Failed"
+export type DataLoadState = "Loading" | "Loaded" | "Failed" | "Corrupted" | "IncompatibleVersion"
 
 export type PointEffectRarity = "Common" | "Rare" | "Epic" | "Legendary"
 
@@ -181,6 +282,9 @@ export type PointFeedbackPayload = {
 
 export type PointFeedbackBroadcast = {
 	MatchId: string,
+	SessionId: string?,
+	StateVersion: number?,
+	VisualOnly: boolean?,
 	PointId: string,
 	ScoringTeam: "Red" | "Blue",
 	ScoringPlayerName: string,
@@ -203,7 +307,7 @@ export type Service = {
 
 export type CurrencyType = "Coins" | "Robux"
 
-export type ProductType = "Cosmetic" | "Consumable"
+export type ProductType = "Cosmetic" | "Consumable" | "Ability"
 
 export type ProductDefinition = {
 	-- Campos Obligatorios

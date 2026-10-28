@@ -1,0 +1,102 @@
+[
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\CinematicConfig.native-before.luau",
+    "Hash": "D710B3C7B94ECBDA7FC9127A5CBD9C6B83E4F08218911FA74E4EAC12B3DB1710"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\CrateBatchRewardSlot.final.base64",
+    "Hash": "463DAC5A4C6154FC9A1D2850BE57BD43742CC4B3A4C0DD358CE19A45A136294B"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\CrateOpeningHUD.before.base64",
+    "Hash": "BA0370F29ECE7D60D81E4B8586185939202332135ECC1C270966517324DD39B1"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\CrateOpeningHUD.before.rbxm",
+    "Hash": "569D148832B054438E5CEE40FBBE138F41765E29269D82281C4514042BBAF935"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\CrateShopView.native-before.luau",
+    "Hash": "CF5CD4DC098CBFE16AABBB77D4425A18011EDA21EA7D83D2D063850741B85C54"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\default.project.before.json",
+    "Hash": "066974AED644516EB44821F3F38D69F844277DF7F2C12135D4D6D0E31F674338"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\MainCrateStand.before.base64",
+    "Hash": "F4A8A6E21494E605F563C421D06F421DB1351C965FE1EFDEF5A87CEDBCADDBDF"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\MainCrateStand.before.rbxm",
+    "Hash": "308E97088596283E1ED8A742F019B6B2E13DF16C3DD14BDA26EAF34676963AB7"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\MainCrateStand.final.base64",
+    "Hash": "F4A8A6E21494E605F563C421D06F421DB1351C965FE1EFDEF5A87CEDBCADDBDF"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\ShopHUD.before.base64",
+    "Hash": "A2123D99F9C2A205BEA26DF849490354768D369359C834E17B3461F45C8A32A4"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\ShopHUD.before.rbxm",
+    "Hash": "9B37091C2C03016689641E4FF09308E8BEB298C25383416B38AC3A1BFD226E8E"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\ShopHUD.final.base64",
+    "Hash": "2FF3AEC89DF12BC21B0CDA53471E86E1135F87F130CB7BF459F2137AAF969F28"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\src__client__Controllers__CrateController.luau",
+    "Hash": "F719D059EA4D0B116C2E4200A2FCD8B3B4D6A67C7050B60C5F900AFAAA818456"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\src__client__Controllers__CrateStandCinematicController.luau",
+    "Hash": "46DE5776C769E9F5916179464C3B3EE22B34D79691ED6375B01B3E3CDECFC5F2"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\src__server__Services__Crates__AnnouncementAdapter.luau",
+    "Hash": "77C9B5A4641651831495BF06CC9D00CCF66779685AFD0B5F4C8861E76DE81A8A"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\src__server__Services__Crates__CrateEngine.luau",
+    "Hash": "A78267C2B6B16C81777E6417FB4DA105B0B8935D122B116B1B1A6F8767A5D94E"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\src__server__Services__Crates__InMemoryStock.luau",
+    "Hash": "124F7767A1E7025C91AF47BD66535A59D743B7F85EC04FB5941DB4CE72CB5568"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\src__server__Services__Crates__ProductionStockAdapter.luau",
+    "Hash": "C25C9FA127DD1D35E45456A3CD2FD9952F40E736A9C69A68CFABB19F48003468"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\src__server__Services__Crates__StandOpeningLedger.luau",
+    "Hash": "319B207C7693713554FDA91C160B9EAB1CE7E020E760A96C825450DE072613D4"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\src__server__Services__Crates__StandOpeningService.luau",
+    "Hash": "F9F3B4E08D1F70E768C98F373EF15A6FEA38D0A79AEF3DA9827E88EA197D4C82"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\src__server__Services__Crates__StockLedger.luau",
+    "Hash": "5394088C5F083C0F2405AF8EE282F067F41D81978D1228E7DAB9743D0A1985A7"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\src__server__Services__CrateService.luau",
+    "Hash": "9D538249BB8999F8B7AD5D0E0A5BC8476BF468052E31A4C7BDE1C72D3DB986B6"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\src__shared__SlapCrates__OpeningConfig.luau",
+    "Hash": "0F3E7442BD8349F7546444FB8AA82A9BFD0D6333F7B7E80EFA6D8C75EDDF6A61"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\src__shared__SlapCrates__OpeningTimeline.luau",
+    "Hash": "2829EC4798E32196D983258C3B51EA55C9D17863FF712B9F4148C2B7C3A57D49"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\tests\\assets\\backups\\CrateBatchV24\\src-hashes.before.json",
+    "Hash": "E996B63CB6C075C82057D52438DE93F1DBD560888032E8917B9139CC6AFB6240"
+  }
+]

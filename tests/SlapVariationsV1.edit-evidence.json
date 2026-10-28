@@ -1,0 +1,69 @@
+{
+  "Installation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"Backup\":\"ServerStorage.SlapVariationsV1_Backup\",\"IsRunning\":false,\"Previews\":12,\"Updated\":25,\"Created\":114,\"Profiles\":12}"
+      }
+    ],
+    "isError": false
+  },
+  "PureCosmeticClonesInEdit": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"Previews\":12,\"IsStudio\":true,\"IsRunning\":false,\"Assertions\":210,\"Rows\":{\"1\":{\"Profile\":\"ReplicatedStorage.SlapVariationEffects.Basic\",\"Material\":\"SmoothPlastic\",\"Emitters\":1,\"EnabledRate\":0,\"Id\":\"Basic\",\"Preview\":\"ReplicatedStorage.SlapVariationPreviews.Classic.Basic\",\"RewardId\":\"Classic:Basic\",\"Attachments\":1},\"3\":{\"Profile\":\"ReplicatedStorage.SlapVariationEffects.Uncommon\",\"Material\":\"SmoothPlastic\",\"Emitters\":1,\"EnabledRate\":5,\"Id\":\"Uncommon\",\"Preview\":\"ReplicatedStorage.SlapVariationPreviews.Classic.Uncommon\",\"RewardId\":\"Classic:Uncommon\",\"Attachments\":1},\"2\":{\"Profile\":\"ReplicatedStorage.SlapVariationEffects.Common\",\"Material\":\"SmoothPlastic\",\"Emitters\":1,\"EnabledRate\":0,\"Id\":\"Common\",\"Preview\":\"ReplicatedStorage.SlapVariationPreviews.Classic.Common\",\"RewardId\":\"Classic:Common\",\"Attachments\":1},\"5\":{\"Profile\":\"ReplicatedStorage.SlapVariationEffects.Gold\",\"Material\":\"Metal\",\"Emitters\":1,\"EnabledRate\":6,\"Id\":\"Gold\",\"Preview\":\"ReplicatedStorage.SlapVariationPreviews.Classic.Gold\",\"RewardId\":\"Classic:Gold\",\"Attachments\":1},\"4\":{\"Profile\":\"ReplicatedStorage.SlapVariationEffects.Rare\",\"Material\":\"SmoothPlastic\",\"Emitters\":1,\"EnabledRate\":7,\"Id\":\"Rare\",\"Preview\":\"ReplicatedStorage.SlapVariationPreviews.Classic.Rare\",\"RewardId\":\"Classic:Rare\",\"Attachments\":1},\"7\":{\"Profile\":\"ReplicatedStorage.SlapVariationEffects.Emote\",\"Material\":\"SmoothPlastic\",\"Emitters\":1,\"EnabledRate\":4,\"Id\":\"Emote\",\"Preview\":\"ReplicatedStorage.SlapVariationPreviews.Classic.Emote\",\"RewardId\":\"Classic:Emote\",\"Attachments\":1},\"6\":{\"Profile\":\"ReplicatedStorage.SlapVariationEffects.Arcoiris\",\"Material\":\"SmoothPlastic\",\"Emitters\":1,\"EnabledRate\":9,\"Id\":\"Arcoiris\",\"Preview\":\"ReplicatedStorage.SlapVariationPreviews.Classic.Arcoiris\",\"RewardId\":\"Classic:Arcoiris\",\"Attachments\":1},\"9\":{\"Profile\":\"ReplicatedStorage.SlapVariationEffects.Epic\",\"Material\":\"Neon\",\"Emitters\":1,\"EnabledRate\":11,\"Id\":\"Epic\",\"Preview\":\"ReplicatedStorage.SlapVariationPreviews.Classic.Epic\",\"RewardId\":\"Classic:Epic\",\"Attachments\":1},\"8\":{\"Profile\":\"ReplicatedStorage.SlapVariationEffects.Wings\",\"Material\":\"Glass\",\"Emitters\":2,\"EnabledRate\":6,\"Id\":\"Wings\",\"Preview\":\"ReplicatedStorage.SlapVariationPreviews.Classic.Wings\",\"RewardId\":\"Classic:Wings\",\"Attachments\":2},\"12\":{\"Profile\":\"ReplicatedStorage.SlapVariationEffects.Galaxy\",\"Material\":\"Neon\",\"Emitters\":1,\"EnabledRate\":12,\"Id\":\"Galaxy\",\"Preview\":\"ReplicatedStorage.SlapVariationPreviews.Classic.Galaxy\",\"RewardId\":\"Classic:Galaxy\",\"Attachments\":1},\"11\":{\"Profile\":\"ReplicatedStorage.SlapVariationEffects.Blood\",\"Material\":\"SmoothPlastic\",\"Emitters\":1,\"EnabledRate\":8,\"Id\":\"Blood\",\"Preview\":\"ReplicatedStorage.SlapVariationPreviews.Classic.Blood\",\"RewardId\":\"Classic:Blood\",\"Attachments\":1},\"10\":{\"Profile\":\"ReplicatedStorage.SlapVariationEffects.Legendary\",\"Material\":\"Neon\",\"Emitters\":1,\"EnabledRate\":16,\"Id\":\"Legendary\",\"Preview\":\"ReplicatedStorage.SlapVariationPreviews.Classic.Legendary\",\"RewardId\":\"Classic:Legendary\",\"Attachments\":1}},\"ActiveMatches\":0,\"Profiles\":12}"
+      }
+    ],
+    "isError": false
+  },
+  "Sources": [
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"SHA256\":\"8ddff92cc70c06b0ba47b99dab446874a7f5f1d677b97a3a6ec3c4d06d4d196b\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.Appearance\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"SHA256\":\"15e5a7b3b3cdb10c68aafcf83927449e0b86f64538685888b532f078ced22479\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.VariationDefinitions\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"SHA256\":\"438ac49110da3f867d0c19b1878b86662cae187695862cbf4234742d0ec6b352\",\"Path\":\"ServerScriptService.Services.CrateService\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"SHA256\":\"eab374c60c0e24df63033407e66e6a3c6df09e86422d5f8ae3326836ab425afc\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.CrateController\"}"
+        }
+      ],
+      "isError": false
+    }
+  ],
+  "Assets": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"IsStudio\":true,\"Mismatches\":[],\"Nodes\":139,\"Properties\":919,\"IsRunning\":false}"
+      }
+    ],
+    "isError": false
+  },
+  "Gameplay": "NOT RUN",
+  "Cloud": "NO ACCESS"
+}

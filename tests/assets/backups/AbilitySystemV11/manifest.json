@@ -1,0 +1,30 @@
+[
+  {
+    "File": "AbilityHUD_Before.rbxm",
+    "SHA256": "7c615e70dcbb950d81cb04dda5211d25f9d5fb7b284e775291ed430376dff387"
+  },
+  {
+    "File": "src/shared/AbilityDefinitions.luau",
+    "SHA256": "62801fafabec06f93f918717aeb7aaef1dd54f0de6a36748964fde03ed390de1"
+  },
+  {
+    "File": "src/ui/AbilityHUD.rbxm",
+    "SHA256": "7c615e70dcbb950d81cb04dda5211d25f9d5fb7b284e775291ed430376dff387"
+  },
+  {
+    "File": "src/client/Abilities/AbilitySelection.luau",
+    "SHA256": "824da8b890d8dbd7397b7132107fe0c9700901b4c9e05a2967c298f97a8cb6b7"
+  },
+  {
+    "File": "src/client/Controllers/AbilityController.luau",
+    "SHA256": "035949c60608f97461f251d83510bfc9b7695c588d4a1ba12cb07ee833b32236"
+  },
+  {
+    "File": "src/server/Services/AbilityService.luau",
+    "SHA256": "3dcb67dda7fec6ff33481a3042f76d1e7c45be16d56265632079575622695dc6"
+  },
+  {
+    "File": "src/server/Services/RoundService.luau",
+    "SHA256": "f8fa594385b3c887ebd6615df421d3451f6125676aa9c4163cca9a3ca5d13914"
+  }
+]

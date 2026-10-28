@@ -9,6 +9,7 @@ local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
 
 local Constants = require(ReplicatedStorage.Shared.Constants)
+local Config = require(ReplicatedStorage.Shared.Config)
 
 local localPlayer = Players.LocalPlayer
 
@@ -70,6 +71,7 @@ MatchController._countdownAnimToken = 0
 MatchController._countdownConn = nil :: RBXScriptConnection?
 MatchController._countdownFx = nil :: CountdownFx?
 MatchController._currentMatchId = nil :: string?
+MatchController._lastStateVersion = 0
 
 -- CountdownFrame
 MatchController._countdownFrame = nil :: Frame?
@@ -88,6 +90,9 @@ MatchController._clonedButtons = {} :: { [string]: TextButton }
 -- MatchTimerFrame
 MatchController._matchTimerFrame = nil :: Frame?
 MatchController._matchTimer = nil :: TextLabel?
+MatchController._roundIndex = 0
+MatchController._roundDeadline = nil :: number?
+MatchController._clockSessionId = nil :: string?
 
 -- ResultFrame
 MatchController._resultFrame = nil :: Frame?
@@ -129,6 +134,8 @@ end
 
 function MatchController:Init(context)
 	self._context = context
+	self._currentMatchId = nil
+	self._lastStateVersion = 0
 	self:_bindHUD()
 end
 
@@ -138,6 +145,10 @@ end
 
 function MatchController:GetStartCountdownFrame(): Frame?
 	return self._startCountdownFrame
+end
+
+function MatchController:GetCurrentStateVersion(): number
+ return self._lastStateVersion
 end
 
 function MatchController:GetCurrentState(): string
@@ -152,10 +163,62 @@ function MatchController:GetCurrentSelectedMap(): string?
 	return self._currentSelectedMap
 end
 
+function MatchController:_payloadContainsLocalPlayer(payload: any): boolean
+	if type(payload) ~= "table" or type(payload.ParticipantUserIds) ~= "table" then return false end
+	return table.find(payload.ParticipantUserIds, localPlayer.UserId) ~= nil
+end
+
+function MatchController:_acceptSessionPayload(payload: any, allowBind: boolean, advanceVersion: boolean?): boolean
+	if type(payload) ~= "table" then return false end
+	local sessionId = payload.SessionId or payload.MatchId
+	if type(sessionId) ~= "string" or sessionId == "" then return false end
+	if self._retiredSessionIds and self._retiredSessionIds[sessionId] then return false end
+	local version = payload.StateVersion
+	if version ~= nil and type(version) ~= "number" then return false end
+
+	if self._currentMatchId == nil then
+		if not allowBind
+			or localPlayer:GetAttribute("MatchId") ~= sessionId
+			or not self:_payloadContainsLocalPlayer(payload) then
+			return false
+		end
+		self._currentMatchId = sessionId
+		self._lastStateVersion = 0
+		local teams = payload.ParticipantTeams
+		if type(teams) == "table" then
+			self._currentRole = teams[localPlayer.UserId]
+		end
+	elseif self._currentMatchId ~= sessionId then
+		return false
+	end
+
+	if version ~= nil and version < self._lastStateVersion then
+		return false
+	end
+	if advanceVersion and version ~= nil then
+		self._lastStateVersion = version
+	end
+	return true
+end
+
+function MatchController:_clearSessionIdentity(expectedSessionId: string)
+	if self._currentMatchId ~= expectedSessionId then return end
+	self._retiredSessionIds=self._retiredSessionIds or {}
+	self._retiredSessionIds[expectedSessionId]=true
+	self._roundIndex=0;self._roundDeadline=nil;self._clockSessionId=nil
+	self._currentMatchId = nil
+	self._lastStateVersion = 0
+end
+
 function MatchController:Start(context)
 	self._context = context
 	self:_setupButtonEvents()
 	self:_connectRemotes()
+ game:GetService("RunService").Heartbeat:Connect(function()
+  if self._roundDeadline and self._clockSessionId==self._currentMatchId and self._currentState=="Playing" and self._matchTimer then
+   self._matchTimer.Text=formatTime(math.max(0,math.ceil(self._roundDeadline-workspace:GetServerTimeNow())))
+  end
+ end)
 	print("[MatchController] Controlador iniciado y enlazado a PlayerGui.MatchHUD")
 end
 
@@ -294,6 +357,7 @@ function MatchController:_connectRemotes()
 
 	if mapSelection then
 		mapSelection.OnClientEvent:Connect(function(data: any)
+			if not self:_acceptSessionPayload(data, false, false) then return end
 			if type(data) == "table" and data.Maps then
 				self:_populateMapSelection(data.Maps)
 			elseif type(data) == "table" and data.Voted then
@@ -303,19 +367,22 @@ function MatchController:_connectRemotes()
 	end
 
 	if matchResult then
-		matchResult.OnClientEvent:Connect(function(result: string, winnerName: string?)
+		matchResult.OnClientEvent:Connect(function(result: string, winnerName: string?, metadata: any)
+			if not self:_acceptSessionPayload(metadata, false, false) then return end
 			self:_handleMatchResult(result, winnerName)
 		end)
 	end
 
 	if scoreUpdated then
 		scoreUpdated.OnClientEvent:Connect(function(data: any)
+			if not self:_acceptSessionPayload(data, false, false) then return end
 			self:_handleScoreUpdated(data)
 		end)
 	end
 
 	if lastPoint then
 		lastPoint.OnClientEvent:Connect(function(data: any)
+			if not self:_acceptSessionPayload(data, false, false) then return end
 			self:_handleLastPoint(data)
 		end)
 	end
@@ -323,6 +390,7 @@ function MatchController:_connectRemotes()
 	local pointFeedback = matchFolder:WaitForChild("PointFeedback", 5) :: RemoteEvent?
 	if pointFeedback then
 		pointFeedback.OnClientEvent:Connect(function(data: any)
+			if not self:_acceptSessionPayload(data, false, false) then return end
 			self:_handlePointFeedback(data)
 		end)
 	end
@@ -332,6 +400,14 @@ function MatchController:_handlePointFeedback(data: any)
 	-- Hook arquitectónico preparado para Camera Shake y efectos de pantalla
 	-- Autoridad exclusiva del servidor: el cliente reacciona pero no decide
 	if type(data) ~= "table" then return end
+	if data.IsFinalPoint == true then
+		local musicController = self._context and self._context:GetController("MusicController")
+		if musicController and typeof(musicController.Suspend) == "function" then
+			local endCinematicConfig = require(ReplicatedStorage.Shared.EndCinematicConfig)
+			local fadeOut = (endCinematicConfig.Music and endCinematicConfig.Music.FadeOutDuration) or 0.4
+			musicController:Suspend("EndCinematic", fadeOut)
+		end
+	end
 	print(string.format("[MatchController] PointFeedback recibido del servidor: Equipo=%s, Jugador=%s, Efecto=%s, Final=%s",
 		tostring(data.ScoringTeam),
 		tostring(data.ScoringPlayerName),
@@ -340,16 +416,35 @@ function MatchController:_handlePointFeedback(data: any)
 end
 
 function MatchController:_handleStateChanged(newState: string, extraData: any)
+	if not self:_acceptSessionPayload(extraData, true, true) then return end
+	if extraData and extraData.PrematchCancelled == true then
+		self:_stopStartCountdownAnimation()
+		for _,frame in pairs({self._countdownFrame,self._startCountdownFrame,self._mapSelectionFrame,self._matchTimerFrame,self._resultFrame}) do frame.Visible=false end
+		self._currentRole=nil;self._selectedMapVote=nil;self._currentSelectedMap=nil
+		self:_clearClonedButtons();self:_clearPlayerSlots()
+		self:_clearSessionIdentity(self._currentMatchId)
+		self._currentState=Constants.RoundState.Waiting
+		local queue=self._context and self._context:GetController("MatchmakingController")
+		local music=self._context and self._context:GetController("MusicController")
+		if music then
+			if queue and queue:IsInQueue() then music:PlayMatchmaking() else music:PlayLobby() end
+		end
+		return
+	end
+	local eventSessionId = self._currentMatchId :: string
 	local prevState = self._currentState
 	self._currentState = newState
 	print(string.format("[MatchController] Estado recibido: %s", newState))
 
 	local isPointRestart = (newState == Constants.RoundState.PointRestartCountdown)
+	if newState~=Constants.RoundState.Playing then self._roundDeadline=nil end
 
 	-- Ocultar frames condicionalmente (durante PointRestartCountdown el HUD y timer permanecen visibles)
 	if not isPointRestart then
 		if self._startCountdownFrame then self._startCountdownFrame.Visible = false end
-		if self._countdownFrame then self._countdownFrame.Visible = false end
+		if self._countdownFrame and newState ~= Constants.RoundState.MatchReady and newState ~= Constants.RoundState.MatchCountdown then
+			self._countdownFrame.Visible = false
+		end
 		if self._mapSelectionFrame then self._mapSelectionFrame.Visible = false end
 		if self._matchTimerFrame and newState ~= Constants.RoundState.Playing then self._matchTimerFrame.Visible = false end
 		if self._resultFrame then self._resultFrame.Visible = false end
@@ -368,11 +463,24 @@ function MatchController:_handleStateChanged(newState: string, extraData: any)
 				self._currentRole = nil
 			end
 		end
+		if self._countdownFrame then
+			if self._countdownTitle then
+				self._countdownTitle.Text = "LA PARTIDA COMIENZA EN"
+			end
+			if self._countdownTimer then
+				local defaultDuration = Config.Round and Config.Round.MatchCountdownTime or 5
+				self._countdownTimer.Text = tostring(defaultDuration)
+			end
+			self._countdownFrame.Visible = true
+		end
 
 	elseif newState == Constants.RoundState.MatchCountdown then
 		if self._countdownFrame then
 			if self._countdownTitle then
 				self._countdownTitle.Text = "LA PARTIDA COMIENZA EN"
+			end
+			if extraData and extraData.Duration and self._countdownTimer then
+				self._countdownTimer.Text = tostring(extraData.Duration)
 			end
 			self._countdownFrame.Visible = true
 		end
@@ -441,6 +549,7 @@ function MatchController:_handleStateChanged(newState: string, extraData: any)
 		if self._blueTeamFrame then self._blueTeamFrame.Visible = true end
 
 	elseif newState == Constants.RoundState.Playing then
+		if self._matchTimer then self._matchTimer.Text=formatTime(Config.Round.RoundDuration) end
 		if extraData and extraData.MatchId then
 			self._currentMatchId = extraData.MatchId
 		end
@@ -476,18 +585,24 @@ function MatchController:_handleStateChanged(newState: string, extraData: any)
 
 	elseif newState == Constants.RoundState.Ending then
 		if self._resultFrame then
-			self._resultFrame.Visible = true
+			self._resultFrame.Visible = not (extraData and extraData.Cinematic == true)
 		end
 		if self._lastPointFrame then
 			self._lastPointFrame.Visible = false
+		end
+		local musicController = self._context and self._context:GetController("MusicController")
+		if musicController and typeof(musicController.Suspend) == "function" then
+			local endCinematicConfig = require(ReplicatedStorage.Shared.EndCinematicConfig)
+			local fadeOut = (endCinematicConfig.Music and endCinematicConfig.Music.FadeOutDuration) or 0.4
+			musicController:Suspend("EndCinematic", fadeOut)
 		end
 
 	elseif newState == Constants.RoundState.ReturningToLobby or newState == Constants.RoundState.Waiting then
 		local wasParticipant = self:IsParticipant()
 		self._currentRole = nil
 		self._selectedMapVote = nil
-		self._currentMatchId = nil
 		self._currentSelectedMap = nil
+		if self._countdownFrame then self._countdownFrame.Visible = false end
 		if self._startCountdownFrame then self._startCountdownFrame.Visible = false end
 		if self._redTeamFrame then self._redTeamFrame.Visible = false end
 		if self._blueTeamFrame then self._blueTeamFrame.Visible = false end
@@ -495,12 +610,19 @@ function MatchController:_handleStateChanged(newState: string, extraData: any)
 		self:_clearClonedButtons()
 		self:_clearPlayerSlots()
 
+		local musicController = self._context and self._context:GetController("MusicController")
+		local endCinematic = self._context and self._context:GetController("EndCinematicController")
+		if (not endCinematic or not endCinematic:IsPlaying()) and musicController and typeof(musicController.Resume) == "function" then
+			musicController:Resume("EndCinematic")
+		end
+
 		if wasParticipant or newState == Constants.RoundState.ReturningToLobby then
-			local musicController = self._context and self._context:GetController("MusicController")
 			if musicController then
 				musicController:PlayLobby()
 			end
 		end
+		self:_clearSessionIdentity(eventSessionId)
+		self._currentState = Constants.RoundState.Waiting
 	end
 end
 
@@ -611,8 +733,22 @@ function MatchController:_populatePlayers(redData: any, blueData: any, redFallba
 end
 
 function MatchController:_handleCountdown(remaining: number, label: string, extraData: any?)
-	if extraData and extraData.MatchId and self._currentMatchId and extraData.MatchId ~= self._currentMatchId then
-		return -- Ignorar countdown de otra partida concurrente
+	if not self:_acceptSessionPayload(extraData, false, false) then return end
+
+	if label=="PLAYING" and type(extraData)=="table" and type(extraData.RoundIndex)=="number" then
+  if self._clockSessionId~=self._currentMatchId then self._roundIndex=0 end
+  if extraData.RoundIndex<self._roundIndex then return end
+  self._roundIndex=extraData.RoundIndex;self._clockSessionId=self._currentMatchId
+  self._roundDeadline=if extraData.Resolved then nil else extraData.Deadline
+  if self._matchTimer then self._matchTimer.Text=formatTime(remaining) end
+  return
+ end
+
+	if extraData and extraData.Cancelled then
+		if self._countdownFrame then
+			self._countdownFrame.Visible = false
+		end
+		return
 	end
 
 	if self._currentState == Constants.RoundState.MatchCountdown then
@@ -1304,8 +1440,10 @@ function MatchController:_submitVote(votePayload: string, clickedButton: TextBut
 	local matchFolder = remotesFolder and remotesFolder:FindFirstChild("Match")
 	local mapSelection = matchFolder and matchFolder:FindFirstChild("MapSelection") :: RemoteEvent?
 
-	if mapSelection then
-		mapSelection:FireServer(votePayload)
+	if mapSelection and self._currentMatchId then
+		mapSelection:FireServer(votePayload, self._currentMatchId)
+	else
+		return
 	end
 
 	self:_highlightSelectedVote(votePayload)

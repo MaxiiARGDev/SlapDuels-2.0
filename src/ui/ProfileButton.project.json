@@ -1,0 +1,85 @@
+{
+  "name": "ProfileButton",
+  "tree": {
+    "$className": "TextButton",
+    "$properties": {
+      "Text": "MI PERFIL",
+      "Visible": true,
+      "Active": true,
+      "Selectable": true,
+      "AutoButtonColor": false,
+      "AnchorPoint": {
+        "Vector2": [
+          0,
+          0
+        ]
+      },
+      "Position": {
+        "UDim2": [
+          [
+            0.007,
+            0
+          ],
+          [
+            0.18,
+            0
+          ]
+        ]
+      },
+      "Size": {
+        "UDim2": [
+          [
+            0,
+            142
+          ],
+          [
+            0,
+            40
+          ]
+        ]
+      },
+      "BackgroundColor3": {
+        "Color3": [
+          0.047,
+          0.078,
+          0.125
+        ]
+      },
+      "TextColor3": {
+        "Color3": [
+          0.85,
+          0.96,
+          1
+        ]
+      },
+      "TextSize": 16,
+      "Font": "GothamBold",
+      "BorderSizePixel": 0,
+      "ZIndex": 3
+    },
+    "Corner": {
+      "$className": "UICorner",
+      "$properties": {
+        "CornerRadius": {
+          "UDim": [
+            0,
+            10
+          ]
+        }
+      }
+    },
+    "Accent": {
+      "$className": "UIStroke",
+      "$properties": {
+        "Color": {
+          "Color3": [
+            0.29,
+            0.82,
+            0.94
+          ]
+        },
+        "Thickness": 1.5
+      }
+    }
+  }
+}

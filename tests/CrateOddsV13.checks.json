@@ -1,0 +1,59 @@
+{
+  "RuntimeScriptsCompiled": 124,
+  "Checks": {
+    "compose": {
+      "ExitCode": 0,
+      "Log": "tests/CrateOddsV13.compose.log"
+    },
+    "odds": {
+      "ExitCode": 0,
+      "Log": "tests/CrateOddsV13.odds.log"
+    },
+    "economy": {
+      "ExitCode": 0,
+      "Log": "tests/CrateOddsV13.economy.log"
+    },
+    "combat": {
+      "ExitCode": 0,
+      "Log": "tests/CrateOddsV13.combat.log"
+    },
+    "abilities": {
+      "ExitCode": 0,
+      "Log": "tests/CrateOddsV13.abilities.log"
+    },
+    "registry": {
+      "ExitCode": 0,
+      "Log": "tests/CrateOddsV13.registry.log"
+    },
+    "shop": {
+      "ExitCode": 0,
+      "Log": "tests/CrateOddsV13.shop.log"
+    },
+    "variations": {
+      "ExitCode": 0,
+      "Log": "tests/CrateOddsV13.variations.log"
+    },
+    "compile": {
+      "ExitCode": 0,
+      "Log": "tests/CrateOddsV13.compile.log"
+    },
+    "build": {
+      "ExitCode": 0,
+      "Log": "tests/CrateOddsV13.build.log"
+    },
+    "safe-build": {
+      "ExitCode": 0,
+      "Log": "tests/CrateOddsV13.safe-build.log"
+    },
+    "diff-check": {
+      "ExitCode": 0,
+      "Log": "tests/CrateOddsV13.diff-check.log"
+    },
+    "integrity": {
+      "ExitCode": 0,
+      "Log": "tests/CrateOddsV13.integrity.log"
+    }
+  },
+  "Gameplay": "NOT RUN",
+  "Cloud": "NOT ACCESSED"
+}

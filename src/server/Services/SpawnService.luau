@@ -12,8 +12,16 @@ local ServerScriptService = game:GetService("ServerScriptService")
 
 local Constants = require(ReplicatedStorage.Shared.Constants)
 local Types = require(ReplicatedStorage.Shared.Types)
+local Config = require(ReplicatedStorage.Shared.Config)
+local ArenaRespawn = require(script.Parent.Respawn.ArenaRespawn)
+local CharacterPhysics = require(script.Parent.Respawn.CharacterPhysics)
+local MovementSpeed = require(script.Parent.Respawn.MovementSpeed)
+
+print("[SpawnService] MovementLock diagnostic version loaded")
 
 type MatchSession = Types.MatchSession
+type SessionParticipant = Types.SessionParticipant
+type SpawnBatchResult = Types.SpawnBatchResult
 
 local SpawnService = {}
 SpawnService.Name = "SpawnService"
@@ -24,6 +32,11 @@ SpawnService._returnConnection = nil :: RBXScriptConnection?
 
 function SpawnService:Init(context)
 	self._context = context
+	self._arenaRespawn = ArenaRespawn.new(self)
+	CharacterPhysics.Configure()
+	self._respawnConnections = {}
+	self._respawnPlayerConnections = {}
+	self._movementCharacterConnections = {}
 
 	-- Validar existencia de Workspace.Lobby.SpawnLocation
 	local lobby = Workspace:FindFirstChild("Lobby")
@@ -36,7 +49,41 @@ function SpawnService:Init(context)
 end
 
 function SpawnService:Start(context)
+	if self._movementStarted then return end
+	self._movementStarted = true
 	self._context = context
+	local function track(player: Player)
+		if self._respawnPlayerConnections[player] then return end
+		self._respawnPlayerConnections[player] = {
+			player.CharacterRemoving:Connect(function(character)
+				self:ForgetMovementCharacter(player)
+				local pending = self._arenaRespawn.Pending[player]
+				if pending and pending.Character == character then self._arenaRespawn:Cancel(player, "CharacterRemoving", false) end
+					CharacterPhysics.Forget(character)
+			end),
+			player.CharacterAdded:Connect(function(character)
+				local pending = self._arenaRespawn.Pending[player]
+				if pending and pending.Character ~= character then self._arenaRespawn:Cancel(player, "CharacterReplaced", false) end
+					CharacterPhysics.Track(character)
+				self:TrackMovementCharacter(player, character)
+			end),
+			player:GetAttributeChangedSignal("MatchId"):Connect(function()
+				local pending = self._arenaRespawn.Pending[player]
+				if pending and player:GetAttribute("MatchId") ~= pending.Session.Id then self._arenaRespawn:Cancel(player, "MatchChanged", false) end
+				self:RefreshMovementSpeed(player)
+			end),
+		}
+			if player.Character then CharacterPhysics.Track(player.Character); self:TrackMovementCharacter(player, player.Character) end
+	end
+	table.insert(self._respawnConnections, Players.PlayerAdded:Connect(track))
+	table.insert(self._respawnConnections, Players.PlayerRemoving:Connect(function(player)
+		self:ForgetMovementCharacter(player)
+		self._arenaRespawn:Cancel(player, "PlayerRemoving", false)
+		if player.Character then CharacterPhysics.Forget(player.Character) end
+		for _,connection in ipairs(self._respawnPlayerConnections[player] or {}) do connection:Disconnect() end
+		self._respawnPlayerConnections[player] = nil
+	end))
+	for _,player in ipairs(Players:GetPlayers()) do track(player) end
 
 	-- Conectar a la señal de RoundService para retornar jugadores al lobby
 	local roundService = self:_getRoundService()
@@ -49,6 +96,52 @@ function SpawnService:Start(context)
 	end
 
 	print("[SpawnService] Servicio iniciado y listo para gestionar posicionamiento de jugadores")
+end
+
+-- Resolve afresh after every yield; never retain the session of an earlier life.
+function SpawnService:RefreshMovementSpeed(player, expectedCharacter)
+	if player.Parent ~= Players then return end
+	local character = player.Character
+	if not character or not character.Parent or (expectedCharacter and character ~= expectedCharacter) then return end
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+	if not humanoid then return end
+	local rounds = self:_getRoundService()
+	local session = rounds and rounds:GetSessionForPlayer(player)
+	MovementSpeed.SetBase(humanoid, MovementSpeed.ResolveBase(session, player:GetAttribute("MatchId")))
+end
+
+function SpawnService:ForgetMovementCharacter(player)
+	local connections = self._movementCharacterConnections[player]
+	if connections then for _, connection in ipairs(connections) do connection:Disconnect() end end
+	self._movementCharacterConnections[player] = nil
+end
+
+function SpawnService:TrackMovementCharacter(player, character)
+	self:ForgetMovementCharacter(player)
+	task.spawn(function()
+		local humanoid = character:FindFirstChildOfClass("Humanoid") or character:WaitForChild("Humanoid", 10)
+		if not humanoid or not humanoid:IsA("Humanoid") or player.Character ~= character or player.Parent ~= Players then return end
+		self:ForgetMovementCharacter(player)
+		local function refresh() self:RefreshMovementSpeed(player, character) end
+		self._movementCharacterConnections[player] = {
+			humanoid:GetPropertyChangedSignal("PlatformStand"):Connect(refresh),
+			character:GetAttributeChangedSignal("ArenaRespawnPending"):Connect(refresh),
+		}
+		local rounds = self:_getRoundService()
+		local session = rounds and rounds:GetSessionForPlayer(player)
+		if session and player:GetAttribute("MatchId") == session.Id
+			and (session.State == Constants.RoundState.StartCountdown or session.State == Constants.RoundState.PointRestartCountdown
+				or session.State == Constants.RoundState.Ending) then self:LockCharacterMovement(player) end
+		self:RefreshMovementSpeed(player, character)
+	end)
+end
+
+function SpawnService:RefreshSessionMovement(session)
+	for _, participant in ipairs(session.Participants or {}) do
+		if participant.State ~= "Left" and participant.State ~= "Released" then
+			self:RefreshMovementSpeed(participant.Player)
+		end
+	end
 end
 
 function SpawnService:_getMatchInstanceService()
@@ -114,7 +207,7 @@ end
 function SpawnService:_getSpawnPoints(session: MatchSession): (BasePart?, BasePart?)
 	-- 1. Intentar desde session.InstanceInfo si ya esta cacheado
 	if session.InstanceInfo then
-		return session.InstanceInfo.RedSpawn, session.InstanceInfo.BlueSpawn
+		return session.InstanceInfo.TeamSpawns.Red[1], session.InstanceInfo.TeamSpawns.Blue[1]
 	end
 
 	-- 2. Consultar a MatchInstanceService
@@ -163,6 +256,14 @@ function SpawnService:TeleportCharacterToSpawn(player: Player, spawnPart: BasePa
 	end
 
 	local character = player.Character
+	local isLobby = spawnPart == self._lobbySpawn
+	local originalCharacter = character
+	local originalGeneration = character and character:GetAttribute("ArenaPhysicsGeneration")
+	local originalMatchId = player:GetAttribute("MatchId")
+	if self._arenaRespawn then
+		self._arenaRespawn:Cancel(player, "ExternalTeleport", false)
+	end
+	if character then character:SetAttribute("ArenaPhysicsPhase", if isLobby then "Lobby" else "Playing") end
 	local humanoid = character and character:FindFirstChildOfClass("Humanoid")
 	local rootPart = character and character:FindFirstChild("HumanoidRootPart") :: BasePart?
 
@@ -175,7 +276,7 @@ function SpawnService:TeleportCharacterToSpawn(player: Player, spawnPart: BasePa
 		and rootPart.Position.Y > (workspace.FallenPartsDestroyHeight + 100)
 
 	if not isAlive then
-		if self:IsPlayerInActiveMatch(player) then
+		if not isLobby and self:IsPlayerInActiveMatch(player) then
 			-- REGLA FASE 4B: En MATCH, NUNCA invocar player:LoadCharacter()
 			warn(string.format("[SpawnService] Personaje de '%s' no listo durante MatchSession. Esperando HumanoidRootPart sin recargar rig...", player.Name))
 			character = player.Character
@@ -219,9 +320,15 @@ function SpawnService:TeleportCharacterToSpawn(player: Player, spawnPart: BasePa
 		warn(string.format("[SpawnService] Personaje de '%s' no contiene HumanoidRootPart o Humanoid", player.Name))
 		return false
 	end
+	if player.Character ~= character or player.Parent ~= Players then return false end
+	if player:GetAttribute("MatchId") ~= originalMatchId
+		or (character == originalCharacter and character:GetAttribute("ArenaPhysicsGeneration") ~= originalGeneration) then return false end
+	CharacterPhysics.Restore(character)
+	character:SetAttribute("ArenaPhysicsPhase", if isLobby then "Lobby" else "Playing")
 
 	-- Si el jugador está dentro de un match, asegurar que Dead esté deshabilitado
-	if self:IsPlayerInActiveMatch(player) then
+	character:SetAttribute("ArenaPhysicsGeneration", (character:GetAttribute("ArenaPhysicsGeneration") or 0) + 1)
+	if not isLobby and self:IsPlayerInActiveMatch(player) then
 		pcall(function()
 			humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
 		end)
@@ -237,8 +344,7 @@ function SpawnService:TeleportCharacterToSpawn(player: Player, spawnPart: BasePa
 	local verticalClearance = spawnHalfThickness + hipHeight + rootHalfHeight + safetyBuffer
 
 	-- Orientar al jugador segun la orientacion del spawn
-	local targetPosition = spawnPart.Position + Vector3.new(0, verticalClearance, 0)
-	local targetCFrame = CFrame.new(targetPosition) * CFrame.Angles(0, math.rad(spawnPart.Orientation.Y), 0)
+		local targetCFrame = spawnPart.CFrame * CFrame.new(0, verticalClearance, 0)
 
 	-- Detener cualquier inercia o velocidad previa del jugador en todas sus partes
 	rootPart.AssemblyLinearVelocity = Vector3.zero
@@ -253,12 +359,21 @@ function SpawnService:TeleportCharacterToSpawn(player: Player, spawnPart: BasePa
 	-- Si el personaje estaba en ragdoll, restaurarlo inmediatamente cancelando timers pendientes
 	local ragdollService = self:_getRagdollService()
 	if ragdollService and type(ragdollService.ResetRagdollImmediate) == "function" then
-		ragdollService:ResetRagdollImmediate(character)
+		ragdollService:ResetRagdollImmediate(character, isLobby)
 	elseif ragdollService then
 		ragdollService:RemoveRagdoll(character)
 	end
 
-	character:PivotTo(targetCFrame)
+	character:PivotTo(targetCFrame * rootPart.CFrame:Inverse() * character:GetPivot())
+	if not isLobby then
+		local rounds = self:_getRoundService()
+		local session = rounds and rounds:GetSessionForPlayer(player)
+		if session then
+			(session :: any).ArenaTransferred = true
+			(session :: any).TransferredPlayers = (session :: any).TransferredPlayers or {}
+			(session :: any).TransferredPlayers[player] = true
+		end
+	end
 	rootPart.AssemblyLinearVelocity = Vector3.zero
 	rootPart.AssemblyAngularVelocity = Vector3.zero
 	for _, desc in ipairs(character:GetDescendants()) do
@@ -269,7 +384,7 @@ function SpawnService:TeleportCharacterToSpawn(player: Player, spawnPart: BasePa
 	end
 
 	print(string.format("[SpawnService] Jugador '%s' posicionado en '%s' (%s)",
-		player.Name, spawnPart.Name, tostring(targetPosition)))
+			player.Name, spawnPart.Name, tostring(targetCFrame.Position)))
 
 	return true
 end
@@ -293,6 +408,43 @@ function SpawnService:_getPlayerTeam(session: MatchSession, player: Player): ("R
 	return nil
 end
 
+function SpawnService:_getParticipant(session: MatchSession, player: Player): SessionParticipant?
+	if not session or not player then return nil end
+	for _, participant in ipairs(session.Participants or {}) do
+		if participant.Player == player and participant.State ~= "Released" then
+			return participant
+		end
+	end
+	return nil
+end
+
+-- Resolver autoritativo reutilizable para carga, reinicios y recuperación de caídas.
+-- La sesión registrada, el participante y la instancia física deben coincidir.
+function SpawnService:ResolveParticipantSpawn(sessionId: string, player: Player): (BasePart?, string?)
+	local roundService = self:_getRoundService()
+	if not roundService or type(roundService.GetSessionById) ~= "function" then
+		return nil, "RoundServiceUnavailable"
+	end
+	local session = roundService:GetSessionById(sessionId)
+	if not session or session.Id ~= sessionId then return nil, "SessionNotRegistered" end
+	if roundService:GetSessionForPlayer(player) ~= session then return nil, "PlayerSessionMismatch" end
+
+	local participant = self:_getParticipant(session, player)
+	if not participant then return nil, "ParticipantNotRegistered" end
+	if participant.State == "Left" then return nil, "ParticipantLeft" end
+
+	local instanceService = self:_getMatchInstanceService()
+	local instanceInfo = instanceService and instanceService:GetInstance(sessionId)
+	if not instanceInfo or session.InstanceInfo ~= instanceInfo or instanceInfo.MatchId ~= sessionId then
+		return nil, "MatchInstanceMismatch"
+	end
+	local spawnPart = instanceService:GetSpawnPoint(sessionId, participant.Team, participant.Slot)
+	if not spawnPart or not spawnPart:IsDescendantOf(instanceInfo.Container) then
+		return nil, "SpawnUnavailable"
+	end
+	return spawnPart, nil
+end
+
 -- Posiciona a un jugador individual en el spawn correspondiente a su equipo dentro de la partida activa
 function SpawnService:SpawnPlayerInMatch(session: MatchSession, player: Player): boolean
 	if not session or not player then
@@ -300,17 +452,15 @@ function SpawnService:SpawnPlayerInMatch(session: MatchSession, player: Player):
 		return false
 	end
 
-	local team = self:_getPlayerTeam(session, player)
-	if not team then
+	local participant = self:_getParticipant(session, player)
+	if not participant then
 		warn(string.format("[SpawnService] Jugador '%s' no pertenece al Match '%s'", player.Name, session.Id))
 		return false
 	end
-
-	local redSpawn, blueSpawn = self:_getSpawnPoints(session)
-	local targetSpawn = if team == "Red" then redSpawn else blueSpawn
+	local targetSpawn, reason = self:ResolveParticipantSpawn(session.Id, player)
 
 	if not targetSpawn or not targetSpawn:IsA("BasePart") or not targetSpawn:IsDescendantOf(Workspace) then
-		warn(string.format("[SpawnService] Spawn de equipo '%s' no valido para Match '%s'", team, session.Id))
+		warn(string.format("[SpawnService] Spawn %s/%d no valido para Match '%s': %s", participant.Team, participant.Slot, session.Id, tostring(reason)))
 		return false
 	end
 
@@ -336,7 +486,7 @@ end
 -- 4. Invoca RagdollService:ResetRagdollImmediate() para restaurar locomoción y cancelar timers.
 -- 5. Anula AssemblyLinearVelocity y AssemblyAngularVelocity antes y después de PivotTo.
 -- 6. Aplica elevación vertical y orientación de forma segura para no incrustar en el suelo.
-function SpawnService:ResetCharacterInArena(player: Player): boolean
+function SpawnService:ResetCharacterInArena(player: Player, expectedSessionId: string?): boolean
 	if not player or not player:IsDescendantOf(game:GetService("Players")) then
 		warn("[SpawnService] Player invalido o desconectado para ResetCharacterInArena")
 		return false
@@ -355,50 +505,29 @@ function SpawnService:ResetCharacterInArena(player: Player): boolean
 		return false
 	end
 
-	-- Resolver identidad server-authoritative
-	local matchId = player:GetAttribute("MatchId") :: string?
-	local team = player:GetAttribute("MatchTeam") :: string?
-
-	-- Fallback a RoundService si los atributos no estuvieran en el jugador
-	if not matchId or not team then
-		local roundService = self:_getRoundService()
-		if roundService and roundService.GetSessionForPlayer then
-			local session = roundService:GetSessionForPlayer(player)
-			if session then
-				matchId = session.Id
-				team = self:_getPlayerTeam(session, player)
-			end
-		end
-	end
-
-	if not matchId or not team then
-		warn(string.format("[SpawnService] No se pudo resolver MatchId/MatchTeam para '%s'", player.Name))
+	local roundService = self:_getRoundService()
+	local session = roundService and roundService:GetSessionForPlayer(player)
+	if not session or (expectedSessionId and session.Id ~= expectedSessionId) then
+		warn(string.format("[SpawnService] Sesion autoritativa ausente o distinta para '%s'", player.Name))
 		return false
 	end
-
-	-- Resolver spawn físico de la MatchInstance correspondiente (sin búsquedas globales)
-	local matchInstanceService = self:_getMatchInstanceService()
-	if not matchInstanceService then
-		warn("[SpawnService] MatchInstanceService no disponible")
+	local participant = self:_getParticipant(session, player)
+	local targetSpawn, reason = self:ResolveParticipantSpawn(session.Id, player)
+	if not participant or not targetSpawn then
+		warn(string.format("[SpawnService] No se pudo resolver spawn autoritativo para '%s': %s", player.Name, tostring(reason)))
 		return false
 	end
-
-	local instanceInfo = matchInstanceService:GetInstance(matchId)
-	if not instanceInfo then
-		warn(string.format("[SpawnService] MatchInstance no encontrada para MatchId '%s'", matchId))
-		return false
+	local pending = self._arenaRespawn and self._arenaRespawn.Pending[player]
+	if pending and pending.Thread and pending.Thread ~= coroutine.running() then
+		pcall(task.cancel, pending.Thread)
+		pending.Thread = nil
 	end
-
-	local targetSpawn = if team == "Red" then instanceInfo.RedSpawn else instanceInfo.BlueSpawn
-	if not targetSpawn or not targetSpawn:IsA("BasePart") or not targetSpawn:IsDescendantOf(Workspace) then
-		warn(string.format("[SpawnService] TeamSpawn '%s' no valido para Match '%s'", tostring(team), matchId))
-		return false
-	end
+	character:SetAttribute("ArenaPhysicsGeneration", (character:GetAttribute("ArenaPhysicsGeneration") or 0) + 1)
 
 	-- 1. Resetear inmediatamente el estado de Ragdoll y cancelar callbacks pendientes
 	local ragdollService = self:_getRagdollService()
 	if ragdollService and type(ragdollService.ResetRagdollImmediate) == "function" then
-		ragdollService:ResetRagdollImmediate(character)
+		ragdollService:ResetRagdollImmediate(character, pending ~= nil)
 	elseif ragdollService then
 		ragdollService:RemoveRagdoll(character)
 	end
@@ -418,22 +547,56 @@ function SpawnService:ResetCharacterInArena(player: Player): boolean
 	local hipHeight = if humanoid.HipHeight > 0 then humanoid.HipHeight else 2.0
 	local rootHalfHeight = rootPart.Size.Y / 2
 	local safetyBuffer = 0.5
+	if pending then
+		-- Official rig clearance: R6 includes leg length; R15 uses HipHeight.
+		local leg = character:FindFirstChild("Left Leg") :: BasePart?
+		hipHeight = math.max(0, humanoid.HipHeight)
+		if humanoid.RigType == Enum.HumanoidRigType.R6 and leg then hipHeight += leg.Size.Y end
+		safetyBuffer = 0.05
+	end
 	local verticalClearance = spawnHalfThickness + hipHeight + rootHalfHeight + safetyBuffer
 
-	local targetPosition = targetSpawn.Position + Vector3.new(0, verticalClearance, 0)
-	local targetCFrame = CFrame.new(targetPosition) * CFrame.Angles(0, math.rad(targetSpawn.Orientation.Y), 0)
+		local targetCFrame = targetSpawn.CFrame * CFrame.new(0, verticalClearance, 0)
 
 	-- 4. Reposicionar el Character EXISTENTE
-	character:PivotTo(targetCFrame)
+	if pending then
+		-- Position the root exactly, independent of Model pivot offsets.
+		character:PivotTo(targetCFrame * rootPart.CFrame:Inverse() * character:GetPivot())
+	else
+		character:PivotTo(targetCFrame)
+	end
 
 	-- 5. Limpieza física secundaria post-PivotTo para cancelar inercia residual
 	rootPart.AssemblyLinearVelocity = Vector3.zero
 	rootPart.AssemblyAngularVelocity = Vector3.zero
+	if pending then
+		local exclude: { Instance } = { character }
+		for _,other in ipairs(Players:GetPlayers()) do
+			if other.Character then table.insert(exclude, other.Character) end
+		end
+		local overlap = OverlapParams.new()
+		overlap.FilterType = Enum.RaycastFilterType.Exclude
+		overlap.FilterDescendantsInstances = exclude
+		overlap.RespectCanCollide = true
+		overlap.MaxParts = 1
+		for _,body in ipairs(character:GetChildren()) do
+			if body:IsA("BasePart") and #Workspace:GetPartBoundsInBox(body.CFrame, body.Size * 0.95, overlap) > 0 then
+				warn("[ArenaRespawn] Unsafe spawn overlap", player.Name, targetSpawn:GetFullName(), body.Name)
+				return false
+			end
+		end
+		self._arenaRespawn:Take(player)
+		self._arenaRespawn:Restore(pending)
+	end
 
 	-- 6. Garantizar que Humanoid pueda caminar y mantener Dead bloqueado (Zero-Death)
 	if humanoid.Health > 0 then
+		humanoid.Jump = false
 		humanoid.PlatformStand = false
-		humanoid.AutoRotate = true
+		local isLocked = humanoid:GetAttribute("MovementLocked") == true
+		if not isLocked then
+			humanoid.AutoRotate = true
+		end
 		pcall(function()
 			humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
 			humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp, true)
@@ -442,10 +605,221 @@ function SpawnService:ResetCharacterInArena(player: Player): boolean
 	end
 
 	print(string.format("[SpawnService] ResetCharacterInArena exitoso para '%s' en '%s' (Match '%s', Team '%s')",
-		player.Name, targetSpawn.Name, matchId, team))
+		player.Name, targetSpawn.Name, session.Id, participant.Team))
+	CharacterPhysics.Trace(player, "ArenaPositioned", targetSpawn, session.State)
+	self:RefreshMovementSpeed(player, character)
 
 	return true
 end
+
+function SpawnService:IsKillPartRespawnPending(player: Player): boolean
+	return self._arenaRespawn ~= nil and self._arenaRespawn.Pending[player] ~= nil
+end
+
+function SpawnService:BeginKillPartRespawn(player: Player, session: MatchSession, eliminationId: string, kind: string?): boolean
+	local rounds = self:_getRoundService()
+	if not player or player.Parent ~= Players or not session or not rounds
+		or rounds:GetSessionForPlayer(player) ~= session or not rounds:IsSessionActive(session.Id)
+		or not rounds:GetSessionParticipant(session.Id, player) then return false end
+	if session.State ~= Constants.RoundState.Playing or session.PointInProgress or session.GameplayFrozen then return false end
+	return self._arenaRespawn:Begin(player, session, eliminationId, kind)
+end
+
+function SpawnService:CancelSessionRespawns(sessionId: string, reason: string)
+	if self._arenaRespawn then self._arenaRespawn:CancelSession(sessionId, reason, true) end
+end
+
+-- ==================================================
+-- BLOQUEO Y RESTAURACIÓN DE MOVIMIENTO (Countdowns)
+-- ==================================================
+
+-- Obtiene la lista de jugadores participantes válidos de una MatchSession
+-- Reutiliza la misma estrategia que SpawnMatchPlayers() soportando RedTeam/BlueTeam y RedPlayer/BluePlayer
+function SpawnService:GetSessionParticipants(session: MatchSession?): { Player }
+	if not session then return {} end
+	local participants: { Player } = {}
+
+	local addPlayer = function(p: any)
+		if isPlayer(p) and p:IsDescendantOf(Players) then
+			if not table.find(participants, p) then
+				table.insert(participants, p)
+			end
+		end
+	end
+
+	if session.RedTeam and #session.RedTeam > 0 then
+		for _, p in ipairs(session.RedTeam) do
+			addPlayer(p)
+		end
+	elseif session.RedPlayer then
+		addPlayer(session.RedPlayer)
+	end
+
+	if session.BlueTeam and #session.BlueTeam > 0 then
+		for _, p in ipairs(session.BlueTeam) do
+			addPlayer(p)
+		end
+	elseif session.BluePlayer then
+		addPlayer(session.BluePlayer)
+	end
+
+	for index, participant in ipairs(participants) do
+		warn(
+			"[DEBUG Participants]",
+			index,
+			tostring(participant),
+			typeof(participant)
+		)
+	end
+
+	return participants
+end
+
+-- Bloquea autoritativamente el movimiento del Character durante countdowns (Start / PointRestart)
+-- Garantiza: WalkSpeed = 0, JumpPower = 0, JumpHeight = 0, AutoRotate = false, AssemblyVelocities = 0
+-- NO usa Anchored, NO usa PlatformStand, NO crea Characters nuevos.
+function SpawnService:LockCharacterMovement(player: Player?): boolean
+	warn(
+		"[DEBUG LockCharacterMovement]",
+		"player=", tostring(player),
+		"typeof=", typeof(player)
+	)
+
+	if typeof(player) ~= "Instance" then
+		warn("[DEBUG LockCharacterMovement] INVALID PLAYER:", tostring(player))
+		return false
+	end
+
+	if not player:IsA("Player") then
+		warn("[DEBUG LockCharacterMovement] INVALID CLASS:", player.ClassName)
+		return false
+	end
+
+	if player.Parent ~= Players then
+		warn("[DEBUG LockCharacterMovement] PLAYER NOT IN PLAYERS:", player:GetFullName())
+		return false
+	end
+
+	local character = player.Character
+	if not character or not character.Parent or not character:IsDescendantOf(Workspace) then
+		return false
+	end
+
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+	local rootPart = character:FindFirstChild("HumanoidRootPart") :: BasePart?
+	if not humanoid or humanoid.Health <= 0 or not rootPart then
+		return false
+	end
+
+	self:RefreshMovementSpeed(player, character)
+	local defaultJumpPower = (Config.Character and Config.Character.DefaultJumpPower) or 50
+	local defaultJumpHeight = (Config.Character and Config.Character.DefaultJumpHeight) or 7.2
+
+	if not humanoid:GetAttribute("BaseJumpPower") then
+		local currentPower = humanoid.JumpPower
+		humanoid:SetAttribute("BaseJumpPower", if currentPower > 0 then currentPower else defaultJumpPower)
+	end
+	if not humanoid:GetAttribute("BaseJumpHeight") then
+		local currentHeight = humanoid.JumpHeight
+		humanoid:SetAttribute("BaseJumpHeight", if currentHeight > 0 then currentHeight else defaultJumpHeight)
+	end
+
+	humanoid:SetAttribute("MovementLocked", true)
+	humanoid:SetAttribute("MovementSpeedUnlockPending", nil)
+	humanoid.WalkSpeed = 0
+	humanoid.JumpPower = 0
+	humanoid.JumpHeight = 0
+	humanoid.AutoRotate = false
+
+	-- Detener cualquier inercia o velocidad física residual
+	rootPart.AssemblyLinearVelocity = Vector3.zero
+	rootPart.AssemblyAngularVelocity = Vector3.zero
+	for _, desc in ipairs(character:GetDescendants()) do
+		if desc:IsA("BasePart") then
+			desc.AssemblyLinearVelocity = Vector3.zero
+			desc.AssemblyAngularVelocity = Vector3.zero
+		end
+	end
+
+	return true
+end
+
+-- Restaura autoritativamente el movimiento normal del Character al pasar a PLAYING o Lobby
+function SpawnService:UnlockCharacterMovement(player: Player?): boolean
+	if typeof(player) ~= "Instance" or not player:IsA("Player") or player.Parent ~= Players then
+		return false
+	end
+
+	local character = player.Character
+	if not character or not character.Parent then
+		return false
+	end
+
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+	if not humanoid then
+		return false
+	end
+
+	local defaultJumpPower = (Config.Character and Config.Character.DefaultJumpPower) or 50
+	local defaultJumpHeight = (Config.Character and Config.Character.DefaultJumpHeight) or 7.2
+
+	local baseJumpPower = humanoid:GetAttribute("BaseJumpPower")
+	local baseJumpHeight = humanoid:GetAttribute("BaseJumpHeight")
+
+	humanoid:SetAttribute("MovementLocked", nil)
+	humanoid:SetAttribute("MovementSpeedUnlockPending", true)
+	self:RefreshMovementSpeed(player, character)
+	MovementSpeed.Apply(humanoid, true)
+	humanoid.JumpPower = if typeof(baseJumpPower) == "number" and baseJumpPower > 0 then baseJumpPower else defaultJumpPower
+	humanoid.JumpHeight = if typeof(baseJumpHeight) == "number" and baseJumpHeight > 0 then baseJumpHeight else defaultJumpHeight
+	humanoid.AutoRotate = true
+
+	return true
+end
+
+-- Bloquea movimiento para todos los participantes válidos de una sesión
+function SpawnService:LockSessionPlayers(session: MatchSession)
+	if not session then
+		warn("[SpawnService] LockSessionPlayers: MatchSession nula o inválida")
+		return
+	end
+
+	local participants = self:GetSessionParticipants(session)
+	if #participants == 0 then
+		warn(string.format("[SpawnService] LockSessionPlayers: no se encontraron participantes válidos para Match '%s'", tostring(session.Id)))
+		return
+	end
+
+	if session.Mode == "1v1" and #participants < 2 then
+		warn(string.format("[SpawnService] LockSessionPlayers: participante faltante en 1v1 para Match '%s' (encontrados: %d)",
+			tostring(session.Id), #participants))
+	end
+
+	for _, player in ipairs(participants) do
+		warn(
+			"[DEBUG MovementLock]",
+			"Match=", tostring(session.Id),
+			"Participant=", tostring(player),
+			"Type=", typeof(player),
+			"Class=", if typeof(player) == "Instance" then player.ClassName else "N/A"
+		)
+		self:LockCharacterMovement(player)
+	end
+end
+
+-- Restaura movimiento para todos los participantes válidos de una sesión
+function SpawnService:UnlockSessionPlayers(session: MatchSession)
+	if not session then
+		warn("[SpawnService] UnlockSessionPlayers: MatchSession nula o inválida")
+		return
+	end
+
+	local participants = self:GetSessionParticipants(session)
+	for _, player in ipairs(participants) do
+		self:UnlockCharacterMovement(player)
+	end
+end
+
 
 -- Deprecated (Fase 4B Zero-Death): En arquitectura Zero-Death el Character es persistente y no requiere rescue reactivo
 function SpawnService:StartMatchRespawnTracking(_session: MatchSession)
@@ -458,73 +832,64 @@ function SpawnService:StopMatchRespawnTracking(_matchId: string)
 end
 
 -- Valida spawns de la partida y posiciona a RedPlayer y BluePlayer
-function SpawnService:SpawnMatchPlayers(session: MatchSession): boolean
+function SpawnService:SpawnMatchPlayers(session: MatchSession): SpawnBatchResult
+	local sessionId = if session then session.Id else ""
+	local result: SpawnBatchResult = {
+		Success = false,
+		SessionId = sessionId,
+		Required = 0,
+		Placed = 0,
+		PlacedPlayers = {},
+		Failures = {},
+	}
 	if not session then
 		warn("[SpawnService] MatchSession invalida")
-		return false
+		table.insert(result.Failures, { Reason = "InvalidSession" })
+		return result
 	end
 
-	local redSpawn, blueSpawn = self:_getSpawnPoints(session)
-
-	-- Validar que ambos spawns existan y esten en el DataModel
-	if not redSpawn or not redSpawn:IsA("BasePart") or not redSpawn:IsDescendantOf(Workspace) then
-		warn(string.format("[SpawnService] RedSpawn no existe o no es valido para la partida '%s'", session.Id))
-		return false
-	end
-
-	if not blueSpawn or not blueSpawn:IsA("BasePart") or not blueSpawn:IsDescendantOf(Workspace) then
-		warn(string.format("[SpawnService] BlueSpawn no existe o no es valido para la partida '%s'", session.Id))
-		return false
-	end
-
-	local redOk = false
-	local blueOk = false
-
-	if session.RedTeam and #session.RedTeam > 0 then
-		for _, player in ipairs(session.RedTeam) do
-			if self:TeleportCharacterToSpawn(player, redSpawn) then
-				redOk = true
+	local participants = session.Participants or {}
+	-- Resolve the whole batch before moving anyone. Never prepare only one side.
+	for _, participant in ipairs(participants) do
+		if participant.State ~= "Left" and participant.State ~= "Released" then
+			local target, reason = self:ResolveParticipantSpawn(session.Id, participant.Player)
+			if not target then
+				table.insert(result.Failures, { Player=participant.Player, Reason=reason or "SpawnUnavailable" })
 			end
 		end
-	elseif session.RedPlayer then
-		redOk = self:TeleportCharacterToSpawn(session.RedPlayer, redSpawn)
 	end
-
-	if session.BlueTeam and #session.BlueTeam > 0 then
-		for _, player in ipairs(session.BlueTeam) do
-			if self:TeleportCharacterToSpawn(player, blueSpawn) then
-				blueOk = true
+	if #result.Failures > 0 then
+		for _,participant in ipairs(participants) do if participant.State~="Left" and participant.State~="Released" then result.Required+=1 end end
+		return result
+	end
+	for _, participant in ipairs(participants) do
+		if participant.State ~= "Left" and participant.State ~= "Released" then
+			result.Required += 1
+			local spawnPart, reason = self:ResolveParticipantSpawn(session.Id, participant.Player)
+			if not spawnPart then
+				table.insert(result.Failures, { Player = participant.Player, UserId = participant.UserId, Team = participant.Team, Slot = participant.Slot, Reason = reason or "SpawnUnavailable" })
+			elseif self:TeleportCharacterToSpawn(participant.Player, spawnPart) then
+				result.Placed += 1
+				table.insert(result.PlacedPlayers, participant.Player)
+			else
+				table.insert(result.Failures, { Player = participant.Player, UserId = participant.UserId, Team = participant.Team, Slot = participant.Slot, Reason = "TeleportFailed" })
 			end
 		end
-	elseif session.BluePlayer then
-		blueOk = self:TeleportCharacterToSpawn(session.BluePlayer, blueSpawn)
 	end
-
-	print(string.format("[SpawnService] Posicionamiento completado para Match '%s': RedOk=%s, BlueOk=%s",
-		session.Id, tostring(redOk), tostring(blueOk)))
+	result.Success = result.Required > 0 and result.Placed == result.Required and #result.Failures == 0
+	print(string.format("[SpawnService] Posicionamiento Match '%s': %d/%d; Success=%s", session.Id, result.Placed, result.Required, tostring(result.Success)))
 
 	-- Asegurar que los jugadores cuenten con su Slap equipado tras el reposicionamiento
 	local slapService = self:_getSlapService()
-	if slapService then
-		if session.RedTeam and #session.RedTeam > 0 then
-			for _, p in ipairs(session.RedTeam) do slapService:GiveSlap(p) end
-		elseif session.RedPlayer then
-			slapService:GiveSlap(session.RedPlayer)
-		end
-
-		if session.BlueTeam and #session.BlueTeam > 0 then
-			for _, p in ipairs(session.BlueTeam) do slapService:GiveSlap(p) end
-		elseif session.BluePlayer then
-			slapService:GiveSlap(session.BluePlayer)
-		end
+	if result.Success and slapService then
+		for _,p in ipairs(result.PlacedPlayers) do slapService:GiveSlap(p) end
 	end
 
-	-- Si al menos un jugador valido fue posicionado (o ambos si ambos tienen personaje), retorna true
-	return redOk or blueOk
+	return result
 end
 
 -- Retorna a los jugadores al punto de spawn del lobby reutilizando sus Characters existentes
-function SpawnService:ReturnPlayersToLobby(redPlayer: any?, bluePlayer: any?)
+function SpawnService:ReturnPlayersToLobby(redPlayer: any?, bluePlayer: any?): boolean
 	local lobbySpawn = self._lobbySpawn
 	if not lobbySpawn or not lobbySpawn:IsDescendantOf(Workspace) then
 		local lobby = Workspace:FindFirstChild("Lobby")
@@ -534,20 +899,30 @@ function SpawnService:ReturnPlayersToLobby(redPlayer: any?, bluePlayer: any?)
 
 	if not lobbySpawn then
 		warn("[SpawnService] No se puede retornar al lobby: SpawnLocation no encontrado")
-		return
+		return false
 	end
 
 	local ragdollService = self:_getRagdollService()
+	local allReturned = true
 
 	local returnSinglePlayer = function(player: Player?)
 		if not player or not player:IsA("Player") or not player:IsDescendantOf(Players) then return end
 		local character = player.Character
+			-- Invalidate competitive work BEFORE recovery/teleport, including individual results exits.
+			self._arenaRespawn:Cancel(player, "ReturnToLobby", false)
+			if character then
+				character:SetAttribute("ArenaPhysicsGeneration", (character:GetAttribute("ArenaPhysicsGeneration") or 0) + 1)
+				character:SetAttribute("ArenaPhysicsPhase", "Lobby")
+				CharacterPhysics.Restore(character)
+			end
 		if character and character.Parent then
 			if ragdollService and type(ragdollService.ResetRagdollImmediate) == "function" then
 				ragdollService:ResetRagdollImmediate(character)
 			elseif ragdollService then
 				ragdollService:RemoveRagdoll(character)
 			end
+
+			self:UnlockCharacterMovement(player)
 
 			local hum = character:FindFirstChildOfClass("Humanoid")
 			if hum then
@@ -561,13 +936,27 @@ function SpawnService:ReturnPlayersToLobby(redPlayer: any?, bluePlayer: any?)
 			end
 		end
 
-		self:TeleportCharacterToSpawn(player, lobbySpawn)
+			if not self:TeleportCharacterToSpawn(player, lobbySpawn) then
+			allReturned = false
+		end
+			if player.Character then CharacterPhysics.Restore(player.Character) end
+			local returnedHumanoid = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
+			if returnedHumanoid then
+				returnedHumanoid.Jump = false
+				returnedHumanoid.PlatformStand = false
+				returnedHumanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, true)
+				returnedHumanoid:ChangeState(Enum.HumanoidStateType.Running)
+			end
+			local rounds = self:_getRoundService()
+			local returningSession = rounds and rounds:GetSessionForPlayer(player)
+			CharacterPhysics.Trace(player, "LobbyReturned", lobbySpawn, returningSession and returningSession.State)
 
 		-- Limpieza inmediata de identidad de match a nivel de player
 		pcall(function()
 			player:SetAttribute("MatchId", nil)
 			player:SetAttribute("MatchTeam", nil)
 		end)
+		self:RefreshMovementSpeed(player)
 	end
 
 	local processTarget = function(target: any?)
@@ -585,6 +974,7 @@ function SpawnService:ReturnPlayersToLobby(redPlayer: any?, bluePlayer: any?)
 	processTarget(bluePlayer)
 
 	print("[SpawnService] Jugadores retornados a Workspace.Lobby.SpawnLocation con estados normales restaurados")
+	return allReturned
 end
 
 return SpawnService

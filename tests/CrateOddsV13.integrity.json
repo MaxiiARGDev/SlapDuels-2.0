@@ -1,0 +1,89 @@
+{
+  "Sources": [
+    {
+      "File": "src/shared/SlapCrates/InitialOdds.luau",
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "InitialOdds"
+      ],
+      "Before": null,
+      "After": "428baa2e1a2349efdb8972bbb93ceb27226ccc17795bc3947f1da20e02b4509d"
+    },
+    {
+      "File": "src/shared/SlapCrates/CrateDefinitions.luau",
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "CrateDefinitions"
+      ],
+      "Before": "f12c8cfb16457877645b532c39cfda8df70d92f2ef6c6d35e1fc090957c5edd0",
+      "After": "04f0c8e3fe7b8b5aaf40ecacde6b4b90f0740e9b73a42be91cb4a05be45b4319"
+    },
+    {
+      "File": "src/shared/SlapCrates/Catalog.luau",
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "Catalog"
+      ],
+      "Before": "6f655063c09fe94f557bb280821cbc46534ffe4eac5572884798dc5cbc05b5bd",
+      "After": "48f27b008de1d221248588e80d990f4eb1d86daa9e189ad5fe64f479702d346a"
+    },
+    {
+      "File": "src/shared/SlapCrates/Odds.luau",
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "Odds"
+      ],
+      "Before": "2f402ad60b485def207bc98eaee4451b8176a24102d124a700253ba8249739df",
+      "After": "52d9d4d1926fa7fc7516d55e6b9b733ac419c7fe38fe8af67881e8a1351b04d3"
+    },
+    {
+      "File": "src/shared/SlapCrates/OddsPresentation.luau",
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "OddsPresentation"
+      ],
+      "Before": null,
+      "After": "e0a46524ea3e16061069ddddd9325dd69950230c6da5178929ddc435d3871959"
+    },
+    {
+      "File": "src/server/Services/CrateService.luau",
+      "Path": [
+        "ServerScriptService",
+        "Services",
+        "CrateService"
+      ],
+      "Before": "9a858109cca22f6b3e4438db3d5ebb3388523fedc5e66ac625ab8c8650bd7605",
+      "After": "6e71d9fa3afc1ae43a7d646bd15afbca1fcec0cab978b10d185d039fd20cf098"
+    },
+    {
+      "File": "src/client/Controllers/CrateController.luau",
+      "Path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "Controllers",
+        "CrateController"
+      ],
+      "Before": "3686cc089c87577a86db30b2b5a778a22d7d12ee2faf3d346b7125f77ebe0913",
+      "After": "9a1d3c298b75591f39fa52ca5d1cc629b81e0b78df50caf97195bcde76ecd270"
+    }
+  ],
+  "ChangedOriginalSources": [
+    "src/client/Controllers/CrateController.luau",
+    "src/server/Services/CrateService.luau",
+    "src/shared/SlapCrates/Catalog.luau",
+    "src/shared/SlapCrates/CrateDefinitions.luau",
+    "src/shared/SlapCrates/Odds.luau"
+  ],
+  "UnchangedOriginalFiles": 147,
+  "SpinAndWorldUnchanged": true
+}

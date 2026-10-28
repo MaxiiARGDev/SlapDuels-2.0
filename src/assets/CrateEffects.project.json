@@ -1,0 +1,1087 @@
+{
+  "name": "CrateEffects",
+  "tree": {
+    "$className": "Folder",
+    "$properties": {},
+    "Basic": {
+      "$className": "Model",
+      "$properties": {},
+      "Body": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.95,
+              0.5225,
+              0.5225
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.6,
+              2,
+              2.2
+            ]
+          }
+        },
+        "Burst": {
+          "$className": "ParticleEmitter",
+          "$properties": {
+            "Enabled": false,
+            "Rate": 0,
+            "Lifetime": {
+              "NumberRange": [
+                0.4,
+                0.8
+              ]
+            },
+            "Speed": {
+              "NumberRange": [
+                2,
+                5
+              ]
+            },
+            "SpreadAngle": {
+              "Vector2": [
+                180,
+                180
+              ]
+            }
+          }
+        }
+      },
+      "Lid": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.95,
+              0.5225,
+              0.5225
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.8,
+              0.4,
+              2.4
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              0,
+              1.2,
+              0
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Common": {
+      "$className": "Model",
+      "$properties": {},
+      "Body": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.95,
+              0.73625,
+              0.5225
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.6,
+              2,
+              2.2
+            ]
+          }
+        },
+        "Burst": {
+          "$className": "ParticleEmitter",
+          "$properties": {
+            "Enabled": false,
+            "Rate": 0,
+            "Lifetime": {
+              "NumberRange": [
+                0.4,
+                0.8
+              ]
+            },
+            "Speed": {
+              "NumberRange": [
+                2,
+                5
+              ]
+            },
+            "SpreadAngle": {
+              "Vector2": [
+                180,
+                180
+              ]
+            }
+          }
+        }
+      },
+      "Lid": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.95,
+              0.73625,
+              0.5225
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.8,
+              0.4,
+              2.4
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              0,
+              1.2,
+              0
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Uncommon": {
+      "$className": "Model",
+      "$properties": {},
+      "Body": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.95,
+              0.95,
+              0.5225
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.6,
+              2,
+              2.2
+            ]
+          }
+        },
+        "Burst": {
+          "$className": "ParticleEmitter",
+          "$properties": {
+            "Enabled": false,
+            "Rate": 0,
+            "Lifetime": {
+              "NumberRange": [
+                0.4,
+                0.8
+              ]
+            },
+            "Speed": {
+              "NumberRange": [
+                2,
+                5
+              ]
+            },
+            "SpreadAngle": {
+              "Vector2": [
+                180,
+                180
+              ]
+            }
+          }
+        }
+      },
+      "Lid": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.95,
+              0.95,
+              0.5225
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.8,
+              0.4,
+              2.4
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              0,
+              1.2,
+              0
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Rare": {
+      "$className": "Model",
+      "$properties": {},
+      "Body": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.73625,
+              0.95,
+              0.5225
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.6,
+              2,
+              2.2
+            ]
+          }
+        },
+        "Burst": {
+          "$className": "ParticleEmitter",
+          "$properties": {
+            "Enabled": false,
+            "Rate": 0,
+            "Lifetime": {
+              "NumberRange": [
+                0.4,
+                0.8
+              ]
+            },
+            "Speed": {
+              "NumberRange": [
+                2,
+                5
+              ]
+            },
+            "SpreadAngle": {
+              "Vector2": [
+                180,
+                180
+              ]
+            }
+          }
+        }
+      },
+      "Lid": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.73625,
+              0.95,
+              0.5225
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.8,
+              0.4,
+              2.4
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              0,
+              1.2,
+              0
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Gold": {
+      "$className": "Model",
+      "$properties": {},
+      "Body": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.5225,
+              0.95,
+              0.5225
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.6,
+              2,
+              2.2
+            ]
+          }
+        },
+        "Burst": {
+          "$className": "ParticleEmitter",
+          "$properties": {
+            "Enabled": false,
+            "Rate": 0,
+            "Lifetime": {
+              "NumberRange": [
+                0.4,
+                0.8
+              ]
+            },
+            "Speed": {
+              "NumberRange": [
+                2,
+                5
+              ]
+            },
+            "SpreadAngle": {
+              "Vector2": [
+                180,
+                180
+              ]
+            }
+          }
+        }
+      },
+      "Lid": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.5225,
+              0.95,
+              0.5225
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.8,
+              0.4,
+              2.4
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              0,
+              1.2,
+              0
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Arcoiris": {
+      "$className": "Model",
+      "$properties": {},
+      "Body": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.5225,
+              0.95,
+              0.73625
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.6,
+              2,
+              2.2
+            ]
+          }
+        },
+        "Burst": {
+          "$className": "ParticleEmitter",
+          "$properties": {
+            "Enabled": false,
+            "Rate": 0,
+            "Lifetime": {
+              "NumberRange": [
+                0.4,
+                0.8
+              ]
+            },
+            "Speed": {
+              "NumberRange": [
+                2,
+                5
+              ]
+            },
+            "SpreadAngle": {
+              "Vector2": [
+                180,
+                180
+              ]
+            }
+          }
+        }
+      },
+      "Lid": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.5225,
+              0.95,
+              0.73625
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.8,
+              0.4,
+              2.4
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              0,
+              1.2,
+              0
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Emote": {
+      "$className": "Model",
+      "$properties": {},
+      "Body": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.5225,
+              0.95,
+              0.95
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.6,
+              2,
+              2.2
+            ]
+          }
+        },
+        "Burst": {
+          "$className": "ParticleEmitter",
+          "$properties": {
+            "Enabled": false,
+            "Rate": 0,
+            "Lifetime": {
+              "NumberRange": [
+                0.4,
+                0.8
+              ]
+            },
+            "Speed": {
+              "NumberRange": [
+                2,
+                5
+              ]
+            },
+            "SpreadAngle": {
+              "Vector2": [
+                180,
+                180
+              ]
+            }
+          }
+        }
+      },
+      "Lid": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.5225,
+              0.95,
+              0.95
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.8,
+              0.4,
+              2.4
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              0,
+              1.2,
+              0
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Wings": {
+      "$className": "Model",
+      "$properties": {},
+      "Body": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.5225,
+              0.73625,
+              0.95
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.6,
+              2,
+              2.2
+            ]
+          }
+        },
+        "Burst": {
+          "$className": "ParticleEmitter",
+          "$properties": {
+            "Enabled": false,
+            "Rate": 0,
+            "Lifetime": {
+              "NumberRange": [
+                0.4,
+                0.8
+              ]
+            },
+            "Speed": {
+              "NumberRange": [
+                2,
+                5
+              ]
+            },
+            "SpreadAngle": {
+              "Vector2": [
+                180,
+                180
+              ]
+            }
+          }
+        }
+      },
+      "Lid": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.5225,
+              0.73625,
+              0.95
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.8,
+              0.4,
+              2.4
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              0,
+              1.2,
+              0
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Epic": {
+      "$className": "Model",
+      "$properties": {},
+      "Body": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.5225,
+              0.5225,
+              0.95
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.6,
+              2,
+              2.2
+            ]
+          }
+        },
+        "Burst": {
+          "$className": "ParticleEmitter",
+          "$properties": {
+            "Enabled": false,
+            "Rate": 0,
+            "Lifetime": {
+              "NumberRange": [
+                0.4,
+                0.8
+              ]
+            },
+            "Speed": {
+              "NumberRange": [
+                2,
+                5
+              ]
+            },
+            "SpreadAngle": {
+              "Vector2": [
+                180,
+                180
+              ]
+            }
+          }
+        }
+      },
+      "Lid": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.5225,
+              0.5225,
+              0.95
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.8,
+              0.4,
+              2.4
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              0,
+              1.2,
+              0
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Legendary": {
+      "$className": "Model",
+      "$properties": {},
+      "Body": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.73625,
+              0.5225,
+              0.95
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.6,
+              2,
+              2.2
+            ]
+          }
+        },
+        "Burst": {
+          "$className": "ParticleEmitter",
+          "$properties": {
+            "Enabled": false,
+            "Rate": 0,
+            "Lifetime": {
+              "NumberRange": [
+                0.4,
+                0.8
+              ]
+            },
+            "Speed": {
+              "NumberRange": [
+                2,
+                5
+              ]
+            },
+            "SpreadAngle": {
+              "Vector2": [
+                180,
+                180
+              ]
+            }
+          }
+        }
+      },
+      "Lid": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.73625,
+              0.5225,
+              0.95
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.8,
+              0.4,
+              2.4
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              0,
+              1.2,
+              0
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Blood": {
+      "$className": "Model",
+      "$properties": {},
+      "Body": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.95,
+              0.5225,
+              0.95
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.6,
+              2,
+              2.2
+            ]
+          }
+        },
+        "Burst": {
+          "$className": "ParticleEmitter",
+          "$properties": {
+            "Enabled": false,
+            "Rate": 0,
+            "Lifetime": {
+              "NumberRange": [
+                0.4,
+                0.8
+              ]
+            },
+            "Speed": {
+              "NumberRange": [
+                2,
+                5
+              ]
+            },
+            "SpreadAngle": {
+              "Vector2": [
+                180,
+                180
+              ]
+            }
+          }
+        }
+      },
+      "Lid": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.95,
+              0.5225,
+              0.95
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.8,
+              0.4,
+              2.4
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              0,
+              1.2,
+              0
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Galaxy": {
+      "$className": "Model",
+      "$properties": {},
+      "Body": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.95,
+              0.5225,
+              0.73625
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.6,
+              2,
+              2.2
+            ]
+          }
+        },
+        "Burst": {
+          "$className": "ParticleEmitter",
+          "$properties": {
+            "Enabled": false,
+            "Rate": 0,
+            "Lifetime": {
+              "NumberRange": [
+                0.4,
+                0.8
+              ]
+            },
+            "Speed": {
+              "NumberRange": [
+                2,
+                5
+              ]
+            },
+            "SpreadAngle": {
+              "Vector2": [
+                180,
+                180
+              ]
+            }
+          }
+        }
+      },
+      "Lid": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.95,
+              0.5225,
+              0.73625
+            ]
+          },
+          "Size": {
+            "Vector3": [
+              2.8,
+              0.4,
+              2.4
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              0,
+              1.2,
+              0
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    }
+  }
+}

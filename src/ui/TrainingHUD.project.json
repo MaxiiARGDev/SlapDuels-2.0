@@ -1,0 +1,334 @@
+{
+  "name": "TrainingHUD",
+  "tree": {
+    "$className": "ScreenGui",
+    "$properties": {
+      "Enabled": true,
+      "ResetOnSpawn": false,
+      "DisplayOrder": 80,
+      "IgnoreGuiInset": false,
+      "ZIndexBehavior": "Sibling"
+    },
+    "Panel": {
+      "$className": "Frame",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              0.5,
+              0
+            ],
+            [
+              1,
+              -18
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              0.65,
+              0
+            ],
+            [
+              0,
+              125
+            ]
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.07450980392156863,
+            0.11372549019607843,
+            0.17647058823529413
+          ]
+        },
+        "BorderSizePixel": 0,
+        "AnchorPoint": {
+          "Vector2": [
+            0.5,
+            1
+          ]
+        },
+        "Visible": false
+      },
+      "Corner": {
+        "$className": "UICorner",
+        "$properties": {
+          "CornerRadius": {
+            "UDim": [
+              0,
+              12
+            ]
+          }
+        }
+      },
+      "Stroke": {
+        "$className": "UIStroke",
+        "$properties": {
+          "Color": {
+            "Color3": [
+              0.30196078431372547,
+              0.5568627450980392,
+              0.7098039215686275
+            ]
+          },
+          "Thickness": 1.5
+        }
+      },
+      "Bounds": {
+        "$className": "UISizeConstraint",
+        "$properties": {
+          "MinSize": {
+            "Vector2": [
+              285,
+              125
+            ]
+          },
+          "MaxSize": {
+            "Vector2": [
+              690,
+              125
+            ]
+          }
+        }
+      },
+      "Title": {
+        "$className": "TextLabel",
+        "$properties": {
+          "Text": "ZONA DE PR\u00c1CTICA  /  SIN PREMIOS",
+          "Position": {
+            "UDim2": [
+              [
+                0.03,
+                0
+              ],
+              [
+                0.05,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.76,
+                0
+              ],
+              [
+                0.17,
+                0
+              ]
+            ]
+          },
+          "BackgroundTransparency": 1,
+          "TextColor3": {
+            "Color3": [
+              0.9098039215686274,
+              0.9450980392156862,
+              1.0
+            ]
+          },
+          "Font": "GothamBold",
+          "TextSize": 14,
+          "TextScaled": true,
+          "TextWrapped": true
+        },
+        "Bounds": {
+          "$className": "UITextSizeConstraint",
+          "$properties": {
+            "MinTextSize": 8,
+            "MaxTextSize": 14
+          }
+        }
+      },
+      "Status": {
+        "$className": "TextLabel",
+        "$properties": {
+          "Text": "Golpe\u00e1 al maniqu\u00ed. Durante el ragdoll no recibe otro impacto.",
+          "Position": {
+            "UDim2": [
+              [
+                0.03,
+                0
+              ],
+              [
+                0.28,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.94,
+                0
+              ],
+              [
+                0.22,
+                0
+              ]
+            ]
+          },
+          "BackgroundTransparency": 1,
+          "TextColor3": {
+            "Color3": [
+              0.9098039215686274,
+              0.9450980392156862,
+              1.0
+            ]
+          },
+          "Font": "GothamBold",
+          "TextSize": 12,
+          "TextScaled": true,
+          "TextWrapped": true
+        },
+        "Bounds": {
+          "$className": "UITextSizeConstraint",
+          "$properties": {
+            "MinTextSize": 8,
+            "MaxTextSize": 12
+          }
+        }
+      },
+      "Attack": {
+        "$className": "TextButton",
+        "$properties": {
+          "Text": "GOLPEAR",
+          "Position": {
+            "UDim2": [
+              [
+                0.03,
+                0
+              ],
+              [
+                0.62,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.64,
+                0
+              ],
+              [
+                0.28,
+                0
+              ]
+            ]
+          },
+          "BackgroundTransparency": 0,
+          "TextColor3": {
+            "Color3": [
+              0.9098039215686274,
+              0.9450980392156862,
+              1.0
+            ]
+          },
+          "Font": "GothamBold",
+          "TextSize": 16,
+          "TextScaled": true,
+          "TextWrapped": true,
+          "BackgroundColor3": {
+            "Color3": [
+              0.12156862745098039,
+              0.4549019607843137,
+              0.6509803921568628
+            ]
+          },
+          "AutoButtonColor": true,
+          "BorderSizePixel": 0
+        },
+        "Bounds": {
+          "$className": "UITextSizeConstraint",
+          "$properties": {
+            "MinTextSize": 8,
+            "MaxTextSize": 16
+          }
+        },
+        "Corner": {
+          "$className": "UICorner",
+          "$properties": {
+            "CornerRadius": {
+              "UDim": [
+                0,
+                7
+              ]
+            }
+          }
+        }
+      },
+      "Exit": {
+        "$className": "TextButton",
+        "$properties": {
+          "Text": "SALIR",
+          "Position": {
+            "UDim2": [
+              [
+                0.71,
+                0
+              ],
+              [
+                0.62,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.26,
+                0
+              ],
+              [
+                0.28,
+                0
+              ]
+            ]
+          },
+          "BackgroundTransparency": 0,
+          "TextColor3": {
+            "Color3": [
+              0.9098039215686274,
+              0.9450980392156862,
+              1.0
+            ]
+          },
+          "Font": "GothamBold",
+          "TextSize": 16,
+          "TextScaled": true,
+          "TextWrapped": true,
+          "BackgroundColor3": {
+            "Color3": [
+              0.6627450980392157,
+              0.20784313725490197,
+              0.26666666666666666
+            ]
+          },
+          "AutoButtonColor": true,
+          "BorderSizePixel": 0
+        },
+        "Bounds": {
+          "$className": "UITextSizeConstraint",
+          "$properties": {
+            "MinTextSize": 8,
+            "MaxTextSize": 16
+          }
+        },
+        "Corner": {
+          "$className": "UICorner",
+          "$properties": {
+            "CornerRadius": {
+              "UDim": [
+                0,
+                7
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+PASS: 23 isolated Shop UI assertions; no Studio/gameplay/cloud execution.

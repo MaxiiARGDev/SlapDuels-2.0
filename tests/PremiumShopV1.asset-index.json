@@ -1,0 +1,78 @@
+[
+  {
+    "Name": "ShopHUD",
+    "Path": "StarterGui.ShopHUD",
+    "Descendants": 348,
+    "TreePath": [
+      "StarterGui",
+      "ShopHUD"
+    ]
+  },
+  {
+    "Name": "PlayerHUD",
+    "Path": "StarterGui.PlayerHUD",
+    "Descendants": 58,
+    "TreePath": [
+      "StarterGui",
+      "PlayerHUD"
+    ]
+  },
+  {
+    "Name": "PremiumShopHUD",
+    "Path": "StarterGui.PremiumShopHUD",
+    "Descendants": 58,
+    "TreePath": [
+      "StarterGui",
+      "PremiumShopHUD"
+    ]
+  },
+  {
+    "Name": "PremiumShopPreviews",
+    "Path": "ReplicatedStorage.PremiumShopPreviews",
+    "Descendants": 38,
+    "TreePath": [
+      "ReplicatedStorage",
+      "PremiumShopPreviews"
+    ]
+  },
+  {
+    "Name": "CoinShop",
+    "Path": "Workspace.Shops.CoinShop",
+    "Descendants": 7,
+    "TreePath": [
+      "Workspace",
+      "Shops",
+      "CoinShop"
+    ]
+  },
+  {
+    "Name": "PremiumI",
+    "Path": "ReplicatedStorage.CrateEffects.PremiumI",
+    "Descendants": 7,
+    "TreePath": [
+      "ReplicatedStorage",
+      "CrateEffects",
+      "PremiumI"
+    ]
+  },
+  {
+    "Name": "PremiumII",
+    "Path": "ReplicatedStorage.CrateEffects.PremiumII",
+    "Descendants": 7,
+    "TreePath": [
+      "ReplicatedStorage",
+      "CrateEffects",
+      "PremiumII"
+    ]
+  },
+  {
+    "Name": "PremiumIII",
+    "Path": "ReplicatedStorage.CrateEffects.PremiumIII",
+    "Descendants": 7,
+    "TreePath": [
+      "ReplicatedStorage",
+      "CrateEffects",
+      "PremiumIII"
+    ]
+  }
+]

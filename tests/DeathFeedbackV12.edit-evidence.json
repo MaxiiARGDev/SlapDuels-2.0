@@ -1,0 +1,73 @@
+{
+  "PhysicalParts": [
+    {
+      "Path": "Workspace.MapaPlantilla.RedSpawn",
+      "Position": "1100.444580078125, 102.65524291992188, 506.75140380859375",
+      "Anchored": true,
+      "CanTouch": true,
+      "CanCollide": true
+    },
+    {
+      "Path": "Workspace.MapaPlantilla.BlueSpawn",
+      "Position": "931.9442138671875, 102.65524291992188, 507.74285888671875",
+      "Anchored": true,
+      "CanTouch": true,
+      "CanCollide": true
+    },
+    {
+      "Path": "Workspace.MapaPlantilla.Geometry.KillPart",
+      "Position": "1018.5, -25, 500",
+      "Anchored": true,
+      "CanTouch": true,
+      "CanCollide": false
+    },
+    {
+      "Path": "ServerStorage.Maps.Levels.Geometry.KillPart",
+      "Position": "161.5, -25, 805",
+      "Anchored": true,
+      "CanTouch": true,
+      "CanCollide": false
+    },
+    {
+      "Path": "ServerStorage.Maps.Levels.RedSpawn",
+      "Position": "217.9339599609375, 11.601390838623047, 804.008544921875",
+      "Anchored": true,
+      "CanTouch": true,
+      "CanCollide": true
+    },
+    {
+      "Path": "ServerStorage.Maps.Levels.BlueSpawn",
+      "Position": "149.07318115234375, 12, 805",
+      "Anchored": true,
+      "CanTouch": true,
+      "CanCollide": true
+    }
+  ],
+  "Sources": {
+    "Ragdoll": true,
+    "Elimination": true,
+    "PointRewardPreserved": true,
+    "Config": true,
+    "Lifecycle": true,
+    "PointCancellation": true,
+    "KillRewardPreserved": true,
+    "PacketIdentity": true,
+    "InputGuard": true,
+    "Spawn": true
+  },
+  "RespawnTime": 3,
+  "Mode": "Edit",
+  "Rig": {
+    "Path": "Workspace.Rig",
+    "JumpPower": 50,
+    "RootCanCollide": false,
+    "RigType": "R6",
+    "HipHeight": 0
+  },
+  "CharacterAutoLoads": true,
+  "Tests": "NOT RUN",
+  "ActiveRespawnGuards": 1,
+  "ArchivedDisabledGuardCopies": 1,
+  "ContactGuardPresent": true,
+  "PlaceSaved": false
+}

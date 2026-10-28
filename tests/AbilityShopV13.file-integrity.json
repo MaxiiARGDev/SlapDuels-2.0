@@ -1,0 +1,22 @@
+{
+  "ProtectedFiles": 106,
+  "ProtectedUnchanged": 106,
+  "ProtectedDifferences": [],
+  "BackupFiles": 9,
+  "BackupHashMismatches": [],
+  "ChangedFiles": [
+    "src/server/Abilities/DashAbility.luau",
+    "src/server/Abilities/AirJumpsAbility.luau",
+    "src/server/Abilities/DevilSpeedAbility.luau",
+    "src/server/Abilities/InvisibilityAbility.luau",
+    "src/server/Abilities/StrongSlapAbility.luau",
+    "src/server/Shop/Providers/AbilityProvider.luau",
+    "src/server/Shop/ShopRemotes.luau",
+    "src/server/Shop/ProfilePurchase.luau",
+    "src/client/Controllers/ShopController.luau"
+  ],
+  "AbilityMechanicsCompared": 5,
+  "AbilityMechanicsDifferences": [],
+  "WhitespaceFiles": 22,
+  "WhitespaceIssues": []
+}

@@ -1,0 +1,18 @@
+<!doctype html><meta charset="utf-8">
+<style>body{font:13px system-ui;background:#101a2b;color:#e7f3ff;padding:16px}h2{color:#60dfff}input,textarea,button{box-sizing:border-box;width:100%;margin:5px 0;padding:10px;border-radius:7px;border:1px solid #37506c;background:#17283d;color:inherit}button{cursor:pointer;background:#126b89}textarea{height:125px;font:11px monospace}small{color:#adc0d5}#status{white-space:pre-wrap;overflow:auto;max-height:150px}</style>
+<h2>Figma → Studio</h2>
+<small>Puente local · http://localhost:38474 · ningún script de juego generado</small>
+<input id="token" type="password" placeholder="Token de la terminal del puente" autocomplete="off">
+<button id="export">Exportar selección</button>
+<button id="send" disabled>Enviar al puente local</button>
+<button id="download" disabled>Descargar JSON (alternativa sin puente)</button>
+<textarea id="json" readonly placeholder="El diseño exportado aparecerá aquí"></textarea>
+<div id="status">Etiquetas: [button], [scroll], [raster], [dynamic], [font=GothamBold], [asset=ID].</div>
+<script>
+let packet;
+const status=document.getElementById('status'), field=document.getElementById('json');
+document.getElementById('export').onclick=()=>{status.textContent='Exportando…';parent.postMessage({pluginMessage:{type:'export'}},'*');};
+onmessage=e=>{const m=e.data.pluginMessage;if(!m)return;if(m.type==='error'){status.textContent=m.message;return;}if(m.type==='exported'){packet=m.packet;field.value=JSON.stringify(packet);document.getElementById('send').disabled=false;document.getElementById('download').disabled=false;status.textContent=packet.nodes.length+' capas; '+Object.keys(packet.assets).length+' PNG\n'+packet.warnings.join('\n');}};
+document.getElementById('download').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([field.value],{type:'application/json'}));a.download='design.bridge.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);};
+document.getElementById('send').onclick=async()=>{try{const response=await fetch('http://localhost:38474/design',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+document.getElementById('token').value.trim()},body:field.value});const result=await response.json();if(!response.ok)throw Error(result.error);status.textContent='Enviado. Revisión '+result.revision+'\nEn Studio: Obtener → Preview → Aplicar.\nPNG: '+result.assetDirectory;}catch(e){status.textContent='No se pudo enviar: '+e.message+'\nComprobá el puente y los permisos de red local; también podés descargar el JSON.';}};
+</script>

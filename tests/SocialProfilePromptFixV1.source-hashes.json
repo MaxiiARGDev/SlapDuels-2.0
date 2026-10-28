@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "SocialController",
+    "Path": "src/client/Controllers/SocialController.luau",
+    "BeforeHash": "e4e624565e80bf428747375516af3094147fa4b228e2cc353ab22fba3bf9213e",
+    "Hash": "450b72c3786f0266bc3bcbeada8b3d941067e2c4b2aa986cd2c0b9d36a2bdefe"
+  },
+  {
+    "Name": "Targeting",
+    "Path": "src/client/Social/Targeting.luau",
+    "BeforeHash": "fe51f51f4e2fdbcb8660ad6e44f2752bc785d9aeb8e9cde5f7cddd188bafeb3e",
+    "Hash": "b03054f039cb4c4d483ac872fe80abeac3f48fd21791b63b8eb51de11e6b311d"
+  }
+]

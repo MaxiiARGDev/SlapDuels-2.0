@@ -1,0 +1,10 @@
+[
+  {
+    "Path": "src\\server\\Services\\SlapService.luau",
+    "SHA256": "CAAA29F5DA6D75D2D07CA5C8C7E62565076B6F95C6FF833F0408955739C14C01"
+  },
+  {
+    "Path": "src\\client\\Controllers\\SlapController.luau",
+    "SHA256": "3C09F2DDEF6A9F0BF85D03D68FABCE061D5C2FAD79B928EC847C18A8BEDBCEA2"
+  }
+]

@@ -132,6 +132,7 @@ function SettingsController:_connectEvents()
 			local nextState = not current
 			musicController:SetMusicEnabled(nextState)
 			self:_updateToggleUI(nextState)
+				self:_savePreferences()
 		end)
 	end
 
@@ -206,6 +207,7 @@ function SettingsController:_processSliderInput(inputX: number, isDragging: bool
 		-- Si está en arrastre continuo usar fadeDuration 0 para latencia cero
 		local fade = if isDragging then 0 else 0.1
 		musicController:SetMusicVolume(volumeFraction, fade)
+			if not isDragging then self:_savePreferences()end
 	end
 end
 
@@ -320,10 +322,34 @@ function SettingsController:Init(context: any)
 	self:_bindHUD()
 end
 
+function SettingsController:_savePreferences()
+	self._preferenceVersion=(self._preferenceVersion or 0)+1
+	local version=self._preferenceVersion
+	task.delay(.5,function()
+		if version~=self._preferenceVersion or not self._preferencesRemote then return end
+		local music=self:_getMusicController();if not music then return end
+		local ok,result=pcall(self._preferencesRemote.InvokeServer,self._preferencesRemote,"Update",{MusicEnabled=music:IsMusicEnabled(),MusicVolume=music:GetMusicVolume()})
+		if not ok or not result or not result.Ok then warn("[Settings] No se confirmó el envío de preferencias; reintentá el ajuste")end
+	end)
+end
 function SettingsController:Start(context: any)
 	self._context = context
 	self:_connectEvents()
 	self:SyncWithMusicController()
+		task.spawn(function()
+			local remote=game.ReplicatedStorage:WaitForChild("Remotes"):WaitForChild("PlayerPreferences",20);if not remote then return end
+			self._preferencesRemote=remote
+			for _=1,30 do
+				if (self._preferenceVersion or 0)>0 then self:_savePreferences();return end
+				local ok,result=pcall(remote.InvokeServer,remote,"Snapshot")
+				if ok and result and result.Ok then
+					if (self._preferenceVersion or 0)>0 then self:_savePreferences();return end
+					local music=self:_getMusicController();if music then music:SetMusicEnabled(result.Preferences.MusicEnabled);music:SetMusicVolume(result.Preferences.MusicVolume);self:SyncWithMusicController()end
+					return
+				end
+				task.wait(1)
+			end
+		end)
 	print("[SettingsController] Controlador de ajustes iniciado y enlazado a SettingsGUI")
 end
 

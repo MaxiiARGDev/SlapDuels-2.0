@@ -1,0 +1,101 @@
+{
+  "Sources": [
+    {
+      "Bytes": 30418,
+      "Path": "ServerScriptService.Services.ScoreService"
+    },
+    {
+      "Bytes": 30042,
+      "Path": "ServerScriptService.Services.EliminationService"
+    },
+    {
+      "Bytes": 2268,
+      "Path": "ServerScriptService.Services.Respawn.CompetitiveTransit"
+    }
+  ],
+  "IsStudio": true,
+  "IsRunning": false,
+  "Mode": "Edit",
+  "Geometry": [
+    {
+      "Size": "334, 5, 248",
+      "Path": "Workspace.MapaPlantilla.Geometry.KillPart",
+      "CanTouch": true,
+      "Position": "1018.5, -25, 500"
+    },
+    {
+      "Size": "9, 11, 14",
+      "Path": "Workspace.MapaPlantilla.ZoneWin.RedWin",
+      "CanTouch": true,
+      "Position": "941.4442138671875, 95.15524291992188, 507.74285888671875"
+    },
+    {
+      "Size": "8.967330932617188, 11, 13.999979019165039",
+      "Path": "Workspace.MapaPlantilla.ZoneWin.BlueWin",
+      "CanTouch": true,
+      "Position": "1091.4609375, 95.15524291992188, 506.75140380859375"
+    },
+    {
+      "Size": "334, 5, 248",
+      "Path": "ServerStorage.Maps.Levels.Geometry.KillPart",
+      "CanTouch": true,
+      "Position": "161.5, -25, 805"
+    },
+    {
+      "Size": "9, 11, 14",
+      "Path": "ServerStorage.Maps.Levels.ZoneWin.RedWin",
+      "CanTouch": true,
+      "Position": "158.57318115234375, 4.5, 805"
+    },
+    {
+      "Size": "8.967330932617188, 11, 13.999979019165039",
+      "Path": "ServerStorage.Maps.Levels.ZoneWin.BlueWin",
+      "CanTouch": true,
+      "Position": "208.9503173828125, 4.101390838623047, 804.008544921875"
+    }
+  ],
+  "ProtectedFileHashes": [
+    {
+      "Algorithm": "SHA256",
+      "Hash": "5F3117B7A3ED778DE68041F9A8F8A62E12FDEE93E4759D237BED8ABC0B72D893",
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\PlayerService.luau"
+    },
+    {
+      "Algorithm": "SHA256",
+      "Hash": "6B6ED2A3ADDC7C14D2A00239F57A04DCBA6449004647F2FF1548C54150C9BEFD",
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\ShopService.luau"
+    },
+    {
+      "Algorithm": "SHA256",
+      "Hash": "0EC8B3619BD57D39A35DAC8881159807AB733E0841CEFE9829D79A2F96E764DC",
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\SpawnService.luau"
+    },
+    {
+      "Algorithm": "SHA256",
+      "Hash": "4DB341A5246254D4B183D31C61B5CC6CEA8CFA81CEBCA7C8958B4791BFC6B9AE",
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\DeathEffectService.luau"
+    },
+    {
+      "Algorithm": "SHA256",
+      "Hash": "A154074789873923151CEF03A57C661B64BA82B92FAB9D7B81CFD4CA999D0062",
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\Config.luau"
+    },
+    {
+      "Algorithm": "SHA256",
+      "Hash": "F6402F7AEB0C29754C2350B8A16B1C78B61A8E77D6A5F3011FF4BAD8EADA6254",
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\Frost.rbxm"
+    },
+    {
+      "Algorithm": "SHA256",
+      "Hash": "E61992E0CD44A00D7317749B76963B279A995BFF7958CC81BF73650C8C3CD17F",
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\Void.rbxm"
+    },
+    {
+      "Algorithm": "SHA256",
+      "Hash": "086DE79F6E81C05EEF9316EBF5E67C0E63FE58F83564D1F83C66FE412BB60F32",
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\ShopHUD.rbxm"
+    }
+  ],
+  "ContractTests": "PREPARED_NOT_RUN",
+  "Gameplay": "NOT_RUN"
+}

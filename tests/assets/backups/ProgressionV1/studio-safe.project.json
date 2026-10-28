@@ -1,0 +1,1157 @@
+{
+  "name": "SlapDuels-2.0 Scripts Only SAFE",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Shared": {
+        "$ignoreUnknownInstances": true,
+        "$className": "Folder",
+        "ArenaRespawnPolicy": {
+          "$path": "src/shared/ArenaRespawnPolicy.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "Config": {
+          "$path": "src/shared/Config.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "Constants": {
+          "$path": "src/shared/Constants.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "DeathEffectDefinitions": {
+          "$path": "src/shared/DeathEffectDefinitions.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "DeathFeedbackConfig": {
+          "$path": "src/shared/DeathFeedbackConfig.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "DeathFeedbackContract": {
+          "$path": "src/shared/DeathFeedbackContract.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "EndCinematicConfig": {
+          "$path": "src/shared/EndCinematicConfig.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "EndCinematicRanking": {
+          "$path": "src/shared/EndCinematicRanking.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "PointEffectDefinitions": {
+          "$path": "src/shared/PointEffectDefinitions.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "Types": {
+          "$path": "src/shared/Types.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "AbilityDefinitions": {
+          "$path": "src/shared/AbilityDefinitions.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "AbilityCatalog": {
+          "$path": "src/shared/AbilityCatalog.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "AbilityDiagnostics": {
+          "$path": "src/shared/AbilityDiagnostics.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "SlapCrates": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "Appearance": {
+            "$path": "src/shared/SlapCrates/Appearance.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "Catalog": {
+            "$path": "src/shared/SlapCrates/Catalog.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CrateDefinitions": {
+            "$path": "src/shared/SlapCrates/CrateDefinitions.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CrateShopView": {
+            "$path": "src/shared/SlapCrates/CrateShopView.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "Inventory": {
+            "$path": "src/shared/SlapCrates/Inventory.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "Odds": {
+            "$path": "src/shared/SlapCrates/Odds.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "OpeningConfig": {
+            "$path": "src/shared/SlapCrates/OpeningConfig.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "OpeningTimeline": {
+            "$path": "src/shared/SlapCrates/OpeningTimeline.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "Registry": {
+            "$path": "src/shared/SlapCrates/Registry.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "SlapDefinitions": {
+            "$path": "src/shared/SlapCrates/SlapDefinitions.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "StockDefinitions": {
+            "$path": "src/shared/SlapCrates/StockDefinitions.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "VariationDefinitions": {
+            "$path": "src/shared/SlapCrates/VariationDefinitions.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "InitialOdds": {
+            "$path": "src/shared/SlapCrates/InitialOdds.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "OddsPresentation": {
+            "$path": "src/shared/SlapCrates/OddsPresentation.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "BatchOpening": {
+            "$path": "src/shared/SlapCrates/BatchOpening.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "PremiumCrateDefinitions": {
+            "$path": "src/shared/SlapCrates/PremiumCrateDefinitions.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "PremiumShop": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "PremiumShopConfig": {
+            "$path": "src/shared/PremiumShop/PremiumShopConfig.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "Catalog": {
+            "$className": "Folder",
+            "$ignoreUnknownInstances": true,
+            "CoinPackages": {
+              "$path": "src/shared/PremiumShop/Catalog/CoinPackages.luau",
+              "$ignoreUnknownInstances": true
+            },
+            "PremiumCombos": {
+              "$path": "src/shared/PremiumShop/Catalog/PremiumCombos.luau",
+              "$ignoreUnknownInstances": true
+            },
+            "PremiumCrates": {
+              "$path": "src/shared/PremiumShop/Catalog/PremiumCrates.luau",
+              "$ignoreUnknownInstances": true
+            },
+            "Combos": {
+              "$className": "Folder",
+              "$ignoreUnknownInstances": true,
+              "PremiumCombo_01": {
+                "$path": "src/shared/PremiumShop/Catalog/Combos/PremiumCombo_01.luau",
+                "$ignoreUnknownInstances": true
+              },
+              "PremiumCombo_02": {
+                "$path": "src/shared/PremiumShop/Catalog/Combos/PremiumCombo_02.luau",
+                "$ignoreUnknownInstances": true
+              },
+              "PremiumCombo_03": {
+                "$path": "src/shared/PremiumShop/Catalog/Combos/PremiumCombo_03.luau",
+                "$ignoreUnknownInstances": true
+              }
+            }
+          },
+          "PlaceholderProductIds": {
+            "$path": "src/shared/PremiumShop/PlaceholderProductIds.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "SocialConfig": {
+          "$path": "src/shared/SocialConfig.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "SocialPlayConfig": {
+          "$path": "src/shared/SocialPlayConfig.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "TrainingConfig": {
+          "$path": "src/shared/TrainingConfig.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "NametagPresentation": {
+          "$path": "src/shared/NametagPresentation.luau"
+        }
+      },
+      "StateEvent": {
+        "$className": "UnreliableRemoteEvent",
+        "$ignoreUnknownInstances": true
+      },
+      "Remotes": {
+        "$className": "Folder",
+        "Player": {
+          "$className": "Folder",
+          "DataUpdated": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "$ignoreUnknownInstances": true
+        },
+        "Matchmaking": {
+          "$className": "Folder",
+          "QueueStatus": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "$ignoreUnknownInstances": true
+        },
+        "Match": {
+          "$className": "Folder",
+          "StateChanged": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "Countdown": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "MapSelection": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "MatchResult": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "EndCinematic": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "EndCinematicAction": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "DeathFeedback": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "ScoreUpdated": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "LastPoint": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "PointFeedback": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "$ignoreUnknownInstances": true
+        },
+        "Combat": {
+          "$className": "Folder",
+          "AbilityRequest": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "AbilityState": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "PerformSlap": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "SlapFeedback": {
+            "$className": "RemoteEvent",
+            "$ignoreUnknownInstances": true
+          },
+          "$ignoreUnknownInstances": true
+        },
+        "Shop": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true
+        },
+        "$ignoreUnknownInstances": true,
+        "Social": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "Inspect": {
+            "$className": "RemoteFunction"
+          },
+          "Action": {
+            "$className": "RemoteFunction"
+          },
+          "Updated": {
+            "$className": "RemoteEvent"
+          },
+          "SelfProfile": {
+            "$className": "RemoteFunction"
+          },
+          "Equip": {
+            "$className": "RemoteFunction"
+          }
+        },
+        "SocialPlay": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "Request": {
+            "$className": "RemoteFunction"
+          },
+          "Updated": {
+            "$className": "RemoteEvent"
+          }
+        },
+        "Admin": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "Request": {
+            "$className": "RemoteFunction"
+          }
+        },
+        "Training": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "Activate": {
+            "$className": "RemoteEvent"
+          },
+          "Leave": {
+            "$className": "RemoteEvent"
+          },
+          "Updated": {
+            "$className": "RemoteEvent"
+          }
+        }
+      },
+      "$ignoreUnknownInstances": true,
+      "SlapVariationPreviews": {
+        "$path": "src/assets/SlapVariationPreviewsV3.rbxm",
+        "$ignoreUnknownInstances": true
+      },
+      "CrateRewardPreviews": {
+        "$path": "src/assets/SlapRewardPreviewsV3.rbxm",
+        "$ignoreUnknownInstances": true
+      },
+      "SlapCatalog": {
+        "$path": "src/assets/SlapCatalogV3.rbxm",
+        "$ignoreUnknownInstances": true
+      },
+      "$properties": {
+        "Attributes": {
+          "SlapCatalogReady": {
+            "Bool": false
+          }
+        }
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "Bootstrap": {
+        "$path": "src/server/Bootstrap.server.luau",
+        "$ignoreUnknownInstances": true
+      },
+      "Services": {
+        "Gameplay": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "RoundClock": {
+            "$path": "src/server/Services/Gameplay/RoundClock.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "SocialPlayEngine": {
+            "$path": "src/server/Services/Gameplay/SocialPlayEngine.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "WinStreak": {
+            "$path": "src/server/Services/Gameplay/WinStreak.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "TrainingState": {
+            "$path": "src/server/Services/Gameplay/TrainingState.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "Persistence": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "InMemoryDataStore": {
+            "$path": "src/server/Services/Persistence/InMemoryDataStore.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "PersistenceEnvironment": {
+            "$path": "src/server/Services/Persistence/PersistenceEnvironment.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "RobloxDataStoreAdapter": {
+            "$path": "src/server/Services/Persistence/RobloxDataStoreAdapter.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "Respawn": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "ArenaRespawn": {
+            "$path": "src/server/Services/Respawn/ArenaRespawn.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CharacterPhysics": {
+            "$path": "src/server/Services/Respawn/CharacterPhysics.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CompetitiveTransit": {
+            "$path": "src/server/Services/Respawn/CompetitiveTransit.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "$ignoreUnknownInstances": true,
+        "$className": "Folder",
+        "CombatService": {
+          "$path": "src/server/Services/CombatService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "DeathEffectService": {
+          "$path": "src/server/Services/DeathEffectService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "EliminationService": {
+          "$path": "src/server/Services/EliminationService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "KnockbackService": {
+          "$path": "src/server/Services/KnockbackService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "MatchInstanceService": {
+          "$path": "src/server/Services/MatchInstanceService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "MatchmakingFeedbackService": {
+          "$path": "src/server/Services/MatchmakingFeedbackService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "MatchmakingService": {
+          "$path": "src/server/Services/MatchmakingService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "PlayerDataService": {
+          "$path": "src/server/Services/PlayerDataService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "PlayerService": {
+          "$path": "src/server/Services/PlayerService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "PointEffectTestService": {
+          "$path": "src/server/Services/PointEffectTestService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "PointFeedbackService": {
+          "$path": "src/server/Services/PointFeedbackService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "RagdollService": {
+          "$path": "src/server/Services/RagdollService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "RoundService": {
+          "$path": "src/server/Services/RoundService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "ScoreService": {
+          "$path": "src/server/Services/ScoreService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "ShopService": {
+          "$path": "src/server/Services/ShopService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "SlapService": {
+          "$path": "src/server/Services/SlapService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "SpawnService": {
+          "$path": "src/server/Services/SpawnService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "ThunderController": {
+          "$path": "src/server/Services/ThunderController.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "AbilityService": {
+          "$path": "src/server/Services/AbilityService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "AbilityRegistry": {
+          "$path": "src/server/Services/AbilityRegistry.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "CrateService": {
+          "$path": "src/server/Services/CrateService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "Crates": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "AnnouncementAdapter": {
+            "$path": "src/server/Services/Crates/AnnouncementAdapter.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CrateEngine": {
+            "$path": "src/server/Services/Crates/CrateEngine.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "InMemoryStock": {
+            "$path": "src/server/Services/Crates/InMemoryStock.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "ProductionStockAdapter": {
+            "$path": "src/server/Services/Crates/ProductionStockAdapter.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "StandOpeningLedger": {
+            "$path": "src/server/Services/Crates/StandOpeningLedger.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "StandOpeningService": {
+            "$path": "src/server/Services/Crates/StandOpeningService.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "StockLedger": {
+            "$path": "src/server/Services/Crates/StockLedger.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CrateBatchEngine": {
+            "$path": "src/server/Services/Crates/CrateBatchEngine.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "RewardVisualMetadata": {
+            "$path": "src/server/Services/Crates/RewardVisualMetadata.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "SlapResourceRegistry": {
+            "$path": "src/server/Services/Crates/SlapResourceRegistry.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "CoinShopAccessService": {
+          "$path": "src/server/Services/CoinShopAccessService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "PremiumShopService": {
+          "$path": "src/server/Services/PremiumShopService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "TeamSpawnResolver": {
+          "$path": "src/server/Services/TeamSpawnResolver.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "SocialService": {
+          "$path": "src/server/Services/SocialService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "Trading": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "PublicInventory": {
+            "$path": "src/server/Services/Trading/PublicInventory.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "TradeEngine": {
+            "$path": "src/server/Services/Trading/TradeEngine.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "TradePolicy": {
+            "$path": "src/server/Services/Trading/TradePolicy.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "TradeRecoveryService": {
+            "$path": "src/server/Services/Trading/TradeRecoveryService.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "TradeTransactionService": {
+            "$path": "src/server/Services/Trading/TradeTransactionService.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "SocialPlayService": {
+          "$path": "src/server/Services/SocialPlayService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "AdminService": {
+          "$path": "src/server/Services/AdminService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "TrainingService": {
+          "$path": "src/server/Services/TrainingService.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "BackSlapService": {
+          "$path": "src/server/Services/BackSlapService.luau",
+          "$ignoreUnknownInstances": true
+        }
+      },
+      "PointEffectControllers": {
+        "$ignoreUnknownInstances": true,
+        "$className": "Folder",
+        "BasicController": {
+          "$path": "src/server/PointEffectControllers/BasicController.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "InfernoController": {
+          "$path": "src/server/PointEffectControllers/InfernoController.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "PointEffectRegistry": {
+          "$path": "src/server/PointEffectControllers/PointEffectRegistry.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "ThunderController": {
+          "$path": "src/server/PointEffectControllers/ThunderController.luau",
+          "$ignoreUnknownInstances": true
+        }
+      },
+      "RagdollHandler": {
+        "$path": "src/server/RagdollHandler.server.luau",
+        "$ignoreUnknownInstances": true
+      },
+      "Shop": {
+        "Providers": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "DeathEffectProvider": {
+            "$path": "src/server/Shop/Providers/DeathEffectProvider.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "PointEffectProvider": {
+            "$path": "src/server/Shop/Providers/PointEffectProvider.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "AbilityProvider": {
+            "$path": "src/server/Shop/Providers/AbilityProvider.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CrateProviders": {
+            "$path": "src/server/Shop/Providers/CrateProviders.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "$ignoreUnknownInstances": true,
+        "$className": "Folder",
+        "ProfilePurchase": {
+          "$path": "src/server/Shop/ProfilePurchase.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "ShopRegistry": {
+          "$path": "src/server/Shop/ShopRegistry.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "ShopRemotes": {
+          "$path": "src/server/Shop/ShopRemotes.luau",
+          "$ignoreUnknownInstances": true
+        }
+      },
+      "$ignoreUnknownInstances": true,
+      "Abilities": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true,
+        "AirJumpsAbility": {
+          "$path": "src/server/Abilities/AirJumpsAbility.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "DashAbility": {
+          "$path": "src/server/Abilities/DashAbility.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "DevilSpeedAbility": {
+          "$path": "src/server/Abilities/DevilSpeedAbility.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "InvisibilityAbility": {
+          "$path": "src/server/Abilities/InvisibilityAbility.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "MovementGuard": {
+          "$path": "src/server/Abilities/MovementGuard.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "StrongSlapAbility": {
+          "$path": "src/server/Abilities/StrongSlapAbility.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "AbilityAssetValidator": {
+          "$path": "src/server/Abilities/AbilityAssetValidator.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "AbilityCallbacks": {
+          "$path": "src/server/Abilities/AbilityCallbacks.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "AbilityInputAdapter": {
+          "$path": "src/server/Abilities/AbilityInputAdapter.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "AbilityManifest": {
+          "$path": "src/server/Abilities/AbilityManifest.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "Templates": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "AbilityTemplate": {
+            "$path": "src/server/Abilities/Templates/AbilityTemplate.luau",
+            "$ignoreUnknownInstances": true
+          }
+        }
+      },
+      "PremiumShop": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true,
+        "PremiumEligibility": {
+          "$path": "src/server/PremiumShop/PremiumEligibility.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "PremiumGrantPlan": {
+          "$path": "src/server/PremiumShop/PremiumGrantPlan.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "PremiumProductRegistry": {
+          "$path": "src/server/PremiumShop/PremiumProductRegistry.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "ReceiptCoordinator": {
+          "$path": "src/server/PremiumShop/ReceiptCoordinator.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "DurableReceiptBackend": {
+          "$path": "src/server/PremiumShop/DurableReceiptBackend.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "ProductVerifier": {
+          "$path": "src/server/PremiumShop/ProductVerifier.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "ProfileReceiptStore": {
+          "$path": "src/server/PremiumShop/ProfileReceiptStore.luau",
+          "$ignoreUnknownInstances": true
+        }
+      },
+      "Admin": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true,
+        "Access": {
+          "$path": "src/server/Admin/Access.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "CommandManifest": {
+          "$path": "src/server/Admin/CommandManifest.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "CommandRegistry": {
+          "$path": "src/server/Admin/CommandRegistry.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "Commands": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "GrantCoins": {
+            "$path": "src/server/Admin/Commands/GrantCoins.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "GrantSlap": {
+            "$path": "src/server/Admin/Commands/GrantSlap.luau",
+            "$ignoreUnknownInstances": true
+          }
+        }
+      }
+    },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "RagdollModule": {
+        "$path": "src/server/RagdollModule.luau",
+        "$ignoreUnknownInstances": true
+      },
+      "$ignoreUnknownInstances": true,
+      "SlapVariations": {
+        "$path": "src/assets/SlapVariationToolsV3.rbxm",
+        "$ignoreUnknownInstances": true
+      },
+      "Slaps": {
+        "$path": "src/assets/SlapBaseToolsV3.rbxm",
+        "$ignoreUnknownInstances": true
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "Controllers": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "DeathFeedbackController": {
+            "$path": "src/client/Controllers/DeathFeedbackController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "EndCinematicController": {
+            "$path": "src/client/Controllers/EndCinematicController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "KillRewardController": {
+            "$path": "src/client/Controllers/KillRewardController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "MatchController": {
+            "$path": "src/client/Controllers/MatchController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "MatchmakingController": {
+            "$path": "src/client/Controllers/MatchmakingController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "MatchStartEffectsController": {
+            "$path": "src/client/Controllers/MatchStartEffectsController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "MusicController": {
+            "$path": "src/client/Controllers/MusicController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "PlayerHUDController": {
+            "$path": "src/client/Controllers/PlayerHUDController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "SettingsController": {
+            "$path": "src/client/Controllers/SettingsController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "ShopController": {
+            "$path": "src/client/Controllers/ShopController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "SlapController": {
+            "$path": "src/client/Controllers/SlapController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "SuddenDeathController": {
+            "$path": "src/client/Controllers/SuddenDeathController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "AbilityController": {
+            "$path": "src/client/Controllers/AbilityController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CrateController": {
+            "$path": "src/client/Controllers/CrateController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CrateStandCinematicController": {
+            "$path": "src/client/Controllers/CrateStandCinematicController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "PremiumShopController": {
+            "$path": "src/client/Controllers/PremiumShopController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "SocialController": {
+            "$path": "src/client/Controllers/SocialController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "SocialPlayController": {
+            "$path": "src/client/Controllers/SocialPlayController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "AdminController": {
+            "$path": "src/client/Controllers/AdminController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "TrainingController": {
+            "$path": "src/client/Controllers/TrainingController.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "WindowNavigationController": {
+            "$path": "src/client/Controllers/WindowNavigationController.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "DeathFeedback": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "DeathEffectPlayer": {
+            "$path": "src/client/DeathFeedback/DeathEffectPlayer.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "DeathNotifications": {
+            "$path": "src/client/DeathFeedback/DeathNotifications.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "Scope": {
+            "$path": "src/client/DeathFeedback/Scope.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "EndCinematic": {
+          "$className": "Folder",
+          "Modules": {
+            "$className": "Folder",
+            "$ignoreUnknownInstances": true,
+            "EndCinematicAnimations": {
+              "$path": "src/client/EndCinematic/Modules/EndCinematicAnimations.luau",
+              "$ignoreUnknownInstances": true
+            },
+            "EndCinematicAudio": {
+              "$path": "src/client/EndCinematic/Modules/EndCinematicAudio.luau",
+              "$ignoreUnknownInstances": true
+            },
+            "EndCinematicAvatars": {
+              "$path": "src/client/EndCinematic/Modules/EndCinematicAvatars.luau",
+              "$ignoreUnknownInstances": true
+            },
+            "EndCinematicBillboards": {
+              "$path": "src/client/EndCinematic/Modules/EndCinematicBillboards.luau",
+              "$ignoreUnknownInstances": true
+            },
+            "EndCinematicCamera": {
+              "$path": "src/client/EndCinematic/Modules/EndCinematicCamera.luau",
+              "$ignoreUnknownInstances": true
+            },
+            "EndCinematicHUD": {
+              "$path": "src/client/EndCinematic/Modules/EndCinematicHUD.luau",
+              "$ignoreUnknownInstances": true
+            },
+            "EndCinematicParticles": {
+              "$path": "src/client/EndCinematic/Modules/EndCinematicParticles.luau",
+              "$ignoreUnknownInstances": true
+            },
+            "EndCinematicRanking": {
+              "$path": "src/client/EndCinematic/Modules/EndCinematicRanking.luau",
+              "$ignoreUnknownInstances": true
+            },
+            "EndCinematicTransition": {
+              "$path": "src/client/EndCinematic/Modules/EndCinematicTransition.luau",
+              "$ignoreUnknownInstances": true
+            }
+          },
+          "$ignoreUnknownInstances": true
+        },
+        "$ignoreUnknownInstances": true,
+        "AnimacionLetras1v1": {
+          "$path": "src/client/AnimacionLetras1v1.client.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "ClientBootstrap": {
+          "$path": "src/client/ClientBootstrap.client.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "EndCinematicPreview": {
+          "$path": "src/client/EndCinematicPreview.client.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "PointCameraFX": {
+          "$path": "src/client/PointCameraFX.client.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "Abilities": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "AbilityPresentation": {
+            "$path": "src/client/Abilities/AbilityPresentation.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "AbilitySelection": {
+            "$path": "src/client/Abilities/AbilitySelection.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "AbilityPresentationProfiles": {
+            "$path": "src/client/Abilities/AbilityPresentationProfiles.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "CrateOpening": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "CameraLease": {
+            "$path": "src/client/CrateOpening/CameraLease.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "RewardOverlayPresenter": {
+            "$path": "src/client/CrateOpening/RewardOverlayPresenter.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "VisualProfile": {
+            "$path": "src/client/CrateOpening/VisualProfile.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CharacterVisibility": {
+            "$path": "src/client/CrateOpening/CharacterVisibility.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CinematicConfig": {
+            "$path": "src/client/CrateOpening/CinematicConfig.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CinematicMotion": {
+            "$path": "src/client/CrateOpening/CinematicMotion.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CinematicTransition": {
+            "$path": "src/client/CrateOpening/CinematicTransition.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "StandPromptVisibility": {
+            "$path": "src/client/CrateOpening/StandPromptVisibility.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "RewardGallery": {
+            "$path": "src/client/CrateOpening/RewardGallery.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "RewardGalleryLayout": {
+            "$path": "src/client/CrateOpening/RewardGalleryLayout.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "RewardRevealConfig": {
+            "$path": "src/client/CrateOpening/RewardRevealConfig.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "RewardRevealProfile": {
+            "$path": "src/client/CrateOpening/RewardRevealProfile.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "RewardSpin3D": {
+            "$path": "src/client/CrateOpening/RewardSpin3D.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "RewardSpinMotion": {
+            "$path": "src/client/CrateOpening/RewardSpinMotion.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "RewardVFX": {
+            "$path": "src/client/CrateOpening/RewardVFX.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CrateOddsLabels": {
+            "$path": "src/client/CrateOpening/CrateOddsLabels.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "CrateRewardGallery": {
+            "$path": "src/client/CrateOpening/CrateRewardGallery.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "PremiumShop": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "PremiumPurchaseFlow": {
+            "$path": "src/client/PremiumShop/PremiumPurchaseFlow.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "Social": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "Targeting": {
+            "$path": "src/client/Social/Targeting.luau",
+            "$ignoreUnknownInstances": true
+          },
+          "ViewportPool": {
+            "$path": "src/client/Social/ViewportPool.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "UI": {
+          "$className": "Folder",
+          "$ignoreUnknownInstances": true,
+          "WindowStack": {
+            "$path": "src/client/UI/WindowStack.luau",
+            "$ignoreUnknownInstances": true
+          }
+        },
+        "NametagPlatform": {
+          "$path": "src/client/NametagPlatform.client.luau"
+        }
+      },
+      "StarterCharacterScripts": {
+        "$className": "StarterCharacterScripts",
+        "$ignoreUnknownInstances": true,
+        "ArenaRespawnGuard": {
+          "$path": "src/character/ArenaRespawnGuard.client.luau",
+          "$ignoreUnknownInstances": true
+        },
+        "RagdollStatesHandler": {
+          "$path": "src/character/RagdollStatesHandler.client.luau",
+          "$ignoreUnknownInstances": true
+        }
+      },
+      "$ignoreUnknownInstances": true,
+      "StarterCharacter": {
+        "$path": "src/assets/BackSlapV1/StarterCharacter.rbxm"
+      }
+    },
+    "$ignoreUnknownInstances": true,
+    "StarterGui": {
+      "$className": "StarterGui",
+      "$ignoreUnknownInstances": true,
+      "PlayerProfileHUD": {
+        "$path": "src/ui/PlayerProfileHUD.project.json",
+        "$ignoreUnknownInstances": true
+      },
+      "TradeRequestHUD": {
+        "$path": "src/ui/TradeRequestHUD.project.json",
+        "$ignoreUnknownInstances": true
+      },
+      "TradeHUD": {
+        "$path": "src/ui/TradeHUD.project.json",
+        "$ignoreUnknownInstances": true
+      },
+      "PlayerHUD": {
+        "$className": "ScreenGui",
+        "$ignoreUnknownInstances": true,
+        "ProfileButton": {
+          "$path": "src/ui/ProfileButton.project.json"
+        }
+      },
+      "SocialPlayHUD": {
+        "$path": "src/ui/SocialPlayHUD.project.json",
+        "$ignoreUnknownInstances": true
+      },
+      "AdminHUD": {
+        "$path": "src/ui/AdminHUD.project.json",
+        "$ignoreUnknownInstances": true
+      },
+      "TrainingHUD": {
+        "$path": "src/ui/TrainingHUD.project.json",
+        "$ignoreUnknownInstances": true
+      },
+      "ShopHUD": {
+        "$className": "ScreenGui",
+        "$ignoreUnknownInstances": true,
+        "CratePanel": {
+          "$path": "src/ui/CratePanel.project.json"
+        }
+      }
+    },
+    "Workspace": {
+      "$className": "Workspace",
+      "$ignoreUnknownInstances": true,
+      "TrainingZone": {
+        "$path": "src/assets/TrainingZone.rbxm",
+        "$ignoreUnknownInstances": true
+      },
+      "NametagService": {
+        "$path": "src/world/NametagService.server.luau",
+        "Nametag": {
+          "$path": "src/assets/NametagV1/Nametag.rbxm"
+        },
+        "$properties": {
+          "Sandboxed": false,
+          "RunContext": "Server"
+        }
+      }
+    }
+  },
+  "servePort": 34873
+}

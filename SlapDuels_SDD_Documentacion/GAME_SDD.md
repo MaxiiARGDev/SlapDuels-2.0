@@ -14,51 +14,55 @@ Este archivo es el índice y manifiesto arquitectónico principal del proyecto.
 ## Documentos por dominio
 
 ### Arquitectura
-- `docs/architecture/ARCHITECTURE.md`
-- `docs/architecture/SERVER_CLIENT.md`
-- `docs/architecture/SERVICES.md`
+- [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md)
+- [architecture/SERVER_CLIENT.md](architecture/SERVER_CLIENT.md)
+- [architecture/SERVICES.md](architecture/SERVICES.md)
 
 ### Gameplay
-- `docs/gameplay/MATCH_FLOW.md`
-- `docs/gameplay/MATCHMAKING.md`
-- `docs/gameplay/COMBAT.md`
-- `docs/gameplay/SCORING.md`
-- `docs/gameplay/ELIMINATION.md`
-- `docs/gameplay/CHARACTER_LIFECYCLE.md`
+- [gameplay/MATCH_FLOW.md](gameplay/MATCH_FLOW.md)
+- [gameplay/MATCHMAKING.md](gameplay/MATCHMAKING.md)
+- [gameplay/COMBAT.md](gameplay/COMBAT.md)
+- [gameplay/SCORING.md](gameplay/SCORING.md)
+- [gameplay/ELIMINATION.md](gameplay/ELIMINATION.md)
+- [gameplay/CHARACTER_LIFECYCLE.md](gameplay/CHARACTER_LIFECYCLE.md)
 
 ### Presentación
-- `docs/presentation/AUDIO.md`
-- `docs/presentation/UI.md`
-- `docs/presentation/GAME_FEEL.md`
-- `docs/presentation/POINT_EFFECTS.md`
+- [presentation/AUDIO.md](presentation/AUDIO.md)
+- [presentation/UI.md](presentation/UI.md)
+- [presentation/GAME_FEEL.md](presentation/GAME_FEEL.md)
+- [presentation/POINT_EFFECTS.md](presentation/POINT_EFFECTS.md)
 
 ### Datos
-- `docs/data/PLAYER_DATA.md`
+- [data/PLAYER_DATA.md](data/PLAYER_DATA.md)
 
 ### Estándares
-- `docs/standards/ASSETS.md`
-- `docs/standards/TESTING.md`
-- `docs/standards/DEBUGGING.md`
+- [standards/ASSETS.md](standards/ASSETS.md)
+- [standards/TESTING.md](standards/TESTING.md)
+- [standards/DEBUGGING.md](standards/DEBUGGING.md)
 
 ## Routing rápido para agentes
 
 | Si la tarea menciona | Leer |
 |---|---|
-| slap, golpe, knockback, ragdoll | `docs/gameplay/COMBAT.md` |
-| Kill, KillPart, eliminación | `docs/gameplay/ELIMINATION.md` |
-| WinPart, punto, score | `docs/gameplay/SCORING.md` |
-| respawn, caída después de punto, CharacterAdded, Humanoid.Died | `docs/gameplay/CHARACTER_LIFECYCLE.md` |
-| matchmaking, pads, cola | `docs/gameplay/MATCHMAKING.md` |
-| estados de partida, countdown, ronda | `docs/gameplay/MATCH_FLOW.md` |
-| música, SoundService, volumen musical | `docs/presentation/AUDIO.md` |
-| HUD, SettingsGUI, interfaces | `docs/presentation/UI.md` |
-| camera shake, flash, blur, countdown FX | `docs/presentation/GAME_FEEL.md` |
-| PointEffect, cosméticos de punto | `docs/presentation/POINT_EFFECTS.md` |
-| Coins, Wins, Losses, Kills, DataStore | `docs/data/PLAYER_DATA.md` |
-| assets, templates, Instance.new | `docs/standards/ASSETS.md` |
-| tests, Rojo, Definition of Done | `docs/standards/TESTING.md` |
-| logs, cleanup, depuración | `docs/standards/DEBUGGING.md` |
+| slap, golpe, knockback, ragdoll | [gameplay/COMBAT.md](gameplay/COMBAT.md) |
+| Kill, KillPart, eliminación | [gameplay/ELIMINATION.md](gameplay/ELIMINATION.md) |
+| WinPart, punto, score | [gameplay/SCORING.md](gameplay/SCORING.md) |
+| respawn, caída después de punto, CharacterAdded, Humanoid.Died | [gameplay/CHARACTER_LIFECYCLE.md](gameplay/CHARACTER_LIFECYCLE.md) |
+| matchmaking, pads, cola | [gameplay/MATCHMAKING.md](gameplay/MATCHMAKING.md) |
+| estados de partida, countdown, ronda | [gameplay/MATCH_FLOW.md](gameplay/MATCH_FLOW.md) |
+| música, SoundService, volumen musical | [presentation/AUDIO.md](presentation/AUDIO.md) |
+| HUD, SettingsGUI, interfaces | [presentation/UI.md](presentation/UI.md) |
+| camera shake, flash, blur, countdown FX | [presentation/GAME_FEEL.md](presentation/GAME_FEEL.md) |
+| PointEffect, cosméticos de punto | [presentation/POINT_EFFECTS.md](presentation/POINT_EFFECTS.md) |
+| Coins, Wins, Losses, Kills, DataStore | [data/PLAYER_DATA.md](data/PLAYER_DATA.md) |
+| assets, templates, Instance.new | [standards/ASSETS.md](standards/ASSETS.md) |
+| tests, Rojo, Definition of Done | [standards/TESTING.md](standards/TESTING.md) |
+| logs, cleanup, depuración | [standards/DEBUGGING.md](standards/DEBUGGING.md) |
 
-## Regla de conservación
+## Mantenimiento y precedencia documental
 
-Estos documentos son una redistribución del `GAME_SDD.md` original suministrado para el proyecto. No se deben eliminar reglas existentes durante la migración. Cuando una regla afecte a varios dominios, se mantiene en el documento de dominio y se referencia desde los demás documentos.
+Cada dominio es la referencia normativa de sus propias reglas. Las referencias cruzadas sustituyen las copias de contratos para evitar divergencias. Las decisiones sustituidas se registran en [MIGRATION_MANIFEST.md](MIGRATION_MANIFEST.md); no son instrucciones vigentes.
+
+Esta consolidación del 14 de octubre de 2026 adopta Zero-Death, datos V2 y música local centralizada. No implica una auditoría completa del código ni pruebas en Studio. Si la implementación difiere del contrato, se registra la discrepancia antes de cambiar arquitectura o reglas.
+
+Al cambiar una regla, actualizar su documento propietario y sus referencias en la misma tarea. No eliminar requisitos vigentes sin sustitución explícita. Las características futuras deben permanecer identificadas como planificadas.

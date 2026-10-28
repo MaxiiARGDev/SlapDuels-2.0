@@ -1,0 +1,14 @@
+[
+  {
+    "Name": "MainCrateStand",
+    "Descendants": 173,
+    "Bytes": 52463,
+    "Hash": "b1e65dfeb934508dcb4d586c0753179e165f8164202933845df360968672f69a"
+  },
+  {
+    "Name": "CrateOpeningHUD",
+    "Descendants": 26,
+    "Bytes": 10912,
+    "Hash": "569d148832b054438e5cee40fbbe138f41765e29269d82281c4514042bbaf935"
+  }
+]

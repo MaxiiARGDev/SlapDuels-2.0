@@ -1,0 +1,297 @@
+{
+  "Physical": {
+    "Workspace.ZoneMatchmaking": "2aec4502c2d596e3e530bed34d1aef7ef42702c5f10a9b11c9f1e08214f990d2",
+    "StarterGui.MatchmakingHUD": "ec941de59e6676587ca28e652d500bd7a8fa96dcc343a3ce1eed1518e6f50ea1",
+    "ServerStorage.Maps.Levels": "a1da792e7d79b65b85f78fb2919aa4f35da996d504698b6e97f00c1bcd0aceb2",
+    "StarterGui.ShopHUD": "044aa835a3c39771c9061a1d35d8336fb0cd71810c2258263581ddbc9fb77b16",
+    "StarterGui.PremiumShopHUD": "c5353b46410505b19152f666d8830c1b1d4acc2d412c28dda78ac7a33699d1f5",
+    "Workspace.Levels": "a1da792e7d79b65b85f78fb2919aa4f35da996d504698b6e97f00c1bcd0aceb2",
+    "StarterGui.MatchHUD": "0bd648c4a16fa25ce4c554c9c2736a30756f9cae390e4d96d059ace2d0453cae",
+    "ServerStorage.EndGames-Scenario.ScenarioFinal": "ea071427defae560fadcd641eaf558078b0d55f62c8aebce3424e65af08776cc"
+  },
+  "HUD": [
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame",
+      "Auto": "X",
+      "Position": "{0.5, 0}, {0.800000012, 0}",
+      "Class": "Frame",
+      "Size": "{0, 0}, {0.109999999, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.ImageLabel1",
+      "Auto": "None",
+      "Position": "{0.567436934, 0}, {0, 0}",
+      "Class": "ImageLabel",
+      "Size": "{0, 111}, {0, 74}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.ImageLabel",
+      "Auto": "None",
+      "Position": "{-0.0136422999, 0}, {0, 0}",
+      "Class": "ImageLabel",
+      "Size": "{0, 111}, {0, 74}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content",
+      "Auto": "X",
+      "Position": "{0, 0}, {0, 0}",
+      "Class": "Frame",
+      "Size": "{0, 0}, {1, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.UIListLayout",
+      "Class": "UIListLayout",
+      "Direction": "Horizontal"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam",
+      "Auto": "X",
+      "Position": "{0, 0}, {0, 0}",
+      "Class": "Frame",
+      "Size": "{0, 0}, {1, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.TeamLabel",
+      "Auto": "None",
+      "Position": "{0, 2}, {0, -2}",
+      "Class": "TextLabel",
+      "Size": "{1, 0}, {0, 14}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer",
+      "Auto": "X",
+      "Position": "{0, 0}, {0, 0}",
+      "Class": "Frame",
+      "Size": "{0, 0}, {1, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.UIListLayout",
+      "Class": "UIListLayout",
+      "Direction": "Horizontal"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate",
+      "Auto": "None",
+      "Position": "{0, 0}, {0, 0}",
+      "Class": "Frame",
+      "Size": "{0, 400}, {1, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body",
+      "Auto": "None",
+      "Position": "{0.5, 0}, {0.5, 0}",
+      "Class": "Frame",
+      "Size": "{1, 0}, {1, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.EntryScale",
+      "Class": "UIScale"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Empty",
+      "Auto": "None",
+      "Position": "{0, 0}, {0, 0}",
+      "Class": "Frame",
+      "Size": "{1, 0}, {1, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Empty.Spinner",
+      "Auto": "None",
+      "Position": "{0.5, 0}, {0.5, 0}",
+      "Class": "Frame",
+      "Size": "{0.5, 0}, {0.5, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Empty.Spinner.Bar1",
+      "Auto": "None",
+      "Position": "{0.5, 0}, {0.119999997, 0}",
+      "Class": "Frame",
+      "Size": "{0.109999999, 0}, {0.25999999, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Empty.Spinner.Bar2",
+      "Auto": "None",
+      "Position": "{0.7687006, 0}, {0.23129943, 0}",
+      "Class": "Frame",
+      "Size": "{0.109999999, 0}, {0.25999999, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Empty.Spinner.Bar3",
+      "Auto": "None",
+      "Position": "{0.879999995, 0}, {0.5, 0}",
+      "Class": "Frame",
+      "Size": "{0.109999999, 0}, {0.25999999, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Empty.Spinner.Bar4",
+      "Auto": "None",
+      "Position": "{0.7687006, 0}, {0.7687006, 0}",
+      "Class": "Frame",
+      "Size": "{0.109999999, 0}, {0.25999999, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Empty.Spinner.Bar5",
+      "Auto": "None",
+      "Position": "{0.5, 0}, {0.879999995, 0}",
+      "Class": "Frame",
+      "Size": "{0.109999999, 0}, {0.25999999, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Empty.Spinner.Bar6",
+      "Auto": "None",
+      "Position": "{0.23129943, 0}, {0.7687006, 0}",
+      "Class": "Frame",
+      "Size": "{0.109999999, 0}, {0.25999999, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Empty.Spinner.Bar7",
+      "Auto": "None",
+      "Position": "{0.119999997, 0}, {0.5, 0}",
+      "Class": "Frame",
+      "Size": "{0.109999999, 0}, {0.25999999, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Empty.Spinner.Bar8",
+      "Auto": "None",
+      "Position": "{0.23129943, 0}, {0.23129943, 0}",
+      "Class": "Frame",
+      "Size": "{0.109999999, 0}, {0.25999999, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Empty.QuestionMark",
+      "Auto": "None",
+      "Position": "{0.5, 0}, {0.5, 0}",
+      "Class": "TextLabel",
+      "Size": "{0.600000024, 0}, {0.600000024, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Occupied",
+      "Auto": "None",
+      "Position": "{0, 0}, {0, 0}",
+      "Class": "Frame",
+      "Size": "{1, 0}, {1, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Occupied.Avatar",
+      "Auto": "None",
+      "Position": "{0, 0}, {0, 0}",
+      "Class": "ImageLabel",
+      "Size": "{1, 0}, {1, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Occupied.Scrim",
+      "Auto": "None",
+      "Position": "{0, 0}, {1, 0}",
+      "Class": "Frame",
+      "Size": "{1, 0}, {0.340000004, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Occupied.DisplayName",
+      "Auto": "None",
+      "Position": "{0.5, 0}, {1, -4}",
+      "Class": "TextLabel",
+      "Size": "{0.920000017, 0}, {0.200000003, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Occupied.Username",
+      "Auto": "None",
+      "Position": "{0.5, 0}, {1, -18}",
+      "Class": "TextLabel",
+      "Size": "{0.920000017, 0}, {0.140000001, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Occupied.StatusText",
+      "Auto": "None",
+      "Position": "{1, -4}, {0, 4}",
+      "Class": "TextLabel",
+      "Size": "{0.5, 0}, {0.159999996, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.NameLabel",
+      "Auto": "None",
+      "Position": "{0.5, 0}, {0, -4}",
+      "Class": "TextLabel",
+      "Size": "{1.29999995, 0}, {0, 16}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.BlueTeam",
+      "Auto": "X",
+      "Position": "{0, 0}, {0, 0}",
+      "Class": "Frame",
+      "Size": "{0, 0}, {1, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.BlueTeam.TeamLabel",
+      "Auto": "None",
+      "Position": "{1, -2}, {0, -2}",
+      "Class": "TextLabel",
+      "Size": "{1, 0}, {0, 14}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.BlueTeam.SlotsContainer",
+      "Auto": "X",
+      "Position": "{0, 0}, {0, 0}",
+      "Class": "Frame",
+      "Size": "{0, 0}, {1, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.BlueTeam.SlotsContainer.UIListLayout",
+      "Class": "UIListLayout",
+      "Direction": "Horizontal"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.Versus",
+      "Auto": "None",
+      "Position": "{0, 0}, {0, 0}",
+      "Class": "Frame",
+      "Size": "{0, 400}, {0.620000005, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.Versus.TextLabel",
+      "Auto": "None",
+      "Position": "{0.5, 0}, {0.5, 0}",
+      "Class": "TextLabel",
+      "Size": "{0.860000014, 0}, {1, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.PadLeft",
+      "Auto": "None",
+      "Position": "{0, 0}, {0, 0}",
+      "Class": "Frame",
+      "Size": "{0, 10}, {1, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.PadRight",
+      "Auto": "None",
+      "Position": "{0, 0}, {0, 0}",
+      "Class": "Frame",
+      "Size": "{0, 10}, {1, 0}"
+    },
+    {
+      "Path": "StarterGui.MatchmakingHUD.QueueFrame.CardScale",
+      "Class": "UIScale"
+    }
+  ],
+  "Scripts": {
+    "ServerScriptService.Services.MatchmakingService": {
+      "Hash": "57818723f588b8d2e879e03e6da1c2b4a5d431c0accc8baadb0fd2179eabcd3b",
+      "EditorMatches": true
+    },
+    "ServerScriptService.Services.SpawnService": {
+      "Hash": "58037d5ac8a263a0ebbd55d8bc734fe6d80a857ebef3b81dc287db57a29cf758",
+      "EditorMatches": true
+    },
+    "ReplicatedStorage.Shared.Config": {
+      "Hash": "d517d956d46f24d243bec87811b5b341e1dd39fb252b9f7d0e121d326a8fe62d",
+      "EditorMatches": true
+    },
+    "StarterPlayer.StarterPlayerScripts.Controllers.MatchmakingController": {
+      "Hash": "929e294867a951601773e39a8ab4c864fd4ad1d3082275edc1cc6fdbc3be94e0",
+      "EditorMatches": true
+    },
+    "ReplicatedStorage.Shared.EndCinematicRanking": {
+      "Hash": "9e6916432249aedcdcce2299d0af266de75c76a4fe85a896fca236d012002dad",
+      "EditorMatches": true
+    }
+  }
+}

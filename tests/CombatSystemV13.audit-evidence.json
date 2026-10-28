@@ -1,0 +1,210 @@
+{
+  "ChangesMade": false,
+  "Sources": [
+    {
+      "EditorHash": "bcfc92ac4db6e55788f27d96c5fb50d845f54966f070550ef2fe2a1507cd1f55",
+      "Path": "StarterPlayer.StarterPlayerScripts.ClientBootstrap",
+      "Name": "ClientBootstrap",
+      "Class": "LocalScript",
+      "SourceHash": "bcfc92ac4db6e55788f27d96c5fb50d845f54966f070550ef2fe2a1507cd1f55",
+      "Local": "src\\client\\ClientBootstrap.client.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "a3680711ee8f2302a02de8cfe2b7050a6cfe13a4f81c352a6c57f1be79594035",
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SlapController",
+      "Name": "SlapController",
+      "Class": "ModuleScript",
+      "SourceHash": "a3680711ee8f2302a02de8cfe2b7050a6cfe13a4f81c352a6c57f1be79594035",
+      "Local": "src\\client\\Controllers\\SlapController.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda",
+      "Path": "ReplicatedStorage.Shared.Config",
+      "Name": "Config",
+      "Class": "ModuleScript",
+      "SourceHash": "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda",
+      "Local": "src\\shared\\Config.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "ed336c74e166e0c70701bdf5203a3a734bdba1119c304191913fa7deec8d0fe8",
+      "Path": "ServerScriptService.Bootstrap",
+      "Name": "Bootstrap",
+      "Class": "Script",
+      "SourceHash": "ed336c74e166e0c70701bdf5203a3a734bdba1119c304191913fa7deec8d0fe8",
+      "Local": "src\\server\\Bootstrap.server.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "3fc4d954e3b18b476a22c0c24840083b5a0f27a5034a5b03a747783bb748f7d5",
+      "Path": "ServerScriptService.Services.PlayerService",
+      "Name": "PlayerService",
+      "Class": "ModuleScript",
+      "SourceHash": "3fc4d954e3b18b476a22c0c24840083b5a0f27a5034a5b03a747783bb748f7d5",
+      "Local": "src\\server\\Services\\PlayerService.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "d51bf993907ba9aec949c565d0fcf2b8e54bc5352c5af7637c9e6daf41b5e759",
+      "Path": "ServerScriptService.Services.CombatService",
+      "Name": "CombatService",
+      "Class": "ModuleScript",
+      "SourceHash": "d51bf993907ba9aec949c565d0fcf2b8e54bc5352c5af7637c9e6daf41b5e759",
+      "Local": "src\\server\\Services\\CombatService.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "346721e0c2d588da28d49948e121b22b496f6b616b6050fce4d6f9e2e5e00ac3",
+      "Path": "ServerScriptService.Services.KnockbackService",
+      "Name": "KnockbackService",
+      "Class": "ModuleScript",
+      "SourceHash": "346721e0c2d588da28d49948e121b22b496f6b616b6050fce4d6f9e2e5e00ac3",
+      "Local": "src\\server\\Services\\KnockbackService.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "8ac791f3730358da537f37b383e794b703315b35c69621cf7a47aebdfb649066",
+      "Path": "ServerScriptService.Services.EliminationService",
+      "Name": "EliminationService",
+      "Class": "ModuleScript",
+      "SourceHash": "8ac791f3730358da537f37b383e794b703315b35c69621cf7a47aebdfb649066",
+      "Local": "src\\server\\Services\\EliminationService.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "aaed4d0c1ff74344b835b14e7b8de15ede82167587024ade24ea1e672597ce5d",
+      "Path": "ServerScriptService.Services.SpawnService",
+      "Name": "SpawnService",
+      "Class": "ModuleScript",
+      "SourceHash": "aaed4d0c1ff74344b835b14e7b8de15ede82167587024ade24ea1e672597ce5d",
+      "Local": "src\\server\\Services\\SpawnService.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "25aa9e76fe7e726557b5d9eed5a6412318caabf06fd662102fdc8657f148a1f1",
+      "Path": "ServerScriptService.Services.RagdollService",
+      "Name": "RagdollService",
+      "Class": "ModuleScript",
+      "SourceHash": "25aa9e76fe7e726557b5d9eed5a6412318caabf06fd662102fdc8657f148a1f1",
+      "Local": "src\\server\\Services\\RagdollService.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "e457aab19161e1fde8bcad720df6fcdf519103222aa55918f0e1b200e9b7e91a",
+      "Path": "ServerScriptService.Services.PlayerDataService",
+      "Name": "PlayerDataService",
+      "Class": "ModuleScript",
+      "SourceHash": "e457aab19161e1fde8bcad720df6fcdf519103222aa55918f0e1b200e9b7e91a",
+      "Local": "src\\server\\Services\\PlayerDataService.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "a724448e3b3066d32086f9376d5bb9d3488821587aa5385266448b979145db80",
+      "Path": "ServerScriptService.Services.SlapService",
+      "Name": "SlapService",
+      "Class": "ModuleScript",
+      "SourceHash": "a724448e3b3066d32086f9376d5bb9d3488821587aa5385266448b979145db80",
+      "Local": "src\\server\\Services\\SlapService.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "828f14b2a62ed04d3ebca74e3cc8c59d7851e9ca4a0fb1541d7b81162c4e5f93",
+      "Path": "ServerScriptService.Services.RoundService",
+      "Name": "RoundService",
+      "Class": "ModuleScript",
+      "SourceHash": "828f14b2a62ed04d3ebca74e3cc8c59d7851e9ca4a0fb1541d7b81162c4e5f93",
+      "Local": "src\\server\\Services\\RoundService.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "336ec689a5f9936147411703936fe092700c0ebc62168e9f2d5f5ca0a05cee4f",
+      "Path": "ServerScriptService.Services.AbilityService",
+      "Name": "AbilityService",
+      "Class": "ModuleScript",
+      "SourceHash": "336ec689a5f9936147411703936fe092700c0ebc62168e9f2d5f5ca0a05cee4f",
+      "Local": "src\\server\\Services\\AbilityService.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853",
+      "Path": "ServerScriptService.Services.Persistence.PersistenceEnvironment",
+      "Name": "PersistenceEnvironment",
+      "Class": "ModuleScript",
+      "SourceHash": "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853",
+      "Local": "src\\server\\Services\\Persistence\\PersistenceEnvironment.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "1e3890ce65cd2943cf83d62e645eb543abc53a138f05335e63f3be84cb3f3cf2",
+      "Path": "ServerScriptService.Abilities.AirJumpsAbility",
+      "Name": "AirJumpsAbility",
+      "Class": "ModuleScript",
+      "SourceHash": "1e3890ce65cd2943cf83d62e645eb543abc53a138f05335e63f3be84cb3f3cf2",
+      "Local": "src\\server\\Abilities\\AirJumpsAbility.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "def547b6bf8649321cbcb45380ffbe0798220399f81738933f7ddb715c83bdd2",
+      "Path": "ServerScriptService.Abilities.DashAbility",
+      "Name": "DashAbility",
+      "Class": "ModuleScript",
+      "SourceHash": "def547b6bf8649321cbcb45380ffbe0798220399f81738933f7ddb715c83bdd2",
+      "Local": "src\\server\\Abilities\\DashAbility.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "df02e550301bca6f33e6aba91608dc32bdbfc08e511f61f5dc2e82c937ea7e85",
+      "Path": "ServerScriptService.Abilities.DevilSpeedAbility",
+      "Name": "DevilSpeedAbility",
+      "Class": "ModuleScript",
+      "SourceHash": "df02e550301bca6f33e6aba91608dc32bdbfc08e511f61f5dc2e82c937ea7e85",
+      "Local": "src\\server\\Abilities\\DevilSpeedAbility.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "719cbcf04aaee7fb6febebdb9df6dbc474bf4199e7e92ff6ac0f6c949fde0bd8",
+      "Path": "ServerScriptService.Abilities.InvisibilityAbility",
+      "Name": "InvisibilityAbility",
+      "Class": "ModuleScript",
+      "SourceHash": "719cbcf04aaee7fb6febebdb9df6dbc474bf4199e7e92ff6ac0f6c949fde0bd8",
+      "Local": "src\\server\\Abilities\\InvisibilityAbility.luau",
+      "Matches": true
+    },
+    {
+      "EditorHash": "41e7ded94930159deb5c2e8363d58c3d7407dc1383bf41342b46f50b85ae29c4",
+      "Path": "ServerScriptService.Abilities.StrongSlapAbility",
+      "Name": "StrongSlapAbility",
+      "Class": "ModuleScript",
+      "SourceHash": "41e7ded94930159deb5c2e8363d58c3d7407dc1383bf41342b46f50b85ae29c4",
+      "Local": "src\\server\\Abilities\\StrongSlapAbility.luau",
+      "Matches": true
+    }
+  ],
+  "IsStudio": true,
+  "IsRunning": false,
+  "RuntimePersistenceNotStarted": true,
+  "Mode": "Edit",
+  "PlaceId": 107328891970677,
+  "GameId": 10769217377,
+  "UnrelatedHarnessConfig": [
+    {
+      "EditorHash": "c492b89a5b479fefefb8ce0b04747a4f9574ce6e6fdfb47764b67699f58066e8",
+      "Path": "ServerStorage.TestHarness_71491fd1-1d0e-4487-8dbf-b825a7120b65.Shared.Config",
+      "Name": "Config",
+      "Class": "ModuleScript",
+      "SourceHash": "c492b89a5b479fefefb8ce0b04747a4f9574ce6e6fdfb47764b67699f58066e8"
+    }
+  ],
+  "Matched": 20,
+  "RuntimeTests": "NOT RUN",
+  "Persistence": "Studio resolver inspected only; no runtime/provider initialization",
+  "ProtectedFiles": 118,
+  "ProtectedFilesVerifiedUnchanged": 118,
+  "ProtectedDifferences": [],
+  "GitDiffCheck": {
+    "ExitCode": 0,
+    "Warnings": "Existing LF/CRLF normalization warnings; no errors"
+  }
+}

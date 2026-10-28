@@ -1,0 +1,1 @@
+PASS SlapCratesV2: 283 combined deterministic assertions; no gameplay/cloud

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"TrainingHUDHash\":\"fac057312ef47b0b2fbde3639072ebe777927a54d0f14b29930f4d6f98e8f351\",\"ProtectedHUDHashes\":{\"EndCinematicHUD\":\"8b4239bc70abf009195d6c636a374e270da92fe7b9c13881c98956790a641c92\",\"TradeHUD\":\"9749ab9ca86db5310042ff81bf36c836db7a0b4d62ea1e644e63b18d241ed181\",\"ShopHUD\":\"044aa835a3c39771c9061a1d35d8336fb0cd71810c2258263581ddbc9fb77b16\",\"TradeRequestHUD\":\"4c00d1e2f155d135679d38bc991fa64743c3f1da4b99e24263aabc113937516c\",\"MatchHUD\":\"0bd648c4a16fa25ce4c554c9c2736a30756f9cae390e4d96d059ace2d0453cae\",\"SocialPlayHUD\":\"f31fbf52f929161401e59a25c17aa33038007593c3b1a57809f7b0eefd4a3551\",\"MatchmakingHUD\":\"ec941de59e6676587ca28e652d500bd7a8fa96dcc343a3ce1eed1518e6f50ea1\",\"PremiumShopHUD\":\"c5353b46410505b19152f666d8830c1b1d4acc2d412c28dda78ac7a33699d1f5\",\"PlayerHUD\":\"c66fd5857497fcb429d4e6088f5783ec328f4dc218fbcb07ed8b19d30949dca6\",\"PlayerProfileHUD\":\"507e70b54667896f973e462ca0398a0e50f66e0dbce929516a17babe669625a7\"},\"PlaceId\":107328891970677,\"GameId\":10769217377,\"ZoneHash\":\"257cb524f05cf1be777e3df73dd9b0073f4a7275c87f8ef83e2d6fd9f75be369\",\"AdminHash\":\"7d71eb9cac4ef4e27e7c497a810cec82cbd65283cee29e167a546fb44df82158\",\"Mode\":\"Edit\",\"AdminUserId\":1522376993,\"UniqueObjects\":true}"
+    }
+  ],
+  "isError": false
+}

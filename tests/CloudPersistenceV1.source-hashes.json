@@ -1,0 +1,16 @@
+{
+  "src/server/Services/Persistence/ProfileSessions.luau": "08ac3624afec04f13e6fd923c2c9e30c34599d542c945d447d2d61771e1d7f94",
+  "src/server/Services/Crates/UnlimitedProductionStock.luau": "46c45b8ad9d96dfde1b308d7c3b7e6314b76045048a6276d1116d459aee12426",
+  "src/shared/Progression/Passes/LaunchSeason.luau": "c8698646f4c3869615c28f852f288dac38130f09cde87bbbc971c00f6690ea2a",
+  "src/server/Services/Persistence/PersistenceEnvironment.luau": "845f355f1bff9c1739ced6f007ac45900ee9b6a564c310bc82757ab624c198cc",
+  "src/server/Services/Persistence/RobloxDataStoreAdapter.luau": "3f1a47614de0af64d214ba1e5933d82eafd37b670240501fdcc116e50a015be0",
+  "src/server/Services/PlayerDataService.luau": "f2767ffe4c795c5a8d298d85aacbdb811e79ffd93164c8f7503aab707f80617f",
+  "src/server/Services/PlayerService.luau": "ab5b8eddf76bd2b52d8bb1c6406fd96a77be46f2854bb56a89761d7cac401d67",
+  "src/server/Services/ProgressionService.luau": "60551a2ce4cee783684dcceb9b93f63324b8494ea5d8ea0190080fc484337191",
+  "src/server/Services/CrateService.luau": "2ef6b212f2d2bb857ec6fe4a111f8edabe8813293b93fb85a2b818e30dc25dd5",
+  "src/shared/Progression/Config.luau": "e7c979486c39629633215b3be94e2bce4f98d1150df3ee849aa4819dbbed15e1",
+  "src/shared/Progression/PassManifest.luau": "e409c4897e8593fc362c62eaf42a8017c6c3018dda3ccd33d474771a8965a8c7",
+  "src/shared/Types.luau": "ceee60998a4d116a42c2367a89cea17352a4e4a60f1ef15d6a9050465d5f0d9b",
+  "src/shared/Config.luau": "78cc299b2e79ee6f7f730ec5410cb0391abe7d372ffc4f6fc333ffd1fc50a6fe",
+  "src/client/Controllers/SettingsController.luau": "d69307f70791a93b2b5d045fcd1d7b097a6ec18269835baa17ef80a549d8aed5"
+}

@@ -1,0 +1,16 @@
+{
+  "Children": {
+    "ProfileCard": "2e26c1c86f88c97cc04c83d2f409b7c8436be70ea596484de62f5f0301b54ac5",
+    "PremiumShopButton": "e3d09f431e88d441fbcca9fa948c2cbd473280363f1d45563f7f672174cf1b89",
+    "CombatSlots": "1607e085e21a13b3c9d7d9f9a415ceadfd6d73028dcc8cc5af23da4ba9d71bc8"
+  },
+  "Hashes": {
+    "ShopHUD": "044aa835a3c39771c9061a1d35d8336fb0cd71810c2258263581ddbc9fb77b16",
+    "MatchHUD": "0bd648c4a16fa25ce4c554c9c2736a30756f9cae390e4d96d059ace2d0453cae",
+    "EndCinematicHUD": "8b4239bc70abf009195d6c636a374e270da92fe7b9c13881c98956790a641c92",
+    "MatchmakingHUD": "ec941de59e6676587ca28e652d500bd7a8fa96dcc343a3ce1eed1518e6f50ea1",
+    "PremiumShopHUD": "c5353b46410505b19152f666d8830c1b1d4acc2d412c28dda78ac7a33699d1f5",
+    "PlayerHUD": "2a2c75f04409e441b139540ecfdb9d9a10b8eb17daaaee29b40263ffb3c26a20",
+    "PlayerProfileHUD": "25ae4ec5215a9b6c2ebef5db39a3af7aaf37245d712e3266e11b5e711051e585"
+  }
+}

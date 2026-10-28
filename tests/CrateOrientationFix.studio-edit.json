@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"Models\":{\"1\":\"Workspace.CrateStands.MainCrateStand.PreviewAnchors.Preview_3.Decoration\",\"3\":\"Workspace.CrateStands.MainCrateStand.PreviewAnchors.Preview_2.Decoration\",\"2\":\"Workspace.CrateStands.MainCrateStand.PreviewAnchors.Preview_1.Decoration\"},\"PlayStarted\":false,\"PhysicalModelsMoved\":false,\"Hash\":\"548a7ac514572ce998d1391c965f4cbf2db7392d11d419bf9ba16221f1e19c14\",\"Mode\":\"Edit\",\"EditorHash\":\"548a7ac514572ce998d1391c965f4cbf2db7392d11d419bf9ba16221f1e19c14\",\"OrientationMatrixChecks\":66}"
+    }
+  ],
+  "isError": false
+}

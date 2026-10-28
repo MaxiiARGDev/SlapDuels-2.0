@@ -1,15 +1,19 @@
 --!strict
 -- PlayerDataService
--- Capa de persistencia autoritativa mediante DataStoreService.
+-- Capa de persistencia autoritativa mediante el proveedor seleccionado al arrancar.
 -- Gestiona el ciclo de vida de persistencia (Load, Save, BindToClose, Retries, Validación).
 -- No contiene lógica económica de gameplay (responsabilidad de PlayerService).
 
-local DataStoreService = game:GetService("DataStoreService")
+local WinStreak = require(script.Parent.Gameplay.WinStreak)
+local Progression = require(game.ReplicatedStorage.Shared.Progression.Model)
+local ProfileSessions = require(script.Parent.Persistence.ProfileSessions)
+local RichInventory = require(game.ReplicatedStorage.Shared.SlapCrates.Inventory)
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Config = require(ReplicatedStorage.Shared.Config)
 local Types = require(ReplicatedStorage.Shared.Types)
+local DeathSettings = require(ReplicatedStorage.Shared.DeathFeedbackConfig).DeathEffects
 
 type PlayerData = Types.PlayerData
 type PlayerDataRecord = Types.PlayerDataRecord
@@ -20,6 +24,7 @@ PlayerDataService.Name = "PlayerDataService"
 
 PlayerDataService._context = nil :: any
 PlayerDataService._store = nil :: any
+PlayerDataService._persistenceInfo = nil :: any
 PlayerDataService._loadStates = {} :: { [Player]: DataLoadState }
 PlayerDataService._saving = {} :: { [Player]: boolean }
 PlayerDataService._bindToCloseConnected = false
@@ -35,9 +40,13 @@ local function getDefaultInventory(): Types.PlayerInventory
 	return {
 		Owned = {
 			["PointEffects"] = { ["Basic"] = true },
+			["DeathEffects"] = { [DeathSettings.DefaultKillEffectId] = true },
+			["Abilities"] = { Dash = true },
 		},
 		Equipped = {
 			["PointEffects"] = "Basic",
+			["DeathEffects"] = DeathSettings.DefaultKillEffectId,
+			["Abilities"] = "Dash",
 		},
 	}
 end
@@ -72,6 +81,11 @@ local function sanitizeInventory(rawInv: any, warnings: { string }): Types.Playe
 		sanitizedOwned["PointEffects"] = {}
 	end
 	sanitizedOwned["PointEffects"]["Basic"] = true
+	-- Additive initial entitlement within the existing schema; preserve all owned future effects.
+	sanitizedOwned["DeathEffects"] = sanitizedOwned["DeathEffects"] or {}
+	sanitizedOwned["DeathEffects"][DeathSettings.DefaultKillEffectId] = true
+	sanitizedOwned["Abilities"] = sanitizedOwned["Abilities"] or {}
+	sanitizedOwned["Abilities"].Dash = true
 
 	local sanitizedEquipped: { [string]: string? } = {}
 	local rawEquipped = rawInv.Equipped
@@ -94,11 +108,17 @@ local function sanitizeInventory(rawInv: any, warnings: { string }): Types.Playe
 	if not sanitizedEquipped["PointEffects"] or not sanitizedOwned["PointEffects"][sanitizedEquipped["PointEffects"]] then
 		sanitizedEquipped["PointEffects"] = "Basic"
 	end
+	if not sanitizedEquipped["DeathEffects"] or sanitizedEquipped["DeathEffects"] == DeathSettings.DefaultFallEffectId then
+		sanitizedEquipped["DeathEffects"] = DeathSettings.DefaultKillEffectId
+	end
+	if not sanitizedEquipped["Abilities"] then sanitizedEquipped["Abilities"] = "Dash" end
 
-	return {
-		Owned = sanitizedOwned,
-		Equipped = sanitizedEquipped,
-	}
+		local result = { Owned = sanitizedOwned, Equipped = sanitizedEquipped }
+		-- Rich crate inventory is additive; keep units/journal through load/save.
+			for _, key in ipairs({"Crates", "SlapUnits", "CrateOperations", "PremiumReceipts", "PremiumPurchases"}) do
+			if rawInv[key] ~= nil then result[key] = rawInv[key] end
+		end
+			return RichInventory.Preserve(rawInv,result)
 end
 
 -- ==================================================
@@ -114,9 +134,13 @@ function PlayerDataService:ValidatePlayerData(raw: any): (boolean, PlayerDataRec
 			Wins = Config.Economy.StartingWins or 0,
 			Losses = Config.Economy.StartingLosses or 0,
 			Kills = Config.Economy.StartingKills or 0,
+			WinStreak = WinStreak.Normalize(nil),
+			Progression = Progression.Normalize(nil),
 			Inventory = defaultInv,
 		}, "Raw data is not a table"
 	end
+
+	local warnings: { string } = {}
 
 	local version = raw.Version
 	local currentVersion = (Config.DataStore and Config.DataStore.CurrentVersion) or 2
@@ -177,6 +201,12 @@ function PlayerDataService:ValidatePlayerData(raw: any): (boolean, PlayerDataRec
 		Wins = wins,
 		Losses = losses,
 		Kills = kills,
+		WinStreak = WinStreak.Normalize(raw.WinStreak),
+		Progression = Progression.Normalize(raw.Progression),
+			Preferences = {
+				MusicEnabled = type(raw.Preferences)~="table" or raw.Preferences.MusicEnabled~=false,
+				MusicVolume = if type(raw.Preferences)=="table" and isValidNumber(raw.Preferences.MusicVolume) then math.clamp(raw.Preferences.MusicVolume,0,1) else 1,
+			},
 		Inventory = inventory,
 		LastSaved = raw.LastSaved,
 	}
@@ -193,24 +223,30 @@ function PlayerDataService:Init(context: any)
 	self._context = context
 	self._loadStates = {}
 	self._saving = {}
+	self._store = context and context.PersistenceProvider or nil
+	self._persistenceInfo = context and context.PersistenceInfo or nil
+		self._sessions = nil
+		if self._store and self._persistenceInfo and self._persistenceInfo.Environment=="Production" and self._persistenceInfo.WritesToCloud==true then
+			self._sessions=ProfileSessions.new(self._store,function(raw)
+				if raw==nil then raw={Version=Config.DataStore.CurrentVersion,Coins=Config.Economy.StartingCoins or 0,Wins=0,Losses=0,Kills=0,Inventory=getDefaultInventory()}end
+				return self:ValidatePlayerData(ProfileSessions.Copy(raw))
+			end,function(player)
+				local ps=self:_getPlayerService();return ps and ps._data and ps._data[player]
+			end)
+		end
 
-	local storeName = (Config.DataStore and Config.DataStore.Name) or "SlapDuels_PlayerData_v1"
-	local ok, storeOrErr = pcall(function()
-		return DataStoreService:GetDataStore(storeName)
-	end)
-
-	if ok and storeOrErr then
-		self._store = storeOrErr
-	else
-		warn(string.format("[PlayerData] Error al inicializar DataStore '%s': %s", storeName, tostring(storeOrErr)))
-		self._store = nil
+	if not self._store then
+		local reason = self._persistenceInfo and self._persistenceInfo.BlockedReason or "ProviderMissing"
+		warn(string.format("[PlayerData] Persistencia no disponible; acceso cloud bloqueado (%s)", tostring(reason)))
 	end
 
 	-- BindToClose seguro con espera activa de guardados
 	if not self._bindToCloseConnected then
 		self._bindToCloseConnected = true
 		game:BindToClose(function()
-			print("[PlayerData] BindToClose: Guardando datos de todos los jugadores...")
+			local ps = self:_getPlayerService()
+				if ps then ps:BeginShopShutdown() end
+				print("[PlayerData] BindToClose: Guardando datos de todos los jugadores...")
 			self:SaveAllPlayers()
 			print("[PlayerData] BindToClose: Finalizado.")
 		end)
@@ -219,21 +255,44 @@ end
 
 function PlayerDataService:Start(context: any)
 	print("[PlayerDataService] Servicio de persistencia iniciado y listo")
+		if self._sessions then
+			task.spawn(function()
+				while true do
+					task.wait(45+math.random()*10)
+					local ps=self:_getPlayerService()
+					if ps and not ps._shopShutdown then for _,player in ipairs(Players:GetPlayers())do
+						if self._loadStates[player]=="Loaded"then task.spawn(function()
+							local ok,why=self:SavePlayer(player)
+							if not ok then warn("[PlayerData] Autosave failed: "..tostring(why));if not self._sessions:Owns(player)then player:Kick("Tu perfil perdió la conexión segura. Volvé a ingresar en unos segundos.")end end
+						end)end
+					end end
+				end
+			end)
+		end
 end
 
 function PlayerDataService:GetStore(): any
-	if self._store then
-		return self._store
+	-- La selección es fija durante toda la vida del servidor. Nunca realizar
+	-- fallback automático a DataStoreService si el proveedor está ausente o falla.
+	return self._store
+end
+
+function PlayerDataService:GetPersistenceDiagnostics(): { [string]: any }
+	local result = {
+		Environment = self._persistenceInfo and self._persistenceInfo.Environment or "Unknown",
+		ProviderName = self._persistenceInfo and self._persistenceInfo.ProviderName or "Unavailable",
+		WritesToCloud = self._persistenceInfo and self._persistenceInfo.WritesToCloud == true or false,
+		GameId = self._persistenceInfo and self._persistenceInfo.GameId or game.GameId,
+		PlaceId = self._persistenceInfo and self._persistenceInfo.PlaceId or game.PlaceId,
+		BlockedReason = self._persistenceInfo and self._persistenceInfo.BlockedReason or nil,
+	}
+
+	if self._store and type(self._store.GetDiagnostics) == "function" then
+		for key, value in pairs(self._store:GetDiagnostics()) do
+			result[key] = value
+		end
 	end
-	local storeName = (Config.DataStore and Config.DataStore.Name) or "SlapDuels_PlayerData_v1"
-	local ok, storeOrErr = pcall(function()
-		return DataStoreService:GetDataStore(storeName)
-	end)
-	if ok and storeOrErr then
-		self._store = storeOrErr
-		return storeOrErr
-	end
-	return nil
+	return result
 end
 
 function PlayerDataService:GetLoadState(player: Player): DataLoadState?
@@ -254,6 +313,11 @@ function PlayerDataService:LoadPlayer(player: Player): (boolean, PlayerDataRecor
 	end
 
 	self._loadStates[player] = "Loading"
+		if self._sessions then
+			local ok,data,why=self._sessions:Load(player);self._loadStates[player]=ok and "Loaded" or "Failed"
+			if ok then print("[ProfilePersistence] Loaded UserId="..player.UserId.." fenced=true")else warn("[ProfilePersistence] Load rejected: "..tostring(why))end
+			return ok,data,why
+		end
 
 	local store = self:GetStore()
 	if not store then
@@ -274,6 +338,10 @@ function PlayerDataService:LoadPlayer(player: Player): (boolean, PlayerDataRecor
 		end)
 
 		if ok then
+				if type(result)=="table" and result._PremiumProfile~=nil then
+					self._loadStates[player]="Failed"
+					return false,nil,"FencedProfileLifecycleRequired"
+				end
 			if result == nil then
 				-- Jugador nuevo sin datos previos
 				local newRecord: PlayerDataRecord = {
@@ -283,6 +351,7 @@ function PlayerDataService:LoadPlayer(player: Player): (boolean, PlayerDataRecor
 					Losses = (Config.Economy and Config.Economy.StartingLosses) or 0,
 					Kills = (Config.Economy and Config.Economy.StartingKills) or 0,
 					Inventory = getDefaultInventory(),
+						Progression = Progression.Normalize(nil),
 				}
 				self._loadStates[player] = "Loaded"
 				print(string.format("[PlayerData] Load success (Nuevo jugador): '%s' (UserId: %d)", player.Name, player.UserId))
@@ -329,10 +398,20 @@ end
 -- GUARDADO DE DATOS (SAVE)
 -- ==================================================
 
-function PlayerDataService:SavePlayer(player: Player, runtimeData: PlayerData?): (boolean, string?)
+local function snapshotInventory(inventory: any): any
+ return ProfileSessions.Copy(inventory)
+end
+
+function PlayerDataService:SavePlayer(player: Player, runtimeData: PlayerData?, release: boolean?): (boolean, string?)
 	if not player or not player:IsA("Player") then
 		return false, "InvalidPlayerInstance"
 	end
+		if self._sessions then
+			if self._loadStates[player]~="Loaded"then return false,"DataNotLoaded"end
+			local saved,why=self._sessions:Save(player,runtimeData,release)
+			if saved then print("[ProfilePersistence] Saved UserId="..player.UserId.." release="..tostring(release==true))else warn("[ProfilePersistence] Save pending: "..tostring(why))end
+			return saved,why
+		end
 
 	-- SEGURIDAD CRÍTICA: Si el jugador no cargó correctamente, NUNCA guardar para no corromper ni sobrescribir
 	local loadState = self._loadStates[player]
@@ -352,6 +431,10 @@ function PlayerDataService:SavePlayer(player: Player, runtimeData: PlayerData?):
 		warn(string.format("[PlayerData] RECHAZO DE GUARDADO para '%s': runtimeData es nil", player.Name))
 		return false, "NilRuntimeData"
 	end
+
+	-- Capture the entire purchase state before any yielding wait/retry.
+	runtimeData = table.clone(runtimeData)
+	runtimeData.Inventory = snapshotInventory(runtimeData.Inventory or getDefaultInventory())
 
 	-- Protección contra guardado simultáneo del mismo jugador
 	if self._saving[player] then
@@ -387,15 +470,20 @@ function PlayerDataService:SavePlayer(player: Player, runtimeData: PlayerData?):
 		Wins = math.max(0, math.floor(runtimeData.Wins or 0)),
 		Losses = math.max(0, math.floor(runtimeData.Losses or 0)),
 		Kills = math.max(0, math.floor(runtimeData.Kills or 0)),
+		WinStreak = WinStreak.Normalize(runtimeData.WinStreak),
+		Progression = Progression.Normalize(runtimeData.Progression),
+			Preferences = runtimeData.Preferences,
 		Inventory = runtimeData.Inventory or getDefaultInventory(),
 		LastSaved = os.time(),
 	}
 
 	local lastErr: any = nil
 	local wasVersionAborted = false
+		local wasCommerceAborted = false
 	for attempt = 1, maxRetries do
 		local ok, err = pcall(function()
 			store:UpdateAsync(key, function(oldData: any)
+					if type(oldData)=="table" and oldData._PremiumProfile~=nil then wasCommerceAborted=true;return nil end
 				-- Mantener posibles campos externos futuros si existen
 				if type(oldData) == "table" then
 					local currentVersion = (Config.DataStore and Config.DataStore.CurrentVersion) or 2
@@ -410,6 +498,9 @@ function PlayerDataService:SavePlayer(player: Player, runtimeData: PlayerData?):
 					updated.Wins = payload.Wins
 					updated.Losses = payload.Losses
 					updated.Kills = payload.Kills
+					updated.WinStreak = payload.WinStreak
+						updated.Progression = payload.Progression
+						updated.Preferences = payload.Preferences
 					updated.Inventory = payload.Inventory
 					updated.LastSaved = payload.LastSaved
 					return updated
@@ -418,7 +509,8 @@ function PlayerDataService:SavePlayer(player: Player, runtimeData: PlayerData?):
 			end)
 		end)
 
-		if wasVersionAborted then
+			if wasCommerceAborted then self._saving[player]=nil;return false,"FencedProfileLifecycleRequired"end
+			if wasVersionAborted then
 			self._saving[player] = nil
 			self._loadStates[player] = "IncompatibleVersion"
 			warn(string.format("[PlayerData] Save abortado para '%s': Versión remota en DataStore es superior a la versión soportada (%d).",
@@ -489,7 +581,7 @@ function PlayerDataService:SaveAllPlayers(): (number, number)
 
 			local success = false
 			if runtimeData and self._loadStates[player] == "Loaded" then
-				local ok = self:SavePlayer(player, runtimeData)
+					local ok = self:SavePlayer(player, runtimeData, true)
 				success = ok
 			else
 				print(string.format("[PlayerData] SaveAllPlayers: Omitiendo '%s' (no cargado o sin datos runtime)", player.Name))
@@ -518,6 +610,7 @@ end
 
 -- Limpieza de estado auxiliar al salir
 function PlayerDataService:Cleanup(player: Player)
+		if self._sessions then self._sessions:Cleanup(player)end
 	self._loadStates[player] = nil
 	self._saving[player] = nil
 end

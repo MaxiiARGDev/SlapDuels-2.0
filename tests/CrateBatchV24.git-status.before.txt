@@ -1,0 +1,109 @@
+ M SlapDuels_SDD_Documentacion/GAME_SDD.md
+ M SlapDuels_SDD_Documentacion/MIGRATION_MANIFEST.md
+ M SlapDuels_SDD_Documentacion/architecture/ARCHITECTURE.md
+ M SlapDuels_SDD_Documentacion/architecture/SERVER_CLIENT.md
+ M SlapDuels_SDD_Documentacion/architecture/SERVICES.md
+ M SlapDuels_SDD_Documentacion/data/PLAYER_DATA.md
+ M SlapDuels_SDD_Documentacion/gameplay/CHARACTER_LIFECYCLE.md
+ M SlapDuels_SDD_Documentacion/gameplay/COMBAT.md
+ M SlapDuels_SDD_Documentacion/gameplay/ELIMINATION.md
+ M SlapDuels_SDD_Documentacion/gameplay/MATCHMAKING.md
+ M SlapDuels_SDD_Documentacion/gameplay/MATCH_FLOW.md
+ M SlapDuels_SDD_Documentacion/gameplay/SCORING.md
+ M SlapDuels_SDD_Documentacion/presentation/AUDIO.md
+ M SlapDuels_SDD_Documentacion/presentation/GAME_FEEL.md
+ M SlapDuels_SDD_Documentacion/presentation/POINT_EFFECTS.md
+ M SlapDuels_SDD_Documentacion/presentation/UI.md
+ M SlapDuels_SDD_Documentacion/standards/ASSETS.md
+ M SlapDuels_SDD_Documentacion/standards/DEBUGGING.md
+ M SlapDuels_SDD_Documentacion/standards/TESTING.md
+ M default.project.json
+ M src/character/RagdollStatesHandler.client.luau
+ M src/client/Controllers/MatchController.luau
+ M src/client/Controllers/MatchStartEffectsController.luau
+ M src/client/Controllers/MatchmakingController.luau
+ M src/client/Controllers/MusicController.luau
+ M src/client/Controllers/SlapController.luau
+ M src/client/PointCameraFX.client.luau
+ M src/server/Bootstrap.server.luau
+ M src/server/PointEffectControllers/PointEffectRegistry.luau
+ M src/server/Services/CombatService.luau
+ M src/server/Services/EliminationService.luau
+ M src/server/Services/MatchInstanceService.luau
+ M src/server/Services/MatchmakingService.luau
+ M src/server/Services/PlayerDataService.luau
+ M src/server/Services/PlayerService.luau
+ M src/server/Services/PointEffectTestService.luau
+ M src/server/Services/PointFeedbackService.luau
+ M src/server/Services/RagdollService.luau
+ M src/server/Services/RoundService.luau
+ M src/server/Services/ScoreService.luau
+ M src/server/Services/ShopService.luau
+ M src/server/Services/SlapService.luau
+ M src/server/Services/SpawnService.luau
+ M src/server/Shop/Providers/PointEffectProvider.luau
+ M src/server/Shop/ShopRegistry.luau
+ M src/shared/Config.luau
+ M src/shared/Types.luau
+?? Start-StudioSafeRojo.ps1
+?? src/assets/
+?? src/character/ArenaRespawnGuard.client.luau
+?? src/client/Abilities/
+?? src/client/Controllers/AbilityController.luau
+?? src/client/Controllers/CrateController.luau
+?? src/client/Controllers/CrateStandCinematicController.luau
+?? src/client/Controllers/DeathFeedbackController.luau
+?? src/client/Controllers/EndCinematicController.luau
+?? src/client/Controllers/KillRewardController.luau
+?? src/client/Controllers/ShopController.luau
+?? src/client/Controllers/SuddenDeathController.luau
+?? src/client/CrateOpening/
+?? src/client/DeathFeedback/
+?? src/client/EndCinematic/
+?? src/client/EndCinematicPreview.client.luau
+?? src/server/Abilities/
+?? src/server/PointEffectControllers/InfernoController.luau
+?? src/server/PointEffectControllers/ThunderController.luau
+?? src/server/Services/AbilityRegistry.luau
+?? src/server/Services/AbilityService.luau
+?? src/server/Services/CrateService.luau
+?? src/server/Services/Crates/
+?? src/server/Services/DeathEffectService.luau
+?? src/server/Services/Gameplay/
+?? src/server/Services/Persistence/
+?? src/server/Services/Respawn/
+?? src/server/Services/ThunderController.luau
+?? src/server/Shop/ProfilePurchase.luau
+?? src/server/Shop/Providers/AbilityProvider.luau
+?? src/server/Shop/Providers/CrateProviders.luau
+?? src/server/Shop/Providers/DeathEffectProvider.luau
+?? src/server/Shop/ShopRemotes.luau
+?? src/shared/AbilityCatalog.luau
+?? src/shared/AbilityDefinitions.luau
+?? src/shared/AbilityDiagnostics.luau
+?? src/shared/ArenaRespawnPolicy.luau
+?? src/shared/DeathEffectDefinitions.luau
+?? src/shared/DeathFeedbackConfig.luau
+?? src/shared/DeathFeedbackContract.luau
+?? src/shared/EndCinematicConfig.luau
+?? src/shared/EndCinematicRanking.luau
+?? src/shared/SlapCrates/
+?? src/ui/AbilityHUD.rbxm
+?? src/ui/CombatSlots.project.json
+?? src/ui/CrateActionsTemplate.project.json
+?? src/ui/CrateOddsList.project.json
+?? src/ui/CrateOpeningHUD.project.json
+?? src/ui/CratePanel.project.json
+?? src/ui/CratePreviewTemplate.project.json
+?? src/ui/CrateSpinPanel.project.json
+?? src/ui/CratesTab.project.json
+?? src/ui/DeathFeedbackHUD.project.json
+?? src/ui/EndCinematicBillboardAnchor.rbxmx
+?? src/ui/EndCinematicBillboardTemplate.rbxmx
+?? src/ui/EndCinematicHUD.rbxmx
+?? src/ui/KillRewardHUD.project.json
+?? src/ui/MatchHUD.rbxm
+?? src/ui/ShopHUD.rbxm
+?? src/ui/SuddenDeathHUD.rbxm
+?? studio-safe.project.json
+?? tests/

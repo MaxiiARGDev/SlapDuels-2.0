@@ -1,0 +1,117 @@
+[
+  {
+    "Path": "src/server/Services/Gameplay/RoundClock.luau",
+    "SHA256": "2838A46F71CCE1586F456B40FCCD7FF60F981851CEC7F4383CB410D105AFBEC8",
+    "Bytes": 925
+  },
+  {
+    "Path": "src/shared/Config.luau",
+    "SHA256": "36D684039A789AF75268129695ECBAF4AD8CBB33BAA322F14CFBD47741B81A43",
+    "Bytes": 6321
+  },
+  {
+    "Path": "src/shared/Types.luau",
+    "SHA256": "CF81F77B6723EEE6538B98900D7133BA2B56D944C5287D005640198F6059D9D4",
+    "Bytes": 7445
+  },
+  {
+    "Path": "src/server/Services/RoundService.luau",
+    "SHA256": "E6ACE17204918E49D93E8B1FF4FD81C8303766FDD4AC3D45FD1E2BF8E68946CA",
+    "Bytes": 82777
+  },
+  {
+    "Path": "src/server/Services/ScoreService.luau",
+    "SHA256": "4EBABF43DFAE348F5AD5FED5147A646D3D9B4A3F04D244C53A5788334213BA54",
+    "Bytes": 31727
+  },
+  {
+    "Path": "src/server/Services/CombatService.luau",
+    "SHA256": "481CC12D771020BB8573C68E244A8F8E6B7AA8534F64B5E3640E085A51206D0F",
+    "Bytes": 9162
+  },
+  {
+    "Path": "src/server/Services/EliminationService.luau",
+    "SHA256": "11E9A9CE3850711C905A58759506B29FA8F1E1A052454EBB9154A2930C580271",
+    "Bytes": 32550
+  },
+  {
+    "Path": "src/server/Services/RagdollService.luau",
+    "SHA256": "6850C54DBD3D936EE277A0BA3779A871AB7A39F0B50B4063D3B4DAEDF67F667B",
+    "Bytes": 18890
+  },
+  {
+    "Path": "src/server/Services/SlapService.luau",
+    "SHA256": "78290EF2A97C4C4DE8FCE659445755A2C77AA3678B298E62F6E32FE9B67FD345",
+    "Bytes": 30350
+  },
+  {
+    "Path": "src/client/Controllers/SlapController.luau",
+    "SHA256": "3C09F2DDEF6A9F0BF85D03D68FABCE061D5C2FAD79B928EC847C18A8BEDBCEA2",
+    "Bytes": 6081
+  },
+  {
+    "Path": "src/client/Controllers/MatchController.luau",
+    "SHA256": "98FE925E6699A72603082541933A6FE3A54ABD2AE9FE5424E013C8DAF7E09D41",
+    "Bytes": 48991
+  },
+  {
+    "Path": "src/client/Controllers/MusicController.luau",
+    "SHA256": "C8F15E3EFE43BEB1CC5F084A526A375A5A6E251B17A22F59EA3921A7ED8782D6",
+    "Bytes": 20789
+  },
+  {
+    "Path": "src/client/Controllers/SuddenDeathController.luau",
+    "SHA256": "7E9D2A857D5F74BAD47C40FCD0235BF312497A0A3A7DAA462B55B1B81E922B50",
+    "Bytes": 3817
+  },
+  {
+    "Path": "default.project.json",
+    "SHA256": "71C0E55D95273C451771E2A4F9260BD3B912D55D1A913F8176B6C40DC4511461",
+    "Bytes": 4184
+  },
+  {
+    "Path": "src/ui/MatchHUD.rbxm",
+    "SHA256": "603ECA0A15B3012F4AC1A02A0E3727D9677B749D296BBD22617543913815D070",
+    "Bytes": 18826
+  },
+  {
+    "Path": "src/ui/SuddenDeathHUD.rbxm",
+    "SHA256": "7E75C40D29567C4400BBB4EEA7D081B506EA029A570D96D323C7A4FE04F36C4E",
+    "Bytes": 4536
+  },
+  {
+    "Path": "src/assets/SuddenDeathAssets.rbxm",
+    "SHA256": "30309562D76EC44A50267F860FD2045C3A1E7D856ACDED9D8F2FA64971EDB646",
+    "Bytes": 1177
+  },
+  {
+    "Path": "src/assets/SuddenDeathMusic.rbxm",
+    "SHA256": "D6C55FB6D06393C8DDB2B109FA300D0497928D760377EE164FE861C5A6BA1B4F",
+    "Bytes": 1241
+  },
+  {
+    "Path": "tests/GameplayV2.spec.luau",
+    "SHA256": "77CCFC48ABFE3EFA2FD8A754A8F042ED58C4FD5F63453688B249EE47E0BE7AE9",
+    "Bytes": 6790
+  },
+  {
+    "Path": "tests/GameplayV2.validation.md",
+    "SHA256": "3622969919D0743C013E21BE7F360A6DAD1F0A51B44C3C67936A2F3D7A6E6812",
+    "Bytes": 26392
+  },
+  {
+    "Path": "tests/GameplayV2.edit-evidence.json",
+    "SHA256": "7D1FFE39FBE299A04DF844B6786A26FB5F1FB4FC40F6DE8847A4A79368E1DE4D",
+    "Bytes": 2799
+  },
+  {
+    "Path": "tests/assets/backups/GameplayV2.sources.before.json",
+    "SHA256": "407AE6C81B0D719DCFE7FF7CFEBE19C7056F7276DA86DB4E099453AB4A118DF4",
+    "Bytes": 301673
+  },
+  {
+    "Path": "tests/assets/backups/MatchHUD.before-GameplayV2.rbxm",
+    "SHA256": "CD4C20E0165307025AFDFECC078C754D305A79DCDFFD02A00BBFB92CDE1524F3",
+    "Bytes": 18844
+  }
+]

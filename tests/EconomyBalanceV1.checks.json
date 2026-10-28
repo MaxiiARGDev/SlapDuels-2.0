@@ -1,0 +1,59 @@
+{
+  "RuntimeScriptsCompiled": 116,
+  "Checks": {
+    "compose": {
+      "ExitCode": 0,
+      "Log": "tests/EconomyBalanceV1.compose.log"
+    },
+    "economy": {
+      "ExitCode": 0,
+      "Log": "tests/EconomyBalanceV1.economy.log"
+    },
+    "crates": {
+      "ExitCode": 0,
+      "Log": "tests/EconomyBalanceV1.crates.log"
+    },
+    "combat": {
+      "ExitCode": 0,
+      "Log": "tests/EconomyBalanceV1.combat.log"
+    },
+    "abilities": {
+      "ExitCode": 0,
+      "Log": "tests/EconomyBalanceV1.abilities.log"
+    },
+    "registry": {
+      "ExitCode": 0,
+      "Log": "tests/EconomyBalanceV1.registry.log"
+    },
+    "shop": {
+      "ExitCode": 0,
+      "Log": "tests/EconomyBalanceV1.shop.log"
+    },
+    "variations": {
+      "ExitCode": 0,
+      "Log": "tests/EconomyBalanceV1.variations.log"
+    },
+    "compile": {
+      "ExitCode": 0,
+      "Log": "tests/EconomyBalanceV1.compile.log"
+    },
+    "build": {
+      "ExitCode": 0,
+      "Log": "tests/EconomyBalanceV1.build.log"
+    },
+    "safe-build": {
+      "ExitCode": 0,
+      "Log": "tests/EconomyBalanceV1.safe-build.log"
+    },
+    "diff-check": {
+      "ExitCode": 0,
+      "Log": "tests/EconomyBalanceV1.diff-check.log"
+    },
+    "integrity": {
+      "ExitCode": 0,
+      "Log": "tests/EconomyBalanceV1.integrity.log"
+    }
+  },
+  "Gameplay": "NOT RUN",
+  "Cloud": "NOT ACCESSED"
+}

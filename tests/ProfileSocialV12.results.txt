@@ -1,0 +1,1 @@
+PASS ProfileSocialV12: 111 isolated assertions; real gameplay and visual acceptance NOT RUN

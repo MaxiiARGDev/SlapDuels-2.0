@@ -1,0 +1,1 @@
+PASS: 31 isolated remote/catalog assertions; no Studio/gameplay/cloud execution.

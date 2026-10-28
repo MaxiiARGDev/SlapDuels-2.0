@@ -1,0 +1,964 @@
+{
+  "HUD": {
+    "NativeLayoutUntouched": true,
+    "Roots": 1,
+    "KillTabCategory": "DeathEffects",
+    "Descendants": 86
+  },
+  "Persistence": "Source inspection only; Bootstrap not executed",
+  "IsStudio": true,
+  "IsRunning": false,
+  "GameId": 10769217377,
+  "Mode": "Edit",
+  "PlaceId": 107328891970677,
+  "Effects": [
+    {
+      "Sounds": [
+        {
+          "SoundId": "rbxassetid://136881806991431",
+          "Path": "ServerStorage.DeathEffects.DefaultFall.SFX.Impact.DeathImpact",
+          "PlayDelay": 0,
+          "MaxDistance": 95
+        }
+      ],
+      "Path": "ServerStorage.DeathEffects.DefaultFall",
+      "TotalEmitCount": 37,
+      "Descendants": 16,
+      "Duration": 1.5,
+      "Particles": [
+        {
+          "Path": "ServerStorage.DeathEffects.DefaultFall.VFX.VerticalJet.Jet",
+          "LifetimeMax": 0.949999988079071,
+          "Rate": 0,
+          "SpeedMin": 12,
+          "Count": 12,
+          "SpeedMax": 21,
+          "Direction": "Top",
+          "Delay": 0,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.DefaultFall.VFX.Sparks.Sparks",
+          "LifetimeMax": 0.8500000238418579,
+          "Rate": 0,
+          "SpeedMin": 16,
+          "Count": 8,
+          "SpeedMax": 28,
+          "Direction": "Top",
+          "Delay": 0.035,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.DefaultFall.VFX.Flash.Glow",
+          "LifetimeMax": 0.20000000298023224,
+          "Rate": 0,
+          "SpeedMin": 0,
+          "Count": 1,
+          "SpeedMax": 0,
+          "Direction": "Top",
+          "Delay": 0.035,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.DefaultFall.VFX.Shockwave.Disc",
+          "LifetimeMax": 0.550000011920929,
+          "Rate": 0,
+          "SpeedMin": 0.10000000149011612,
+          "Count": 2,
+          "SpeedMax": 0.20000000298023224,
+          "Direction": "Top",
+          "Delay": 0.035,
+          "Texture": "rbxasset://textures/particles/smoke_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.DefaultFall.VFX.WideBurst.Burst",
+          "LifetimeMax": 0.75,
+          "Rate": 0,
+          "SpeedMin": 9,
+          "Count": 14,
+          "SpeedMax": 15,
+          "Direction": "Top",
+          "Delay": 0.035,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        }
+      ],
+      "Parts": 7
+    },
+    {
+      "Sounds": [
+        {
+          "SoundId": "rbxassetid://77561686949288",
+          "Path": "ServerStorage.DeathEffects.BasicKill.SFX.Impact.DeathImpact",
+          "PlayDelay": 0,
+          "MaxDistance": 95
+        }
+      ],
+      "Path": "ServerStorage.DeathEffects.BasicKill",
+      "TotalEmitCount": 77,
+      "Descendants": 16,
+      "Duration": 2.2,
+      "Particles": [
+        {
+          "Path": "ServerStorage.DeathEffects.BasicKill.VFX.VerticalJet.Jet",
+          "LifetimeMax": 0.949999988079071,
+          "Rate": 0,
+          "SpeedMin": 32,
+          "Count": 32,
+          "SpeedMax": 52,
+          "Direction": "Top",
+          "Delay": 0,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.BasicKill.VFX.Sparks.Sparks",
+          "LifetimeMax": 0.8500000238418579,
+          "Rate": 0,
+          "SpeedMin": 16,
+          "Count": 18,
+          "SpeedMax": 28,
+          "Direction": "Top",
+          "Delay": 0.035,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.BasicKill.VFX.Flash.Glow",
+          "LifetimeMax": 0.20000000298023224,
+          "Rate": 0,
+          "SpeedMin": 0,
+          "Count": 1,
+          "SpeedMax": 0,
+          "Direction": "Top",
+          "Delay": 0.035,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.BasicKill.VFX.Shockwave.Disc",
+          "LifetimeMax": 0.550000011920929,
+          "Rate": 0,
+          "SpeedMin": 0.10000000149011612,
+          "Count": 2,
+          "SpeedMax": 0.20000000298023224,
+          "Direction": "Top",
+          "Delay": 0.035,
+          "Texture": "rbxasset://textures/particles/smoke_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.BasicKill.VFX.WideBurst.Burst",
+          "LifetimeMax": 0.75,
+          "Rate": 0,
+          "SpeedMin": 18,
+          "Count": 24,
+          "SpeedMax": 30,
+          "Direction": "Top",
+          "Delay": 0.035,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        }
+      ],
+      "Parts": 7
+    },
+    {
+      "Sounds": [
+        {
+          "SoundId": "",
+          "Path": "ServerStorage.DeathEffects.Frost.SFX.Impact.FrostImpact",
+          "PlayDelay": 0,
+          "MaxDistance": 110
+        }
+      ],
+      "Path": "ServerStorage.DeathEffects.Frost",
+      "TotalEmitCount": 116,
+      "Descendants": 57,
+      "Duration": 3.2,
+      "Particles": [
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Flash.FlashBurst",
+          "LifetimeMax": 0.2199999988079071,
+          "Rate": 0,
+          "SpeedMin": 0,
+          "Count": 2,
+          "SpeedMax": 0,
+          "Direction": "Top",
+          "Delay": 0,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.VerticalJet.UpwardColumn",
+          "LifetimeMax": 1.2000000476837158,
+          "Rate": 0,
+          "SpeedMin": 18.899999618530273,
+          "Count": 34,
+          "SpeedMax": 27,
+          "Direction": "Top",
+          "Delay": 0.025,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.IceShards.Crystals",
+          "LifetimeMax": 1.649999976158142,
+          "Rate": 0,
+          "SpeedMin": 15.399999618530273,
+          "Count": 28,
+          "SpeedMax": 22,
+          "Direction": "Top",
+          "Delay": 0.07,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.FrostMist.Dispersal",
+          "LifetimeMax": 1.7000000476837158,
+          "Rate": 0,
+          "SpeedMin": 2.799999952316284,
+          "Count": 10,
+          "SpeedMax": 4,
+          "Direction": "Top",
+          "Delay": 0.1,
+          "Texture": "rbxasset://textures/particles/smoke_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.FallingParticles.SecondaryParticles",
+          "LifetimeMax": 2,
+          "Rate": 0,
+          "SpeedMin": 1.399999976158142,
+          "Count": 22,
+          "SpeedMax": 2,
+          "Direction": "Bottom",
+          "Delay": 0.35,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_1.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_2.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_3.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_4.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_5.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_6.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_7.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_8.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_9.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_10.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_11.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_12.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_13.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_14.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_15.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_16.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_17.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_18.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_19.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Frost.VFX.Shockwave.Wave1_20.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        }
+      ],
+      "Parts": 8
+    },
+    {
+      "Sounds": [
+        {
+          "SoundId": "",
+          "Path": "ServerStorage.DeathEffects.Void.SFX.Impact.VoidImpact",
+          "PlayDelay": 0,
+          "MaxDistance": 110
+        }
+      ],
+      "Path": "ServerStorage.DeathEffects.Void",
+      "TotalEmitCount": 136,
+      "Descendants": 97,
+      "Duration": 3.6,
+      "Particles": [
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.Flash.FlashBurst",
+          "LifetimeMax": 0.2199999988079071,
+          "Rate": 0,
+          "SpeedMin": 0,
+          "Count": 2,
+          "SpeedMax": 0,
+          "Direction": "Top",
+          "Delay": 0,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.VioletJet.UpwardColumn",
+          "LifetimeMax": 1.2000000476837158,
+          "Rate": 0,
+          "SpeedMin": 18.899999618530273,
+          "Count": 34,
+          "SpeedMax": 27,
+          "Direction": "Top",
+          "Delay": 0.025,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.VoidParticles.DarkFragments",
+          "LifetimeMax": 1.649999976158142,
+          "Rate": 0,
+          "SpeedMin": 15.399999618530273,
+          "Count": 28,
+          "SpeedMax": 22,
+          "Direction": "Top",
+          "Delay": 0.07,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.DarkCore.Dispersal",
+          "LifetimeMax": 1.7000000476837158,
+          "Rate": 0,
+          "SpeedMin": 2.799999952316284,
+          "Count": 10,
+          "SpeedMax": 4,
+          "Direction": "Top",
+          "Delay": 0.1,
+          "Texture": "rbxasset://textures/particles/smoke_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.RisingEnergy.SecondaryParticles",
+          "LifetimeMax": 2,
+          "Rate": 0,
+          "SpeedMin": 4.900000095367432,
+          "Count": 22,
+          "SpeedMax": 7,
+          "Direction": "Top",
+          "Delay": 0.35,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_1.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_2.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_3.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_4.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_5.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_6.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_7.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_8.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_9.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_10.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_11.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_12.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_13.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_14.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_15.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_16.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_17.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_18.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_19.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave1_20.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 11.199999809265137,
+          "Count": 1,
+          "SpeedMax": 16,
+          "Direction": "Front",
+          "Delay": 0.04,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_1.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_2.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_3.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_4.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_5.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_6.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_7.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_8.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_9.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_10.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_11.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_12.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_13.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_14.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_15.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_16.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_17.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_18.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_19.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        },
+        {
+          "Path": "ServerStorage.DeathEffects.Void.VFX.EnergyRings.Wave2_20.RingParticle",
+          "LifetimeMax": 0.800000011920929,
+          "Rate": 0,
+          "SpeedMin": 9.100000381469727,
+          "Count": 1,
+          "SpeedMax": 13,
+          "Direction": "Front",
+          "Delay": 0.22,
+          "Texture": "rbxasset://textures/particles/sparkles_main.dds"
+        }
+      ],
+      "Parts": 8
+    }
+  ]
+}

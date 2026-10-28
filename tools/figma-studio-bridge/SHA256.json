@@ -1,0 +1,9 @@
+{
+  "SlapDuelsUIBridge.rbxm": "4b9f4c86451304e5fa3123fc85db18f1a1099756105c5957d0403e18440b84e5",
+  "figma/code.js": "430b52626092cec2818c798bb2fda8ed4b2458676403e53335c3c97e28c6d557",
+  "figma/manifest.json": "2491a33d947e5530bebb2dcbfb9cc77e723fec6eeb40b150f6d94241eb409505",
+  "figma/ui.html": "fdf3195c2dfeadad3380d3155a8610bacec1e60c79a09b1f0b0e905d112c323e",
+  "bridge/server.mjs": "d628bdfc9d4f9eeca470c81d7ad6efc1188d9497b3cf0b4ee401c31f466f7239",
+  "studio/Core.luau": "dbde10baf4c59105eb059931e5789afcbb3caa1ce38326c35b4f98f0237013d5",
+  "studio/Plugin.server.luau": "32aca6cea28e90a763c97d68a32f533fdb8c95e53b20689f211a046c70c8ec7f"
+}

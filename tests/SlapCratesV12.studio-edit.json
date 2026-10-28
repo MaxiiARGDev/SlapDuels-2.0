@@ -1,0 +1,20 @@
+{
+  "Verification": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"CloudAccessPerformed\":false,\"Persistence\":\"Static Studio branch InMemory/WritesToCloud=false; runtime NOT RUN\",\"Duplicates\":false,\"PreviewHidden\":true,\"Fixture\":true,\"Mode\":\"Edit\",\"Sources\":{\"1\":{\"Hash\":\"799bc3844764b07576b1ec76d13f57385de6c3228341c3c0e127d39f72c2640b\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.CrateDefinitions\"},\"3\":{\"Hash\":\"4646a1c6e47b16a2612aea051cb56635e0379a98f2f2c91ff6408055700adf7c\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.CrateShopView\"},\"2\":{\"Hash\":\"6f655063c09fe94f557bb280821cbc46534ffe4eac5572884798dc5cbc05b5bd\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.Catalog\"},\"5\":{\"Hash\":\"6798731a00a98da48c012aca1763fa523c2d07d10114029df422a678ecaf5204\",\"Path\":\"ServerScriptService.Shop.ShopRemotes\"},\"4\":{\"Hash\":\"198783dd191a4980601b1e832a0e5424577484d12dc899600cb6fb8a81687cfb\",\"Path\":\"ServerScriptService.Services.CrateService\"},\"7\":{\"Hash\":\"9d6668e4bdb250ffb5a0c0f2bd772baf0bc474a41bae65783ad77ff81599b17f\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.CrateController\"},\"6\":{\"Hash\":\"ce8aa97d4c6e18c00eb9f81f97d825a077cf4cb98e26d1717db667cad5f5f543\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.ShopController\"}},\"OriginalGeometryPreserved\":75}"
+      }
+    ],
+    "isError": false
+  },
+  "Installation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"NoPlay\":true,\"Edit\":true,\"StockLabel\":\"StarterGui.ShopHUD.CrateActionsTemplate.StockLabel\",\"FixtureEnabled\":true,\"Preview\":\"StarterGui.ShopHUD.CratePreviewTemplate\",\"OriginalGeometryPreserved\":75}"
+      }
+    ],
+    "isError": false
+  }
+}

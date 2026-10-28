@@ -1,0 +1,87 @@
+{
+  "Date": "2026-10-18",
+  "HumanV13": {
+    "MissSpam": "FAIL",
+    "AnimationLatency": "FAIL",
+    "ThreeSlaps": "PASS",
+    "OtherCases": "PENDING",
+    "Approved": false
+  },
+  "Before": {
+    "DiagnosticsEnabled": false,
+    "Sources": [
+      {
+        "Editor": "1ff7be43dffaebc16e8a38108acc52c4fcd90c9caa11cc22421bbb86013ca8e5",
+        "Path": "ServerScriptService.Services.SlapService",
+        "Source": "1ff7be43dffaebc16e8a38108acc52c4fcd90c9caa11cc22421bbb86013ca8e5"
+      },
+      {
+        "Editor": "033e1a78d677516a0ad22c3cf18d2aa103022f78f3739604bc390c88ee6ef3ea",
+        "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SlapController",
+        "Source": "033e1a78d677516a0ad22c3cf18d2aa103022f78f3739604bc390c88ee6ef3ea"
+      },
+      {
+        "Editor": "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda",
+        "Path": "ReplicatedStorage.Shared.Config",
+        "Source": "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda"
+      },
+      {
+        "Editor": "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853",
+        "Path": "ServerScriptService.Services.Persistence.PersistenceEnvironment",
+        "Source": "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853"
+      }
+    ],
+    "IsStudio": true,
+    "IsRunning": false
+  },
+  "EditVerification": {
+    "IsRunning": false,
+    "Classic": {
+      "SlapCooldown": 0.6,
+      "Power": 20
+    },
+    "PersistenceResolverHash": "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853",
+    "Sources": [
+      {
+        "EditorHash": "8876ac9085cb3cf6905651c53d92e733ab5ae16038c349268f2b6fb1e2aaba46",
+        "Path": "ServerScriptService.Services.SlapService",
+        "SourceHash": "8876ac9085cb3cf6905651c53d92e733ab5ae16038c349268f2b6fb1e2aaba46",
+        "Expected": "8876ac9085cb3cf6905651c53d92e733ab5ae16038c349268f2b6fb1e2aaba46"
+      },
+      {
+        "EditorHash": "dd68c6efd7c67e3f80226f60c4a33008bc03deb18af29fc2f5c167a7bf9c0fac",
+        "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SlapController",
+        "SourceHash": "dd68c6efd7c67e3f80226f60c4a33008bc03deb18af29fc2f5c167a7bf9c0fac",
+        "Expected": "dd68c6efd7c67e3f80226f60c4a33008bc03deb18af29fc2f5c167a7bf9c0fac"
+      }
+    ],
+    "IsStudio": true,
+    "DiagnosticsEnabled": false,
+    "Mode": "Edit",
+    "ConfigHash": "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda",
+    "ActiveMatches": 0
+  },
+  "Tests": {
+    "Combat": 97,
+    "Ability": 164,
+    "Registry": 89,
+    "Total": 350,
+    "CompiledFiles": 99,
+    "DefaultBuild": 0,
+    "SafeBuild": 0,
+    "Gameplay": "NOT RUN"
+  },
+  "RuntimePersistence": "Not started; Studio branch source/config unchanged",
+  "SourceMapping": [
+    {
+      "Path": "ServerScriptService.Services.SlapService",
+      "BeforeSHA256": "1ff7be43dffaebc16e8a38108acc52c4fcd90c9caa11cc22421bbb86013ca8e5",
+      "SHA256": "8876ac9085cb3cf6905651c53d92e733ab5ae16038c349268f2b6fb1e2aaba46"
+    },
+    {
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SlapController",
+      "BeforeSHA256": "033e1a78d677516a0ad22c3cf18d2aa103022f78f3739604bc390c88ee6ef3ea",
+      "SHA256": "dd68c6efd7c67e3f80226f60c4a33008bc03deb18af29fc2f5c167a7bf9c0fac"
+    }
+  ]
+}

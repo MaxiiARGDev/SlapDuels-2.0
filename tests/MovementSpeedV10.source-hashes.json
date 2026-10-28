@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "Config",
+    "Path": "src/shared/Config.luau",
+    "BeforeHash": "78cc299b2e79ee6f7f730ec5410cb0391abe7d372ffc4f6fc333ffd1fc50a6fe",
+    "Hash": "6c194310ebfbcdc262ca254eaa0a8f1f18ac0d166caba9d559bf00be0980b4e8"
+  },
+  {
+    "Name": "SpawnService",
+    "Path": "src/server/Services/SpawnService.luau",
+    "BeforeHash": "4d3ebb10e233e906cd8f34b31cbb63fecc27aa19eefe79d9d4794436ab9dcc4c",
+    "Hash": "22b2a58a5b315b81a2637ae300142b3c0420358be4501c00fdf0477ae76bc309"
+  },
+  {
+    "Name": "RoundService",
+    "Path": "src/server/Services/RoundService.luau",
+    "BeforeHash": "c8ba3965c7e0a95b432515b0b89d39b2611c5f699834b506023b7a11f4fcd69b",
+    "Hash": "616e31078aaceb63c786d1e968c15ac9118105234020256781d934902f691b23"
+  },
+  {
+    "Name": "DevilSpeedAbility",
+    "Path": "src/server/Abilities/DevilSpeedAbility.luau",
+    "BeforeHash": "df02e550301bca6f33e6aba91608dc32bdbfc08e511f61f5dc2e82c937ea7e85",
+    "Hash": "cac65b0ccdbd145f4f60cd2492febbeb3cf7410994a0b474ae9f0f85143fae21"
+  },
+  {
+    "Name": "MovementSpeed",
+    "Path": "src/server/Services/Respawn/MovementSpeed.luau",
+    "BeforeHash": null,
+    "Hash": "1d5945679563dc89953c9d3db979e95c131dbafd7e2f88b427232f99a55f566a"
+  }
+]

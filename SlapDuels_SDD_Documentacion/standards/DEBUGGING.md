@@ -1,8 +1,8 @@
 # Slap Duels 2.0 — DEBUGGING
 
-> Este documento conserva contenido del `GAME_SDD.md` original suministrado, redistribuido por dominio para reducir el contexto necesario para agentes de IA.
+> Especificación vigente. Define el comportamiento requerido; no certifica que la implementación ni los assets actuales hayan sido verificados en Studio.
 
-## 6. Política de Limpieza (Cleanup)
+## Política de Limpieza (Cleanup)
 
 Todo sistema audiovisual temporal debe garantizar un **cleanup exhaustivo**:
 1. **Detener sonidos:** Pausar o silenciar sonidos antes de destruir la instancia si están en reproducción.
@@ -15,8 +15,7 @@ Todo sistema audiovisual temporal debe garantizar un **cleanup exhaustivo**:
 
 ---
 
-
-## 7. Modificación de Propiedades Existentes
+## Modificación de Propiedades Existentes
 
 Cuando un sistema modifique una propiedad de un objeto preexistente (como un pad o un componente del mapa):
 - **Guardar el estado original:** Registrar el valor previo en memoria antes de aplicar el cambio.
@@ -32,8 +31,7 @@ Cuando un sistema modifique una propiedad de un objeto preexistente (como un pad
 
 ---
 
-
-## 10. Directrices de Depuración y Logging
+## Directrices de Depuración y Logging
 
 - **Prefijo obligatorio:** Todo mensaje de log debe usar la convención:
   `[NombreServicio] Mensaje descriptivo`

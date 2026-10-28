@@ -1,0 +1,78 @@
+[
+  {
+    "Name": "ShopHUD",
+    "Descendants": 348,
+    "Path": [
+      "StarterGui",
+      "ShopHUD"
+    ],
+    "Hash": "fddd687885a89679d6fc1547c2ca85db877121f661626e49a12a3f80bd0d22e7"
+  },
+  {
+    "Name": "PlayerHUD",
+    "Descendants": 58,
+    "Path": [
+      "StarterGui",
+      "PlayerHUD"
+    ],
+    "Hash": "5b91a53715a5b13fb37da5dcf114c3eacc2a5e139feba2aa44faee5f918f8ecd"
+  },
+  {
+    "Name": "PremiumShopHUD",
+    "Descendants": 58,
+    "Path": [
+      "StarterGui",
+      "PremiumShopHUD"
+    ],
+    "Hash": "6aefdd78af97bb2d4ecbbbe65d8e68ec2c4e4dc6787307521d64218be2a80db9"
+  },
+  {
+    "Name": "PremiumShopPreviews",
+    "Descendants": 38,
+    "Path": [
+      "ReplicatedStorage",
+      "PremiumShopPreviews"
+    ],
+    "Hash": "eabaed40cc84bc9e1c714422c815193de4d933d7b7c7ff555bf84a01aa15cf68"
+  },
+  {
+    "Name": "CoinShop",
+    "Descendants": 7,
+    "Path": [
+      "Workspace",
+      "Shops",
+      "CoinShop"
+    ],
+    "Hash": "8bed8ef28f66b8ca6215f2cdc87452f9e7c9d364e2e822882b7ec1e9bc8cb504"
+  },
+  {
+    "Name": "PremiumI",
+    "Descendants": 7,
+    "Path": [
+      "ReplicatedStorage",
+      "CrateEffects",
+      "PremiumI"
+    ],
+    "Hash": "7f15aeea7e4233a9e5719c4c13c9a8037a8e75fb9ccc534432bc4c447b6263c6"
+  },
+  {
+    "Name": "PremiumII",
+    "Descendants": 7,
+    "Path": [
+      "ReplicatedStorage",
+      "CrateEffects",
+      "PremiumII"
+    ],
+    "Hash": "40335a8c86b18fc285c961fb26879a77c2a01835abf39512ca0c45ba399618f0"
+  },
+  {
+    "Name": "PremiumIII",
+    "Descendants": 7,
+    "Path": [
+      "ReplicatedStorage",
+      "CrateEffects",
+      "PremiumIII"
+    ],
+    "Hash": "2b9df2a634ab31fc9b970bf6e43d48edef5837fd371b6d5907878bee72862e32"
+  }
+]

@@ -1,0 +1,509 @@
+{
+  "name": "CratePanel",
+  "tree": {
+    "$className": "Frame",
+    "$properties": {
+      "AnchorPoint": {
+        "Vector2": [
+          0.5,
+          0.5
+        ]
+      },
+      "Position": {
+        "UDim2": [
+          [
+            0.5,
+            0
+          ],
+          [
+            0.5,
+            0
+          ]
+        ]
+      },
+      "Size": {
+        "UDim2": [
+          [
+            0.9,
+            0
+          ],
+          [
+            0.8,
+            0
+          ]
+        ]
+      },
+      "BackgroundColor3": {
+        "Color3": [
+          0.05,
+          0.12,
+          0.32
+        ]
+      },
+      "Visible": false,
+      "ZIndex": 60
+    },
+    "UISizeConstraint": {
+      "$className": "UISizeConstraint",
+      "$properties": {
+        "MaxSize": {
+          "Vector2": [
+            760,
+            550
+          ]
+        },
+        "MinSize": {
+          "Vector2": [
+            310,
+            340
+          ]
+        }
+      }
+    },
+    "UICorner": {
+      "$className": "UICorner",
+      "$properties": {
+        "CornerRadius": {
+          "UDim": [
+            0,
+            12
+          ]
+        }
+      }
+    },
+    "Title": {
+      "$className": "TextLabel",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              12
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              0,
+              520
+            ],
+            [
+              0,
+              32
+            ]
+          ]
+        },
+        "BorderSizePixel": 0,
+        "Text": "CAJAS",
+        "TextSize": 16,
+        "TextColor3": {
+          "Color3": [
+            1,
+            1,
+            1
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.08,
+            0.1,
+            0.15
+          ]
+        },
+        "TextWrapped": true,
+        "ZIndex": 65
+      }
+    },
+    "Close": {
+      "$className": "TextButton",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              1,
+              -48
+            ],
+            [
+              0,
+              12
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              0,
+              40
+            ],
+            [
+              0,
+              32
+            ]
+          ]
+        },
+        "BorderSizePixel": 0,
+        "Text": "X",
+        "TextSize": 16,
+        "TextColor3": {
+          "Color3": [
+            1,
+            1,
+            1
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.08,
+            0.1,
+            0.15
+          ]
+        },
+        "TextWrapped": true,
+        "ZIndex": 65
+      }
+    },
+    "Count": {
+      "$className": "TextLabel",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              52
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              0,
+              400
+            ],
+            [
+              0,
+              26
+            ]
+          ]
+        },
+        "BorderSizePixel": 0,
+        "Text": "Cajas cerradas: 0",
+        "TextSize": 16,
+        "TextColor3": {
+          "Color3": [
+            1,
+            1,
+            1
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.08,
+            0.1,
+            0.15
+          ]
+        },
+        "TextWrapped": true,
+        "ZIndex": 65
+      }
+    },
+    "Status": {
+      "$className": "TextLabel",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              84
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              1,
+              -32
+            ],
+            [
+              0,
+              42
+            ]
+          ]
+        },
+        "BorderSizePixel": 0,
+        "Text": "Comercio pendiente de aprobación",
+        "TextSize": 16,
+        "TextColor3": {
+          "Color3": [
+            1,
+            1,
+            1
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.08,
+            0.1,
+            0.15
+          ]
+        },
+        "TextWrapped": true,
+        "ZIndex": 65
+      }
+    },
+    "Outcomes": {
+      "$className": "TextLabel",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              0,
+              16
+            ],
+            [
+              0,
+              132
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              1,
+              -32
+            ],
+            [
+              1,
+              -245
+            ]
+          ]
+        },
+        "BorderSizePixel": 0,
+        "Text": "Ver probabilidades antes de comprar.",
+        "TextSize": 16,
+        "TextColor3": {
+          "Color3": [
+            1,
+            1,
+            1
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.08,
+            0.1,
+            0.15
+          ]
+        },
+        "TextWrapped": true,
+        "ZIndex": 65,
+        "TextYAlignment": "Top",
+        "TextXAlignment": "Left"
+      }
+    },
+    "ViewOdds": {
+      "$className": "TextButton",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              0,
+              8
+            ],
+            [
+              1,
+              -96
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              0.36,
+              -12
+            ],
+            [
+              0,
+              40
+            ]
+          ]
+        },
+        "BorderSizePixel": 0,
+        "Text": "VER PROBABILIDADES",
+        "TextSize": 16,
+        "TextColor3": {
+          "Color3": [
+            1,
+            1,
+            1
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.08,
+            0.1,
+            0.15
+          ]
+        },
+        "TextWrapped": true,
+        "ZIndex": 65
+      }
+    },
+    "Buy": {
+      "$className": "TextButton",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              0.37,
+              8
+            ],
+            [
+              1,
+              -96
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              0.3,
+              -12
+            ],
+            [
+              0,
+              40
+            ]
+          ]
+        },
+        "BorderSizePixel": 0,
+        "Text": "COMPRAR CAJA",
+        "TextSize": 16,
+        "TextColor3": {
+          "Color3": [
+            1,
+            1,
+            1
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.08,
+            0.1,
+            0.15
+          ]
+        },
+        "TextWrapped": true,
+        "ZIndex": 65
+      }
+    },
+    "Open": {
+      "$className": "TextButton",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              0.69,
+              8
+            ],
+            [
+              1,
+              -96
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              0.3,
+              -12
+            ],
+            [
+              0,
+              40
+            ]
+          ]
+        },
+        "BorderSizePixel": 0,
+        "Text": "ABRIR CAJA",
+        "TextSize": 16,
+        "TextColor3": {
+          "Color3": [
+            1,
+            1,
+            1
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.08,
+            0.1,
+            0.15
+          ]
+        },
+        "TextWrapped": true,
+        "ZIndex": 65
+      }
+    },
+    "Receipt": {
+      "$className": "TextButton",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              0,
+              16
+            ],
+            [
+              1,
+              -48
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              0,
+              260
+            ],
+            [
+              0,
+              36
+            ]
+          ]
+        },
+        "BorderSizePixel": 0,
+        "Text": "VER ÚLTIMO PREMIO",
+        "TextSize": 16,
+        "TextColor3": {
+          "Color3": [
+            1,
+            1,
+            1
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.08,
+            0.1,
+            0.15
+          ]
+        },
+        "TextWrapped": true,
+        "ZIndex": 65
+      }
+    }
+  }
+}

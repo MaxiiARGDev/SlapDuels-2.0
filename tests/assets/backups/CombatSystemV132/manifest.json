@@ -1,0 +1,18 @@
+[
+  {
+    "Path": "src\\client\\Controllers\\SlapController.luau",
+    "SHA256": "746FABC95B47BE3C643EB8C027BF8B26100B55EDACD3F67F9A31B585DE00ACF4"
+  },
+  {
+    "Path": "default.project.json",
+    "SHA256": "A99D5DF3DC6A7DF1ACE6D4E6C4003A90329CC0F80B0FB659E9C74003261B3FCB"
+  },
+  {
+    "Path": "studio-safe.project.json",
+    "SHA256": "212DC02EDF90DC04D89D353AC35C3962DE85B0C621EF05407151C7478A12F7C7"
+  },
+  {
+    "Path": "src\\server\\Services\\SlapService.luau",
+    "SHA256": "2309E6BA8587A5486370E15F50D9EE42A29AC3575833A3369E5FA2AF29077793"
+  }
+]

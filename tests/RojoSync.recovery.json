@@ -1,0 +1,52 @@
+{
+  "Archive": "ServerStorage._RojoSyncRecovery_20261017_063311",
+  "Canonical": [
+    "ReplicatedStorage.Shared.EndCinematicRanking",
+    "ReplicatedStorage.Shared.DeathFeedbackConfig",
+    "ReplicatedStorage.Shared.DeathEffectDefinitions",
+    "ReplicatedStorage.Shared.DeathFeedbackContract",
+    "ReplicatedStorage.Shared.ArenaRespawnPolicy",
+    "ServerScriptService.Services.DeathEffectService",
+    "ServerScriptService.Services.Respawn",
+    "StarterPlayer.StarterPlayerScripts.Controllers.DeathFeedbackController",
+    "StarterPlayer.StarterPlayerScripts.Controllers.KillRewardController"
+  ],
+  "Moved": [
+    {
+      "Archived": "ServerStorage._RojoSyncRecovery_20261017_063311.ReplicatedStorage_Shared_EndCinematicRanking.MovedOriginals.EndCinematicRanking",
+      "Original": "ReplicatedStorage.Shared.EndCinematicRanking"
+    },
+    {
+      "Archived": "ServerStorage._RojoSyncRecovery_20261017_063311.ReplicatedStorage_Shared_DeathFeedbackConfig.MovedOriginals.DeathFeedbackConfig",
+      "Original": "ReplicatedStorage.Shared.DeathFeedbackConfig"
+    },
+    {
+      "Archived": "ServerStorage._RojoSyncRecovery_20261017_063311.ReplicatedStorage_Shared_DeathEffectDefinitions.MovedOriginals.DeathEffectDefinitions",
+      "Original": "ReplicatedStorage.Shared.DeathEffectDefinitions"
+    },
+    {
+      "Archived": "ServerStorage._RojoSyncRecovery_20261017_063311.ReplicatedStorage_Shared_DeathFeedbackContract.MovedOriginals.DeathFeedbackContract",
+      "Original": "ReplicatedStorage.Shared.DeathFeedbackContract"
+    },
+    {
+      "Archived": "ServerStorage._RojoSyncRecovery_20261017_063311.ReplicatedStorage_Shared_ArenaRespawnPolicy.MovedOriginals.ArenaRespawnPolicy",
+      "Original": "ReplicatedStorage.Shared.ArenaRespawnPolicy"
+    },
+    {
+      "Archived": "ServerStorage._RojoSyncRecovery_20261017_063311.ServerScriptService_Services_DeathEffectService.MovedOriginals.DeathEffectService",
+      "Original": "ServerScriptService.Services.DeathEffectService"
+    },
+    {
+      "Archived": "ServerStorage._RojoSyncRecovery_20261017_063311.ServerScriptService_Services_Respawn.MovedOriginals.Respawn",
+      "Original": "ServerScriptService.Services.Respawn"
+    },
+    {
+      "Archived": "ServerStorage._RojoSyncRecovery_20261017_063311.StarterPlayer_StarterPlayerScripts_Controllers_DeathFeedbackController.MovedOriginals.DeathFeedbackController",
+      "Original": "StarterPlayer.StarterPlayerScripts.Controllers.DeathFeedbackController"
+    },
+    {
+      "Archived": "ServerStorage._RojoSyncRecovery_20261017_063311.StarterPlayer_StarterPlayerScripts_Controllers_KillRewardController.MovedOriginals.KillRewardController",
+      "Original": "StarterPlayer.StarterPlayerScripts.Controllers.KillRewardController"
+    }
+  ]
+}

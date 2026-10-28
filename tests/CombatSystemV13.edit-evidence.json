@@ -1,0 +1,115 @@
+{
+  "Date": "2026-10-18",
+  "Before": {
+    "SlapDebug": false,
+    "Sources": [
+      {
+        "Editor": "a724448e3b3066d32086f9376d5bb9d3488821587aa5385266448b979145db80",
+        "Path": "ServerScriptService.Services.SlapService",
+        "Source": "a724448e3b3066d32086f9376d5bb9d3488821587aa5385266448b979145db80"
+      },
+      {
+        "Editor": "a3680711ee8f2302a02de8cfe2b7050a6cfe13a4f81c352a6c57f1be79594035",
+        "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SlapController",
+        "Source": "a3680711ee8f2302a02de8cfe2b7050a6cfe13a4f81c352a6c57f1be79594035"
+      },
+      {
+        "Editor": "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda",
+        "Path": "ReplicatedStorage.Shared.Config",
+        "Source": "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda"
+      },
+      {
+        "Editor": "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853",
+        "Path": "ServerScriptService.Services.Persistence.PersistenceEnvironment",
+        "Source": "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853"
+      }
+    ],
+    "IsStudio": true,
+    "IsRunning": false
+  },
+  "Deployment": {
+    "Sources": [
+      {
+        "EditorHash": "1ff7be43dffaebc16e8a38108acc52c4fcd90c9caa11cc22421bbb86013ca8e5",
+        "Path": "ServerScriptService.Services.SlapService",
+        "SourceHash": "1ff7be43dffaebc16e8a38108acc52c4fcd90c9caa11cc22421bbb86013ca8e5",
+        "Expected": "1ff7be43dffaebc16e8a38108acc52c4fcd90c9caa11cc22421bbb86013ca8e5"
+      },
+      {
+        "EditorHash": "033e1a78d677516a0ad22c3cf18d2aa103022f78f3739604bc390c88ee6ef3ea",
+        "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SlapController",
+        "SourceHash": "033e1a78d677516a0ad22c3cf18d2aa103022f78f3739604bc390c88ee6ef3ea",
+        "Expected": "033e1a78d677516a0ad22c3cf18d2aa103022f78f3739604bc390c88ee6ef3ea"
+      }
+    ],
+    "IsStudio": true,
+    "IsRunning": false,
+    "Mode": "Edit",
+    "Changes": "Only two ModuleScript sources; no instances/settings/persistence changed",
+    "DiagnosticsEnabled": false
+  },
+  "Final": {
+    "RuntimePersistence": "NOT STARTED; Studio branch source inspected",
+    "IsRunning": false,
+    "Classic": {
+      "Swing": "rbxassetid://204062532",
+      "SlapCooldown": 0.6,
+      "Power": 20
+    },
+    "CloudAccessPerformed": false,
+    "Sources": [
+      {
+        "EditorHash": "1ff7be43dffaebc16e8a38108acc52c4fcd90c9caa11cc22421bbb86013ca8e5",
+        "Path": "ServerScriptService.Services.SlapService",
+        "SourceHash": "1ff7be43dffaebc16e8a38108acc52c4fcd90c9caa11cc22421bbb86013ca8e5"
+      },
+      {
+        "EditorHash": "033e1a78d677516a0ad22c3cf18d2aa103022f78f3739604bc390c88ee6ef3ea",
+        "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SlapController",
+        "SourceHash": "033e1a78d677516a0ad22c3cf18d2aa103022f78f3739604bc390c88ee6ef3ea"
+      },
+      {
+        "EditorHash": "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda",
+        "Path": "ReplicatedStorage.Shared.Config",
+        "SourceHash": "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda"
+      },
+      {
+        "EditorHash": "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853",
+        "Path": "ServerScriptService.Services.Persistence.PersistenceEnvironment",
+        "SourceHash": "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853"
+      }
+    ],
+    "IsStudio": true,
+    "DiagnosticsEnabled": false,
+    "Remotes": {
+      "PerformSlap": 1,
+      "SlapFeedback": 1
+    },
+    "ActiveMatches": 0,
+    "Mode": "Edit"
+  },
+  "Tests": {
+    "Combat": 79,
+    "AbilityRegression": 164,
+    "Registry": 89,
+    "Total": 332,
+    "CompiledRuntimeSources": 98,
+    "CompiledNewSpec": 1,
+    "DefaultBuildExitCode": 0,
+    "SafeBuildExitCode": 0,
+    "GitDiffCheckExitCode": 0,
+    "Gameplay": "NOT RUN"
+  },
+  "ChangedRuntimeSources": [
+    {
+      "Path": "ServerScriptService.Services.SlapService",
+      "SHA256": "1ff7be43dffaebc16e8a38108acc52c4fcd90c9caa11cc22421bbb86013ca8e5",
+      "BeforeSHA256": "a724448e3b3066d32086f9376d5bb9d3488821587aa5385266448b979145db80"
+    },
+    {
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SlapController",
+      "SHA256": "033e1a78d677516a0ad22c3cf18d2aa103022f78f3739604bc390c88ee6ef3ea",
+      "BeforeSHA256": "a3680711ee8f2302a02de8cfe2b7050a6cfe13a4f81c352a6c57f1be79594035"
+    }
+  ]
+}

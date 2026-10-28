@@ -1,0 +1,32 @@
+[
+  {
+    "Name": "Bootstrap",
+    "Path": "src/server/Bootstrap.server.luau",
+    "Hash": "1f9c5d7dd67823e1b88f36939426091273c53b80e6573e22db4719bb6bc5a1b8",
+    "BeforeHash": "1eba18c0e207834ef1c9b21276909fb50d6c2bad5b8e39ae44961274ea54d3f5"
+  },
+  {
+    "Name": "MatchInstanceService",
+    "Path": "src/server/Services/MatchInstanceService.luau",
+    "Hash": "bdcfee9c7b732446b85eaf3cb68e6c7581b470d07cdbcf7076dc83a1b6f70ee8",
+    "BeforeHash": "400e33a2836b65d3ba87e28ae2ebaf750dba8c5eb17b0b4f50927e4281ed3185"
+  },
+  {
+    "Name": "DisappearingPlatformsService",
+    "Path": "src/server/Services/DisappearingPlatformsService.luau",
+    "Hash": "0beaec2e781cb973560d918aae52e2361db97654cad7ec087b285aa1af8ebab6",
+    "BeforeHash": null
+  },
+  {
+    "Name": "PlatformPolicy",
+    "Path": "src/server/Services/Platforms/PlatformPolicy.luau",
+    "Hash": "1d62a5d82d80d3173c36c8bd3a90826b098720460b25020c2cbf5da358e65637",
+    "BeforeHash": null
+  },
+  {
+    "Name": "DisappearingPlatformsConfig",
+    "Path": "src/shared/DisappearingPlatformsConfig.luau",
+    "Hash": "227f1558fbacf0c4d5070bd86d656a0610cbb0fd66c9fdf32d290441debc4e4d",
+    "BeforeHash": null
+  }
+]

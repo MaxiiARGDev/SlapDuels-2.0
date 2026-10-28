@@ -1,0 +1,1033 @@
+{
+  "Zones": [
+    {
+      "Name": "1v1",
+      "Attributes": {
+        "Secuencia": "3, 4, 5",
+        "TotalPlayers": 2,
+        "DuracionFase": 4,
+        "TiempoTransicion": 0.6,
+        "MaxPlayersPerTeam": 1,
+        "Mode": "1v1",
+        "TeamSize": 1
+      }
+    },
+    {
+      "Name": "1v1-2",
+      "Attributes": {
+        "Secuencia": "3, 7, 5",
+        "TotalPlayers": 2,
+        "DuracionFase": 4,
+        "TiempoTransicion": 0.6,
+        "MaxPlayersPerTeam": 1,
+        "Mode": "1v1",
+        "TeamSize": 1
+      }
+    },
+    {
+      "Name": "Pisos",
+      "Attributes": []
+    },
+    {
+      "Name": "2v2",
+      "Attributes": {
+        "Secuencia": "2, 8, 7",
+        "TotalPlayers": 4,
+        "DuracionFase": 4,
+        "TiempoTransicion": 0.6,
+        "MaxPlayersPerTeam": 2,
+        "Mode": "2v2",
+        "TeamSize": 2
+      }
+    }
+  ],
+  "Physical": {
+    "StarterGui.MatchmakingHUD": "ec941de59e6676587ca28e652d500bd7a8fa96dcc343a3ce1eed1518e6f50ea1",
+    "Workspace.ZoneMatchmaking": "2aec4502c2d596e3e530bed34d1aef7ef42702c5f10a9b11c9f1e08214f990d2",
+    "StarterGui.ShopHUD": "044aa835a3c39771c9061a1d35d8336fb0cd71810c2258263581ddbc9fb77b16",
+    "ServerStorage.Maps.Levels": "d70ba54558b8c03e99e53c37c1860cd1c0a5b480f32bea9df14da8c50e747f9f",
+    "StarterGui.PremiumShopHUD": "c5353b46410505b19152f666d8830c1b1d4acc2d412c28dda78ac7a33699d1f5",
+    "StarterGui.MatchHUD": "0bd648c4a16fa25ce4c554c9c2736a30756f9cae390e4d96d059ace2d0453cae",
+    "ServerStorage.EndGames-Scenario.ScenarioFinal": "ea071427defae560fadcd641eaf558078b0d55f62c8aebce3424e65af08776cc"
+  },
+  "Maps": [
+    {
+      "Hash": "65fb59e968055975e8f04205f0eb5aff24b73020444e8dfe37f1726ce2821a1c",
+      "Path": "Workspace.Levels",
+      "Spawns": [
+        {
+          "Anchored": true,
+          "Path": "Workspace.Levels.RedTeam.Spawn1",
+          "CanQuery": true,
+          "CanCollide": false,
+          "Transparency": 1,
+          "CFrame": [
+            -258.74847412109375,
+            13.1019926071167,
+            1058.012451171875,
+            -1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "CanTouch": true,
+          "Size": [
+            3,
+            0.3857825994491577,
+            3
+          ]
+        },
+        {
+          "Anchored": true,
+          "Path": "Workspace.Levels.RedTeam.Spawn2",
+          "CanQuery": true,
+          "CanCollide": false,
+          "Transparency": 1,
+          "CFrame": [
+            -265.74847412109375,
+            13.1019926071167,
+            1058.012451171875,
+            -1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "CanTouch": true,
+          "Size": [
+            3,
+            0.3857825994491577,
+            3
+          ]
+        },
+        {
+          "Anchored": true,
+          "Path": "Workspace.Levels.RedTeam.Spawn3",
+          "CanQuery": true,
+          "CanCollide": false,
+          "Transparency": 1,
+          "CFrame": [
+            -265.74847412109375,
+            13.1019926071167,
+            1054.012451171875,
+            -1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "CanTouch": true,
+          "Size": [
+            3,
+            0.3857825994491577,
+            3
+          ]
+        },
+        {
+          "Anchored": true,
+          "Path": "Workspace.Levels.RedTeam.Spawn4",
+          "CanQuery": true,
+          "CanCollide": false,
+          "Transparency": 1,
+          "CFrame": [
+            -258.74847412109375,
+            13.1019926071167,
+            1054.012451171875,
+            -1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "CanTouch": true,
+          "Size": [
+            3,
+            0.3857825994491577,
+            3
+          ]
+        },
+        {
+          "Anchored": true,
+          "Path": "Workspace.Levels.BlueTeam.Spawn1",
+          "CanQuery": true,
+          "CanCollide": false,
+          "Transparency": 1,
+          "CFrame": [
+            -265.66455078125,
+            13.1019926071167,
+            1244.012451171875,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "CanTouch": true,
+          "Size": [
+            3,
+            0.3857825994491577,
+            3
+          ]
+        },
+        {
+          "Anchored": true,
+          "Path": "Workspace.Levels.BlueTeam.Spawn2",
+          "CanQuery": true,
+          "CanCollide": false,
+          "Transparency": 1,
+          "CFrame": [
+            -258.66455078125,
+            13.1019926071167,
+            1244.012451171875,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "CanTouch": true,
+          "Size": [
+            3,
+            0.3857825994491577,
+            3
+          ]
+        },
+        {
+          "Anchored": true,
+          "Path": "Workspace.Levels.BlueTeam.Spawn3",
+          "CanQuery": true,
+          "CanCollide": false,
+          "Transparency": 1,
+          "CFrame": [
+            -258.66455078125,
+            13.1019926071167,
+            1248.012451171875,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "CanTouch": true,
+          "Size": [
+            3,
+            0.3857825994491577,
+            3
+          ]
+        },
+        {
+          "Anchored": true,
+          "Path": "Workspace.Levels.BlueTeam.Spawn4",
+          "CanQuery": true,
+          "CanCollide": false,
+          "Transparency": 1,
+          "CFrame": [
+            -265.66455078125,
+            13.1019926071167,
+            1248.012451171875,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "CanTouch": true,
+          "Size": [
+            3,
+            0.3857825994491577,
+            3
+          ]
+        }
+      ]
+    }
+  ],
+  "IsRunning": false,
+  "Missing": [],
+  "Slots": [
+    {
+      "Anchor": "ServerStorage.EndGames-Scenario.ScenarioFinal.Players.SlotPlayer_1.BillboardAnchor",
+      "CFrame": [
+        527.302734375,
+        51.06658172607422,
+        38.40934371948242,
+        -0.4999990463256836,
+        0,
+        0.8660261631011963,
+        0,
+        1,
+        0,
+        -0.8660262227058411,
+        0,
+        -0.4999989867210388
+      ],
+      "Components": [
+        "RankLabel",
+        "PlayerName",
+        "MVPLabel",
+        "Username",
+        "TeamLabel",
+        "PreviewLabel",
+        "StatsFrame",
+        "StatsFrame.GoalsLabel",
+        "StatsFrame.KillsLabel",
+        "StatsFrame.DeathsLabel",
+        "StatsFrame.MatchPointsLabel"
+      ],
+      "Reserved": false
+    },
+    {
+      "Anchor": "ServerStorage.EndGames-Scenario.ScenarioFinal.Players.SlotPlayer_2.BillboardAnchor",
+      "CFrame": [
+        526.5700073242188,
+        51.06658172607422,
+        34.21356201171875,
+        -0.4999990463256836,
+        0,
+        0.8660261631011963,
+        0,
+        1,
+        0,
+        -0.8660262227058411,
+        0,
+        -0.4999989867210388
+      ],
+      "Components": [
+        "RankLabel",
+        "PlayerName",
+        "MVPLabel",
+        "Username",
+        "TeamLabel",
+        "PreviewLabel",
+        "StatsFrame",
+        "StatsFrame.GoalsLabel",
+        "StatsFrame.KillsLabel",
+        "StatsFrame.DeathsLabel",
+        "StatsFrame.MatchPointsLabel"
+      ],
+      "Reserved": false
+    },
+    {
+      "Anchor": "ServerStorage.EndGames-Scenario.ScenarioFinal.Players.SlotPlayer_3.BillboardAnchor",
+      "CFrame": [
+        530.5874633789062,
+        51.06658172607422,
+        41.086631774902344,
+        -0.4999990463256836,
+        0,
+        0.8660261631011963,
+        0,
+        1,
+        0,
+        -0.8660262227058411,
+        0,
+        -0.4999989867210388
+      ],
+      "Components": [
+        "RankLabel",
+        "PlayerName",
+        "MVPLabel",
+        "Username",
+        "TeamLabel",
+        "PreviewLabel",
+        "StatsFrame",
+        "StatsFrame.GoalsLabel",
+        "StatsFrame.KillsLabel",
+        "StatsFrame.DeathsLabel",
+        "StatsFrame.MatchPointsLabel"
+      ],
+      "Reserved": false
+    },
+    {
+      "Anchor": "ServerStorage.EndGames-Scenario.ScenarioFinal.Players.SlotPlayer_4.BillboardAnchor",
+      "CFrame": [
+        523.5443725585938,
+        51.06658172607422,
+        31.319013595581055,
+        -0.4999993145465851,
+        0,
+        0.8660261631011963,
+        0,
+        1,
+        0,
+        -0.8660268187522888,
+        0,
+        -0.4999990165233612
+      ],
+      "Components": [
+        "RankLabel",
+        "PlayerName",
+        "MVPLabel",
+        "Username",
+        "TeamLabel",
+        "PreviewLabel",
+        "StatsFrame",
+        "StatsFrame.GoalsLabel",
+        "StatsFrame.KillsLabel",
+        "StatsFrame.DeathsLabel",
+        "StatsFrame.MatchPointsLabel"
+      ],
+      "Reserved": false
+    },
+    {
+      "Anchor": "ServerStorage.EndGames-Scenario.ScenarioFinal.Players.SlotPlayer_5.BillboardAnchor",
+      "CFrame": [
+        532.1773071289062,
+        51.06658172607422,
+        44.78764724731445,
+        -0.4999989867210388,
+        0,
+        0.866025984287262,
+        0,
+        1,
+        0,
+        -0.8660261631011963,
+        0,
+        -0.49999889731407166
+      ],
+      "Components": [
+        "RankLabel",
+        "PlayerName",
+        "MVPLabel",
+        "Username",
+        "TeamLabel",
+        "PreviewLabel",
+        "StatsFrame",
+        "StatsFrame.GoalsLabel",
+        "StatsFrame.KillsLabel",
+        "StatsFrame.DeathsLabel",
+        "StatsFrame.MatchPointsLabel"
+      ],
+      "Reserved": true
+    }
+  ],
+  "Persistence": {
+    "Environment": "Studio",
+    "Scope": "Read-only resolver in Edit; Bootstrap not started",
+    "ProviderName": "InMemory",
+    "Diagnostics": {
+      "StoredKeys": 0,
+      "CommittedWrites": 0,
+      "UpdateAsyncCalls": 0,
+      "ProviderName": "InMemory",
+      "GetAsyncCalls": 0,
+      "WritesToCloud": false
+    },
+    "WritesToCloud": false
+  },
+  "IsStudio": true,
+  "Scripts": {
+    "ServerScriptService.Services.MatchmakingService": "1ecf706440a092fd9e883bf5a71808580be4577a8672865e89eb931fb6d37664",
+    "ServerScriptService.Services.SpawnService": "4d3ebb10e233e906cd8f34b31cbb63fecc27aa19eefe79d9d4794436ab9dcc4c",
+    "ReplicatedStorage.Shared.Config": "6b4d4b6440f6ff20bc9bd54c6c43a61147b07cb6a53242f81f0948d6b659fbda",
+    "StarterPlayer.StarterPlayerScripts.Controllers.MatchmakingController": "24472671f9ba41c945e9d8b1de427b0934e3d41c53476291a096f148dc723bf9",
+    "StarterPlayer.StarterPlayerScripts.EndCinematicPreview": "54b1867a30d043a003ed62727a0a81394612d929136aa78a19710344b549f758",
+    "ReplicatedStorage.Shared.EndCinematicRanking": "89e30e1a316d0f0bc8a67d06b4f1857cdf2231fc8c34fb7a6a5728e80ac9f268"
+  },
+  "ActiveMatches": 0,
+  "FinalMapInspection": {
+    "Maps": [
+      {
+        "Path": "Workspace.Levels",
+        "ZoneWinValid": true,
+        "Spawns": [
+          {
+            "CanQuery": true,
+            "Slot": 1,
+            "CFrame": [
+              -258.74847412109375,
+              13.1019926071167,
+              1058.012451171875,
+              -1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              -1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Red",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 2,
+            "CFrame": [
+              -265.74847412109375,
+              13.1019926071167,
+              1058.012451171875,
+              -1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              -1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Red",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 3,
+            "CFrame": [
+              -265.74847412109375,
+              13.1019926071167,
+              1054.012451171875,
+              -1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              -1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Red",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 4,
+            "CFrame": [
+              -258.74847412109375,
+              13.1019926071167,
+              1054.012451171875,
+              -1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              -1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Red",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 1,
+            "CFrame": [
+              -265.66455078125,
+              13.1019926071167,
+              1244.012451171875,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Blue",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 2,
+            "CFrame": [
+              -258.66455078125,
+              13.1019926071167,
+              1244.012451171875,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Blue",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 3,
+            "CFrame": [
+              -258.66455078125,
+              13.1019926071167,
+              1248.012451171875,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Blue",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 4,
+            "CFrame": [
+              -265.66455078125,
+              13.1019926071167,
+              1248.012451171875,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Blue",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          }
+        ],
+        "Descendants": 152,
+        "Class": "Model",
+        "Children": 8,
+        "GeometryPresent": true
+      },
+      {
+        "Path": "ServerStorage.Maps.Levels",
+        "ZoneWinValid": true,
+        "Spawns": [
+          {
+            "CanQuery": true,
+            "Slot": 1,
+            "CFrame": [
+              -117.74848937988281,
+              13.1019926071167,
+              1058.012451171875,
+              -1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              -1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Red",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 2,
+            "CFrame": [
+              -124.74848937988281,
+              13.1019926071167,
+              1058.012451171875,
+              -1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              -1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Red",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 3,
+            "CFrame": [
+              -124.74848937988281,
+              13.1019926071167,
+              1054.012451171875,
+              -1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              -1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Red",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 4,
+            "CFrame": [
+              -117.74848937988281,
+              13.1019926071167,
+              1054.012451171875,
+              -1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              -1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Red",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 1,
+            "CFrame": [
+              -124.66455078125,
+              13.1019926071167,
+              1244.012451171875,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Blue",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 2,
+            "CFrame": [
+              -117.66455078125,
+              13.1019926071167,
+              1244.012451171875,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Blue",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 3,
+            "CFrame": [
+              -117.66455078125,
+              13.1019926071167,
+              1248.012451171875,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Blue",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          },
+          {
+            "CanQuery": true,
+            "Slot": 4,
+            "CFrame": [
+              -124.66455078125,
+              13.1019926071167,
+              1248.012451171875,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1
+            ],
+            "CanTouch": true,
+            "Transparency": 1,
+            "Team": "Blue",
+            "CanCollide": false,
+            "Anchored": true,
+            "Size": [
+              3,
+              0.3857825994491577,
+              3
+            ]
+          }
+        ],
+        "Descendants": 152,
+        "Class": "Model",
+        "Children": 8,
+        "GeometryPresent": true
+      }
+    ],
+    "SpawnComparisons": [
+      {
+        "Team": "Red",
+        "SameCFrame": false,
+        "SameSize": true,
+        "Slot": 1
+      },
+      {
+        "Team": "Red",
+        "SameCFrame": false,
+        "SameSize": true,
+        "Slot": 2
+      },
+      {
+        "Team": "Red",
+        "SameCFrame": false,
+        "SameSize": true,
+        "Slot": 3
+      },
+      {
+        "Team": "Red",
+        "SameCFrame": false,
+        "SameSize": true,
+        "Slot": 4
+      },
+      {
+        "Team": "Blue",
+        "SameCFrame": false,
+        "SameSize": true,
+        "Slot": 1
+      },
+      {
+        "Team": "Blue",
+        "SameCFrame": false,
+        "SameSize": true,
+        "Slot": 2
+      },
+      {
+        "Team": "Blue",
+        "SameCFrame": false,
+        "SameSize": true,
+        "Slot": 3
+      },
+      {
+        "Team": "Blue",
+        "SameCFrame": false,
+        "SameSize": true,
+        "Slot": 4
+      }
+    ]
+  },
+  "MapStateNote": "Owner temporarily reorganized maps during verification, then confirmed one Workspace.Levels and one ServerStorage.Maps.Levels; no physical writes by agent.",
+  "RelativeSpawnComparison": {
+    "1": {
+      "Team": "Red",
+      "Matches": true,
+      "RelativeCFrameMaxError": 1.52587890625e-05,
+      "Slot": 1
+    },
+    "2": {
+      "Team": "Red",
+      "Matches": true,
+      "RelativeCFrameMaxError": 1.52587890625e-05,
+      "Slot": 2
+    },
+    "3": {
+      "Team": "Red",
+      "Matches": true,
+      "RelativeCFrameMaxError": 1.52587890625e-05,
+      "Slot": 3
+    },
+    "4": {
+      "Team": "Red",
+      "Matches": true,
+      "RelativeCFrameMaxError": 1.52587890625e-05,
+      "Slot": 4
+    },
+    "5": {
+      "Team": "Blue",
+      "Matches": true,
+      "RelativeCFrameMaxError": 0,
+      "Slot": 1
+    },
+    "6": {
+      "Team": "Blue",
+      "Matches": true,
+      "RelativeCFrameMaxError": 0,
+      "Slot": 2
+    },
+    "7": {
+      "Team": "Blue",
+      "Matches": true,
+      "RelativeCFrameMaxError": 0,
+      "Slot": 3
+    },
+    "8": {
+      "Team": "Blue",
+      "Matches": true,
+      "RelativeCFrameMaxError": 0,
+      "Slot": 4
+    }
+  }
+}

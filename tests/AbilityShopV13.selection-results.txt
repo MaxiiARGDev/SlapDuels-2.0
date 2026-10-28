@@ -1,0 +1,1 @@
+PASS: 15 isolated purchase/selection assertions; no Studio/gameplay/cloud execution.

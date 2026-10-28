@@ -1,8 +1,8 @@
 # Slap Duels 2.0 — TESTING
 
-> Este documento conserva contenido del `GAME_SDD.md` original suministrado, redistribuido por dominio para reducir el contexto necesario para agentes de IA.
+> Especificación vigente. Define el comportamiento requerido; no certifica que la implementación ni los assets actuales hayan sido verificados en Studio.
 
-## 11. Protocolo de Pruebas (Testing)
+## Protocolo de Pruebas (Testing)
 
 Antes de dar por completado cualquier sistema, se deben ejecutar pruebas exhaustivas:
 - **Flujo normal:** Comportamiento esperado de principio a fin.
@@ -15,8 +15,7 @@ Antes de dar por completado cualquier sistema, se deben ejecutar pruebas exhaust
 
 ---
 
-
-## 12. Definition of Done (DoD)
+## Definition of Done (DoD)
 
 Una tarea o feature solo se considera **COMPLETA** cuando satisface la siguiente lista de verificación:
 
@@ -32,3 +31,7 @@ Una tarea o feature solo se considera **COMPLETA** cuando satisface la siguiente
 - [ ] **Compatibilidad Rojo:** Compilación limpia sin errores en sourcemap ni build.
 
 ---
+
+## Validación documental
+
+Una revisión exclusiva del SDD requiere enlaces locales resolubles, contratos consistentes entre dominios y registro de las reglas sustituidas. No requiere ejecutar gameplay ni permite afirmar que pasó pruebas de Studio o Rojo. Para cambios de implementación se mantiene íntegro el protocolo y DoD anteriores.

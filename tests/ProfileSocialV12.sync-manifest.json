@@ -1,0 +1,86 @@
+[
+  {
+    "File": "src/server/Bootstrap.server.luau",
+    "Path": "ServerScriptService.Bootstrap",
+    "Before": "aa6f1a8aef9703f30c8e85f7f61ae7ce687a4305927199cf5cd0c05d3146b2f5",
+    "After": "240a737cf02f02eef04203bb5e87314e2d85ed67a9ab8056de703a0490ea0237"
+  },
+  {
+    "File": "src/shared/SocialPlayConfig.luau",
+    "Path": "ReplicatedStorage.Shared.SocialPlayConfig",
+    "Before": null,
+    "After": "bae9a5a8333488fbe835f6eb74f0e5a0e479f173d3586139df0f0ad28ae1fea9"
+  },
+  {
+    "File": "src/shared/Types.luau",
+    "Path": "ReplicatedStorage.Shared.Types",
+    "Before": "22ea0e74a2e6d0ba92ba2d22ed98b83769092477b6fff04df72a9bde3e27b1fa",
+    "After": "72654aad4e508dbd0d71c77f076048895e1da3041a59d90941f3a637ea79d458"
+  },
+  {
+    "File": "src/client/Controllers/SocialController.luau",
+    "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SocialController",
+    "Before": "cd38f72ab3fec43a49465c65c52229e2d8d96a5974e405b9c5905c6ad62c8906",
+    "After": "c042081f8bd8bc47c3b5038fdbee8ac9b893329fc72e0483377bd56bc13b352f"
+  },
+  {
+    "File": "src/client/Controllers/SocialPlayController.luau",
+    "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SocialPlayController",
+    "Before": null,
+    "After": "4d85b31f9db81efd5bfc2a43ae1cdea32d79074e7ae72e82a9d3513ef9e67c65"
+  },
+  {
+    "File": "src/server/Services/MatchmakingService.luau",
+    "Path": "ServerScriptService.Services.MatchmakingService",
+    "Before": "1ecf706440a092fd9e883bf5a71808580be4577a8672865e89eb931fb6d37664",
+    "After": "5ef7f9618cbe421deafe05217ae5bd863f1ebae327ea8e9681a59a31d1e2f19a"
+  },
+  {
+    "File": "src/server/Services/PlayerDataService.luau",
+    "Path": "ServerScriptService.Services.PlayerDataService",
+    "Before": "ebc3a7e7a5b1079ed8fb63c2af712a187f0cdbcea181228d22b2ccb6177204ee",
+    "After": "10176e8a7de4f83966a62e1a3afb00441121ffc8b00d2b738c813b39cfdba4d0"
+  },
+  {
+    "File": "src/server/Services/PlayerService.luau",
+    "Path": "ServerScriptService.Services.PlayerService",
+    "Before": "4a091f3807f62e7ee89a0c57759baccace5e600f62221b701a37468378aad926",
+    "After": "eed184f903b036d82d748c4c30fdb2b644fe90d2b305ab864c7f80749a5392e7"
+  },
+  {
+    "File": "src/server/Services/RoundService.luau",
+    "Path": "ServerScriptService.Services.RoundService",
+    "Before": "5a28d63b0e165fb5a024d0d7d3eb29101f73ebfec9ba5e72a2961585c4d7b7b6",
+    "After": "9da200cb1ede84aad1f8ee725684e430047027e486b14780000f43c087f27f20"
+  },
+  {
+    "File": "src/server/Services/SocialPlayService.luau",
+    "Path": "ServerScriptService.Services.SocialPlayService",
+    "Before": null,
+    "After": "54567d1934ca54d79ca825d62aa722defd2f25eb603df8b17c26171b63a195c4"
+  },
+  {
+    "File": "src/server/Services/SocialService.luau",
+    "Path": "ServerScriptService.Services.SocialService",
+    "Before": "85daa7796e4939b3906b05feac59c702d2f77ab8c25e89e2eceddf2f1f82c380",
+    "After": "bc8cfdcf3e82df8aa2a4f0513d4e4c4adb8e00fc5e652691cf4efbdfa881388f"
+  },
+  {
+    "File": "src/server/Services/Gameplay/SocialPlayEngine.luau",
+    "Path": "ServerScriptService.Services.Gameplay.SocialPlayEngine",
+    "Before": null,
+    "After": "7e65bb1f80c0ed96fb2b24e974679f2ec6487acfda3c1d0bc3ead81b0c81a17f"
+  },
+  {
+    "File": "src/server/Services/Gameplay/WinStreak.luau",
+    "Path": "ServerScriptService.Services.Gameplay.WinStreak",
+    "Before": null,
+    "After": "5c4b07bbfa748d7f2397f6429b81df6ae7eb70e1e179557330aa621120e58697"
+  },
+  {
+    "File": "src/server/Services/Trading/PublicInventory.luau",
+    "Path": "ServerScriptService.Services.Trading.PublicInventory",
+    "Before": "36ac29a28a9d09c8896dd63a67345155ec1a3458eceb1bd6bd617c714c53d9c0",
+    "After": "80458033a4598deda8b8b4bbbd05df5d079d8565bd41bd12dd833d069c58bca3"
+  }
+]

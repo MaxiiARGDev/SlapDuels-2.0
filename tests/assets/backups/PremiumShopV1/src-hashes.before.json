@@ -1,0 +1,746 @@
+[
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\AbilityEffects.rbxm",
+    "Hash": "ccecd9e2e62c45e7fb7e4826625e4a43e139bb5d5bba2069bfdc94e1b00391ce"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateEffects.project.json",
+    "Hash": "7b5710b5f8fcee1fd7a5c45afb5d3ed0e563c8b88333a53769af9b60a6e11662"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateRewardPreviews.project.json",
+    "Hash": "94cca07cf268108e792da4150d35a1eeccb3361a3ee9e93b5597ac7cd2d7d799"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateStands.project.json",
+    "Hash": "70cecabdc7ac509d72b527d99c87656bcf8c5fbbf459f8cc29cfba5fcb48039d"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\DeathEffects.project.json",
+    "Hash": "511da1e2f5f7bcbab2bf496fca856b7cde09fd51f273a126e24058a9f8333beb"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\Frost.rbxm",
+    "Hash": "f6402f7aeb0c29754c2350b8a16b1c78b61a8e77d6a5f3011ff4bad8eada6254"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\SlapVariationEffects.project.json",
+    "Hash": "4e6ed7120676974a75ee21e30fb06a9ad719318aee601e3e4a2c2e7d69606904"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\SlapVariationPreviews.project.json",
+    "Hash": "6e95970870a20d56b700c31ed941d1c317d653909d2b6d74af7b2e888918d046"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\SuddenDeathAssets.rbxm",
+    "Hash": "30309562d76ec44a50267f860fd2045c3a1e7d856acded9d8f2fa64971edb646"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\SuddenDeathMusic.rbxm",
+    "Hash": "d6c55fb6d06393c8ddb2b109fa300d0497928d760377ee164fe861c5a6ba1b4f"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\Void.rbxm",
+    "Hash": "e61992e0cd44a00d7317749b76963b279a995bff7958cc81bf73650c8c3cd17f"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\character\\ArenaRespawnGuard.client.luau",
+    "Hash": "88cd022cab46b0cb193e4c274ea1d28244aafd06f291a09d7703ca1cf604cbda"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\character\\RagdollStatesHandler.client.luau",
+    "Hash": "f78eff3ebb3e3cb6cc71634e629cc6b746ca8f73e2fc7d94a2668963b6da0d70"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\AnimacionLetras1v1.client.luau",
+    "Hash": "ba59761efefde6ad1ae557dfdf6babe1d7c90d6a900c176835c617a7449e58be"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\ClientBootstrap.client.luau",
+    "Hash": "613a2bab21064fc7b130e3f127168366e829834190e2944b9861838b48dfdc8e"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\EndCinematicPreview.client.luau",
+    "Hash": "d46ee1906619fe6adcdabf5c25bccf3d356acded974ae9430943d300df7ef2a8"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\PointCameraFX.client.luau",
+    "Hash": "a6cace0ea0eab749eec66a085b9a2567b48a1faf39832e7738f865be9a764867"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Bootstrap.server.luau",
+    "Hash": "6a2e9ae2df261d4dc476e0d66ecb232e59630a28f2afbd070bed778c1632dbd6"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\RagdollHandler.server.luau",
+    "Hash": "b8e94e37f71088daa8a355c30da8a185acd5a1000ec19092b569a6dbab8430ab"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\RagdollModule.luau",
+    "Hash": "f0c382f77c431fa36ecf1ff2ec19ef9294c1daf1835e1f11fb2b60eeddc12e66"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\AbilityCatalog.luau",
+    "Hash": "5c411a26b02f86d65f1b596814d312e176a678b49b36c4de350f688ee7f3c60b"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\AbilityDefinitions.luau",
+    "Hash": "6bf60d4358c6459754c979a2e7f04510e57efdcebab34e8488b8c165d242a1d3"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\AbilityDiagnostics.luau",
+    "Hash": "b3bfea5bfad9ab24436ca011d8b23ff6fca688ff50c7259ad4b76a492c188714"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\ArenaRespawnPolicy.luau",
+    "Hash": "20cb2b061338c1b42cd0417a7a41bc238492fd9ba2d60936cddd002c2d32519b"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\Config.luau",
+    "Hash": "3ca14f0de771532c4ae395e067387b23e8bed0fa0918fb2d6f2e41a127185a6f"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\Constants.luau",
+    "Hash": "c405a645e540cdc73346bd8d93dc75ce0b032a801a06e9234698234806b3cc92"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\DeathEffectDefinitions.luau",
+    "Hash": "f8ad6032d33beec5d973b98940af855f981ee8d66444b2870bff00883281618a"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\DeathFeedbackConfig.luau",
+    "Hash": "0a2d9c683dbef08a270caef73077236a3f844864b7a958ca0d6e0f01ba7ee882"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\DeathFeedbackContract.luau",
+    "Hash": "3b1d112a408cfabe93dee9895c8a9f69278485797b920525aed42c09872e584d"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\EndCinematicConfig.luau",
+    "Hash": "147ae6bf2b5ebad64b6e383ca529b35514b45ae9bad780af763dacf47f71825b"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\EndCinematicRanking.luau",
+    "Hash": "329fc579dd60f03c5906c9c47f2c0a9ed6e5b5a84a3156cbea968ac0a7c37b52"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\PointEffectDefinitions.luau",
+    "Hash": "0167d6ce2dea9abeadc48c994f2f77989871a8706b6fa953aa906f59bd5f07f2"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\Types.luau",
+    "Hash": "c8b28706794dfbdc995b21b494be58a11b64ba2c592dbca821baf623c408a52d"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\AbilityHUD.rbxm",
+    "Hash": "7928006fb52a79a532ec54386e321fe1914ee2d4bc4b27f54a0cf5e8cd6191e3"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\CombatSlots.project.json",
+    "Hash": "f9dfa936aa8b305d45a5036db4ed58a48472d0398d57e40172c14162837d5437"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\CrateActionsTemplate.project.json",
+    "Hash": "43bcdf88c72f2635f979dddef7e4d3c6dd1c863ed3c1a61a369bacb707f1751f"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\CrateOddsList.project.json",
+    "Hash": "df8ea66ac89b43c142c958bca2d8706de0348236fc30a763b0e674269dd0a52b"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\CrateOpeningHUD.project.json",
+    "Hash": "df3c175486a39cb268c613ba072d015897254d75f67836ba83f89a7947fe3d6a"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\CratePanel.project.json",
+    "Hash": "40828afae0efbf322102248320e47723bf2255c249c4f0805c23a261681e3140"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\CratePreviewTemplate.project.json",
+    "Hash": "b0461666fd219851a5d3884a713ac2f863728ecbfdd45c55837505fd8f26f506"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\CrateSpinPanel.project.json",
+    "Hash": "3b0bff9391d2edbc1bcfd6d169c05bc983680fd48559f42e6fac575584d4d8a5"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\CratesTab.project.json",
+    "Hash": "af09966668fc98b6a89b821268a13d5739a4fcfdab9502bed2041c852904c779"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\DeathFeedbackHUD.project.json",
+    "Hash": "835804e0b94636e0c9e938e07d934f3fca61e092379ed682f1cd318d71baf9fb"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\EndCinematicBillboardAnchor.rbxmx",
+    "Hash": "3c4541c114dcc6ac14cccdd4d129fb8382144564d06dccb50ea9dffaf42efa32"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\EndCinematicBillboardTemplate.rbxmx",
+    "Hash": "b30a79919c798da6bde3641132adb23b4d1e05a267d1ce96f3301b364a1a8fe3"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\EndCinematicHUD.rbxmx",
+    "Hash": "3220388c92d18b605a7f3fa97cbc586021957d67d61bc7c16be1c307c05e9c38"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\KillRewardHUD.project.json",
+    "Hash": "8d757f9ecac800a9cf606a9f3fac44d66d9f43a51cb558ff263aa9d7fac3f218"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\MatchHUD.rbxm",
+    "Hash": "603eca0a15b3012f4ac1a02a0e3727d9677b749d296bbd22617543913815d070"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\MatchHUD.rbxmx",
+    "Hash": "a29f12ae0e98a3c8a519165d034b75229d15642507e8427da2a6879f701fc931"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\MatchmakingHUD.rbxmx",
+    "Hash": "be9c0abb46dd0cf55802ac30a52289555a137f0690885a0c9ec43f5337019a30"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\PlayerHUD.rbxmx",
+    "Hash": "85da5fd12b01807801faa3555e7400a5d949cf35e1e409a2e9fa8e4864c6af95"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\ShopHUD.rbxm",
+    "Hash": "8ba03c9ee53acf34d79ed7c60ba7c27e71f6952ba6f3e484d93a2af934540676"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\SuddenDeathHUD.rbxm",
+    "Hash": "7e75c40d29567c4400bbb4eea7d081b506ea029a570d96d323c7a4fe04f36c4e"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateBatchV24\\CrateBatchRewardSlot.rbxm",
+    "Hash": "b34f57cb077aed2c386cea81de429c277a51b32707921e7094d6972daeda49bd"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateBatchV24\\MainCrateStand.rbxm",
+    "Hash": "308e97088596283e1ed8a742f019b6b2e13df16c3dd14bda26eaf34676963ab7"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateBatchV24\\manifest.json",
+    "Hash": "5aa46994faf106071ea3cd87f82e4ca15cfd5fd9c158892389069b422fa50685"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateBatchV24\\ShopHUD.rbxm",
+    "Hash": "9ff3c7de491d0f2abcba18cee8862e0a8c9284db33d0e9242e185efb9dd7a852"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateCinematicV23\\CrateOpeningHUD.rbxm",
+    "Hash": "569d148832b054438e5cee40fbbe138f41765e29269d82281c4514042bbaf935"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateCinematicV23\\MainCrateStand.rbxm",
+    "Hash": "b1e65dfeb934508dcb4d586c0753179e165f8164202933845df360968672f69a"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateCinematicV23\\manifest.json",
+    "Hash": "826a0036083e4f1dd2490dfd13bf83ff24e662cc0972067f2508d1c6d36fda8e"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateRevealV25\\CrateRevealV25.rbxm",
+    "Hash": "4eb56ed7fe1fc005fec60fee2a5bd385496b65dd685ebd6908c97a3e1ae46a73"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateRevealV25\\manifest.json",
+    "Hash": "3d6c1c356f7a8f4cba60c46397e1cb0b4acc841114e3204d5daa3b4cfb7037bb"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateRevealV25\\ShopHUD.rbxm",
+    "Hash": "3520d1d2e9d1ce541f59f11c99bac1a4b522c17625f870e7aa76357e4503fe02"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateVisualsV21\\CrateOpeningHUD.rbxm",
+    "Hash": "443984dae9326a10615e8d6725eec84ad31a59fe83a72ba65e93a6140eba79ff"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateVisualsV21\\MainCrateStand.rbxm",
+    "Hash": "d813859729da7ea6d0acaeaf9fa9ef0deac98584aa19d1ebb9c09032384e582e"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateVisualsV21\\manifest.json",
+    "Hash": "cda5caff9c613d0031e2bcc68ce14e7cfd2dbfda637bc287ac841fa578195a3e"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\assets\\CrateVisualsV21\\ShopHUD.rbxm",
+    "Hash": "ce7a44b723f4881e1fb5c3a8bfac9d2f5e369c409393608d05f7dded80e39b57"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Abilities\\AbilityPresentation.luau",
+    "Hash": "61e2780b9e6ffbafd96a539724e8a441fb45db04531f44f7f9a2d39a81320f8e"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Abilities\\AbilityPresentationProfiles.luau",
+    "Hash": "abd8dff045d4e324420d4344a536b602a62d5b22f1e07bd19ee5f86cd23fe118"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Abilities\\AbilitySelection.luau",
+    "Hash": "23d028b93df6c34159bbfaec7a0dd815f6bd0cc536aa894062e6b4ce7c2847cd"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\AbilityController.luau",
+    "Hash": "2a691f644ad5388029e44790b03e4a96e37d2b985a69751dcc0f9c6730f93e54"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\CrateController.luau",
+    "Hash": "ce22b2274874bb184bf66dcbf53cf08b4f8d31aedf3ad34414f0161a10175a2a"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\CrateStandCinematicController.luau",
+    "Hash": "aec02fe161124b92213ba28245ab6aec703860eea1b5a19301f7fad4c37468c3"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\DeathFeedbackController.luau",
+    "Hash": "465def2959ae4eb035cd23d8ecda01b5a2fe49e716f061b48d8b2815c9395de1"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\EndCinematicController.luau",
+    "Hash": "dd7b933b95be168efd0e16d0a286357d271ecb0a9f123a9fafe8aeb8242fe049"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\KillRewardController.luau",
+    "Hash": "2b93f05d9a34e44111143944c661fc9a1c17b4c21edb1d57cfa25e8254f0f6b1"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\MatchController.luau",
+    "Hash": "98fe925e6699a72603082541933a6fe3a54abd2ae9fe5424e013c8daf7e09d41"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\MatchmakingController.luau",
+    "Hash": "591feadf8bfec176f199aa154c5c1a911d3685044755bdf1ca2d613be29d205e"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\MatchStartEffectsController.luau",
+    "Hash": "1bc3311357418fea886f42a21d4b8ab452e9598dc38af882841f24fdc618d3f0"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\MusicController.luau",
+    "Hash": "c8f15e3efe43beb1cc5f084a526a375a5a6e251b17a22f59ea3921a7ed8782d6"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\PlayerHUDController.luau",
+    "Hash": "703df89bfd5323b585206cb0f037ee5acb4b91c6a3e022ea2f40840f0979bb2a"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\SettingsController.luau",
+    "Hash": "56af1a0b2223973100ff42aa4edc87c83210994d67d094df2f0aa0628ab8f745"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\ShopController.luau",
+    "Hash": "3a9bbdc724827476f288228507ad58112b3fc64d9ea8abce4a952f73153b73cf"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\SlapController.luau",
+    "Hash": "6bc83af68748151e2c692938e3182f176f20b4ee56eb88482565e2c5bebf87f1"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\SuddenDeathController.luau",
+    "Hash": "7e9d2a857d5f74bad47c40fcd0235bf312497a0a3a7daa462b55b1b81e922b50"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\CameraLease.luau",
+    "Hash": "689aab5e4f72190477644dec283b66610f0481f1cf1bbb61fe2c1784cde9c80a"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\CharacterVisibility.luau",
+    "Hash": "73c96ac504d7745371a1353ca43a6243123e359d0f46113a356a61a8980c18d8"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\CinematicConfig.luau",
+    "Hash": "27721a9975c21d2c276a1b6ec2066ebfd749903fb4f27bb0c05cfc1e9e746b29"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\CinematicMotion.luau",
+    "Hash": "c172f12c436f1fbb5a6312e33ee59f069bac66ae71a44dcfd82c76345566f702"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\CinematicTransition.luau",
+    "Hash": "3cdda4465cadeea00c14e8b57dfe6de82640df51eeae22278771accc84be72ee"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\RewardGallery.luau",
+    "Hash": "5a8fd3f2eb5161cb8d16fa3f45b35e8f1d4978c29acda4898415f9f5866e6b7c"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\RewardGalleryLayout.luau",
+    "Hash": "320499a2cc1de34d98d390e29753f066943cb7a44c66ca4df8d8deacd2a980b5"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\RewardOverlayPresenter.luau",
+    "Hash": "1f9e44f81e7a0590da734921f484f6299e39f9205c26e3d3dd133b8bda238c44"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\RewardRevealConfig.luau",
+    "Hash": "c0de11deeefcd560406be9c69024c01719a3470e00f39cfb7d5415cf27c074cf"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\RewardRevealProfile.luau",
+    "Hash": "10a2534705091ebb3e77a305f158cf98dc4ffb1eb6b201695ca30fd52dfb75c2"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\RewardSpin3D.luau",
+    "Hash": "3a64fa59c4abcae5c4b8a7393cdb29b6eb246caeb79dbf6e6fc04dc65bae0c6a"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\RewardSpinMotion.luau",
+    "Hash": "48f456c6ff5b35fbba9ab286560466052553c4d4239a9afb9e0992ba1cad8d26"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\RewardVFX.luau",
+    "Hash": "4159e422477ab199c270e846f7dd9702753b0a24b4d12d8ceef833123489ee07"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\StandPromptVisibility.luau",
+    "Hash": "48a9720c5fbbdff3956a66c4fb20a161be72a6ad89803857a7c3609d2a393155"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\CrateOpening\\VisualProfile.luau",
+    "Hash": "62d5a0941c0ee4f64f71c9e4d776a4a26c6f8ab87089e05f2f2680e3e1635a75"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\DeathFeedback\\DeathEffectPlayer.luau",
+    "Hash": "94fa8d57ba6833ec1aba74b11ba7d9cdb8ae5c9a02de8ac2b5fd83b83006b335"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\DeathFeedback\\DeathNotifications.luau",
+    "Hash": "ee8e6354cf0d1f1b1634c0839ebec6d4a5b345591cf6f5d31e98609c38fbdfac"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\DeathFeedback\\Scope.luau",
+    "Hash": "c15e187b8e7636b89bc62a664ed9c13326fc97ca440ad3dde96629df2447514b"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\EndCinematic\\Modules\\EndCinematicAnimations.luau",
+    "Hash": "0bc03bea650115c804a8b46e0c7e767286d94fb9404ed5ee4c364c9260de7df5"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\EndCinematic\\Modules\\EndCinematicAudio.luau",
+    "Hash": "31dc0bb7556e2875aaf26dfaf140fde943ac0bcf26b5d06920a3d45a3eee096f"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\EndCinematic\\Modules\\EndCinematicAvatars.luau",
+    "Hash": "a6593bbe91757a847291143d23bc1bc4ebb6788bdfd8370210303955f6ca234c"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\EndCinematic\\Modules\\EndCinematicBillboards.luau",
+    "Hash": "73a4667052b3943a4abd5907da35c0f8c21397c188c7d068812b1df2dca32b5f"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\EndCinematic\\Modules\\EndCinematicCamera.luau",
+    "Hash": "71dc206da20fc97d180a71fcbfff0261ce2ebe7481e311da1a444cd8beb8e4b8"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\EndCinematic\\Modules\\EndCinematicHUD.luau",
+    "Hash": "2c95b59b410208be86da4fbc2e0a62fbbb302eafc3b2dab02b4d65cd19cf4cd9"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\EndCinematic\\Modules\\EndCinematicParticles.luau",
+    "Hash": "0a591e12c18e695bbb88c05ddcad733e54d7c3808a0d08fdbc5f6559b6f94fdf"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\EndCinematic\\Modules\\EndCinematicRanking.luau",
+    "Hash": "e24fd8a125e37cb7338eb78248e6b03b076b1a7373d5f316da8a6f3bd0b6ace3"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\EndCinematic\\Modules\\EndCinematicTransition.luau",
+    "Hash": "2f3961fa544b0a37f31bb7808a0050e8b7a3bbc4affa97932c19a0fce901f9e9"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Abilities\\AbilityAssetValidator.luau",
+    "Hash": "aee51c72183a007179f8a262540846a093e15c6b15e5eb47ec9a43f8585e1cc1"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Abilities\\AbilityCallbacks.luau",
+    "Hash": "afb33008213916766a33db7ba54c3fb1bf9351b7650152e8dbcc3676e938a4d7"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Abilities\\AbilityInputAdapter.luau",
+    "Hash": "948681266378d50d09432a4aec26dda6039ab94a8022eb6cd85cc7d17682cf5c"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Abilities\\AbilityManifest.luau",
+    "Hash": "5a457f5a286b2af730c2efa6c2eaf1fb3bf8deb5eba83a5555427cde34b06f61"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Abilities\\AirJumpsAbility.luau",
+    "Hash": "b21b46e86d0609484f0c7db22a6bd7f8f5e4cbd71d8088fc3828277a64145b82"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Abilities\\DashAbility.luau",
+    "Hash": "37f155aaec1e4ac5be7b710bc5ef936a85654ac9b70af77b9a34e8589713c539"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Abilities\\DevilSpeedAbility.luau",
+    "Hash": "c79bc74c0d6729887da62f6d90745fc364eb4284ab4e22eaf07f7d0bdd3b3c74"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Abilities\\InvisibilityAbility.luau",
+    "Hash": "858d64944244d537b059d7d4595277fc6fcb4ce3d68a322187c2c8c03ea687bb"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Abilities\\MovementGuard.luau",
+    "Hash": "aa8b4f84e382ed66078a16254222e09de7ca82b59db11ea3ec8add1af3bc1e26"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Abilities\\StrongSlapAbility.luau",
+    "Hash": "fe17c1962fd7651de7387f1291ba3e61c4172f5f63dcdd5a91f3a269acd002cd"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\PointEffectControllers\\BasicController.luau",
+    "Hash": "9ef01be5f50e7e2e515f013402b4972c318f9ce1ab5168f32b4629e15b1b594b"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\PointEffectControllers\\InfernoController.luau",
+    "Hash": "881e1d3acfd844c29b2cbb52d37351541e667b73d3852409d692221dc084528e"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\PointEffectControllers\\PointEffectRegistry.luau",
+    "Hash": "aec74723959735a67394a5b5b2f1da6997de5989005fd44b31babbe9f0c7e6bb"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\PointEffectControllers\\ThunderController.luau",
+    "Hash": "87a081745dc054b19d017f0b1e2bbc5d6577cd2e06358ce9ef13f2e66ebc8ece"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\AbilityRegistry.luau",
+    "Hash": "ebeb4faa323751798d23227480d333917feca4de0a201f2e444bd5b32eedae36"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\AbilityService.luau",
+    "Hash": "4b02fb2fbf88a59026f4b6694e71562580784fcb949315df56eddccca79490ac"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\CombatService.luau",
+    "Hash": "ce728c68a75b1a811c1c1d8f3d2e74447e0dd1aa765c3c215ad76e3d6c98a2f1"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\CrateService.luau",
+    "Hash": "d8552b2ce9065608593fc92ced856ff87cee69b5908da6159dd9e353dd5f3732"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\DeathEffectService.luau",
+    "Hash": "4db341a5246254d4b183d31c61b5cc6cea8cfa81cebca7c8958b4791bfc6b9ae"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\EliminationService.luau",
+    "Hash": "256f8b502311470c3c71102ad3f2f33de360869f7a340e6436ce0da2336323c2"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\KnockbackService.luau",
+    "Hash": "51420f2f430af6a29b2b4a2dcd4e944a4f86cbc384dd43449ffcf1ad575d6796"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\MatchInstanceService.luau",
+    "Hash": "ed3e31bbc4fb6db2e474481ae49f25905fb5263e44f521743c8af199479ac176"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\MatchmakingFeedbackService.luau",
+    "Hash": "449a181f4befb96b5d7aace6f49f0a635c791be3bee497d565c237f8ec6947ab"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\MatchmakingService.luau",
+    "Hash": "4162fd9d447d977e984ccddeaf91389edc0c34057be0c517bc7f5d2609b2ede8"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\PlayerDataService.luau",
+    "Hash": "d9c82369b163e56edc8e5801ed1607df94794e690c56e784c69de1723db66afe"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\PlayerService.luau",
+    "Hash": "92fc7ab548d72aa2f73a812115481784377d4f19696e8198d29f1bbbd8d22b28"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\PointEffectTestService.luau",
+    "Hash": "987825b98b1e570f9674bc4b894dbb691285c4cf71648ac74aab87a6b0148759"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\PointFeedbackService.luau",
+    "Hash": "178615d93214a9291b5d76d3092979d4a6b39a55274ddf6072efaddc91222fc1"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\RagdollService.luau",
+    "Hash": "3e203c841e02c4c540bbb516da37887839a609ebc23f46035bd1e8f608045967"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\RoundService.luau",
+    "Hash": "8ac09a0a0bbf7fc1611aacba2ae2dd431ac31ef6742cdad4d7cfad694cf45311"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\ScoreService.luau",
+    "Hash": "8ce46e5486916073d7e327b93458f2ff664750c942f205df2377a197831e408b"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\ShopService.luau",
+    "Hash": "bd794e57bd41f17ead5a09fecef5f54b51f18353e0d44733414ae5548a04a3bf"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\SlapService.luau",
+    "Hash": "fb49893f47c099c0344d3096d38aff7208ab61f9f194a0b835131d48aca005ad"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\SpawnService.luau",
+    "Hash": "0ec8b3619bd57d39a35dac8881159807ab733e0841cefe9829d79a2f96e764dc"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\ThunderController.luau",
+    "Hash": "f0c6cddf64d93c86b92ec6cf2eefc2ef67d5e507e23e24d3324ae7cda88afe23"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Shop\\ProfilePurchase.luau",
+    "Hash": "96ad115a688f3a135aee7c9affc150507627364d403a5182cd23d938a81c14fb"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Shop\\ShopRegistry.luau",
+    "Hash": "1fa10179ccbe5aba5b55f5d2b1b06dfbc6b26dcec8488b71ce3b7b516e074d6c"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Shop\\ShopRemotes.luau",
+    "Hash": "579722f827ed7de1044b944f4f4b1acf392ecd0072762c392031ceb55febe9c0"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Abilities\\Templates\\AbilityTemplate.luau",
+    "Hash": "81629fbe96e46909c42b3e13feaee116cf7d1967289de39ff0858ecbe5757c71"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Crates\\AnnouncementAdapter.luau",
+    "Hash": "77c9b5a4641651831495bf06cc9d00ccf66779685afd0b5f4c8861e76de81a8a"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Crates\\CrateBatchEngine.luau",
+    "Hash": "5f59e1d9bd0e7d5557cc017315f8bd0dd1d47e5e1e18799ed7c30690ffcfc356"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Crates\\CrateEngine.luau",
+    "Hash": "caadd52550674a03828f4241e8260ffc23acee70b209990382155bbe10f413f0"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Crates\\InMemoryStock.luau",
+    "Hash": "124f7767a1e7025c91af47bd66535a59d743b7f85ec04fb5941db4ce72cb5568"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Crates\\ProductionStockAdapter.luau",
+    "Hash": "c25c9fa127dd1d35e45456a3cd2fd9952f40e736a9c69a68cfabb19f48003468"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Crates\\RewardVisualMetadata.luau",
+    "Hash": "94482f89cd748e4d0f6f81b7f45f484881d9da571f7edbf29bab60ff28087410"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Crates\\StandOpeningLedger.luau",
+    "Hash": "fc636c576ca4c3ba71b7befb3efbee92a3361d624aca187682bab3b61edf2702"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Crates\\StandOpeningService.luau",
+    "Hash": "baadb5bc222d814bc0fe032c799f76f3ca872d220b25d65030d92f1fdeb98d40"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Crates\\StockLedger.luau",
+    "Hash": "5394088c5f083c0f2405af8ee282f067f41d81978d1228e7dab9743d0a1985a7"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Gameplay\\RoundClock.luau",
+    "Hash": "2838a46f71cce1586f456b40fccd7ff60f981851cec7f4383cb410d105afbec8"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Persistence\\InMemoryDataStore.luau",
+    "Hash": "2e7571d5a943d11fffc6cbbf18b4f0328162528fdf24b8620191165bd46cbcb5"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Persistence\\PersistenceEnvironment.luau",
+    "Hash": "bd9479b65dd700a16f4577fe230a0de7f223c7d318d5146ee0cb113f7d743083"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Persistence\\RobloxDataStoreAdapter.luau",
+    "Hash": "dfd12359f34479ed1f889786d8aec2765c6ce648a842cbd7ef9de5da4b02e292"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Respawn\\ArenaRespawn.luau",
+    "Hash": "ed94fa0b0e5cbb786d3215a8f2ac5a5cb9281aa0b58c7ba1bac1c0566a01b5c8"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Respawn\\CharacterPhysics.luau",
+    "Hash": "303e65d3cdc1ba78c98b712a47b3dea44c0e0285b000766a63e597dd8ae006b7"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\Respawn\\CompetitiveTransit.luau",
+    "Hash": "c52d7f218642ecc4f7d9b27c3e0318284e1ec487670437a2feb786d65bc804a7"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Shop\\Providers\\AbilityProvider.luau",
+    "Hash": "80da1e0ca39f1a66a7be6ae2aa88780c24e96200a080c4afb10bf3bfb11788a3"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Shop\\Providers\\CrateProviders.luau",
+    "Hash": "b0c885e8b24ab5896deca8c05d2e9708bf9cd1211e8d0f73a213b67eefa398fb"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Shop\\Providers\\DeathEffectProvider.luau",
+    "Hash": "52fab0ac73411d630c9bd799805968911d0c1ec575014625450f8f8f9746e680"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Shop\\Providers\\PointEffectProvider.luau",
+    "Hash": "a211153953be8368a049714659840cc1e43d0ed2b130060a35827bd49e9b5fb5"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\Appearance.luau",
+    "Hash": "a379e3fe9978d9abb1a4b153172a6f971a835ca645ae18aee60a71c1197f6dbf"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\BatchOpening.luau",
+    "Hash": "beb1aaa65dabdc25279187420fb88bc77fae6fe1954f8a1c41730a409f0d70c7"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\Catalog.luau",
+    "Hash": "b9c0d310249d1de52905be5d488e15fa41292c644bfb6feaee9bde2e5d12fe87"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\CrateDefinitions.luau",
+    "Hash": "08066c4e77d7a7560b6481f31d5cd174d0abbf76a90884ee0c919e980edf1a9c"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\CrateShopView.luau",
+    "Hash": "e5bd8a4c0df2e68b764ea16a75f6919ed857bc3c757542e522f13e75ba66488c"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\InitialOdds.luau",
+    "Hash": "5d0e592cab8dce1ba7f10be12d80ca8f3e58b60853ca58078816e5ec2d51edc1"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\Inventory.luau",
+    "Hash": "105563dfcbd603161716f832670ae29eaab6509ca7e78e8fbb6653b37fab7264"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\Odds.luau",
+    "Hash": "0a69a5a9ef1dec20fb20db6c615836ccafa72931ab08dcd359f458cea71ea867"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\OddsPresentation.luau",
+    "Hash": "ab06463b3d7b3733ed317813f4393ab662e8f23950ca5f3ba93afcc6c4ce4c87"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\OpeningConfig.luau",
+    "Hash": "f2e9c7499840b436df471fa3269a646c5ec90e8ad0f92d12bedf06c6393065d3"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\OpeningTimeline.luau",
+    "Hash": "774b4a0aef31b6aafa90f7f3201bc6066d3d560bfa0f27c6e624fef5772e2c80"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\Registry.luau",
+    "Hash": "49a8da256ccd4d0014c4198f288e2641b606c22da9daced9ac556f4dc8787987"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\SlapDefinitions.luau",
+    "Hash": "7fef5855244b7e41c1819a7868cc495ee676b1ed218e03146bbf5b0c1a9912ef"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\StockDefinitions.luau",
+    "Hash": "45dc5f5e83c4272e2f8fcdfdf5cfd30c68d5d826d47ba4e3573cc655261ba4bd"
+  },
+  {
+    "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\SlapCrates\\VariationDefinitions.luau",
+    "Hash": "e05dee8779be1c99ee55bd679f9ad86eff2cde220ccc8ce9672667ec9ff8eb32"
+  }
+]

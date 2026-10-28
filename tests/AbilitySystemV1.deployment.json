@@ -1,0 +1,127 @@
+[
+  {
+    "File": "src/server/Bootstrap.server.luau",
+    "SHA256": "0be83df4246876341dc3b9e0b65dab9ce543109484cab03d46d8a940ebfde127",
+    "BeforeSHA256": "172ff0581b6a3ebdf2e69e1066ebf74e14cafe633a7033214b8851671ccc9571"
+  },
+  {
+    "File": "src/shared/Types.luau",
+    "SHA256": "4f933eb46bd9297e4a2e29725b3f3081453095fc96c39975feada8de8c523267",
+    "BeforeSHA256": "257b98eaca53e38a831db2cd8bc02bd80d9de211f107e26810be197f6cbd8f14"
+  },
+  {
+    "File": "src/client/Controllers/ShopController.luau",
+    "SHA256": "866322f383d65e81ff4157d806151fac6554244920093983a75f4d4b1fda3e5e",
+    "BeforeSHA256": "d0a56e864f9b80e1f7f1f95a5125bdcab485336ccf1f63ff50b90bab6fb53500"
+  },
+  {
+    "File": "src/server/Services/CombatService.luau",
+    "SHA256": "d51bf993907ba9aec949c565d0fcf2b8e54bc5352c5af7637c9e6daf41b5e759",
+    "BeforeSHA256": "2f989a4798ca41c756b3153098427237b9a918e912dded34645a066388f39173"
+  },
+  {
+    "File": "src/server/Services/EliminationService.luau",
+    "SHA256": "050c5ab47cd2e39e842df8f4c43fe25173d600c23b147e3a4b93de75ff1a90c3",
+    "BeforeSHA256": "d66b53236bcdcdc7319f4cd35cf55579e5ed297083f3070ef566320c66bd0883"
+  },
+  {
+    "File": "src/server/Services/PlayerDataService.luau",
+    "SHA256": "e457aab19161e1fde8bcad720df6fcdf519103222aa55918f0e1b200e9b7e91a",
+    "BeforeSHA256": "8735a3a660a188c93038a4aeec8ed9aa0a2cc57b6ae366a36e9e4e1b1b06358e"
+  },
+  {
+    "File": "src/server/Services/PlayerService.luau",
+    "SHA256": "3fc4d954e3b18b476a22c0c24840083b5a0f27a5034a5b03a747783bb748f7d5",
+    "BeforeSHA256": "bf24629820c2974b1d080bcc82b3ecbcb968ad14e94d06d901d5b3435c079310"
+  },
+  {
+    "File": "src/server/Services/RagdollService.luau",
+    "SHA256": "25aa9e76fe7e726557b5d9eed5a6412318caabf06fd662102fdc8657f148a1f1",
+    "BeforeSHA256": "1c183866456e99976d7bcb3f765a40380b0bfa7f557fa86073e69d560ab1d414"
+  },
+  {
+    "File": "src/server/Services/RoundService.luau",
+    "SHA256": "58d98abb000cedac55155564542a25ca74f1aa25c51c1450e21e6a1bef0c1dea",
+    "BeforeSHA256": "b658710b4027a28e304a35d9a5aaa26e4b88cd17aa3f8351274d1b717b522bb3"
+  },
+  {
+    "File": "src/server/Services/ShopService.luau",
+    "SHA256": "f3251ef3e1f15d03d56e6a78c7f8c6410371d5aaf46421d244de440414e809b6",
+    "BeforeSHA256": "745167081725d16a33fea7e1b352f0ad840114895fc79d30579483bb1d27db96"
+  },
+  {
+    "File": "src/server/Services/SlapService.luau",
+    "SHA256": "cf75ef9c1cb2ca05de4aa74018836108a40a7fd330223fa5ab5106c8c54d505c",
+    "BeforeSHA256": "88c95a23892a54a4833971cdce91a6c64f9ea363c9573cb7d806d02d6c8dc896"
+  },
+  {
+    "File": "src/server/Shop/ProfilePurchase.luau",
+    "SHA256": "f5eaa557268b58d0e766da2e07b334a6da1183abcf351bc275bfc2cee515b91c",
+    "BeforeSHA256": "67e28218c098890f98da8d567a74f3e23772ecef42b87ec9f5ad2f6bdee0c4d0"
+  },
+  {
+    "File": "src/server/Shop/ShopRegistry.luau",
+    "SHA256": "3405acb7832c7873a04cbb3ef6075d23c8ff48af9799de64f708c94a1e8e7941",
+    "BeforeSHA256": "a1944deb03b685fb6dca037786e3779fc2fd7be47572c9d17f5e7799b7c96eac"
+  },
+  {
+    "File": "src/server/Abilities/AirJumpsAbility.luau",
+    "SHA256": "8975288f239cef0405fb17ff9c0fc2c26737aeed1d102340ee971738df782082",
+    "BeforeSHA256": null
+  },
+  {
+    "File": "src/server/Abilities/DashAbility.luau",
+    "SHA256": "967d263135713e1bd5fb4173139d1e2b0a730fa84925bac9f564a3c5f3ca0f13",
+    "BeforeSHA256": null
+  },
+  {
+    "File": "src/server/Abilities/DevilSpeedAbility.luau",
+    "SHA256": "fa3412a07a59608466f64a1e555a9dc3c775e93de75981c395bc0f239b4e88c7",
+    "BeforeSHA256": null
+  },
+  {
+    "File": "src/server/Abilities/InvisibilityAbility.luau",
+    "SHA256": "3e684ecec1bf420bcaab0819a3e4cdac4e135d82d87c06eb2b67727d642dea63",
+    "BeforeSHA256": null
+  },
+  {
+    "File": "src/server/Abilities/MovementGuard.luau",
+    "SHA256": "7f7dd28a135ee570c8d4360a890d647857f57407310251b6bb6994ca6f23e728",
+    "BeforeSHA256": null
+  },
+  {
+    "File": "src/server/Abilities/StrongSlapAbility.luau",
+    "SHA256": "78791aa7c6b5cf6ae97214f78072dc9a8971f76adc0fb68405c71d85acc8efcb",
+    "BeforeSHA256": null
+  },
+  {
+    "File": "src/client/Abilities/AbilityPresentation.luau",
+    "SHA256": "0f877737d4548896940229d7528d7c4d3589ace32289f988dd0ea48a9605e14c",
+    "BeforeSHA256": null
+  },
+  {
+    "File": "src/client/Abilities/AbilitySelection.luau",
+    "SHA256": "4a2a5dd27d2a67efdccfc7a4951cc6d028777c1969783db85f3b5ab02cf93040",
+    "BeforeSHA256": null
+  },
+  {
+    "File": "src/server/Services/AbilityService.luau",
+    "SHA256": "0279dc2f51fb49a3a1e3948337822ee8b5f74e145696169244391e53d4ea38c0",
+    "BeforeSHA256": null
+  },
+  {
+    "File": "src/shared/AbilityDefinitions.luau",
+    "SHA256": "f9c857b03fac4ab461b6554c1481a21bf0a28df3379e2f5ec0dacabf54906fe1",
+    "BeforeSHA256": null
+  },
+  {
+    "File": "src/server/Shop/Providers/AbilityProvider.luau",
+    "SHA256": "71824c1e968a3c4fc5b8f2aadc07f07a5be00f3e10f08f5b9f0b9903a2f3b750",
+    "BeforeSHA256": null
+  },
+  {
+    "File": "src/client/Controllers/AbilityController.luau",
+    "SHA256": "8a061c9aea8e8fd678447be8e1caf2875bcc5f7e72fb37aca709ef5720241bb1",
+    "BeforeSHA256": null
+  }
+]

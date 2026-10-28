@@ -1,0 +1,55 @@
+{
+  "ChangedExistingSrc": [
+    "src/assets/SlapVariationEffects.project.json",
+    "src/client/Controllers/CrateController.luau",
+    "src/server/Services/CrateService.luau",
+    "src/shared/SlapCrates/VariationDefinitions.luau"
+  ],
+  "UnchangedOriginalSrc": 136,
+  "Sources": [
+    {
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "Appearance"
+      ],
+      "File": "src/shared/SlapCrates/Appearance.luau",
+      "Before": null,
+      "After": "8ddff92cc70c06b0ba47b99dab446874a7f5f1d677b97a3a6ec3c4d06d4d196b"
+    },
+    {
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "VariationDefinitions"
+      ],
+      "File": "src/shared/SlapCrates/VariationDefinitions.luau",
+      "Before": "5ecc7da1b1a3e9e2998812eaf1cfe7db6fc60e088116bd9fba363a815df7512d",
+      "After": "15e5a7b3b3cdb10c68aafcf83927449e0b86f64538685888b532f078ced22479"
+    },
+    {
+      "Path": [
+        "ServerScriptService",
+        "Services",
+        "CrateService"
+      ],
+      "File": "src/server/Services/CrateService.luau",
+      "Before": "24a05b83bbabf0c7467cb0a4ec3b9ac2852d03e7ce99cbcf49e6d84e51798ae5",
+      "After": "438ac49110da3f867d0c19b1878b86662cae187695862cbf4234742d0ec6b352"
+    },
+    {
+      "Path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "Controllers",
+        "CrateController"
+      ],
+      "File": "src/client/Controllers/CrateController.luau",
+      "Before": "1b830e40b70bd4a8ad391e2f2bd422773dbbf0ca869160f3004ba3f20dd1efc7",
+      "After": "eab374c60c0e24df63033407e66e6a3c6df09e86422d5f8ae3326836ab425afc"
+    }
+  ],
+  "SafeProjectUnchanged": true
+}

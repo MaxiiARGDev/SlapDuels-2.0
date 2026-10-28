@@ -1,0 +1,25 @@
+{
+  "Modified": [
+    "src/server/Bootstrap.server.luau",
+    "src/server/Services/SlapService.luau",
+    "default.project.json",
+    "studio-safe.project.json"
+  ],
+  "Added": [
+    "src/assets/TrainingZone.rbxm",
+    "src/shared/TrainingConfig.luau",
+    "src/ui/AdminHUD.project.json",
+    "src/ui/TrainingHUD.project.json",
+    "src/client/Controllers/AdminController.luau",
+    "src/client/Controllers/TrainingController.luau",
+    "src/server/Admin/Access.luau",
+    "src/server/Admin/CommandManifest.luau",
+    "src/server/Admin/CommandRegistry.luau",
+    "src/server/Services/AdminService.luau",
+    "src/server/Services/TrainingService.luau",
+    "src/server/Admin/Commands/GrantCoins.luau",
+    "src/server/Admin/Commands/GrantSlap.luau",
+    "src/server/Services/Gameplay/TrainingState.luau"
+  ],
+  "Deleted": []
+}

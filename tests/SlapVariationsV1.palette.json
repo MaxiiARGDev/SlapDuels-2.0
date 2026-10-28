@@ -1,0 +1,146 @@
+[
+  {
+    "Id": "Basic",
+    "DisplayName": "Basic",
+    "RGB": [
+      248,
+      248,
+      248
+    ],
+    "Material": "SmoothPlastic",
+    "Rate": 0,
+    "Description": "Original sin efectos extraordinarios"
+  },
+  {
+    "Id": "Common",
+    "DisplayName": "Common",
+    "RGB": [
+      202,
+      209,
+      218
+    ],
+    "Material": "SmoothPlastic",
+    "Rate": 0,
+    "Description": "Plateado discreto"
+  },
+  {
+    "Id": "Uncommon",
+    "DisplayName": "Uncommon",
+    "RGB": [
+      65,
+      190,
+      100
+    ],
+    "Material": "SmoothPlastic",
+    "Rate": 5,
+    "Description": "Energía verde suave"
+  },
+  {
+    "Id": "Rare",
+    "DisplayName": "Rare",
+    "RGB": [
+      69,
+      138,
+      255
+    ],
+    "Material": "SmoothPlastic",
+    "Rate": 7,
+    "Description": "Energía azul y brillo tenue"
+  },
+  {
+    "Id": "Gold",
+    "DisplayName": "Gold",
+    "RGB": [
+      239,
+      187,
+      62
+    ],
+    "Material": "Metal",
+    "Rate": 6,
+    "Description": "Metal dorado y destellos moderados"
+  },
+  {
+    "Id": "Arcoiris",
+    "DisplayName": "Arcoiris",
+    "RGB": [
+      245,
+      245,
+      245
+    ],
+    "Material": "SmoothPlastic",
+    "Rate": 9,
+    "Description": "Partículas multicolores sin bucles de servidor"
+  },
+  {
+    "Id": "Emote",
+    "DisplayName": "Emote",
+    "RGB": [
+      220,
+      93,
+      180
+    ],
+    "Material": "SmoothPlastic",
+    "Rate": 4,
+    "Description": "Símbolo expresivo rosa; sin sistema de emotes"
+  },
+  {
+    "Id": "Wings",
+    "DisplayName": "Wings",
+    "RGB": [
+      151,
+      218,
+      255
+    ],
+    "Material": "Glass",
+    "Rate": 6,
+    "Description": "Dos plumas de energía celeste; sin vuelo"
+  },
+  {
+    "Id": "Epic",
+    "DisplayName": "Epic",
+    "RGB": [
+      145,
+      58,
+      225
+    ],
+    "Material": "Neon",
+    "Rate": 11,
+    "Description": "Energía violeta intensa"
+  },
+  {
+    "Id": "Legendary",
+    "DisplayName": "Legendary",
+    "RGB": [
+      255,
+      156,
+      37
+    ],
+    "Material": "Neon",
+    "Rate": 16,
+    "Description": "Aura dorada anaranjada moderada"
+  },
+  {
+    "Id": "Blood",
+    "DisplayName": "Blood",
+    "RGB": [
+      125,
+      24,
+      45
+    ],
+    "Material": "SmoothPlastic",
+    "Rate": 8,
+    "Description": "Energía roja y negra, sin gore"
+  },
+  {
+    "Id": "Galaxy",
+    "DisplayName": "Galaxy",
+    "RGB": [
+      38,
+      31,
+      83
+    ],
+    "Material": "Neon",
+    "Rate": 12,
+    "Description": "Estrellas azules, violetas y blancas"
+  }
+]

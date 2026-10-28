@@ -1,0 +1,139 @@
+{
+  "Sources": [
+    {
+      "SHA256": "026fc8e36bc9b4daaca57bf98e6fe3ebea265391d7267079232131f62a6419be",
+      "File": "src/server/Bootstrap.server.luau",
+      "Path": "ServerScriptService.Bootstrap"
+    },
+    {
+      "SHA256": "7f53fdeecac588b27e0b2274ad0793cd90931ccd0b1c8f6b1390c4d395fb51fe",
+      "File": "src/server/Services/PlayerService.luau",
+      "Path": "ServerScriptService.Services.PlayerService"
+    },
+    {
+      "SHA256": "e7a06d2472ed3a9c4b84c2a215929b1ab5d88b71278999eb0e3b3a66f2b99b57",
+      "File": "src/server/Services/PlayerDataService.luau",
+      "Path": "ServerScriptService.Services.PlayerDataService"
+    },
+    {
+      "SHA256": "dcbad00d47a8a393deacb3c07f8b3823786c2f977e168f7672d1fab00c370184",
+      "File": "src/server/Services/SlapService.luau",
+      "Path": "ServerScriptService.Services.SlapService"
+    },
+    {
+      "SHA256": "986a375d75c877029138f3438e827f4f72fe04996f648da8f4ce6f140106a684",
+      "File": "src/server/Shop/ShopRemotes.luau",
+      "Path": "ServerScriptService.Shop.ShopRemotes"
+    },
+    {
+      "SHA256": "d3798d6d3f4b2f8221e2342920f733907dab05a7bce50b8326b86d8e7ecbfa31",
+      "File": "src/client/Controllers/ShopController.luau",
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.ShopController"
+    },
+    {
+      "SHA256": "22ea0e74a2e6d0ba92ba2d22ed98b83769092477b6fff04df72a9bde3e27b1fa",
+      "File": "src/shared/Types.luau",
+      "Path": "ReplicatedStorage.Shared.Types"
+    },
+    {
+      "SHA256": "24a05b83bbabf0c7467cb0a4ec3b9ac2852d03e7ce99cbcf49e6d84e51798ae5",
+      "File": "src/server/Services/CrateService.luau",
+      "Path": "ServerScriptService.Services.CrateService"
+    },
+    {
+      "SHA256": "1b830e40b70bd4a8ad391e2f2bd422773dbbf0ca869160f3004ba3f20dd1efc7",
+      "File": "src/client/Controllers/CrateController.luau",
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.CrateController"
+    },
+    {
+      "SHA256": "3fb60c306cf58df79cff1ccc07582998fcedff7ba22e5539ae97cb47d5c6fb2e",
+      "File": "src/server/Shop/Providers/CrateProviders.luau",
+      "Path": "ServerScriptService.Shop.Providers.CrateProviders"
+    },
+    {
+      "SHA256": "f5e4dfdbcfb5160e10c71abb7a275694c63b69a106ef02ab37d69d601ed96836",
+      "File": "src/shared/SlapCrates/Catalog.luau",
+      "Path": "ReplicatedStorage.Shared.SlapCrates.Catalog"
+    },
+    {
+      "SHA256": "46efa7d260e09f9ae21b8258db5c1b25877ecb9c17d129f12296fd8518566ad9",
+      "File": "src/shared/SlapCrates/CrateDefinitions.luau",
+      "Path": "ReplicatedStorage.Shared.SlapCrates.CrateDefinitions"
+    },
+    {
+      "SHA256": "109d77d11e50a8342de613eceaeae88ca7a86465d51a3fd5b80d06052569311f",
+      "File": "src/shared/SlapCrates/Inventory.luau",
+      "Path": "ReplicatedStorage.Shared.SlapCrates.Inventory"
+    },
+    {
+      "SHA256": "2f402ad60b485def207bc98eaee4451b8176a24102d124a700253ba8249739df",
+      "File": "src/shared/SlapCrates/Odds.luau",
+      "Path": "ReplicatedStorage.Shared.SlapCrates.Odds"
+    },
+    {
+      "SHA256": "fb1b88e6139062e378f160847be4a18b61dcc7e6a113611bab6120720a0fddca",
+      "File": "src/shared/SlapCrates/Registry.luau",
+      "Path": "ReplicatedStorage.Shared.SlapCrates.Registry"
+    },
+    {
+      "SHA256": "432c9d8b7c8a78223f6d2a1967b3f624f89eae146a75692348959067f1ebc811",
+      "File": "src/shared/SlapCrates/SlapDefinitions.luau",
+      "Path": "ReplicatedStorage.Shared.SlapCrates.SlapDefinitions"
+    },
+    {
+      "SHA256": "9aba53eaff5ff69d903038f8938ff56da9a3128d355d882895d63b2d7f953313",
+      "File": "src/shared/SlapCrates/StockDefinitions.luau",
+      "Path": "ReplicatedStorage.Shared.SlapCrates.StockDefinitions"
+    },
+    {
+      "SHA256": "5ecc7da1b1a3e9e2998812eaf1cfe7db6fc60e088116bd9fba363a815df7512d",
+      "File": "src/shared/SlapCrates/VariationDefinitions.luau",
+      "Path": "ReplicatedStorage.Shared.SlapCrates.VariationDefinitions"
+    },
+    {
+      "SHA256": "3b8b5a8d60dfddde53ca47725f00c868b4644136dc6c800ea0183eb5510bf40f",
+      "File": "src/server/Services/Crates/AnnouncementAdapter.luau",
+      "Path": "ServerScriptService.Services.Crates.AnnouncementAdapter"
+    },
+    {
+      "SHA256": "6c96476c6348e5874c1b25d5d6098e7ca2035d67b18b47fafa28f0a2c77a9600",
+      "File": "src/server/Services/Crates/CrateEngine.luau",
+      "Path": "ServerScriptService.Services.Crates.CrateEngine"
+    },
+    {
+      "SHA256": "f0c8bfa5af4f579f3474a45350f613968ead868df38ba90516f328e69be5013c",
+      "File": "src/server/Services/Crates/InMemoryStock.luau",
+      "Path": "ServerScriptService.Services.Crates.InMemoryStock"
+    },
+    {
+      "SHA256": "d90878f5f84bf58a29f425e21bcffe54a7b4dd66702bbb40389670b9eaac4d79",
+      "File": "src/server/Services/Crates/ProductionStockAdapter.luau",
+      "Path": "ServerScriptService.Services.Crates.ProductionStockAdapter"
+    },
+    {
+      "SHA256": "ca8ea4b37071cc33988405e80d92e69b1932183aa9963bba41f52a7fe7955078",
+      "File": "src/server/Services/Crates/StockLedger.luau",
+      "Path": "ServerScriptService.Services.Crates.StockLedger"
+    }
+  ],
+  "ResourceVerification": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"IsRunning\":false,\"SafeParts\":25,\"Nodes\":132,\"IsStudio\":true,\"Mismatches\":{\"25\":\"ReplicatedStorage.CrateRewardPreviews.Classic.Hand.Color\",\"24\":\"ReplicatedStorage.CrateEffects.Gold.Body.Color\",\"23\":\"ReplicatedStorage.CrateEffects.Gold.Lid.Color\",\"22\":\"ReplicatedStorage.CrateEffects.Epic.Body.Color\",\"21\":\"ReplicatedStorage.CrateEffects.Epic.Lid.Color\",\"20\":\"ReplicatedStorage.CrateEffects.Basic.Body.Color\",\"19\":\"ReplicatedStorage.CrateEffects.Basic.Lid.Color\",\"18\":\"ReplicatedStorage.CrateEffects.Wings.Body.Color\",\"9\":\"ReplicatedStorage.CrateEffects.Uncommon.Lid.Color\",\"1\":\"ReplicatedStorage.CrateEffects.Galaxy.Lid.Color\",\"15\":\"ReplicatedStorage.CrateEffects.Legendary.Lid.Color\",\"3\":\"ReplicatedStorage.CrateEffects.Emote.Lid.Color\",\"2\":\"ReplicatedStorage.CrateEffects.Galaxy.Body.Color\",\"5\":\"ReplicatedStorage.CrateEffects.Common.Lid.Color\",\"4\":\"ReplicatedStorage.CrateEffects.Emote.Body.Color\",\"7\":\"ReplicatedStorage.CrateEffects.Blood.Lid.Color\",\"6\":\"ReplicatedStorage.CrateEffects.Common.Body.Color\",\"14\":\"ReplicatedStorage.CrateEffects.Arcoiris.Body.Color\",\"8\":\"ReplicatedStorage.CrateEffects.Blood.Body.Color\",\"16\":\"ReplicatedStorage.CrateEffects.Legendary.Body.Color\",\"17\":\"ReplicatedStorage.CrateEffects.Wings.Lid.Color\",\"13\":\"ReplicatedStorage.CrateEffects.Arcoiris.Lid.Color\",\"12\":\"ReplicatedStorage.CrateEffects.Rare.Body.Color\",\"11\":\"ReplicatedStorage.CrateEffects.Rare.Lid.Color\",\"10\":\"ReplicatedStorage.CrateEffects.Uncommon.Body.Color\"},\"StudioTestOptIn\":false,\"Roots\":{\"1\":\"ReplicatedStorage.CrateEffects\",\"3\":\"ReplicatedStorage.CrateRewardPreviews\",\"2\":\"ReplicatedStorage.SlapVariationEffects\",\"5\":\"StarterGui.ShopHUD.CrateSpinPanel\",\"4\":\"StarterGui.ShopHUD.CratePanel\",\"7\":\"StarterGui.ShopHUD.MainFrame.Tabs.CratesTab\",\"6\":\"StarterGui.ShopHUD.CrateActionsTemplate\"},\"ActiveMatches\":0,\"Properties\":521}"
+      }
+    ],
+    "isError": false
+  },
+  "ColorCorrection": {
+    "CheckedParts": 25,
+    "Mismatches": [],
+    "Reason": "BasePart.Color RGB8 quantization",
+    "PerChannelTolerance": 0.00392156862745098
+  },
+  "FinalResources": "PASS:132 nodes,521 properties; initial discrepancies confined to RGB8 part colours, rechecked within native precision.",
+  "Mode": "Edit",
+  "Gameplay": "NOT RUN",
+  "Production": "BLOCKED",
+  "Cloud": "NO ACCESS"
+}

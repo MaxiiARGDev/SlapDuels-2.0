@@ -1,0 +1,15 @@
+{
+  "name": "V25SnapshotComparison",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Before": {
+        "$path": "ShopHUD.before.rbxm"
+      },
+      "After": {
+        "$path": "ShopHUD.after.rbxm"
+      }
+    }
+  }
+}

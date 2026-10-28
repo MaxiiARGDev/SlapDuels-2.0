@@ -1,0 +1,15 @@
+{
+  "default.project.json": "05e2f736aae3321b74ce9675e8a6e0db2f965b0d62e8cc54a70683f223f720da",
+  "src__client__Controllers__SettingsController.luau": "56af1a0b2223973100ff42aa4edc87c83210994d67d094df2f0aa0628ab8f745",
+  "src__server__Services__CrateService.luau": "9bcab2d5a262a093754ea026d9ef90bffb805c9d0d2d0e9b3995f684e5df1bf7",
+  "src__server__Services__Persistence__PersistenceEnvironment.luau": "bd9479b65dd700a16f4577fe230a0de7f223c7d318d5146ee0cb113f7d743083",
+  "src__server__Services__Persistence__RobloxDataStoreAdapter.luau": "dfd12359f34479ed1f889786d8aec2765c6ce648a842cbd7ef9de5da4b02e292",
+  "src__server__Services__PlayerDataService.luau": "d15a32ecd3574151e76575a71e200fb5432fedc301ff711eecfa853ff4ae79a3",
+  "src__server__Services__PlayerService.luau": "d772d20a266d93b6fd36dc1a7bb57a8eac76401876efb635a955015ae22f95f6",
+  "src__server__Services__ProgressionService.luau": "dfbf3a3a37895fda706a3d963f00523a2ebc9e850ace97d1ac113cd71f66c48b",
+  "src__shared__Config.luau": "35455a7c3c196cb53d3227673e9266cb9296a24291cc30e875b9a49dc5f7a6ea",
+  "src__shared__Progression__Config.luau": "67fb3c58a69139335322748c3c6bfc15d20b4d4867174ee8e5e07c1fb523af58",
+  "src__shared__Progression__PassManifest.luau": "70d2b0cdc5fdc017ab061c0ae23e06cea4f33fd11fc67d0f14ce95fd2c778aff",
+  "src__shared__Types.luau": "c432fc2f7d3f7ff07b8981738db52ae670bddc53151a51ba40ec15fb63a25a65",
+  "studio-safe.project.json": "5c656c8760eaef3d16e00746e5f16345b73dcfc941f534e2fc02c981bfe1fb4f"
+}

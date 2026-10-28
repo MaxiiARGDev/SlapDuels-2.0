@@ -1,0 +1,46 @@
+{
+  "Compile": {
+    "Sources": 162,
+    "Specs": 3,
+    "Failures": []
+  },
+  "matchmaking": {
+    "ExitCode": 0
+  },
+  "SlapVictimProtection": {
+    "ExitCode": 0
+  },
+  "AbilityMultiplayerFixV1.regression": {
+    "ExitCode": 0
+  },
+  "EconomyBalanceV1": {
+    "ExitCode": 0
+  },
+  "EconomyBalanceV1.shop": {
+    "ExitCode": 0
+  },
+  "PremiumShopV11": {
+    "ExitCode": 0
+  },
+  "default.project.json": {
+    "ExitCode": 0
+  },
+  "studio-safe.project.json": {
+    "ExitCode": 0
+  },
+  "diff": {
+    "ExitCode": 0
+  },
+  "Scope": {
+    "Changed": [
+      "src/client/EndCinematicPreview.client.luau",
+      "src/shared/Config.luau",
+      "src/shared/EndCinematicRanking.luau",
+      "src/client/Controllers/MatchmakingController.luau",
+      "src/server/Services/MatchmakingService.luau",
+      "src/server/Services/SpawnService.luau"
+    ],
+    "Unexpected": [],
+    "Unchanged": 213
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "name": "CratePreviewTemplate",
+  "tree": {
+    "$className": "ViewportFrame",
+    "$properties": {
+      "Size": {
+        "UDim2": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      },
+      "BackgroundTransparency": 1,
+      "Visible": false,
+      "ZIndex": 2,
+      "Ambient": {
+        "Color3": [
+          0.8,
+          0.8,
+          0.8
+        ]
+      },
+      "LightColor": {
+        "Color3": [
+          1,
+          1,
+          1
+        ]
+      }
+    },
+    "WorldModel": {
+      "$className": "WorldModel"
+    },
+    "Camera": {
+      "$className": "Camera",
+      "$properties": {
+        "FieldOfView": 45
+      }
+    }
+  }
+}

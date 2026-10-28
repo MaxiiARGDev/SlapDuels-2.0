@@ -1,0 +1,38 @@
+{
+  "Preflight": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"18\":{\"State\":\"Create\",\"File\":\"src/shared/PremiumShop/PlaceholderProductIds.luau\"},\"9\":{\"Hash\":\"b875383fb0abd1bb11b1196092890ea3b81df6e5c2f8282291c6b84cc94b0537\",\"File\":\"src/shared/PremiumShop/Catalog/PremiumCombos.luau\",\"State\":\"Ready\"},\"1\":{\"Hash\":\"d3b3f2c7d9b3b40c1dd85e1dbc3df3efa7b4c8b5f8839a70c3b53eed6f5a24c4\",\"File\":\"src/client/Controllers/PremiumShopController.luau\",\"State\":\"Ready\"},\"15\":{\"State\":\"Create\",\"File\":\"src/shared/PremiumShop/Catalog/Combos/PremiumCombo_01.luau\"},\"3\":{\"Hash\":\"d5cbd847c706b0616658649fbab58c3807f2757c47df847bdbe5f6f842b2a125\",\"File\":\"src/server/PremiumShop/PremiumProductRegistry.luau\",\"State\":\"Ready\"},\"2\":{\"Hash\":\"50ae16b8efbc56947a03225e07e95f85bf162f013c12d02b240c1ca9ff1db02d\",\"File\":\"src/server/PremiumShop/PremiumGrantPlan.luau\",\"State\":\"Ready\"},\"5\":{\"Hash\":\"a776272dcbadba84e0f81faa3c9187fcfea12cc3cc8d6d0d33eb97a8f4f45fe8\",\"File\":\"src/server/Services/CrateService.luau\",\"State\":\"Ready\"},\"4\":{\"Hash\":\"fa8100fc7bccf346e2f744abe7b2a14e34cb14388642b067740c7435359e6f98\",\"File\":\"src/server/PremiumShop/ReceiptCoordinator.luau\",\"State\":\"Ready\"},\"7\":{\"Hash\":\"1891287b8c83e7d0902b35c03172f9ad965ca6f09a9633366482463d8c194385\",\"File\":\"src/server/Services/PremiumShopService.luau\",\"State\":\"Ready\"},\"6\":{\"Hash\":\"ebc3a7e7a5b1079ed8fb63c2af712a187f0cdbcea181228d22b2ccb6177204ee\",\"File\":\"src/server/Services/PlayerDataService.luau\",\"State\":\"Current\"},\"14\":{\"State\":\"Create\",\"File\":\"src/server/PremiumShop/ProfileReceiptStore.luau\"},\"8\":{\"Hash\":\"ee4eecee94f646f62f200ff5d918621ce7152055b72cf7a7b2bf9eae7734d933\",\"File\":\"src/shared/PremiumShop/Catalog/CoinPackages.luau\",\"State\":\"Ready\"},\"16\":{\"State\":\"Create\",\"File\":\"src/shared/PremiumShop/Catalog/Combos/PremiumCombo_02.luau\"},\"17\":{\"State\":\"Create\",\"File\":\"src/shared/PremiumShop/Catalog/Combos/PremiumCombo_03.luau\"},\"13\":{\"State\":\"Create\",\"File\":\"src/server/PremiumShop/ProductVerifier.luau\"},\"12\":{\"State\":\"Create\",\"File\":\"src/server/PremiumShop/DurableReceiptBackend.luau\"},\"11\":{\"State\":\"Create\",\"File\":\"src/client/PremiumShop/PremiumPurchaseFlow.luau\"},\"10\":{\"Hash\":\"9cf9d56e2421c0c67ecba587f0c06e950c9750502ee0f9bf3a1a62f4629195c9\",\"File\":\"src/shared/PremiumShop/Catalog/PremiumCrates.luau\",\"State\":\"Ready\"}}"
+      }
+    ],
+    "isError": false
+  },
+  "Sync": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"18\":{\"Hash\":\"c506339733f1a6e960a61aa57893a077410503a14f1bdce594f48b5e1469c106\",\"File\":\"src/shared/PremiumShop/PlaceholderProductIds.luau\",\"Path\":\"ReplicatedStorage.Shared.PremiumShop.PlaceholderProductIds\"},\"9\":{\"Hash\":\"3acf96dc77b4f37bf88ef135eb3109f69d973d2502e0dac0eddeb17b87e5fc0f\",\"File\":\"src/shared/PremiumShop/Catalog/PremiumCombos.luau\",\"Path\":\"ReplicatedStorage.Shared.PremiumShop.Catalog.PremiumCombos\"},\"1\":{\"Hash\":\"54ffdb4c1e0e139f97ea2ba4d6b4306ff6c74b269667590e0ad8bfbf67522fb7\",\"File\":\"src/client/Controllers/PremiumShopController.luau\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.PremiumShopController\"},\"15\":{\"Hash\":\"a48c2f9bfbb0eec5a756a15117606266f4e0063f5be09491016790c65063caf8\",\"File\":\"src/shared/PremiumShop/Catalog/Combos/PremiumCombo_01.luau\",\"Path\":\"ReplicatedStorage.Shared.PremiumShop.Catalog.Combos.PremiumCombo_01\"},\"3\":{\"Hash\":\"e2c114ac4af4626f4e691b21a38ebdd954d20f8315ad4e85071484556cc84ee9\",\"File\":\"src/server/PremiumShop/PremiumProductRegistry.luau\",\"Path\":\"ServerScriptService.PremiumShop.PremiumProductRegistry\"},\"2\":{\"Hash\":\"71a1c2b497c2c8e4522d094f17d5a7513bbd121ee9d8e17629f209fb4aed2c9c\",\"File\":\"src/server/PremiumShop/PremiumGrantPlan.luau\",\"Path\":\"ServerScriptService.PremiumShop.PremiumGrantPlan\"},\"5\":{\"Hash\":\"4f5fed510be17c633827ac667fee170d8f0b8ebf0da52968342c15272eb53404\",\"File\":\"src/server/Services/CrateService.luau\",\"Path\":\"ServerScriptService.Services.CrateService\"},\"4\":{\"Hash\":\"b5656ddfa88e0bd0b328b42051231cd416d71ab8b9ac764df2218e63815cdb5f\",\"File\":\"src/server/PremiumShop/ReceiptCoordinator.luau\",\"Path\":\"ServerScriptService.PremiumShop.ReceiptCoordinator\"},\"7\":{\"Hash\":\"ae9ba3dd1b7fbc302b832ded3931d39c2114a6332f601ce791bfc71f8ed8627b\",\"File\":\"src/server/Services/PremiumShopService.luau\",\"Path\":\"ServerScriptService.Services.PremiumShopService\"},\"6\":{\"Hash\":\"ebc3a7e7a5b1079ed8fb63c2af712a187f0cdbcea181228d22b2ccb6177204ee\",\"File\":\"src/server/Services/PlayerDataService.luau\",\"Path\":\"ServerScriptService.Services.PlayerDataService\"},\"14\":{\"Hash\":\"4d2e616bdd5823063e1ef14068d7e6ca015ff51da5c83bc80ddd95b59e30eeb9\",\"File\":\"src/server/PremiumShop/ProfileReceiptStore.luau\",\"Path\":\"ServerScriptService.PremiumShop.ProfileReceiptStore\"},\"8\":{\"Hash\":\"7a72fc838cc2f0b72e7fe74f6719a42ec5f3f687c7bd2653b8687ae6477ec90c\",\"File\":\"src/shared/PremiumShop/Catalog/CoinPackages.luau\",\"Path\":\"ReplicatedStorage.Shared.PremiumShop.Catalog.CoinPackages\"},\"16\":{\"Hash\":\"09316d1607cc1ba8757602b5306b2bc28b081f2369920846509630b8beb83922\",\"File\":\"src/shared/PremiumShop/Catalog/Combos/PremiumCombo_02.luau\",\"Path\":\"ReplicatedStorage.Shared.PremiumShop.Catalog.Combos.PremiumCombo_02\"},\"17\":{\"Hash\":\"0e9b48d2b0287cd47ac381ec9cd2f143d04b12f923e0404c2600f9af8c44a312\",\"File\":\"src/shared/PremiumShop/Catalog/Combos/PremiumCombo_03.luau\",\"Path\":\"ReplicatedStorage.Shared.PremiumShop.Catalog.Combos.PremiumCombo_03\"},\"13\":{\"Hash\":\"bba75215cb6785a842b149d78b2c35fd336886a2441e6a5639239d0c541b0bfe\",\"File\":\"src/server/PremiumShop/ProductVerifier.luau\",\"Path\":\"ServerScriptService.PremiumShop.ProductVerifier\"},\"12\":{\"Hash\":\"6288276b3cf3c5f1f077b01e0ccc6dbfa0494a7be4431a4d998c1da258f62191\",\"File\":\"src/server/PremiumShop/DurableReceiptBackend.luau\",\"Path\":\"ServerScriptService.PremiumShop.DurableReceiptBackend\"},\"11\":{\"Hash\":\"bfebb01a7427d3e9d26da75cc4c00ba80c8e7f57e47fea823e6688dfc0df42e3\",\"File\":\"src/client/PremiumShop/PremiumPurchaseFlow.luau\",\"Path\":\"StarterPlayer.StarterPlayerScripts.PremiumShop.PremiumPurchaseFlow\"},\"10\":{\"Hash\":\"dbf7f8ca613919a86e5cb5f47ab7c24433547592dfc889ccf0ef328c39916d21\",\"File\":\"src/shared/PremiumShop/Catalog/PremiumCrates.luau\",\"Path\":\"ReplicatedStorage.Shared.PremiumShop.Catalog.PremiumCrates\"}}"
+      }
+    ],
+    "isError": false
+  },
+  "UIAfter": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"1\":{\"Hash\":\"6aefdd78af97bb2d4ecbbbe65d8e68ec2c4e4dc6787307521d64218be2a80db9\",\"Descendants\":58,\"Name\":\"PremiumShopHUD\"},\"3\":{\"Hash\":\"5b91a53715a5b13fb37da5dcf114c3eacc2a5e139feba2aa44faee5f918f8ecd\",\"Descendants\":58,\"Name\":\"PlayerHUD\"},\"2\":{\"Hash\":\"fddd687885a89679d6fc1547c2ca85db877121f661626e49a12a3f80bd0d22e7\",\"Descendants\":348,\"Name\":\"ShopHUD\"}}"
+      }
+    ],
+    "isError": false
+  },
+  "Persistence": {
+    "Environment": "Studio",
+    "ProviderName": "InMemory",
+    "WritesToCloud": false
+  },
+  "IsRunning": false,
+  "PlayStarted": false,
+  "CloudWritesPerformed": false,
+  "RealPurchasesPerformed": false
+}

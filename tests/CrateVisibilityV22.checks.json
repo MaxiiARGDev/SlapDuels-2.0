@@ -1,0 +1,47 @@
+{
+  "Checks": {
+    "compose": {
+      "ExitCode": 0
+    },
+    "visibility": {
+      "ExitCode": 0
+    },
+    "crates": {
+      "ExitCode": 0
+    },
+    "economy": {
+      "ExitCode": 0
+    },
+    "combat": {
+      "ExitCode": 0
+    },
+    "abilities": {
+      "ExitCode": 0
+    },
+    "registry": {
+      "ExitCode": 0
+    },
+    "shop": {
+      "ExitCode": 0
+    },
+    "compile": {
+      "ExitCode": 0
+    },
+    "safe-map": {
+      "ExitCode": 0
+    },
+    "build": {
+      "ExitCode": 0
+    },
+    "safe-build": {
+      "ExitCode": 0
+    },
+    "diff-check": {
+      "ExitCode": 0
+    }
+  },
+  "CompiledRuntimeScripts": 127,
+  "V21AssetsUnchanged": true,
+  "SourceBaselineUnchangedSinceImplementation": true,
+  "Gameplay": "NOT RUN"
+}

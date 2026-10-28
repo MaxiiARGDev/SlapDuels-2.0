@@ -1,0 +1,47 @@
+{
+  "Checks": {
+    "unit": 0,
+    "batch": 0,
+    "reveal": 0,
+    "gallery": 0,
+    "cinematic": 0,
+    "economy": 0,
+    "combat": 0,
+    "abilities": 0,
+    "registry": 0,
+    "shop": 0,
+    "compile": 0,
+    "safe-map": 0,
+    "build": 0,
+    "safe-build": 0,
+    "diff-check": 0
+  },
+  "Compiled": 161,
+  "Changed": [
+    "src/client/Controllers/PremiumShopController.luau",
+    "src/server/PremiumShop/PremiumGrantPlan.luau",
+    "src/server/PremiumShop/PremiumProductRegistry.luau",
+    "src/server/PremiumShop/ReceiptCoordinator.luau",
+    "src/server/Services/CrateService.luau",
+    "src/server/Services/PlayerDataService.luau",
+    "src/server/Services/PremiumShopService.luau",
+    "src/shared/PremiumShop/Catalog/CoinPackages.luau",
+    "src/shared/PremiumShop/Catalog/PremiumCombos.luau",
+    "src/shared/PremiumShop/Catalog/PremiumCrates.luau"
+  ],
+  "New": [
+    "src/client/PremiumShop/PremiumPurchaseFlow.luau",
+    "src/server/PremiumShop/DurableReceiptBackend.luau",
+    "src/server/PremiumShop/ProductVerifier.luau",
+    "src/server/PremiumShop/ProfileReceiptStore.luau",
+    "src/shared/PremiumShop/Catalog/Combos/PremiumCombo_01.luau",
+    "src/shared/PremiumShop/Catalog/Combos/PremiumCombo_02.luau",
+    "src/shared/PremiumShop/Catalog/Combos/PremiumCombo_03.luau",
+    "src/shared/PremiumShop/PlaceholderProductIds.luau"
+  ],
+  "OtherBaselineFilesUnchanged": 197,
+  "PhysicalAssetsUnchanged": true,
+  "PurchasesEnabled": false,
+  "RuntimeBridge": "BLOCKED / NOT IMPLEMENTED",
+  "Gameplay": "NOT RUN"
+}

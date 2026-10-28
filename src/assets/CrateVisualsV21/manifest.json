@@ -1,0 +1,23 @@
+[
+  {
+    "Bytes": 28029,
+    "Descendants": 177,
+    "Name": "MainCrateStand",
+    "Base64Bytes": 37372,
+    "Hash": "d813859729da7ea6d0acaeaf9fa9ef0deac98584aa19d1ebb9c09032384e582e"
+  },
+  {
+    "Bytes": 10798,
+    "Descendants": 24,
+    "Name": "CrateOpeningHUD",
+    "Base64Bytes": 14400,
+    "Hash": "443984dae9326a10615e8d6725eec84ad31a59fe83a72ba65e93a6140eba79ff"
+  },
+  {
+    "Bytes": 35568,
+    "Descendants": 172,
+    "Name": "ShopHUD",
+    "Base64Bytes": 47424,
+    "Hash": "ce7a44b723f4881e1fb5c3a8bfac9d2f5e369c409393608d05f7dded80e39b57"
+  }
+]

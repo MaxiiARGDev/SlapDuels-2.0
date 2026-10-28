@@ -1,0 +1,1 @@
+PASS CrateCinematicV23: 1931 isolated assertions including V2.2 lifecycle; visual acceptance NOT RUN

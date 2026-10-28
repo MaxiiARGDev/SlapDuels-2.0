@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "MainCrateStand",
+    "Bytes": 50374,
+    "Hash": "308e97088596283e1ed8a742f019b6b2e13df16c3dd14bda26eaf34676963ab7",
+    "Descendants": 154
+  },
+  {
+    "Name": "ShopHUD",
+    "Bytes": 36234,
+    "Hash": "9ff3c7de491d0f2abcba18cee8862e0a8c9284db33d0e9242e185efb9dd7a852",
+    "Descendants": 191
+  },
+  {
+    "Name": "CrateBatchRewardSlot",
+    "Bytes": 13353,
+    "Hash": "b34f57cb077aed2c386cea81de429c277a51b32707921e7094d6972daeda49bd",
+    "Descendants": 18
+  }
+]

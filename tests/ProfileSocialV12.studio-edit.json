@@ -1,0 +1,309 @@
+{
+  "StudioId": "5984807e-5268-4214-8b30-e127bebb4d84",
+  "Preflight": {
+    "Persistence": {
+      "Provider": "InMemory",
+      "WritesToCloud": false,
+      "Environment": "Studio"
+    },
+    "Sources": [
+      {
+        "Editor": "240a737cf02f02eef04203bb5e87314e2d85ed67a9ab8056de703a0490ea0237",
+        "Path": "ServerScriptService.Bootstrap",
+        "Source": "240a737cf02f02eef04203bb5e87314e2d85ed67a9ab8056de703a0490ea0237",
+        "Safe": true
+      },
+      {
+        "Path": "ReplicatedStorage.Shared.SocialPlayConfig",
+        "Safe": true
+      },
+      {
+        "Editor": "72654aad4e508dbd0d71c77f076048895e1da3041a59d90941f3a637ea79d458",
+        "Path": "ReplicatedStorage.Shared.Types",
+        "Source": "72654aad4e508dbd0d71c77f076048895e1da3041a59d90941f3a637ea79d458",
+        "Safe": true
+      },
+      {
+        "Editor": "cd38f72ab3fec43a49465c65c52229e2d8d96a5974e405b9c5905c6ad62c8906",
+        "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SocialController",
+        "Source": "cd38f72ab3fec43a49465c65c52229e2d8d96a5974e405b9c5905c6ad62c8906",
+        "Safe": true
+      },
+      {
+        "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SocialPlayController",
+        "Safe": true
+      },
+      {
+        "Editor": "5ef7f9618cbe421deafe05217ae5bd863f1ebae327ea8e9681a59a31d1e2f19a",
+        "Path": "ServerScriptService.Services.MatchmakingService",
+        "Source": "5ef7f9618cbe421deafe05217ae5bd863f1ebae327ea8e9681a59a31d1e2f19a",
+        "Safe": true
+      },
+      {
+        "Editor": "10176e8a7de4f83966a62e1a3afb00441121ffc8b00d2b738c813b39cfdba4d0",
+        "Path": "ServerScriptService.Services.PlayerDataService",
+        "Source": "10176e8a7de4f83966a62e1a3afb00441121ffc8b00d2b738c813b39cfdba4d0",
+        "Safe": true
+      },
+      {
+        "Editor": "eed184f903b036d82d748c4c30fdb2b644fe90d2b305ab864c7f80749a5392e7",
+        "Path": "ServerScriptService.Services.PlayerService",
+        "Source": "eed184f903b036d82d748c4c30fdb2b644fe90d2b305ab864c7f80749a5392e7",
+        "Safe": true
+      },
+      {
+        "Editor": "9da200cb1ede84aad1f8ee725684e430047027e486b14780000f43c087f27f20",
+        "Path": "ServerScriptService.Services.RoundService",
+        "Source": "9da200cb1ede84aad1f8ee725684e430047027e486b14780000f43c087f27f20",
+        "Safe": true
+      },
+      {
+        "Path": "ServerScriptService.Services.SocialPlayService",
+        "Safe": true
+      },
+      {
+        "Editor": "85daa7796e4939b3906b05feac59c702d2f77ab8c25e89e2eceddf2f1f82c380",
+        "Path": "ServerScriptService.Services.SocialService",
+        "Source": "85daa7796e4939b3906b05feac59c702d2f77ab8c25e89e2eceddf2f1f82c380",
+        "Safe": true
+      },
+      {
+        "Path": "ServerScriptService.Services.Gameplay.SocialPlayEngine",
+        "Safe": true
+      },
+      {
+        "Path": "ServerScriptService.Services.Gameplay.WinStreak",
+        "Safe": true
+      },
+      {
+        "Editor": "36ac29a28a9d09c8896dd63a67345155ec1a3458eceb1bd6bd617c714c53d9c0",
+        "Path": "ServerScriptService.Services.Trading.PublicInventory",
+        "Source": "36ac29a28a9d09c8896dd63a67345155ec1a3458eceb1bd6bd617c714c53d9c0",
+        "Safe": true
+      }
+    ]
+  },
+  "Synchronization": {
+    "SocialHUDDescendants": 28,
+    "Sources": [
+      {
+        "Editor": "240a737cf02f02eef04203bb5e87314e2d85ed67a9ab8056de703a0490ea0237",
+        "Path": "ServerScriptService.Bootstrap",
+        "Source": "240a737cf02f02eef04203bb5e87314e2d85ed67a9ab8056de703a0490ea0237",
+        "Expected": "240a737cf02f02eef04203bb5e87314e2d85ed67a9ab8056de703a0490ea0237"
+      },
+      {
+        "Editor": "bae9a5a8333488fbe835f6eb74f0e5a0e479f173d3586139df0f0ad28ae1fea9",
+        "Path": "ReplicatedStorage.Shared.SocialPlayConfig",
+        "Source": "bae9a5a8333488fbe835f6eb74f0e5a0e479f173d3586139df0f0ad28ae1fea9",
+        "Expected": "bae9a5a8333488fbe835f6eb74f0e5a0e479f173d3586139df0f0ad28ae1fea9"
+      },
+      {
+        "Editor": "72654aad4e508dbd0d71c77f076048895e1da3041a59d90941f3a637ea79d458",
+        "Path": "ReplicatedStorage.Shared.Types",
+        "Source": "72654aad4e508dbd0d71c77f076048895e1da3041a59d90941f3a637ea79d458",
+        "Expected": "72654aad4e508dbd0d71c77f076048895e1da3041a59d90941f3a637ea79d458"
+      },
+      {
+        "Editor": "c042081f8bd8bc47c3b5038fdbee8ac9b893329fc72e0483377bd56bc13b352f",
+        "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SocialController",
+        "Source": "c042081f8bd8bc47c3b5038fdbee8ac9b893329fc72e0483377bd56bc13b352f",
+        "Expected": "c042081f8bd8bc47c3b5038fdbee8ac9b893329fc72e0483377bd56bc13b352f"
+      },
+      {
+        "Editor": "6acc0ab49e3a59f0935346fb12fa6786c7ea6190b0467562d131ae2f77c4ab23",
+        "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SocialPlayController",
+        "Source": "6acc0ab49e3a59f0935346fb12fa6786c7ea6190b0467562d131ae2f77c4ab23",
+        "Expected": "6acc0ab49e3a59f0935346fb12fa6786c7ea6190b0467562d131ae2f77c4ab23"
+      },
+      {
+        "Editor": "5ef7f9618cbe421deafe05217ae5bd863f1ebae327ea8e9681a59a31d1e2f19a",
+        "Path": "ServerScriptService.Services.MatchmakingService",
+        "Source": "5ef7f9618cbe421deafe05217ae5bd863f1ebae327ea8e9681a59a31d1e2f19a",
+        "Expected": "5ef7f9618cbe421deafe05217ae5bd863f1ebae327ea8e9681a59a31d1e2f19a"
+      },
+      {
+        "Editor": "10176e8a7de4f83966a62e1a3afb00441121ffc8b00d2b738c813b39cfdba4d0",
+        "Path": "ServerScriptService.Services.PlayerDataService",
+        "Source": "10176e8a7de4f83966a62e1a3afb00441121ffc8b00d2b738c813b39cfdba4d0",
+        "Expected": "10176e8a7de4f83966a62e1a3afb00441121ffc8b00d2b738c813b39cfdba4d0"
+      },
+      {
+        "Editor": "eed184f903b036d82d748c4c30fdb2b644fe90d2b305ab864c7f80749a5392e7",
+        "Path": "ServerScriptService.Services.PlayerService",
+        "Source": "eed184f903b036d82d748c4c30fdb2b644fe90d2b305ab864c7f80749a5392e7",
+        "Expected": "eed184f903b036d82d748c4c30fdb2b644fe90d2b305ab864c7f80749a5392e7"
+      },
+      {
+        "Editor": "9da200cb1ede84aad1f8ee725684e430047027e486b14780000f43c087f27f20",
+        "Path": "ServerScriptService.Services.RoundService",
+        "Source": "9da200cb1ede84aad1f8ee725684e430047027e486b14780000f43c087f27f20",
+        "Expected": "9da200cb1ede84aad1f8ee725684e430047027e486b14780000f43c087f27f20"
+      },
+      {
+        "Editor": "54567d1934ca54d79ca825d62aa722defd2f25eb603df8b17c26171b63a195c4",
+        "Path": "ServerScriptService.Services.SocialPlayService",
+        "Source": "54567d1934ca54d79ca825d62aa722defd2f25eb603df8b17c26171b63a195c4",
+        "Expected": "54567d1934ca54d79ca825d62aa722defd2f25eb603df8b17c26171b63a195c4"
+      },
+      {
+        "Editor": "bc8cfdcf3e82df8aa2a4f0513d4e4c4adb8e00fc5e652691cf4efbdfa881388f",
+        "Path": "ServerScriptService.Services.SocialService",
+        "Source": "bc8cfdcf3e82df8aa2a4f0513d4e4c4adb8e00fc5e652691cf4efbdfa881388f",
+        "Expected": "bc8cfdcf3e82df8aa2a4f0513d4e4c4adb8e00fc5e652691cf4efbdfa881388f"
+      },
+      {
+        "Editor": "7e65bb1f80c0ed96fb2b24e974679f2ec6487acfda3c1d0bc3ead81b0c81a17f",
+        "Path": "ServerScriptService.Services.Gameplay.SocialPlayEngine",
+        "Source": "7e65bb1f80c0ed96fb2b24e974679f2ec6487acfda3c1d0bc3ead81b0c81a17f",
+        "Expected": "7e65bb1f80c0ed96fb2b24e974679f2ec6487acfda3c1d0bc3ead81b0c81a17f"
+      },
+      {
+        "Editor": "5c4b07bbfa748d7f2397f6429b81df6ae7eb70e1e179557330aa621120e58697",
+        "Path": "ServerScriptService.Services.Gameplay.WinStreak",
+        "Source": "5c4b07bbfa748d7f2397f6429b81df6ae7eb70e1e179557330aa621120e58697",
+        "Expected": "5c4b07bbfa748d7f2397f6429b81df6ae7eb70e1e179557330aa621120e58697"
+      },
+      {
+        "Editor": "80458033a4598deda8b8b4bbbd05df5d079d8565bd41bd12dd833d069c58bca3",
+        "Path": "ServerScriptService.Services.Trading.PublicInventory",
+        "Source": "80458033a4598deda8b8b4bbbd05df5d079d8565bd41bd12dd833d069c58bca3",
+        "Expected": "80458033a4598deda8b8b4bbbd05df5d079d8565bd41bd12dd833d069c58bca3"
+      }
+    ],
+    "ProfileDescendants": 84,
+    "Edit": true
+  },
+  "Final": {
+    "SocialPlay": {
+      "Notice": "TextLabel",
+      "RequestPanel": "Frame",
+      "GroupPanel": "Frame"
+    },
+    "Protected": {
+      "ShopHUD": "044aa835a3c39771c9061a1d35d8336fb0cd71810c2258263581ddbc9fb77b16",
+      "EndCinematicHUD": "8b4239bc70abf009195d6c636a374e270da92fe7b9c13881c98956790a641c92",
+      "TradeHUD": "9749ab9ca86db5310042ff81bf36c836db7a0b4d62ea1e644e63b18d241ed181",
+      "MatchHUD": "0bd648c4a16fa25ce4c554c9c2736a30756f9cae390e4d96d059ace2d0453cae",
+      "MatchmakingHUD": "ec941de59e6676587ca28e652d500bd7a8fa96dcc343a3ce1eed1518e6f50ea1",
+      "TradeRequestHUD": "4c00d1e2f155d135679d38bc991fa64743c3f1da4b99e24263aabc113937516c",
+      "PremiumShopHUD": "c5353b46410505b19152f666d8830c1b1d4acc2d412c28dda78ac7a33699d1f5",
+      "PlayerHUD": "c66fd5857497fcb429d4e6088f5783ec328f4dc218fbcb07ed8b19d30949dca6"
+    },
+    "Edit": true,
+    "Persistence": {
+      "Provider": "InMemory",
+      "WritesToCloud": false,
+      "Environment": "Studio"
+    },
+    "TradeCommitEnabled": false,
+    "Counts": {
+      "KillRewardHUD": 1,
+      "EndCinematicHUD": 1,
+      "AbilityHUD": 1,
+      "ShopHUD": 1,
+      "TradeHUD": 1,
+      "DeathFeedbackHUD": 1,
+      "PlayerHUD": 1,
+      "SettingsGUI": 1,
+      "CrateOpeningHUD": 1,
+      "SocialPlayHUD": 1,
+      "TradeRequestHUD": 1,
+      "SuddenDeathHUD": 1,
+      "PremiumShopHUD": 1,
+      "MatchmakingHUD": 1,
+      "MatchHUD": 1,
+      "PlayerProfileHUD": 1,
+      "dialog": 1
+    },
+    "Profile": {
+      "Progression": {
+        "Path": "StarterGui.PlayerProfileHUD.MainFrame.Progression",
+        "Class": "TextLabel"
+      },
+      "Challenge": {
+        "Path": "StarterGui.PlayerProfileHUD.MainFrame.Challenge",
+        "Class": "TextButton"
+      },
+      "Invite": {
+        "Path": "StarterGui.PlayerProfileHUD.MainFrame.Invite",
+        "Class": "TextButton"
+      },
+      "Articles": {
+        "Path": "StarterGui.PlayerProfileHUD.MainFrame.Articles",
+        "Class": "TextButton"
+      },
+      "Identity": {
+        "Path": "StarterGui.PlayerProfileHUD.MainFrame.Identity",
+        "Class": "TextLabel"
+      },
+      "Summary": {
+        "Path": "StarterGui.PlayerProfileHUD.MainFrame.Summary",
+        "Class": "Frame"
+      },
+      "Trade": {
+        "Path": "StarterGui.PlayerProfileHUD.MainFrame.Trade",
+        "Class": "TextButton"
+      },
+      "Collection": {
+        "Path": "StarterGui.PlayerProfileHUD.MainFrame.Collection",
+        "Class": "ScrollingFrame"
+      },
+      "Close": {
+        "Path": "StarterGui.PlayerProfileHUD.MainFrame.Close",
+        "Class": "TextButton"
+      },
+      "Avatar": {
+        "Path": "StarterGui.PlayerProfileHUD.MainFrame.Avatar",
+        "Class": "ViewportFrame"
+      }
+    }
+  },
+  "Protection": {
+    "ShopHUD": {
+      "Before": "044aa835a3c39771c9061a1d35d8336fb0cd71810c2258263581ddbc9fb77b16",
+      "After": "044aa835a3c39771c9061a1d35d8336fb0cd71810c2258263581ddbc9fb77b16",
+      "Unchanged": true
+    },
+    "EndCinematicHUD": {
+      "Before": "8b4239bc70abf009195d6c636a374e270da92fe7b9c13881c98956790a641c92",
+      "After": "8b4239bc70abf009195d6c636a374e270da92fe7b9c13881c98956790a641c92",
+      "Unchanged": true
+    },
+    "TradeHUD": {
+      "Before": "9749ab9ca86db5310042ff81bf36c836db7a0b4d62ea1e644e63b18d241ed181",
+      "After": "9749ab9ca86db5310042ff81bf36c836db7a0b4d62ea1e644e63b18d241ed181",
+      "Unchanged": true
+    },
+    "MatchHUD": {
+      "Before": "0bd648c4a16fa25ce4c554c9c2736a30756f9cae390e4d96d059ace2d0453cae",
+      "After": "0bd648c4a16fa25ce4c554c9c2736a30756f9cae390e4d96d059ace2d0453cae",
+      "Unchanged": true
+    },
+    "MatchmakingHUD": {
+      "Before": "ec941de59e6676587ca28e652d500bd7a8fa96dcc343a3ce1eed1518e6f50ea1",
+      "After": "ec941de59e6676587ca28e652d500bd7a8fa96dcc343a3ce1eed1518e6f50ea1",
+      "Unchanged": true
+    },
+    "TradeRequestHUD": {
+      "Before": "4c00d1e2f155d135679d38bc991fa64743c3f1da4b99e24263aabc113937516c",
+      "After": "4c00d1e2f155d135679d38bc991fa64743c3f1da4b99e24263aabc113937516c",
+      "Unchanged": true
+    },
+    "PremiumShopHUD": {
+      "Before": "c5353b46410505b19152f666d8830c1b1d4acc2d412c28dda78ac7a33699d1f5",
+      "After": "c5353b46410505b19152f666d8830c1b1d4acc2d412c28dda78ac7a33699d1f5",
+      "Unchanged": true
+    },
+    "PlayerHUD": {
+      "Before": "c66fd5857497fcb429d4e6088f5783ec328f4dc218fbcb07ed8b19d30949dca6",
+      "After": "c66fd5857497fcb429d4e6088f5783ec328f4dc218fbcb07ed8b19d30949dca6",
+      "Unchanged": true
+    }
+  },
+  "GroupPanelAmendment": {
+    "Editor": "4d85b31f9db81efd5bfc2a43ae1cdea32d79074e7ae72e82a9d3513ef9e67c65",
+    "Expected": "4d85b31f9db81efd5bfc2a43ae1cdea32d79074e7ae72e82a9d3513ef9e67c65",
+    "Source": "4d85b31f9db81efd5bfc2a43ae1cdea32d79074e7ae72e82a9d3513ef9e67c65"
+  }
+}

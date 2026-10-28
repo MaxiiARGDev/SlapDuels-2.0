@@ -1,0 +1,1786 @@
+{
+  "name": "TradeHUD",
+  "tree": {
+    "$className": "ScreenGui",
+    "$properties": {
+      "ResetOnSpawn": false,
+      "IgnoreGuiInset": false,
+      "DisplayOrder": 90,
+      "Enabled": false,
+      "ZIndexBehavior": "Sibling"
+    },
+    "MainFrame": {
+      "$className": "CanvasGroup",
+      "$properties": {
+        "AnchorPoint": {
+          "Vector2": [
+            0.5,
+            0.5
+          ]
+        },
+        "Position": {
+          "UDim2": [
+            [
+              0.5,
+              0
+            ],
+            [
+              0.5,
+              0
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              0.94,
+              0
+            ],
+            [
+              0.9,
+              0
+            ]
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.0392156862745098,
+            0.06274509803921569,
+            0.10588235294117647
+          ]
+        },
+        "BorderSizePixel": 0,
+        "GroupTransparency": 0
+      },
+      "Corner": {
+        "$className": "UICorner",
+        "$properties": {
+          "CornerRadius": {
+            "UDim": [
+              0,
+              14
+            ]
+          }
+        }
+      },
+      "Stroke": {
+        "$className": "UIStroke",
+        "$properties": {
+          "Color": {
+            "Color3": [
+              0.13725490196078433,
+              0.5725490196078431,
+              0.7137254901960784
+            ]
+          },
+          "Thickness": 1.5
+        }
+      },
+      "Bounds": {
+        "$className": "UISizeConstraint",
+        "$properties": {
+          "MaxSize": {
+            "Vector2": [
+              1060,
+              780
+            ]
+          },
+          "MinSize": {
+            "Vector2": [
+              280,
+              250
+            ]
+          }
+        }
+      },
+      "Title": {
+        "$className": "TextLabel",
+        "$properties": {
+          "Text": "INTERCAMBIO DE SLAPS",
+          "Position": {
+            "UDim2": [
+              [
+                0,
+                16
+              ],
+              [
+                0,
+                8
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                1,
+                -80
+              ],
+              [
+                0,
+                32
+              ]
+            ]
+          },
+          "TextColor3": {
+            "Color3": [
+              0.8784313725490196,
+              0.9372549019607843,
+              0.9764705882352941
+            ]
+          },
+          "BackgroundTransparency": 1,
+          "BackgroundColor3": {
+            "Color3": [
+              0.09803921568627451,
+              0.2549019607843137,
+              0.3333333333333333
+            ]
+          },
+          "BorderSizePixel": 0,
+          "TextSize": 15,
+          "Font": "GothamBold",
+          "TextWrapped": true
+        }
+      },
+      "Close": {
+        "$className": "TextButton",
+        "$properties": {
+          "Text": "X",
+          "Position": {
+            "UDim2": [
+              [
+                1,
+                -52
+              ],
+              [
+                0,
+                10
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0,
+                36
+              ],
+              [
+                0,
+                32
+              ]
+            ]
+          },
+          "TextColor3": {
+            "Color3": [
+              0.8784313725490196,
+              0.9372549019607843,
+              0.9764705882352941
+            ]
+          },
+          "BackgroundTransparency": 0,
+          "BackgroundColor3": {
+            "Color3": [
+              0.09803921568627451,
+              0.2549019607843137,
+              0.3333333333333333
+            ]
+          },
+          "BorderSizePixel": 0,
+          "TextSize": 15,
+          "Font": "GothamBold",
+          "TextWrapped": true
+        },
+        "Corner": {
+          "$className": "UICorner",
+          "$properties": {
+            "CornerRadius": {
+              "UDim": [
+                0,
+                8
+              ]
+            }
+          }
+        }
+      },
+      "Status": {
+        "$className": "TextLabel",
+        "$properties": {
+          "Text": "",
+          "Position": {
+            "UDim2": [
+              [
+                0,
+                12
+              ],
+              [
+                1,
+                -60
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                1,
+                -24
+              ],
+              [
+                0,
+                24
+              ]
+            ]
+          },
+          "TextColor3": {
+            "Color3": [
+              0.8784313725490196,
+              0.9372549019607843,
+              0.9764705882352941
+            ]
+          },
+          "BackgroundTransparency": 1,
+          "BackgroundColor3": {
+            "Color3": [
+              0.09803921568627451,
+              0.2549019607843137,
+              0.3333333333333333
+            ]
+          },
+          "BorderSizePixel": 0,
+          "TextSize": 15,
+          "Font": "GothamBold",
+          "TextWrapped": true
+        }
+      },
+      "Mine": {
+        "$className": "Frame",
+        "$properties": {
+          "Position": {
+            "UDim2": [
+              [
+                0.025,
+                0
+              ],
+              [
+                0.08,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.46,
+                0
+              ],
+              [
+                0.72,
+                0
+              ]
+            ]
+          },
+          "BackgroundTransparency": 1
+        },
+        "Name": {
+          "$className": "TextLabel",
+          "$properties": {
+            "Text": "MIS OFERTAS",
+            "Position": {
+              "UDim2": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  28
+                ]
+              ]
+            },
+            "TextColor3": {
+              "Color3": [
+                0.8784313725490196,
+                0.9372549019607843,
+                0.9764705882352941
+              ]
+            },
+            "BackgroundTransparency": 1,
+            "BackgroundColor3": {
+              "Color3": [
+                0.09803921568627451,
+                0.2549019607843137,
+                0.3333333333333333
+              ]
+            },
+            "BorderSizePixel": 0,
+            "TextSize": 15,
+            "Font": "GothamBold",
+            "TextWrapped": true
+          }
+        },
+        "Avatar": {
+          "$className": "ViewportFrame",
+          "$properties": {
+            "Position": {
+              "UDim2": [
+                [
+                  0.03,
+                  0
+                ],
+                [
+                  0.07,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  0.28,
+                  0
+                ],
+                [
+                  0.17,
+                  0
+                ]
+              ]
+            },
+            "BackgroundColor3": {
+              "Color3": [
+                0.047058823529411764,
+                0.0784313725490196,
+                0.12549019607843137
+              ]
+            },
+            "BorderSizePixel": 0,
+            "Ambient": {
+              "Color3": [
+                0.6666666666666666,
+                0.6980392156862745,
+                0.7607843137254902
+              ]
+            },
+            "LightColor": {
+              "Color3": [
+                0.9019607843137255,
+                0.9215686274509803,
+                0.9607843137254902
+              ]
+            },
+            "LightDirection": {
+              "Vector3": [
+                -1,
+                -1,
+                -1
+              ]
+            }
+          }
+        },
+        "Identity": {
+          "$className": "TextLabel",
+          "$properties": {
+            "Text": "",
+            "Position": {
+              "UDim2": [
+                [
+                  0.34,
+                  0
+                ],
+                [
+                  0.07,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  0.64,
+                  0
+                ],
+                [
+                  0.17,
+                  0
+                ]
+              ]
+            },
+            "TextColor3": {
+              "Color3": [
+                0.8784313725490196,
+                0.9372549019607843,
+                0.9764705882352941
+              ]
+            },
+            "BackgroundTransparency": 1,
+            "BackgroundColor3": {
+              "Color3": [
+                0.09803921568627451,
+                0.2549019607843137,
+                0.3333333333333333
+              ]
+            },
+            "BorderSizePixel": 0,
+            "TextSize": 15,
+            "Font": "GothamBold",
+            "TextWrapped": true
+          }
+        },
+        "Offers": {
+          "$className": "ScrollingFrame",
+          "$properties": {
+            "Position": {
+              "UDim2": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.26,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0.36,
+                  0
+                ]
+              ]
+            },
+            "BackgroundTransparency": 1,
+            "BorderSizePixel": 0,
+            "ScrollBarThickness": 5,
+            "AutomaticCanvasSize": "Y",
+            "CanvasSize": {
+              "UDim2": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            }
+          },
+          "Grid": {
+            "$className": "UIGridLayout",
+            "$properties": {
+              "CellSize": {
+                "UDim2": [
+                  [
+                    0.48,
+                    0
+                  ],
+                  [
+                    0,
+                    150
+                  ]
+                ]
+              },
+              "CellPadding": {
+                "UDim2": [
+                  [
+                    0.02,
+                    0
+                  ],
+                  [
+                    0,
+                    12
+                  ]
+                ]
+              },
+              "SortOrder": "LayoutOrder"
+            }
+          }
+        },
+        "Accepted": {
+          "$className": "TextLabel",
+          "$properties": {
+            "Text": "",
+            "Position": {
+              "UDim2": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.63,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0.08,
+                  0
+                ]
+              ]
+            },
+            "TextColor3": {
+              "Color3": [
+                0.8784313725490196,
+                0.9372549019607843,
+                0.9764705882352941
+              ]
+            },
+            "BackgroundTransparency": 1,
+            "BackgroundColor3": {
+              "Color3": [
+                0.09803921568627451,
+                0.2549019607843137,
+                0.3333333333333333
+              ]
+            },
+            "BorderSizePixel": 0,
+            "TextSize": 15,
+            "Font": "GothamBold",
+            "TextWrapped": true
+          }
+        },
+        "Inventory": {
+          "$className": "ScrollingFrame",
+          "$properties": {
+            "Position": {
+              "UDim2": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.73,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0.27,
+                  0
+                ]
+              ]
+            },
+            "BackgroundTransparency": 1,
+            "BorderSizePixel": 0,
+            "ScrollBarThickness": 5,
+            "AutomaticCanvasSize": "Y",
+            "CanvasSize": {
+              "UDim2": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            }
+          },
+          "Grid": {
+            "$className": "UIGridLayout",
+            "$properties": {
+              "CellSize": {
+                "UDim2": [
+                  [
+                    0.48,
+                    0
+                  ],
+                  [
+                    0,
+                    150
+                  ]
+                ]
+              },
+              "CellPadding": {
+                "UDim2": [
+                  [
+                    0.02,
+                    0
+                  ],
+                  [
+                    0,
+                    12
+                  ]
+                ]
+              },
+              "SortOrder": "LayoutOrder"
+            }
+          }
+        }
+      },
+      "Theirs": {
+        "$className": "Frame",
+        "$properties": {
+          "Position": {
+            "UDim2": [
+              [
+                0.515,
+                0
+              ],
+              [
+                0.08,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.46,
+                0
+              ],
+              [
+                0.72,
+                0
+              ]
+            ]
+          },
+          "BackgroundTransparency": 1
+        },
+        "Name": {
+          "$className": "TextLabel",
+          "$properties": {
+            "Text": "OFERTA DEL OTRO JUGADOR",
+            "Position": {
+              "UDim2": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  28
+                ]
+              ]
+            },
+            "TextColor3": {
+              "Color3": [
+                0.8784313725490196,
+                0.9372549019607843,
+                0.9764705882352941
+              ]
+            },
+            "BackgroundTransparency": 1,
+            "BackgroundColor3": {
+              "Color3": [
+                0.09803921568627451,
+                0.2549019607843137,
+                0.3333333333333333
+              ]
+            },
+            "BorderSizePixel": 0,
+            "TextSize": 15,
+            "Font": "GothamBold",
+            "TextWrapped": true
+          }
+        },
+        "Avatar": {
+          "$className": "ViewportFrame",
+          "$properties": {
+            "Position": {
+              "UDim2": [
+                [
+                  0.03,
+                  0
+                ],
+                [
+                  0.07,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  0.28,
+                  0
+                ],
+                [
+                  0.17,
+                  0
+                ]
+              ]
+            },
+            "BackgroundColor3": {
+              "Color3": [
+                0.047058823529411764,
+                0.0784313725490196,
+                0.12549019607843137
+              ]
+            },
+            "BorderSizePixel": 0,
+            "Ambient": {
+              "Color3": [
+                0.6666666666666666,
+                0.6980392156862745,
+                0.7607843137254902
+              ]
+            },
+            "LightColor": {
+              "Color3": [
+                0.9019607843137255,
+                0.9215686274509803,
+                0.9607843137254902
+              ]
+            },
+            "LightDirection": {
+              "Vector3": [
+                -1,
+                -1,
+                -1
+              ]
+            }
+          }
+        },
+        "Identity": {
+          "$className": "TextLabel",
+          "$properties": {
+            "Text": "",
+            "Position": {
+              "UDim2": [
+                [
+                  0.34,
+                  0
+                ],
+                [
+                  0.07,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  0.64,
+                  0
+                ],
+                [
+                  0.17,
+                  0
+                ]
+              ]
+            },
+            "TextColor3": {
+              "Color3": [
+                0.8784313725490196,
+                0.9372549019607843,
+                0.9764705882352941
+              ]
+            },
+            "BackgroundTransparency": 1,
+            "BackgroundColor3": {
+              "Color3": [
+                0.09803921568627451,
+                0.2549019607843137,
+                0.3333333333333333
+              ]
+            },
+            "BorderSizePixel": 0,
+            "TextSize": 15,
+            "Font": "GothamBold",
+            "TextWrapped": true
+          }
+        },
+        "Offers": {
+          "$className": "ScrollingFrame",
+          "$properties": {
+            "Position": {
+              "UDim2": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.26,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0.36,
+                  0
+                ]
+              ]
+            },
+            "BackgroundTransparency": 1,
+            "BorderSizePixel": 0,
+            "ScrollBarThickness": 5,
+            "AutomaticCanvasSize": "Y",
+            "CanvasSize": {
+              "UDim2": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            }
+          },
+          "Grid": {
+            "$className": "UIGridLayout",
+            "$properties": {
+              "CellSize": {
+                "UDim2": [
+                  [
+                    0.48,
+                    0
+                  ],
+                  [
+                    0,
+                    150
+                  ]
+                ]
+              },
+              "CellPadding": {
+                "UDim2": [
+                  [
+                    0.02,
+                    0
+                  ],
+                  [
+                    0,
+                    12
+                  ]
+                ]
+              },
+              "SortOrder": "LayoutOrder"
+            }
+          }
+        },
+        "Accepted": {
+          "$className": "TextLabel",
+          "$properties": {
+            "Text": "",
+            "Position": {
+              "UDim2": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.63,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0.08,
+                  0
+                ]
+              ]
+            },
+            "TextColor3": {
+              "Color3": [
+                0.8784313725490196,
+                0.9372549019607843,
+                0.9764705882352941
+              ]
+            },
+            "BackgroundTransparency": 1,
+            "BackgroundColor3": {
+              "Color3": [
+                0.09803921568627451,
+                0.2549019607843137,
+                0.3333333333333333
+              ]
+            },
+            "BorderSizePixel": 0,
+            "TextSize": 15,
+            "Font": "GothamBold",
+            "TextWrapped": true
+          }
+        },
+        "Summary": {
+          "$className": "TextLabel",
+          "$properties": {
+            "Text": "Revisá artículos, variaciones e identidad antes de confirmar.",
+            "Position": {
+              "UDim2": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0.74,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  0.25,
+                  0
+                ]
+              ]
+            },
+            "TextColor3": {
+              "Color3": [
+                0.8784313725490196,
+                0.9372549019607843,
+                0.9764705882352941
+              ]
+            },
+            "BackgroundTransparency": 1,
+            "BackgroundColor3": {
+              "Color3": [
+                0.09803921568627451,
+                0.2549019607843137,
+                0.3333333333333333
+              ]
+            },
+            "BorderSizePixel": 0,
+            "TextSize": 15,
+            "Font": "GothamBold",
+            "TextWrapped": true
+          }
+        }
+      },
+      "Accept": {
+        "$className": "TextButton",
+        "$properties": {
+          "Text": "ACEPTAR OFERTA",
+          "Position": {
+            "UDim2": [
+              [
+                0.025,
+                0
+              ],
+              [
+                1,
+                -38
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.29,
+                0
+              ],
+              [
+                0,
+                30
+              ]
+            ]
+          },
+          "TextColor3": {
+            "Color3": [
+              0.8784313725490196,
+              0.9372549019607843,
+              0.9764705882352941
+            ]
+          },
+          "BackgroundTransparency": 0,
+          "BackgroundColor3": {
+            "Color3": [
+              0.09803921568627451,
+              0.2549019607843137,
+              0.3333333333333333
+            ]
+          },
+          "BorderSizePixel": 0,
+          "TextSize": 15,
+          "Font": "GothamBold",
+          "TextWrapped": true
+        },
+        "Corner": {
+          "$className": "UICorner",
+          "$properties": {
+            "CornerRadius": {
+              "UDim": [
+                0,
+                8
+              ]
+            }
+          }
+        }
+      },
+      "Confirm": {
+        "$className": "TextButton",
+        "$properties": {
+          "Text": "CONFIRMAR INTERCAMBIO",
+          "Position": {
+            "UDim2": [
+              [
+                0.335,
+                0
+              ],
+              [
+                1,
+                -38
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.4,
+                0
+              ],
+              [
+                0,
+                30
+              ]
+            ]
+          },
+          "TextColor3": {
+            "Color3": [
+              0.8784313725490196,
+              0.9372549019607843,
+              0.9764705882352941
+            ]
+          },
+          "BackgroundTransparency": 0,
+          "BackgroundColor3": {
+            "Color3": [
+              0.09803921568627451,
+              0.2549019607843137,
+              0.3333333333333333
+            ]
+          },
+          "BorderSizePixel": 0,
+          "TextSize": 15,
+          "Font": "GothamBold",
+          "TextWrapped": true
+        },
+        "Corner": {
+          "$className": "UICorner",
+          "$properties": {
+            "CornerRadius": {
+              "UDim": [
+                0,
+                8
+              ]
+            }
+          }
+        }
+      },
+      "Cancel": {
+        "$className": "TextButton",
+        "$properties": {
+          "Text": "CANCELAR",
+          "Position": {
+            "UDim2": [
+              [
+                0.755,
+                0
+              ],
+              [
+                1,
+                -38
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.22,
+                0
+              ],
+              [
+                0,
+                30
+              ]
+            ]
+          },
+          "TextColor3": {
+            "Color3": [
+              0.8784313725490196,
+              0.9372549019607843,
+              0.9764705882352941
+            ]
+          },
+          "BackgroundTransparency": 0,
+          "BackgroundColor3": {
+            "Color3": [
+              0.09803921568627451,
+              0.2549019607843137,
+              0.3333333333333333
+            ]
+          },
+          "BorderSizePixel": 0,
+          "TextSize": 15,
+          "Font": "GothamBold",
+          "TextWrapped": true
+        },
+        "Corner": {
+          "$className": "UICorner",
+          "$properties": {
+            "CornerRadius": {
+              "UDim": [
+                0,
+                8
+              ]
+            }
+          }
+        }
+      },
+      "Page": {
+        "$className": "TextLabel",
+        "$properties": {
+          "Text": "",
+          "Position": {
+            "UDim2": [
+              [
+                0.15,
+                0
+              ],
+              [
+                0.81,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.22,
+                0
+              ],
+              [
+                0,
+                24
+              ]
+            ]
+          },
+          "TextColor3": {
+            "Color3": [
+              0.8784313725490196,
+              0.9372549019607843,
+              0.9764705882352941
+            ]
+          },
+          "BackgroundTransparency": 1,
+          "BackgroundColor3": {
+            "Color3": [
+              0.09803921568627451,
+              0.2549019607843137,
+              0.3333333333333333
+            ]
+          },
+          "BorderSizePixel": 0,
+          "TextSize": 15,
+          "Font": "GothamBold",
+          "TextWrapped": true
+        }
+      },
+      "Previous": {
+        "$className": "TextButton",
+        "$properties": {
+          "Text": "<",
+          "Position": {
+            "UDim2": [
+              [
+                0.025,
+                0
+              ],
+              [
+                0.81,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.1,
+                0
+              ],
+              [
+                0,
+                24
+              ]
+            ]
+          },
+          "TextColor3": {
+            "Color3": [
+              0.8784313725490196,
+              0.9372549019607843,
+              0.9764705882352941
+            ]
+          },
+          "BackgroundTransparency": 0,
+          "BackgroundColor3": {
+            "Color3": [
+              0.09803921568627451,
+              0.2549019607843137,
+              0.3333333333333333
+            ]
+          },
+          "BorderSizePixel": 0,
+          "TextSize": 15,
+          "Font": "GothamBold",
+          "TextWrapped": true
+        },
+        "Corner": {
+          "$className": "UICorner",
+          "$properties": {
+            "CornerRadius": {
+              "UDim": [
+                0,
+                8
+              ]
+            }
+          }
+        }
+      },
+      "Next": {
+        "$className": "TextButton",
+        "$properties": {
+          "Text": ">",
+          "Position": {
+            "UDim2": [
+              [
+                0.39,
+                0
+              ],
+              [
+                0.81,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.1,
+                0
+              ],
+              [
+                0,
+                24
+              ]
+            ]
+          },
+          "TextColor3": {
+            "Color3": [
+              0.8784313725490196,
+              0.9372549019607843,
+              0.9764705882352941
+            ]
+          },
+          "BackgroundTransparency": 0,
+          "BackgroundColor3": {
+            "Color3": [
+              0.09803921568627451,
+              0.2549019607843137,
+              0.3333333333333333
+            ]
+          },
+          "BorderSizePixel": 0,
+          "TextSize": 15,
+          "Font": "GothamBold",
+          "TextWrapped": true
+        },
+        "Corner": {
+          "$className": "UICorner",
+          "$properties": {
+            "CornerRadius": {
+              "UDim": [
+                0,
+                8
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Audio": {
+      "$className": "Folder",
+      "$properties": {},
+      "Open": {
+        "$className": "Sound",
+        "$properties": {
+          "SoundId": "",
+          "Volume": 0.25,
+          "PlaybackSpeed": 1
+        }
+      },
+      "Close": {
+        "$className": "Sound",
+        "$properties": {
+          "SoundId": "",
+          "Volume": 0.25,
+          "PlaybackSpeed": 1
+        }
+      },
+      "Click": {
+        "$className": "Sound",
+        "$properties": {
+          "SoundId": "",
+          "Volume": 0.25,
+          "PlaybackSpeed": 1
+        }
+      },
+      "Hover": {
+        "$className": "Sound",
+        "$properties": {
+          "SoundId": "",
+          "Volume": 0.25,
+          "PlaybackSpeed": 1
+        }
+      },
+      "Accept": {
+        "$className": "Sound",
+        "$properties": {
+          "SoundId": "",
+          "Volume": 0.25,
+          "PlaybackSpeed": 1
+        }
+      },
+      "Confirm": {
+        "$className": "Sound",
+        "$properties": {
+          "SoundId": "",
+          "Volume": 0.25,
+          "PlaybackSpeed": 1
+        }
+      },
+      "Cancel": {
+        "$className": "Sound",
+        "$properties": {
+          "SoundId": "",
+          "Volume": 0.25,
+          "PlaybackSpeed": 1
+        }
+      },
+      "Error": {
+        "$className": "Sound",
+        "$properties": {
+          "SoundId": "",
+          "Volume": 0.25,
+          "PlaybackSpeed": 1
+        }
+      },
+      "TradeCompleted": {
+        "$className": "Sound",
+        "$properties": {
+          "SoundId": "",
+          "Volume": 0.25,
+          "PlaybackSpeed": 1
+        }
+      }
+    },
+    "CardTemplate": {
+      "$className": "TextButton",
+      "$properties": {
+        "Visible": false,
+        "Size": {
+          "UDim2": [
+            [
+              0,
+              130
+            ],
+            [
+              0,
+              180
+            ]
+          ]
+        },
+        "BackgroundColor3": {
+          "Color3": [
+            0.07058823529411765,
+            0.10980392156862745,
+            0.17254901960784313
+          ]
+        },
+        "BorderSizePixel": 0,
+        "Text": "",
+        "AutoButtonColor": false
+      },
+      "Corner": {
+        "$className": "UICorner",
+        "$properties": {
+          "CornerRadius": {
+            "UDim": [
+              0,
+              9
+            ]
+          }
+        }
+      },
+      "Accent": {
+        "$className": "UIStroke",
+        "$properties": {
+          "Color": {
+            "Color3": [
+              0.28627450980392155,
+              0.7098039215686275,
+              0.8509803921568627
+            ]
+          },
+          "Thickness": 1.5
+        }
+      },
+      "Aura": {
+        "$className": "Frame",
+        "$properties": {
+          "Position": {
+            "UDim2": [
+              [
+                0.02,
+                0
+              ],
+              [
+                0.01,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.96,
+                0
+              ],
+              [
+                0.44,
+                0
+              ]
+            ]
+          },
+          "BackgroundColor3": {
+            "Color3": [
+              0.19607843137254902,
+              0.5490196078431373,
+              0.7058823529411765
+            ]
+          },
+          "BackgroundTransparency": 0.82,
+          "BorderSizePixel": 0
+        },
+        "Corner": {
+          "$className": "UICorner",
+          "$properties": {
+            "CornerRadius": {
+              "UDim": [
+                0,
+                12
+              ]
+            }
+          }
+        },
+        "Gradient": {
+          "$className": "UIGradient",
+          "$properties": {
+            "Rotation": 45
+          }
+        }
+      },
+      "Preview": {
+        "$className": "ViewportFrame",
+        "$properties": {
+          "Position": {
+            "UDim2": [
+              [
+                0.04,
+                0
+              ],
+              [
+                0.03,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.92,
+                0
+              ],
+              [
+                0.41,
+                0
+              ]
+            ]
+          },
+          "BackgroundColor3": {
+            "Color3": [
+              0.047058823529411764,
+              0.0784313725490196,
+              0.12549019607843137
+            ]
+          },
+          "BorderSizePixel": 0,
+          "Ambient": {
+            "Color3": [
+              0.6666666666666666,
+              0.6980392156862745,
+              0.7607843137254902
+            ]
+          },
+          "LightColor": {
+            "Color3": [
+              0.9019607843137255,
+              0.9215686274509803,
+              0.9607843137254902
+            ]
+          },
+          "LightDirection": {
+            "Vector3": [
+              -1,
+              -1,
+              -1
+            ]
+          }
+        }
+      },
+      "ItemName": {
+        "$className": "TextLabel",
+        "$properties": {
+          "Text": "",
+          "Position": {
+            "UDim2": [
+              [
+                0.03,
+                0
+              ],
+              [
+                0.46,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.94,
+                0
+              ],
+              [
+                0.14,
+                0
+              ]
+            ]
+          },
+          "TextColor3": {
+            "Color3": [
+              0.8784313725490196,
+              0.9372549019607843,
+              0.9764705882352941
+            ]
+          },
+          "BackgroundTransparency": 1,
+          "BackgroundColor3": {
+            "Color3": [
+              0.09803921568627451,
+              0.2549019607843137,
+              0.3333333333333333
+            ]
+          },
+          "BorderSizePixel": 0,
+          "TextSize": 15,
+          "Font": "GothamBold",
+          "TextWrapped": true
+        }
+      },
+      "Variation": {
+        "$className": "TextLabel",
+        "$properties": {
+          "Text": "",
+          "Position": {
+            "UDim2": [
+              [
+                0.03,
+                0
+              ],
+              [
+                0.6,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.94,
+                0
+              ],
+              [
+                0.1,
+                0
+              ]
+            ]
+          },
+          "TextColor3": {
+            "Color3": [
+              0.8784313725490196,
+              0.9372549019607843,
+              0.9764705882352941
+            ]
+          },
+          "BackgroundTransparency": 1,
+          "BackgroundColor3": {
+            "Color3": [
+              0.09803921568627451,
+              0.2549019607843137,
+              0.3333333333333333
+            ]
+          },
+          "BorderSizePixel": 0,
+          "TextSize": 15,
+          "Font": "GothamBold",
+          "TextWrapped": true
+        }
+      },
+      "State": {
+        "$className": "TextLabel",
+        "$properties": {
+          "Text": "",
+          "Position": {
+            "UDim2": [
+              [
+                0.03,
+                0
+              ],
+              [
+                0.7,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.94,
+                0
+              ],
+              [
+                0.1,
+                0
+              ]
+            ]
+          },
+          "TextColor3": {
+            "Color3": [
+              0.8784313725490196,
+              0.9372549019607843,
+              0.9764705882352941
+            ]
+          },
+          "BackgroundTransparency": 1,
+          "BackgroundColor3": {
+            "Color3": [
+              0.09803921568627451,
+              0.2549019607843137,
+              0.3333333333333333
+            ]
+          },
+          "BorderSizePixel": 0,
+          "TextSize": 15,
+          "Font": "GothamBold",
+          "TextWrapped": true
+        }
+      },
+      "UnitId": {
+        "$className": "TextLabel",
+        "$properties": {
+          "Text": "",
+          "Position": {
+            "UDim2": [
+              [
+                0.03,
+                0
+              ],
+              [
+                0.8,
+                0
+              ]
+            ]
+          },
+          "Size": {
+            "UDim2": [
+              [
+                0.94,
+                0
+              ],
+              [
+                0.2,
+                0
+              ]
+            ]
+          },
+          "TextColor3": {
+            "Color3": [
+              0.8784313725490196,
+              0.9372549019607843,
+              0.9764705882352941
+            ]
+          },
+          "BackgroundTransparency": 1,
+          "BackgroundColor3": {
+            "Color3": [
+              0.09803921568627451,
+              0.2549019607843137,
+              0.3333333333333333
+            ]
+          },
+          "BorderSizePixel": 0,
+          "TextSize": 15,
+          "Font": "GothamBold",
+          "TextWrapped": true
+        }
+      }
+    }
+  }
+}

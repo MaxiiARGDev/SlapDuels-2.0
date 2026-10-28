@@ -1,0 +1,16 @@
+{
+  "Mode": "Edit",
+  "CodePresent": {
+    "Config": true,
+    "Elimination": true,
+    "Label": true,
+    "Transaction": true,
+    "Receipt": true,
+    "Authority": true
+  },
+  "CoinTargetUnchanged": true,
+  "ScenarioFinalUnchanged": true,
+  "ObjectsCompared": 137,
+  "GameplayTests": "NOT RUN",
+  "PlaceSaved": false
+}

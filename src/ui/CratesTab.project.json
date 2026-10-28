@@ -1,0 +1,46 @@
+{
+  "name": "CratesTab",
+  "tree": {
+    "$className": "TextButton",
+    "$properties": {
+      "Size": {
+        "UDim2": [
+          [
+            0,
+            120
+          ],
+          [
+            0,
+            54
+          ]
+        ]
+      },
+      "Text": "CAJAS",
+      "TextSize": 18,
+      "TextColor3": {
+        "Color3": [
+          1,
+          1,
+          1
+        ]
+      },
+      "BackgroundColor3": {
+        "Color3": [
+          0.08,
+          0.1,
+          0.15
+        ]
+      },
+      "LayoutOrder": 60,
+      "Attributes": {
+        "Category": {
+          "String": "Crates"
+        }
+      }
+    },
+    "UICorner": {
+      "$className": "UICorner",
+      "$properties": {}
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "RuntimeCompiled": 115,
+  "Gameplay": "NOT RUN",
+  "Checks": {
+    "appearance": {
+      "ExitCode": 0,
+      "Log": "tests/SlapVariationsV1.appearance.log"
+    },
+    "crates": {
+      "ExitCode": 0,
+      "Log": "tests/SlapVariationsV1.crates.log"
+    },
+    "combat": {
+      "ExitCode": 0,
+      "Log": "tests/SlapVariationsV1.combat.log"
+    },
+    "ability": {
+      "ExitCode": 0,
+      "Log": "tests/SlapVariationsV1.ability.log"
+    },
+    "registry": {
+      "ExitCode": 0,
+      "Log": "tests/SlapVariationsV1.registry.log"
+    },
+    "shop": {
+      "ExitCode": 0,
+      "Log": "tests/SlapVariationsV1.shop.log"
+    },
+    "compile": {
+      "ExitCode": 0,
+      "Log": "tests/SlapVariationsV1.compile.log"
+    },
+    "build": {
+      "ExitCode": 0,
+      "Log": "tests/SlapVariationsV1.build.log"
+    },
+    "safe-build": {
+      "ExitCode": 0,
+      "Log": "tests/SlapVariationsV1.safe-build.log"
+    },
+    "diff-check": {
+      "ExitCode": 0,
+      "Log": "tests/SlapVariationsV1.diff-check.log"
+    },
+    "integrity": {
+      "ExitCode": 0,
+      "Log": "tests/SlapVariationsV1.integrity.log"
+    }
+  }
+}

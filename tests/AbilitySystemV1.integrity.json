@@ -1,0 +1,282 @@
+[
+  {
+    "File": "default.project.json",
+    "SHA256": "a99d5df3dc6a7df1ace6d4e6c4003a90329cc0f80b0fb659e9c74003261b3fcb",
+    "Bytes": 4490
+  },
+  {
+    "File": "src/assets/AbilityEffects.rbxm",
+    "SHA256": "ccecd9e2e62c45e7fb7e4826625e4a43e139bb5d5bba2069bfdc94e1b00391ce",
+    "Bytes": 10036
+  },
+  {
+    "File": "src/client/Abilities/AbilityPresentation.luau",
+    "SHA256": "eaf5c6bdbc8f0c61e4a0a7449ae40e200f6189a94b199522f1b7b3235ecef35f",
+    "Bytes": 5438
+  },
+  {
+    "File": "src/client/Abilities/AbilitySelection.luau",
+    "SHA256": "824da8b890d8dbd7397b7132107fe0c9700901b4c9e05a2967c298f97a8cb6b7",
+    "Bytes": 1768
+  },
+  {
+    "File": "src/client/Controllers/AbilityController.luau",
+    "SHA256": "035949c60608f97461f251d83510bfc9b7695c588d4a1ba12cb07ee833b32236",
+    "Bytes": 5044
+  },
+  {
+    "File": "src/client/Controllers/ShopController.luau",
+    "SHA256": "df8a16c7772ee3a79dc2b599b0ba741a2a91cb894bee9928d5949dfd84a4fe53",
+    "Bytes": 27194
+  },
+  {
+    "File": "src/server/Abilities/AirJumpsAbility.luau",
+    "SHA256": "8e9bc950f31b180b57b640aa53439c35ca82514989eb1f9107add8da4b8dcb3d",
+    "Bytes": 1372
+  },
+  {
+    "File": "src/server/Abilities/DashAbility.luau",
+    "SHA256": "ff23f7691f26e13eae62f77b64def0629470c0204c33d022717f686b2517ad68",
+    "Bytes": 1572
+  },
+  {
+    "File": "src/server/Abilities/DevilSpeedAbility.luau",
+    "SHA256": "f1482813fcb2b4a0a52bbd8ff9773b94c6a7c44cbf5bf815ca5f080b202d6232",
+    "Bytes": 823
+  },
+  {
+    "File": "src/server/Abilities/InvisibilityAbility.luau",
+    "SHA256": "9ab4a4503bbda7de9569713f3c24f2ad4d2f1f28c9248c8d2f7477e96ede9544",
+    "Bytes": 368
+  },
+  {
+    "File": "src/server/Abilities/MovementGuard.luau",
+    "SHA256": "3fcfb27bae4d4a122847f2514cd41e05affc5cbed92d707f594bf34eeac89539",
+    "Bytes": 2904
+  },
+  {
+    "File": "src/server/Abilities/StrongSlapAbility.luau",
+    "SHA256": "f5b83a3cb6ae8394f6d798456ada7d7ceafd3d9eb9d682483c4dc7a48aaf00e9",
+    "Bytes": 308
+  },
+  {
+    "File": "src/server/Bootstrap.server.luau",
+    "SHA256": "b0850423674e836e8c88572b9caaa44dd71460511bbdb8f586307749d4fb83f7",
+    "Bytes": 3635
+  },
+  {
+    "File": "src/server/Services/AbilityService.luau",
+    "SHA256": "3dcb67dda7fec6ff33481a3042f76d1e7c45be16d56265632079575622695dc6",
+    "Bytes": 14321
+  },
+  {
+    "File": "src/server/Services/CombatService.luau",
+    "SHA256": "84c3b26cbf00073a21ad605dca0afad80a1986bcf504826dfd588757c85af99d",
+    "Bytes": 9219
+  },
+  {
+    "File": "src/server/Services/EliminationService.luau",
+    "SHA256": "7f1290446030daff4a190b399d7a1c82d9c4eea8e3a831a0186219105553f975",
+    "Bytes": 33157
+  },
+  {
+    "File": "src/server/Services/PlayerDataService.luau",
+    "SHA256": "4212f5ae39be3236727032547adc835a2a7e5f9a331f72b319c2d988f791bc9f",
+    "Bytes": 20629
+  },
+  {
+    "File": "src/server/Services/PlayerService.luau",
+    "SHA256": "4f841074d915cc785baf233b0ed681487c7677c2c8f1406d2de76e6d5cb85a64",
+    "Bytes": 27922
+  },
+  {
+    "File": "src/server/Services/RagdollService.luau",
+    "SHA256": "3e203c841e02c4c540bbb516da37887839a609ebc23f46035bd1e8f608045967",
+    "Bytes": 19124
+  },
+  {
+    "File": "src/server/Services/RoundService.luau",
+    "SHA256": "f8fa594385b3c887ebd6615df421d3451f6125676aa9c4163cca9a3ca5d13914",
+    "Bytes": 83623
+  },
+  {
+    "File": "src/server/Services/ShopService.luau",
+    "SHA256": "bd794e57bd41f17ead5a09fecef5f54b51f18353e0d44733414ae5548a04a3bf",
+    "Bytes": 13619
+  },
+  {
+    "File": "src/server/Services/SlapService.luau",
+    "SHA256": "a171f211b109dfebfcb94baf8278f69ddc5bdb2d9154bbb38db9ba952f2a0ee5",
+    "Bytes": 30964
+  },
+  {
+    "File": "src/server/Shop/ProfilePurchase.luau",
+    "SHA256": "eaabe1abb2925afcf8ebbb861799a58bdbd5dacba14cde23d09bec1414c7f5bf",
+    "Bytes": 1911
+  },
+  {
+    "File": "src/server/Shop/Providers/AbilityProvider.luau",
+    "SHA256": "ab56e323fa83c38db7aec729cbaa1dc1558644050a7266df37f7ca1f5079f456",
+    "Bytes": 2383
+  },
+  {
+    "File": "src/server/Shop/ShopRegistry.luau",
+    "SHA256": "1fa10179ccbe5aba5b55f5d2b1b06dfbc6b26dcec8488b71ce3b7b516e074d6c",
+    "Bytes": 7758
+  },
+  {
+    "File": "src/shared/AbilityDefinitions.luau",
+    "SHA256": "62801fafabec06f93f918717aeb7aaef1dd54f0de6a36748964fde03ed390de1",
+    "Bytes": 2008
+  },
+  {
+    "File": "src/shared/Types.luau",
+    "SHA256": "0c3ce4cad782cb2df06d31b46cfddb0d618b608ce0d6ff2f608dc2425a6b9c20",
+    "Bytes": 7457
+  },
+  {
+    "File": "src/ui/AbilityHUD.rbxm",
+    "SHA256": "7c615e70dcbb950d81cb04dda5211d25f9d5fb7b284e775291ed430376dff387",
+    "Bytes": 18110
+  },
+  {
+    "File": "src/ui/ShopHUD.rbxm",
+    "SHA256": "8ba03c9ee53acf34d79ed7c60ba7c27e71f6952ba6f3e484d93a2af934540676",
+    "Bytes": 26150
+  },
+  {
+    "File": "studio-safe.project.json",
+    "SHA256": "be4dc77ede55036334654972793c78a2e1594a304ea0e860363cd96785a7db6f",
+    "Bytes": 19329
+  },
+  {
+    "File": "tests/AbilitySystemV1.assets.edit.luau",
+    "SHA256": "ee07ff35e082cb99fcc47ec0868603a90207bcb80c2f218e8847b9372bcec6e3",
+    "Bytes": 6693
+  },
+  {
+    "File": "tests/AbilitySystemV1.deployment.json",
+    "SHA256": "3cb5bb702c40e4b06cb4ea5582bd58e909b6691df14d7a1172c0e7fc24edbbcb",
+    "Bytes": 5206
+  },
+  {
+    "File": "tests/AbilitySystemV1.edit-evidence.json",
+    "SHA256": "233e7b5eb9a31022df99a0b1ccb61fde1f062e45969f9bd337880fa443b7d496",
+    "Bytes": 7263
+  },
+  {
+    "File": "tests/AbilitySystemV1.manual.md",
+    "SHA256": "617e5373d71dc40f7d5c934979115cb276a75b18a9b7ab74a164f42efae2d283",
+    "Bytes": 9197
+  },
+  {
+    "File": "tests/AbilitySystemV1.protected-sources.json",
+    "SHA256": "5c39822f666d86fa82697bdad6bacdb94113e08afe98c7988cf2b3d005db842f",
+    "Bytes": 6058
+  },
+  {
+    "File": "tests/AbilitySystemV1.spec.luau",
+    "SHA256": "92b65f14f850261a02ad497c8220eddbb1e50ddbbb4399fd81f88c28c217e229",
+    "Bytes": 17586
+  },
+  {
+    "File": "tests/AbilitySystemV1.unit-results.txt",
+    "SHA256": "82fd6c4e7661c863cd1fe2a5ba783d1b2aba2b54d8ce179c13ba3f804ab8e353",
+    "Bytes": 74
+  },
+  {
+    "File": "tests/AbilitySystemV1.validation.md",
+    "SHA256": "18d081597924a6d4692f6f54107849ccf384181a7a2dfaed8134e1c5ea2c8788",
+    "Bytes": 20277
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/ShopHUD_Before.rbxm",
+    "SHA256": "6f9de3e47283f7c33ab9a19a2b8257ce6cad7a466ebf72a5189db9bfa2d125f1",
+    "Bytes": 25952
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/default.project.json",
+    "SHA256": "71c0e55d95273c451771e2a4f9260bd3b912d55d1a913f8176b6c40dc4511461",
+    "Bytes": 4184
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/manifest.json",
+    "SHA256": "f743b43d4462bf3fea7da09a770180020d181aa296417e3ac666262c36006bc7",
+    "Bytes": 2299
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/src/client/Controllers/ShopController.luau",
+    "SHA256": "ae194ce912e227efa2dda853f6fd829ca3c7401753507daf93904c9d10f7f3b2",
+    "Bytes": 26360
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/src/server/Bootstrap.server.luau",
+    "SHA256": "e5e5f7fdf69aceaf0939ec0b4e21ed03fb152b05539ec5233c5c00ad53498e66",
+    "Bytes": 3616
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/src/server/Services/CombatService.luau",
+    "SHA256": "481cc12d771020bb8573c68e244a8f8e6b7aa8534f64b5e3640e085a51206d0f",
+    "Bytes": 9162
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/src/server/Services/EliminationService.luau",
+    "SHA256": "11e9a9ce3850711c905a58759506b29fa8f1e1a052454ebb9154a2930c580271",
+    "Bytes": 32550
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/src/server/Services/PlayerDataService.luau",
+    "SHA256": "ccb7bd6fa8051cf95637b24011aee80aba49ddb77a885e5bc849a830a183b0eb",
+    "Bytes": 20372
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/src/server/Services/PlayerService.luau",
+    "SHA256": "5f3117b7a3ed778de68041f9a8f8a62e12fdee93e4759d237bed8abc0b72d893",
+    "Bytes": 27784
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/src/server/Services/RagdollService.luau",
+    "SHA256": "6850c54dbd3d936ee277a0ba3779a871ab7a39f0b50b4063d3b4daedf67f667b",
+    "Bytes": 18890
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/src/server/Services/RoundService.luau",
+    "SHA256": "e6ace17204918e49d93e8b1ff4fd81c8303766fdd4ac3d45fd1e2bf8e68946ca",
+    "Bytes": 82777
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/src/server/Services/ShopService.luau",
+    "SHA256": "6b6ed2a3addc7c14d2a00239f57a04dcba6449004647f2ff1548c54150c9befd",
+    "Bytes": 13448
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/src/server/Services/SlapService.luau",
+    "SHA256": "78290ef2a97c4c4de8fce659445755a2c77aa3678b298e62f6e32fe9b67fd345",
+    "Bytes": 30350
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/src/server/Shop/ProfilePurchase.luau",
+    "SHA256": "b419278c5f62d9f0b477c82dfe5c541b2f2de4eda6a87913ce1005e4f3caccce",
+    "Bytes": 1687
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/src/server/Shop/ShopRegistry.luau",
+    "SHA256": "112b6ae98a6f114593c090fc32825ff3d52f21a9dc45a177f6a456e321fce85d",
+    "Bytes": 7758
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/src/shared/Types.luau",
+    "SHA256": "cf81f77b6723eee6538b98900d7133ba2b56d944c5287d005640198f6059d9d4",
+    "Bytes": 7445
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV1/studio-safe.project.json",
+    "SHA256": "25963747d32b2528552b4fd8a2514c01fbee6d9d5f506ad7dc24ee3fc7cc9f10",
+    "Bytes": 17073
+  },
+  {
+    "File": "tests/tools/run_ability_unit_tests.py",
+    "SHA256": "9200fd73410b4901923f0c11d04741dd813059982a35ff095a111960aa3769f7",
+    "Bytes": 1604
+  }
+]

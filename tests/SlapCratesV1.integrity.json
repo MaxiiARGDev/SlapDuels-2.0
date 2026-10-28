@@ -1,0 +1,282 @@
+{
+  "ChangedExistingSources": [
+    "src/client/Controllers/ShopController.luau",
+    "src/server/Bootstrap.server.luau",
+    "src/server/Services/PlayerDataService.luau",
+    "src/server/Services/PlayerService.luau",
+    "src/server/Services/SlapService.luau",
+    "src/server/Shop/ShopRemotes.luau",
+    "src/shared/Types.luau"
+  ],
+  "OtherOriginalSourceHashesPreserved": 110,
+  "SourceTargets": [
+    {
+      "Path": [
+        "ServerScriptService",
+        "Bootstrap"
+      ],
+      "Class": "Script",
+      "File": "src/server/Bootstrap.server.luau",
+      "Before": "ed336c74e166e0c70701bdf5203a3a734bdba1119c304191913fa7deec8d0fe8",
+      "After": "026fc8e36bc9b4daaca57bf98e6fe3ebea265391d7267079232131f62a6419be"
+    },
+    {
+      "Path": [
+        "ServerScriptService",
+        "Services",
+        "PlayerService"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/server/Services/PlayerService.luau",
+      "Before": "3fc4d954e3b18b476a22c0c24840083b5a0f27a5034a5b03a747783bb748f7d5",
+      "After": "7f53fdeecac588b27e0b2274ad0793cd90931ccd0b1c8f6b1390c4d395fb51fe"
+    },
+    {
+      "Path": [
+        "ServerScriptService",
+        "Services",
+        "PlayerDataService"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/server/Services/PlayerDataService.luau",
+      "Before": "e457aab19161e1fde8bcad720df6fcdf519103222aa55918f0e1b200e9b7e91a",
+      "After": "e7a06d2472ed3a9c4b84c2a215929b1ab5d88b71278999eb0e3b3a66f2b99b57"
+    },
+    {
+      "Path": [
+        "ServerScriptService",
+        "Services",
+        "SlapService"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/server/Services/SlapService.luau",
+      "Before": "55e02fc4ade9e415f389e25f3faa7403fe2027961f30ed79b1054de9b6c4555e",
+      "After": "dcbad00d47a8a393deacb3c07f8b3823786c2f977e168f7672d1fab00c370184"
+    },
+    {
+      "Path": [
+        "ServerScriptService",
+        "Shop",
+        "ShopRemotes"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/server/Shop/ShopRemotes.luau",
+      "Before": "313649397b4104479185e5408c7ee0caaf9c3ee7d6538356e668be8c86a03b5b",
+      "After": "986a375d75c877029138f3438e827f4f72fe04996f648da8f4ce6f140106a684"
+    },
+    {
+      "Path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "Controllers",
+        "ShopController"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/client/Controllers/ShopController.luau",
+      "Before": "c24018a0cc3cfec48218e8ec27a2b36df1d1b6e3e7280837462a41c1240fbb51",
+      "After": "d3798d6d3f4b2f8221e2342920f733907dab05a7bce50b8326b86d8e7ecbfa31"
+    },
+    {
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "Types"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/shared/Types.luau",
+      "Before": "4f933eb46bd9297e4a2e29725b3f3081453095fc96c39975feada8de8c523267",
+      "After": "22ea0e74a2e6d0ba92ba2d22ed98b83769092477b6fff04df72a9bde3e27b1fa"
+    },
+    {
+      "Path": [
+        "ServerScriptService",
+        "Services",
+        "CrateService"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/server/Services/CrateService.luau",
+      "Before": null,
+      "After": "24a05b83bbabf0c7467cb0a4ec3b9ac2852d03e7ce99cbcf49e6d84e51798ae5"
+    },
+    {
+      "Path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "Controllers",
+        "CrateController"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/client/Controllers/CrateController.luau",
+      "Before": null,
+      "After": "1b830e40b70bd4a8ad391e2f2bd422773dbbf0ca869160f3004ba3f20dd1efc7"
+    },
+    {
+      "Path": [
+        "ServerScriptService",
+        "Shop",
+        "Providers",
+        "CrateProviders"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/server/Shop/Providers/CrateProviders.luau",
+      "Before": null,
+      "After": "3fb60c306cf58df79cff1ccc07582998fcedff7ba22e5539ae97cb47d5c6fb2e"
+    },
+    {
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "Catalog"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/shared/SlapCrates/Catalog.luau",
+      "Before": null,
+      "After": "f5e4dfdbcfb5160e10c71abb7a275694c63b69a106ef02ab37d69d601ed96836"
+    },
+    {
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "CrateDefinitions"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/shared/SlapCrates/CrateDefinitions.luau",
+      "Before": null,
+      "After": "46efa7d260e09f9ae21b8258db5c1b25877ecb9c17d129f12296fd8518566ad9"
+    },
+    {
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "Inventory"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/shared/SlapCrates/Inventory.luau",
+      "Before": null,
+      "After": "109d77d11e50a8342de613eceaeae88ca7a86465d51a3fd5b80d06052569311f"
+    },
+    {
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "Odds"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/shared/SlapCrates/Odds.luau",
+      "Before": null,
+      "After": "2f402ad60b485def207bc98eaee4451b8176a24102d124a700253ba8249739df"
+    },
+    {
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "Registry"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/shared/SlapCrates/Registry.luau",
+      "Before": null,
+      "After": "fb1b88e6139062e378f160847be4a18b61dcc7e6a113611bab6120720a0fddca"
+    },
+    {
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "SlapDefinitions"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/shared/SlapCrates/SlapDefinitions.luau",
+      "Before": null,
+      "After": "432c9d8b7c8a78223f6d2a1967b3f624f89eae146a75692348959067f1ebc811"
+    },
+    {
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "StockDefinitions"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/shared/SlapCrates/StockDefinitions.luau",
+      "Before": null,
+      "After": "9aba53eaff5ff69d903038f8938ff56da9a3128d355d882895d63b2d7f953313"
+    },
+    {
+      "Path": [
+        "ReplicatedStorage",
+        "Shared",
+        "SlapCrates",
+        "VariationDefinitions"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/shared/SlapCrates/VariationDefinitions.luau",
+      "Before": null,
+      "After": "5ecc7da1b1a3e9e2998812eaf1cfe7db6fc60e088116bd9fba363a815df7512d"
+    },
+    {
+      "Path": [
+        "ServerScriptService",
+        "Services",
+        "Crates",
+        "AnnouncementAdapter"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/server/Services/Crates/AnnouncementAdapter.luau",
+      "Before": null,
+      "After": "3b8b5a8d60dfddde53ca47725f00c868b4644136dc6c800ea0183eb5510bf40f"
+    },
+    {
+      "Path": [
+        "ServerScriptService",
+        "Services",
+        "Crates",
+        "CrateEngine"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/server/Services/Crates/CrateEngine.luau",
+      "Before": null,
+      "After": "6c96476c6348e5874c1b25d5d6098e7ca2035d67b18b47fafa28f0a2c77a9600"
+    },
+    {
+      "Path": [
+        "ServerScriptService",
+        "Services",
+        "Crates",
+        "InMemoryStock"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/server/Services/Crates/InMemoryStock.luau",
+      "Before": null,
+      "After": "f0c8bfa5af4f579f3474a45350f613968ead868df38ba90516f328e69be5013c"
+    },
+    {
+      "Path": [
+        "ServerScriptService",
+        "Services",
+        "Crates",
+        "ProductionStockAdapter"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/server/Services/Crates/ProductionStockAdapter.luau",
+      "Before": null,
+      "After": "d90878f5f84bf58a29f425e21bcffe54a7b4dd66702bbb40389670b9eaac4d79"
+    },
+    {
+      "Path": [
+        "ServerScriptService",
+        "Services",
+        "Crates",
+        "StockLedger"
+      ],
+      "Class": "ModuleScript",
+      "File": "src/server/Services/Crates/StockLedger.luau",
+      "Before": null,
+      "After": "ca8ea4b37071cc33988405e80d92e69b1932183aa9963bba41f52a7fe7955078"
+    }
+  ]
+}

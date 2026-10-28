@@ -1,0 +1,55 @@
+{
+  "Protected": {
+    "StarterCharacter": {
+      "Count": 37,
+      "Hash": "5edecb2f1a1128f32fe37fa49aa976c9cb7f1b48c11fa2cb99beda7dcebbd26a"
+    },
+    "GUI": {
+      "Count": 2887,
+      "Hash": "856c60bf25feb48c9beb5bcecd3d7a53ded5503f31e5f95f0e736db0cf0cc818"
+    },
+    "Maps": {
+      "Count": 280,
+      "Hash": "38c90d83ce71b77d6529c859e7c2435f6e4e1ad200d446ffb696134bd17a8ac6"
+    }
+  },
+  "Maps": {
+    "1": {
+      "Classes": {
+        "Part": 10
+      },
+      "Class": "Model",
+      "Name": "Circulos",
+      "NonCollidable": 0,
+      "WhiteParts": 10,
+      "Rotated": 0,
+      "Geometry": "Folder",
+      "NonQueryable": 0
+    },
+    "2": {
+      "Classes": {
+        "Part": 14
+      },
+      "Class": "Model",
+      "Name": "Levels",
+      "NonCollidable": 0,
+      "WhiteParts": 14,
+      "Rotated": 0,
+      "Geometry": "Folder",
+      "NonQueryable": 0
+    }
+  },
+  "Environment": "Studio",
+  "Provider": "InMemory",
+  "WritesToCloud": false,
+  "Sources": {
+    "Bootstrap": {
+      "Editor": "1eba18c0e207834ef1c9b21276909fb50d6c2bad5b8e39ae44961274ea54d3f5",
+      "Source": "1eba18c0e207834ef1c9b21276909fb50d6c2bad5b8e39ae44961274ea54d3f5"
+    },
+    "MatchInstanceService": {
+      "Editor": "400e33a2836b65d3ba87e28ae2ebaf750dba8c5eb17b0b4f50927e4281ed3185",
+      "Source": "400e33a2836b65d3ba87e28ae2ebaf750dba8c5eb17b0b4f50927e4281ed3185"
+    }
+  }
+}

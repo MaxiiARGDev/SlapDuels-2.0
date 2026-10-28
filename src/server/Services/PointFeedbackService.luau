@@ -79,6 +79,14 @@ function PointFeedbackService:_getPlayerService()
 	return nil
 end
 
+function PointFeedbackService:_getRoundService()
+	if self._context and self._context.GetService then
+		local service = self._context:GetService("RoundService")
+		if service then return service end
+	end
+	return nil
+end
+
 -- Obtiene el registro de controllers cargando BasicController si aún no se inicializó
 function PointFeedbackService:_getControllerRegistry()
 	local controllersFolder = ServerScriptService:FindFirstChild("PointEffectControllers")
@@ -249,11 +257,27 @@ function PointFeedbackService:_fallbackPlay(clone: Instance, scoringZone: BasePa
 end
 
 -- Punto de entrada principal invocado por ScoreService al validar un punto
-function PointFeedbackService:PlayPoint(session: MatchSession, payload: PointFeedbackPayload): boolean
+function PointFeedbackService:PlayPoint(session: MatchSession, payload: PointFeedbackPayload, finalToken: string?): boolean
 	if not session or not payload then
 		warn("[PointFeedbackService] PlayPoint llamado con parámetros nulos")
 		return false
 	end
+	local authority = self:_getRoundService()
+	local stateVersion = session.StateVersion
+		local visualOnly = finalToken ~= nil
+		local function isCurrent(): boolean
+			if not authority or authority:GetSessionById(session.Id) ~= session or session.Closed
+				or session.StateVersion ~= stateVersion then return false end
+			if visualOnly then
+				local results = session.Results
+				return session.State == "Ending" and session.GameplayFrozen == true and not session.Cancelled
+					and results ~= nil and results.Celebrating == true and results.Token == finalToken
+					and payload.IsFinalPoint == true and session.Result == payload.ScoringTeam
+			end
+			return not session.GameplayFrozen and session.Result == nil and not session.Closing
+				and authority:IsSessionActive(session.Id) and authority:GetSessionState(session.Id) == "Playing"
+		end
+		if not isCurrent() then return false end
 
 	local pointId = payload.PointId
 	if not pointId or self._processedPoints[pointId] then
@@ -291,8 +315,8 @@ function PointFeedbackService:PlayPoint(session: MatchSession, payload: PointFee
 		tostring(payload.IsFinalPoint)))
 
 	-- 2. Notificar a clientes para Camera Shake y efectos locales controlados por servidor
-	local remote = self:_getRemote("PointFeedback")
-	if remote then
+	local roundService = self:_getRoundService()
+	if roundService and type(roundService.FireSessionRemote) == "function" then
 		local broadcastData: PointFeedbackBroadcast = {
 			MatchId = matchId,
 			PointId = pointId,
@@ -303,8 +327,11 @@ function PointFeedbackService:PlayPoint(session: MatchSession, payload: PointFee
 			IsFinalPoint = payload.IsFinalPoint,
 			RedScore = payload.RedScore,
 			BlueScore = payload.BlueScore,
+				VisualOnly = visualOnly,
+				SessionId = session.Id,
+				StateVersion = stateVersion,
 		}
-		remote:FireAllClients(broadcastData)
+		roundService:FireSessionRemote(matchId, "Match", "PointFeedback", broadcastData)
 	end
 
 	-- 3. Obtener template, clonar y posicionar en ScoringZone
@@ -315,6 +342,15 @@ function PointFeedbackService:PlayPoint(session: MatchSession, payload: PointFee
 	end
 
 	local clone = template:Clone()
+		if visualOnly then
+			-- Existing controllers provide visuals/audio; the final copy cannot apply physics.
+			for _, object in ipairs(clone:GetDescendants()) do
+				if object:IsA("LuaSourceContainer") then object:Destroy()
+				elseif object:IsA("BasePart") then
+					object.Anchored = true; object.CanCollide = false; object.CanTouch = false; object.CanQuery = false
+				elseif object:IsA("Explosion") then object.BlastPressure = 0; object.DestroyJointRadiusPercent = 0 end
+			end
+		end
 
 	-- Posicionar con orientación neutral exactamente en la posición física de ScoringZone
 	if clone:IsA("Model") then
@@ -350,6 +386,15 @@ function PointFeedbackService:PlayPoint(session: MatchSession, payload: PointFee
 		local ok, handle = pcall(function()
 			return controller.Play(playContext)
 		end)
+		-- A controller may yield while the terminal barrier cleans this session.
+			if not isCurrent() then
+			if ok and typeof(handle) == "table" then
+				local cleanup = handle.Destroy or handle.Stop
+				if typeof(cleanup) == "function" then pcall(cleanup, handle) end
+			end
+			clone:Destroy()
+			return false
+		end
 
 		if ok and handle and typeof(handle) == "table" then
 			if not self._activeMatchHandles[matchId] then
@@ -367,7 +412,7 @@ function PointFeedbackService:PlayPoint(session: MatchSession, payload: PointFee
 
 	-- 5. Física de lanzamiento en Ragdoll por la onda expansiva del punto
 	local ragdollService = self:_getRagdollService()
-	if ragdollService and payload.ScoringZone then
+		if not visualOnly and ragdollService and payload.ScoringZone then
 		local blastRadius = (Config.Ragdoll and Config.Ragdoll.BlastRadius) or 100
 		local blastForce = (Config.Ragdoll and Config.Ragdoll.BlastForce) or 110
 		local upRatio = (Config.Ragdoll and Config.Ragdoll.UpwardRatio) or 1.0
@@ -379,6 +424,12 @@ function PointFeedbackService:PlayPoint(session: MatchSession, payload: PointFee
 		local scoringPlayer = payload.ScoringPlayer
 		local scoringTeam = payload.ScoringTeam
 		local function filterScoringPlayer(targetPlayer: Player?, _char: Model): boolean
+			if session.GameplayFrozen or session.Result ~= nil or session.Closing
+				or session.StateVersion ~= stateVersion
+				or authority:GetSessionById(session.Id) ~= session or not authority:IsSessionActive(session.Id)
+				or not targetPlayer or authority:GetSessionParticipant(session.Id, targetPlayer) == nil then
+				return false
+			end
 			if scoringPlayer and targetPlayer == scoringPlayer then
 				return false -- El jugador que anota el punto no es afectado por la explosión ni el ragdoll
 			end
@@ -394,6 +445,19 @@ function PointFeedbackService:PlayPoint(session: MatchSession, payload: PointFee
 		ragdollService:BlastZone(payload.ScoringZone.Position, blastRadius, blastForce, upRatio, ragDuration, filterScoringPlayer)
 	end
 return true
+end
+
+function PointFeedbackService:HasActiveFeedback(matchId: string): boolean
+	for _, handle in ipairs(self._activeMatchHandles[matchId] or {}) do
+		if typeof(handle.IsActive) == "function" then
+			local ok, active = pcall(handle.IsActive, handle)
+			if ok and active then return true end
+		end
+	end
+	for _, clone in ipairs(self._activeMatchEffects[matchId] or {}) do
+		if typeof(clone) == "Instance" and clone.Parent then return true end
+	end
+	return false
 end
 
 -- Limpieza de recursos temporales de una partida

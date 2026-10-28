@@ -1,0 +1,30 @@
+{
+  "StudioMode": "Edit",
+  "ScenarioFinalUnchanged": true,
+  "ScenarioFinalObjectsCompared": 137,
+  "KillPartUnchanged": true,
+  "Resources": [
+    {
+      "Descendants": 34,
+      "Path": "ServerStorage.DeathEffects"
+    },
+    {
+      "Descendants": 10,
+      "Path": "StarterGui.DeathFeedbackHUD"
+    },
+    {
+      "Descendants": 12,
+      "Path": "StarterGui.KillRewardHUD"
+    }
+  ],
+  "SourceChecks": {
+    "Contract": true,
+    "Elimination": true,
+    "Client": true,
+    "Receipt": true,
+    "Server": true
+  },
+  "LiveWorkspaceEffects": 0,
+  "GameplayTests": "NOT RUN",
+  "PlaceSaved": false
+}

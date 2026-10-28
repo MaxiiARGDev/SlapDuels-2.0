@@ -7,17 +7,38 @@ local Config = {}
 Config.Round = {
 	MatchCountdownTime = 5,
 	MapSelectionTime = 5,
-	RoundDuration = 300,
+	RoundDuration = 180,
+	SuddenDeath = { Enabled = true, StartAtRemainingSeconds = 30, FallAwardsGoal = true },
 	EndingDisplayTime = 4,
 	ReturnToLobbyTime = 2,
+	PlayableModes = {
+		["1v1"] = true,
+		["2v2"] = true,
+		["3v3"] = true,
+		["4v4"] = true,
+	},
 }
 
 Config.Match = {
 	WinningScore = 5,
-	PointReward = 50,
+	PointReward = 150,
 	PointResetDelay = 1.5,
 	StartCountdownTime = 5,
 	PointRestartCountdownTime = 3,
+}
+
+Config.Character = {
+	LobbyWalkSpeed = 32,
+	MatchWalkSpeed = 16,
+	DefaultJumpPower = 50,
+	DefaultJumpHeight = 7.2,
+}
+Config.Character.DefaultWalkSpeed = Config.Character.MatchWalkSpeed -- compatibility alias
+
+Config.Respawn = {
+	KillPartDelayMs = 500,
+	MaxKillPartDelayMs = 10000,
+	Debug = false,
 }
 
 Config.PointRestartCountdownEffects = {
@@ -183,6 +204,7 @@ Config.StartCountdownEffects = {
 }
 
 Config.Economy = {
+	KillRewardCoins = 30,
 	StartingCoins = 0,
 	StartingWins = 0,
 	StartingLosses = 0,
@@ -191,13 +213,16 @@ Config.Economy = {
 
 Config.DataStore = {
 	Name = "SlapDuels_PlayerData_v1",
-	CurrentVersion = 2,
+	CurrentVersion = 3, -- Additive fenced lifecycle; older writers reject this version.
 	MaxRetries = 3,
 	InitialRetryDelay = 1.0,
 	RetryBackoffMultiplier = 2.0,
 }
 
 Config.Combat = {
+	SlapCombo = { Enabled = true, SuccessfulHitRecovery = 0.15, MissRecovery = 0.45, SwingWindow = 0.10, SampleInterval = 0.025 },
+	DefaultSlapKnockdownDuration = 3.0,
+	SlapElimination = { HitsToEliminate = 3 },
 	SlapCooldown = 0.6,
 	KnockbackForce = 45,
 	LastHitLifetime = 10, -- Segundos de validez para otorgar la Kill al último atacante
@@ -208,6 +233,13 @@ Config.Ragdoll = {
 	BlastForce = 110,      -- Magnitud del impulso de despegue
 	UpwardRatio = 1,    -- 100% componente vertical prioritaria (fuerte impulso hacia arriba por los aires)
 	DefaultDuration = 5.0, -- Segundos en estado muñeco de trapo antes de reincorporarse
+}
+
+Config.SuddenDeathPresentation = {
+	TransitionDuration = 0.8,
+	TintColor = Color3.fromRGB(255, 170, 170),
+	Contrast = 0.12, Saturation = -0.12, Brightness = -0.08,
+	MusicSoundName = "SuddenDeath", -- SoundService.Music.SuddenDeath; authorized SoundId pending.
 }
 
 Config.Arena = {
@@ -221,6 +253,7 @@ Config.Arena = {
 
 Config.Matchmaking = {
 	DefaultMode = "1v1",
+	ReservationTTL = 15,
 	Modes = {
 		["1v1"] = {
 			Mode = "1v1",
@@ -239,6 +272,12 @@ Config.Matchmaking = {
 			TeamSize = 3,
 			MaxPlayersPerTeam = 3,
 			TotalPlayers = 6,
+		},
+		["4v4"] = {
+			Mode = "4v4",
+			TeamSize = 4,
+			MaxPlayersPerTeam = 4,
+			TotalPlayers = 8,
 		},
 	},
 }

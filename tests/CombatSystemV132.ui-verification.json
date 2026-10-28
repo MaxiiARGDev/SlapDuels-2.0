@@ -1,0 +1,8 @@
+{
+  "BuildHierarchyMatches": true,
+  "Instances": 18,
+  "NewScreenGuis": 0,
+  "InteractiveObjects": [],
+  "DefaultPreservesExistingPlayerHUDChildren": true,
+  "SafeUIUnmanaged": true
+}

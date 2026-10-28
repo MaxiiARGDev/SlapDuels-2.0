@@ -1,0 +1,1 @@
+PASS: 86 isolated shop/economy assertions; no Studio/gameplay/cloud execution.

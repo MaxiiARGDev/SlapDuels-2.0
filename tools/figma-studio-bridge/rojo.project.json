@@ -1,0 +1,4 @@
+{
+  "name": "SlapDuelsUIBridge",
+  "tree": {"$path": "studio/Plugin.server.luau", "Core": {"$path": "studio/Core.luau"}}
+}

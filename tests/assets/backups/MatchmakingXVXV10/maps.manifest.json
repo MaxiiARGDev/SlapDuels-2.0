@@ -1,0 +1,241 @@
+[
+  {
+    "Descendants": 241,
+    "Index": 1,
+    "Children": [
+      "ZoneWin:Folder",
+      "Geometry:Folder",
+      "BlueSpawn:Part",
+      "RedSpawn:Part"
+    ],
+    "NewContract": false,
+    "Parts": [],
+    "SHA256": "569d141111f5fb817874c6f5ac7c01656a6b3871ce0848f84e0b688db9c63f3e"
+  },
+  {
+    "Descendants": 152,
+    "Index": 2,
+    "Children": [
+      "ModelBaseAzul:Model",
+      "ModelBaseRoja:Model",
+      "PasarelaAzul:Model",
+      "PasarelaRoja:Model",
+      "Geometry:Folder",
+      "ZoneWin:Folder",
+      "BlueTeam:Folder",
+      "RedTeam:Folder"
+    ],
+    "NewContract": true,
+    "Parts": {
+      "BlueTeam/Spawn2": {
+        "Transparency": 1,
+        "CanQuery": true,
+        "CanCollide": false,
+        "Anchored": true,
+        "CFrame": [
+          -137.66455078125,
+          13.1019926071167,
+          1244.012451171875,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "CanTouch": true,
+        "Size": [
+          3,
+          0.3857825994491577,
+          3
+        ]
+      },
+      "RedTeam/Spawn3": {
+        "Transparency": 1,
+        "CanQuery": true,
+        "CanCollide": false,
+        "Anchored": true,
+        "CFrame": [
+          -144.7484893798828,
+          13.1019926071167,
+          1054.012451171875,
+          -1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          -1
+        ],
+        "CanTouch": true,
+        "Size": [
+          3,
+          0.3857825994491577,
+          3
+        ]
+      },
+      "RedTeam/Spawn1": {
+        "Transparency": 1,
+        "CanQuery": true,
+        "CanCollide": false,
+        "Anchored": true,
+        "CFrame": [
+          -137.7484893798828,
+          13.1019926071167,
+          1058.012451171875,
+          -1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          -1
+        ],
+        "CanTouch": true,
+        "Size": [
+          3,
+          0.3857825994491577,
+          3
+        ]
+      },
+      "BlueTeam/Spawn3": {
+        "Transparency": 1,
+        "CanQuery": true,
+        "CanCollide": false,
+        "Anchored": true,
+        "CFrame": [
+          -137.66455078125,
+          13.1019926071167,
+          1248.012451171875,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "CanTouch": true,
+        "Size": [
+          3,
+          0.3857825994491577,
+          3
+        ]
+      },
+      "BlueTeam/Spawn1": {
+        "Transparency": 1,
+        "CanQuery": true,
+        "CanCollide": false,
+        "Anchored": true,
+        "CFrame": [
+          -144.66455078125,
+          13.1019926071167,
+          1244.012451171875,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "CanTouch": true,
+        "Size": [
+          3,
+          0.3857825994491577,
+          3
+        ]
+      },
+      "RedTeam/Spawn2": {
+        "Transparency": 1,
+        "CanQuery": true,
+        "CanCollide": false,
+        "Anchored": true,
+        "CFrame": [
+          -144.7484893798828,
+          13.1019926071167,
+          1058.012451171875,
+          -1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          -1
+        ],
+        "CanTouch": true,
+        "Size": [
+          3,
+          0.3857825994491577,
+          3
+        ]
+      },
+      "BlueTeam/Spawn4": {
+        "Transparency": 1,
+        "CanQuery": true,
+        "CanCollide": false,
+        "Anchored": true,
+        "CFrame": [
+          -144.66455078125,
+          13.1019926071167,
+          1248.012451171875,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "CanTouch": true,
+        "Size": [
+          3,
+          0.3857825994491577,
+          3
+        ]
+      },
+      "RedTeam/Spawn4": {
+        "Transparency": 1,
+        "CanQuery": true,
+        "CanCollide": false,
+        "Anchored": true,
+        "CFrame": [
+          -137.7484893798828,
+          13.1019926071167,
+          1054.012451171875,
+          -1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          -1
+        ],
+        "CanTouch": true,
+        "Size": [
+          3,
+          0.3857825994491577,
+          3
+        ]
+      }
+    },
+    "SHA256": "a1da792e7d79b65b85f78fb2919aa4f35da996d504698b6e97f00c1bcd0aceb2"
+  }
+]

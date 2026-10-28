@@ -1,0 +1,177 @@
+{
+  "Scripts": [
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"e09ce4978759fe92d59468e3ef8a162dc2eee31ba3104b99361261da27fbac5d\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.BatchOpening\",\"Mode\":\"Edit\",\"Created\":true,\"Hash\":\"e09ce4978759fe92d59468e3ef8a162dc2eee31ba3104b99361261da27fbac5d\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"a1f522970eb982a39ec284716cef95870e422538f42e8922d554f6dc5d106f7d\",\"Path\":\"ServerScriptService.Services.Crates.CrateBatchEngine\",\"Mode\":\"Edit\",\"Created\":true,\"Hash\":\"a1f522970eb982a39ec284716cef95870e422538f42e8922d554f6dc5d106f7d\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"68eaf416ce9959d38718b5a6968a4251d56bc5849de640a69cadf3329c9364b4\",\"Path\":\"StarterPlayer.StarterPlayerScripts.CrateOpening.RewardGalleryLayout\",\"Mode\":\"Edit\",\"Created\":true,\"Hash\":\"68eaf416ce9959d38718b5a6968a4251d56bc5849de640a69cadf3329c9364b4\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"201bec489e27fb5bcb9d515c4d3b7d7c6e590328ff0ba3508cb5e7dc9c388687\",\"Path\":\"StarterPlayer.StarterPlayerScripts.CrateOpening.RewardGallery\",\"Mode\":\"Edit\",\"Created\":false,\"Hash\":\"201bec489e27fb5bcb9d515c4d3b7d7c6e590328ff0ba3508cb5e7dc9c388687\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"64d21af71ff05aeefe95be25609bb0eab356511caadb8d83161ae8a118aad432\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.CrateController\",\"Mode\":\"Edit\",\"Created\":false,\"Hash\":\"64d21af71ff05aeefe95be25609bb0eab356511caadb8d83161ae8a118aad432\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"8d507d6b4a820be3c833a3e3be7abf7aaee10ffef3217abb06b400bbd2ed5a18\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.CrateStandCinematicController\",\"Mode\":\"Edit\",\"Created\":false,\"Hash\":\"8d507d6b4a820be3c833a3e3be7abf7aaee10ffef3217abb06b400bbd2ed5a18\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"4492122fb3027e4b5e01dec06e98682a7f25c261fb12a46460f1a38498eb5241\",\"Path\":\"StarterPlayer.StarterPlayerScripts.CrateOpening.CinematicConfig\",\"Mode\":\"Edit\",\"Created\":false,\"Hash\":\"4492122fb3027e4b5e01dec06e98682a7f25c261fb12a46460f1a38498eb5241\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"898638751188d97d59f9df048ba2f74479aea8ae117e5c6e5164ff0e145b663e\",\"Path\":\"ServerScriptService.Services.CrateService\",\"Mode\":\"Edit\",\"Created\":false,\"Hash\":\"898638751188d97d59f9df048ba2f74479aea8ae117e5c6e5164ff0e145b663e\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"d6da6881933fc1999c3afb298555bcd3bec8773a634817a62238eff23f5a7a65\",\"Path\":\"ServerScriptService.Services.Crates.CrateEngine\",\"Mode\":\"Edit\",\"Created\":false,\"Hash\":\"d6da6881933fc1999c3afb298555bcd3bec8773a634817a62238eff23f5a7a65\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"18891023b2ced0527b7a5b8d2ca6d5b798cc43fa79b74643d77acd0e8514b636\",\"Path\":\"ServerScriptService.Services.Crates.StandOpeningLedger\",\"Mode\":\"Edit\",\"Created\":false,\"Hash\":\"18891023b2ced0527b7a5b8d2ca6d5b798cc43fa79b74643d77acd0e8514b636\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"629f47c8fc05859c525d7a492e1cfcfc343d45aeb0e0a0e3f96b6c3ac3741889\",\"Path\":\"ServerScriptService.Services.Crates.StandOpeningService\",\"Mode\":\"Edit\",\"Created\":false,\"Hash\":\"629f47c8fc05859c525d7a492e1cfcfc343d45aeb0e0a0e3f96b6c3ac3741889\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"819e6a23154ad849cf4d29954355c531a73da28abe245a09417c3077df03cc24\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.CrateShopView\",\"Mode\":\"Edit\",\"Created\":false,\"Hash\":\"819e6a23154ad849cf4d29954355c531a73da28abe245a09417c3077df03cc24\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"ecd77e24ae8ea4077212371641dcc0f309041ca7a329cffdaaa1f43e4040f3f8\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.OpeningConfig\",\"Mode\":\"Edit\",\"Created\":false,\"Hash\":\"ecd77e24ae8ea4077212371641dcc0f309041ca7a329cffdaaa1f43e4040f3f8\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"9261488c8d9e684648b4f27d69b2584d60323dc19e52e403169dcdad64050986\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.OpeningTimeline\",\"Mode\":\"Edit\",\"Created\":false,\"Hash\":\"9261488c8d9e684648b4f27d69b2584d60323dc19e52e403169dcdad64050986\"}"
+        }
+      ],
+      "isError": false
+    }
+  ],
+  "OriginalResources": [
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"OriginalInstancesChecked\":155,\"Resource\":\"Workspace.CrateStands.MainCrateStand\",\"Differences\":[],\"TemporaryClonesDestroyed\":true,\"PropertiesChecked\":780}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"OriginalInstancesChecked\":176,\"Resource\":\"StarterGui.ShopHUD\",\"Differences\":{\"1\":\"ShopHUD.CratePanel.Outcomes.Size\",\"2\":\"ShopHUD.CratePanel.OddsList.Size\"},\"TemporaryClonesDestroyed\":true,\"PropertiesChecked\":846}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"OriginalInstancesChecked\":27,\"Resource\":\"StarterGui.CrateOpeningHUD\",\"Differences\":[],\"TemporaryClonesDestroyed\":true,\"PropertiesChecked\":123}"
+        }
+      ],
+      "isError": false
+    }
+  ],
+  "Inspection": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"Gameplay\":\"NOT RUN\",\"PlaceId\":107328891970677,\"CloudWrites\":false,\"EditableQuantityButtons\":3,\"Resources\":{\"1\":{\"Hash\":\"308e97088596283e1ed8a742f019b6b2e13df16c3dd14bda26eaf34676963ab7\",\"Path\":\"Workspace.CrateStands.MainCrateStand\",\"Descendants\":154},\"3\":{\"Hash\":\"b34f57cb077aed2c386cea81de429c277a51b32707921e7094d6972daeda49bd\",\"Path\":\"ReplicatedStorage.UIAssets.CrateBatchRewardSlot\",\"Descendants\":18},\"2\":{\"Hash\":\"9ff3c7de491d0f2abcba18cee8862e0a8c9284db33d0e9242e185efb9dd7a852\",\"Path\":\"StarterGui.ShopHUD\",\"Descendants\":191}},\"SharedOverlayPreserved\":true,\"Mode\":\"Edit\"}"
+      }
+    ],
+    "isError": false
+  },
+  "FinalSourceAudit": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"IsStudio\":true,\"IsRunning\":false,\"Gameplay\":\"NOT RUN\",\"Datamodel\":\"Edit\",\"VerifiedSourcesAndEditors\":14}"
+      }
+    ],
+    "isError": false
+  }
+}

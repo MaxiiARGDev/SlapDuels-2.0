@@ -1,0 +1,776 @@
+{
+  "Server": {
+    "sessionId": "667ff049-bc90-4987-8529-f2cd31574bb5",
+    "serverVersion": "7.7.0",
+    "protocolVersion": 5,
+    "projectName": "SlapDuels-2.0",
+    "expectedPlaceIds": null,
+    "unexpectedPlaceIds": null,
+    "gameId": null,
+    "placeId": null,
+    "rootInstanceId": "b862fdc5e776a8afccf92880466c1f11"
+  },
+  "InstanceCount": 139,
+  "SourceCount": 77,
+  "Compared": 77,
+  "Matched": 77,
+  "Differences": [],
+  "Sources": [
+    {
+      "File": "src/character/ArenaRespawnGuard.client.luau",
+      "Instance": "StarterPlayer/StarterCharacterScripts/ArenaRespawnGuard",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "c9cb7dae6fd8cf463b31a5fb3cf80c101d9f79e02117f058c5ea5391c1f6648d",
+      "ServedSourceSHA256": "c9cb7dae6fd8cf463b31a5fb3cf80c101d9f79e02117f058c5ea5391c1f6648d"
+    },
+    {
+      "File": "src/character/RagdollStatesHandler.client.luau",
+      "Instance": "StarterPlayer/StarterCharacterScripts/RagdollStatesHandler",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "cb751176afc7c289765f3c51ddaa1f13acbde86e4f0b5e10c5f32ab5b8e5b701",
+      "ServedSourceSHA256": "cb751176afc7c289765f3c51ddaa1f13acbde86e4f0b5e10c5f32ab5b8e5b701"
+    },
+    {
+      "File": "src/client/AnimacionLetras1v1.client.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/AnimacionLetras1v1",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "07355e44bddb5e74441a816af6d1147b004d4cfdadffda9d0fd9e267e6720db8",
+      "ServedSourceSHA256": "07355e44bddb5e74441a816af6d1147b004d4cfdadffda9d0fd9e267e6720db8"
+    },
+    {
+      "File": "src/client/ClientBootstrap.client.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/ClientBootstrap",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "bcfc92ac4db6e55788f27d96c5fb50d845f54966f070550ef2fe2a1507cd1f55",
+      "ServedSourceSHA256": "bcfc92ac4db6e55788f27d96c5fb50d845f54966f070550ef2fe2a1507cd1f55"
+    },
+    {
+      "File": "src/client/Controllers/DeathFeedbackController.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/Controllers/DeathFeedbackController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "2d42edc16b81c860b945b1b2b182466b1408bd048e82537e0aafb791aab70443",
+      "ServedSourceSHA256": "2d42edc16b81c860b945b1b2b182466b1408bd048e82537e0aafb791aab70443"
+    },
+    {
+      "File": "src/client/Controllers/EndCinematicController.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/Controllers/EndCinematicController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "9aaf8a70a9624005564f88791afc6c30060d94d72da745bbcdce28e85d0bb039",
+      "ServedSourceSHA256": "9aaf8a70a9624005564f88791afc6c30060d94d72da745bbcdce28e85d0bb039"
+    },
+    {
+      "File": "src/client/Controllers/KillRewardController.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/Controllers/KillRewardController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "b61fdea82a9670c4ceb5e8ccb72f3bbe15be1f3627ee60d764e17918695cff3f",
+      "ServedSourceSHA256": "b61fdea82a9670c4ceb5e8ccb72f3bbe15be1f3627ee60d764e17918695cff3f"
+    },
+    {
+      "File": "src/client/Controllers/MatchController.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/Controllers/MatchController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "80643bc49b7919595b2ec3889e1167a50bff3ce4ceb162eb834b109109b66b27",
+      "ServedSourceSHA256": "80643bc49b7919595b2ec3889e1167a50bff3ce4ceb162eb834b109109b66b27"
+    },
+    {
+      "File": "src/client/Controllers/MatchmakingController.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/Controllers/MatchmakingController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "929e294867a951601773e39a8ab4c864fd4ad1d3082275edc1cc6fdbc3be94e0",
+      "ServedSourceSHA256": "929e294867a951601773e39a8ab4c864fd4ad1d3082275edc1cc6fdbc3be94e0"
+    },
+    {
+      "File": "src/client/Controllers/MatchStartEffectsController.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/Controllers/MatchStartEffectsController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "4256b7be4e29729715d685fa8633c27266e97758c0e60412d2611772d555a7b7",
+      "ServedSourceSHA256": "4256b7be4e29729715d685fa8633c27266e97758c0e60412d2611772d555a7b7"
+    },
+    {
+      "File": "src/client/Controllers/MusicController.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/Controllers/MusicController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "cd8d1051ebd6b28cb65b65f3917354ea09529f5fa455cf64ba9b54bdf8a5083c",
+      "ServedSourceSHA256": "cd8d1051ebd6b28cb65b65f3917354ea09529f5fa455cf64ba9b54bdf8a5083c"
+    },
+    {
+      "File": "src/client/Controllers/PlayerHUDController.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/Controllers/PlayerHUDController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "3c8d715b8541636ed916348c5f6cb17c40f113c96685cf9bf5c4d3c161d29506",
+      "ServedSourceSHA256": "3c8d715b8541636ed916348c5f6cb17c40f113c96685cf9bf5c4d3c161d29506"
+    },
+    {
+      "File": "src/client/Controllers/SettingsController.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/Controllers/SettingsController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "03bd478b247e316443bac11e5ceb5f89bcf2592a84b9a3e208049cbca3cd258a",
+      "ServedSourceSHA256": "03bd478b247e316443bac11e5ceb5f89bcf2592a84b9a3e208049cbca3cd258a"
+    },
+    {
+      "File": "src/client/Controllers/ShopController.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/Controllers/ShopController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "d0a56e864f9b80e1f7f1f95a5125bdcab485336ccf1f63ff50b90bab6fb53500",
+      "ServedSourceSHA256": "d0a56e864f9b80e1f7f1f95a5125bdcab485336ccf1f63ff50b90bab6fb53500"
+    },
+    {
+      "File": "src/client/Controllers/SlapController.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/Controllers/SlapController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "a3680711ee8f2302a02de8cfe2b7050a6cfe13a4f81c352a6c57f1be79594035",
+      "ServedSourceSHA256": "a3680711ee8f2302a02de8cfe2b7050a6cfe13a4f81c352a6c57f1be79594035"
+    },
+    {
+      "File": "src/client/Controllers/SuddenDeathController.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/Controllers/SuddenDeathController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "58b475dbe43194a0d138aecbc18e571ca8159074d1788174812deb1baf64541d",
+      "ServedSourceSHA256": "58b475dbe43194a0d138aecbc18e571ca8159074d1788174812deb1baf64541d"
+    },
+    {
+      "File": "src/client/DeathFeedback/DeathEffectPlayer.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/DeathFeedback/DeathEffectPlayer",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "5c59717aae084232a5a81169a7e423f30accaa57d5be0bf455bcd91083d42345",
+      "ServedSourceSHA256": "5c59717aae084232a5a81169a7e423f30accaa57d5be0bf455bcd91083d42345"
+    },
+    {
+      "File": "src/client/DeathFeedback/DeathNotifications.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/DeathFeedback/DeathNotifications",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "3bfb03012a56cba5c81872bc0cb1d72a3e4719e898fe2747aa0a868d704e6fb5",
+      "ServedSourceSHA256": "3bfb03012a56cba5c81872bc0cb1d72a3e4719e898fe2747aa0a868d704e6fb5"
+    },
+    {
+      "File": "src/client/DeathFeedback/Scope.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/DeathFeedback/Scope",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "c2e1fbfc7511139c040585d555176c8922f78a2a089297023e039586ee4db79e",
+      "ServedSourceSHA256": "c2e1fbfc7511139c040585d555176c8922f78a2a089297023e039586ee4db79e"
+    },
+    {
+      "File": "src/client/EndCinematic/Modules/EndCinematicAnimations.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicAnimations",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "ff2683c38e2c506b80c84d5aca57165fdee921d9f5db5c1708f86e7c4590c3a3",
+      "ServedSourceSHA256": "ff2683c38e2c506b80c84d5aca57165fdee921d9f5db5c1708f86e7c4590c3a3"
+    },
+    {
+      "File": "src/client/EndCinematic/Modules/EndCinematicAudio.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicAudio",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "7b0dcac4673a37c537ebc7d595acd9836c0fbc59fbc3b8166e596a8e17bb24cc",
+      "ServedSourceSHA256": "7b0dcac4673a37c537ebc7d595acd9836c0fbc59fbc3b8166e596a8e17bb24cc"
+    },
+    {
+      "File": "src/client/EndCinematic/Modules/EndCinematicAvatars.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicAvatars",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "1eb29c6e85f65267f2776b04d588aa4a09949388ffefdc16740073d524834c86",
+      "ServedSourceSHA256": "1eb29c6e85f65267f2776b04d588aa4a09949388ffefdc16740073d524834c86"
+    },
+    {
+      "File": "src/client/EndCinematic/Modules/EndCinematicBillboards.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicBillboards",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "9c49087b688ef9259bd2428b27f0313fe948a802d6e6bf3b7e258a7e8d5ef4f6",
+      "ServedSourceSHA256": "9c49087b688ef9259bd2428b27f0313fe948a802d6e6bf3b7e258a7e8d5ef4f6"
+    },
+    {
+      "File": "src/client/EndCinematic/Modules/EndCinematicCamera.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicCamera",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "025ec35c5ae1b8a7c99e52bdf317746b4e968f929c8d978f74e13196198105db",
+      "ServedSourceSHA256": "025ec35c5ae1b8a7c99e52bdf317746b4e968f929c8d978f74e13196198105db"
+    },
+    {
+      "File": "src/client/EndCinematic/Modules/EndCinematicHUD.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicHUD",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "6164dcf2a857552028b15f7a168e182e70bf33a186b50e89bc18aece07a5a554",
+      "ServedSourceSHA256": "6164dcf2a857552028b15f7a168e182e70bf33a186b50e89bc18aece07a5a554"
+    },
+    {
+      "File": "src/client/EndCinematic/Modules/EndCinematicParticles.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicParticles",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "5e2a6a4e07eda81046469a690ddc24e93f65036d1e3b6bf87780d1197af8a466",
+      "ServedSourceSHA256": "5e2a6a4e07eda81046469a690ddc24e93f65036d1e3b6bf87780d1197af8a466"
+    },
+    {
+      "File": "src/client/EndCinematic/Modules/EndCinematicRanking.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicRanking",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "8123a682b042b36a321f1a867a3b960e003a4124b82b2d98e54fc559df7783be",
+      "ServedSourceSHA256": "8123a682b042b36a321f1a867a3b960e003a4124b82b2d98e54fc559df7783be"
+    },
+    {
+      "File": "src/client/EndCinematic/Modules/EndCinematicTransition.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicTransition",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "fa08a1b2703d3f5a34f96dfd12d20e99b0d30d2a5d562c8d1b9efc751a1a188e",
+      "ServedSourceSHA256": "fa08a1b2703d3f5a34f96dfd12d20e99b0d30d2a5d562c8d1b9efc751a1a188e"
+    },
+    {
+      "File": "src/client/EndCinematicPreview.client.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/EndCinematicPreview",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "85ffc0367297aa5a0ae418a46f0ee5794036f42ac95927b3a1001db41523bdaf",
+      "ServedSourceSHA256": "85ffc0367297aa5a0ae418a46f0ee5794036f42ac95927b3a1001db41523bdaf"
+    },
+    {
+      "File": "src/client/PointCameraFX.client.luau",
+      "Instance": "StarterPlayer/StarterPlayerScripts/PointCameraFX",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "a8454f623af3b234d5a6f5e113301d9805f5a0e0ef1aebc8c09ef8cc92c23c73",
+      "ServedSourceSHA256": "a8454f623af3b234d5a6f5e113301d9805f5a0e0ef1aebc8c09ef8cc92c23c73"
+    },
+    {
+      "File": "src/server/Bootstrap.server.luau",
+      "Instance": "ServerScriptService/Bootstrap",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "172ff0581b6a3ebdf2e69e1066ebf74e14cafe633a7033214b8851671ccc9571",
+      "ServedSourceSHA256": "172ff0581b6a3ebdf2e69e1066ebf74e14cafe633a7033214b8851671ccc9571"
+    },
+    {
+      "File": "src/server/PointEffectControllers/BasicController.luau",
+      "Instance": "ServerScriptService/PointEffectControllers/BasicController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "2cb81af62ece6acf07cfc6e4407735ed5355f5a655055bba2477fbc3d548b364",
+      "ServedSourceSHA256": "2cb81af62ece6acf07cfc6e4407735ed5355f5a655055bba2477fbc3d548b364"
+    },
+    {
+      "File": "src/server/PointEffectControllers/InfernoController.luau",
+      "Instance": "ServerScriptService/PointEffectControllers/InfernoController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "2457e09e5aacfbc0a66a797f01ef2827f4ff5aed0863e7c583634f7de1a02e74",
+      "ServedSourceSHA256": "2457e09e5aacfbc0a66a797f01ef2827f4ff5aed0863e7c583634f7de1a02e74"
+    },
+    {
+      "File": "src/server/PointEffectControllers/PointEffectRegistry.luau",
+      "Instance": "ServerScriptService/PointEffectControllers/PointEffectRegistry",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "1eafd724d37fe9767ad5e4c8653fb78657d0409a12e9771cdbff10e5fa9a16d1",
+      "ServedSourceSHA256": "1eafd724d37fe9767ad5e4c8653fb78657d0409a12e9771cdbff10e5fa9a16d1"
+    },
+    {
+      "File": "src/server/PointEffectControllers/ThunderController.luau",
+      "Instance": "ServerScriptService/PointEffectControllers/ThunderController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "077d5c51c9837a16ee39322e0071c104e3fde9e47c2c670573ce3e79c27b29c1",
+      "ServedSourceSHA256": "077d5c51c9837a16ee39322e0071c104e3fde9e47c2c670573ce3e79c27b29c1"
+    },
+    {
+      "File": "src/server/RagdollHandler.server.luau",
+      "Instance": "ServerScriptService/RagdollHandler",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "dcf3f79467f7108d3f7173969ab9a60d3292b3cbd79a5bdef668bf6bc0073bd0",
+      "ServedSourceSHA256": "dcf3f79467f7108d3f7173969ab9a60d3292b3cbd79a5bdef668bf6bc0073bd0"
+    },
+    {
+      "File": "src/server/RagdollModule.luau",
+      "Instance": "ServerStorage/RagdollModule",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "b78afb612eb0805129266a2da1f9f4a76e5b7aea76a5450a4afc18add7215464",
+      "ServedSourceSHA256": "b78afb612eb0805129266a2da1f9f4a76e5b7aea76a5450a4afc18add7215464"
+    },
+    {
+      "File": "src/server/Services/CombatService.luau",
+      "Instance": "ServerScriptService/Services/CombatService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "2f989a4798ca41c756b3153098427237b9a918e912dded34645a066388f39173",
+      "ServedSourceSHA256": "2f989a4798ca41c756b3153098427237b9a918e912dded34645a066388f39173"
+    },
+    {
+      "File": "src/server/Services/DeathEffectService.luau",
+      "Instance": "ServerScriptService/Services/DeathEffectService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "69bc9635a7f95475ab244637d46ececae90d6e058770b00dd48e19787a65655d",
+      "ServedSourceSHA256": "69bc9635a7f95475ab244637d46ececae90d6e058770b00dd48e19787a65655d"
+    },
+    {
+      "File": "src/server/Services/EliminationService.luau",
+      "Instance": "ServerScriptService/Services/EliminationService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "d66b53236bcdcdc7319f4cd35cf55579e5ed297083f3070ef566320c66bd0883",
+      "ServedSourceSHA256": "d66b53236bcdcdc7319f4cd35cf55579e5ed297083f3070ef566320c66bd0883"
+    },
+    {
+      "File": "src/server/Services/Gameplay/RoundClock.luau",
+      "Instance": "ServerScriptService/Services/Gameplay/RoundClock",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "bd809611fd76a90dcb564c0113e75ca89ee77bb4d40e8510cc81156e6cf8d770",
+      "ServedSourceSHA256": "bd809611fd76a90dcb564c0113e75ca89ee77bb4d40e8510cc81156e6cf8d770"
+    },
+    {
+      "File": "src/server/Services/KnockbackService.luau",
+      "Instance": "ServerScriptService/Services/KnockbackService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "346721e0c2d588da28d49948e121b22b496f6b616b6050fce4d6f9e2e5e00ac3",
+      "ServedSourceSHA256": "346721e0c2d588da28d49948e121b22b496f6b616b6050fce4d6f9e2e5e00ac3"
+    },
+    {
+      "File": "src/server/Services/MatchInstanceService.luau",
+      "Instance": "ServerScriptService/Services/MatchInstanceService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "b33163a57fc17625e8ac29354ffd78cb6bd930cf6d13e49be1aec155e0e359ab",
+      "ServedSourceSHA256": "b33163a57fc17625e8ac29354ffd78cb6bd930cf6d13e49be1aec155e0e359ab"
+    },
+    {
+      "File": "src/server/Services/MatchmakingFeedbackService.luau",
+      "Instance": "ServerScriptService/Services/MatchmakingFeedbackService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "01e6a50c2de686dfbe2fdef1ade8580c019ba3ed3065e78298546996f18ce7f1",
+      "ServedSourceSHA256": "01e6a50c2de686dfbe2fdef1ade8580c019ba3ed3065e78298546996f18ce7f1"
+    },
+    {
+      "File": "src/server/Services/MatchmakingService.luau",
+      "Instance": "ServerScriptService/Services/MatchmakingService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "8048a279147416eddfca0e4444afbf4cbb933e8564958ad00b8429dd7952cf38",
+      "ServedSourceSHA256": "8048a279147416eddfca0e4444afbf4cbb933e8564958ad00b8429dd7952cf38"
+    },
+    {
+      "File": "src/server/Services/Persistence/InMemoryDataStore.luau",
+      "Instance": "ServerScriptService/Services/Persistence/InMemoryDataStore",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "f56374b3388e2b4bb8ed820edb8b9fb3ae3c8637512b2fb078761f0bf9aa9f12",
+      "ServedSourceSHA256": "f56374b3388e2b4bb8ed820edb8b9fb3ae3c8637512b2fb078761f0bf9aa9f12"
+    },
+    {
+      "File": "src/server/Services/Persistence/PersistenceEnvironment.luau",
+      "Instance": "ServerScriptService/Services/Persistence/PersistenceEnvironment",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853",
+      "ServedSourceSHA256": "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853"
+    },
+    {
+      "File": "src/server/Services/Persistence/RobloxDataStoreAdapter.luau",
+      "Instance": "ServerScriptService/Services/Persistence/RobloxDataStoreAdapter",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "d081f0a22cc940ef7948c9663bd884c10def45e25b06cf48bb1edbe245c51adf",
+      "ServedSourceSHA256": "d081f0a22cc940ef7948c9663bd884c10def45e25b06cf48bb1edbe245c51adf"
+    },
+    {
+      "File": "src/server/Services/PlayerDataService.luau",
+      "Instance": "ServerScriptService/Services/PlayerDataService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "8735a3a660a188c93038a4aeec8ed9aa0a2cc57b6ae366a36e9e4e1b1b06358e",
+      "ServedSourceSHA256": "8735a3a660a188c93038a4aeec8ed9aa0a2cc57b6ae366a36e9e4e1b1b06358e"
+    },
+    {
+      "File": "src/server/Services/PlayerService.luau",
+      "Instance": "ServerScriptService/Services/PlayerService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "bf24629820c2974b1d080bcc82b3ecbcb968ad14e94d06d901d5b3435c079310",
+      "ServedSourceSHA256": "bf24629820c2974b1d080bcc82b3ecbcb968ad14e94d06d901d5b3435c079310"
+    },
+    {
+      "File": "src/server/Services/PointEffectTestService.luau",
+      "Instance": "ServerScriptService/Services/PointEffectTestService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "690b79ca9fc1f42a61edf67fe4b4101fd0a0dbe8142be44934029c7e41417d8e",
+      "ServedSourceSHA256": "690b79ca9fc1f42a61edf67fe4b4101fd0a0dbe8142be44934029c7e41417d8e"
+    },
+    {
+      "File": "src/server/Services/PointFeedbackService.luau",
+      "Instance": "ServerScriptService/Services/PointFeedbackService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "569857775b824b35cc07e3e8baf4d65f620ec2f6048d32142e8ad52c07dc7c2d",
+      "ServedSourceSHA256": "569857775b824b35cc07e3e8baf4d65f620ec2f6048d32142e8ad52c07dc7c2d"
+    },
+    {
+      "File": "src/server/Services/RagdollService.luau",
+      "Instance": "ServerScriptService/Services/RagdollService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "1c183866456e99976d7bcb3f765a40380b0bfa7f557fa86073e69d560ab1d414",
+      "ServedSourceSHA256": "1c183866456e99976d7bcb3f765a40380b0bfa7f557fa86073e69d560ab1d414"
+    },
+    {
+      "File": "src/server/Services/Respawn/ArenaRespawn.luau",
+      "Instance": "ServerScriptService/Services/Respawn/ArenaRespawn",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "7c19a71ba27e134480b7318bb7ec4cbe48b8cfa01fe576b6621fdb5d39413319",
+      "ServedSourceSHA256": "7c19a71ba27e134480b7318bb7ec4cbe48b8cfa01fe576b6621fdb5d39413319"
+    },
+    {
+      "File": "src/server/Services/Respawn/CharacterPhysics.luau",
+      "Instance": "ServerScriptService/Services/Respawn/CharacterPhysics",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "57bf13bc6752a0aa814bd7049fb6611456ae128bd90433e73eb2e232cc3a24eb",
+      "ServedSourceSHA256": "57bf13bc6752a0aa814bd7049fb6611456ae128bd90433e73eb2e232cc3a24eb"
+    },
+    {
+      "File": "src/server/Services/Respawn/CompetitiveTransit.luau",
+      "Instance": "ServerScriptService/Services/Respawn/CompetitiveTransit",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "06782a4ab036f25c6b4ebf24c32b3344545f1646f3d4ef0d65cb0700442b8161",
+      "ServedSourceSHA256": "06782a4ab036f25c6b4ebf24c32b3344545f1646f3d4ef0d65cb0700442b8161"
+    },
+    {
+      "File": "src/server/Services/RoundService.luau",
+      "Instance": "ServerScriptService/Services/RoundService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "b658710b4027a28e304a35d9a5aaa26e4b88cd17aa3f8351274d1b717b522bb3",
+      "ServedSourceSHA256": "b658710b4027a28e304a35d9a5aaa26e4b88cd17aa3f8351274d1b717b522bb3"
+    },
+    {
+      "File": "src/server/Services/ScoreService.luau",
+      "Instance": "ServerScriptService/Services/ScoreService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "a7cb41f0f76bfd401c15de503ac9b71e0d6fffbc9779d367c02ce6b2d1ba0001",
+      "ServedSourceSHA256": "a7cb41f0f76bfd401c15de503ac9b71e0d6fffbc9779d367c02ce6b2d1ba0001"
+    },
+    {
+      "File": "src/server/Services/ShopService.luau",
+      "Instance": "ServerScriptService/Services/ShopService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "745167081725d16a33fea7e1b352f0ad840114895fc79d30579483bb1d27db96",
+      "ServedSourceSHA256": "745167081725d16a33fea7e1b352f0ad840114895fc79d30579483bb1d27db96"
+    },
+    {
+      "File": "src/server/Services/SlapService.luau",
+      "Instance": "ServerScriptService/Services/SlapService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "88c95a23892a54a4833971cdce91a6c64f9ea363c9573cb7d806d02d6c8dc896",
+      "ServedSourceSHA256": "88c95a23892a54a4833971cdce91a6c64f9ea363c9573cb7d806d02d6c8dc896"
+    },
+    {
+      "File": "src/server/Services/SpawnService.luau",
+      "Instance": "ServerScriptService/Services/SpawnService",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "aaed4d0c1ff74344b835b14e7b8de15ede82167587024ade24ea1e672597ce5d",
+      "ServedSourceSHA256": "aaed4d0c1ff74344b835b14e7b8de15ede82167587024ade24ea1e672597ce5d"
+    },
+    {
+      "File": "src/server/Services/ThunderController.luau",
+      "Instance": "ServerScriptService/Services/ThunderController",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "528d690ff8970e3ff654ed48363d37f1a07e00b879fa01d63cc1c93cbc21a0fb",
+      "ServedSourceSHA256": "528d690ff8970e3ff654ed48363d37f1a07e00b879fa01d63cc1c93cbc21a0fb"
+    },
+    {
+      "File": "src/server/Shop/ProfilePurchase.luau",
+      "Instance": "ServerScriptService/Shop/ProfilePurchase",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "67e28218c098890f98da8d567a74f3e23772ecef42b87ec9f5ad2f6bdee0c4d0",
+      "ServedSourceSHA256": "67e28218c098890f98da8d567a74f3e23772ecef42b87ec9f5ad2f6bdee0c4d0"
+    },
+    {
+      "File": "src/server/Shop/Providers/DeathEffectProvider.luau",
+      "Instance": "ServerScriptService/Shop/Providers/DeathEffectProvider",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "abc9b1daeacdcb9b07656a723c74bac7c94451d9e4d09d97ffdc6d18b7440217",
+      "ServedSourceSHA256": "abc9b1daeacdcb9b07656a723c74bac7c94451d9e4d09d97ffdc6d18b7440217"
+    },
+    {
+      "File": "src/server/Shop/Providers/PointEffectProvider.luau",
+      "Instance": "ServerScriptService/Shop/Providers/PointEffectProvider",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "75df3a9e8ecac0ad164d4f5ba9cbd91b9c9d0dbb84f8c325a667f42aceff1732",
+      "ServedSourceSHA256": "75df3a9e8ecac0ad164d4f5ba9cbd91b9c9d0dbb84f8c325a667f42aceff1732"
+    },
+    {
+      "File": "src/server/Shop/ShopRegistry.luau",
+      "Instance": "ServerScriptService/Shop/ShopRegistry",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "a1944deb03b685fb6dca037786e3779fc2fd7be47572c9d17f5e7799b7c96eac",
+      "ServedSourceSHA256": "a1944deb03b685fb6dca037786e3779fc2fd7be47572c9d17f5e7799b7c96eac"
+    },
+    {
+      "File": "src/server/Shop/ShopRemotes.luau",
+      "Instance": "ServerScriptService/Shop/ShopRemotes",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "763c9ccc613a0b2408be493be24e0026f8a472217e892c44ef32d2535a51921f",
+      "ServedSourceSHA256": "763c9ccc613a0b2408be493be24e0026f8a472217e892c44ef32d2535a51921f"
+    },
+    {
+      "File": "src/shared/ArenaRespawnPolicy.luau",
+      "Instance": "ReplicatedStorage/Shared/ArenaRespawnPolicy",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "9212a0018e58b8544aef9f397a99a5ee351d1b47925d6d5c771aa4e2e4ff58f0",
+      "ServedSourceSHA256": "9212a0018e58b8544aef9f397a99a5ee351d1b47925d6d5c771aa4e2e4ff58f0"
+    },
+    {
+      "File": "src/shared/Config.luau",
+      "Instance": "ReplicatedStorage/Shared/Config",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda",
+      "ServedSourceSHA256": "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda"
+    },
+    {
+      "File": "src/shared/Constants.luau",
+      "Instance": "ReplicatedStorage/Shared/Constants",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "392e3402b4aa980bc6880ebe2ce8338fc46c65f2fe59d51c03081b255485b211",
+      "ServedSourceSHA256": "392e3402b4aa980bc6880ebe2ce8338fc46c65f2fe59d51c03081b255485b211"
+    },
+    {
+      "File": "src/shared/DeathEffectDefinitions.luau",
+      "Instance": "ReplicatedStorage/Shared/DeathEffectDefinitions",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "ddd872667861710a6a11db732a1091b771e83fccacab1038383f80a5f2b044d3",
+      "ServedSourceSHA256": "ddd872667861710a6a11db732a1091b771e83fccacab1038383f80a5f2b044d3"
+    },
+    {
+      "File": "src/shared/DeathFeedbackConfig.luau",
+      "Instance": "ReplicatedStorage/Shared/DeathFeedbackConfig",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "cc0d66164f21af5699ad3c454615b4d4ad75923ae6254f96798713e901efa58a",
+      "ServedSourceSHA256": "cc0d66164f21af5699ad3c454615b4d4ad75923ae6254f96798713e901efa58a"
+    },
+    {
+      "File": "src/shared/DeathFeedbackContract.luau",
+      "Instance": "ReplicatedStorage/Shared/DeathFeedbackContract",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "a8c06f436518be010171c46d627558533657b8682148fe8d7ac6372f90a54f0c",
+      "ServedSourceSHA256": "a8c06f436518be010171c46d627558533657b8682148fe8d7ac6372f90a54f0c"
+    },
+    {
+      "File": "src/shared/EndCinematicConfig.luau",
+      "Instance": "ReplicatedStorage/Shared/EndCinematicConfig",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "2371cc57dfb802c984b8bc6e45a856a857314e962e7648be0bacc18c0ca89e2b",
+      "ServedSourceSHA256": "2371cc57dfb802c984b8bc6e45a856a857314e962e7648be0bacc18c0ca89e2b"
+    },
+    {
+      "File": "src/shared/EndCinematicRanking.luau",
+      "Instance": "ReplicatedStorage/Shared/EndCinematicRanking",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "9e6916432249aedcdcce2299d0af266de75c76a4fe85a896fca236d012002dad",
+      "ServedSourceSHA256": "9e6916432249aedcdcce2299d0af266de75c76a4fe85a896fca236d012002dad"
+    },
+    {
+      "File": "src/shared/PointEffectDefinitions.luau",
+      "Instance": "ReplicatedStorage/Shared/PointEffectDefinitions",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "f49e083321e665b14f84fb7d16f0df76fdde196f8c72c308d77a26b30effa2fa",
+      "ServedSourceSHA256": "f49e083321e665b14f84fb7d16f0df76fdde196f8c72c308d77a26b30effa2fa"
+    },
+    {
+      "File": "src/shared/Types.luau",
+      "Instance": "ReplicatedStorage/Shared/Types",
+      "Present": true,
+      "Matches": true,
+      "DiskSourceSHA256": "257b98eaca53e38a831db2cd8bc02bd80d9de211f107e26810be197f6cbd8f14",
+      "ServedSourceSHA256": "257b98eaca53e38a831db2cd8bc02bd80d9de211f107e26810be197f6cbd8f14"
+    }
+  ],
+  "InstancePaths": [
+    "ReplicatedStorage",
+    "ReplicatedStorage/Remotes",
+    "ReplicatedStorage/Remotes/Combat",
+    "ReplicatedStorage/Remotes/Combat/PerformSlap",
+    "ReplicatedStorage/Remotes/Match",
+    "ReplicatedStorage/Remotes/Match/Countdown",
+    "ReplicatedStorage/Remotes/Match/EndCinematic",
+    "ReplicatedStorage/Remotes/Match/EndCinematicAction",
+    "ReplicatedStorage/Remotes/Match/LastPoint",
+    "ReplicatedStorage/Remotes/Match/MapSelection",
+    "ReplicatedStorage/Remotes/Match/MatchResult",
+    "ReplicatedStorage/Remotes/Match/PointFeedback",
+    "ReplicatedStorage/Remotes/Match/ScoreUpdated",
+    "ReplicatedStorage/Remotes/Match/StateChanged",
+    "ReplicatedStorage/Remotes/Matchmaking",
+    "ReplicatedStorage/Remotes/Matchmaking/QueueStatus",
+    "ReplicatedStorage/Remotes/Player",
+    "ReplicatedStorage/Remotes/Player/DataUpdated",
+    "ReplicatedStorage/Remotes/Shop",
+    "ReplicatedStorage/Shared",
+    "ReplicatedStorage/Shared/ArenaRespawnPolicy",
+    "ReplicatedStorage/Shared/Config",
+    "ReplicatedStorage/Shared/Constants",
+    "ReplicatedStorage/Shared/DeathEffectDefinitions",
+    "ReplicatedStorage/Shared/DeathFeedbackConfig",
+    "ReplicatedStorage/Shared/DeathFeedbackContract",
+    "ReplicatedStorage/Shared/EndCinematicConfig",
+    "ReplicatedStorage/Shared/EndCinematicRanking",
+    "ReplicatedStorage/Shared/PointEffectDefinitions",
+    "ReplicatedStorage/Shared/Types",
+    "ReplicatedStorage/StateEvent",
+    "ServerScriptService",
+    "ServerScriptService/Bootstrap",
+    "ServerScriptService/PointEffectControllers",
+    "ServerScriptService/PointEffectControllers/BasicController",
+    "ServerScriptService/PointEffectControllers/InfernoController",
+    "ServerScriptService/PointEffectControllers/PointEffectRegistry",
+    "ServerScriptService/PointEffectControllers/ThunderController",
+    "ServerScriptService/RagdollHandler",
+    "ServerScriptService/Services",
+    "ServerScriptService/Services/CombatService",
+    "ServerScriptService/Services/DeathEffectService",
+    "ServerScriptService/Services/EliminationService",
+    "ServerScriptService/Services/Gameplay",
+    "ServerScriptService/Services/Gameplay/RoundClock",
+    "ServerScriptService/Services/KnockbackService",
+    "ServerScriptService/Services/MatchInstanceService",
+    "ServerScriptService/Services/MatchmakingFeedbackService",
+    "ServerScriptService/Services/MatchmakingService",
+    "ServerScriptService/Services/Persistence",
+    "ServerScriptService/Services/Persistence/InMemoryDataStore",
+    "ServerScriptService/Services/Persistence/PersistenceEnvironment",
+    "ServerScriptService/Services/Persistence/RobloxDataStoreAdapter",
+    "ServerScriptService/Services/PlayerDataService",
+    "ServerScriptService/Services/PlayerService",
+    "ServerScriptService/Services/PointEffectTestService",
+    "ServerScriptService/Services/PointFeedbackService",
+    "ServerScriptService/Services/RagdollService",
+    "ServerScriptService/Services/Respawn",
+    "ServerScriptService/Services/Respawn/ArenaRespawn",
+    "ServerScriptService/Services/Respawn/CharacterPhysics",
+    "ServerScriptService/Services/Respawn/CompetitiveTransit",
+    "ServerScriptService/Services/RoundService",
+    "ServerScriptService/Services/ScoreService",
+    "ServerScriptService/Services/ShopService",
+    "ServerScriptService/Services/SlapService",
+    "ServerScriptService/Services/SpawnService",
+    "ServerScriptService/Services/ThunderController",
+    "ServerScriptService/Shop",
+    "ServerScriptService/Shop/ProfilePurchase",
+    "ServerScriptService/Shop/Providers",
+    "ServerScriptService/Shop/Providers/DeathEffectProvider",
+    "ServerScriptService/Shop/Providers/PointEffectProvider",
+    "ServerScriptService/Shop/ShopRegistry",
+    "ServerScriptService/Shop/ShopRemotes",
+    "ServerStorage",
+    "ServerStorage/Assets",
+    "ServerStorage/Maps",
+    "ServerStorage/PointEffects",
+    "ServerStorage/RagdollModule",
+    "ServerStorage/Slaps",
+    "ServerStorage/Tools",
+    "StarterGui",
+    "StarterGui/EndCinematicHUD",
+    "StarterGui/EndCinematicHUD/MainFrame",
+    "StarterGui/EndCinematicHUD/MainFrame/RematchButton",
+    "StarterGui/EndCinematicHUD/MainFrame/RematchButton/UICorner",
+    "StarterGui/EndCinematicHUD/MainFrame/RematchCounter",
+    "StarterGui/EndCinematicHUD/MainFrame/ReturnButton",
+    "StarterGui/EndCinematicHUD/MainFrame/ReturnButton/UICorner",
+    "StarterGui/EndCinematicHUD/MainFrame/Score",
+    "StarterGui/EndCinematicHUD/MainFrame/Subtitle",
+    "StarterGui/EndCinematicHUD/MainFrame/Title",
+    "StarterGui/EndCinematicHUD/MainFrame/UICorner",
+    "StarterGui/EndCinematicHUD/MainFrame/UISizeConstraint",
+    "StarterGui/EndCinematicHUD/MainFrame/UIStroke",
+    "StarterGui/EndCinematicHUD/MainFrame/WinnerLine",
+    "StarterGui/EndCinematicHUD/MainFrame/WinnerLine/Layout",
+    "StarterGui/EndCinematicHUD/MainFrame/WinnerLine/WinnerNames",
+    "StarterGui/EndCinematicHUD/MainFrame/WinnerLine/WinningTeam",
+    "StarterGui/EndCinematicHUD/UIEffects",
+    "StarterPlayer",
+    "StarterPlayer/StarterCharacterScripts",
+    "StarterPlayer/StarterCharacterScripts/ArenaRespawnGuard",
+    "StarterPlayer/StarterCharacterScripts/RagdollStatesHandler",
+    "StarterPlayer/StarterPlayerScripts",
+    "StarterPlayer/StarterPlayerScripts/AnimacionLetras1v1",
+    "StarterPlayer/StarterPlayerScripts/ClientBootstrap",
+    "StarterPlayer/StarterPlayerScripts/Controllers",
+    "StarterPlayer/StarterPlayerScripts/Controllers/DeathFeedbackController",
+    "StarterPlayer/StarterPlayerScripts/Controllers/EndCinematicController",
+    "StarterPlayer/StarterPlayerScripts/Controllers/KillRewardController",
+    "StarterPlayer/StarterPlayerScripts/Controllers/MatchController",
+    "StarterPlayer/StarterPlayerScripts/Controllers/MatchStartEffectsController",
+    "StarterPlayer/StarterPlayerScripts/Controllers/MatchmakingController",
+    "StarterPlayer/StarterPlayerScripts/Controllers/MusicController",
+    "StarterPlayer/StarterPlayerScripts/Controllers/PlayerHUDController",
+    "StarterPlayer/StarterPlayerScripts/Controllers/SettingsController",
+    "StarterPlayer/StarterPlayerScripts/Controllers/ShopController",
+    "StarterPlayer/StarterPlayerScripts/Controllers/SlapController",
+    "StarterPlayer/StarterPlayerScripts/Controllers/SuddenDeathController",
+    "StarterPlayer/StarterPlayerScripts/DeathFeedback",
+    "StarterPlayer/StarterPlayerScripts/DeathFeedback/DeathEffectPlayer",
+    "StarterPlayer/StarterPlayerScripts/DeathFeedback/DeathNotifications",
+    "StarterPlayer/StarterPlayerScripts/DeathFeedback/Scope",
+    "StarterPlayer/StarterPlayerScripts/EndCinematic",
+    "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules",
+    "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicAnimations",
+    "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicAudio",
+    "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicAvatars",
+    "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicBillboards",
+    "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicCamera",
+    "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicHUD",
+    "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicParticles",
+    "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicRanking",
+    "StarterPlayer/StarterPlayerScripts/EndCinematic/Modules/EndCinematicTransition",
+    "StarterPlayer/StarterPlayerScripts/EndCinematicPreview",
+    "StarterPlayer/StarterPlayerScripts/PointCameraFX"
+  ]
+}

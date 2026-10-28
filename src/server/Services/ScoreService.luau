@@ -19,6 +19,7 @@ local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerScriptService = game:GetService("ServerScriptService")
 
+local ArenaRespawnPolicy = require(ReplicatedStorage.Shared.ArenaRespawnPolicy)
 local Config = require(ReplicatedStorage.Shared.Config)
 local Constants = require(ReplicatedStorage.Shared.Constants)
 local Types = require(ReplicatedStorage.Shared.Types)
@@ -103,6 +104,27 @@ function ScoreService:IsPointInProgress(matchId: string): boolean
 	return self._pointInProgress[matchId] == true
 end
 
+-- Obtiene el Player a partir de cualquier BasePart del personaje de forma robusta
+local function getPlayerFromPart(part: BasePart): Player?
+	if not part or not part:IsA("BasePart") then return nil end
+
+	-- Buscar hacia arriba en la jerarquía hasta encontrar un Model con Humanoid perteneciente a un Player
+	local current: Instance? = part
+	while current and current ~= workspace do
+		if current:IsA("Model") then
+			local humanoid = current:FindFirstChildOfClass("Humanoid")
+			if humanoid then
+				local player = Players:GetPlayerFromCharacter(current)
+				if player then
+					return player
+				end
+			end
+		end
+		current = current.Parent
+	end
+	return nil
+end
+
 function ScoreService:_getPlayerFromPart(part: BasePart): any?
 	if self._customPlayerResolver then
 		local p = self._customPlayerResolver(part)
@@ -124,6 +146,10 @@ function ScoreService:_getRoundService()
 		if ok then return result end
 	end
 	return nil
+end
+
+function ScoreService:_getEliminationService(): any
+ return self._context and self._context:GetService("EliminationService")
 end
 
 function ScoreService:_getPlayerService()
@@ -171,27 +197,6 @@ function ScoreService:_getPointFeedbackService()
 	return nil
 end
 
--- Obtiene el Player a partir de cualquier BasePart del personaje de forma robusta
-local function getPlayerFromPart(part: BasePart): Player?
-	if not part or not part:IsA("BasePart") then return nil end
-
-	-- Buscar hacia arriba en la jerarquía hasta encontrar un Model con Humanoid perteneciente a un Player
-	local current: Instance? = part
-	while current and current ~= workspace do
-		if current:IsA("Model") then
-			local humanoid = current:FindFirstChildOfClass("Humanoid")
-			if humanoid then
-				local player = Players:GetPlayerFromCharacter(current)
-				if player then
-					return player
-				end
-			end
-		end
-		current = current.Parent
-	end
-	return nil
-end
-
 -- Valida que el mapa físico instanciado contenga el contrato ZoneWin completo
 function ScoreService:ValidateZoneWin(session: MatchSession): boolean
 	if not session or not session.InstanceInfo then
@@ -225,20 +230,10 @@ end
 -- Determina el equipo de un jugador dentro de la sesión (soporta 1v1 y colecciones futuras)
 function ScoreService:GetPlayerTeam(session: MatchSession, player: Player): ("Red" | "Blue")?
 	if not session or not player then return nil end
-
-	if session.RedTeam and table.find(session.RedTeam, player) ~= nil then
-		return "Red"
-	elseif session.RedPlayer == player then
-		return "Red"
-	end
-
-	if session.BlueTeam and table.find(session.BlueTeam, player) ~= nil then
-		return "Blue"
-	elseif session.BluePlayer == player then
-		return "Blue"
-	end
-
-	return nil
+	local roundService = self:_getRoundService()
+	if not roundService or type(roundService.GetSessionParticipant) ~= "function" then return nil end
+	local participant = roundService:GetSessionParticipant(session.Id, player)
+	return if participant then participant.Team else nil
 end
 
 -- Valida las reglas estrictas de anotación:
@@ -247,8 +242,18 @@ end
 -- RED + BlueWin -> Inválido
 -- BLUE + RedWin -> Inválido
 function ScoreService:_validateScorer(session: MatchSession, zoneName: string, player: Player): (boolean, ("Red" | "Blue")?)
+	local character = player.Character
+	if not character or not character.Parent then return false,nil end
+	local humanoid=character:FindFirstChildOfClass("Humanoid")
+	if not humanoid or humanoid.Health<=0 then return false,nil end
+	if typeof(character) == "Instance" and character:GetAttribute("ArenaRespawnPending") then return false, nil end
 	local roundService = self:_getRoundService()
-	local currentState = (roundService and roundService:GetState()) or session.State
+	if not roundService or type(roundService.IsSessionActive) ~= "function"
+		or not roundService:IsSessionActive(session.Id) then
+		return false, nil
+	end
+	local currentState = roundService:GetSessionState(session.Id)
+	if not roundService:IsGameplayRoundOpen(session) then return false,nil end
 
 	-- 1. Verificar que el match esté en Playing
 	if currentState ~= Constants.RoundState.Playing then
@@ -281,6 +286,13 @@ function ScoreService:StartScoring(session: MatchSession)
 	end
 
 	local matchId = session.Id
+	local roundService = self:_getRoundService()
+	if not roundService or type(roundService.IsSessionActive) ~= "function"
+		or not roundService:IsSessionActive(matchId)
+		or roundService:GetSessionById(matchId) ~= session then
+		warn(string.format("[ScoreService] No se puede iniciar scoring: sesión '%s' no vigente", matchId))
+		return
+	end
 	self:StopScoring(matchId)
 
 	-- Inicializar score
@@ -320,6 +332,8 @@ function ScoreService:StartScoring(session: MatchSession)
 	self._sweepThreads[matchId] = task.spawn(function()
 		while self._scores[matchId] ~= nil do
 			task.wait(0.25)
+			if not roundService:IsSessionActive(matchId)
+				or roundService:GetSessionById(matchId) ~= session then break end
 			self:_sweepExits(session, redWin, blueWin)
 		end
 	end)
@@ -328,6 +342,8 @@ function ScoreService:StartScoring(session: MatchSession)
 	self._spatialThreads[matchId] = task.spawn(function()
 		while self._scores[matchId] ~= nil do
 			task.wait(0.05)
+			if not roundService:IsSessionActive(matchId)
+				or roundService:GetSessionById(matchId) ~= session then break end
 			self:_checkSpatialScoring(session)
 		end
 	end)
@@ -361,7 +377,9 @@ function ScoreService:_onZoneTouched(session: MatchSession, zoneName: string, hi
 	-- Logs de diagnóstico requeridos para validación en Studio
 	if player then
 		local roundService = self:_getRoundService()
-		local currentState = (roundService and roundService:GetState()) or session.State
+		local currentState = if roundService and type(roundService.GetSessionState) == "function"
+			then roundService:GetSessionState(matchId)
+			else nil
 		local team = self:GetPlayerTeam(session, player)
 		print(string.format("[ScoreService] Zone touched: %s", zoneName))
 		print(string.format("[ScoreService] Touching instance: %s (%s)", hitPart:GetFullName(), hitPart.ClassName))
@@ -400,20 +418,46 @@ function ScoreService:_handleZoneScoring(session: MatchSession, zoneName: string
 		return
 	end
 
+	local score = self._scores[matchId]
+ if not score then return end
+ local character=player.Character
+ if not character then return end
+ local zone=if team=="Red" then session.InstanceInfo and session.InstanceInfo.RedWin else session.InstanceInfo and session.InstanceInfo.BlueWin
+ if hitPart and (not hitPart:IsDescendantOf(character) or not zone
+  or not ArenaRespawnPolicy.IsContactCurrent(zone.CFrame,zone.Size,hitPart.Position,hitPart.Size)) then return end
+ local pointId=string.format("%s_%s_%d_%d",matchId,team,score.Red+(if team=="Red" then 1 else 0),score.Blue+(if team=="Blue" then 1 else 0))
+ local elimination=self:_getEliminationService()
+ -- Fail closed if the central owner is absent; never commit an unprotected goal.
+ if not elimination or not elimination:TryProtectGoal(session,player,character,pointId) then return end
+ if not self:_getRoundService():TryResolveGameplayRound(session,"Goal") then return end
+
+	self:_commitPoint(session,team,player,pointId)
+end
+
+-- Called only after EliminationService reserved this round's valid sudden-death fall.
+function ScoreService:AwardSuddenDeathGoal(session: MatchSession,victim: Player,roundId: string): boolean
+ local round=session.GameplayRound
+ if not round or round.Id~=roundId or round.Resolved~="SuddenDeathFall" or self._pointInProgress[session.Id] then return false end
+ local victimTeam=self:GetPlayerTeam(session,victim)
+ if not victimTeam or not self._scores[session.Id] then return false end
+ local team=if victimTeam=="Red" then "Blue" else "Red"
+ self:_commitPoint(session,team,nil,round.Id..":FallGoal")
+ return true
+end
+
+function ScoreService:_commitPoint(session: MatchSession,team: "Red"|"Blue",player: Player?,pointId: string)
+ local matchId=session.Id
 	-- 3. ATÓMICO: Bloquear scoring inmediatamente para prevenir dobles eventos por Touched repetido o múltiples partes
 	self._pointInProgress[matchId] = true
 
 	-- Marcar al jugador como dentro de la zona
-	insideZone[player] = true
+	if player then self._playersInside[matchId][team=="Red" and "RedWin" or "BlueWin"][player]=true end
 
 	print(string.format("[ScoreService] Valid scoring entry"))
 
 	-- Incrementar score autoritativo
-	local score = self._scores[matchId]
-	if not score then
-		self._pointInProgress[matchId] = false
-		return
-	end
+	local score=self._scores[matchId]
+	if not score then return end
 	score[team] += 1
 	session.Score = score
 
@@ -423,24 +467,28 @@ function ScoreService:_handleZoneScoring(session: MatchSession, zoneName: string
 	session.PointScorerTeam = team
 	session.PointScoreTimestamp = os.clock()
 	session.PointNumber = score.Red + score.Blue
+		local performanceOwner = self:_getRoundService()
+		if player and performanceOwner and performanceOwner.RecordMatchPerformance then
+			performanceOwner:RecordMatchPerformance(matchId, string.format("Goal_%d_%d", score.Red, score.Blue), player, nil, nil)
+		end
 
 	print(string.format("[ScoreService] PointScorer registrado: '%s' (Equipo %s, Punto %d, Match %s)",
-		player.Name, team, session.PointNumber, matchId))
+		(if player then player.Name else "SuddenDeathTeamGoal"), team, session.PointNumber, matchId))
 
 	print(string.format("[ScoreService] %s score incremented", team))
 
-	-- 4. Recompensa: Otorgar autoritativamente +50 Coins al jugador que anotó
-	local rewardAmount = (Config.Match and Config.Match.PointReward) or 50
+	-- 4. Recompensa personal configurada; el gol colectivo no inventa un receptor.
+	local rewardAmount = if player then Config.Match.PointReward else 0
 	local playerService = self:_getPlayerService()
-	if playerService and playerService.AddCoins then
-		playerService:AddCoins(player, rewardAmount, "MatchPoint")
+	if player and playerService and playerService.AddCoins then
+		playerService:AddCoins(player, rewardAmount, "MatchPoint", "Goal:" .. pointId)
 	end
 
 	print(string.format("[ScoreService] ¡ANOTACIÓN! %s anotó para %s (+%d Coins). Nuevo Score: Red=%d, Blue=%d",
-		player.Name, team, rewardAmount, score.Red, score.Blue))
+		(if player then player.Name else "SuddenDeathTeamGoal"), team, rewardAmount, score.Red, score.Blue))
 
 	-- 5. Emitir actualización a los clientes
-	self:_broadcastScore(matchId, score, team, player.Name)
+	self:_broadcastScore(matchId, score, team, if player then player.Name else nil)
 
 	-- 6. Disparar presentación audiovisual a través de PointFeedbackService
 	local winningScore = (Config.Match and Config.Match.WinningScore) or 5
@@ -448,9 +496,18 @@ function ScoreService:_handleZoneScoring(session: MatchSession, zoneName: string
 	local scoringZone = if team == "Red"
 		then (session.InstanceInfo and session.InstanceInfo.RedWin)
 		else (session.InstanceInfo and session.InstanceInfo.BlueWin)
+		-- Pass presentation data to the existing terminal owner; never replay scoring.
+		if isFinalPoint then
+			local roundService = self:_getRoundService()
+			if roundService then roundService:DeclareSessionWinner(matchId, team, {
+				PointId = string.format("%s_%s_%d_%d", matchId, team, score.Red, score.Blue),
+				MatchId = matchId, ScoringTeam = team, ScoringPlayer = player,
+				ScoringZone = scoringZone, IsFinalPoint = true, RedScore = score.Red, BlueScore = score.Blue,
+			}) end
+		end
 
 	local pointFeedbackService = self:_getPointFeedbackService()
-	if pointFeedbackService and pointFeedbackService.PlayPoint then
+	if not session.GameplayFrozen and pointFeedbackService and pointFeedbackService.PlayPoint then
 		local pointId = string.format("%s_%s_%d_%d", matchId, team, score.Red, score.Blue)
 		local ok, err = pcall(function()
 			pointFeedbackService:PlayPoint(session, {
@@ -481,10 +538,6 @@ function ScoreService:_handleZoneScoring(session: MatchSession, zoneName: string
 	-- 8. Chequeo de Victoria Inmediata al alcanzar WinningScore (5)
 	if isFinalPoint then
 		print(string.format("[ScoreService] ¡%s ALCANZÓ EL WINNING SCORE (%d)! Victoria inmediata.", team, winningScore))
-		local roundService = self:_getRoundService()
-		if roundService then
-			roundService:DeclareWinner(team)
-		end
 		-- NO se realiza reset de posiciones al alcanzar winningScore (la partida pasa inmediatamente a Ending)
 		return
 	end
@@ -509,11 +562,22 @@ function ScoreService:_checkSpatialScoring(session: MatchSession)
 	if not redWin or not blueWin then return end
 
 	local roundService = self:_getRoundService()
-	local currentState = (roundService and roundService:GetState()) or session.State
+	if not roundService or type(roundService.IsSessionActive) ~= "function"
+		or not roundService:IsSessionActive(matchId) then return end
+	local currentState = roundService:GetSessionState(matchId)
 	if currentState ~= Constants.RoundState.Playing then return end
 
-	local redPlayers = session.RedTeam or (session.RedPlayer and { session.RedPlayer }) or {}
-	local bluePlayers = session.BlueTeam or (session.BluePlayer and { session.BluePlayer }) or {}
+	local redPlayers: { Player } = {}
+	local bluePlayers: { Player } = {}
+	for _, participant in ipairs(session.Participants) do
+		if roundService:GetSessionParticipant(matchId, participant.Player) == participant then
+			if participant.Team == "Red" then
+				table.insert(redPlayers, participant.Player)
+			else
+				table.insert(bluePlayers, participant.Player)
+			end
+		end
+	end
 
 	-- Verificar Red en RedWin
 	for _, player in ipairs(redPlayers) do
@@ -568,13 +632,16 @@ function ScoreService:_schedulePointReset(session: MatchSession)
 		-- Validar que la partida siga activa y en estado Playing
 		if not self._scores[matchId] then return end
 		local roundService = self:_getRoundService()
-		if roundService and roundService:GetState() ~= Constants.RoundState.Playing then return end
+		if not roundService or type(roundService.IsSessionActive) ~= "function"
+			or not roundService:IsSessionActive(matchId)
+			or roundService:GetSessionById(matchId) ~= session
+			or roundService:GetSessionState(matchId) ~= Constants.RoundState.Playing then return end
 
 		-- Reposicionar ambos equipos en sus spawns respectivos de la arena activa
 		local spawnService = self:_getSpawnService()
-		if spawnService then
-			spawnService:SpawnMatchPlayers(session)
-		end
+		if not spawnService then return end
+		local result=spawnService:SpawnMatchPlayers(session)
+		if not result.Success then return end
 
 		-- Limpiar registro de presencia en zonas para la nueva ronda de punto
 		self._playersInside[matchId] = {
@@ -584,9 +651,13 @@ function ScoreService:_schedulePointReset(session: MatchSession)
 
 		-- Breve margen de estabilización física antes de reabrir scoring
 		task.wait(0.2)
-		if not self._scores[matchId] then return end
+		if not self._scores[matchId]
+			or not roundService:IsSessionActive(matchId)
+			or roundService:GetSessionById(matchId) ~= session
+			or roundService:GetSessionState(matchId) ~= Constants.RoundState.Playing then return end
 
-		self._pointInProgress[matchId] = false
+		self:ResumeScoring(matchId)
+		roundService:BeginGameplayRound(session)
 		self._resetThreads[matchId] = nil
 		print(string.format("[ScoreService] Nueva ronda de punto iniciada para Match '%s'. Score acumulado: Red=%d, Blue=%d",
 			matchId, session.Score.Red, session.Score.Blue))
@@ -657,10 +728,12 @@ function ScoreService:_sweepExits(session: MatchSession, redWin: BasePart, blueW
 end
 
 function ScoreService:_broadcastScore(matchId: string, score: MatchScore, scoringTeam: string?, scoringPlayer: string?)
-	local remote = self:_getRemote("ScoreUpdated")
-	if remote then
-		remote:FireAllClients({
+	local roundService = self:_getRoundService()
+	if roundService and type(roundService.FireSessionRemote) == "function" then
+		roundService:FireSessionRemote(matchId, "Match", "ScoreUpdated", {
+			SessionId = matchId,
 			MatchId = matchId,
+			StateVersion = roundService:GetSessionById(matchId) and roundService:GetSessionById(matchId).StateVersion or nil,
 			Red = score.Red,
 			Blue = score.Blue,
 			ScoringTeam = scoringTeam,
@@ -670,10 +743,12 @@ function ScoreService:_broadcastScore(matchId: string, score: MatchScore, scorin
 end
 
 function ScoreService:_broadcastLastPoint(matchId: string, team: string)
-	local remote = self:_getRemote("LastPoint")
-	if remote then
-		remote:FireAllClients({
+	local roundService = self:_getRoundService()
+	if roundService and type(roundService.FireSessionRemote) == "function" then
+		roundService:FireSessionRemote(matchId, "Match", "LastPoint", {
+			SessionId = matchId,
 			MatchId = matchId,
+			StateVersion = roundService:GetSessionById(matchId) and roundService:GetSessionById(matchId).StateVersion or nil,
 			Team = team,
 			Message = "ÚLTIMO PUNTO PARA GANAR LA PARTIDA",
 		})
@@ -712,6 +787,8 @@ end
 
 -- Reanuda el scoring autoritativo al finalizar el countdown y limpia el estado de punto
 function ScoreService:ResumeScoring(matchId: string)
+	local elimination=self:_getEliminationService()
+	if elimination then elimination:ReleaseGoalProtections(matchId) end
 	self._pointInProgress[matchId] = false
 	self:ClearPointState(matchId)
 end
@@ -721,15 +798,8 @@ function ScoreService:ClearPointState(matchId: string)
 	self._pointInProgress[matchId] = false
 	local roundService = self:_getRoundService()
 	local session = nil
-	if roundService then
-		if type(roundService.GetSessionById) == "function" then
-			session = roundService:GetSessionById(matchId)
-		elseif type(roundService.GetSession) == "function" then
-			local cur = roundService:GetSession()
-			if cur and cur.Id == matchId then
-				session = cur
-			end
-		end
+	if roundService and type(roundService.GetSessionById) == "function" then
+		session = roundService:GetSessionById(matchId)
 	end
 	if session then
 		session.PointInProgress = false

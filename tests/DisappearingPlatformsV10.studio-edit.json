@@ -1,0 +1,48 @@
+{
+  "Running": false,
+  "PersistenceEnvironment": "Studio",
+  "Sources": {
+    "DisappearingPlatformsConfig": {
+      "Editor": "227f1558fbacf0c4d5070bd86d656a0610cbb0fd66c9fdf32d290441debc4e4d",
+      "Path": "ReplicatedStorage.Shared.DisappearingPlatformsConfig",
+      "Source": "227f1558fbacf0c4d5070bd86d656a0610cbb0fd66c9fdf32d290441debc4e4d"
+    },
+    "DisappearingPlatformsService": {
+      "Editor": "0beaec2e781cb973560d918aae52e2361db97654cad7ec087b285aa1af8ebab6",
+      "Path": "ServerScriptService.Services.DisappearingPlatformsService",
+      "Source": "0beaec2e781cb973560d918aae52e2361db97654cad7ec087b285aa1af8ebab6"
+    },
+    "PlatformPolicy": {
+      "Editor": "1d62a5d82d80d3173c36c8bd3a90826b098720460b25020c2cbf5da358e65637",
+      "Path": "ServerScriptService.Services.Platforms.PlatformPolicy",
+      "Source": "1d62a5d82d80d3173c36c8bd3a90826b098720460b25020c2cbf5da358e65637"
+    },
+    "Bootstrap": {
+      "Editor": "1f9c5d7dd67823e1b88f36939426091273c53b80e6573e22db4719bb6bc5a1b8",
+      "Path": "ServerScriptService.Bootstrap",
+      "Source": "1f9c5d7dd67823e1b88f36939426091273c53b80e6573e22db4719bb6bc5a1b8"
+    },
+    "MatchInstanceService": {
+      "Editor": "bdcfee9c7b732446b85eaf3cb68e6c7581b470d07cdbcf7076dc83a1b6f70ee8",
+      "Path": "ServerScriptService.Services.MatchInstanceService",
+      "Source": "bdcfee9c7b732446b85eaf3cb68e6c7581b470d07cdbcf7076dc83a1b6f70ee8"
+    }
+  },
+  "PersistenceProvider": "InMemory",
+  "Mode": "Edit",
+  "WritesToCloud": false,
+  "Protected": {
+    "StarterCharacter": {
+      "Count": 37,
+      "Hash": "5edecb2f1a1128f32fe37fa49aa976c9cb7f1b48c11fa2cb99beda7dcebbd26a"
+    },
+    "GUI": {
+      "Count": 2887,
+      "Hash": "856c60bf25feb48c9beb5bcecd3d7a53ded5503f31e5f95f0e736db0cf0cc818"
+    },
+    "Maps": {
+      "Count": 280,
+      "Hash": "38c90d83ce71b77d6529c859e7c2435f6e4e1ad200d446ffb696134bd17a8ac6"
+    }
+  }
+}

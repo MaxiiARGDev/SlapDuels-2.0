@@ -1,0 +1,26 @@
+{
+  "Checks": {
+    "countdown": 0,
+    "compile": 0,
+    "SlapVictimProtection": 0,
+    "AbilityMultiplayerFixV1.regression": 0,
+    "EconomyBalanceV1": 0,
+    "EconomyBalanceV1.shop": 0,
+    "PremiumShopV11": 0,
+    "default.project.json": 0,
+    "studio-safe.project.json": 0,
+    "diff": 0
+  },
+  "Changed": [
+    "src/client/Controllers/MatchController.luau",
+    "src/server/Services/MatchmakingService.luau",
+    "src/server/Services/RoundService.luau",
+    "src/server/Services/SpawnService.luau"
+  ],
+  "OtherSourceFilesUnchanged": 213,
+  "Compiled": 162,
+  "NewAssertions": 56,
+  "TotalAssertions": 628,
+  "MapAndConfigsUnchanged": true,
+  "Gameplay": "NOT RUN"
+}

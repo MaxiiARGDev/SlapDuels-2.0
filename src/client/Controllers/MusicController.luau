@@ -5,8 +5,10 @@
 
 local SoundService = game:GetService("SoundService")
 local TweenService = game:GetService("TweenService")
+local Config = require(game.ReplicatedStorage.Shared.Config)
+local Players = game:GetService("Players")
 
-export type MusicState = "None" | "Lobby" | "Matchmaking" | "Arena" | "Victory" | "Defeat" | "Draw"
+export type MusicState = "None" | "Lobby" | "Matchmaking" | "Arena" | "SuddenDeath" | "Victory" | "Defeat" | "Draw"
 
 local MusicController = {}
 MusicController.Name = "MusicController"
@@ -16,6 +18,7 @@ MusicController._musicEnabled = true
 MusicController._userMusicVolume = 1.0
 
 -- Estado de Reproducción
+MusicController._suddenDeathActive = false
 MusicController._currentState = "None" :: MusicState
 MusicController._currentMapName = nil :: string?
 MusicController._currentSound = nil :: Sound?
@@ -23,6 +26,11 @@ MusicController._baseVolumes = {} :: { [Sound]: number }
 MusicController._activeTweens = {} :: { [Sound]: Tween }
 MusicController._transitionToken = 0
 MusicController._context = nil :: any
+
+-- Suspensiones Locales de Música
+MusicController._suspensions = {} :: { [string]: { Token: number, PreviousState: MusicState, PreviousMap: string?, PreviousSound: Sound? } }
+MusicController._suspensionTokenCounter = 0
+MusicController._pendingMusicState = nil :: { State: MusicState, MapName: string?, FadeDuration: number? }?
 
 -- Parámetros de Fade
 local DEFAULT_FADE_DURATION = 0.8
@@ -238,8 +246,170 @@ end
 --------------------------------------------------------------------------------
 -- API Pública
 --------------------------------------------------------------------------------
+-- API Pública y Gestión de Suspensión
+--------------------------------------------------------------------------------
+
+function MusicController:_getMatchController()
+	if self._context and typeof(self._context.GetController) == "function" then
+		return self._context:GetController("MatchController")
+	end
+	local controllers = script.Parent
+	local matchScript = controllers and controllers:FindFirstChild("MatchController")
+	if matchScript and matchScript:IsA("ModuleScript") then
+		local ok, mod = pcall(require, matchScript)
+		if ok then return mod end
+	end
+	return nil
+end
+
+function MusicController:_getMatchmakingController()
+	if self._context and typeof(self._context.GetController) == "function" then
+		return self._context:GetController("MatchmakingController")
+	end
+	local controllers = script.Parent
+	local mmScript = controllers and controllers:FindFirstChild("MatchmakingController")
+	if mmScript and mmScript:IsA("ModuleScript") then
+		local ok, mod = pcall(require, mmScript)
+		if ok then return mod end
+	end
+	return nil
+end
+
+function MusicController:IsSuspended(reason: string?): boolean
+	if reason then
+		return self._suspensions[reason] ~= nil
+	end
+	for _ in pairs(self._suspensions) do
+		return true
+	end
+	return false
+end
+
+function MusicController:Suspend(reason: string?, fadeDuration: number?): number
+	local r = reason or "Default"
+	self._suspensionTokenCounter += 1
+	local token = self._suspensionTokenCounter
+
+	local record = self._suspensions[r]
+	if not record then
+		self._suspensions[r] = {
+			Token = token,
+			PreviousState = self._currentState,
+			PreviousMap = self._currentMapName,
+			PreviousSound = self._currentSound,
+		}
+	else
+		record.Token = token
+	end
+
+	local duration = if fadeDuration ~= nil then fadeDuration else 0.4
+	self:_transitionTo(nil, "None", duration)
+	print(string.format("[MusicController] Música suspendida por '%s' (Token=%d, Fade=%.2fs)", r, token, duration))
+	return token
+end
+
+function MusicController:Resume(reason: string?, token: number?, restoreFadeDuration: number?): boolean
+	local r = reason or "Default"
+	local record = self._suspensions[r]
+	if not record then
+		return false
+	end
+
+	if token ~= nil and record.Token ~= token then
+		-- Token desactualizado: pertenece a una ejecución anterior ya superada
+		return false
+	end
+
+	local previousState = record.PreviousState
+	local previousMap = record.PreviousMap
+	self._suspensions[r] = nil
+	print(string.format("[MusicController] Suspensión '%s' liberada", r))
+
+	if self:IsSuspended() then
+		return true
+	end
+
+	local duration = if restoreFadeDuration ~= nil then restoreFadeDuration else 0.6
+	local pending = self._pendingMusicState
+	self._pendingMusicState = nil
+
+	if pending and pending.State ~= "None" then
+		local pDuration = pending.FadeDuration or duration
+		if pending.State == "Lobby" then
+			self:PlayLobby(pDuration)
+		elseif pending.State == "Matchmaking" then
+			self:PlayMatchmaking(pDuration)
+		elseif pending.State == "Arena" and pending.MapName then
+			self:PlayArena(pending.MapName, pDuration)
+		end
+	elseif r == "EndCinematicPreview" then
+		if previousState == "Lobby" then
+			self:PlayLobby(duration)
+		elseif previousState == "Matchmaking" then
+			self:PlayMatchmaking(duration)
+		elseif (previousState == "Arena" or previousState == "SuddenDeath") and previousMap then
+			self:PlayArena(previousMap, duration)
+		else
+			self:Stop(duration)
+		end
+	else
+		local inMatch = false
+		local matchController = self:_getMatchController()
+		if matchController and typeof(matchController.IsParticipant) == "function" then
+			inMatch = matchController:IsParticipant()
+		end
+		if Players.LocalPlayer and Players.LocalPlayer:GetAttribute("MatchId") ~= nil then
+			inMatch = true
+		end
+
+		local mmController = self:_getMatchmakingController()
+		local inQueue = mmController and typeof(mmController.IsInQueue) == "function" and mmController:IsInQueue()
+
+		if inMatch then
+			local selectedMap = matchController and matchController:GetCurrentSelectedMap() or "Default"
+			self:PlayArena(selectedMap, duration)
+		elseif inQueue then
+			self:PlayMatchmaking(duration)
+		else
+			self:PlayLobby(duration)
+		end
+	end
+
+	return true
+end
+
+-- Shares the existing music mixer, preferences and cinematic suspension priority.
+function MusicController:_playSuddenDeath(fadeDuration: number?): boolean
+ if self:IsSuspended() then return false end
+ local sound=self:_getSoundInstance(Config.SuddenDeathPresentation.MusicSoundName)
+ if not sound or sound.SoundId=="" then
+  if not self._suddenAudioWarning then warn("[MusicController] Authorized SuddenDeath SoundId missing; arena music retained");self._suddenAudioWarning=true end
+  return false
+ end
+ if self._currentState~="SuddenDeath" or self._currentSound~=sound or not sound.IsPlaying then
+  self:_transitionTo(sound,"SuddenDeath",fadeDuration)
+ end
+ return true
+end
+function MusicController:SetSuddenDeath(active: boolean,mapName: string?,restoreArena: boolean?)
+ self._suddenDeathActive=active
+ if mapName then self._currentMapName=mapName end
+ if self:IsSuspended() then return end
+ if active then
+  self:_playSuddenDeath(Config.SuddenDeathPresentation.TransitionDuration)
+ elseif restoreArena and self._currentMapName then
+  self:PlayArena(self._currentMapName,Config.SuddenDeathPresentation.TransitionDuration)
+ end
+end
 
 function MusicController:PlayLobby(fadeDuration: number?)
+	self._suddenDeathActive=false
+	if self:IsSuspended() then
+		self._pendingMusicState = { State = "Lobby", MapName = nil, FadeDuration = fadeDuration }
+		print("[MusicController] PlayLobby recibido durante suspensión; encolado")
+		return
+	end
+
 	local lobbySound = self:_getSoundInstance("Lobby")
 	if self._currentState == "Lobby" and self._currentSound == lobbySound and lobbySound and lobbySound.IsPlaying then
 		return
@@ -251,6 +421,13 @@ function MusicController:PlayLobby(fadeDuration: number?)
 end
 
 function MusicController:PlayMatchmaking(fadeDuration: number?)
+	self._suddenDeathActive=false
+	if self:IsSuspended() then
+		self._pendingMusicState = { State = "Matchmaking", MapName = nil, FadeDuration = fadeDuration }
+		print("[MusicController] PlayMatchmaking recibido durante suspensión; encolado")
+		return
+	end
+
 	local mmSound = self:_getSoundInstance("Matchmaking")
 	if self._currentState == "Matchmaking" and self._currentSound == mmSound and mmSound and mmSound.IsPlaying then
 		return
@@ -262,6 +439,14 @@ function MusicController:PlayMatchmaking(fadeDuration: number?)
 end
 
 function MusicController:PlayArena(mapName: string, fadeDuration: number?)
+	if self:IsSuspended() then
+		self._pendingMusicState = { State = "Arena", MapName = mapName, FadeDuration = fadeDuration }
+		print(string.format("[MusicController] PlayArena(%s) recibido durante suspensión; encolado", mapName))
+		return
+	end
+
+	self._currentMapName=mapName
+	if self._suddenDeathActive and self:_playSuddenDeath(fadeDuration) then return end
 	local arenaSound = self:_getArenaSound(mapName)
 	if self._currentState == "Arena" and self._currentMapName == mapName and self._currentSound == arenaSound and arenaSound and arenaSound.IsPlaying then
 		return
@@ -279,6 +464,11 @@ function MusicController:PlayArena(mapName: string, fadeDuration: number?)
 end
 
 function MusicController:Stop(fadeDuration: number?)
+	if self:IsSuspended() then
+		self._pendingMusicState = { State = "None", MapName = nil, FadeDuration = fadeDuration }
+		return
+	end
+
 	self._currentMapName = nil
 	self:_transitionTo(nil, "None", fadeDuration)
 	print("[MusicController] Música detenida")
@@ -288,6 +478,10 @@ function MusicController:SetMusicEnabled(enabled: boolean, fadeDuration: number?
 	if self._musicEnabled == enabled then return end
 	self._musicEnabled = enabled
 	print(string.format("[MusicController] MusicEnabled establecido en %s", tostring(enabled)))
+
+	if self:IsSuspended() then
+		return
+	end
 
 	local duration = if fadeDuration ~= nil then fadeDuration else 0.4
 
@@ -347,6 +541,8 @@ function MusicController:SetMusicEnabled(enabled: boolean, fadeDuration: number?
 				self:PlayLobby(duration)
 			elseif self._currentState == "Matchmaking" then
 				self:PlayMatchmaking(duration)
+			elseif self._currentState == "SuddenDeath" then
+				self:_playSuddenDeath(duration)
 			elseif self._currentState == "Arena" and self._currentMapName then
 				self:PlayArena(self._currentMapName, duration)
 			end
@@ -408,6 +604,9 @@ end
 
 function MusicController:Init(context: any)
 	self._context = context
+	self._suspensions = {}
+	self._suspensionTokenCounter = 0
+	self._pendingMusicState = nil
 	self:_cacheAllSounds()
 	print("[MusicController] Inicializado exitosamente")
 end

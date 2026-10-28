@@ -1,0 +1,48 @@
+{
+  "name": "CrateRewardPreviews",
+  "tree": {
+    "$className": "Folder",
+    "$properties": {},
+    "Classic": {
+      "$className": "Model",
+      "$properties": {},
+      "Hand": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "Size": {
+            "Vector3": [
+              2.300506353378296,
+              3.1455867290496826,
+              1.088670015335083
+            ]
+          },
+          "Color": {
+            "Color3": [
+              0.9,
+              0.9,
+              0.9
+            ]
+          }
+        },
+        "Mesh": {
+          "$className": "SpecialMesh",
+          "$properties": {
+            "MeshType": "FileMesh",
+            "MeshId": "http://www.roblox.com/asset/?id=32054761",
+            "Scale": {
+              "Vector3": [
+                0.5804947018623352,
+                0.6936213970184326,
+                0.79637610912323
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

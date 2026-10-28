@@ -1,0 +1,1 @@
+{"Scripts": 10, "Changed": ["src/client/Controllers/CrateController.luau", "src/client/Controllers/ShopController.luau", "src/server/Services/CrateService.luau", "src/shared/SlapCrates/CrateShopView.luau"], "Unchanged": 140}

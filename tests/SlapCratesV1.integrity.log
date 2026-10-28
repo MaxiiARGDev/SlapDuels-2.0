@@ -1,0 +1,1 @@
+{"Scripts": 23, "ExistingChanges": ["src/client/Controllers/ShopController.luau", "src/server/Bootstrap.server.luau", "src/server/Services/PlayerDataService.luau", "src/server/Services/PlayerService.luau", "src/server/Services/SlapService.luau", "src/server/Shop/ShopRemotes.luau", "src/shared/Types.luau"], "UnchangedOtherSources": 110}

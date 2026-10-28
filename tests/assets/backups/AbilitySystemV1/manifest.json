@@ -1,0 +1,66 @@
+[
+  {
+    "File": "default.project.json",
+    "SHA256": "71c0e55d95273c451771e2a4f9260bd3b912d55d1a913f8176b6c40dc4511461"
+  },
+  {
+    "File": "ShopHUD_Before.rbxm",
+    "SHA256": "6f9de3e47283f7c33ab9a19a2b8257ce6cad7a466ebf72a5189db9bfa2d125f1"
+  },
+  {
+    "File": "src/client/Controllers/ShopController.luau",
+    "SHA256": "ae194ce912e227efa2dda853f6fd829ca3c7401753507daf93904c9d10f7f3b2"
+  },
+  {
+    "File": "src/server/Bootstrap.server.luau",
+    "SHA256": "e5e5f7fdf69aceaf0939ec0b4e21ed03fb152b05539ec5233c5c00ad53498e66"
+  },
+  {
+    "File": "src/server/Services/CombatService.luau",
+    "SHA256": "481cc12d771020bb8573c68e244a8f8e6b7aa8534f64b5e3640e085a51206d0f"
+  },
+  {
+    "File": "src/server/Services/EliminationService.luau",
+    "SHA256": "11e9a9ce3850711c905a58759506b29fa8f1e1a052454ebb9154a2930c580271"
+  },
+  {
+    "File": "src/server/Services/PlayerDataService.luau",
+    "SHA256": "ccb7bd6fa8051cf95637b24011aee80aba49ddb77a885e5bc849a830a183b0eb"
+  },
+  {
+    "File": "src/server/Services/PlayerService.luau",
+    "SHA256": "5f3117b7a3ed778de68041f9a8f8a62e12fdee93e4759d237bed8abc0b72d893"
+  },
+  {
+    "File": "src/server/Services/RagdollService.luau",
+    "SHA256": "6850c54dbd3d936ee277a0ba3779a871ab7a39f0b50b4063d3b4daedf67f667b"
+  },
+  {
+    "File": "src/server/Services/RoundService.luau",
+    "SHA256": "e6ace17204918e49d93e8b1ff4fd81c8303766fdd4ac3d45fd1e2bf8e68946ca"
+  },
+  {
+    "File": "src/server/Services/ShopService.luau",
+    "SHA256": "6b6ed2a3addc7c14d2a00239f57a04dcba6449004647f2ff1548c54150c9befd"
+  },
+  {
+    "File": "src/server/Services/SlapService.luau",
+    "SHA256": "78290ef2a97c4c4de8fce659445755a2c77aa3678b298e62f6e32fe9b67fd345"
+  },
+  {
+    "File": "src/server/Shop/ProfilePurchase.luau",
+    "SHA256": "b419278c5f62d9f0b477c82dfe5c541b2f2de4eda6a87913ce1005e4f3caccce"
+  },
+  {
+    "File": "src/server/Shop/ShopRegistry.luau",
+    "SHA256": "112b6ae98a6f114593c090fc32825ff3d52f21a9dc45a177f6a456e321fce85d"
+  },
+  {
+    "File": "src/shared/Types.luau",
+    "SHA256": "cf81f77b6723eee6538b98900d7133ba2b56d944c5287d005640198f6059d9d4"
+  },
+  {
+    "File": "studio-safe.project.json",
+    "SHA256": "25963747d32b2528552b4fd8a2514c01fbee6d9d5f506ad7dc24ee3fc7cc9f10"
+  }
+]

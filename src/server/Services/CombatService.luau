@@ -9,6 +9,7 @@
 -- - Proveer estructura extensible para futuras asistencias y estadísticas de combate.
 -- NO administra la eliminación física ni otorga puntos directamente.
 
+local Players = game:GetService("Players")
 local HttpService = game:GetService("HttpService")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerScriptService = game:GetService("ServerScriptService")
@@ -26,6 +27,7 @@ CombatService.Name = "CombatService"
 
 CombatService._context = nil :: any
 CombatService._tags = {} :: { [Player]: CombatTag }
+CombatService._lifeHits = {} :: { [Player]: any }
 CombatService._history = {} :: { [Player]: { CombatHitHistoryItem } }
 CombatService._roundService = nil :: any
 
@@ -33,10 +35,12 @@ function CombatService:Init(context: any)
 	self._context = context
 	self._tags = {}
 	self._history = {}
+	self._lifeHits = {}
 end
 
 function CombatService:Start(context: any)
 	self._context = context
+	Players.PlayerRemoving:Connect(function(player) self:ClearCombatTag(player) end)
 	print("[CombatService] Servicio de combate iniciado y listo")
 end
 
@@ -86,8 +90,20 @@ end
 -- REGISTRO DE IMPACTOS Y COMBAT TAGS
 -- ==================================================
 
+-- One server clock and one scoped record for selection and final hit admission.
+-- Do not use PlatformStand/timer callbacks: scheduler delay must not extend immunity.
+function CombatService:IsHitProtected(victim: Player, session: MatchSession): boolean
+	local hits = self._lifeHits[victim]
+	local character = victim.Character
+	return hits ~= nil and character ~= nil and hits.Character == character
+		and hits.Session == session and hits.SessionId == session.Id
+		and hits.RoundId == (session.GameplayRound and session.GameplayRound.Id)
+		and hits.Generation == (character:GetAttribute("ArenaPhysicsGeneration") or 0)
+		and os.clock() < (hits.ProtectedUntil or 0)
+end
+
 -- Registra un impacto de combate válido entre dos jugadores
-function CombatService:RegisterHit(attacker: Player, victim: Player, overrideMatchId: string?): (boolean, string?)
+function CombatService:RegisterHit(attacker: Player, victim: Player, overrideMatchId: string?, skipComboCount: boolean?): (boolean, string?, number?)
 	-- 1. Validar que ambos jugadores existan y sean instancias Player
 	if not isPlayer(attacker) then
 		return false, "InvalidAttacker"
@@ -105,41 +121,84 @@ function CombatService:RegisterHit(attacker: Player, victim: Player, overrideMat
 	if not attacker.Parent or not victim.Parent then
 		return false, "PlayerNotDescendant"
 	end
-
-	-- 4. Resolver y validar MatchId
-	local matchId = overrideMatchId
-	local session: MatchSession? = nil
-
-	if matchId then
-		local roundService = self:_getRoundService()
-		if roundService and type(roundService.GetSessionById) == "function" then
-			session = roundService:GetSessionById(matchId)
-		end
-	else
-		session = self:_resolveSession(victim)
-		if session then
-			matchId = session.Id
+	for _, player in ipairs({ attacker, victim }) do
+		local character = player.Character
+		if typeof(character) == "Instance" and character:GetAttribute("ArenaRespawnPending") then
+			return false, "ParticipantRespawning"
 		end
 	end
+
+	-- 4. Resolver y validar MatchId
+	local roundService = self:_getRoundService()
+	if not roundService then
+		return false, "RoundServiceUnavailable"
+	end
+
+	local victimSession = self:_resolveSession(victim)
+	local matchId = overrideMatchId or (victimSession and victimSession.Id)
+	local session: MatchSession? = if matchId and type(roundService.GetSessionById) == "function"
+		then roundService:GetSessionById(matchId)
+		else nil
 
 	if not matchId or not session then
 		return false, "NotInMatch"
 	end
+	if session.Closing or session.Cancelled or session.Closed then
+		return false, "SessionClosing"
+	end
 
-	-- 5. Validar que la partida no esté cancelada y esté en estado Playing
-	local currentState = session.State
+	-- 5. Validar identidad, vigencia y estado de la sesión explícita
+	if victimSession ~= session
+		or type(roundService.IsSessionActive) ~= "function"
+		or not roundService:IsSessionActive(matchId) then
+		return false, "DifferentMatch"
+	end
+	local currentState = if type(roundService.GetSessionState) == "function"
+		then roundService:GetSessionState(matchId)
+		else nil
 	if currentState ~= Constants.RoundState.Playing then
 		return false, "MatchNotPlaying"
 	end
 
+	if not roundService:IsGameplayRoundOpen(session) then return false,"RoundNotOpen" end
+
 	-- 6. Validar que AMBOS pertenezcan al mismo MatchId
 	local attackerSession = self:_resolveSession(attacker)
-	if not attackerSession or attackerSession.Id ~= matchId then
+	if attackerSession ~= session then
 		return false, "DifferentMatch"
 	end
+	if type(roundService.GetSessionParticipant) ~= "function" then
+		return false, "ParticipantRegistryUnavailable"
+	end
+	local attackerParticipant = roundService:GetSessionParticipant(matchId, attacker)
+	local victimParticipant = roundService:GetSessionParticipant(matchId, victim)
+	if not attackerParticipant or not victimParticipant then
+		return false, "NotInMatch"
+	end
+	if attackerParticipant.State == "Left" or attackerParticipant.State == "Released"
+		or victimParticipant.State == "Left" or victimParticipant.State == "Released" then
+		return false, "ParticipantInactive"
+	end
+	if attackerParticipant.Team == victimParticipant.Team then
+		return false, "SameTeam"
+	end
+
+	local character=victim.Character
+ if not character then return false,"VictimNotSpawned" end
+ local generation=character:GetAttribute("ArenaPhysicsGeneration") or 0
+ local roundId=session.GameplayRound.Id
+ if self:IsHitProtected(victim, session) then return false,"VictimHitProtected" end
+ local hits=self._lifeHits[victim]
+ if not hits or hits.Session~=session or hits.SessionId~=session.Id or hits.RoundId~=roundId or hits.Character~=character or hits.Generation~=generation then
+  hits={Session=session,SessionId=session.Id,RoundId=roundId,Character=character,Generation=generation,Count=0}
+  self._lifeHits[victim]=hits
+ end
+ if not skipComboCount then hits.Count+=1 end
 
 	-- 7. Registrar o actualizar CombatTag autoritativo
 	local timestamp = os.clock()
+	-- Reserve before any physics/ability side effects; rejected contacts never refresh it.
+	hits.ProtectedUntil = timestamp + Config.Combat.DefaultSlapKnockdownDuration
 	local tag: CombatTag = {
 		Victim = victim,
 		Attacker = attacker,
@@ -163,7 +222,7 @@ function CombatService:RegisterHit(attacker: Player, victim: Player, overrideMat
 	print(string.format("[CombatService] Hit registrado: '%s' golpeó a '%s' en Match '%s'",
 		attacker.Name, victim.Name, matchId))
 
-	return true, nil
+	return true, nil, hits.Count
 end
 
 -- Retorna el CombatTag activo de una víctima
@@ -202,10 +261,12 @@ function CombatService:ClearCombatTag(victim: Player)
 	if not victim then return end
 	self._tags[victim] = nil
 	self._history[victim] = nil
+	self._lifeHits[victim] = nil
 end
 
 -- Limpia todos los CombatTags e historial de una partida
 function CombatService:ClearMatch(matchId: string)
+	for player,hits in pairs(self._lifeHits) do if hits.SessionId==matchId then self._lifeHits[player]=nil end end
 	if not matchId then return end
 	for victim, tag in pairs(self._tags) do
 		if tag.MatchId == matchId then

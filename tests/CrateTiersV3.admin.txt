@@ -1,0 +1,1 @@
+AdminTrainingV1 PASS: 73 assertions (isolated; gameplay NOT RUN)

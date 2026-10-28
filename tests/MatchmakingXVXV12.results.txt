@@ -1,0 +1,3 @@
+PASS MatchmakingXVXV12 base: 49 isolated assertions; gameplay NOT RUN
+PASS MatchmakingXVXV12 prematch: 102 new assertions; total including V1.0=151; no Play/cloud
+PASS MatchmakingXVXV12 integration: 208 new assertions; TOTAL=359; engine adapters, gameplay NOT RUN

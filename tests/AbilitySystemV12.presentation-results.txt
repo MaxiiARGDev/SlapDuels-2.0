@@ -1,0 +1,1 @@
+PASS: 18 isolated presentation/resource assertions; no Studio/gameplay/cloud execution.

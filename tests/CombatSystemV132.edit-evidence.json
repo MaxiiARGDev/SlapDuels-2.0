@@ -1,0 +1,787 @@
+{
+  "Date": "2026-10-18",
+  "Audit": {
+    "Slaps": [
+      {
+        "Path": "ServerStorage.Slaps.Classic",
+        "Class": "Tool"
+      },
+      {
+        "Path": "ServerStorage.Slaps.Classic.Swing",
+        "Class": "Animation",
+        "AnimationId": "rbxassetid://204062532"
+      },
+      {
+        "Path": "ServerStorage.Slaps.Classic.Configuration.Power",
+        "Value": "20",
+        "Class": "NumberValue"
+      },
+      {
+        "Path": "ServerStorage.Slaps.Classic.Configuration.SlapCooldown",
+        "Value": "0.6",
+        "Class": "NumberValue"
+      }
+    ],
+    "IsStudio": true,
+    "IsRunning": false,
+    "UI": [
+      {
+        "Path": "StarterGui.MatchHUD",
+        "Class": "ScreenGui"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.CountdownFrame.Title",
+        "Text": "LA PARTIDA COMIENZA EN",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.CountdownFrame.Timer",
+        "Text": "5",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.MapSelectionFrame.Header",
+        "Text": "ELIGE UN MAPA",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.MapSelectionFrame.Timer",
+        "Text": "5",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.MapSelectionFrame.MapsContainer.MapButtonTemplate",
+        "Text": "",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.MapSelectionFrame.MapsContainer.MapButtonTemplate.MapName",
+        "Text": "Map Name",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.MapSelectionFrame.RandomButton",
+        "Text": "ALEATORIO",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.MatchTimerFrame.Timer",
+        "Text": "3:00",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.ResultFrame.ResultTitle",
+        "Text": "VICTORIA",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.ResultFrame.ResultSubtitle",
+        "Text": "Fin de la partida",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.RedTeamFrame.TeamLabel",
+        "Text": "RED",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.RedTeamFrame.ScoreLabel",
+        "Text": "0",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.BlueTeamFrame.TeamLabel",
+        "Text": "BLUE",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.BlueTeamFrame.ScoreLabel",
+        "Text": "0",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.PlayerSlotTemplate",
+        "Class": "Frame"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.PlayerSlotTemplate.DisplayName",
+        "Text": "PlayerName",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.PlayerSlotTemplate.Username",
+        "Text": "@username",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.LastPointFrame.Title",
+        "Text": "ÚLTIMO PUNTO PARA GANAR LA PARTIDA",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.LastPointFrame.Subtitle",
+        "Text": "¡Equipo a 1 punto de la victoria!",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.StartCountdownFrame.Title",
+        "Text": "LA PARTIDA COMIENZA",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchHUD.StartCountdownFrame.CountdownLabel",
+        "Text": "¡COMIENZA!",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchmakingHUD",
+        "Class": "ScreenGui"
+      },
+      {
+        "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.TeamLabel",
+        "Text": "TU",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer",
+        "Class": "Frame"
+      },
+      {
+        "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate",
+        "Class": "Frame"
+      },
+      {
+        "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Empty.QuestionMark",
+        "Text": "?",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Occupied.DisplayName",
+        "Text": "Roblox",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Occupied.Username",
+        "Text": "@Roblox",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.Body.Occupied.StatusText",
+        "Text": "Listo",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.RedTeam.SlotsContainer.PlayerSlotTemplate.NameLabel",
+        "Text": "Jugador",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.BlueTeam.TeamLabel",
+        "Text": "OPONENTE",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.BlueTeam.SlotsContainer",
+        "Class": "Frame"
+      },
+      {
+        "Path": "StarterGui.MatchmakingHUD.QueueFrame.Content.Versus.TextLabel",
+        "Text": "CONTRA",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.PlayerHUD",
+        "Class": "ScreenGui"
+      },
+      {
+        "Path": "StarterGui.PlayerHUD.ProfileCard.PlayerName",
+        "Text": "Player",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.PlayerHUD.ProfileCard.WinsLabel",
+        "Text": "Wins: 0",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.PlayerHUD.ProfileCard.LossesLabel",
+        "Text": "Losses: 0",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.PlayerHUD.ProfileCard.CoinsContainer.CoinsLabel",
+        "Text": "0",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.PlayerHUD.ProfileCard.KillsLabel",
+        "Text": "Kills: 0",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.SettingsGUI",
+        "Class": "ScreenGui"
+      },
+      {
+        "Path": "StarterGui.SettingsGUI.SettingsButton",
+        "Text": "⚙",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.SettingsGUI.MainFrame.Header.Title",
+        "Text": "AJUSTES",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.SettingsGUI.MainFrame.Header.CloseButton",
+        "Text": "✕",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.SettingsGUI.MainFrame.Content.AudioSection.SectionTitle",
+        "Text": "AUDIO — MÚSICA",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.SettingsGUI.MainFrame.Content.AudioSection.MusicToggleRow.MusicToggleLabel",
+        "Text": "Música",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.SettingsGUI.MainFrame.Content.AudioSection.MusicToggleRow.MusicToggle",
+        "Text": "",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.SettingsGUI.MainFrame.Content.AudioSection.MusicToggleRow.MusicToggle.StatusText",
+        "Text": "ON",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.SettingsGUI.MainFrame.Content.AudioSection.MusicVolumeRow.TopRow.MusicVolumeLabel",
+        "Text": "Volumen",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.SettingsGUI.MainFrame.Content.AudioSection.MusicVolumeRow.TopRow.MusicVolumePercent",
+        "Text": "100%",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.SettingsGUI.MainFrame.Content.AudioSection.MusicVolumeRow.MusicSlider",
+        "Text": "",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.ShopHUD",
+        "Class": "ScreenGui"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.ShopButton",
+        "Text": "TIENDA",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Header.CoinsContainer.CoinsLabel",
+        "Text": "—",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Tabs.PointEffectsTab.SoonBadge",
+        "Text": "PRONTO",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Tabs.PointEffectsTab.TextLabel",
+        "Text": "EFECTOS DE PUNTO",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Tabs.SlapsTab",
+        "Class": "ImageButton"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Tabs.SlapsTab.Slabs",
+        "Text": "Slaps",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Tabs.SlapsTab.SoonBadge",
+        "Text": "PRONTO",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Tabs.TrailsTab.Trails",
+        "Text": "Trails",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Tabs.TrailsTab.SoonBadge",
+        "Text": "PRONTO",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Tabs.DeathEffectsTab.SoonBadge",
+        "Text": "PRONTO",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Tabs.DeathEffectsTab.TextLabel",
+        "Text": "KILL EFFECTS",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Tabs.AbilitiesTab.SoonBadge",
+        "Text": "PRONTO",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Tabs.AbilitiesTab.TextLabel",
+        "Text": "ABILITIES",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.Catalog.ProductCardTemplate",
+        "Text": "",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.Catalog.ProductCardTemplate.Preview.PreviewLabel",
+        "Text": "✦",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.Catalog.ProductCardTemplate.NameLabel",
+        "Text": "Producto",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.Catalog.ProductCardTemplate.RarityLabel",
+        "Text": "Rareza",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.Catalog.ProductCardTemplate.PriceLabel",
+        "Text": "0",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.Catalog.ProductCardTemplate.StateBadge",
+        "Text": "EQUIPADO",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.EmptyState",
+        "Text": "PRÓXIMAMENTE\nEsta categoría estará disponible en una próxima actualización.",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.LoadingLabel",
+        "Text": "Cargando catálogo…",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.DetailPanel.Preview.PreviewLabel",
+        "Text": "✦",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.DetailPanel.NameLabel",
+        "Text": "Seleccioná un producto",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.DetailPanel.RarityLabel",
+        "Text": "",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.DetailPanel.DescriptionLabel",
+        "Text": "",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.DetailPanel.PriceRow.PriceLabel",
+        "Text": "",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.DetailPanel.StatusLabel",
+        "Text": "",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.DetailPanel.ActionButton",
+        "Text": "COMPRAR",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.Body.DetailPanel.SecondaryButton",
+        "Text": "DESEQUIPAR",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.ShopHUD.MainFrame.MessageLabel",
+        "Text": "",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.EndCinematicHUD",
+        "Class": "ScreenGui"
+      },
+      {
+        "Path": "StarterGui.EndCinematicHUD.MainFrame.Title",
+        "Text": "VICTORIA",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.EndCinematicHUD.MainFrame.Subtitle",
+        "Text": "GANASTE EL DUELO",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.EndCinematicHUD.MainFrame.WinnerLine.WinningTeam",
+        "Text": "EQUIPO Red  ·  ",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.EndCinematicHUD.MainFrame.WinnerLine.WinnerNames",
+        "Text": "Ganador",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.EndCinematicHUD.MainFrame.Score",
+        "Text": "5  —  3",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.EndCinematicHUD.MainFrame.ReturnButton",
+        "Text": "VOLVER AL LOBBY",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.EndCinematicHUD.MainFrame.RematchButton",
+        "Text": "REVANCHA (0/2)",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.EndCinematicHUD.MainFrame.RematchCounter",
+        "Text": "VOTAR REVANCHA",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.KillRewardHUD",
+        "Class": "ScreenGui"
+      },
+      {
+        "Path": "StarterGui.KillRewardHUD.CoinTemplate",
+        "Text": "¢",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.KillRewardHUD.RewardAmountTemplate",
+        "Text": "+0",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.KillRewardHUD.CoinTarget.Label",
+        "Text": "¢  COINS",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.DeathFeedbackHUD",
+        "Class": "ScreenGui"
+      },
+      {
+        "Path": "StarterGui.DeathFeedbackHUD.NotificationContainer.NotificationTemplate.MessageLabel",
+        "Text": "Atacante tiró a Víctima",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.DeathFeedbackHUD.NotificationContainer.NotificationTemplate.Icon",
+        "Text": "✦",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.SuddenDeathHUD",
+        "Class": "ScreenGui"
+      },
+      {
+        "Path": "StarterGui.SuddenDeathHUD.Notice",
+        "Text": "MUERTE SÚBITA",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.AbilityHUD",
+        "Class": "ScreenGui"
+      },
+      {
+        "Path": "StarterGui.AbilityHUD.AbilityButton",
+        "Text": "",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.AbilityHUD.AbilityButton.AbilityName",
+        "Text": "DASH",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.AbilityHUD.AbilityButton.CooldownLabel",
+        "Text": "E · LISTA",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.AbilityHUD.AbilitySelectionFrame.Title",
+        "Text": "ELEGÍ TU HABILIDAD",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.AbilityHUD.AbilitySelectionFrame.Hint",
+        "Text": "Una habilidad por ronda · elección confirmada por el servidor",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.AbilityHUD.AbilitySelectionFrame.Cards.AbilityCardTemplate",
+        "Text": "",
+        "Class": "TextButton"
+      },
+      {
+        "Path": "StarterGui.AbilityHUD.AbilitySelectionFrame.Cards.AbilityCardTemplate.AbilityName",
+        "Text": "HABILIDAD",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.AbilityHUD.AbilitySelectionFrame.Cards.AbilityCardTemplate.Description",
+        "Text": "Descripción",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.AbilityHUD.AbilitySelectionFrame.Cards.AbilityCardTemplate.Cooldown",
+        "Text": "CD",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.AbilityHUD.AbilitySelectionFrame.Cards.AbilityCardTemplate.Status",
+        "Text": "SELECCIONAR",
+        "Class": "TextLabel"
+      },
+      {
+        "Path": "StarterGui.AbilityHUD.ChangeAbilityButton",
+        "Text": "Cambiar habilidad",
+        "Class": "TextButton"
+      }
+    ]
+  },
+  "AnimationAssetRead": {
+    "Keyframes": 5,
+    "Loop": false,
+    "Duration": 0.6600000262260437,
+    "Priority": "Enum.AnimationPriority.Action",
+    "Class": "KeyframeSequence",
+    "AssetRead": true
+  },
+  "UIInstall": {
+    "Created": [
+      {
+        "Class": "UIListLayout",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.UIListLayout"
+      },
+      {
+        "Class": "Frame",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot"
+      },
+      {
+        "Class": "ImageLabel",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.ToolIcon"
+      },
+      {
+        "Class": "TextLabel",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.FallbackIcon"
+      },
+      {
+        "Class": "UICorner",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.UICorner"
+      },
+      {
+        "Class": "StringValue",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.DefaultDisplayName"
+      },
+      {
+        "Class": "StringValue",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.DefaultToolName"
+      },
+      {
+        "Class": "Frame",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay"
+      },
+      {
+        "Class": "Frame",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.CooldownBarBackground"
+      },
+      {
+        "Class": "UICorner",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.CooldownBarBackground.UICorner"
+      },
+      {
+        "Class": "Frame",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.CooldownBarBackground.CooldownBarFill"
+      },
+      {
+        "Class": "UICorner",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.CooldownBarBackground.CooldownBarFill.UICorner"
+      },
+      {
+        "Class": "UICorner",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.UICorner"
+      },
+      {
+        "Class": "TextLabel",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.CooldownTimeLabel"
+      },
+      {
+        "Class": "TextLabel",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.NameLabel"
+      },
+      {
+        "Class": "UIStroke",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.UIStroke"
+      },
+      {
+        "Class": "TextLabel",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.KeyLabel"
+      }
+    ],
+    "IsRunning": false,
+    "Root": "StarterGui.PlayerHUD.CombatSlots",
+    "ExistingPropertiesUnchanged": true,
+    "NewScreenGuis": 0,
+    "ExistingInstancesPreserved": 22,
+    "IsStudio": true,
+    "Selectable": false,
+    "Active": false,
+    "Visible": false
+  },
+  "UIFinal": {
+    "Paths": [
+      {
+        "Class": "Frame",
+        "Path": "StarterGui.PlayerHUD.CombatSlots"
+      },
+      {
+        "Class": "UIListLayout",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.UIListLayout"
+      },
+      {
+        "Class": "Frame",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot"
+      },
+      {
+        "Class": "ImageLabel",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.ToolIcon"
+      },
+      {
+        "Class": "TextLabel",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.FallbackIcon"
+      },
+      {
+        "Class": "UICorner",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.UICorner"
+      },
+      {
+        "Class": "StringValue",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.DefaultDisplayName"
+      },
+      {
+        "Class": "StringValue",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.DefaultToolName"
+      },
+      {
+        "Class": "Frame",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay"
+      },
+      {
+        "Class": "Frame",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.CooldownBarBackground"
+      },
+      {
+        "Class": "UICorner",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.CooldownBarBackground.UICorner"
+      },
+      {
+        "Class": "Frame",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.CooldownBarBackground.CooldownBarFill"
+      },
+      {
+        "Class": "UICorner",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.CooldownBarBackground.CooldownBarFill.UICorner"
+      },
+      {
+        "Class": "UICorner",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.UICorner"
+      },
+      {
+        "Class": "TextLabel",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.CooldownTimeLabel"
+      },
+      {
+        "Class": "TextLabel",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.NameLabel"
+      },
+      {
+        "Class": "UIStroke",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.UIStroke"
+      },
+      {
+        "Class": "TextLabel",
+        "Path": "StarterGui.PlayerHUD.CombatSlots.SlapSlot.KeyLabel"
+      }
+    ],
+    "InteractiveObjects": [],
+    "Count": 18,
+    "DuplicateNames": false,
+    "FloatTolerance": 0.000001,
+    "PropertyDifferences": []
+  },
+  "Final": {
+    "IsRunning": false,
+    "PersistenceResolverHash": "10a9af745b6e1ae383582445d5b3be2f014d09a6d058fdd25a50c85c3731b853",
+    "ConfigHash": "88193976ac9b82f86612bfbb91517eeb1d50ffa89b4f027c70489293e6b4ceda",
+    "Sources": [
+      {
+        "Editor": "080e04bf7233c2a59c37404cd45b30398389b7438d60269bf16bb58f1b5dc72b",
+        "Path": "ServerScriptService.Services.SlapService",
+        "Source": "080e04bf7233c2a59c37404cd45b30398389b7438d60269bf16bb58f1b5dc72b",
+        "Expected": "080e04bf7233c2a59c37404cd45b30398389b7438d60269bf16bb58f1b5dc72b"
+      },
+      {
+        "Editor": "f39fc583b3aa3ca1e165fee46dad3f58175045312a8e52304da12c170d20799b",
+        "Path": "StarterPlayer.StarterPlayerScripts.Controllers.SlapController",
+        "Source": "f39fc583b3aa3ca1e165fee46dad3f58175045312a8e52304da12c170d20799b",
+        "Expected": "f39fc583b3aa3ca1e165fee46dad3f58175045312a8e52304da12c170d20799b"
+      }
+    ],
+    "IsStudio": true,
+    "DiagnosticsEnabled": false,
+    "UIVisible": false,
+    "Mode": "Edit",
+    "Components": [
+      "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay",
+      "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.CooldownBarBackground",
+      "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.CooldownBarBackground.CooldownBarFill",
+      "StarterGui.PlayerHUD.CombatSlots.SlapSlot.CooldownOverlay.CooldownTimeLabel"
+    ],
+    "UIExists": true
+  },
+  "Tests": {
+    "CombatAndUI": 124,
+    "Ability": 164,
+    "Registry": 89,
+    "Total": 377,
+    "CompiledFiles": 99,
+    "DefaultBuild": 0,
+    "SafeBuild": 0,
+    "Gameplay": "NOT RUN"
+  },
+  "Authorization": "Custom combat slots in existing PlayerHUD; no slots or equipped tools outside combat; user explicitly confirmed",
+  "RuntimePersistence": "Not initialized; Studio/InMemory/false source and config unchanged"
+}

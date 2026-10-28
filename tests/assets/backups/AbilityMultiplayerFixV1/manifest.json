@@ -1,0 +1,22 @@
+[
+  {
+    "File": "src/server/Services/AbilityService.luau",
+    "SHA256": "734760947915880c73e2e7f5dc29fbda494a39a4eed5af256c0f4c95bf054aab"
+  },
+  {
+    "File": "src/client/Controllers/AbilityController.luau",
+    "SHA256": "a3e20c21156804ca0678db28348fd8945fbf8fd399fc72e219f14b4de8d659bb"
+  },
+  {
+    "File": "src/server/Abilities/DashAbility.luau",
+    "SHA256": "1490ee59b531ec658b60aff9548a4c604fca26b7697fe95cc34246336a805b81"
+  },
+  {
+    "File": "src/server/Abilities/MovementGuard.luau",
+    "SHA256": "23b057a6c06e74b419b06a277b0c6089def7dd1c642e99d97519431175b0a7df"
+  },
+  {
+    "File": "studio-safe.project.json",
+    "SHA256": "110e49a63bda50a011cac61cda95b0b3d21c623288811fb0839ac4e9e68c1536"
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "name": "OddsList",
+  "tree": {
+    "$className": "ScrollingFrame",
+    "$properties": {
+      "Position": {"UDim2": [[0, 16], [0, 132]]},
+      "Size": {"UDim2": [[1, -32], [1, -245]]},
+      "CanvasSize": {"UDim2": [[0, 0], [0, 0]]},
+      "AutomaticCanvasSize": "Y",
+      "ScrollingDirection": "Y",
+      "BackgroundTransparency": 1,
+      "BorderSizePixel": 0,
+      "ScrollBarThickness": 5,
+      "Visible": false,
+      "ZIndex": 65
+    },
+    "UIListLayout": {
+      "$className": "UIListLayout",
+      "$properties": {"SortOrder": "LayoutOrder", "Padding": {"UDim": [0, 4]}}
+    },
+    "RowTemplate": {
+      "$className": "TextLabel",
+      "$properties": {
+        "Size": {"UDim2": [[1, -8], [0, 48]]},
+        "AutomaticSize": "Y",
+        "BackgroundTransparency": 1,
+        "Text": "Slap · Variación — probabilidad efectiva",
+        "TextSize": 12,
+        "TextColor3": {"Color3": [1, 1, 1]},
+        "TextXAlignment": "Left",
+        "TextYAlignment": "Top",
+        "TextWrapped": true,
+        "RichText": false,
+        "Visible": false,
+        "ZIndex": 66
+      }
+    }
+  }
+}

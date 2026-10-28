@@ -1,0 +1,82 @@
+{
+  "Scripts": [
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"d12b97e57e0a6176b5780b1b4448c2c798bd131b8181d565451835e39bfdd8ba\",\"Path\":\"StarterPlayer.StarterPlayerScripts.CrateOpening.VisualProfile\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"74abbb934b5c91e9b9104b28c98ddadddd169f109c034fd30d48ecabf15978f1\",\"Path\":\"StarterPlayer.StarterPlayerScripts.CrateOpening.RewardOverlayPresenter\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Before\":\"54aaa9828ebb9c86ecd8f990be7da4b3ac441ef21c1cc4707146ab7f36bf77dc\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.CrateStandCinematicController\",\"After\":\"34865ba53d216cbb1fbca22787b07476e97b1174542d461cb21a3054a285ba7f\",\"Mode\":\"Edit\",\"EditorAfter\":\"34865ba53d216cbb1fbca22787b07476e97b1174542d461cb21a3054a285ba7f\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"Hash\":\"0685dbb99d00804b7ea00115ee8ac2ba56a4907c50cfdbba3b1128c744709e3f\",\"Path\":\"ServerScriptService.Services.Crates.StandOpeningService\",\"Edit\":true}"
+        }
+      ],
+      "isError": false
+    }
+  ],
+  "VisualsPreserved": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"InternalBackupHash\":\"7b838825c792e6ad7a4904961b3c48023c10dcb7b8677df94e961a08c8270b8a\",\"OriginalInstancesPreserved\":372,\"OriginalVisualPropertiesPreserved\":1673,\"Edit\":true}"
+      }
+    ],
+    "isError": false
+  },
+  "FinalResources": [
+    {
+      "Bytes": 28029,
+      "Descendants": 177,
+      "Name": "MainCrateStand",
+      "Base64Bytes": 37372,
+      "Hash": "d813859729da7ea6d0acaeaf9fa9ef0deac98584aa19d1ebb9c09032384e582e"
+    },
+    {
+      "Bytes": 10798,
+      "Descendants": 24,
+      "Name": "CrateOpeningHUD",
+      "Base64Bytes": 14400,
+      "Hash": "443984dae9326a10615e8d6725eec84ad31a59fe83a72ba65e93a6140eba79ff"
+    },
+    {
+      "Bytes": 35568,
+      "Descendants": 172,
+      "Name": "ShopHUD",
+      "Base64Bytes": 47424,
+      "Hash": "ce7a44b723f4881e1fb5c3a8bfac9d2f5e369c409393608d05f7dded80e39b57"
+    }
+  ],
+  "Gameplay": "NOT RUN",
+  "FinalInspection": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"PersistenceBranch\":\"Studio/InMemory/WritesToCloud=false preserved; runtime NOT RUN\",\"Edit\":true,\"FinalSnapshotHashesMatch\":3,\"NoPlay\":true,\"InternalBackupUnchanged\":true}"
+      }
+    ],
+    "isError": false
+  }
+}

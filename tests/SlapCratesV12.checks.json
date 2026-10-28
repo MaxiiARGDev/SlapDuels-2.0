@@ -1,0 +1,55 @@
+{
+  "RuntimeScriptsCompiled": 116,
+  "Gameplay": "NOT RUN",
+  "Cloud": "NOT ACCESSED",
+  "Checks": {
+    "compose": {
+      "ExitCode": 0,
+      "Log": "tests/SlapCratesV12.compose.log"
+    },
+    "crates": {
+      "ExitCode": 0,
+      "Log": "tests/SlapCratesV12.crates.log"
+    },
+    "combat": {
+      "ExitCode": 0,
+      "Log": "tests/SlapCratesV12.combat.log"
+    },
+    "ability": {
+      "ExitCode": 0,
+      "Log": "tests/SlapCratesV12.ability.log"
+    },
+    "registry": {
+      "ExitCode": 0,
+      "Log": "tests/SlapCratesV12.registry.log"
+    },
+    "shop": {
+      "ExitCode": 0,
+      "Log": "tests/SlapCratesV12.shop.log"
+    },
+    "variations": {
+      "ExitCode": 0,
+      "Log": "tests/SlapCratesV12.variations.log"
+    },
+    "compile": {
+      "ExitCode": 0,
+      "Log": "tests/SlapCratesV12.compile.log"
+    },
+    "build": {
+      "ExitCode": 0,
+      "Log": "tests/SlapCratesV12.build.log"
+    },
+    "safe-build": {
+      "ExitCode": 0,
+      "Log": "tests/SlapCratesV12.safe-build.log"
+    },
+    "diff-check": {
+      "ExitCode": 0,
+      "Log": "tests/SlapCratesV12.diff-check.log"
+    },
+    "integrity": {
+      "ExitCode": 0,
+      "Log": "tests/SlapCratesV12.integrity.log"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "Compile": {
+    "Sources": 177,
+    "Specs": 2,
+    "Failures": []
+  },
+  "social": {
+    "ExitCode": 0
+  },
+  "features": {
+    "ExitCode": 0
+  },
+  "matchmaking": {
+    "ExitCode": 0
+  },
+  "SlapVictimProtection": {
+    "ExitCode": 0
+  },
+  "AbilityMultiplayerFixV1.regression": {
+    "ExitCode": 0
+  },
+  "EconomyBalanceV1": {
+    "ExitCode": 0
+  },
+  "EconomyBalanceV1.shop": {
+    "ExitCode": 0
+  },
+  "PremiumShopV11": {
+    "ExitCode": 0
+  },
+  "CrateBatchV24": {
+    "ExitCode": 0
+  },
+  "default.project.json": {
+    "ExitCode": 0
+  },
+  "studio-safe.project.json": {
+    "ExitCode": 0
+  },
+  "diff": {
+    "ExitCode": 0
+  },
+  "Integrity": {
+    "ChangedExistingFiles": [
+      "src/server/Bootstrap.server.luau",
+      "src/shared/Types.luau",
+      "src/client/Controllers/SocialController.luau",
+      "src/server/Services/MatchmakingService.luau",
+      "src/server/Services/PlayerDataService.luau",
+      "src/server/Services/PlayerService.luau",
+      "src/server/Services/RoundService.luau",
+      "src/server/Services/SocialService.luau",
+      "src/server/Services/Trading/PublicInventory.luau",
+      "src/ui/PlayerProfileHUD.project.json",
+      "default.project.json",
+      "studio-safe.project.json"
+    ],
+    "Unexpected": []
+  },
+  "OldRojoEntriesPreserved": true
+}

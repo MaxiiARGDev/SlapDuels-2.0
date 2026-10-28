@@ -1,0 +1,258 @@
+[
+  {
+    "File": "src/character/ArenaRespawnGuard.client.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/character/RagdollStatesHandler.client.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/AnimacionLetras1v1.client.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/ClientBootstrap.client.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/Controllers/DeathFeedbackController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/Controllers/EndCinematicController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/Controllers/KillRewardController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/Controllers/MatchController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/Controllers/MatchmakingController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/Controllers/MatchStartEffectsController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/Controllers/MusicController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/Controllers/PlayerHUDController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/Controllers/SettingsController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/Controllers/SlapController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/Controllers/SuddenDeathController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/DeathFeedback/DeathEffectPlayer.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/DeathFeedback/DeathNotifications.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/DeathFeedback/Scope.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicAnimations.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicAudio.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicAvatars.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicBillboards.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicCamera.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicHUD.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicParticles.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicRanking.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicTransition.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/EndCinematicPreview.client.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/client/PointCameraFX.client.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/PointEffectControllers/BasicController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/PointEffectControllers/InfernoController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/PointEffectControllers/PointEffectRegistry.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/PointEffectControllers/ThunderController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/RagdollHandler.server.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/RagdollModule.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/DeathEffectService.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/Gameplay/RoundClock.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/KnockbackService.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/MatchInstanceService.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/MatchmakingFeedbackService.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/MatchmakingService.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/Persistence/InMemoryDataStore.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/Persistence/PersistenceEnvironment.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/Persistence/RobloxDataStoreAdapter.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/PointEffectTestService.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/PointFeedbackService.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/Respawn/ArenaRespawn.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/Respawn/CharacterPhysics.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/Respawn/CompetitiveTransit.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/ScoreService.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/SpawnService.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Services/ThunderController.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Shop/Providers/DeathEffectProvider.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Shop/Providers/PointEffectProvider.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/server/Shop/ShopRemotes.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/shared/ArenaRespawnPolicy.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/shared/Config.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/shared/Constants.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/shared/DeathEffectDefinitions.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/shared/DeathFeedbackConfig.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/shared/DeathFeedbackContract.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/shared/EndCinematicConfig.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/shared/EndCinematicRanking.luau",
+    "Matches": true
+  },
+  {
+    "File": "src/shared/PointEffectDefinitions.luau",
+    "Matches": true
+  }
+]

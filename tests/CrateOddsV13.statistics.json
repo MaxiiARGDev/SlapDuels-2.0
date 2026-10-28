@@ -1,0 +1,7 @@
+{
+  "Seed": 8675309,
+  "DrawsPerCrate": 200000,
+  "TotalDraws": 2400000,
+  "MaximumAbsoluteZ": 3.111566603785375,
+  "AllWithinSevenSigma": true
+}

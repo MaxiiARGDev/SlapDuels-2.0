@@ -1,0 +1,15 @@
+{
+  "src/server/Services/Persistence/ProfileSessions.luau": true,
+  "src/server/Services/Crates/UnlimitedProductionStock.luau": true,
+  "src/shared/Progression/Passes/LaunchSeason.luau": true,
+  "src/server/Services/Persistence/PersistenceEnvironment.luau": true,
+  "src/server/Services/Persistence/RobloxDataStoreAdapter.luau": true,
+  "src/server/Services/PlayerDataService.luau": true,
+  "src/server/Services/PlayerService.luau": true,
+  "src/server/Services/ProgressionService.luau": true,
+  "src/server/Services/CrateService.luau": true,
+  "src/shared/Progression/Config.luau": true,
+  "src/shared/Progression/PassManifest.luau": true,
+  "src/shared/Types.luau": true,
+  "src/client/Controllers/SettingsController.luau": true
+}

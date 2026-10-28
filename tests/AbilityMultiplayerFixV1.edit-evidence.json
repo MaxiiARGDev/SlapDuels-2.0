@@ -1,0 +1,76 @@
+{
+  "Date": "2026-10-17",
+  "BeforeSourceAudit": [
+    {
+      "PersistenceEnvironment": "Studio",
+      "IsRunning": false,
+      "WritesToCloud": false,
+      "PersistenceProvider": "InMemory",
+      "IsStudio": true,
+      "Mode": "Edit",
+      "EditorMatches": 97,
+      "Expected": 97,
+      "Differences": [],
+      "SourceMatches": 97
+    }
+  ],
+  "Deployment": [
+    {
+      "PersistenceProvider": "InMemory",
+      "Sources": {
+        "1": {
+          "SHA256": "681a442093afab9cc003eda18d145411212f88fcdc025f871eee2832419e8d1a",
+          "Path": "ReplicatedStorage/Shared/AbilityDiagnostics",
+          "Action": "Created"
+        },
+        "2": {
+          "SHA256": "1d6a59aba2865258a98861954172ed7552b77c5938f6d20dd7ccb1bb63d409ba",
+          "Path": "ServerScriptService/Abilities/MovementGuard",
+          "Action": "Verified"
+        },
+        "3": {
+          "SHA256": "def547b6bf8649321cbcb45380ffbe0798220399f81738933f7ddb715c83bdd2",
+          "Path": "ServerScriptService/Abilities/DashAbility",
+          "Action": "Verified"
+        },
+        "4": {
+          "SHA256": "8dc35599e93b581d6800fd4896f65db5606f4b3e40dabc5885f83cefdb473b42",
+          "Path": "StarterPlayer/StarterPlayerScripts/Controllers/AbilityController",
+          "Action": "Verified"
+        },
+        "5": {
+          "SHA256": "336ec689a5f9936147411703936fe092700c0ebc62168e9f2d5f5ca0a05cee4f",
+          "Path": "ServerScriptService/Services/AbilityService",
+          "Action": "Verified"
+        }
+      },
+      "PersistenceEnvironment": "Studio",
+      "DiagnosticsEnabled": false,
+      "IsRunning": false,
+      "Mode": "Edit",
+      "WritesToCloud": false,
+      "Matched": 5
+    }
+  ],
+  "FinalSourceUpdate": [
+    {
+      "Mode": "Edit",
+      "Matched": 1
+    }
+  ],
+  "PriorOutputFiltered": [
+    "[ClientBootstrap] Controladores inicializados: MatchmakingController, MatchController, KillRewardController, PlayerHUDController, SuddenDeathController, MatchStartEffectsController, EndCinematicController, MusicController, ShopController, SettingsController, AbilityController, SlapController, DeathFeedbackController",
+    "[Bootstrap] PersistenceEnvironment=Studio PersistenceProvider=InMemory WritesToCloud=false GameId=10769217377 PlaceId=107328891970677",
+    "[ShopRegistry] Proveedor registrado exitosamente para la categoría 'PointEffects' (5 productos indexados)",
+    "[ShopRegistry] Proveedor registrado exitosamente para la categoría 'DeathEffects' (3 productos indexados)",
+    "[ShopRegistry] Proveedor registrado exitosamente para la categoría 'Abilities' (5 productos indexados)",
+    "[Bootstrap] Servicios inicializados: PlayerDataService, PlayerService, ShopService, RagdollService, MatchInstanceService, SpawnService, PointFeedbackService, PointEffectTestService, ScoreService, RoundService, MatchmakingFeedbackService, MatchmakingService, CombatService, KnockbackService, EliminationService, DeathEffectService, SlapService, AbilityService",
+    "[Bootstrap] Arranque completado",
+    "[ClientBootstrap] Controladores inicializados: MatchmakingController, KillRewardController, EndCinematicController, PlayerHUDController, SuddenDeathController, SlapController, MatchController, MusicController, ShopController, SettingsController, AbilityController, DeathFeedbackController, MatchStartEffectsController"
+  ],
+  "PriorOutputTruncated": true,
+  "PriorActivationFailureNotTraced": true,
+  "HistoricalTeamTestBuildNotEstablished": true,
+  "RootCauseConfirmed": false,
+  "GameplayNotRunByAgent": true
+}

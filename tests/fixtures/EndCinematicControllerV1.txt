@@ -1,0 +1,287 @@
+--!nonstrict
+-- Local presentation only. No match remotes, rewards, teleports or server state.
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local TweenService = game:GetService("TweenService")
+local Config = require(game:GetService("ReplicatedStorage").Shared.EndCinematicConfig)
+local Controller = { Name = "EndCinematicController", _serial = 0 }
+
+local function make(class, properties, parent)
+	local object = Instance.new(class)
+	for key, value in pairs(properties) do object[key] = value end
+	object.Parent = parent
+	return object
+end
+
+function Controller:Initialize()
+	if self._initialized then return end
+	self._initialized = true
+	self._serial = 0
+end
+
+function Controller:IsPlaying() return self._run ~= nil end
+
+function Controller:_alive(run)
+	return self._run == run and run.Id == self._serial
+end
+
+function Controller:_tween(run, object, duration, properties)
+	if not self:_alive(run) then return false end
+	local tween = TweenService:Create(object, TweenInfo.new(math.max(duration, 0.001), Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), properties)
+	table.insert(run.Tweens, tween)
+	tween:Play()
+	local result = tween.Completed:Wait()
+	return self:_alive(run) and result == Enum.PlaybackState.Completed
+end
+
+function Controller:Stop()
+	local run = self._run
+	if not run then return end
+	self._run = nil
+	self._serial += 1
+	for _, connection in ipairs(run.Connections) do connection:Disconnect() end
+	for _, tween in ipairs(run.Tweens) do tween:Cancel() end
+	for _, track in ipairs(run.Tracks) do pcall(function() track:Stop(0); track:Destroy() end) end
+	for _, sound in ipairs(run.Sounds) do sound:Stop() end
+	for gui, enabled in pairs(run.HiddenHUDs or {}) do if gui.Parent then gui.Enabled = enabled end end
+	if run.Camera then
+		pcall(function()
+			run.Camera.CameraType = run.CameraType
+			local subject = run.CameraSubject
+			if not subject or not subject.Parent then
+				local char = Players.LocalPlayer.Character
+				subject = char and char:FindFirstChildOfClass("Humanoid")
+			end
+			run.Camera.CameraSubject = subject
+			run.Camera.CFrame = run.CameraCFrame
+			run.Camera.FieldOfView = run.FieldOfView
+		end)
+	end
+	for _, object in ipairs(run.Resources) do object:Destroy() end
+end
+
+function Controller:_transition(run)
+	local gui = make("ScreenGui", { Name = "EndCinematicTransition", IgnoreGuiInset = true, ResetOnSpawn = false, DisplayOrder = 10000 }, Players.LocalPlayer.PlayerGui)
+	table.insert(run.Resources, gui)
+	-- Full-height, oversized rotated panels: diagonal inner edges with overlap.
+	local panels = {}
+	for index, sign in ipairs({ -1, 1 }) do
+		local panel = make("Frame", { Name = index == 1 and "Left" or "Right", AnchorPoint = Vector2.new(0.5, 0.5), Size = UDim2.fromScale(2, 6), Position = UDim2.fromScale(0.5 + sign * 3, 0.5), Rotation = Config.Transition.Angle, BackgroundColor3 = Config.Transition.Color, BorderSizePixel = 0, ZIndex = 10 }, gui)
+		table.insert(panels, panel)
+	end
+	return panels
+end
+
+function Controller:_slide(run, panels, closed)
+	local duration = closed and Config.Transition.CloseDuration or Config.Transition.OpenDuration
+	local tweens = {}
+	for index, panel in ipairs(panels) do
+		local sign = index == 1 and -1 or 1
+		local target = UDim2.fromScale(0.5 + sign * (closed and 0.94 or 3), 0.5)
+		local tween = TweenService:Create(panel, TweenInfo.new(duration, Enum.EasingStyle.Quint, Enum.EasingDirection.InOut), { Position = target })
+		table.insert(run.Tweens, tween); table.insert(tweens, tween); tween:Play()
+	end
+	tweens[1].Completed:Wait()
+	return self:_alive(run)
+end
+
+function Controller:_rig(run, winner, slot, stage, cameraEnd)
+	local description
+	local player = Players:GetPlayerByUserId(winner.UserId)
+	local humanoid = player and player.Character and player.Character:FindFirstChildOfClass("Humanoid")
+	if humanoid then description = humanoid:GetAppliedDescription()
+	elseif winner.UserId > 0 then description = Players:GetHumanoidDescriptionFromUserIdAsync(winner.UserId)
+	else error("No description available for Studio user " .. tostring(winner.UserId)) end
+	if not self:_alive(run) then description:Destroy(); return end
+	local ok, rig = pcall(function() return Players:CreateHumanoidModelFromDescriptionAsync(description, Enum.HumanoidRigType.R15) end)
+	description:Destroy()
+	if not ok then error(rig) end
+	if not self:_alive(run) then rig:Destroy(); return end
+	rig.Name = "Winner_" .. tostring(winner.UserId)
+	for _, object in ipairs(rig:GetDescendants()) do
+		if object:IsA("LuaSourceContainer") or object:IsA("Tool") then object:Destroy()
+		elseif object:IsA("BasePart") then object.CanCollide = false; object.CanTouch = false; object.CanQuery = false end
+	end
+	local root = assert(rig:FindFirstChild("HumanoidRootPart"), "Rig root missing")
+	root.Anchored = true
+	rig.Parent = run.Container
+	local _, size = rig:GetBoundingBox()
+	local rigHumanoid = rig:FindFirstChildOfClass("Humanoid")
+	local bottomOffset = rig:GetPivot().Position.Y - root.Position.Y + rigHumanoid.HipHeight + root.Size.Y / 2
+	local finish = slot.CFrame * CFrame.new(0, slot.Size.Y / 2 + bottomOffset, 0)
+	-- Walk ends at the authored slot; clamp its starting point to the platform.
+	local distance = math.max(0, Config.Winners.WalkDistance)
+	local floor = stage.Structure:FindFirstChild("Floor")
+	while distance > 0 do
+		local start = finish * CFrame.new(0, 0, distance)
+		local localPoint = floor.CFrame:PointToObjectSpace(start.Position)
+		if math.abs(localPoint.X) + size.X / 2 + Config.Winners.PlatformMargin <= floor.Size.X / 2
+			and math.abs(localPoint.Z) + size.Z / 2 + Config.Winners.PlatformMargin <= floor.Size.Z / 2
+			and (start.Position - cameraEnd.Position).Magnitude >= Config.Winners.CameraClearance then break end
+		distance = math.max(0, distance - 0.25)
+	end
+	local start = finish * CFrame.new(0, 0, distance)
+	rig:PivotTo(start)
+	table.insert(run.Rigs, { Model = rig, Start = start, Finish = finish })
+end
+
+function Controller:_effects(run, enabled)
+	for _, object in ipairs(run.Effects:GetDescendants()) do
+		if object:IsA("ParticleEmitter") then
+			object.Enabled = enabled and Config.Effects.ConfettiEnabled and object.Rate > 0
+			if enabled and Config.Effects.ConfettiEnabled and object.Rate == 0 then object:Emit(object:GetAttribute("EmitCount") or Config.Effects.BurstCount) end
+		elseif enabled and object:IsA("Sound") and Config.Effects.SoundsEnabled and not Config.Effects.DisabledSounds[object.Name] and object.SoundId ~= "" then
+			object:Play(); table.insert(run.Sounds, object)
+		end
+	end
+end
+
+function Controller:_travel(run, from, target)
+	local alpha = make("NumberValue", { Value = 0 }, run.Container)
+	local bounce = false
+	table.insert(run.Connections, alpha.Changed:Connect(function(value)
+		if not self:_alive(run) then return end
+		local frame
+		if bounce then
+			frame = target * CFrame.new(0, 0, -math.sin(value * math.pi) * Config.Camera.ArrivalBounceStrength)
+		else
+			frame = from:Lerp(target, value)
+			if Config.Camera.HorizontalRotationEnabled then frame *= CFrame.Angles(0, math.rad(Config.Camera.HorizontalRotationDegrees) * math.sin(value * math.pi), 0) end
+		end
+		run.Camera.CFrame = frame
+	end))
+	if not self:_tween(run, alpha, Config.Camera.TravelDuration, { Value = 1 }) then return end
+	if Config.Camera.ArrivalBounceEnabled then
+		bounce = true; alpha.Value = 0
+		if not self:_tween(run, alpha, Config.Camera.ArrivalBounceDuration, { Value = 1 }) then return end
+	end
+	run.Camera.CFrame = target
+	run.CameraDone = true
+	self:_effects(run, false)
+end
+
+function Controller:_walk(run, entry, index)
+	task.wait(Config.Winners.WalkStartDelay + (index - 1) * Config.Winners.EntryStagger)
+	if not self:_alive(run) then return end
+	local track
+	if Config.Winners.WalkAnimationId ~= "" then
+		local ok, result = pcall(function()
+			local animator = entry.Model:FindFirstChildOfClass("Humanoid"):FindFirstChildOfClass("Animator")
+			local animation = make("Animation", { AnimationId = Config.Winners.WalkAnimationId }, run.Container)
+			return animator:LoadAnimation(animation)
+		end)
+		if ok then track = result; table.insert(run.Tracks, track); track:Play() else warn("[EndCinematic] Animation unavailable: " .. tostring(result)) end
+	end
+	local alpha = make("NumberValue", { Value = 0 }, run.Container)
+	table.insert(run.Connections, alpha.Changed:Connect(function(v)
+		if self:_alive(run) then entry.Model:PivotTo(entry.Start:Lerp(entry.Finish, v)) end
+	end))
+	self:_tween(run, alpha, Config.Winners.WalkDuration, { Value = 1 })
+	if track then track:Stop(0.15) end
+	if self:_alive(run) then entry.Model:PivotTo(entry.Finish); run.WalksDone += 1 end
+end
+
+function Controller:_hud(run, data, winners)
+	local gui = make("ScreenGui", { Name = "EndCinematicHUD", ResetOnSpawn = false, IgnoreGuiInset = true, DisplayOrder = 9990 }, Players.LocalPlayer.PlayerGui)
+	table.insert(run.Resources, gui)
+	local panel = make("CanvasGroup", { AnchorPoint = Vector2.new(0.5, 1), Position = UDim2.fromScale(0.5, 0.96), Size = UDim2.new(0.9, 0, 0, 265), BackgroundColor3 = Color3.fromRGB(12, 14, 25), BackgroundTransparency = 0.08, GroupTransparency = 1 }, gui)
+	make("UISizeConstraint", { MaxSize = Vector2.new(700, 265) }, panel)
+	make("UICorner", { CornerRadius = UDim.new(0, 18) }, panel)
+	make("UIStroke", { Color = Color3.fromRGB(255, 199, 62), Thickness = 2 }, panel)
+	local won = data.LocalTeam == data.WinningTeam
+	local function label(text, y, height, size, color)
+		return make("TextLabel", { BackgroundTransparency = 1, Position = UDim2.new(0.04, 0, 0, y), Size = UDim2.new(0.92, 0, 0, height), Text = text, TextColor3 = color or Color3.new(1, 1, 1), Font = Enum.Font.GothamBold, TextSize = size, TextWrapped = true }, panel)
+	end
+	label(won and "VICTORIA" or "DERROTA", 12, 46, 36, won and Color3.fromRGB(255, 207, 74) or Color3.fromRGB(255, 104, 115))
+	label(won and "GANASTE EL DUELO" or "PERDISTE EL DUELO", 58, 25, 16)
+	local names = {}; for _, winner in ipairs(winners) do table.insert(names, winner.DisplayName) end
+	label("EQUIPO " .. data.WinningTeam .. "  ·  " .. table.concat(names, ", "), 90, 42, 17)
+	label(string.format("%d  —  %d", data.Score.Red, data.Score.Blue), 134, 32, 25)
+	local back = make("TextButton", { Text = "VOLVER AL LOBBY", Font = Enum.Font.GothamBold, TextSize = 15, TextColor3 = Color3.new(0, 0, 0), BackgroundColor3 = Color3.fromRGB(255, 207, 74), Position = UDim2.fromScale(0.05, 0.7), Size = UDim2.fromScale(0.43, 0.18) }, panel)
+	make("UICorner", { CornerRadius = UDim.new(0, 8) }, back)
+	local eligible = data.EligibleParticipantCount or (#winners * 2)
+	local rematch = make("TextButton", { Text = string.format("REVANCHA (0/%d)", eligible), Active = false, AutoButtonColor = false, Font = Enum.Font.GothamBold, TextSize = 15, TextColor3 = Color3.fromRGB(140, 145, 160), BackgroundColor3 = Color3.fromRGB(35, 38, 52), Position = UDim2.fromScale(0.52, 0.7), Size = UDim2.fromScale(0.43, 0.18) }, panel)
+	make("UICorner", { CornerRadius = UDim.new(0, 8) }, rematch)
+	label("REVANCHA · PRÓXIMAMENTE", 238, 18, 11)
+	table.insert(run.Connections, back.Activated:Connect(function() self:Stop() end))
+	table.insert(run.Connections, gui.Destroying:Connect(function() if self:_alive(run) then self:Stop() end end))
+	self:_tween(run, panel, Config.HUD.FadeDuration, { GroupTransparency = 0 })
+end
+
+function Controller:Play(data)
+	self:Initialize()
+	if not RunService:IsStudio() then return false, "PreviewOnly" end
+	if Players.LocalPlayer:GetAttribute("MatchId") ~= nil then return false, "MatchActive" end
+	if self:IsPlaying() then return false, "AlreadyPlaying" end
+	local stage = workspace:FindFirstChild("EndCinematic")
+	if not stage then return false, "EndCinematicMissing" end
+	if type(data) ~= "table" or type(data.Winners) ~= "table" or #data.Winners < 1 or #data.Winners > Config.Winners.MaxVisible then return false, "InvalidWinners" end
+	if type(data.MatchId) ~= "string" or (data.WinningTeam ~= "Red" and data.WinningTeam ~= "Blue") or type(data.Score) ~= "table" or type(data.Score.Red) ~= "number" or type(data.Score.Blue) ~= "number" then return false, "InvalidPayload" end
+	local winners = table.clone(data.Winners)
+	for _, w in ipairs(winners) do if type(w) ~= "table" or type(w.UserId) ~= "number" or w.UserId == 0 or type(w.DisplayName) ~= "string" or type(w.Slot) ~= "number" then return false, "InvalidWinner" end end
+	table.sort(winners, function(a, b) return a.Slot == b.Slot and a.UserId < b.UserId or a.Slot < b.Slot end)
+	local cameras, slots = stage:FindFirstChild("TransCamera"), stage:FindFirstChild("Players")
+	local from, target = cameras and cameras:FindFirstChild("CameraCheck-v1"), cameras and cameras:FindFirstChild("CameraCheck-v2")
+	if not from or not target or not from:IsA("BasePart") or not target:IsA("BasePart") then return false, "CameraReferencesMissing" end
+	for index = 1, #winners do local slot = slots and slots:FindFirstChild("SlotPlayer_" .. index); if not slot or not slot:IsA("BasePart") then return false, "InsufficientSlots" end end
+	local camera = workspace.CurrentCamera
+	if not camera then return false, "CameraMissing" end
+	self._serial += 1
+	local run = { Id = self._serial, Resources = {}, Tweens = {}, Connections = {}, Tracks = {}, Sounds = {}, Rigs = {}, WalksDone = 0, Camera = camera, CameraType = camera.CameraType, CameraSubject = camera.CameraSubject, CameraCFrame = camera.CFrame, FieldOfView = camera.FieldOfView }
+	self._run = run
+	run.HiddenHUDs = {}
+	for _, gui in ipairs(Players.LocalPlayer.PlayerGui:GetChildren()) do
+		if gui:IsA("ScreenGui") and gui.Name ~= "EndCinematicPreview" then
+			run.HiddenHUDs[gui] = gui.Enabled
+			gui.Enabled = false
+		end
+	end
+	run.Container = make("Folder", { Name = "EndCinematicLocal_" .. run.Id }, workspace)
+	table.insert(run.Resources, run.Container)
+	local function stop() if self:_alive(run) then self:Stop() end end
+	table.insert(run.Connections, workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(stop))
+	table.insert(run.Connections, Players.LocalPlayer.CharacterAdded:Connect(stop))
+	table.insert(run.Connections, Players.LocalPlayer:GetAttributeChangedSignal("MatchId"):Connect(function() if Players.LocalPlayer:GetAttribute("MatchId") then stop() end end))
+	task.spawn(function()
+		local ok, err = xpcall(function()
+			local panels = self:_transition(run)
+			if not self:_slide(run, panels, true) then return end
+			camera.CameraType = Enum.CameraType.Scriptable; camera.CFrame = from.CFrame
+			for index, winner in ipairs(winners) do
+				if not self:_alive(run) then return end
+				self:_rig(run, winner, slots["SlotPlayer_" .. index], stage, target.CFrame)
+			end
+			if not self:_alive(run) then return end
+			local original = stage:FindFirstChild("Confeti")
+			run.Effects = original and original:Clone() or make("Folder", {}, nil)
+			for _, object in ipairs(run.Effects:GetDescendants()) do
+				if object:IsA("LuaSourceContainer") then object:Destroy()
+				elseif object:IsA("ParticleEmitter") then object.Enabled = false; object:Clear()
+				elseif object:IsA("Sound") then object:Stop()
+				elseif object:IsA("BasePart") then object.Anchored = true; object.CanCollide = false; object.CanTouch = false; object.Transparency = 1 end
+			end
+			run.Effects.Parent = run.Container
+			task.wait(Config.Transition.ClosedHoldDuration)
+			if not self:_alive(run) then return end
+			self:_effects(run, true)
+			local function guarded(callback)
+				task.spawn(function()
+					local success, failure = xpcall(callback, debug.traceback)
+					if not success then warn("[EndCinematic] " .. tostring(failure)); stop() end
+				end)
+			end
+			guarded(function() self:_travel(run, from.CFrame, target.CFrame) end)
+			for index, entry in ipairs(run.Rigs) do guarded(function() self:_walk(run, entry, index) end) end
+			if not self:_slide(run, panels, false) then return end
+			while self:_alive(run) and (not run.CameraDone or run.WalksDone < #run.Rigs) do task.wait() end
+			task.wait(Config.HUD.ShowDelay)
+			if self:_alive(run) then self:_hud(run, data, winners) end
+		end, debug.traceback)
+		if not ok then warn("[EndCinematic] " .. tostring(err)); stop() end
+	end)
+	return true
+end
+
+return Controller
+
+

@@ -1,0 +1,147 @@
+{
+  "Sources": {
+    "1": {
+      "SHA256": "d3b3f2c7d9b3b40c1dd85e1dbc3df3efa7b4c8b5f8839a70c3b53eed6f5a24c4",
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.PremiumShopController"
+    },
+    "2": {
+      "SHA256": "745e7f0e58f3c3df15e0f3e6d9b26fbc35b9c2eb429475df1824793ae55fd51c",
+      "Path": "ServerScriptService.PremiumShop.PremiumEligibility"
+    },
+    "3": {
+      "SHA256": "50ae16b8efbc56947a03225e07e95f85bf162f013c12d02b240c1ca9ff1db02d",
+      "Path": "ServerScriptService.PremiumShop.PremiumGrantPlan"
+    },
+    "4": {
+      "SHA256": "d5cbd847c706b0616658649fbab58c3807f2757c47df847bdbe5f6f842b2a125",
+      "Path": "ServerScriptService.PremiumShop.PremiumProductRegistry"
+    },
+    "5": {
+      "SHA256": "fa8100fc7bccf346e2f744abe7b2a14e34cb14388642b067740c7435359e6f98",
+      "Path": "ServerScriptService.PremiumShop.ReceiptCoordinator"
+    },
+    "6": {
+      "SHA256": "77b571719bf256ce1730d4ab65819a892c8f33ab03002e7d83e1908fe0f8d184",
+      "Path": "ServerScriptService.Services.CoinShopAccessService"
+    },
+    "7": {
+      "SHA256": "1891287b8c83e7d0902b35c03172f9ad965ca6f09a9633366482463d8c194385",
+      "Path": "ServerScriptService.Services.PremiumShopService"
+    },
+    "8": {
+      "SHA256": "ee4eecee94f646f62f200ff5d918621ce7152055b72cf7a7b2bf9eae7734d933",
+      "Path": "ReplicatedStorage.Shared.PremiumShop.Catalog.CoinPackages"
+    },
+    "9": {
+      "SHA256": "b875383fb0abd1bb11b1196092890ea3b81df6e5c2f8282291c6b84cc94b0537",
+      "Path": "ReplicatedStorage.Shared.PremiumShop.Catalog.PremiumCombos"
+    },
+    "10": {
+      "SHA256": "9cf9d56e2421c0c67ecba587f0c06e950c9750502ee0f9bf3a1a62f4629195c9",
+      "Path": "ReplicatedStorage.Shared.PremiumShop.Catalog.PremiumCrates"
+    },
+    "11": {
+      "SHA256": "668f66ab488ee5bf891425002d58b72a4fb2df921f77752ac99e2ce6a37ecf09",
+      "Path": "ReplicatedStorage.Shared.PremiumShop.PremiumShopConfig"
+    },
+    "12": {
+      "SHA256": "5d955291e16e0935a4b592052fded3177a734b34ffa9a6280b9b6577caa0061c",
+      "Path": "ReplicatedStorage.Shared.SlapCrates.PremiumCrateDefinitions"
+    },
+    "13": {
+      "SHA256": "fc50d61cc8fb908eff85d3b720425d635a2bd522ed757359896395f8df80e467",
+      "Path": "ServerScriptService.Bootstrap"
+    },
+    "14": {
+      "SHA256": "6a9c6eec389d94d9c53f27ec9590ca2f13ff0a2aac78c609851897777d5a560d",
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.CrateStandCinematicController"
+    },
+    "15": {
+      "SHA256": "4a6a877a4099bb9582964ea6f6485e83c863c355a6080cceaedc62e8c1f6217c",
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.ShopController"
+    },
+    "16": {
+      "SHA256": "a776272dcbadba84e0f81faa3c9187fcfea12cc3cc8d6d0d33eb97a8f4f45fe8",
+      "Path": "ServerScriptService.Services.CrateService"
+    },
+    "17": {
+      "SHA256": "1bef90f6fd827520c57c86c8510449caf1fedcee6206e8e45f8dd72882cbb8d5",
+      "Path": "ServerScriptService.Services.Crates.CrateEngine"
+    },
+    "18": {
+      "SHA256": "cdbe69a9e8ffee1a6ae911e6db58fd6a3bbd328d6c3206306f58b28736f64320",
+      "Path": "ReplicatedStorage.Shared.SlapCrates.CrateDefinitions"
+    },
+    "19": {
+      "SHA256": "27c1caf6a16a097581345ec30f26cd748f05eaa68531775060aba55a9523b9a6",
+      "Path": "ReplicatedStorage.Shared.SlapCrates.CrateShopView"
+    },
+    "20": {
+      "SHA256": "20a014e5edf9b367ee841c326f9d0f0219266b12e5276e1695d77ea612340e68",
+      "Path": "ReplicatedStorage.Shared.SlapCrates.Inventory"
+    }
+  },
+  "IsStudio": true,
+  "IsRunning": false,
+  "PlaceId": 107328891970677,
+  "Persistence": {
+    "Scope": "Resolve in Edit only",
+    "ProviderName": "InMemory",
+    "WritesToCloud": false,
+    "Environment": "Studio"
+  },
+  "GameId": 10769217377,
+  "Physical": [
+    {
+      "Path": "StarterGui.ShopHUD",
+      "SnapshotByteIdentical": true,
+      "Descendants": 348
+    },
+    {
+      "Path": "StarterGui.PlayerHUD",
+      "SnapshotByteIdentical": true,
+      "Descendants": 58
+    },
+    {
+      "Path": "StarterGui.PremiumShopHUD",
+      "SnapshotByteIdentical": true,
+      "Descendants": 58
+    },
+    {
+      "Path": "ReplicatedStorage.PremiumShopPreviews",
+      "SnapshotByteIdentical": true,
+      "Descendants": 38
+    },
+    {
+      "Path": "Workspace.Shops.CoinShop",
+      "SnapshotByteIdentical": true,
+      "Descendants": 7
+    },
+    {
+      "Path": "ReplicatedStorage.CrateEffects.PremiumI",
+      "SnapshotByteIdentical": true,
+      "Descendants": 7
+    },
+    {
+      "Path": "ReplicatedStorage.CrateEffects.PremiumII",
+      "SnapshotByteIdentical": true,
+      "Descendants": 7
+    },
+    {
+      "Path": "ReplicatedStorage.CrateEffects.PremiumIII",
+      "SnapshotByteIdentical": true,
+      "Descendants": 7
+    },
+    {
+      "Path": "Workspace.CrateStands.MainCrateStand",
+      "SnapshotByteIdentical": true,
+      "Descendants": 154
+    }
+  ],
+  "ReceiptAssignments": [
+    "ServerScriptService.Services.PremiumShopService"
+  ],
+  "RealPurchases": "DISABLED / NOT RUN",
+  "Gameplay": "NOT RUN",
+  "StaticUIPreview": "Observed in Edit; temporary previews removed"
+}

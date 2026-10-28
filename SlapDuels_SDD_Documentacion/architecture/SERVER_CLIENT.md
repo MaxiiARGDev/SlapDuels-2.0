@@ -1,8 +1,8 @@
 # Slap Duels 2.0 — SERVER_CLIENT
 
-> Este documento conserva contenido del `GAME_SDD.md` original suministrado, redistribuido por dominio para reducir el contexto necesario para agentes de IA.
+> Especificación vigente. Define el comportamiento requerido; no certifica que la implementación ni los assets actuales hayan sido verificados en Studio.
 
-## 9. Distribución: Servidor vs Cliente
+## Distribución: Servidor vs Cliente
 
 1. **Autoridad del Servidor:** El servidor es siempre la autoridad para estados de partida, resultados, ocupación de pads, instanciación física de mapas y posicionamiento de jugadores.
 2. **Presentación en Cliente:** La interfaz de usuario (HUD), animaciones locales de cámara y efectos que sólo incumben al jugador local deben ser gestionados en el cliente.

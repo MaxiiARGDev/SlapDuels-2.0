@@ -1,0 +1,511 @@
+{
+  "name": "SlapVariationEffects",
+  "tree": {
+    "$className": "Folder",
+    "$properties": {},
+    "Basic": {
+      "$className": "Folder",
+      "$properties": {
+        "Attributes": {
+          "Tint": {
+            "Color3": [
+              0.95,
+              0.5225,
+              0.5225
+            ]
+          },
+          "DesignPending": {
+            "Bool": true
+          }
+        }
+      },
+      "Sparkles": {
+        "$className": "ParticleEmitter",
+        "$properties": {
+          "Enabled": false,
+          "Rate": 0,
+          "Lifetime": {
+            "NumberRange": [
+              0.4,
+              0.8
+            ]
+          },
+          "Speed": {
+            "NumberRange": [
+              2,
+              5
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Common": {
+      "$className": "Folder",
+      "$properties": {
+        "Attributes": {
+          "Tint": {
+            "Color3": [
+              0.95,
+              0.73625,
+              0.5225
+            ]
+          },
+          "DesignPending": {
+            "Bool": true
+          }
+        }
+      },
+      "Sparkles": {
+        "$className": "ParticleEmitter",
+        "$properties": {
+          "Enabled": false,
+          "Rate": 0,
+          "Lifetime": {
+            "NumberRange": [
+              0.4,
+              0.8
+            ]
+          },
+          "Speed": {
+            "NumberRange": [
+              2,
+              5
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Uncommon": {
+      "$className": "Folder",
+      "$properties": {
+        "Attributes": {
+          "Tint": {
+            "Color3": [
+              0.95,
+              0.95,
+              0.5225
+            ]
+          },
+          "DesignPending": {
+            "Bool": true
+          }
+        }
+      },
+      "Sparkles": {
+        "$className": "ParticleEmitter",
+        "$properties": {
+          "Enabled": false,
+          "Rate": 0,
+          "Lifetime": {
+            "NumberRange": [
+              0.4,
+              0.8
+            ]
+          },
+          "Speed": {
+            "NumberRange": [
+              2,
+              5
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Rare": {
+      "$className": "Folder",
+      "$properties": {
+        "Attributes": {
+          "Tint": {
+            "Color3": [
+              0.73625,
+              0.95,
+              0.5225
+            ]
+          },
+          "DesignPending": {
+            "Bool": true
+          }
+        }
+      },
+      "Sparkles": {
+        "$className": "ParticleEmitter",
+        "$properties": {
+          "Enabled": false,
+          "Rate": 0,
+          "Lifetime": {
+            "NumberRange": [
+              0.4,
+              0.8
+            ]
+          },
+          "Speed": {
+            "NumberRange": [
+              2,
+              5
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Gold": {
+      "$className": "Folder",
+      "$properties": {
+        "Attributes": {
+          "Tint": {
+            "Color3": [
+              0.5225,
+              0.95,
+              0.5225
+            ]
+          },
+          "DesignPending": {
+            "Bool": true
+          }
+        }
+      },
+      "Sparkles": {
+        "$className": "ParticleEmitter",
+        "$properties": {
+          "Enabled": false,
+          "Rate": 0,
+          "Lifetime": {
+            "NumberRange": [
+              0.4,
+              0.8
+            ]
+          },
+          "Speed": {
+            "NumberRange": [
+              2,
+              5
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Arcoiris": {
+      "$className": "Folder",
+      "$properties": {
+        "Attributes": {
+          "Tint": {
+            "Color3": [
+              0.5225,
+              0.95,
+              0.73625
+            ]
+          },
+          "DesignPending": {
+            "Bool": true
+          }
+        }
+      },
+      "Sparkles": {
+        "$className": "ParticleEmitter",
+        "$properties": {
+          "Enabled": false,
+          "Rate": 0,
+          "Lifetime": {
+            "NumberRange": [
+              0.4,
+              0.8
+            ]
+          },
+          "Speed": {
+            "NumberRange": [
+              2,
+              5
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Emote": {
+      "$className": "Folder",
+      "$properties": {
+        "Attributes": {
+          "Tint": {
+            "Color3": [
+              0.5225,
+              0.95,
+              0.95
+            ]
+          },
+          "DesignPending": {
+            "Bool": true
+          }
+        }
+      },
+      "Sparkles": {
+        "$className": "ParticleEmitter",
+        "$properties": {
+          "Enabled": false,
+          "Rate": 0,
+          "Lifetime": {
+            "NumberRange": [
+              0.4,
+              0.8
+            ]
+          },
+          "Speed": {
+            "NumberRange": [
+              2,
+              5
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Wings": {
+      "$className": "Folder",
+      "$properties": {
+        "Attributes": {
+          "Tint": {
+            "Color3": [
+              0.5225,
+              0.73625,
+              0.95
+            ]
+          },
+          "DesignPending": {
+            "Bool": true
+          }
+        }
+      },
+      "Sparkles": {
+        "$className": "ParticleEmitter",
+        "$properties": {
+          "Enabled": false,
+          "Rate": 0,
+          "Lifetime": {
+            "NumberRange": [
+              0.4,
+              0.8
+            ]
+          },
+          "Speed": {
+            "NumberRange": [
+              2,
+              5
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Epic": {
+      "$className": "Folder",
+      "$properties": {
+        "Attributes": {
+          "Tint": {
+            "Color3": [
+              0.5225,
+              0.5225,
+              0.95
+            ]
+          },
+          "DesignPending": {
+            "Bool": true
+          }
+        }
+      },
+      "Sparkles": {
+        "$className": "ParticleEmitter",
+        "$properties": {
+          "Enabled": false,
+          "Rate": 0,
+          "Lifetime": {
+            "NumberRange": [
+              0.4,
+              0.8
+            ]
+          },
+          "Speed": {
+            "NumberRange": [
+              2,
+              5
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Legendary": {
+      "$className": "Folder",
+      "$properties": {
+        "Attributes": {
+          "Tint": {
+            "Color3": [
+              0.73625,
+              0.5225,
+              0.95
+            ]
+          },
+          "DesignPending": {
+            "Bool": true
+          }
+        }
+      },
+      "Sparkles": {
+        "$className": "ParticleEmitter",
+        "$properties": {
+          "Enabled": false,
+          "Rate": 0,
+          "Lifetime": {
+            "NumberRange": [
+              0.4,
+              0.8
+            ]
+          },
+          "Speed": {
+            "NumberRange": [
+              2,
+              5
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Blood": {
+      "$className": "Folder",
+      "$properties": {
+        "Attributes": {
+          "Tint": {
+            "Color3": [
+              0.95,
+              0.5225,
+              0.95
+            ]
+          },
+          "DesignPending": {
+            "Bool": true
+          }
+        }
+      },
+      "Sparkles": {
+        "$className": "ParticleEmitter",
+        "$properties": {
+          "Enabled": false,
+          "Rate": 0,
+          "Lifetime": {
+            "NumberRange": [
+              0.4,
+              0.8
+            ]
+          },
+          "Speed": {
+            "NumberRange": [
+              2,
+              5
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    },
+    "Galaxy": {
+      "$className": "Folder",
+      "$properties": {
+        "Attributes": {
+          "Tint": {
+            "Color3": [
+              0.95,
+              0.5225,
+              0.73625
+            ]
+          },
+          "DesignPending": {
+            "Bool": true
+          }
+        }
+      },
+      "Sparkles": {
+        "$className": "ParticleEmitter",
+        "$properties": {
+          "Enabled": false,
+          "Rate": 0,
+          "Lifetime": {
+            "NumberRange": [
+              0.4,
+              0.8
+            ]
+          },
+          "Speed": {
+            "NumberRange": [
+              2,
+              5
+            ]
+          }
+        }
+      },
+      "Reveal": {
+        "$className": "Sound",
+        "$properties": {
+          "Volume": 0.4
+        }
+      }
+    }
+  }
+}

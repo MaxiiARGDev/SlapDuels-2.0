@@ -1,0 +1,11 @@
+{
+  "default.project.json": "0cb8febc4a836f2be546fec3f9f2fc3c5fb5e3b43659aac680e34582529fe843",
+  "git-status.txt": "8e6475620b2ded7df4db82e6f4f818d9f548f05a5c1dea4b7760a47a5d770fff",
+  "PlayerHUD.rbxm": "2a2c75f04409e441b139540ecfdb9d9a10b8eb17daaaee29b40263ffb3c26a20",
+  "source-hashes.json": "5e576912155abe3a9b27005b97ad6d532bf29075deeead843b3c782919a27dd7",
+  "src__client__Controllers__SocialController.luau": "866faddee2db339adb1597d83d24d413b78340bf729e1b5502853fc61356eda9",
+  "src__server__Services__SocialService.luau": "5750f9d6ce752a3ea64de56705f81310f627ae1faa799e4a4e41875851c0523e",
+  "src__shared__SocialConfig.luau": "b6756162cb5963098dd29eb46e08d82d5a01dc6caa43e20152912d93b129383b",
+  "studio-baseline.json": "38204a7765b1493471cb6318f81a969294917315730b43df1e83f6cd0db10fb6",
+  "studio-safe.project.json": "105e5be87f165d47c3fc052c9cf5b3985cb9fc79bae526abf632b452137b4122"
+}

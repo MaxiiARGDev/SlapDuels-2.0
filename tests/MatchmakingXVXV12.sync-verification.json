@@ -1,0 +1,30 @@
+{
+  "Edit": true,
+  "Physical": {
+    "ServerStorage.Maps.Levels": "d70ba54558b8c03e99e53c37c1860cd1c0a5b480f32bea9df14da8c50e747f9f",
+    "StarterGui.MatchmakingHUD": "ec941de59e6676587ca28e652d500bd7a8fa96dcc343a3ce1eed1518e6f50ea1",
+    "StarterGui.PremiumShopHUD": "c5353b46410505b19152f666d8830c1b1d4acc2d412c28dda78ac7a33699d1f5",
+    "StarterGui.ShopHUD": "044aa835a3c39771c9061a1d35d8336fb0cd71810c2258263581ddbc9fb77b16",
+    "Workspace.ZoneMatchmaking": "2aec4502c2d596e3e530bed34d1aef7ef42702c5f10a9b11c9f1e08214f990d2",
+    "Workspace.Levels": "09ff8211227d8f261638d2f84f7fd09c1447571a47882c3ed4d27c92d012a745",
+    "StarterGui.MatchHUD": "0bd648c4a16fa25ce4c554c9c2736a30756f9cae390e4d96d059ace2d0453cae",
+    "ServerStorage.EndGames-Scenario.ScenarioFinal": "ea071427defae560fadcd641eaf558078b0d55f62c8aebce3424e65af08776cc"
+  },
+  "ActiveMatches": 0,
+  "Scripts": {
+    "ServerScriptService.Services.MatchmakingService": "1ecf706440a092fd9e883bf5a71808580be4577a8672865e89eb931fb6d37664",
+    "ServerScriptService.Services.SpawnService": "4d3ebb10e233e906cd8f34b31cbb63fecc27aa19eefe79d9d4794436ab9dcc4c",
+    "ReplicatedStorage.Shared.Config": "6b4d4b6440f6ff20bc9bd54c6c43a61147b07cb6a53242f81f0948d6b659fbda",
+    "StarterPlayer.StarterPlayerScripts.Controllers.MatchmakingController": "24472671f9ba41c945e9d8b1de427b0934e3d41c53476291a096f148dc723bf9",
+    "StarterPlayer.StarterPlayerScripts.EndCinematicPreview": "54b1867a30d043a003ed62727a0a81394612d929136aa78a19710344b549f758",
+    "ReplicatedStorage.Shared.EndCinematicRanking": "89e30e1a316d0f0bc8a67d06b4f1857cdf2231fc8c34fb7a6a5728e80ac9f268"
+  },
+  "PreservedPhysicalResources": {
+    "Workspace.ZoneMatchmaking": true,
+    "StarterGui.MatchmakingHUD": true,
+    "StarterGui.ShopHUD": true,
+    "StarterGui.PremiumShopHUD": true,
+    "StarterGui.MatchHUD": true,
+    "ServerStorage.EndGames-Scenario.ScenarioFinal": true
+  }
+}

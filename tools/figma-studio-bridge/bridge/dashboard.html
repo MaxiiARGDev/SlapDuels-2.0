@@ -1,0 +1,17 @@
+<!doctype html><meta charset="utf-8"><title>UI Bridge local</title>
+<style>body{max-width:850px;margin:40px auto;background:#101a2b;color:#eef8ff;font:16px system-ui}input,button,textarea{padding:12px;margin:6px 0;box-sizing:border-box;width:100%;background:#1c3049;border:1px solid #5b809f;color:white;border-radius:8px}button{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere}textarea{height:130px}</style>
+<h1>Figma → Roblox Studio · puente local</h1>
+<p>El token aparece al ejecutar npm start. No pegues contraseñas de Roblox ni cookies.</p>
+<input id="token" type="password" placeholder="Token del puente"><button id="refresh">Consultar diseño y PNG</button>
+<pre id="status"></pre>
+<h2>Importación alternativa</h2><p>Cargá el JSON descargado desde el plugin de Figma.</p><input id="file" type="file" accept=".json"><button id="import">Importar JSON al puente</button>
+<h2>Imágenes</h2><p>Los PNG exportados están en la carpeta indicada arriba. Importalos con Asset Manager de Roblox y asociá cada hash al ID de imagen utilizable en ImageLabel. No se sube nada automáticamente.</p>
+<textarea id="mapping" placeholder='{"hash-del-png":"123456789"}'></textarea><button id="save">Guardar asociaciones</button>
+<script>
+const status=document.getElementById('status');
+async function call(path,body){const r=await fetch(path,{method:body?'POST':'GET',headers:{Authorization:'Bearer '+document.getElementById('token').value.trim(),'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined});const data=await r.json();if(!r.ok)throw Error(data.error);return data;}
+async function refresh(){const d=await call('/status');status.textContent=JSON.stringify(d,null,2);}
+document.getElementById('refresh').onclick=()=>refresh().catch(e=>status.textContent=e.message);
+document.getElementById('import').onclick=async()=>{try{const f=document.getElementById('file').files[0];if(!f)throw Error('Elegí un archivo');await call('/design',JSON.parse(await f.text()));await refresh();}catch(e){status.textContent=e.message;}};
+document.getElementById('save').onclick=async()=>{try{await call('/mapping',JSON.parse(document.getElementById('mapping').value));await refresh();}catch(e){status.textContent=e.message;}};
+</script>

@@ -1,0 +1,233 @@
+{
+  "name": "DeathFeedbackHUD",
+  "tree": {
+    "$className": "ScreenGui",
+    "$properties": {
+      "ResetOnSpawn": false,
+      "IgnoreGuiInset": true,
+      "DisplayOrder": 65,
+      "ZIndexBehavior": "Sibling"
+    },
+    "NotificationContainer": {
+      "$className": "Frame",
+      "$properties": {
+        "Position": {
+          "UDim2": [
+            [
+              1,
+              -370
+            ],
+            [
+              0,
+              110
+            ]
+          ]
+        },
+        "Size": {
+          "UDim2": [
+            [
+              0,
+              340
+            ],
+            [
+              0,
+              220
+            ]
+          ]
+        },
+        "BackgroundTransparency": 1,
+        "Active": false
+      },
+      "UIListLayout": {
+        "$className": "UIListLayout",
+        "$properties": {
+          "SortOrder": "LayoutOrder",
+          "Padding": {
+            "UDim": [
+              0,
+              6
+            ]
+          }
+        }
+      },
+      "NotificationTemplate": {
+        "$className": "CanvasGroup",
+        "$properties": {
+          "Visible": false,
+          "Size": {
+            "UDim2": [
+              [
+                1,
+                0
+              ],
+              [
+                0,
+                46
+              ]
+            ]
+          },
+          "BackgroundTransparency": 1,
+          "GroupTransparency": 0,
+          "Attributes": {
+            "KillColor": { "Color3": [1, 0.6823529411764706, 0.25098039215686274] },
+            "FallColor": { "Color3": [0.5294117647058824, 0.7019607843137254, 1] }
+          }
+        },
+        "Background": {
+          "$className": "Frame",
+          "$properties": {
+            "Size": {
+              "UDim2": [
+                [
+                  1,
+                  0
+                ],
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            "BackgroundColor3": {
+              "Color3": [
+                0.07450980392156863,
+                0.09411764705882353,
+                0.15294117647058825
+              ]
+            },
+            "BackgroundTransparency": 0.12,
+            "ZIndex": 1
+          },
+          "UICorner": {
+            "$className": "UICorner",
+            "$properties": {
+              "CornerRadius": {
+                "UDim": [
+                  0,
+                  9
+                ]
+              }
+            }
+          },
+          "UIStroke": {
+            "$className": "UIStroke",
+            "$properties": {
+              "Color": {
+                "Color3": [
+                  0.38823529411764707,
+                  0.45098039215686275,
+                  0.5686274509803921
+                ]
+              },
+              "Thickness": 1,
+              "Transparency": 0.25
+            }
+          }
+        },
+        "Icon": {
+          "$className": "TextLabel",
+          "$properties": {
+            "Text": "✦",
+            "Position": {
+              "UDim2": [
+                [
+                  0,
+                  9
+                ],
+                [
+                  0,
+                  7
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  0,
+                  32
+                ],
+                [
+                  0,
+                  32
+                ]
+              ]
+            },
+            "BackgroundTransparency": 1,
+            "TextColor3": {
+              "Color3": [
+                1,
+                0.6823529411764706,
+                0.25098039215686274
+              ]
+            },
+            "Font": "GothamBold",
+            "TextSize": 23,
+            "RichText": false,
+            "Active": false,
+            "Selectable": false,
+            "ZIndex": 2
+          }
+        },
+        "MessageLabel": {
+          "$className": "TextLabel",
+          "$properties": {
+            "Text": "Atacante tiró a Víctima",
+            "Position": {
+              "UDim2": [
+                [
+                  0,
+                  50
+                ],
+                [
+                  0,
+                  0
+                ]
+              ]
+            },
+            "Size": {
+              "UDim2": [
+                [
+                  1,
+                  -60
+                ],
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            "BackgroundTransparency": 1,
+            "TextColor3": {
+              "Color3": [
+                0.9411764705882353,
+                0.9529411764705882,
+                0.9803921568627451
+              ]
+            },
+            "Font": "GothamBold",
+            "TextSize": 14,
+            "RichText": false,
+            "Active": false,
+            "Selectable": false,
+            "TextXAlignment": "Left",
+            "TextTruncate": "AtEnd",
+            "ZIndex": 2
+          }
+        },
+        "UIScale": {
+          "$className": "UIScale",
+          "$properties": {
+            "Scale": 1
+          }
+        },
+        "NotificationSound": {
+          "$className": "Sound",
+          "$properties": {
+            "SoundId": "rbxassetid://130738040152772",
+            "Volume": 0.25
+          }
+        }
+      }
+    }
+  }
+}

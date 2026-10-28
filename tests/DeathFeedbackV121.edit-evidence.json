@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-16",
+  "studioId": "6ecf2c3a-5645-45ee-87c3-0261c9a095b6",
+  "placeId": 107328891970677,
+  "mode": "Edit",
+  "isStudio": true,
+  "isRunning": false,
+  "inspection": "MCP read-only Source marker and sibling count inspection; no module or gameplay execution",
+  "sourceChecks": [
+    {"path": "ServerScriptService.Services.RagdollService", "marker": "StaleRagdollRecovery", "present": true, "count": 1},
+    {"path": "ServerScriptService.Services.SlapService", "marker": "currentCharacter", "present": true, "count": 1},
+    {"path": "ServerScriptService.Services.SpawnService", "marker": "kind: string?", "present": true, "count": 1},
+    {"path": "ServerScriptService.Services.EliminationService", "marker": "KillPart_Kill", "present": true, "count": 1},
+    {"path": "ServerScriptService.Services.Respawn.ArenaRespawn", "marker": "ServerRestored", "present": true, "count": 1},
+    {"path": "StarterPlayer.StarterCharacterScripts.RagdollStatesHandler", "marker": "currentPacket", "present": true, "count": 1},
+    {"path": "StarterPlayer.StarterCharacterScripts.ArenaRespawnGuard", "marker": "ArenaAcceptedLaunchGeneration", "present": true, "count": 1},
+    {"path": "ReplicatedStorage.Shared.Config", "marker": "Debug = false", "present": true, "count": 1}
+  ],
+  "persistence": {"verification": "Source inspection only", "studioBranch": "InMemory", "writesToCloudInStudioBranch": false, "bootstrapExecuted": false},
+  "rojoBuild": "PASS",
+  "gitDiffCheck": "PASS",
+  "isolatedFixtureSuite": "PREPARED_NOT_RUN",
+  "gameplay": "NOT_RUN",
+  "humanAcceptance": "PENDING"
+}

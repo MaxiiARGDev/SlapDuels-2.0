@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"Models\":3,\"Persistence\":{\"ProviderName\":\"InMemory\",\"WritesToCloud\":false,\"Environment\":\"Studio\"},\"Gold\":{\"Galaxy\":0,\"Emote\":0,\"Common\":0,\"Uncommon\":0,\"Rare\":20,\"Legendary\":0,\"Blood\":0,\"Gold\":60,\"Epic\":0,\"Wings\":0,\"Arcoiris\":20,\"Basic\":0},\"Mode\":\"Edit\",\"Variants\":36,\"Assertions\":236}"
+    }
+  ],
+  "isError": false
+}

@@ -1,0 +1,1673 @@
+{
+  "name": "CrateStands",
+  "tree": {
+    "$className": "Folder",
+    "$properties": {},
+    "MainCrateStand": {
+      "$className": "Model",
+      "$properties": {
+        "Attributes": {
+          "StandId": {
+            "String": "Main"
+          },
+          "Enabled": {
+            "Bool": true
+          },
+          "OpeningState": {
+            "String": "Idle"
+          }
+        }
+      },
+      "Base": {
+        "$className": "Part",
+        "$properties": {
+          "Size": {
+            "Vector3": [
+              12,
+              1,
+              10
+            ]
+          },
+          "Anchored": true,
+          "CanCollide": true,
+          "CanTouch": false,
+          "CanQuery": false,
+          "Transparency": 0,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.08,
+              0.1,
+              0.18
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              -46.56125557,
+              16.07930756,
+              197.2275994
+            ]
+          },
+          "Orientation": {
+            "Vector3": [
+              0,
+              -60,
+              0
+            ]
+          }
+        }
+      },
+      "Pedestal": {
+        "$className": "Part",
+        "$properties": {
+          "Size": {
+            "Vector3": [
+              5,
+              1,
+              4
+            ]
+          },
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "Transparency": 0,
+          "CastShadow": false,
+          "Color": {
+            "Color3": [
+              0.18,
+              0.24,
+              0.4
+            ]
+          },
+          "Position": {
+            "Vector3": [
+              -46.56125557,
+              17.07930756,
+              197.2275994
+            ]
+          },
+          "Orientation": {
+            "Vector3": [
+              0,
+              -60,
+              0
+            ]
+          }
+        }
+      },
+      "InteractionPart": {
+        "$className": "Part",
+        "$properties": {
+          "Size": {
+            "Vector3": [
+              4,
+              4,
+              1
+            ]
+          },
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "Transparency": 1,
+          "CastShadow": false,
+          "Position": {
+            "Vector3": [
+              -50.025358078,
+              17.07930756,
+              199.22759964
+            ]
+          },
+          "Orientation": {
+            "Vector3": [
+              0,
+              -60,
+              0
+            ]
+          }
+        },
+        "ProximityPrompt": {
+          "$className": "ProximityPrompt",
+          "$properties": {
+            "ObjectText": "CAJAS",
+            "ActionText": "Abrir tienda",
+            "HoldDuration": 0,
+            "MaxActivationDistance": 10,
+            "RequiresLineOfSight": false
+          }
+        }
+      },
+      "SpawnPoint": {
+        "$className": "Part",
+        "$properties": {
+          "Size": {
+            "Vector3": [
+              1,
+              1,
+              1
+            ]
+          },
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "Transparency": 1,
+          "CastShadow": false,
+          "Position": {
+            "Vector3": [
+              -46.56125557,
+              18.07930756,
+              197.2275994
+            ]
+          },
+          "Orientation": {
+            "Vector3": [
+              0,
+              -60,
+              0
+            ]
+          }
+        }
+      },
+      "RewardPoint": {
+        "$className": "Part",
+        "$properties": {
+          "Size": {
+            "Vector3": [
+              1,
+              1,
+              1
+            ]
+          },
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "Transparency": 1,
+          "CastShadow": false,
+          "Position": {
+            "Vector3": [
+              -46.56125557,
+              21.07930756,
+              197.2275994
+            ]
+          },
+          "Orientation": {
+            "Vector3": [
+              0,
+              -60,
+              0
+            ]
+          }
+        }
+      },
+      "CameraPoint": {
+        "$className": "Part",
+        "$properties": {
+          "Size": {
+            "Vector3": [
+              1,
+              1,
+              1
+            ]
+          },
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "Transparency": 1,
+          "CastShadow": false,
+          "Position": {
+            "Vector3": [
+              -56.953563094,
+              22.07930756,
+              203.22760012
+            ]
+          },
+          "Orientation": {
+            "Vector3": [
+              0,
+              -60,
+              0
+            ]
+          }
+        }
+      },
+      "BillboardAnchor": {
+        "$className": "Part",
+        "$properties": {
+          "Size": {
+            "Vector3": [
+              1,
+              1,
+              1
+            ]
+          },
+          "Anchored": true,
+          "CanCollide": false,
+          "CanTouch": false,
+          "CanQuery": false,
+          "Transparency": 1,
+          "CastShadow": false,
+          "Position": {
+            "Vector3": [
+              -43.963178689,
+              21.07930756,
+              195.72759922
+            ]
+          },
+          "Orientation": {
+            "Vector3": [
+              0,
+              -60,
+              0
+            ]
+          }
+        },
+        "BillboardGui": {
+          "$className": "BillboardGui",
+          "$properties": {
+            "Size": {
+              "UDim2": [
+                [
+                  0,
+                  220
+                ],
+                [
+                  0,
+                  95
+                ]
+              ]
+            },
+            "StudsOffsetWorldSpace": {
+              "Vector3": [
+                0,
+                2,
+                0
+              ]
+            },
+            "AlwaysOnTop": false,
+            "MaxDistance": 65
+          },
+          "Title": {
+            "$className": "TextLabel",
+            "$properties": {
+              "Text": "SLAP CRATES",
+              "Position": {
+                "UDim2": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              },
+              "Size": {
+                "UDim2": [
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    0.35,
+                    0
+                  ]
+                ]
+              },
+              "BackgroundTransparency": 1,
+              "TextColor3": {
+                "Color3": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "TextScaled": true,
+              "Font": "GothamBold"
+            }
+          },
+          "Price": {
+            "$className": "TextLabel",
+            "$properties": {
+              "Text": "",
+              "Position": {
+                "UDim2": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.38,
+                    0
+                  ]
+                ]
+              },
+              "Size": {
+                "UDim2": [
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    0.25,
+                    0
+                  ]
+                ]
+              },
+              "BackgroundTransparency": 1,
+              "TextColor3": {
+                "Color3": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "TextScaled": true,
+              "Font": "GothamBold"
+            }
+          },
+          "Status": {
+            "$className": "TextLabel",
+            "$properties": {
+              "Text": "CAJAS · INTERACTUÁ PARA VER",
+              "Position": {
+                "UDim2": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.68,
+                    0
+                  ]
+                ]
+              },
+              "Size": {
+                "UDim2": [
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    0.25,
+                    0
+                  ]
+                ]
+              },
+              "BackgroundTransparency": 1,
+              "TextColor3": {
+                "Color3": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "TextScaled": true,
+              "Font": "GothamBold"
+            }
+          }
+        }
+      },
+      "Effects": {
+        "$className": "Folder",
+        "$properties": {}
+      },
+      "PresentationTemplate": {
+        "$className": "Model",
+        "$properties": {},
+        "Effects": {
+          "$className": "Model",
+          "$properties": {},
+          "FXAnchor": {
+            "$className": "Part",
+            "$properties": {
+              "Size": {
+                "Vector3": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "Anchored": true,
+              "CanCollide": false,
+              "CanTouch": false,
+              "CanQuery": false,
+              "Transparency": 1,
+              "CastShadow": false,
+              "Position": {
+                "Vector3": [
+                  -46.56125557,
+                  18.07930756,
+                  197.2275994
+                ]
+              },
+              "Orientation": {
+                "Vector3": [
+                  0,
+                  -60,
+                  0
+                ]
+              }
+            },
+            "EnergyFrom": {
+              "$className": "Attachment",
+              "$properties": {
+                "Position": {
+                  "Vector3": [
+                    -1,
+                    0,
+                    0
+                  ]
+                }
+              }
+            },
+            "EnergyTo": {
+              "$className": "Attachment",
+              "$properties": {
+                "Position": {
+                  "Vector3": [
+                    1,
+                    2,
+                    0
+                  ]
+                }
+              }
+            },
+            "Particles": {
+              "$className": "Attachment",
+              "$properties": {},
+              "Soft": {
+                "$className": "ParticleEmitter",
+                "$properties": {
+                  "Enabled": false,
+                  "Rate": 0,
+                  "Lifetime": {
+                    "NumberRange": [
+                      0.4,
+                      0.8
+                    ]
+                  },
+                  "Speed": {
+                    "NumberRange": [
+                      1,
+                      3
+                    ]
+                  },
+                  "SpreadAngle": {
+                    "Vector2": [
+                      180,
+                      180
+                    ]
+                  }
+                }
+              }
+            },
+            "Light": {
+              "$className": "PointLight",
+              "$properties": {
+                "Brightness": 0,
+                "Range": 10,
+                "Color": {
+                  "Color3": [
+                    0.6,
+                    0.8,
+                    1
+                  ]
+                }
+              }
+            },
+            "EnergyBeam": {
+              "$className": "Beam",
+              "$properties": {
+                "Enabled": false,
+                "Width0": 0.08,
+                "Width1": 0.02,
+                "FaceCamera": true
+              }
+            },
+            "Start": {
+              "$className": "Sound",
+              "$properties": {
+                "SoundId": "",
+                "Volume": 0.45,
+                "RollOffMaxDistance": 65
+              }
+            },
+            "Appear": {
+              "$className": "Sound",
+              "$properties": {
+                "SoundId": "",
+                "Volume": 0.45,
+                "RollOffMaxDistance": 65
+              }
+            },
+            "Rise": {
+              "$className": "Sound",
+              "$properties": {
+                "SoundId": "",
+                "Volume": 0.45,
+                "RollOffMaxDistance": 65
+              }
+            },
+            "Growth": {
+              "$className": "Sound",
+              "$properties": {
+                "SoundId": "",
+                "Volume": 0.45,
+                "RollOffMaxDistance": 65
+              }
+            },
+            "Shake": {
+              "$className": "Sound",
+              "$properties": {
+                "SoundId": "",
+                "Volume": 0.45,
+                "RollOffMaxDistance": 65
+              }
+            },
+            "Flash": {
+              "$className": "Sound",
+              "$properties": {
+                "SoundId": "",
+                "Volume": 0.45,
+                "RollOffMaxDistance": 65
+              }
+            },
+            "Reward": {
+              "$className": "Sound",
+              "$properties": {
+                "SoundId": "",
+                "Volume": 0.45,
+                "RollOffMaxDistance": 65
+              }
+            },
+            "Special": {
+              "$className": "Sound",
+              "$properties": {
+                "SoundId": "",
+                "Volume": 0.45,
+                "RollOffMaxDistance": 65
+              }
+            },
+            "Outro": {
+              "$className": "Sound",
+              "$properties": {
+                "SoundId": "",
+                "Volume": 0.45,
+                "RollOffMaxDistance": 65
+              }
+            }
+          }
+        },
+        "RewardAnchor": {
+          "$className": "Part",
+          "$properties": {
+            "Size": {
+              "Vector3": [
+                1,
+                1,
+                1
+              ]
+            },
+            "Anchored": true,
+            "CanCollide": false,
+            "CanTouch": false,
+            "CanQuery": false,
+            "Transparency": 1,
+            "CastShadow": false,
+            "Position": {
+              "Vector3": [
+                -46.56125557,
+                21.07930756,
+                197.2275994
+              ]
+            },
+            "Orientation": {
+              "Vector3": [
+                0,
+                -60,
+                0
+              ]
+            }
+          }
+        },
+        "RewardBillboard": {
+          "$className": "BillboardGui",
+          "$properties": {
+            "Enabled": false,
+            "Size": {
+              "UDim2": [
+                [
+                  0,
+                  280
+                ],
+                [
+                  0,
+                  125
+                ]
+              ]
+            },
+            "StudsOffsetWorldSpace": {
+              "Vector3": [
+                0,
+                2,
+                0
+              ]
+            },
+            "MaxDistance": 80
+          },
+          "Title": {
+            "$className": "TextLabel",
+            "$properties": {
+              "Text": "¡RECOMPENSA OBTENIDA!",
+              "Position": {
+                "UDim2": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              },
+              "Size": {
+                "UDim2": [
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    0.25,
+                    0
+                  ]
+                ]
+              },
+              "BackgroundTransparency": 1,
+              "TextColor3": {
+                "Color3": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "TextScaled": true,
+              "Font": "GothamBold"
+            }
+          },
+          "Slap": {
+            "$className": "TextLabel",
+            "$properties": {
+              "Text": "SLAP",
+              "Position": {
+                "UDim2": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.3,
+                    0
+                  ]
+                ]
+              },
+              "Size": {
+                "UDim2": [
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    0.25,
+                    0
+                  ]
+                ]
+              },
+              "BackgroundTransparency": 1,
+              "TextColor3": {
+                "Color3": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "TextScaled": true,
+              "Font": "GothamBold"
+            }
+          },
+          "Variation": {
+            "$className": "TextLabel",
+            "$properties": {
+              "Text": "VARIACIÓN",
+              "Position": {
+                "UDim2": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0.6,
+                    0
+                  ]
+                ]
+              },
+              "Size": {
+                "UDim2": [
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    0.35,
+                    0
+                  ]
+                ]
+              },
+              "BackgroundTransparency": 1,
+              "TextColor3": {
+                "Color3": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "TextScaled": true,
+              "Font": "GothamBold"
+            }
+          }
+        }
+      },
+      "PreviewAnchors": {
+        "$className": "Folder",
+        "$properties": {},
+        "Preview_1": {
+          "$className": "Part",
+          "$properties": {
+            "Size": {
+              "Vector3": [
+                1,
+                1,
+                1
+              ]
+            },
+            "Anchored": true,
+            "CanCollide": false,
+            "CanTouch": false,
+            "CanQuery": false,
+            "Transparency": 1,
+            "CastShadow": false,
+            "Attributes": {
+              "CrateId": {
+                "String": "Basic"
+              }
+            },
+            "Position": {
+              "Vector3": [
+                -46.579204526000005,
+                18.07930756,
+                193.1965089625
+              ]
+            },
+            "Orientation": {
+              "Vector3": [
+                0,
+                -60,
+                0
+              ]
+            }
+          },
+          "Decoration": {
+            "$className": "Model",
+            "$properties": {},
+            "Body": {
+              "$className": "Part",
+              "$properties": {
+                "Anchored": true,
+                "CanCollide": false,
+                "CanTouch": false,
+                "CanQuery": false,
+                "CastShadow": false,
+                "Color": {
+                  "Color3": [
+                    0.95,
+                    0.5225,
+                    0.5225
+                  ]
+                },
+                "Size": {
+                  "Vector3": [
+                    2.6,
+                    2,
+                    2.2
+                  ]
+                },
+                "Position": {
+                  "Vector3": [
+                    -46.579204526000005,
+                    18.07930756,
+                    193.1965089625
+                  ]
+                },
+                "Orientation": {
+                  "Vector3": [
+                    0,
+                    -60,
+                    0
+                  ]
+                }
+              },
+              "Burst": {
+                "$className": "ParticleEmitter",
+                "$properties": {
+                  "Enabled": false,
+                  "Rate": 0,
+                  "Lifetime": {
+                    "NumberRange": [
+                      0.4,
+                      0.8
+                    ]
+                  },
+                  "Speed": {
+                    "NumberRange": [
+                      2,
+                      5
+                    ]
+                  },
+                  "SpreadAngle": {
+                    "Vector2": [
+                      180,
+                      180
+                    ]
+                  }
+                }
+              }
+            },
+            "Lid": {
+              "$className": "Part",
+              "$properties": {
+                "Anchored": true,
+                "CanCollide": false,
+                "CanTouch": false,
+                "CanQuery": false,
+                "CastShadow": false,
+                "Color": {
+                  "Color3": [
+                    0.95,
+                    0.5225,
+                    0.5225
+                  ]
+                },
+                "Size": {
+                  "Vector3": [
+                    2.8,
+                    0.4,
+                    2.4
+                  ]
+                },
+                "Position": {
+                  "Vector3": [
+                    -46.579204526000005,
+                    19.27930756,
+                    193.1965089625
+                  ]
+                },
+                "Orientation": {
+                  "Vector3": [
+                    0,
+                    -60,
+                    0
+                  ]
+                }
+              }
+            },
+            "Reveal": {
+              "$className": "Sound",
+              "$properties": {
+                "Volume": 0.4
+              }
+            }
+          },
+          "BillboardGui": {
+            "$className": "BillboardGui",
+            "$properties": {
+              "Size": {
+                "UDim2": [
+                  [
+                    0,
+                    220
+                  ],
+                  [
+                    0,
+                    95
+                  ]
+                ]
+              },
+              "StudsOffsetWorldSpace": {
+                "Vector3": [
+                  0,
+                  2,
+                  0
+                ]
+              },
+              "AlwaysOnTop": false,
+              "MaxDistance": 65
+            },
+            "Title": {
+              "$className": "TextLabel",
+              "$properties": {
+                "Text": "Caja Basic",
+                "Position": {
+                  "UDim2": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0
+                    ]
+                  ]
+                },
+                "Size": {
+                  "UDim2": [
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      0.35,
+                      0
+                    ]
+                  ]
+                },
+                "BackgroundTransparency": 1,
+                "TextColor3": {
+                  "Color3": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                "TextScaled": true,
+                "Font": "GothamBold"
+              }
+            },
+            "Price": {
+              "$className": "TextLabel",
+              "$properties": {
+                "Text": "500 Coins",
+                "Position": {
+                  "UDim2": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0.38,
+                      0
+                    ]
+                  ]
+                },
+                "Size": {
+                  "UDim2": [
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      0.25,
+                      0
+                    ]
+                  ]
+                },
+                "BackgroundTransparency": 1,
+                "TextColor3": {
+                  "Color3": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                "TextScaled": true,
+                "Font": "GothamBold"
+              }
+            },
+            "Status": {
+              "$className": "TextLabel",
+              "$properties": {
+                "Text": "Probabilidades pendientes",
+                "Position": {
+                  "UDim2": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0.68,
+                      0
+                    ]
+                  ]
+                },
+                "Size": {
+                  "UDim2": [
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      0.25,
+                      0
+                    ]
+                  ]
+                },
+                "BackgroundTransparency": 1,
+                "TextColor3": {
+                  "Color3": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                "TextScaled": true,
+                "Font": "GothamBold"
+              }
+            }
+          }
+        },
+        "Preview_2": {
+          "$className": "Part",
+          "$properties": {
+            "Size": {
+              "Vector3": [
+                1,
+                1,
+                1
+              ]
+            },
+            "Anchored": true,
+            "CanCollide": false,
+            "CanTouch": false,
+            "CanQuery": false,
+            "Transparency": 1,
+            "CastShadow": false,
+            "Attributes": {
+              "CrateId": {
+                "String": "Common"
+              }
+            },
+            "Position": {
+              "Vector3": [
+                -44.829204316,
+                18.07930756,
+                196.22759928
+              ]
+            },
+            "Orientation": {
+              "Vector3": [
+                0,
+                -60,
+                0
+              ]
+            }
+          },
+          "Decoration": {
+            "$className": "Model",
+            "$properties": {},
+            "Body": {
+              "$className": "Part",
+              "$properties": {
+                "Anchored": true,
+                "CanCollide": false,
+                "CanTouch": false,
+                "CanQuery": false,
+                "CastShadow": false,
+                "Color": {
+                  "Color3": [
+                    0.95,
+                    0.73625,
+                    0.5225
+                  ]
+                },
+                "Size": {
+                  "Vector3": [
+                    2.6,
+                    2,
+                    2.2
+                  ]
+                },
+                "Position": {
+                  "Vector3": [
+                    -44.829204316,
+                    18.07930756,
+                    196.22759928
+                  ]
+                },
+                "Orientation": {
+                  "Vector3": [
+                    0,
+                    -60,
+                    0
+                  ]
+                }
+              },
+              "Burst": {
+                "$className": "ParticleEmitter",
+                "$properties": {
+                  "Enabled": false,
+                  "Rate": 0,
+                  "Lifetime": {
+                    "NumberRange": [
+                      0.4,
+                      0.8
+                    ]
+                  },
+                  "Speed": {
+                    "NumberRange": [
+                      2,
+                      5
+                    ]
+                  },
+                  "SpreadAngle": {
+                    "Vector2": [
+                      180,
+                      180
+                    ]
+                  }
+                }
+              }
+            },
+            "Lid": {
+              "$className": "Part",
+              "$properties": {
+                "Anchored": true,
+                "CanCollide": false,
+                "CanTouch": false,
+                "CanQuery": false,
+                "CastShadow": false,
+                "Color": {
+                  "Color3": [
+                    0.95,
+                    0.73625,
+                    0.5225
+                  ]
+                },
+                "Size": {
+                  "Vector3": [
+                    2.8,
+                    0.4,
+                    2.4
+                  ]
+                },
+                "Position": {
+                  "Vector3": [
+                    -44.829204316,
+                    19.27930756,
+                    196.22759928
+                  ]
+                },
+                "Orientation": {
+                  "Vector3": [
+                    0,
+                    -60,
+                    0
+                  ]
+                }
+              }
+            },
+            "Reveal": {
+              "$className": "Sound",
+              "$properties": {
+                "Volume": 0.4
+              }
+            }
+          },
+          "BillboardGui": {
+            "$className": "BillboardGui",
+            "$properties": {
+              "Size": {
+                "UDim2": [
+                  [
+                    0,
+                    220
+                  ],
+                  [
+                    0,
+                    95
+                  ]
+                ]
+              },
+              "StudsOffsetWorldSpace": {
+                "Vector3": [
+                  0,
+                  2,
+                  0
+                ]
+              },
+              "AlwaysOnTop": false,
+              "MaxDistance": 65
+            },
+            "Title": {
+              "$className": "TextLabel",
+              "$properties": {
+                "Text": "Caja Common",
+                "Position": {
+                  "UDim2": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0
+                    ]
+                  ]
+                },
+                "Size": {
+                  "UDim2": [
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      0.35,
+                      0
+                    ]
+                  ]
+                },
+                "BackgroundTransparency": 1,
+                "TextColor3": {
+                  "Color3": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                "TextScaled": true,
+                "Font": "GothamBold"
+              }
+            },
+            "Price": {
+              "$className": "TextLabel",
+              "$properties": {
+                "Text": "1000 Coins",
+                "Position": {
+                  "UDim2": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0.38,
+                      0
+                    ]
+                  ]
+                },
+                "Size": {
+                  "UDim2": [
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      0.25,
+                      0
+                    ]
+                  ]
+                },
+                "BackgroundTransparency": 1,
+                "TextColor3": {
+                  "Color3": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                "TextScaled": true,
+                "Font": "GothamBold"
+              }
+            },
+            "Status": {
+              "$className": "TextLabel",
+              "$properties": {
+                "Text": "Probabilidades pendientes",
+                "Position": {
+                  "UDim2": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0.68,
+                      0
+                    ]
+                  ]
+                },
+                "Size": {
+                  "UDim2": [
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      0.25,
+                      0
+                    ]
+                  ]
+                },
+                "BackgroundTransparency": 1,
+                "TextColor3": {
+                  "Color3": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                "TextScaled": true,
+                "Font": "GothamBold"
+              }
+            }
+          }
+        },
+        "Preview_3": {
+          "$className": "Part",
+          "$properties": {
+            "Size": {
+              "Vector3": [
+                1,
+                1,
+                1
+              ]
+            },
+            "Anchored": true,
+            "CanCollide": false,
+            "CanTouch": false,
+            "CanQuery": false,
+            "Transparency": 1,
+            "CastShadow": false,
+            "Attributes": {
+              "CrateId": {
+                "String": "Uncommon"
+              }
+            },
+            "Position": {
+              "Vector3": [
+                -43.079204106,
+                18.07930756,
+                199.2586895975
+              ]
+            },
+            "Orientation": {
+              "Vector3": [
+                0,
+                -60,
+                0
+              ]
+            }
+          },
+          "Decoration": {
+            "$className": "Model",
+            "$properties": {},
+            "Body": {
+              "$className": "Part",
+              "$properties": {
+                "Anchored": true,
+                "CanCollide": false,
+                "CanTouch": false,
+                "CanQuery": false,
+                "CastShadow": false,
+                "Color": {
+                  "Color3": [
+                    0.95,
+                    0.95,
+                    0.5225
+                  ]
+                },
+                "Size": {
+                  "Vector3": [
+                    2.6,
+                    2,
+                    2.2
+                  ]
+                },
+                "Position": {
+                  "Vector3": [
+                    -43.079204106,
+                    18.07930756,
+                    199.2586895975
+                  ]
+                },
+                "Orientation": {
+                  "Vector3": [
+                    0,
+                    -60,
+                    0
+                  ]
+                }
+              },
+              "Burst": {
+                "$className": "ParticleEmitter",
+                "$properties": {
+                  "Enabled": false,
+                  "Rate": 0,
+                  "Lifetime": {
+                    "NumberRange": [
+                      0.4,
+                      0.8
+                    ]
+                  },
+                  "Speed": {
+                    "NumberRange": [
+                      2,
+                      5
+                    ]
+                  },
+                  "SpreadAngle": {
+                    "Vector2": [
+                      180,
+                      180
+                    ]
+                  }
+                }
+              }
+            },
+            "Lid": {
+              "$className": "Part",
+              "$properties": {
+                "Anchored": true,
+                "CanCollide": false,
+                "CanTouch": false,
+                "CanQuery": false,
+                "CastShadow": false,
+                "Color": {
+                  "Color3": [
+                    0.95,
+                    0.95,
+                    0.5225
+                  ]
+                },
+                "Size": {
+                  "Vector3": [
+                    2.8,
+                    0.4,
+                    2.4
+                  ]
+                },
+                "Position": {
+                  "Vector3": [
+                    -43.079204106,
+                    19.27930756,
+                    199.2586895975
+                  ]
+                },
+                "Orientation": {
+                  "Vector3": [
+                    0,
+                    -60,
+                    0
+                  ]
+                }
+              }
+            },
+            "Reveal": {
+              "$className": "Sound",
+              "$properties": {
+                "Volume": 0.4
+              }
+            }
+          },
+          "BillboardGui": {
+            "$className": "BillboardGui",
+            "$properties": {
+              "Size": {
+                "UDim2": [
+                  [
+                    0,
+                    220
+                  ],
+                  [
+                    0,
+                    95
+                  ]
+                ]
+              },
+              "StudsOffsetWorldSpace": {
+                "Vector3": [
+                  0,
+                  2,
+                  0
+                ]
+              },
+              "AlwaysOnTop": false,
+              "MaxDistance": 65
+            },
+            "Title": {
+              "$className": "TextLabel",
+              "$properties": {
+                "Text": "Caja Uncommon",
+                "Position": {
+                  "UDim2": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0
+                    ]
+                  ]
+                },
+                "Size": {
+                  "UDim2": [
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      0.35,
+                      0
+                    ]
+                  ]
+                },
+                "BackgroundTransparency": 1,
+                "TextColor3": {
+                  "Color3": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                "TextScaled": true,
+                "Font": "GothamBold"
+              }
+            },
+            "Price": {
+              "$className": "TextLabel",
+              "$properties": {
+                "Text": "1750 Coins",
+                "Position": {
+                  "UDim2": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0.38,
+                      0
+                    ]
+                  ]
+                },
+                "Size": {
+                  "UDim2": [
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      0.25,
+                      0
+                    ]
+                  ]
+                },
+                "BackgroundTransparency": 1,
+                "TextColor3": {
+                  "Color3": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                "TextScaled": true,
+                "Font": "GothamBold"
+              }
+            },
+            "Status": {
+              "$className": "TextLabel",
+              "$properties": {
+                "Text": "Probabilidades pendientes",
+                "Position": {
+                  "UDim2": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0.68,
+                      0
+                    ]
+                  ]
+                },
+                "Size": {
+                  "UDim2": [
+                    [
+                      1,
+                      0
+                    ],
+                    [
+                      0.25,
+                      0
+                    ]
+                  ]
+                },
+                "BackgroundTransparency": 1,
+                "TextColor3": {
+                  "Color3": [
+                    1,
+                    1,
+                    1
+                  ]
+                },
+                "TextScaled": true,
+                "Font": "GothamBold"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

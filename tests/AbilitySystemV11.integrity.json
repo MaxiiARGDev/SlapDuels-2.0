@@ -1,0 +1,94 @@
+[
+  {
+    "File": "src/client/Abilities/AbilitySelection.luau",
+    "SHA256": "7e9ab8711f248a76d37d5815f612affcd9ba8be8b7213de8aab9395c1e8b6ed7"
+  },
+  {
+    "File": "src/client/Controllers/AbilityController.luau",
+    "SHA256": "056ae82db52be1d19e3932072fb94e09ee01d686ce965db8733a7d965d18df00"
+  },
+  {
+    "File": "src/server/Services/AbilityService.luau",
+    "SHA256": "a4dfb8a29229b8ca87b024739f26ceb7c2096603e680f10e49822a20435ae6ea"
+  },
+  {
+    "File": "src/server/Services/RoundService.luau",
+    "SHA256": "8ac09a0a0bbf7fc1611aacba2ae2dd431ac31ef6742cdad4d7cfad694cf45311"
+  },
+  {
+    "File": "src/shared/AbilityDefinitions.luau",
+    "SHA256": "71dd072cbf775c373694c90cc12ae9dca70f33440198d6c38dbe21f343b3d9ba"
+  },
+  {
+    "File": "src/ui/AbilityHUD.rbxm",
+    "SHA256": "7928006fb52a79a532ec54386e321fe1914ee2d4bc4b27f54a0cf5e8cd6191e3"
+  },
+  {
+    "File": "tests/AbilitySystemV1.spec.luau",
+    "SHA256": "54d55da3276316bbbe32a1ad1f317432cc26f67304747ce97029ebbd87cba6b4"
+  },
+  {
+    "File": "tests/AbilitySystemV11.deployment.json",
+    "SHA256": "b8eaa55d6b2a5c1aa160d50c56da2105842035582dbb29b66fde804a6fe3bbfe"
+  },
+  {
+    "File": "tests/AbilitySystemV11.edit-evidence.json",
+    "SHA256": "4c9bf0b9dbcc844f43d74fdf1ccdfc13ff23af3ccf204272d07dac368af1ec9e"
+  },
+  {
+    "File": "tests/AbilitySystemV11.protected-after.json",
+    "SHA256": "e757fb21f7bb0839ba07134908deb9522b96f2ea09706cd9c6c104384975823f"
+  },
+  {
+    "File": "tests/AbilitySystemV11.protected-before.json",
+    "SHA256": "ee18ec38e3e278e3d4bc06d53a34e94631e774db4af4d36ec35062a4e94b13fe"
+  },
+  {
+    "File": "tests/AbilitySystemV11.spec.luau",
+    "SHA256": "edfef0c6542368c3195423f798a547fd59fe838c670201afdf659b32e539a89d"
+  },
+  {
+    "File": "tests/AbilitySystemV11.unit-results.txt",
+    "SHA256": "21ccac082d56998d2ffc820501567ec665cb907bc27914a3193893a219f0f665"
+  },
+  {
+    "File": "tests/AbilitySystemV11.validation.md",
+    "SHA256": "24bb7b6f10b976dacba31bb16a1c03e25be5500fe4f628de6d51dd5939872c38"
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV11/AbilityHUD_Before.rbxm",
+    "SHA256": "7c615e70dcbb950d81cb04dda5211d25f9d5fb7b284e775291ed430376dff387"
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV11/manifest.json",
+    "SHA256": "f9fd3f24338720d2b8088bd58152b0968f28e2aaa1998fbda7b371a5d0457699"
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV11/src/client/Abilities/AbilitySelection.luau",
+    "SHA256": "824da8b890d8dbd7397b7132107fe0c9700901b4c9e05a2967c298f97a8cb6b7"
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV11/src/client/Controllers/AbilityController.luau",
+    "SHA256": "035949c60608f97461f251d83510bfc9b7695c588d4a1ba12cb07ee833b32236"
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV11/src/server/Services/AbilityService.luau",
+    "SHA256": "3dcb67dda7fec6ff33481a3042f76d1e7c45be16d56265632079575622695dc6"
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV11/src/server/Services/RoundService.luau",
+    "SHA256": "f8fa594385b3c887ebd6615df421d3451f6125676aa9c4163cca9a3ca5d13914"
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV11/src/shared/AbilityDefinitions.luau",
+    "SHA256": "62801fafabec06f93f918717aeb7aaef1dd54f0de6a36748964fde03ed390de1"
+  },
+  {
+    "File": "tests/assets/backups/AbilitySystemV11/src/ui/AbilityHUD.rbxm",
+    "SHA256": "7c615e70dcbb950d81cb04dda5211d25f9d5fb7b284e775291ed430376dff387"
+  },
+  {
+    "File": "tests/tools/run_ability_unit_tests.py",
+    "SHA256": "e7d3eb33c5c4d78357beba5efaaf3697c2b556af38307ec8a8f8577a1a498d88"
+  }
+]

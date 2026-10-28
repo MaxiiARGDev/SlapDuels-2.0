@@ -1,0 +1,67 @@
+{
+  "Scripts": [
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"244ca1a0a6ff88b2f0cd9083e7fa24cc5794f896f57f7030793a2b444f491730\",\"Path\":\"StarterPlayer.StarterPlayerScripts.CrateOpening.CinematicConfig\",\"Mode\":\"Edit\",\"Created\":true,\"Hash\":\"244ca1a0a6ff88b2f0cd9083e7fa24cc5794f896f57f7030793a2b444f491730\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"8eb8ea9bc49a168d119a3deb0514f0e5583687b1371ace8f4062b65e9c3361df\",\"Path\":\"StarterPlayer.StarterPlayerScripts.CrateOpening.CinematicMotion\",\"Mode\":\"Edit\",\"Created\":true,\"Hash\":\"8eb8ea9bc49a168d119a3deb0514f0e5583687b1371ace8f4062b65e9c3361df\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"7d594e12714a80628e1d9eaf6443cb31598bc2935c9c72c84aa48f48c74898cf\",\"Path\":\"StarterPlayer.StarterPlayerScripts.CrateOpening.CinematicTransition\",\"Mode\":\"Edit\",\"Created\":true,\"Hash\":\"7d594e12714a80628e1d9eaf6443cb31598bc2935c9c72c84aa48f48c74898cf\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"4e2e5b6ccc6fe1ad831be9abbf341300454b61be37a8df13f98999617ebfeac5\",\"Path\":\"StarterPlayer.StarterPlayerScripts.CrateOpening.StandPromptVisibility\",\"Mode\":\"Edit\",\"Created\":true,\"Hash\":\"4e2e5b6ccc6fe1ad831be9abbf341300454b61be37a8df13f98999617ebfeac5\"}"
+        }
+      ],
+      "isError": false
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"EditorHash\":\"b90b61b8de0a100583d8bf281ba9f05db5b8728274d6cb8ccc219dac5d78d286\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.CrateStandCinematicController\",\"Mode\":\"Edit\",\"Created\":false,\"Hash\":\"b90b61b8de0a100583d8bf281ba9f05db5b8728274d6cb8ccc219dac5d78d286\"}"
+        }
+      ],
+      "isError": false
+    }
+  ],
+  "Preservation": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"OriginalInstancesChecked\":197,\"TemporaryModelsDestroyed\":true,\"Differences\":[],\"Mode\":\"Edit\",\"PropertiesChecked\":1090}"
+      }
+    ],
+    "isError": false
+  },
+  "Inspection": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"PendingSounds\":{\"1\":\"Workspace.CrateStands.MainCrateStand.PresentationTemplate.Effects.FXAnchor.WhooshClose\",\"2\":\"Workspace.CrateStands.MainCrateStand.PresentationTemplate.Effects.FXAnchor.WhooshOpen\"},\"ModuleDuplicates\":false,\"Resources\":{\"1\":{\"Hash\":\"b1e65dfeb934508dcb4d586c0753179e165f8164202933845df360968672f69a\",\"Path\":\"Workspace.CrateStands.MainCrateStand\",\"Descendants\":173},\"2\":{\"Hash\":\"569d148832b054438e5cee40fbbe138f41765e29269d82281c4514042bbaf935\",\"Path\":\"StarterGui.CrateOpeningHUD\",\"Descendants\":26}},\"OverlayPreserved\":true,\"Gameplay\":\"NOT RUN\",\"Mode\":\"Edit\"}"
+      }
+    ],
+    "isError": false
+  }
+}

@@ -1,0 +1,135 @@
++{
+  "ShopRemotes": [],
+  "HUDDescendants": 86,
+  "BackupDescendants": 81,
+  "Running": false,
+  "IsStudio": true,
+  "Resources": {
+    "Void": false,
+    "DefaultFall": true,
+    "BasicKill": true,
+    "Frost": false
+  },
+  "Sources": [
+    {
+      "Path": "ServerScriptService.Shop.Providers.DeathEffectProvider",
+      "Present": true,
+      "Count": 1
+    },
+    {
+      "Path": "ServerScriptService.Services.ShopService",
+      "Present": true,
+      "Count": 1
+    },
+    {
+      "Path": "ServerScriptService.Services.PlayerService",
+      "Present": true,
+      "Count": 1
+    },
+    {
+      "Path": "ServerScriptService.Services.PlayerDataService",
+      "Present": true,
+      "Count": 1
+    },
+    {
+      "Path": "ServerScriptService.Shop.Providers.PointEffectProvider",
+      "Present": true,
+      "Count": 1
+    },
+    {
+      "Path": "StarterPlayer.StarterPlayerScripts.Controllers.ShopController",
+      "Present": true,
+      "Count": 1
+    },
+    {
+      "Path": "ReplicatedStorage.Shared.DeathEffectDefinitions",
+      "Present": true,
+      "Count": 2
+    }
+  ],
+  "Mode": "Edit",
+  "Tabs": [
+    {
+      "LayoutOrder": 0,
+      "Path": "StarterGui.ShopHUD.MainFrame.Tabs.PointEffectsTab",
+      "Category": "PointEffects",
+      "Position": "{-0.0407995358, 0}, {0.0211098529, 0}",
+      "Size": "{0, 177}, {0, 54}"
+    },
+    {
+      "LayoutOrder": 0,
+      "Path": "StarterGui.ShopHUD.MainFrame.Tabs.SlapsTab",
+      "Category": "Slaps",
+      "Position": "{0.261500508, 0}, {-0.130733371, 0}",
+      "Size": "{0, 177}, {0, 54}"
+    },
+    {
+      "LayoutOrder": 0,
+      "Path": "StarterGui.ShopHUD.MainFrame.Tabs.TrailsTab",
+      "Category": "Trails",
+      "Position": "{0.261500508, 0}, {-0.130733371, 0}",
+      "Size": "{0, 177}, {0, 54}"
+    },
+    {
+      "LayoutOrder": 1,
+      "Path": "StarterGui.ShopHUD.MainFrame.Tabs.DeathEffectsTab",
+      "Category": "DeathEffects",
+      "Position": "{-0.0407995358, 0}, {0.0211098529, 0}",
+      "Size": "{0, 177}, {0, 54}"
+    }
+  ],
+  "HUDRoots": 1,
+  "Existing81VisualComponentsUnchanged": true,
+  "NativeBackupSHA256": "D23A10661CE3676A5CCD82DD4FCCE58CA8AE5C2A9528A03CDE58993C004C35A5",
+  "NativeHUDSHA256": "086DE79F6E81C05EEF9316EBF5E67C0E63FE58F83564D1F83C66FE412BB60F32",
+  "BackupModel": "ServerStorage._ShopIntegrationV1Backups.ShopHUD_before_V1_20261017_023953",
+  "NativeRoundTrip": true,
+  "SourceChanges": [
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\client\\Controllers\\ShopController.luau",
+      "BeforeSHA256": "E1C72C81EFC6F8B1C70D216E283BE494536C296C4C6D6673F5BDA63B60967CD1",
+      "AfterSHA256": "AC3DD9BC066E48BA457F7B0AF33B6D54F8A82B46586789BCDA9CE66A5E2E14FB"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\PlayerDataService.luau",
+      "BeforeSHA256": "69AFA8BBBC8FC5E0A67DA98884BFBDCDA73D7187920786936D5B5CDC4C56480D",
+      "AfterSHA256": "D075589DBC7CA85A387F8B876B4E76A6CFB5C845393D69B0AB5684E272BE09BD"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\PlayerService.luau",
+      "BeforeSHA256": "42CE461C813DDCBA60B7CB46552E67B54AB8B22F137910629A9AD24563C3916F",
+      "AfterSHA256": "D40FD75FC05B1329A18C530DD9B947CA8F359CB43C98CD24E7415A65C608457B"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Services\\ShopService.luau",
+      "BeforeSHA256": "D8B69BB2ED0240CA12739480B3E21E3F3088536917101B68C53907A75D023470",
+      "AfterSHA256": "04A7CAE13F42198217BA0CC5026E23BE5CE89377B06EB11BDB5466FB6A762679"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Shop\\Providers\\DeathEffectProvider.luau",
+      "BeforeSHA256": null,
+      "AfterSHA256": "DD6B31BBA8559B6E9ABD2FD92BAAAEEC15A83F91444E081F7304542E5ACE3558"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\server\\Shop\\Providers\\PointEffectProvider.luau",
+      "BeforeSHA256": "E167437E1A3B6D572C8751B7D10326856C52C23A0E2D9AC301DC973E260EFE40",
+      "AfterSHA256": "A211153953BE8368A049714659840CC1E43D0ED2B130060A35827BD49E9B5FB5"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\shared\\DeathEffectDefinitions.luau",
+      "BeforeSHA256": "3D8A9A8E91B135C18E04CDFA972D1ACDFCCFCD04571D0E795EF62BA82AB11FAD",
+      "AfterSHA256": "C60A67EB82860974AA858CBB01CC44C7EE7F049E0D4EBDC27D2523B9AE2AF03D"
+    },
+    {
+      "Path": "H:\\repos-github\\SlapDuels-2.0\\src\\ui\\ShopHUD.rbxm",
+      "BeforeSHA256": null,
+      "AfterSHA256": "086DE79F6E81C05EEF9316EBF5E67C0E63FE58F83564D1F83C66FE412BB60F32"
+    }
+  ],
+  "FunctionalTests": "NOT_RUN",
+  "ContractSuite": "PREPARED_NOT_RUN",
+  "DefinitionCopiesEqualAfterDeployment": true,
+  "Build": "PASS",
+  "DiffCheck": "PASS",
+  "Acceptance": "PENDING_DEVELOPER_VALIDATION"
+}

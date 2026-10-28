@@ -1,0 +1,1 @@
+PASS InventoryEquipFixV121: 17 assertions with real provider/registry/Shop/PlayerService; gameplay NOT RUN

@@ -1,0 +1,5 @@
+C:/Users/RATAAT~1/AppData/Local/Temp/SlapDuels-AbilityUnit-_hw3meyw/isolated.luau:12869: Goal/Kill rewards untouched
+stacktrace:
+[C] function assert
+C:/Users/RATAAT~1/AppData/Local/Temp/SlapDuels-AbilityUnit-_hw3meyw/isolated.luau:12869 function check
+C:/Users/RATAAT~1/AppData/Local/Temp/SlapDuels-AbilityUnit-_hw3meyw/isolated.luau:12978

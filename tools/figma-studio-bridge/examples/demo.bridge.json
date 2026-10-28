@@ -1,0 +1,9 @@
+{
+  "schema":1,"sourceId":"ui-bridge-demo-v1","name":"Demo","width":600,"height":360,"assets":{},"warnings":[],
+  "nodes":[
+    {"id":"root","parent":null,"name":"MainFrame","class":"Frame","x":0,"y":0,"w":1,"h":1,"rotation":0,"opacity":1,"fillOpacity":1,"color":[0.04,0.08,0.14],"radius":18},
+    {"id":"title","parent":"root","name":"Title","class":"TextLabel","x":0.05,"y":0.06,"w":0.9,"h":0.15,"rotation":0,"opacity":1,"fillOpacity":0,"color":[1,1,1],"radius":0,"text":"UI BRIDGE · DISEÑO EDITABLE","textSize":26,"textColor":[0.3,0.85,1],"textOpacity":1,"font":"GothamBold","align":"Left"},
+    {"id":"description","parent":"root","name":"Description","class":"TextLabel","x":0.05,"y":0.27,"w":0.9,"h":0.25,"rotation":0,"opacity":1,"fillOpacity":0,"color":[1,1,1],"radius":0,"text":"Este diseño llegó desde JSON. Modificá el texto y reimportá: los objetos mantienen su identidad.","textSize":20,"textColor":[0.85,0.92,1],"textOpacity":1,"font":"Gotham","align":"Left"},
+    {"id":"button","parent":"root","name":"ContinueButton","class":"TextButton","x":0.05,"y":0.7,"w":0.9,"h":0.2,"rotation":0,"opacity":1,"fillOpacity":1,"color":[0.06,0.45,0.58],"radius":10,"text":"BOTÓN NATIVO · SIN CÓDIGO DE JUEGO","textSize":20,"textColor":[1,1,1],"textOpacity":1,"font":"GothamBold","align":"Center"}
+  ]
+}

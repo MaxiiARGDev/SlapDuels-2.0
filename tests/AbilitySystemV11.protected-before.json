@@ -1,0 +1,406 @@
+[
+  {
+    "File": "src/assets/AbilityEffects.rbxm",
+    "SHA256": "ccecd9e2e62c45e7fb7e4826625e4a43e139bb5d5bba2069bfdc94e1b00391ce"
+  },
+  {
+    "File": "src/assets/DeathEffects.project.json",
+    "SHA256": "511da1e2f5f7bcbab2bf496fca856b7cde09fd51f273a126e24058a9f8333beb"
+  },
+  {
+    "File": "src/assets/Frost.rbxm",
+    "SHA256": "f6402f7aeb0c29754c2350b8a16b1c78b61a8e77d6a5f3011ff4bad8eada6254"
+  },
+  {
+    "File": "src/assets/SuddenDeathAssets.rbxm",
+    "SHA256": "30309562d76ec44a50267f860fd2045c3a1e7d856acded9d8f2fa64971edb646"
+  },
+  {
+    "File": "src/assets/SuddenDeathMusic.rbxm",
+    "SHA256": "d6c55fb6d06393c8ddb2b109fa300d0497928d760377ee164fe861c5a6ba1b4f"
+  },
+  {
+    "File": "src/assets/Void.rbxm",
+    "SHA256": "e61992e0cd44a00d7317749b76963b279a995bff7958cc81bf73650c8c3cd17f"
+  },
+  {
+    "File": "src/character/ArenaRespawnGuard.client.luau",
+    "SHA256": "88cd022cab46b0cb193e4c274ea1d28244aafd06f291a09d7703ca1cf604cbda"
+  },
+  {
+    "File": "src/character/RagdollStatesHandler.client.luau",
+    "SHA256": "f78eff3ebb3e3cb6cc71634e629cc6b746ca8f73e2fc7d94a2668963b6da0d70"
+  },
+  {
+    "File": "src/client/AnimacionLetras1v1.client.luau",
+    "SHA256": "ba59761efefde6ad1ae557dfdf6babe1d7c90d6a900c176835c617a7449e58be"
+  },
+  {
+    "File": "src/client/ClientBootstrap.client.luau",
+    "SHA256": "613a2bab21064fc7b130e3f127168366e829834190e2944b9861838b48dfdc8e"
+  },
+  {
+    "File": "src/client/EndCinematicPreview.client.luau",
+    "SHA256": "d46ee1906619fe6adcdabf5c25bccf3d356acded974ae9430943d300df7ef2a8"
+  },
+  {
+    "File": "src/client/PointCameraFX.client.luau",
+    "SHA256": "a6cace0ea0eab749eec66a085b9a2567b48a1faf39832e7738f865be9a764867"
+  },
+  {
+    "File": "src/server/Bootstrap.server.luau",
+    "SHA256": "b0850423674e836e8c88572b9caaa44dd71460511bbdb8f586307749d4fb83f7"
+  },
+  {
+    "File": "src/server/RagdollHandler.server.luau",
+    "SHA256": "b8e94e37f71088daa8a355c30da8a185acd5a1000ec19092b569a6dbab8430ab"
+  },
+  {
+    "File": "src/server/RagdollModule.luau",
+    "SHA256": "f0c382f77c431fa36ecf1ff2ec19ef9294c1daf1835e1f11fb2b60eeddc12e66"
+  },
+  {
+    "File": "src/shared/ArenaRespawnPolicy.luau",
+    "SHA256": "20cb2b061338c1b42cd0417a7a41bc238492fd9ba2d60936cddd002c2d32519b"
+  },
+  {
+    "File": "src/shared/Config.luau",
+    "SHA256": "36d684039a789af75268129695ecbaf4ad8cbb33baa322f14cfbd47741b81a43"
+  },
+  {
+    "File": "src/shared/Constants.luau",
+    "SHA256": "c405a645e540cdc73346bd8d93dc75ce0b032a801a06e9234698234806b3cc92"
+  },
+  {
+    "File": "src/shared/DeathEffectDefinitions.luau",
+    "SHA256": "f8ad6032d33beec5d973b98940af855f981ee8d66444b2870bff00883281618a"
+  },
+  {
+    "File": "src/shared/DeathFeedbackConfig.luau",
+    "SHA256": "0a2d9c683dbef08a270caef73077236a3f844864b7a958ca0d6e0f01ba7ee882"
+  },
+  {
+    "File": "src/shared/DeathFeedbackContract.luau",
+    "SHA256": "3b1d112a408cfabe93dee9895c8a9f69278485797b920525aed42c09872e584d"
+  },
+  {
+    "File": "src/shared/EndCinematicConfig.luau",
+    "SHA256": "147ae6bf2b5ebad64b6e383ca529b35514b45ae9bad780af763dacf47f71825b"
+  },
+  {
+    "File": "src/shared/EndCinematicRanking.luau",
+    "SHA256": "329fc579dd60f03c5906c9c47f2c0a9ed6e5b5a84a3156cbea968ac0a7c37b52"
+  },
+  {
+    "File": "src/shared/PointEffectDefinitions.luau",
+    "SHA256": "0167d6ce2dea9abeadc48c994f2f77989871a8706b6fa953aa906f59bd5f07f2"
+  },
+  {
+    "File": "src/shared/Types.luau",
+    "SHA256": "0c3ce4cad782cb2df06d31b46cfddb0d618b608ce0d6ff2f608dc2425a6b9c20"
+  },
+  {
+    "File": "src/ui/DeathFeedbackHUD.project.json",
+    "SHA256": "835804e0b94636e0c9e938e07d934f3fca61e092379ed682f1cd318d71baf9fb"
+  },
+  {
+    "File": "src/ui/EndCinematicBillboardAnchor.rbxmx",
+    "SHA256": "3c4541c114dcc6ac14cccdd4d129fb8382144564d06dccb50ea9dffaf42efa32"
+  },
+  {
+    "File": "src/ui/EndCinematicBillboardTemplate.rbxmx",
+    "SHA256": "b30a79919c798da6bde3641132adb23b4d1e05a267d1ce96f3301b364a1a8fe3"
+  },
+  {
+    "File": "src/ui/EndCinematicHUD.rbxmx",
+    "SHA256": "3220388c92d18b605a7f3fa97cbc586021957d67d61bc7c16be1c307c05e9c38"
+  },
+  {
+    "File": "src/ui/KillRewardHUD.project.json",
+    "SHA256": "8d757f9ecac800a9cf606a9f3fac44d66d9f43a51cb558ff263aa9d7fac3f218"
+  },
+  {
+    "File": "src/ui/MatchHUD.rbxm",
+    "SHA256": "603eca0a15b3012f4ac1a02a0e3727d9677b749d296bbd22617543913815d070"
+  },
+  {
+    "File": "src/ui/MatchHUD.rbxmx",
+    "SHA256": "a29f12ae0e98a3c8a519165d034b75229d15642507e8427da2a6879f701fc931"
+  },
+  {
+    "File": "src/ui/MatchmakingHUD.rbxmx",
+    "SHA256": "be9c0abb46dd0cf55802ac30a52289555a137f0690885a0c9ec43f5337019a30"
+  },
+  {
+    "File": "src/ui/PlayerHUD.rbxmx",
+    "SHA256": "85da5fd12b01807801faa3555e7400a5d949cf35e1e409a2e9fa8e4864c6af95"
+  },
+  {
+    "File": "src/ui/ShopHUD.rbxm",
+    "SHA256": "8ba03c9ee53acf34d79ed7c60ba7c27e71f6952ba6f3e484d93a2af934540676"
+  },
+  {
+    "File": "src/ui/SuddenDeathHUD.rbxm",
+    "SHA256": "7e75c40d29567c4400bbb4eea7d081b506ea029a570d96d323c7a4fe04f36c4e"
+  },
+  {
+    "File": "src/client/Abilities/AbilityPresentation.luau",
+    "SHA256": "eaf5c6bdbc8f0c61e4a0a7449ae40e200f6189a94b199522f1b7b3235ecef35f"
+  },
+  {
+    "File": "src/client/Controllers/DeathFeedbackController.luau",
+    "SHA256": "465def2959ae4eb035cd23d8ecda01b5a2fe49e716f061b48d8b2815c9395de1"
+  },
+  {
+    "File": "src/client/Controllers/EndCinematicController.luau",
+    "SHA256": "dd7b933b95be168efd0e16d0a286357d271ecb0a9f123a9fafe8aeb8242fe049"
+  },
+  {
+    "File": "src/client/Controllers/KillRewardController.luau",
+    "SHA256": "7d61baf72d1644430d9517dcadf09c25b3b1be3c1dfe8f02f12016a9473937d6"
+  },
+  {
+    "File": "src/client/Controllers/MatchController.luau",
+    "SHA256": "98fe925e6699a72603082541933a6fe3a54abd2ae9fe5424e013c8daf7e09d41"
+  },
+  {
+    "File": "src/client/Controllers/MatchmakingController.luau",
+    "SHA256": "591feadf8bfec176f199aa154c5c1a911d3685044755bdf1ca2d613be29d205e"
+  },
+  {
+    "File": "src/client/Controllers/MatchStartEffectsController.luau",
+    "SHA256": "1bc3311357418fea886f42a21d4b8ab452e9598dc38af882841f24fdc618d3f0"
+  },
+  {
+    "File": "src/client/Controllers/MusicController.luau",
+    "SHA256": "c8f15e3efe43beb1cc5f084a526a375a5a6e251b17a22f59ea3921a7ed8782d6"
+  },
+  {
+    "File": "src/client/Controllers/PlayerHUDController.luau",
+    "SHA256": "703df89bfd5323b585206cb0f037ee5acb4b91c6a3e022ea2f40840f0979bb2a"
+  },
+  {
+    "File": "src/client/Controllers/SettingsController.luau",
+    "SHA256": "56af1a0b2223973100ff42aa4edc87c83210994d67d094df2f0aa0628ab8f745"
+  },
+  {
+    "File": "src/client/Controllers/ShopController.luau",
+    "SHA256": "df8a16c7772ee3a79dc2b599b0ba741a2a91cb894bee9928d5949dfd84a4fe53"
+  },
+  {
+    "File": "src/client/Controllers/SlapController.luau",
+    "SHA256": "3c09f2ddef6a9f0bf85d03d68fabce061d5c2fad79b928ec847c18a8bedbcea2"
+  },
+  {
+    "File": "src/client/Controllers/SuddenDeathController.luau",
+    "SHA256": "7e9d2a857d5f74bad47c40fcd0235bf312497a0a3a7daa462b55b1b81e922b50"
+  },
+  {
+    "File": "src/client/DeathFeedback/DeathEffectPlayer.luau",
+    "SHA256": "94fa8d57ba6833ec1aba74b11ba7d9cdb8ae5c9a02de8ac2b5fd83b83006b335"
+  },
+  {
+    "File": "src/client/DeathFeedback/DeathNotifications.luau",
+    "SHA256": "ee8e6354cf0d1f1b1634c0839ebec6d4a5b345591cf6f5d31e98609c38fbdfac"
+  },
+  {
+    "File": "src/client/DeathFeedback/Scope.luau",
+    "SHA256": "c15e187b8e7636b89bc62a664ed9c13326fc97ca440ad3dde96629df2447514b"
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicAnimations.luau",
+    "SHA256": "0bc03bea650115c804a8b46e0c7e767286d94fb9404ed5ee4c364c9260de7df5"
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicAudio.luau",
+    "SHA256": "31dc0bb7556e2875aaf26dfaf140fde943ac0bcf26b5d06920a3d45a3eee096f"
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicAvatars.luau",
+    "SHA256": "a6593bbe91757a847291143d23bc1bc4ebb6788bdfd8370210303955f6ca234c"
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicBillboards.luau",
+    "SHA256": "73a4667052b3943a4abd5907da35c0f8c21397c188c7d068812b1df2dca32b5f"
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicCamera.luau",
+    "SHA256": "71dc206da20fc97d180a71fcbfff0261ce2ebe7481e311da1a444cd8beb8e4b8"
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicHUD.luau",
+    "SHA256": "2c95b59b410208be86da4fbc2e0a62fbbb302eafc3b2dab02b4d65cd19cf4cd9"
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicParticles.luau",
+    "SHA256": "0a591e12c18e695bbb88c05ddcad733e54d7c3808a0d08fdbc5f6559b6f94fdf"
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicRanking.luau",
+    "SHA256": "e24fd8a125e37cb7338eb78248e6b03b076b1a7373d5f316da8a6f3bd0b6ace3"
+  },
+  {
+    "File": "src/client/EndCinematic/Modules/EndCinematicTransition.luau",
+    "SHA256": "2f3961fa544b0a37f31bb7808a0050e8b7a3bbc4affa97932c19a0fce901f9e9"
+  },
+  {
+    "File": "src/server/Abilities/AirJumpsAbility.luau",
+    "SHA256": "8e9bc950f31b180b57b640aa53439c35ca82514989eb1f9107add8da4b8dcb3d"
+  },
+  {
+    "File": "src/server/Abilities/DashAbility.luau",
+    "SHA256": "ff23f7691f26e13eae62f77b64def0629470c0204c33d022717f686b2517ad68"
+  },
+  {
+    "File": "src/server/Abilities/DevilSpeedAbility.luau",
+    "SHA256": "f1482813fcb2b4a0a52bbd8ff9773b94c6a7c44cbf5bf815ca5f080b202d6232"
+  },
+  {
+    "File": "src/server/Abilities/InvisibilityAbility.luau",
+    "SHA256": "9ab4a4503bbda7de9569713f3c24f2ad4d2f1f28c9248c8d2f7477e96ede9544"
+  },
+  {
+    "File": "src/server/Abilities/MovementGuard.luau",
+    "SHA256": "3fcfb27bae4d4a122847f2514cd41e05affc5cbed92d707f594bf34eeac89539"
+  },
+  {
+    "File": "src/server/Abilities/StrongSlapAbility.luau",
+    "SHA256": "f5b83a3cb6ae8394f6d798456ada7d7ceafd3d9eb9d682483c4dc7a48aaf00e9"
+  },
+  {
+    "File": "src/server/PointEffectControllers/BasicController.luau",
+    "SHA256": "9ef01be5f50e7e2e515f013402b4972c318f9ce1ab5168f32b4629e15b1b594b"
+  },
+  {
+    "File": "src/server/PointEffectControllers/InfernoController.luau",
+    "SHA256": "881e1d3acfd844c29b2cbb52d37351541e667b73d3852409d692221dc084528e"
+  },
+  {
+    "File": "src/server/PointEffectControllers/PointEffectRegistry.luau",
+    "SHA256": "aec74723959735a67394a5b5b2f1da6997de5989005fd44b31babbe9f0c7e6bb"
+  },
+  {
+    "File": "src/server/PointEffectControllers/ThunderController.luau",
+    "SHA256": "87a081745dc054b19d017f0b1e2bbc5d6577cd2e06358ce9ef13f2e66ebc8ece"
+  },
+  {
+    "File": "src/server/Services/CombatService.luau",
+    "SHA256": "84c3b26cbf00073a21ad605dca0afad80a1986bcf504826dfd588757c85af99d"
+  },
+  {
+    "File": "src/server/Services/DeathEffectService.luau",
+    "SHA256": "4db341a5246254d4b183d31c61b5cc6cea8cfa81cebca7c8958b4791bfc6b9ae"
+  },
+  {
+    "File": "src/server/Services/EliminationService.luau",
+    "SHA256": "7f1290446030daff4a190b399d7a1c82d9c4eea8e3a831a0186219105553f975"
+  },
+  {
+    "File": "src/server/Services/KnockbackService.luau",
+    "SHA256": "51420f2f430af6a29b2b4a2dcd4e944a4f86cbc384dd43449ffcf1ad575d6796"
+  },
+  {
+    "File": "src/server/Services/MatchInstanceService.luau",
+    "SHA256": "ed3e31bbc4fb6db2e474481ae49f25905fb5263e44f521743c8af199479ac176"
+  },
+  {
+    "File": "src/server/Services/MatchmakingFeedbackService.luau",
+    "SHA256": "449a181f4befb96b5d7aace6f49f0a635c791be3bee497d565c237f8ec6947ab"
+  },
+  {
+    "File": "src/server/Services/MatchmakingService.luau",
+    "SHA256": "4162fd9d447d977e984ccddeaf91389edc0c34057be0c517bc7f5d2609b2ede8"
+  },
+  {
+    "File": "src/server/Services/PlayerDataService.luau",
+    "SHA256": "4212f5ae39be3236727032547adc835a2a7e5f9a331f72b319c2d988f791bc9f"
+  },
+  {
+    "File": "src/server/Services/PlayerService.luau",
+    "SHA256": "4f841074d915cc785baf233b0ed681487c7677c2c8f1406d2de76e6d5cb85a64"
+  },
+  {
+    "File": "src/server/Services/PointEffectTestService.luau",
+    "SHA256": "987825b98b1e570f9674bc4b894dbb691285c4cf71648ac74aab87a6b0148759"
+  },
+  {
+    "File": "src/server/Services/PointFeedbackService.luau",
+    "SHA256": "178615d93214a9291b5d76d3092979d4a6b39a55274ddf6072efaddc91222fc1"
+  },
+  {
+    "File": "src/server/Services/RagdollService.luau",
+    "SHA256": "3e203c841e02c4c540bbb516da37887839a609ebc23f46035bd1e8f608045967"
+  },
+  {
+    "File": "src/server/Services/ScoreService.luau",
+    "SHA256": "4ebabf43dfae348f5ad5fed5147a646d3d9b4a3f04d244c53a5788334213ba54"
+  },
+  {
+    "File": "src/server/Services/ShopService.luau",
+    "SHA256": "bd794e57bd41f17ead5a09fecef5f54b51f18353e0d44733414ae5548a04a3bf"
+  },
+  {
+    "File": "src/server/Services/SlapService.luau",
+    "SHA256": "a171f211b109dfebfcb94baf8278f69ddc5bdb2d9154bbb38db9ba952f2a0ee5"
+  },
+  {
+    "File": "src/server/Services/SpawnService.luau",
+    "SHA256": "0ec8b3619bd57d39a35dac8881159807ab733e0841cefe9829d79a2f96e764dc"
+  },
+  {
+    "File": "src/server/Services/ThunderController.luau",
+    "SHA256": "f0c6cddf64d93c86b92ec6cf2eefc2ef67d5e507e23e24d3324ae7cda88afe23"
+  },
+  {
+    "File": "src/server/Shop/ProfilePurchase.luau",
+    "SHA256": "eaabe1abb2925afcf8ebbb861799a58bdbd5dacba14cde23d09bec1414c7f5bf"
+  },
+  {
+    "File": "src/server/Shop/ShopRegistry.luau",
+    "SHA256": "1fa10179ccbe5aba5b55f5d2b1b06dfbc6b26dcec8488b71ce3b7b516e074d6c"
+  },
+  {
+    "File": "src/server/Shop/ShopRemotes.luau",
+    "SHA256": "7df48cc0b9ffd20724c93e1180d27afbedaa4c90fa25369a271746a32234d69b"
+  },
+  {
+    "File": "src/server/Services/Gameplay/RoundClock.luau",
+    "SHA256": "2838a46f71cce1586f456b40fccd7ff60f981851cec7f4383cb410d105afbec8"
+  },
+  {
+    "File": "src/server/Services/Persistence/InMemoryDataStore.luau",
+    "SHA256": "2e7571d5a943d11fffc6cbbf18b4f0328162528fdf24b8620191165bd46cbcb5"
+  },
+  {
+    "File": "src/server/Services/Persistence/PersistenceEnvironment.luau",
+    "SHA256": "bd9479b65dd700a16f4577fe230a0de7f223c7d318d5146ee0cb113f7d743083"
+  },
+  {
+    "File": "src/server/Services/Persistence/RobloxDataStoreAdapter.luau",
+    "SHA256": "dfd12359f34479ed1f889786d8aec2765c6ce648a842cbd7ef9de5da4b02e292"
+  },
+  {
+    "File": "src/server/Services/Respawn/ArenaRespawn.luau",
+    "SHA256": "ed94fa0b0e5cbb786d3215a8f2ac5a5cb9281aa0b58c7ba1bac1c0566a01b5c8"
+  },
+  {
+    "File": "src/server/Services/Respawn/CharacterPhysics.luau",
+    "SHA256": "303e65d3cdc1ba78c98b712a47b3dea44c0e0285b000766a63e597dd8ae006b7"
+  },
+  {
+    "File": "src/server/Services/Respawn/CompetitiveTransit.luau",
+    "SHA256": "c52d7f218642ecc4f7d9b27c3e0318284e1ec487670437a2feb786d65bc804a7"
+  },
+  {
+    "File": "src/server/Shop/Providers/AbilityProvider.luau",
+    "SHA256": "ab56e323fa83c38db7aec729cbaa1dc1558644050a7266df37f7ca1f5079f456"
+  },
+  {
+    "File": "src/server/Shop/Providers/DeathEffectProvider.luau",
+    "SHA256": "52fab0ac73411d630c9bd799805968911d0c1ec575014625450f8f8f9746e680"
+  },
+  {
+    "File": "src/server/Shop/Providers/PointEffectProvider.luau",
+    "SHA256": "a211153953be8368a049714659840cc1e43d0ed2b130060a35827bd49e9b5fb5"
+  }
+]

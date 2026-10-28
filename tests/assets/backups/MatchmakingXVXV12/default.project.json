@@ -1,0 +1,290 @@
+{
+  "name": "SlapDuels-2.0",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$className": "ReplicatedStorage",
+      "Shared": {
+        "$path": "src/shared"
+      },
+      "AbilityEffects": {
+        "$path": "src/assets/AbilityEffects.rbxm"
+      },
+      "UIAssets": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true,
+        "CrateBatchRewardSlot": {
+          "$path": "src/assets/CrateBatchV24/CrateBatchRewardSlot.rbxm",
+          "$ignoreUnknownInstances": true
+        },
+        "SuddenDeathAssets": {
+          "$path": "src/assets/SuddenDeathAssets.rbxm"
+        },
+        "EndCinematicBillboardTemplate": {
+          "$path": "src/ui/EndCinematicBillboardTemplate.rbxmx"
+        },
+        "EndCinematicBillboardAnchor": {
+          "$path": "src/ui/EndCinematicBillboardAnchor.rbxmx"
+        },
+        "CrateRevealV25": {
+          "$path": "src/assets/CrateRevealV25/CrateRevealV25.rbxm",
+          "$ignoreUnknownInstances": true
+        }
+      },
+      "StateEvent": {
+        "$className": "UnreliableRemoteEvent"
+      },
+      "Remotes": {
+        "$className": "Folder",
+        "Player": {
+          "$className": "Folder",
+          "DataUpdated": {
+            "$className": "RemoteEvent"
+          }
+        },
+        "Matchmaking": {
+          "$className": "Folder",
+          "QueueStatus": {
+            "$className": "RemoteEvent"
+          }
+        },
+        "Match": {
+          "$className": "Folder",
+          "StateChanged": {
+            "$className": "RemoteEvent"
+          },
+          "Countdown": {
+            "$className": "RemoteEvent"
+          },
+          "MapSelection": {
+            "$className": "RemoteEvent"
+          },
+          "MatchResult": {
+            "$className": "RemoteEvent"
+          },
+          "EndCinematic": {
+            "$className": "RemoteEvent"
+          },
+          "EndCinematicAction": {
+            "$className": "RemoteEvent"
+          },
+          "DeathFeedback": {
+            "$className": "RemoteEvent"
+          },
+          "ScoreUpdated": {
+            "$className": "RemoteEvent"
+          },
+          "LastPoint": {
+            "$className": "RemoteEvent"
+          },
+          "PointFeedback": {
+            "$className": "RemoteEvent"
+          }
+        },
+        "Combat": {
+          "$className": "Folder",
+          "AbilityRequest": {
+            "$className": "RemoteEvent"
+          },
+          "AbilityState": {
+            "$className": "RemoteEvent"
+          },
+          "PerformSlap": {
+            "$className": "RemoteEvent"
+          },
+          "SlapFeedback": {
+            "$className": "RemoteEvent"
+          }
+        },
+        "Shop": {
+          "$className": "Folder"
+        },
+        "Crates": {
+          "$className": "Folder",
+          "Request": {
+            "$className": "RemoteFunction"
+          },
+          "Reveal": {
+            "$className": "RemoteEvent"
+          },
+          "World": {
+            "$className": "RemoteEvent"
+          },
+          "Announce": {
+            "$className": "RemoteEvent"
+          },
+          "StandPresentation": {
+            "$className": "RemoteEvent"
+          }
+        },
+        "$ignoreUnknownInstances": true
+      },
+      "CrateEffects": {
+        "$path": "src/assets/CrateEffects.project.json",
+        "PremiumI": {
+          "$path": "src/assets/PremiumShopV1/PremiumI.rbxm",
+          "$ignoreUnknownInstances": true
+        },
+        "PremiumII": {
+          "$path": "src/assets/PremiumShopV1/PremiumII.rbxm",
+          "$ignoreUnknownInstances": true
+        },
+        "PremiumIII": {
+          "$path": "src/assets/PremiumShopV1/PremiumIII.rbxm",
+          "$ignoreUnknownInstances": true
+        }
+      },
+      "SlapVariationEffects": {
+        "$path": "src/assets/SlapVariationEffects.project.json"
+      },
+      "CrateRewardPreviews": {
+        "$path": "src/assets/CrateRewardPreviews.project.json"
+      },
+      "SlapVariationPreviews": {
+        "$path": "src/assets/SlapVariationPreviews.project.json"
+      },
+      "PremiumShopPreviews": {
+        "$path": "src/assets/PremiumShopV1/PremiumShopPreviews.rbxm",
+        "$ignoreUnknownInstances": true
+      }
+    },
+    "ServerScriptService": {
+      "$className": "ServerScriptService",
+      "Bootstrap": {
+        "$path": "src/server/Bootstrap.server.luau"
+      },
+      "Services": {
+        "$path": "src/server/Services"
+      },
+      "Abilities": {
+        "$path": "src/server/Abilities"
+      },
+      "PointEffectControllers": {
+        "$path": "src/server/PointEffectControllers"
+      },
+      "RagdollHandler": {
+        "$path": "src/server/RagdollHandler.server.luau"
+      },
+      "Shop": {
+        "$path": "src/server/Shop"
+      }
+    },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "DeathEffects": {
+        "$path": "src/assets/DeathEffects.project.json"
+      },
+      "RagdollModule": {
+        "$path": "src/server/RagdollModule.luau"
+      },
+      "Maps": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true,
+        "Levels": {
+          "$path": "src/assets/Maps/Levels.rbxm",
+          "$ignoreUnknownInstances": true
+        }
+      },
+      "Tools": {
+        "$className": "Folder"
+      },
+      "Assets": {
+        "$className": "Folder"
+      },
+      "PointEffects": {
+        "$className": "Folder"
+      },
+      "Slaps": {
+        "$className": "Folder"
+      },
+      "$ignoreUnknownInstances": true,
+      "$properties": {
+        "Attributes": {
+          "CrateStudioTestsEnabled": {
+            "Bool": true
+          }
+        }
+      }
+    },
+    "StarterGui": {
+      "$className": "StarterGui",
+      "$ignoreUnknownInstances": true,
+      "MatchHUD": {
+        "$path": "src/ui/MatchHUD.rbxm"
+      },
+      "PlayerHUD": {
+        "$path": "src/assets/PremiumShopV1/PlayerHUD.rbxm",
+        "$ignoreUnknownInstances": true
+      },
+      "SuddenDeathHUD": {
+        "$path": "src/ui/SuddenDeathHUD.rbxm"
+      },
+      "ShopHUD": {
+        "$path": "src/assets/PremiumShopV1/ShopHUD.rbxm",
+        "$ignoreUnknownInstances": true
+      },
+      "AbilityHUD": {
+        "$path": "src/ui/AbilityHUD.rbxm"
+      },
+      "EndCinematicHUD": {
+        "$path": "src/ui/EndCinematicHUD.rbxmx"
+      },
+      "DeathFeedbackHUD": {
+        "$path": "src/ui/DeathFeedbackHUD.project.json"
+      },
+      "KillRewardHUD": {
+        "$path": "src/ui/KillRewardHUD.project.json"
+      },
+      "CrateOpeningHUD": {
+        "$path": "src/assets/CrateCinematicV23/CrateOpeningHUD.rbxm",
+        "$ignoreUnknownInstances": true
+      },
+      "PremiumShopHUD": {
+        "$path": "src/assets/PremiumShopV1/PremiumShopHUD.rbxm",
+        "$ignoreUnknownInstances": true
+      }
+    },
+    "SoundService": {
+      "$className": "SoundService",
+      "$ignoreUnknownInstances": true,
+      "Music": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true,
+        "SuddenDeath": {
+          "$path": "src/assets/SuddenDeathMusic.rbxm"
+        }
+      }
+    },
+    "StarterPlayer": {
+      "$className": "StarterPlayer",
+      "StarterPlayerScripts": {
+        "$className": "StarterPlayerScripts",
+        "$path": "src/client"
+      },
+      "StarterCharacterScripts": {
+        "$className": "StarterCharacterScripts",
+        "$path": "src/character"
+      }
+    },
+    "Workspace": {
+      "$className": "Workspace",
+      "$ignoreUnknownInstances": true,
+      "CrateStands": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true,
+        "MainCrateStand": {
+          "$path": "src/assets/CrateBatchV24/MainCrateStand.rbxm",
+          "$ignoreUnknownInstances": true
+        }
+      },
+      "Shops": {
+        "$className": "Folder",
+        "$ignoreUnknownInstances": true,
+        "CoinShop": {
+          "$path": "src/assets/PremiumShopV1/CoinShop.rbxm",
+          "$ignoreUnknownInstances": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"Sources": 4, "ExistingSrcChanges": ["src/assets/SlapVariationEffects.project.json", "src/client/Controllers/CrateController.luau", "src/server/Services/CrateService.luau", "src/shared/SlapCrates/VariationDefinitions.luau"], "UnchangedOriginalSrc": 136}

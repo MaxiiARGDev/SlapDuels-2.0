@@ -1,0 +1,58 @@
+{
+  "Checks": {
+    "compose": 0,
+    "compose-cinematic": 0,
+    "unit": 0,
+    "reveal": 0,
+    "gallery": 0,
+    "cinematic": 0,
+    "economy": 0,
+    "combat": 0,
+    "abilities": 0,
+    "registry": 0,
+    "shop": 0,
+    "compile": 0,
+    "safe-map": 0,
+    "build": 0,
+    "safe-build": 0,
+    "backup-build": 0,
+    "diff-check": 0
+  },
+  "RuntimeScriptsCompiled": 153,
+  "ChangedOriginalSources": [
+    "src/server/Bootstrap.server.luau",
+    "src/client/Controllers/CrateStandCinematicController.luau",
+    "src/client/Controllers/ShopController.luau",
+    "src/server/Services/CrateService.luau",
+    "src/server/Services/Crates/CrateEngine.luau",
+    "src/shared/SlapCrates/CrateDefinitions.luau",
+    "src/shared/SlapCrates/CrateShopView.luau",
+    "src/shared/SlapCrates/Inventory.luau"
+  ],
+  "OtherOriginalFilesUnchanged": 178,
+  "GUIChanges": {
+    "ShopHUD": {
+      "PropertiesChanged": [
+        [
+          "/ShopButton",
+          "Visible"
+        ]
+      ],
+      "ObjectsAdded": []
+    },
+    "PlayerHUD": {
+      "PropertiesChanged": [],
+      "ObjectsAdded": [
+        "/PremiumShopButton",
+        "/PremiumShopButton/Glow",
+        "/PremiumShopButton/UICorner",
+        "/PremiumShopButton/UIStroke"
+      ]
+    }
+  },
+  "PurchasesEnabled": false,
+  "DurableBackend": "NOT IMPLEMENTED / BLOCKED",
+  "Gameplay": "NOT RUN",
+  "BuiltResourcesMatched": true,
+  "SafeScriptsOnly": true
+}

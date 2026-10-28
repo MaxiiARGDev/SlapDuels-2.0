@@ -1,0 +1,60 @@
+{
+  "RuntimeScriptsCompiled": 126,
+  "Checks": {
+    "compose": {
+      "ExitCode": 0,
+      "Log": "tests/CrateVisualV21.compose.log"
+    },
+    "visual": {
+      "ExitCode": 0,
+      "Log": "tests/CrateVisualV21.visual.log"
+    },
+    "economy": {
+      "ExitCode": 0,
+      "Log": "tests/CrateVisualV21.economy.log"
+    },
+    "combat": {
+      "ExitCode": 0,
+      "Log": "tests/CrateVisualV21.combat.log"
+    },
+    "abilities": {
+      "ExitCode": 0,
+      "Log": "tests/CrateVisualV21.abilities.log"
+    },
+    "registry": {
+      "ExitCode": 0,
+      "Log": "tests/CrateVisualV21.registry.log"
+    },
+    "shop": {
+      "ExitCode": 0,
+      "Log": "tests/CrateVisualV21.shop.log"
+    },
+    "variations": {
+      "ExitCode": 0,
+      "Log": "tests/CrateVisualV21.variations.log"
+    },
+    "compile": {
+      "ExitCode": 0,
+      "Log": "tests/CrateVisualV21.compile.log"
+    },
+    "build": {
+      "ExitCode": 0,
+      "Log": "tests/CrateVisualV21.build.log"
+    },
+    "safe-build": {
+      "ExitCode": 0,
+      "Log": "tests/CrateVisualV21.safe-build.log"
+    },
+    "diff-check": {
+      "ExitCode": 0,
+      "Log": "tests/CrateVisualV21.diff-check.log"
+    },
+    "integrity": {
+      "ExitCode": 0,
+      "Log": "tests/CrateVisualV21.integrity.log"
+    }
+  },
+  "BuiltSnapshotHierarchiesMatched": true,
+  "SafeScriptOnlyBoundariesVerified": true,
+  "Gameplay": "NOT RUN"
+}

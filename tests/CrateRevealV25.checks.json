@@ -1,0 +1,35 @@
+{
+  "Checks": {
+    "compose-batch": 0,
+    "compose-cinematic": 0,
+    "visual": 0,
+    "batch": 0,
+    "gallery": 0,
+    "cinematic": 0,
+    "economy": 0,
+    "combat": 0,
+    "abilities": 0,
+    "registry": 0,
+    "shop": 0,
+    "compile": 0,
+    "safe-map": 0,
+    "build": 0,
+    "safe-build": 0,
+    "diff-check": 0
+  },
+  "RuntimeScriptsCompiled": 141,
+  "ChangedOriginalSources": [
+    "src/client/Controllers/CrateStandCinematicController.luau",
+    "src/client/CrateOpening/RewardGallery.luau",
+    "src/server/Services/Crates/CrateBatchEngine.luau",
+    "src/server/Services/Crates/CrateEngine.luau",
+    "src/server/Services/Crates/StandOpeningService.luau",
+    "src/shared/SlapCrates/OpeningConfig.luau",
+    "src/shared/SlapCrates/OpeningTimeline.luau"
+  ],
+  "OtherOriginalFilesUnchanged": 170,
+  "BuiltResourcesMatched": true,
+  "SafeScriptsOnly": true,
+  "Gameplay": "NOT RUN",
+  "ProductionCommerce": "BLOCKED"
+}

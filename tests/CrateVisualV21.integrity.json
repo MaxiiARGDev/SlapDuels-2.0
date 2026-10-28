@@ -1,0 +1,56 @@
+{
+  "Sources": [
+    {
+      "File": "src/client/CrateOpening/VisualProfile.luau",
+      "Path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "CrateOpening",
+        "VisualProfile"
+      ],
+      "Before": null,
+      "After": "d12b97e57e0a6176b5780b1b4448c2c798bd131b8181d565451835e39bfdd8ba"
+    },
+    {
+      "File": "src/client/CrateOpening/RewardOverlayPresenter.luau",
+      "Path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "CrateOpening",
+        "RewardOverlayPresenter"
+      ],
+      "Before": null,
+      "After": "74abbb934b5c91e9b9104b28c98ddadddd169f109c034fd30d48ecabf15978f1"
+    },
+    {
+      "File": "src/client/Controllers/CrateStandCinematicController.luau",
+      "Path": [
+        "StarterPlayer",
+        "StarterPlayerScripts",
+        "Controllers",
+        "CrateStandCinematicController"
+      ],
+      "Before": "2362c678c6a52826544a4b3dbeeaa87b3a80045bb6833a3d07c43df27b8f54b9",
+      "After": "34865ba53d216cbb1fbca22787b07476e97b1174542d461cb21a3054a285ba7f"
+    },
+    {
+      "File": "src/server/Services/Crates/StandOpeningService.luau",
+      "Path": [
+        "ServerScriptService",
+        "Services",
+        "Crates",
+        "StandOpeningService"
+      ],
+      "Before": "c450625462cff6a28a8ab379670baf08f2b951b782e88fbd11b46e716d3d3d5c",
+      "After": "0685dbb99d00804b7ea00115ee8ac2ba56a4907c50cfdbba3b1128c744709e3f"
+    }
+  ],
+  "ChangedOriginalSources": [
+    "src/client/Controllers/CrateStandCinematicController.luau",
+    "src/server/Services/Crates/StandOpeningService.luau"
+  ],
+  "UnchangedOriginalFiles": 153,
+  "ExternalBackup": "H:\\repos-github\\_backups\\SlapDuels-2.0\\CrateVisualV21_20261019_155048",
+  "ExternalFilesVerified": 5,
+  "SnapshotHashesVerified": 3
+}

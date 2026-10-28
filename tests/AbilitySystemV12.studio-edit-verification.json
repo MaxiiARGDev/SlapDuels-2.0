@@ -1,0 +1,440 @@
+{
+  "Date": "2026-10-17",
+  "Preflight": [
+    {
+      "1": {
+        "Status": "Current",
+        "Path": "ServerScriptService/Abilities/AirJumpsAbility",
+        "SHA256": "2ce4543d93165c66ac92638990100c421de1cc0fe2b8a09ea0793459264821f7"
+      },
+      "2": {
+        "Status": "Current",
+        "Path": "ServerScriptService/Abilities/DashAbility",
+        "SHA256": "364146231e7f1da88ee3e5c916689438fe5b133ac215b13ecabdbc41951f1540"
+      },
+      "3": {
+        "Status": "Current",
+        "Path": "ServerScriptService/Abilities/DevilSpeedAbility",
+        "SHA256": "206d29e9223ac7467f4e2e01675533d58ad7f93411ee5e56f22a4e621c124965"
+      },
+      "4": {
+        "Status": "Current",
+        "Path": "ServerScriptService/Abilities/InvisibilityAbility",
+        "SHA256": "2a485b68001eecfe6fe7c9ceefb036805c8b3495986f43380a033db25504be5d"
+      },
+      "5": {
+        "Status": "Current",
+        "Path": "ServerScriptService/Abilities/MovementGuard",
+        "SHA256": "772855ec7425f27281a4d959433fcf68dd9d238a2028ba0731d19e805a289409"
+      },
+      "6": {
+        "Status": "Current",
+        "Path": "ServerScriptService/Abilities/StrongSlapAbility",
+        "SHA256": "c5355e1fe1796ed1d4ee11d75924be03ae562c77a41c0934442b31c4809b4ddc"
+      },
+      "7": {
+        "Status": "Current",
+        "Path": "ReplicatedStorage/Shared/AbilityDefinitions",
+        "SHA256": "c043cbbf0c123f4f4462d58a90111c5ce1f6183c327d4a6a5d0971d01071570f"
+      },
+      "8": {
+        "Status": "Current",
+        "Path": "ServerScriptService/Services/AbilityService",
+        "SHA256": "0c9fbb503a8782f8445d618652c5783b02ac7105f9e45e492627d333b75a7838"
+      },
+      "9": {
+        "Status": "Current",
+        "Path": "ServerScriptService/Shop/Providers/AbilityProvider",
+        "SHA256": "f8ff38c69363304e1e618ce826668ae966931216ac47aacc4244c8e184b24d48"
+      },
+      "10": {
+        "Status": "Current",
+        "Path": "StarterPlayer/StarterPlayerScripts/Controllers/AbilityController",
+        "SHA256": "2d850d005c7439ad4a883d01ee1cc4a862790aac0ad85ec2b2cd6b1b160ceb44"
+      },
+      "11": {
+        "Status": "Current",
+        "Path": "StarterPlayer/StarterPlayerScripts/Abilities/AbilitySelection",
+        "SHA256": "e207ab26acfb46c84b867abf3dc67b1a9fe44d1d7f9f5223c2fc4c56f27508cd"
+      },
+      "12": {
+        "Status": "Current",
+        "Path": "StarterPlayer/StarterPlayerScripts/Abilities/AbilityPresentation",
+        "SHA256": "8444a5bfcbcfeeeae37e32ab4152d658f4c3ec85358c1cd8c68aa8230d24218b"
+      },
+      "13": {
+        "Status": "Current",
+        "Path": "ServerScriptService/Services/SlapService",
+        "SHA256": "a724448e3b3066d32086f9376d5bb9d3488821587aa5385266448b979145db80"
+      },
+      "14": {
+        "Status": "Current",
+        "Path": "ServerScriptService/Services/EliminationService",
+        "SHA256": "8ac791f3730358da537f37b383e794b703315b35c69621cf7a47aebdfb649066"
+      },
+      "15": {
+        "Status": "Current",
+        "Path": "ServerScriptService/Bootstrap",
+        "SHA256": "6cb950a7e0457e7f9de5ed707d706de92f724501a568252265586eac76f264f8"
+      },
+      "16": {
+        "Status": "Missing",
+        "Path": "ServerScriptService/Services/AbilityRegistry"
+      },
+      "17": {
+        "Status": "Missing",
+        "Path": "ReplicatedStorage/Shared/AbilityCatalog"
+      },
+      "18": {
+        "Status": "Missing",
+        "Path": "ServerScriptService/Abilities/AbilityManifest"
+      },
+      "19": {
+        "Status": "Missing",
+        "Path": "ServerScriptService/Abilities/AbilityCallbacks"
+      },
+      "20": {
+        "Status": "Missing",
+        "Path": "ServerScriptService/Abilities/AbilityInputAdapter"
+      },
+      "21": {
+        "Status": "Missing",
+        "Path": "ServerScriptService/Abilities/AbilityAssetValidator"
+      },
+      "22": {
+        "Status": "Missing",
+        "Path": "ServerScriptService/Abilities/Templates/AbilityTemplate"
+      },
+      "23": {
+        "Status": "Missing",
+        "Path": "StarterPlayer/StarterPlayerScripts/Abilities/AbilityPresentationProfiles"
+      }
+    }
+  ],
+  "Deployment": [
+    [
+      {
+        "1": {
+          "SHA256": "2ce4543d93165c66ac92638990100c421de1cc0fe2b8a09ea0793459264821f7",
+          "Path": "ServerScriptService.Abilities.AirJumpsAbility",
+          "Action": "Verified"
+        },
+        "2": {
+          "SHA256": "364146231e7f1da88ee3e5c916689438fe5b133ac215b13ecabdbc41951f1540",
+          "Path": "ServerScriptService.Abilities.DashAbility",
+          "Action": "Verified"
+        },
+        "3": {
+          "SHA256": "206d29e9223ac7467f4e2e01675533d58ad7f93411ee5e56f22a4e621c124965",
+          "Path": "ServerScriptService.Abilities.DevilSpeedAbility",
+          "Action": "Verified"
+        },
+        "4": {
+          "SHA256": "2a485b68001eecfe6fe7c9ceefb036805c8b3495986f43380a033db25504be5d",
+          "Path": "ServerScriptService.Abilities.InvisibilityAbility",
+          "Action": "Verified"
+        },
+        "5": {
+          "SHA256": "772855ec7425f27281a4d959433fcf68dd9d238a2028ba0731d19e805a289409",
+          "Path": "ServerScriptService.Abilities.MovementGuard",
+          "Action": "Verified"
+        }
+      }
+    ],
+    [
+      {
+        "1": {
+          "SHA256": "c5355e1fe1796ed1d4ee11d75924be03ae562c77a41c0934442b31c4809b4ddc",
+          "Path": "ServerScriptService.Abilities.StrongSlapAbility",
+          "Action": "Verified"
+        },
+        "2": {
+          "SHA256": "c043cbbf0c123f4f4462d58a90111c5ce1f6183c327d4a6a5d0971d01071570f",
+          "Path": "ReplicatedStorage.Shared.AbilityDefinitions",
+          "Action": "Verified"
+        },
+        "3": {
+          "SHA256": "0c9fbb503a8782f8445d618652c5783b02ac7105f9e45e492627d333b75a7838",
+          "Path": "ServerScriptService.Services.AbilityService",
+          "Action": "Verified"
+        },
+        "4": {
+          "SHA256": "f8ff38c69363304e1e618ce826668ae966931216ac47aacc4244c8e184b24d48",
+          "Path": "ServerScriptService.Shop.Providers.AbilityProvider",
+          "Action": "Verified"
+        },
+        "5": {
+          "SHA256": "2d850d005c7439ad4a883d01ee1cc4a862790aac0ad85ec2b2cd6b1b160ceb44",
+          "Path": "StarterPlayer.StarterPlayerScripts.Controllers.AbilityController",
+          "Action": "Verified"
+        }
+      }
+    ],
+    [
+      {
+        "1": {
+          "SHA256": "e207ab26acfb46c84b867abf3dc67b1a9fe44d1d7f9f5223c2fc4c56f27508cd",
+          "Path": "StarterPlayer.StarterPlayerScripts.Abilities.AbilitySelection",
+          "Action": "Verified"
+        },
+        "2": {
+          "SHA256": "8444a5bfcbcfeeeae37e32ab4152d658f4c3ec85358c1cd8c68aa8230d24218b",
+          "Path": "StarterPlayer.StarterPlayerScripts.Abilities.AbilityPresentation",
+          "Action": "Verified"
+        },
+        "3": {
+          "SHA256": "a724448e3b3066d32086f9376d5bb9d3488821587aa5385266448b979145db80",
+          "Path": "ServerScriptService.Services.SlapService",
+          "Action": "Verified"
+        },
+        "4": {
+          "SHA256": "8ac791f3730358da537f37b383e794b703315b35c69621cf7a47aebdfb649066",
+          "Path": "ServerScriptService.Services.EliminationService",
+          "Action": "Verified"
+        },
+        "5": {
+          "SHA256": "6cb950a7e0457e7f9de5ed707d706de92f724501a568252265586eac76f264f8",
+          "Path": "ServerScriptService.Bootstrap",
+          "Action": "Verified"
+        }
+      }
+    ],
+    [
+      {
+        "1": {
+          "SHA256": "c29d21fb2de6f1bceff5fb0f351ce8c6bccc2eba32c6a3515a6ddf5242d89435",
+          "Path": "ServerScriptService.Services.AbilityRegistry",
+          "Action": "Verified"
+        },
+        "2": {
+          "SHA256": "cefbcda410ec36a7e4e6570c80ee6c3dfc83a1d92294b47a40f890ab7a1ed65b",
+          "Path": "ReplicatedStorage.Shared.AbilityCatalog",
+          "Action": "Verified"
+        },
+        "3": {
+          "SHA256": "3941dcea3a48f3096c51c6b18877fe575cd71e45339f0bafc263e14bd3683fc4",
+          "Path": "ServerScriptService.Abilities.AbilityManifest",
+          "Action": "Verified"
+        },
+        "4": {
+          "SHA256": "024768249e29c092e496c3513e39183798d29980b5343926f25291fb823fb93e",
+          "Path": "ServerScriptService.Abilities.AbilityCallbacks",
+          "Action": "Verified"
+        },
+        "5": {
+          "SHA256": "3b0bee42a4f122e1e754214e79a7c0b00c0b752cb6950a753b8dc3c6283fab30",
+          "Path": "ServerScriptService.Abilities.AbilityInputAdapter",
+          "Action": "Verified"
+        }
+      }
+    ],
+    [
+      {
+        "1": {
+          "SHA256": "9b5243255abb78e9de7bf432f202ca0dd58ec29ea3a07ea829049002259cd795",
+          "Path": "ServerScriptService.Abilities.AbilityAssetValidator",
+          "Action": "Verified"
+        },
+        "2": {
+          "SHA256": "3a4cf56cbaeecac431c1c9c42f577878134230b67fcee40f5770f7596c96930a",
+          "Path": "ServerScriptService.Abilities.Templates.AbilityTemplate",
+          "Action": "Updated"
+        },
+        "3": {
+          "SHA256": "b6d98088d2f78b3d0acde2e431e5e4f34a977a6b5d0a53d46c51f4d4730b2dd7",
+          "Path": "StarterPlayer.StarterPlayerScripts.Abilities.AbilityPresentationProfiles",
+          "Action": "Created"
+        }
+      }
+    ]
+  ],
+  "FinalUpdates": [
+    {
+      "1": {
+        "SHA256": "f47a1821253b394bb4f5ef8464d20ff925e55e7a138b14649adc7154ce5b4bec",
+        "Path": "ServerScriptService/Services/AbilityService"
+      },
+      "2": {
+        "SHA256": "ed336c74e166e0c70701bdf5203a3a734bdba1119c304191913fa7deec8d0fe8",
+        "Path": "ServerScriptService/Bootstrap"
+      }
+    }
+  ],
+  "EditContractValidation": [
+    {
+      "IsRunning": false,
+      "Abilities": {
+        "1": {
+          "Profile": "AttachmentEffect",
+          "PriceApproved": false,
+          "Id": "Dash",
+          "Duration": 0.2,
+          "Cooldown": 11,
+          "PurchaseEnabled": false
+        },
+        "2": {
+          "Profile": "AttachmentEffect",
+          "PriceApproved": false,
+          "Id": "StrongSlap",
+          "Duration": 15,
+          "Cooldown": 25,
+          "PurchaseEnabled": false
+        },
+        "3": {
+          "Profile": "AttachmentEffect",
+          "PriceApproved": false,
+          "Id": "AirJumps",
+          "Duration": 15,
+          "Cooldown": 20,
+          "PurchaseEnabled": false
+        },
+        "4": {
+          "Profile": "AttachmentEffect",
+          "PriceApproved": false,
+          "Id": "DevilSpeed",
+          "Duration": 5,
+          "Cooldown": 14,
+          "PurchaseEnabled": false
+        },
+        "5": {
+          "Profile": "InvisibleAvatar",
+          "PriceApproved": false,
+          "Id": "Invisible",
+          "Duration": 5,
+          "Cooldown": 35,
+          "PurchaseEnabled": false
+        }
+      },
+      "ActiveMatches": 0,
+      "Remotes": {
+        "AbilityState": {
+          "Count": 1,
+          "Class": "RemoteEvent"
+        },
+        "AbilityRequest": {
+          "Count": 1,
+          "Class": "RemoteEvent"
+        }
+      },
+      "AbilityButton": {
+        "Size": "{0, 148}, {0, 120}",
+        "Position": "{1, -28}, {1, -175}"
+      },
+      "ChangeAbilityButton": {
+        "Size": "{0, 148}, {0, 36}",
+        "Position": "{1, -28}, {1, -303}"
+      },
+      "Count": 5,
+      "Diagnostics": [],
+      "TemporaryInDataModel": false,
+      "Mode": "Edit",
+      "MetadataOnly": true,
+      "TemplateRegistered": false
+    }
+  ],
+  "FinalSourceVerification": [
+    {
+      "PersistenceProvider": "InMemory",
+      "Sources": {
+        "1": {
+          "SHA256": "2ce4543d93165c66ac92638990100c421de1cc0fe2b8a09ea0793459264821f7",
+          "Path": "ServerScriptService/Abilities/AirJumpsAbility"
+        },
+        "2": {
+          "SHA256": "364146231e7f1da88ee3e5c916689438fe5b133ac215b13ecabdbc41951f1540",
+          "Path": "ServerScriptService/Abilities/DashAbility"
+        },
+        "3": {
+          "SHA256": "206d29e9223ac7467f4e2e01675533d58ad7f93411ee5e56f22a4e621c124965",
+          "Path": "ServerScriptService/Abilities/DevilSpeedAbility"
+        },
+        "4": {
+          "SHA256": "2a485b68001eecfe6fe7c9ceefb036805c8b3495986f43380a033db25504be5d",
+          "Path": "ServerScriptService/Abilities/InvisibilityAbility"
+        },
+        "5": {
+          "SHA256": "772855ec7425f27281a4d959433fcf68dd9d238a2028ba0731d19e805a289409",
+          "Path": "ServerScriptService/Abilities/MovementGuard"
+        },
+        "6": {
+          "SHA256": "c5355e1fe1796ed1d4ee11d75924be03ae562c77a41c0934442b31c4809b4ddc",
+          "Path": "ServerScriptService/Abilities/StrongSlapAbility"
+        },
+        "7": {
+          "SHA256": "c043cbbf0c123f4f4462d58a90111c5ce1f6183c327d4a6a5d0971d01071570f",
+          "Path": "ReplicatedStorage/Shared/AbilityDefinitions"
+        },
+        "8": {
+          "SHA256": "f47a1821253b394bb4f5ef8464d20ff925e55e7a138b14649adc7154ce5b4bec",
+          "Path": "ServerScriptService/Services/AbilityService"
+        },
+        "9": {
+          "SHA256": "f8ff38c69363304e1e618ce826668ae966931216ac47aacc4244c8e184b24d48",
+          "Path": "ServerScriptService/Shop/Providers/AbilityProvider"
+        },
+        "10": {
+          "SHA256": "2d850d005c7439ad4a883d01ee1cc4a862790aac0ad85ec2b2cd6b1b160ceb44",
+          "Path": "StarterPlayer/StarterPlayerScripts/Controllers/AbilityController"
+        },
+        "11": {
+          "SHA256": "e207ab26acfb46c84b867abf3dc67b1a9fe44d1d7f9f5223c2fc4c56f27508cd",
+          "Path": "StarterPlayer/StarterPlayerScripts/Abilities/AbilitySelection"
+        },
+        "12": {
+          "SHA256": "8444a5bfcbcfeeeae37e32ab4152d658f4c3ec85358c1cd8c68aa8230d24218b",
+          "Path": "StarterPlayer/StarterPlayerScripts/Abilities/AbilityPresentation"
+        },
+        "13": {
+          "SHA256": "a724448e3b3066d32086f9376d5bb9d3488821587aa5385266448b979145db80",
+          "Path": "ServerScriptService/Services/SlapService"
+        },
+        "14": {
+          "SHA256": "8ac791f3730358da537f37b383e794b703315b35c69621cf7a47aebdfb649066",
+          "Path": "ServerScriptService/Services/EliminationService"
+        },
+        "15": {
+          "SHA256": "ed336c74e166e0c70701bdf5203a3a734bdba1119c304191913fa7deec8d0fe8",
+          "Path": "ServerScriptService/Bootstrap"
+        },
+        "16": {
+          "SHA256": "c29d21fb2de6f1bceff5fb0f351ce8c6bccc2eba32c6a3515a6ddf5242d89435",
+          "Path": "ServerScriptService/Services/AbilityRegistry"
+        },
+        "17": {
+          "SHA256": "cefbcda410ec36a7e4e6570c80ee6c3dfc83a1d92294b47a40f890ab7a1ed65b",
+          "Path": "ReplicatedStorage/Shared/AbilityCatalog"
+        },
+        "18": {
+          "SHA256": "3941dcea3a48f3096c51c6b18877fe575cd71e45339f0bafc263e14bd3683fc4",
+          "Path": "ServerScriptService/Abilities/AbilityManifest"
+        },
+        "19": {
+          "SHA256": "024768249e29c092e496c3513e39183798d29980b5343926f25291fb823fb93e",
+          "Path": "ServerScriptService/Abilities/AbilityCallbacks"
+        },
+        "20": {
+          "SHA256": "3b0bee42a4f122e1e754214e79a7c0b00c0b752cb6950a753b8dc3c6283fab30",
+          "Path": "ServerScriptService/Abilities/AbilityInputAdapter"
+        },
+        "21": {
+          "SHA256": "9b5243255abb78e9de7bf432f202ca0dd58ec29ea3a07ea829049002259cd795",
+          "Path": "ServerScriptService/Abilities/AbilityAssetValidator"
+        },
+        "22": {
+          "SHA256": "3a4cf56cbaeecac431c1c9c42f577878134230b67fcee40f5770f7596c96930a",
+          "Path": "ServerScriptService/Abilities/Templates/AbilityTemplate"
+        },
+        "23": {
+          "SHA256": "b6d98088d2f78b3d0acde2e431e5e4f34a977a6b5d0a53d46c51f4d4730b2dd7",
+          "Path": "StarterPlayer/StarterPlayerScripts/Abilities/AbilityPresentationProfiles"
+        }
+      },
+      "PersistenceEnvironment": "Studio",
+      "IsRunning": false,
+      "WritesToCloud": false,
+      "Mode": "Edit",
+      "ActiveMatches": 0,
+      "Matched": 23
+    }
+  ]
+}

@@ -4,11 +4,16 @@
 -- Servidor autoritativo. Integrado con PlayerDataService para persistencia segura vía DataStoreService.
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local WinStreak = require(script.Parent.Gameplay.WinStreak)
+local Progression = require(game.ReplicatedStorage.Shared.Progression.Model)
 local Players = game:GetService("Players")
 
 local PointEffectDefinitions = require(ReplicatedStorage.Shared.PointEffectDefinitions)
 local Config = require(ReplicatedStorage.Shared.Config)
 local Types = require(ReplicatedStorage.Shared.Types)
+local ProfilePurchase = require(script.Parent.Parent.Shop.ProfilePurchase)
+local Constants = require(ReplicatedStorage.Shared.Constants)
+local DeathSettings = require(ReplicatedStorage.Shared.DeathFeedbackConfig).DeathEffects
 
 type PlayerData = Types.PlayerData
 
@@ -21,10 +26,13 @@ PlayerService._connections = {} :: { RBXScriptConnection }
 PlayerService._data = {} :: { [any]: PlayerData }
 PlayerService._coins = {} :: { [any]: number } -- Retrocompatibilidad
 PlayerService._kills = {} :: { [any]: number }
+PlayerService._coinTransactions = {} :: { [any]: { [string]: boolean } }
 PlayerService._ownedPointEffects = {} :: { [any]: { [string]: boolean } }
 PlayerService._equippedPointEffects = {} :: { [any]: string }
 PlayerService._dataUpdatedRemote = nil :: RemoteEvent?
 PlayerService._playerDataService = nil :: any
+PlayerService._shopClosing = {} :: { [any]: boolean }
+PlayerService._shopShutdown = false
 
 -- Utilidad para garantizar la existencia de RemoteEvents
 local function ensureRemote(parent: Instance, name: string): RemoteEvent
@@ -52,10 +60,13 @@ end
 function PlayerService:Init(context)
 	self._context = context
 	self._registered = {}
+	self._shopClosing = {}
+	self._shopShutdown = false
 	self._connections = {}
 	self._data = {}
 	self._coins = {}
 	self._kills = {}
+	self._coinTransactions = {}
 	self._ownedPointEffects = {}
 	self._equippedPointEffects = {}
 
@@ -73,13 +84,85 @@ function PlayerService:_getDataUpdatedRemote(): RemoteEvent?
 	return remote
 end
 
--- Envía actualización autoritativa de datos al cliente correspondiente
-function PlayerService:_sendDataUpdate(player: any)
-	local remote = self:_getDataUpdatedRemote()
-	if not remote then return end
+-- Sincroniza las estadísticas del jugador con el folder nativo leaderstats de Roblox
+function PlayerService:_syncLeaderstats(player: any, data: PlayerData)
+	if typeof(player) ~= "Instance" or not player:IsA("Player") then
+		return
+	end
+
+	local leaderstats = player:FindFirstChild("leaderstats")
+	if not leaderstats then
+		local folder = Instance.new("Folder")
+		folder.Name = "leaderstats"
+
+		local coinsVal = Instance.new("IntValue")
+		coinsVal.Name = "Coins"
+		coinsVal.Value = data.Coins
+		coinsVal.Parent = folder
+
+		local winsVal = Instance.new("IntValue")
+		winsVal.Name = "Wins"
+		winsVal.Value = data.Wins
+		winsVal.Parent = folder
+
+		local killsVal = Instance.new("IntValue")
+		killsVal.Name = "Kills"
+		killsVal.Value = data.Kills or 0
+		killsVal.Parent = folder
+
+		folder.Parent = player
+	else
+		local coinsVal = leaderstats:FindFirstChild("Coins") :: IntValue?
+		if not coinsVal then
+			coinsVal = Instance.new("IntValue")
+			coinsVal.Name = "Coins"
+			coinsVal.Value = data.Coins
+			coinsVal.Parent = leaderstats
+		else
+			coinsVal.Value = data.Coins
+		end
+
+		local winsVal = leaderstats:FindFirstChild("Wins") :: IntValue?
+		if not winsVal then
+			winsVal = Instance.new("IntValue")
+			winsVal.Name = "Wins"
+			winsVal.Value = data.Wins
+			winsVal.Parent = leaderstats
+		else
+			winsVal.Value = data.Wins
+		end
+
+		local killsVal = leaderstats:FindFirstChild("Kills") :: IntValue?
+		if not killsVal then
+			killsVal = Instance.new("IntValue")
+			killsVal.Name = "Kills"
+			killsVal.Value = data.Kills or 0
+			killsVal.Parent = leaderstats
+		else
+			killsVal.Value = data.Kills or 0
+		end
+	end
+end
+
+-- Envía actualización autoritativa de datos al cliente correspondiente y sincroniza leaderstats
+function PlayerService:_sendDataUpdate(player: any, rewardReceipt: any?)
+	local backSlap = self._context and self._context:GetService("BackSlapService")
+	if backSlap then
+		local ok, failure = pcall(backSlap.Refresh, backSlap, player)
+		if not ok then warn("[PlayerService] Back Slap cosmetic refresh failed: " .. tostring(failure)) end
+	end
 	if typeof(player) == "Instance" and player:IsA("Player") then
 		local data = self:GetPlayerData(player)
-		remote:FireClient(player, data)
+		local progress = Progression.Normalize(data.Progression)
+		local level = Progression.Level(progress.TotalXP)
+		player:SetAttribute("Level", level)
+		player:SetAttribute("TotalXP", progress.TotalXP)
+		self:_syncLeaderstats(player, data)
+
+		local remote = self:_getDataUpdatedRemote()
+		if remote then
+			remote:FireClient(player, data, rewardReceipt)
+		end
 	end
 end
 
@@ -110,12 +193,18 @@ function PlayerService:_register(player: any)
 		Wins = (Config.Economy and Config.Economy.StartingWins) or 0,
 		Losses = (Config.Economy and Config.Economy.StartingLosses) or 0,
 		Kills = (Config.Economy and Config.Economy.StartingKills) or 0,
+		WinStreak = WinStreak.Normalize(nil),
+		Progression = Progression.Normalize(nil),
 		Inventory = {
 			Owned = {
 				["PointEffects"] = { [PointEffectDefinitions.DefaultEffectId] = true },
+				["DeathEffects"] = { [DeathSettings.DefaultKillEffectId] = true },
+				["Abilities"] = { Dash = true },
 			},
 			Equipped = {
 				["PointEffects"] = PointEffectDefinitions.DefaultEffectId,
+				["DeathEffects"] = DeathSettings.DefaultKillEffectId,
+				["Abilities"] = "Dash",
 			},
 		},
 	}
@@ -125,20 +214,27 @@ function PlayerService:_register(player: any)
 		if pds and type(pds.LoadPlayer) == "function" then
 			local ok, record, err = pds:LoadPlayer(player)
 			if ok and record then
+					if not self._registered[player] or player.Parent~=Players then pds:SavePlayer(player,record,true);pds:Cleanup(player);return end
 				initialData.Coins = record.Coins
 				initialData.Wins = record.Wins
 				initialData.Losses = record.Losses
 				initialData.Kills = record.Kills or 0
+				initialData.WinStreak = WinStreak.Normalize(record.WinStreak)
+					initialData.Progression = Progression.Normalize(record.Progression)
 				if record.Inventory then
 					initialData.Inventory = record.Inventory
 				end
+					initialData.Preferences = record.Preferences
 			else
 				warn(string.format("[PlayerService] No se pudo cargar PlayerData de '%s' (err: %s). Usando valores seguros no persistibles.", player.Name, tostring(err)))
+					if pds._persistenceInfo and pds._persistenceInfo.Environment=="Production"then player:Kick("No se pudo cargar tu perfil de forma segura. Reintentá en unos segundos.");return end
 			end
 		end
 	end
 
-	self._data[player] = initialData
+		local crates = self._context and self._context:GetService("CrateService")
+		if crates then initialData.Inventory = crates:ExtendInventory(initialData.Inventory) end
+		self._data[player] = initialData
 	self._coins[player] = initialData.Coins
 	self._kills[player] = initialData.Kills
 	self._ownedPointEffects[player] = initialData.Inventory.Owned["PointEffects"]
@@ -153,11 +249,13 @@ function PlayerService:_register(player: any)
 end
 
 function PlayerService:_unregister(player: any)
+	self._shopClosing[player] = true -- Before the first save/yield; never accept another Shop mutation.
 	if typeof(player) == "Instance" and player:IsA("Player") then
 		local pds = self:_getPlayerDataService()
 		if pds and type(pds.SavePlayer) == "function" then
 			local currentData = self._data[player]
-			pds:SavePlayer(player, currentData)
+				local saved, saveError = pds:SavePlayer(player, currentData, true)
+			if not saved then warn("[PlayerService] Final save failed; no durability guarantee: " .. tostring(saveError)) end
 			if type(pds.Cleanup) == "function" then
 				pds:Cleanup(player)
 			end
@@ -166,8 +264,10 @@ function PlayerService:_unregister(player: any)
 
 	self._registered[player] = nil
 	self._data[player] = nil
+	self._shopClosing[player] = nil
 	self._coins[player] = nil
 	self._kills[player] = nil
+	self._coinTransactions[player] = nil
 	self._ownedPointEffects[player] = nil
 	self._equippedPointEffects[player] = nil
 
@@ -179,12 +279,21 @@ end
 -- INTERFAZ AUTORITATIVA DE ECONOMÍA Y ESTADÍSTICAS
 -- ==================================================
 
-function PlayerService:AddCoins(player: any, amount: number, reason: string): number
-	if not player or amount <= 0 then
-		return self:GetCoins(player)
+function PlayerService:AddCoins(player: any, amount: number, reason: string, transactionId: string?): (number, number)
+	if not player or amount ~= amount or amount <= 0 or amount == math.huge then
+		return self:GetCoins(player), 0
 	end
 
 	local data = self._data[player]
+	if transactionId then
+		-- Transactional awards never reload/recreate a disconnected or missing profile.
+		if transactionId == "" or not data then return self:GetCoins(player), 0 end
+		local transactions = self._coinTransactions[player]
+		if not transactions then transactions = {}; self._coinTransactions[player] = transactions end
+		if transactions[transactionId] then return self:GetCoins(player), 0 end
+		-- No yields between reserving the key and committing the in-memory balance.
+		transactions[transactionId] = true
+	end
 	if not data then
 		self:_register(player)
 		data = self._data[player]
@@ -198,8 +307,48 @@ function PlayerService:AddCoins(player: any, amount: number, reason: string): nu
 	print(string.format("[PlayerService] +%d Coins otorgados a '%s' (Razón: %s). Saldo: %d",
 		amount, pName, reason or "Unspecified", newBalance))
 
-	self:_sendDataUpdate(player)
-	return newBalance
+	if transactionId then
+		-- Failure to notify cannot roll back a committed award or allow a second credit.
+		local receipt = if reason == "MatchPoint" and string.sub(transactionId, 1, 5) == "Goal:" then {
+			Kind = "CreditedGoal", RecipientUserId = player.UserId,
+			SessionId = player:GetAttribute("MatchId"), EventId = transactionId, RewardCoins = amount,
+		} else nil
+		local ok, failure = pcall(self._sendDataUpdate, self, player, receipt)
+		if not ok then warn("[PlayerService] Committed Coins; data notification failed: " .. tostring(failure)) end
+	else
+		self:_sendDataUpdate(player)
+	end
+	return newBalance, amount
+end
+
+-- Called only by the elimination authority after its final credited-kill decision.
+-- Separate from AddKill so generic stat corrections never create money.
+function PlayerService:AwardConfirmedKill(player: Player, victim: Player, sessionId: string, eliminationId: string): (number, number)
+	if not player or not victim or player == victim or player.Parent ~= Players or victim.Parent ~= Players then
+		return 0, self:GetCoins(player)
+	end
+	local rounds = self._context and self._context:GetService("RoundService")
+	local session = rounds and rounds:GetSessionById(sessionId)
+	if not session or not rounds:IsSessionActive(sessionId) or session.GameplayFrozen
+		or session.Closing or session.Cancelled or session.Closed
+		or (session.State ~= Constants.RoundState.Playing and session.State ~= Constants.RoundState.PointRestartCountdown) then
+		return 0, self:GetCoins(player)
+	end
+	local attacker = rounds:GetSessionParticipant(sessionId, player)
+	local target = rounds:GetSessionParticipant(sessionId, victim)
+	local prefix = sessionId .. "_" .. tostring(victim.UserId) .. "_"
+	if not attacker or not target or attacker.Team == target.Team
+		or player:GetAttribute("MatchId") ~= sessionId or victim:GetAttribute("MatchId") ~= sessionId
+		or type(eliminationId) ~= "string" or string.sub(eliminationId, 1, #prefix) ~= prefix then
+		return 0, self:GetCoins(player)
+	end
+	local amount = Config.Economy.KillRewardCoins
+	if type(amount) ~= "number" or amount ~= amount or amount < 0 or amount % 1 ~= 0 or amount == math.huge then
+		warn("[PlayerService] Invalid Economy.KillRewardCoins")
+		return 0, self:GetCoins(player)
+	end
+	local balance, credited = self:AddCoins(player, amount, "SlapElimination", "Kill:" .. eliminationId)
+	return credited, balance
 end
 
 function PlayerService:GetCoins(player: any): number
@@ -233,6 +382,17 @@ function PlayerService:DeductCoins(player: any, amount: number, reason: string?)
 
 	self:_sendDataUpdate(player)
 	return true, newBalance
+end
+
+function PlayerService:RecordStreakResult(player: any, matchId: string, outcome: string): boolean
+ local data=self._data[player]
+ if not data then return false end
+ local applied=WinStreak.Apply(data,matchId,outcome)
+ if applied then
+  local ok,why=pcall(self._sendDataUpdate,self,player)
+  if not ok then warn('[PlayerService] Streak notification failed: '..tostring(why))end
+ end
+ return applied
 end
 
 function PlayerService:AddWin(player: any, reason: string?): number
@@ -281,11 +441,12 @@ function PlayerService:GetLosses(player: any): number
 	return (data and data.Losses) or 0
 end
 
-function PlayerService:AddKill(player: any, amount: number?, reason: string?): number
-	if not player then return 0 end
+-- Stats-only API. Kill money requires AwardConfirmedKill and its elimination transaction key.
+function PlayerService:AddKill(player: any, amount: number?, reason: string?): (number, number)
+	if not player then return 0, 0 end
 	local addAmt = amount or 1
 	if addAmt <= 0 then
-		return self:GetKills(player)
+		return self:GetKills(player), 0
 	end
 
 	local data = self._data[player]
@@ -301,8 +462,9 @@ function PlayerService:AddKill(player: any, amount: number?, reason: string?): n
 	print(string.format("[PlayerService] +%d Kill(s) registrado a '%s' (Razón: %s). Total Kills: %d",
 		addAmt, pName, reason or "Elimination", data.Kills))
 
-	self:_sendDataUpdate(player)
-	return data.Kills
+	local ok, failure = pcall(self._sendDataUpdate, self, player)
+	if not ok then warn("[PlayerService] Kill registered; data notification failed: " .. tostring(failure)) end
+	return data.Kills, 0
 end
 
 function PlayerService:GetKills(player: any): number
@@ -318,6 +480,9 @@ function PlayerService:GetPlayerData(player: any): PlayerData
 			Wins = data.Wins,
 			Losses = data.Losses,
 			Kills = data.Kills or 0,
+			WinStreak = WinStreak.Normalize(data.WinStreak),
+			Progression = Progression.Normalize(data.Progression),
+				Preferences = data.Preferences,
 			Inventory = data.Inventory,
 		}
 	end
@@ -329,9 +494,11 @@ function PlayerService:GetPlayerData(player: any): PlayerData
 		Inventory = {
 			Owned = {
 				["PointEffects"] = { [PointEffectDefinitions.DefaultEffectId] = true },
+				["DeathEffects"] = { [DeathSettings.DefaultKillEffectId] = true },
 			},
 			Equipped = {
 				["PointEffects"] = PointEffectDefinitions.DefaultEffectId,
+				["DeathEffects"] = DeathSettings.DefaultKillEffectId,
 			},
 		},
 	}
@@ -342,6 +509,68 @@ end
 -- ==================================================
 
 -- Obtiene el inventario completo del jugador
+function PlayerService:IsShopDataReady(player: any): boolean
+	if self._shopShutdown or self._shopClosing[player] then return false end
+	if typeof(player) ~= "Instance" or not player:IsA("Player") or player.Parent ~= Players or not self._data[player] then return false end
+	local pds = self:_getPlayerDataService()
+		if pds and pds._sessions and not pds._sessions:Owns(player)then return false end
+	return pds ~= nil and pds:GetLoadState(player) == "Loaded"
+end
+
+-- Stops Shop mutations before shutdown snapshots. Does not change reward rules.
+function PlayerService:BeginShopShutdown()
+ self._shopShutdown = true
+end
+
+function PlayerService:CommitShopPurchase(player: any, product: any): (boolean, string?)
+ if not self:IsShopDataReady(player) then return false,"DataNotLoaded" end
+ local current = self._data[player]
+ local nextData, reason = ProfilePurchase.Stage(current, product)
+ if not nextData then return false,reason end
+ -- Stage is pure/non-yielding; recheck identity/readiness immediately before commit.
+ if self._data[player] ~= current or not self:IsShopDataReady(player) then return false,"DataNotLoaded" end
+ self._data[player] = nextData
+ self._coins[player] = nextData.Coins
+ self._ownedPointEffects[player] = nextData.Inventory.Owned.PointEffects
+ -- A notification failure never undoes payment/ownership or reports a failed commit.
+ self:NotifyShopUpdate(player)
+ return self:FlushPersistentProfile(player)
+end
+
+function PlayerService:FlushPersistentProfile(player: any): (boolean, string?)
+ local pds=self:_getPlayerDataService()
+ if not pds or not pds._sessions then return true end
+ local ok,why=pds:SavePlayer(player,self._data[player])
+ if not ok then warn("[PlayerData] Critical checkpoint pending: "..tostring(why));return false,"PersistencePending"end
+ return true
+end
+function PlayerService:NotifyShopUpdate(player: any)
+ local ok, err = pcall(function() self:_sendDataUpdate(player) end)
+ if not ok then warn("[PlayerService] Shop committed; snapshot delivery failed: " .. tostring(err)) end
+end
+
+-- One non-yielding runtime assignment followed by the fenced production checkpoint.
+-- Grant + claim marker share one profile key; an uncertain write remains pending, never rolled back.
+function PlayerService:CommitProgression(player: any, expected: any, nextData: any): boolean
+ if not self:IsShopDataReady(player) or self._data[player] ~= expected then return false end
+ self._data[player] = nextData
+ self._coins[player] = nextData.Coins
+ self._ownedPointEffects[player] = nextData.Inventory.Owned.PointEffects
+ self:NotifyShopUpdate(player)
+ return self:FlushPersistentProfile(player)
+end
+
+function PlayerService:CommitCrateState(player: any, expectedInventory: any, nextData: any): (boolean, string?)
+ if not self:IsShopDataReady(player) then return false,"DataNotLoaded" end
+ local current=self._data[player]
+ if current.Inventory~=expectedInventory then return false,"ProfileChanged" end
+ self._data[player]=nextData
+ self._coins[player]=nextData.Coins
+ self._ownedPointEffects[player]=nextData.Inventory.Owned.PointEffects
+ self:NotifyShopUpdate(player)
+ return self:FlushPersistentProfile(player)
+end
+
 function PlayerService:GetInventory(player: any): Types.PlayerInventory?
 	local data = self._data[player]
 	if not data then return nil end
@@ -358,6 +587,9 @@ function PlayerService:HasItem(player: any, category: string, productId: string)
 	if category == "PointEffects" and productId == PointEffectDefinitions.DefaultEffectId then
 		return true
 	end
+	-- Initial entitlement, never a purchase/grant event or Coins transaction.
+	if category == "DeathEffects" and productId == DeathSettings.DefaultKillEffectId then return true end
+	if category == "Abilities" and productId == "Dash" then return true end
 
 	local data = self._data[player]
 	if not data or not data.Inventory or not data.Inventory.Owned then
@@ -415,6 +647,11 @@ function PlayerService:GetEquippedItem(player: any, category: string): string?
 	if not player or type(category) ~= "string" then
 		return nil
 	end
+	if category == "DeathEffects" then
+		local shop = self._context and self._context:GetService("ShopService")
+		local provider = shop and shop:GetProvider(category)
+		return if provider then provider:GetEquippedEffectId(player) else DeathSettings.DefaultKillEffectId
+	end
 
 	local data = self._data[player]
 	if not data or not data.Inventory or not data.Inventory.Equipped then
@@ -427,7 +664,10 @@ function PlayerService:GetEquippedItem(player: any, category: string): string?
 	local equipped = data.Inventory.Equipped[category]
 
 	if category == "PointEffects" then
-		if not equipped or not PointEffectDefinitions.IsValid(equipped) or not self:HasItem(player, category, equipped) then
+		local models = game:GetService("ServerStorage"):FindFirstChild("PointEffects")
+		local model = equipped and models and models:FindFirstChild(equipped)
+		if not equipped or not PointEffectDefinitions.IsValid(equipped) or not self:HasItem(player, category, equipped)
+			or not model or not model:IsA("Model") then
 			return PointEffectDefinitions.DefaultEffectId
 		end
 		return equipped
@@ -442,11 +682,27 @@ end
 
 -- Equipa un ítem en una categoría (valida propiedad y disponibilidad)
 function PlayerService:SetEquippedItem(player: any, category: string, productId: string?): (boolean, string?)
+	if not self:IsShopDataReady(player) then return false, "DataNotLoaded" end
 	if not player then
 		return false, "PlayerNotFound"
 	end
 	if type(category) ~= "string" or category == "" then
 		return false, "InvalidCategory"
+	end
+	if category == "DeathEffects" then
+		if not self:IsShopDataReady(player) then return false, "DataNotLoaded" end
+		local shop = self._context and self._context:GetService("ShopService")
+		local provider = shop and shop:GetProvider(category)
+		local actualId = if productId and productId ~= "" then productId else DeathSettings.DefaultKillEffectId
+		local product = provider and provider:GetProduct(actualId)
+		if not product then return false, "ProductNotFound" end
+		if not provider:GetResource(actualId) then return false, "ProductUnavailable" end
+	end
+	if category == "PointEffects" and productId and productId ~= "" then
+		if not PointEffectDefinitions.IsValid(productId) then return false, "ProductNotFound" end
+		local models = game:GetService("ServerStorage"):FindFirstChild("PointEffects")
+		local model = models and models:FindFirstChild(productId)
+		if not model or not model:IsA("Model") then return false, "ProductUnavailable" end
 	end
 
 	local data = self._data[player]
@@ -480,12 +736,13 @@ function PlayerService:SetEquippedItem(player: any, category: string, productId:
 	local pName = if type(player) == "table" and player.Name then player.Name elseif typeof(player) == "Instance" then player.Name else tostring(player)
 	print(string.format("[PlayerService] Jugador '%s' equipó ítem: [%s] '%s'", pName, category, productId))
 
-	self:_sendDataUpdate(player)
+	self:NotifyShopUpdate(player)
 	return true, nil
 end
 
 -- Desequipa el ítem de una categoría (restituye default seguro si aplica)
 function PlayerService:UnequipItem(player: any, category: string): (boolean, string?)
+	if not self:IsShopDataReady(player) then return false, "DataNotLoaded" end
 	if not player then
 		return false, "PlayerNotFound"
 	end
@@ -504,6 +761,8 @@ function PlayerService:UnequipItem(player: any, category: string): (boolean, str
 	if category == "PointEffects" then
 		data.Inventory.Equipped["PointEffects"] = PointEffectDefinitions.DefaultEffectId
 		self._equippedPointEffects[player] = PointEffectDefinitions.DefaultEffectId
+	elseif category == "DeathEffects" then
+		return self:SetEquippedItem(player, category, DeathSettings.DefaultKillEffectId)
 	else
 		data.Inventory.Equipped[category] = nil
 	end
@@ -511,7 +770,7 @@ function PlayerService:UnequipItem(player: any, category: string): (boolean, str
 	local pName = if type(player) == "table" and player.Name then player.Name elseif typeof(player) == "Instance" then player.Name else tostring(player)
 	print(string.format("[PlayerService] Jugador '%s' desequipó categoría: [%s]", pName, category))
 
-	self:_sendDataUpdate(player)
+	self:NotifyShopUpdate(player)
 	return true, nil
 end
 
@@ -559,10 +818,27 @@ end
 
 function PlayerService:Start(context)
 	self._context = context
+		local remotes=ReplicatedStorage:FindFirstChild("Remotes")
+		if not remotes then remotes=Instance.new("Folder");remotes.Name="Remotes";remotes.Parent=ReplicatedStorage end
+		local preferences=remotes:FindFirstChild("PlayerPreferences")
+		if not preferences then preferences=Instance.new("RemoteFunction");preferences.Name="PlayerPreferences";preferences.Parent=remotes end
+		assert(preferences:IsA("RemoteFunction"),"PlayerPreferences class conflict")
+		self._preferencesRate={}
+		preferences.OnServerInvoke=function(player,action,args)
+			if not self:IsShopDataReady(player)then return {Ok=false,Reason="DataNotLoaded"}end
+			local now=os.clock();if now-(self._preferencesRate[player]or -math.huge)<.3 then return {Ok=false,Reason="RateLimited"}end;self._preferencesRate[player]=now
+			local data=self._data[player]
+			if action=="Update"then
+				if type(args)~="table"or type(args.MusicEnabled)~="boolean"or type(args.MusicVolume)~="number"or args.MusicVolume~=args.MusicVolume or args.MusicVolume<0 or args.MusicVolume>1 then return {Ok=false,Reason="InvalidPreferences"}end
+				data.Preferences={MusicEnabled=args.MusicEnabled,MusicVolume=args.MusicVolume}
+			elseif action~="Snapshot"then return {Ok=false,Reason="InvalidAction"}end
+			return {Ok=true,Preferences=table.clone(data.Preferences or {MusicEnabled=true,MusicVolume=1})}
+		end
 	table.insert(self._connections, Players.PlayerAdded:Connect(function(player)
 		self:_register(player)
 	end))
 	table.insert(self._connections, Players.PlayerRemoving:Connect(function(player)
+			self._preferencesRate[player]=nil
 		self:_unregister(player)
 	end))
 

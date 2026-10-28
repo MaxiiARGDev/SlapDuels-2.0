@@ -1,0 +1,19 @@
+{
+  "ModifiedOriginal": [
+    "src/shared/Config.luau",
+    "src/server/Services/MatchInstanceService.luau",
+    "src/server/Services/RoundService.luau",
+    "src/server/Services/SpawnService.luau"
+  ],
+  "OtherOriginalFilesUnchanged": 211,
+  "CompiledScripts": 162,
+  "NewAssertions": 49,
+  "RegressionAssertions": 523,
+  "StudioGameplay": "NOT RUN",
+  "SourceMapByteIdentical": true,
+  "Mode1v1": true,
+  "Mode2v2": true,
+  "Mode3v3": false,
+  "Mode4v4": false,
+  "MaxConcurrentSessions": 1
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"Hash\":\"ec00707fad201aa53925f7b07877b4ea88723065196320941754739c639941ff\",\"Path\":\"ReplicatedStorage.Shared.Config\",\"Edit\":true}"
+      }
+    ],
+    "isError": false
+  },
+  {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"Hash\":\"f12c8cfb16457877645b532c39cfda8df70d92f2ef6c6d35e1fc090957c5edd0\",\"Path\":\"ReplicatedStorage.Shared.SlapCrates.CrateDefinitions\",\"Edit\":true}"
+      }
+    ],
+    "isError": false
+  },
+  {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"Hash\":\"8519e5504f9986c725b525c49ce9dc289c8475ece2b7b690c3e5ac02dd2dc094\",\"Path\":\"ServerScriptService.Services.ScoreService\",\"Edit\":true}"
+      }
+    ],
+    "isError": false
+  },
+  {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"Hash\":\"4a091f3807f62e7ee89a0c57759baccace5e600f62221b701a37468378aad926\",\"Path\":\"ServerScriptService.Services.PlayerService\",\"Edit\":true}"
+      }
+    ],
+    "isError": false
+  },
+  {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"Hash\":\"7296e9fbd184f4d264f5b0579343ea503017ffe0a09ccfd0627a1057ace1155c\",\"Path\":\"StarterPlayer.StarterPlayerScripts.Controllers.KillRewardController\",\"Edit\":true}"
+      }
+    ],
+    "isError": false
+  }
+]

@@ -18,6 +18,7 @@ RagdollService.Name = "RagdollService"
 RagdollService._context = nil :: any
 RagdollService._activeTimers = {} :: { [Model]: thread }
 RagdollService._r6Instances = {} :: { [Model]: { Instance } }
+RagdollService._rootCollisions = setmetatable({}, { __mode = "k" }) :: { [Model]: boolean }
 
 function RagdollService:_getStateEvent(): UnreliableRemoteEvent?
 	local evt = ReplicatedStorage:FindFirstChild("StateEvent")
@@ -40,12 +41,19 @@ end
 -- Pasa el personaje a estado Ragdoll físico y notifica a RagdollStatesHandler
 function RagdollService:ApplyRagdoll(character: Model, duration: number?, launchVelocity: Vector3?): boolean
 	if not character or not character:IsDescendantOf(Workspace) then return false end
+	if character:GetAttribute("ArenaRespawnPending") then return false end
+	local owner = Players:GetPlayerFromCharacter(character)
+	if owner and owner:GetAttribute("ResultsSessionId") ~= nil then return false end
 
 	local humanoid = character:FindFirstChildOfClass("Humanoid")
 	if not humanoid or humanoid.Health <= 0 then return false end
 
 	local rootPart = character:FindFirstChild("HumanoidRootPart") :: BasePart?
 	if not rootPart then return false end
+	-- Release ability movement ownership BEFORE ragdoll takes ownership/velocity.
+	local abilities = self._context and self._context:GetService("AbilityService")
+	if owner and abilities then abilities:CancelPlayer(owner, "Ragdoll") end
+	if self._rootCollisions[character] == nil then self._rootCollisions[character] = rootPart.CanCollide end
 
 	-- Cancelar timer previo si ya estaba en ragdoll
 	local prevTimer = self._activeTimers[character]
@@ -63,7 +71,9 @@ function RagdollService:ApplyRagdoll(character: Model, duration: number?, launch
 	end
 
 	-- Si es R6 clásico (no usa AnimationConstraint sino Motor6D)
-	if not hasAnimationConstraints then
+	-- Repeated hits refresh velocity/timer, not the physical rig. Replacing this
+	-- list leaked the first hit's constraints/colliders beyond ResetRagdollImmediate.
+	if not hasAnimationConstraints and not self._r6Instances[character] then
 		local torso = character:FindFirstChild("Torso") :: BasePart?
 		local rootJoint = rootPart:FindFirstChild("RootJoint") :: Motor6D?
 		if torso and rootJoint then
@@ -89,6 +99,7 @@ function RagdollService:ApplyRagdoll(character: Model, duration: number?, launch
 						collider.CFrame = part1.CFrame
 						collider.Massless = true
 						collider.CanQuery = false
+						collider.CollisionGroup = part1.CollisionGroup
 						collider.CanTouch = false
 						collider.Transparency = 1
 						collider.Name = "Collider"
@@ -153,7 +164,7 @@ function RagdollService:ApplyRagdoll(character: Model, duration: number?, launch
 	local player = Players:GetPlayerFromCharacter(character)
 	local stateEvent = self:_getStateEvent()
 	if player and stateEvent then
-		stateEvent:FireClient(player, false, launchVelocity)
+		stateEvent:FireClient(player, false, launchVelocity, player:GetAttribute("MatchId"), character:GetAttribute("ArenaPhysicsGeneration") or 0, character)
 	else
 		pcall(function()
 			humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp, false)
@@ -164,16 +175,48 @@ function RagdollService:ApplyRagdoll(character: Model, duration: number?, launch
 	-- Programar recuperación automática
 	local ragDuration = duration or (Config.Ragdoll and Config.Ragdoll.DefaultDuration) or 2.0
 	if ragDuration > 0 then
-		self._activeTimers[character] = task.delay(ragDuration, function()
+		local generation = character:GetAttribute("ArenaPhysicsGeneration") or 0
+		local sessionId = player and player:GetAttribute("MatchId")
+		local rounds = self._context and self._context:GetService("RoundService")
+		local session = player and rounds and rounds:GetSessionForPlayer(player)
+		local stateVersion = session and session.StateVersion
+		local deadline=os.clock()+ragDuration
+		character:SetAttribute("RagdollRecoveryDeadline",deadline)
+		local recovery: thread
+		recovery = task.delay(math.max(0,deadline-os.clock()), function()
+			local stale = self._activeTimers[character] ~= recovery or not character:IsDescendantOf(Workspace)
+				or (character:GetAttribute("ArenaPhysicsGeneration") or 0) ~= generation
+				or character:GetAttribute("ArenaRespawnPending") == true
+				or (player ~= nil and (player.Parent ~= Players or player.Character ~= character
+					or player:GetAttribute("MatchId") ~= sessionId or player:GetAttribute("ResultsSessionId") ~= nil))
+				or (session ~= nil and (rounds:GetSessionForPlayer(player) ~= session
+					or session.StateVersion ~= stateVersion or not rounds:IsSessionActive(session.Id)
+					or session.Closing or session.Closed or session.Cancelled or session.GameplayFrozen))
+			if stale then
+				if self._activeTimers[character] == recovery then self._activeTimers[character] = nil end
+				if Config.Respawn.Debug then warn("[RespawnDebug] StaleRagdollRecovery", player and player.UserId, generation, character:GetAttribute("ArenaEliminationId")) end
+				return
+			end
+			self._activeTimers[character] = nil
+			character:SetAttribute("RagdollRecoveryDeadline",nil)
 			self:RemoveRagdoll(character)
 		end)
+		self._activeTimers[character] = recovery
 	end
 
 	return true
 end
 
 -- Restaura el personaje a su estado normal de locomoción notificando a RagdollStatesHandler
+function RagdollService:CancelRecovery(character: Model)
+ local timer=self._activeTimers[character]
+ if timer then pcall(task.cancel,timer);self._activeTimers[character]=nil end
+ character:SetAttribute("RagdollRecoveryDeadline",nil)
+end
+
 function RagdollService:RemoveRagdoll(character: Model): boolean
+	if character then character:SetAttribute("RagdollRecoveryDeadline",nil) end
+	if character and character:GetAttribute("ArenaRespawnPending") then return false end
 	local timer = self._activeTimers[character]
 	if timer then
 		pcall(task.cancel, timer)
@@ -211,7 +254,9 @@ function RagdollService:RemoveRagdoll(character: Model): boolean
 
 	-- 3. Restaurar Humanoid y colisión del RootPart
 	if rootPart then
-		rootPart.CanCollide = true
+		local original = self._rootCollisions[character]
+		if original ~= nil then rootPart.CanCollide = original end
+		self._rootCollisions[character] = nil
 	end
 
 	if humanoid and humanoid.Health > 0 then
@@ -221,7 +266,7 @@ function RagdollService:RemoveRagdoll(character: Model): boolean
 		local player = Players:GetPlayerFromCharacter(character)
 		local stateEvent = self:_getStateEvent()
 		if player and stateEvent then
-			stateEvent:FireClient(player, true)
+			stateEvent:FireClient(player, true, nil, player:GetAttribute("MatchId"), character:GetAttribute("ArenaPhysicsGeneration") or 0, character)
 		else
 			pcall(function()
 				humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp, true)
@@ -235,7 +280,8 @@ end
 
 -- Reseteo forzado e inmediato de ragdoll para reposicionamiento en arena (Zero-Death)
 -- Idempotente, síncrono, cancela timers/callbacks y restaura articulaciones, colisiones y estado físico.
-function RagdollService:ResetRagdollImmediate(character: Model): boolean
+function RagdollService:ResetRagdollImmediate(character: Model, quietRespawn: boolean?): boolean
+	if character then character:SetAttribute("RagdollRecoveryDeadline",nil) end
 	if not character or not character.Parent then return false end
 
 	-- 1. Cancelar cualquier timer pendiente para evitar callbacks diferidos
@@ -275,7 +321,9 @@ function RagdollService:ResetRagdollImmediate(character: Model): boolean
 	-- 4. Anular colapso de RootJoint / TorsoWeld residuales si existieran
 	if rootPart then
 		rootPart.Massless = false
-		rootPart.CanCollide = true
+		local original = self._rootCollisions[character]
+		if original ~= nil then rootPart.CanCollide = original end
+		self._rootCollisions[character] = nil
 		local rootJoint = rootPart:FindFirstChild("RootJoint") :: Motor6D?
 		if rootJoint then
 			rootJoint.Enabled = true
@@ -286,6 +334,32 @@ function RagdollService:ResetRagdollImmediate(character: Model): boolean
 		end
 	end
 
+	-- Quiet Zero-Death recovery runs with the root anchored by ArenaRespawn.
+	-- Reassemble R6 at rest BEFORE teleport/collision restoration; enabling motors
+	-- alone leaves ragdoll limb poses for the next solver step to correct.
+	if quietRespawn and r6Instances and rootPart and rootPart.Anchored then
+		local motors: { Motor6D } = {}
+		for _, joint in ipairs(character:GetDescendants()) do
+			if joint:IsA("Motor6D") and joint.Part0 and joint.Part1 then
+				joint.Transform = CFrame.identity
+				table.insert(motors, joint)
+			end
+		end
+		local positioned: { [BasePart]: boolean } = { [rootPart] = true }
+		for _ = 1, #motors do
+			local progressed = false
+			for _, joint in ipairs(motors) do
+				local a, b = joint.Part0, joint.Part1
+				if a and b and positioned[a] and not positioned[b] then
+					b.CFrame = a.CFrame * joint.C0 * joint.C1:Inverse()
+					positioned[b] = true
+					progressed = true
+				end
+			end
+			if not progressed then break end
+		end
+	end
+
 	-- 5. Restaurar estado de locomoción en Humanoid sin alterar Health
 	if humanoid and humanoid.Health > 0 then
 		humanoid.PlatformStand = false
@@ -293,13 +367,14 @@ function RagdollService:ResetRagdollImmediate(character: Model): boolean
 
 		local player = Players:GetPlayerFromCharacter(character)
 		local stateEvent = self:_getStateEvent()
-		if player and stateEvent then
-			stateEvent:FireClient(player, true)
+		if player and stateEvent and not quietRespawn then
+			stateEvent:FireClient(player, true, nil, player:GetAttribute("MatchId"), character:GetAttribute("ArenaPhysicsGeneration") or 0, character)
 		end
 
 		pcall(function()
 			humanoid:SetStateEnabled(Enum.HumanoidStateType.GettingUp, true)
-			humanoid:ChangeState(Enum.HumanoidStateType.GettingUp)
+			if quietRespawn then humanoid.Jump = false end
+			humanoid:ChangeState(if quietRespawn then Enum.HumanoidStateType.Running else Enum.HumanoidStateType.GettingUp)
 		end)
 	end
 
@@ -348,6 +423,9 @@ end
 -- Aplica un impulso físico de lanzamiento al personaje alejándolo de un punto de origen
 function RagdollService:LaunchCharacter(character: Model, originPos: Vector3, forceMagnitude: number?, upwardRatio: number?)
 	if not character or not character:IsDescendantOf(Workspace) then return end
+	if character:GetAttribute("ArenaRespawnPending") then return end
+	local owner = Players:GetPlayerFromCharacter(character)
+	if owner and owner:GetAttribute("ResultsSessionId") ~= nil then return end
 
 	local rootPart = character:FindFirstChild("HumanoidRootPart") :: BasePart? or character.PrimaryPart
 	if not rootPart then return end
@@ -370,7 +448,7 @@ function RagdollService:LaunchCharacter(character: Model, originPos: Vector3, fo
 	local player = Players:GetPlayerFromCharacter(character)
 	local stateEvent = self:_getStateEvent()
 	if player and stateEvent then
-		stateEvent:FireClient(player, false, launchVel)
+		stateEvent:FireClient(player, false, launchVel, player:GetAttribute("MatchId"), character:GetAttribute("ArenaPhysicsGeneration") or 0, character)
 	end
 end
 
@@ -421,6 +499,7 @@ function RagdollService:Init(context)
 	self._context = context
 	self._activeTimers = {}
 	self._r6Instances = {}
+	self._rootCollisions = setmetatable({}, { __mode = "k" })
 end
 
 function RagdollService:Start(context)

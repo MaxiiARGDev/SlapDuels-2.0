@@ -1,0 +1,6 @@
+[string "PlayerService"]:8: attempt to index nil with 'Model'
+stacktrace:
+[string "PlayerService"]:8
+[string "ShopFixture"]:5 function Load
+[string "ShopFixture"]:46 function New
+C:/Users/RATAAT~1/AppData/Local/Temp/SlapDuels-AbilityUnit-5s1gk5x_/isolated.luau:13513

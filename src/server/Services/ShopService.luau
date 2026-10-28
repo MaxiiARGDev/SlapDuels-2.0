@@ -6,8 +6,8 @@
 -- - Validación autoritativa de productos, disponibilidad y bloqueos transaccionales.
 -- - Enrutamiento de divisas (Coins vs Robux) sin acoplamiento a categorías de productos.
 -- - Preparación de la API de compra (PurchaseProduct), equipamiento (EquipProduct) y desequipamiento (UnequipProduct).
--- Nota: En Fase 2 la infraestructura central queda completamente tipada y validada; la deducción/persistencia de inventario
--- se implementa en la Fase 4 y la integración de MarketplaceService en la Fase 6.
+-- Coins cosmetics commit through PlayerService; success confirms memory only, not durable storage.
+-- Robux remains disabled.
 
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerScriptService = game:GetService("ServerScriptService")
@@ -54,6 +54,20 @@ function ShopService:Init(context: any)
 
 	-- Auto-registrar PointEffectProvider
 	self:_registerDefaultProviders()
+
+	-- Exponer la Remote API del Shop al cliente (delegada en ShopRemotes)
+	local shopFolder = ServerScriptService:FindFirstChild("Shop")
+	local remotesMod = shopFolder and shopFolder:FindFirstChild("ShopRemotes")
+	if remotesMod and remotesMod:IsA("ModuleScript") then
+		local ok, err = pcall(function()
+			require(remotesMod):Init(self)
+		end)
+		if not ok then
+			warn(string.format("[ShopService] No se pudo inicializar ShopRemotes: %s", tostring(err)))
+		end
+	else
+		warn("[ShopService] ShopRemotes no encontrado; la tienda no estará disponible para el cliente")
+	end
 end
 
 function ShopService:_registerDefaultProviders()
@@ -77,6 +91,13 @@ function ShopService:_registerDefaultProviders()
 		if ok and pep and not self:GetProvider("PointEffects") then
 			self:RegisterProvider(pep)
 		end
+	end
+	if not self:GetProvider("DeathEffects") then
+		local provider = require(script.Parent.Parent.Shop.Providers.DeathEffectProvider)
+		self:RegisterProvider(provider)
+	end
+	if not self:GetProvider("Abilities") then
+		self:RegisterProvider(require(script.Parent.Parent.Shop.Providers.AbilityProvider))
 	end
 end
 
@@ -181,10 +202,10 @@ function ShopService:GetCatalog(category: string?): { ProductDefinition }
 end
 
 -- Obtiene un producto por su Id
-function ShopService:GetProduct(productId: string): ProductDefinition?
+function ShopService:GetProduct(productId: string, category: string?): ProductDefinition?
 	local registry = self:GetRegistry()
 	if not registry then return nil end
-	return registry:GetProduct(productId)
+	return registry:GetProduct(productId, category)
 end
 
 -- Obtiene un producto por su RobloxProductId
@@ -216,92 +237,50 @@ end
 
 -- Solicita la compra autoritativa de un producto.
 -- Valida existencia, disponibilidad, locks transaccionales y enruta según Currency.
-function ShopService:PurchaseProduct(player: any, productId: string): (boolean, string?)
-	if not player then
-		return false, "InvalidPlayer"
-	end
-	if type(productId) ~= "string" or productId == "" then
-		return false, "InvalidProductId"
-	end
-
-	-- Verificar si el jugador ya tiene una transacción activa
-	if self:IsTransactionInProgress(player) then
-		return false, "TransactionInProgress"
-	end
-
-	local registry = self:GetRegistry()
-	if not registry then
-		return false, "RegistryNotAvailable"
-	end
-
-	local product = registry:GetProduct(productId)
-	if not product then
-		return false, "ProductNotFound"
-	end
-
-	if not product.IsAvailable then
-		return false, "ProductUnavailable"
-	end
-
-	local provider = registry:GetProvider(product.Category)
-	if not provider then
-		return false, "ProviderNotFound"
-	end
-
-	-- Validación de dominio por el ProductProvider (ej: ya poseído, nivel insuficiente, etc.)
-	local canPurchase, canPurchaseErr = provider:CanPurchase(player, product)
-	if not canPurchase then
-		return false, canPurchaseErr or "CannotPurchase"
-	end
-
-	-- Enrutamiento autoritativo según la divisa del producto
-	if product.Currency == "Coins" then
-		return self:_processCoinsPurchase(player, product, provider)
-	elseif product.Currency == "Robux" then
-		return self:_processRobuxPurchase(player, product, provider)
-	else
-		return false, "UnsupportedCurrency"
-	end
+-- Lock covers validation AND commit. Always released, even if a provider throws/yields.
+function ShopService:_withShopLock(player: any, operation: () -> (boolean, string?)): (boolean, string?)
+ if not player then return false,"InvalidPlayer" end
+ if self:IsTransactionInProgress(player) then return false,"TransactionInProgress" end
+ self:_setTransactionLock(player,true)
+ local ok, success, reason = pcall(operation)
+ self:_setTransactionLock(player,false)
+ if not ok then
+  warn("[ShopService] Shop rejected before commit: " .. tostring(success))
+  return false,"InternalError"
+ end
+ return success == true,reason
 end
 
--- Procesa compras con moneda interna (Coins)
-function ShopService:_processCoinsPurchase(player: any, product: ProductDefinition, provider: ProductProvider): (boolean, string?)
-	local playerService = self:_getPlayerService()
-	if not playerService then
-		return false, "PlayerServiceNotAvailable"
-	end
+function ShopService:PurchaseProduct(player: any, productId: string, category: string?): (boolean, string?)
+ if not player then return false,"InvalidPlayer" end
+ if type(productId) ~= "string" or productId == "" then return false,"InvalidProductId" end
+ return self:_withShopLock(player,function()
+  local ps = self:_getPlayerService()
+  if not ps or not ps:IsShopDataReady(player) then return false,"DataNotLoaded" end
+  local registry = self:GetRegistry()
+  if not registry then return false,"RegistryNotAvailable" end
+  local product = registry:GetProduct(productId,category)
+  if not product then return false,"ProductNotFound" end
+  local provider = registry:GetProvider(product.Category)
+  if not provider then return false,"ProviderNotFound" end
+  if not product.IsAvailable then return false,"ProductUnavailable" end
+  local allowed, reason = provider:CanPurchase(player,product)
+  if not allowed then return false,reason or "CannotPurchase" end
+  -- Re-resolve under the lock after provider validation (a future provider may yield).
+  product = registry:GetProduct(productId,product.Category)
+  if not product or not product.IsAvailable then return false,"ProductUnavailable" end
+  if product.Currency == "Coins" then return self:_processCoinsPurchase(player,product,provider) end
+  if product.Currency == "Robux" then return self:_processRobuxPurchase(player,product,provider) end
+  return false,"UnsupportedCurrency"
+ end)
+end
 
-	-- 1. Verificación autoritativa de fondos vía API pública de PlayerService (sin acceder a tablas privadas)
-	local currentCoins = playerService:GetCoins(player)
-	if currentCoins < product.Price then
-		return false, "InsufficientFunds"
-	end
-
-	-- 2. Lock transaccional in-flight
-	self:_setTransactionLock(player, true)
-
-	-- 3. Deducción atómica de fondos
-	local deductOk, newBalance = playerService:DeductCoins(player, product.Price, "ShopPurchase:" .. product.Id)
-	if not deductOk then
-		self:_setTransactionLock(player, false)
-		return false, "DeductFundsFailed"
-	end
-
-	-- 4. Entrega autoritativa mediante ProductProvider
-	local deliveryOk, deliveryErr = provider:OnPurchased(player, product)
-	if not deliveryOk then
-		-- Rollback atómico de fondos si la entrega falla
-		playerService:AddCoins(player, product.Price, "ShopPurchaseRefund:" .. product.Id)
-		self:_setTransactionLock(player, false)
-		warn(string.format("[ShopService] Entrega de '%s' falló para '%s' (err: %s). Fondos reembolsados.",
-			product.Id, tostring(player), tostring(deliveryErr)))
-		return false, deliveryErr or "DeliveryFailed"
-	end
-
-	self:_setTransactionLock(player, false)
-	print(string.format("[ShopService] Compra exitosa de '%s' por '%s'. Saldo restante: %d",
-		product.Id, tostring(player), newBalance))
-	return true, nil
+function ShopService:_processCoinsPurchase(player: any, product: ProductDefinition, _provider: ProductProvider): (boolean, string?)
+ local ps = self:_getPlayerService()
+ if not ps then return false,"PlayerServiceNotAvailable" end
+ -- No arbitrary delivery callback after debit. One coherent cosmetic profile commit.
+ -- Other product types must supply a future explicit transaction contract.
+ return ps:CommitShopPurchase(player,product)
 end
 
 -- Procesa compras con moneda de plataforma (Robux)
@@ -320,27 +299,30 @@ end
 -- ==================================================
 
 -- Solicita equipar un cosmético
-function ShopService:EquipProduct(player: any, productId: string): (boolean, string?)
+function ShopService:_equipProduct(player: any, productId: string, category: string?): (boolean, string?)
 	if not player then
 		return false, "InvalidPlayer"
 	end
 	if type(productId) ~= "string" or productId == "" then
 		return false, "InvalidProductId"
 	end
+	local ps = self:_getPlayerService()
+	if not ps or not ps:IsShopDataReady(player) then return false, "DataNotLoaded" end
 
 	local registry = self:GetRegistry()
 	if not registry then
 		return false, "RegistryNotAvailable"
 	end
 
-	local product = registry:GetProduct(productId)
+	local product = registry:GetProduct(productId, category)
 	if not product then
 		return false, "ProductNotFound"
 	end
 
-	if product.ProductType ~= "Cosmetic" then
+	if product.ProductType ~= "Cosmetic" and product.ProductType ~= "Ability" then
 		return false, "NotEquippable"
 	end
+	if not product.IsAvailable then return false, "ProductUnavailable" end
 
 	local provider = registry:GetProvider(product.Category)
 	if not provider then
@@ -361,13 +343,15 @@ function ShopService:EquipProduct(player: any, productId: string): (boolean, str
 end
 
 -- Solicita desequipar el cosmético activo de una categoría
-function ShopService:UnequipProduct(player: any, category: string): (boolean, string?)
+function ShopService:_unequipProduct(player: any, category: string): (boolean, string?)
 	if not player then
 		return false, "InvalidPlayer"
 	end
 	if type(category) ~= "string" or category == "" then
 		return false, "InvalidCategory"
 	end
+	local ps = self:_getPlayerService()
+	if not ps or not ps:IsShopDataReady(player) then return false, "DataNotLoaded" end
 
 	local registry = self:GetRegistry()
 	if not registry then
@@ -385,6 +369,13 @@ function ShopService:UnequipProduct(player: any, category: string): (boolean, st
 	end
 
 	return true, nil
+end
+
+function ShopService:EquipProduct(player: any, productId: string, category: string?): (boolean, string?)
+ return self:_withShopLock(player,function() return self:_equipProduct(player,productId,category) end)
+end
+function ShopService:UnequipProduct(player: any, category: string): (boolean, string?)
+ return self:_withShopLock(player,function() return self:_unequipProduct(player,category) end)
 end
 
 return ShopService

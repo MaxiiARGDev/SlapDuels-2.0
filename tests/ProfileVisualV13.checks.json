@@ -1,0 +1,36 @@
+{
+  "compile": {
+    "ExitCode": 0
+  },
+  "social": {
+    "ExitCode": 0
+  },
+  "features": {
+    "ExitCode": 0
+  },
+  "default.project.json": {
+    "ExitCode": 0
+  },
+  "studio-safe.project.json": {
+    "ExitCode": 0
+  },
+  "diff": {
+    "ExitCode": 0
+  },
+  "Contrast": {
+    "NoEnabledGradientOnCanvasGroup": true,
+    "WhiteGroupTint": true,
+    "SeparateBackgroundFrame": true
+  },
+  "NativeShapes": {
+    "StatIcons": true,
+    "ActionIcons": true
+  },
+  "Scope": {
+    "Changed": [
+      "src/ui/PlayerProfileHUD.project.json",
+      "src/client/Controllers/SocialController.luau"
+    ],
+    "Unexpected": []
+  }
+}
